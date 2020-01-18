@@ -14,8 +14,18 @@
 
 int		ft_whatis(t_exectoken *tmp, t_memory *q)
 {
+	int		i;
+
+	i = do_work_subshell(tmp->file_args, q);
+	ft_printf("\nnysh: %d\n", i);
+	if (i == -1)
+		return (-3);
+	if (i == 1)
+		return (1);
 	if (tmp->file_args == NULL)
 		return (ft_error_args(tmp));
+	if (do_zam_bax_and_hist_full(tmp->file_args, q) == -1)
+		ft_error_args(tmp);
 	if (ft_do_zam_eval(tmp->file_args) == -1)
 		ft_error_args(tmp);
 	if (do_zam_ravno(tmp->file_args) == -1)
@@ -104,6 +114,81 @@ void	ft_add_intput_que(char **input, t_memory *head)
 	free(tmp);
 }
 
+
+int		ft_main_what(t_exectoken *tmp, t_memory *q)
+{
+	int		i;
+
+	i = -1;
+	while (tmp)
+	{
+		if (ft_whatis(tmp, q) == -1)
+			return (-1);
+		tmp = tmp->right;
+	}
+	return (1);
+}
+
+char	**new_env_var(char **env)
+{
+	int		i;
+	char	**new_env;
+
+	i = -1;
+	if (!(new_env = (char **)ft_memalloc(sizeof(char *) * (ft_env_len(env) + 1))))
+		ft_error_q(1);
+	while (env[++i])
+	{
+		//ft_printf();
+		if (!(new_env[i] = ft_strdup(env[i])))
+			ft_error_q(1);
+	}
+
+	return (new_env);
+}
+
+void    ft_check_cd()
+{
+	char    folder[1024];
+	char	*dop;
+	char	*res;
+	char	**tmp;
+
+	dop = ft_get_var("PWD", g_env);
+	getcwd(folder, 1024);
+	if (ft_strcmp(folder, dop) == 0)
+		return ;
+	res = ft_strjoin("cd ", dop);
+	tmp = ft_strsplit(res, " ");
+	ft_strdel(&res);
+	ft_cd(tmp);
+}
+
+int		do_cmd(char *input, t_memory *head)
+{
+	t_exectoken		*start_token;
+	char			**g_alias_dop;
+	char			**g_env_dop;
+	char			*g_cp_dop;
+	char			**g_all_var_dop;
+
+	g_cp_dop = ft_strdup(g_cp);
+	g_alias_dop = new_env_var(g_alias);
+	g_env_dop = new_env_var(g_env);
+	g_all_var_dop = new_env_var(g_all_var);
+	ft_show_env(g_alias_dop);
+	start_token = all_parse(input);
+	ft_main_what(start_token, head);
+	ft_printf("123\n");
+	g_alias = g_alias_dop;
+	g_env = g_env_dop;
+	g_cp = g_cp_dop;
+	g_all_var = g_all_var_dop;
+	return (0);
+	return (ft_distruct_tree(start_token) &&
+	ft_dist_str(input) ? 0 : 1);
+}
+
 int		main(int argc, char **argv, char **env)
 {
 	char		*input;
@@ -118,21 +203,30 @@ int		main(int argc, char **argv, char **env)
 	//set_new_var(ft_strdup("?"), ft_itoa(0));
 	while (1)
 	{
+		ft_check_cd();
 		set_input_mode();
+
 		atexit(reset_input_mode);
+		
 		input = ft_read_8(ft_main_norm(0), head, 0);
 		write(2, "\n", 1);
+		
 		while (ft_cheak_quote(input) != 1)
 			ft_add_intput_que(&input, head);
+	
 		reset_input_mode();
 		input[0] != '\0' ? head = ft_memory(head, input) : head;
-		//input = ft_strdup("alias ddd fff ; exit");
+		//ft_printf("rofl-1 %s\n", input);
+		//input = ft_strdup("(ls);ls");
 		start_token = all_parse(input);
+	
 		if (ft_main_what(start_token, head) == -1)
 			break ;
-		free(input);
+
+		ft_strdel(&input);
 		ft_distruct_tree(start_token);
+	
 	}
 	return (ft_distruct_memory(head) && ft_distruct_tree(start_token) &&
-			ft_dist_str(input) ? 0 : 1);
+		ft_dist_str(input) ? 0 : 1);
 }

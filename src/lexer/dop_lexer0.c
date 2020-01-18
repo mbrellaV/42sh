@@ -70,5 +70,5 @@ int				sc_size(char *str, char b)
 	}
 	if (*str == '\0' && cn != 0)
 		return (-1);
-	return (i + 2);
+	return (i + 1);
 }

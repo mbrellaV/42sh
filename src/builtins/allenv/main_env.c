@@ -45,6 +45,7 @@ void	ft_show_env(char **env)
 		ft_putendl(env[i]);
 		i++;
 	}
+	ft_printf("\n\n\n\n\n");
 }
 
 void	ft_realloc_all(int k, char ***envl)

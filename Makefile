@@ -12,13 +12,35 @@
 
 NAME	= 21sh
 
-SRC = src/main.c src/ft_error_q.c src/ft_distruct.c src/errors/errror_handler.c \
-src/builtins/ft_echo.c src/builtins/ft_cd.c src/ft_take_arg.c \
-src/exec/ft_fun_fork.c src/exec/ft_create_file.c src/builtins/ft_echo2.c src/ft_signal.c \
-src/lexer/lexer.c src/lexer/dop_lexer0.c src/lexer/dop_lexer1.c src/lexer/dop_lexer2.c src/lexer/dop_lexer3.c\
-src/parser/main_parser.c src/parser/dop_parser.c src/parser/dop_parser1.c\
-src/nucleus/ft_cutcopy.c src/nucleus/ft_read_8.c \
-src/exec/ft_do_pipe.c src/nucleus/nucleus.c src/nucleus/nucleus2.c src/nucleus/nucleus3.c src/nucleus/nucleus4.c src/builtins/allenv/main_env.c src/builtins/allenv/ft_env.c src/builtins/alias/ft_alias.c src/eval/atoimy.c src/eval/calc.c src/eval/dop.c src/eval/ft_do_zam_eval.c src/eval/inftopost.c
+SRC = src/builtins/ft_cd.c\
+        src/builtins/ft_echo.c\
+        src/builtins/ft_echo2.c\
+        src/builtins/allenv/ft_env.c\
+        src/errors/errror_handler.c\
+        src/exec/ft_create_file.c\
+        src/exec/ft_do_pipe.c\
+        src/exec/ft_fun_fork.c\
+        src/lexer/dop_lexer0.c\
+        src/lexer/dop_lexer1.c\
+        src/lexer/dop_lexer2.c\
+        src/lexer/dop_lexer3.c\
+        src/lexer/lexer.c\
+        src/nucleus/ft_cutcopy.c\
+        src/nucleus/ft_read_8.c\
+        src/nucleus/nucleus.c\
+        src/nucleus/nucleus2.c\
+        src/nucleus/nucleus3.c\
+        src/nucleus/nucleus4.c\
+        src/parser/dop_parser.c\
+        src/parser/dop_parser1.c\
+        src/parser/main_parser.c\
+        src/ft_distruct.c\
+        src/ft_error_q.c\
+        src/ft_signal.c\
+        src/ft_take_arg.c\
+src/main.c src/builtins/allenv/main_env.c src/builtins/alias/ft_alias.c src/evaln/ft_do_zam_eval.c\
+src/evaln/atoimy.c src/evaln/inftopost.c src/evaln/calc.c src/evaln/dop.c\
+
 
 OBJ	= $(SRC:.c=.o)
 

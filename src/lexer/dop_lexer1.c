@@ -22,18 +22,15 @@ char				*do_zam_str_by_str(int start, int end, char *str, char *zam_str)
 	dopi = 0;
 	if (zam_str == NULL)
 		zam_str = ft_strdup("\0");
-	//ft_printf("|%d %d %s|\n", start, end, zam_str);
 	if (!(newstr = ft_memalloc((ft_strlen(str) + ft_strlen(zam_str) + 2) * sizeof(char))))
 		return (NULL);
 	while (str[i] != '\0' && i < start - 1)
 	{
-		//ft_printf("%s\n", newstr);
 		newstr[i] = str[i];
 		i++;
 	}
 	while (zam_str[dopi] != '\0')
 	{
-		//ft_printf("%s\n", newstr);
 		newstr[i] = zam_str[dopi];
 		dopi++;
 		i++;
@@ -49,47 +46,99 @@ char				*do_zam_str_by_str(int start, int end, char *str, char *zam_str)
 	return (newstr);
 }
 
-char				*do_zam_str_bax(char *str1)
+int					dop_subshell(char *str, t_memory *head)
 {
-	t_dop_bax	*t;
+	int		i;
+	char	*newstr;
+
+	i = 0;
+	newstr = NULL;
+	if (!ft_strstr(str, "("))
+		return (0);
+	while (str[i] != '\0')
+	{
+		if (str[i] == '(')
+		{
+			newstr = ft_strsub(str, i + 1, sc_size(str, '(') - i - 3);
+			break ;
+		}
+		i++;
+	}
+//	ft_printf("fevsavafsv///////////////// %s ", newstr);
+	if (newstr != NULL)
+	{
+	//	ft_printf("\n///////// %s\n", newstr);
+		do_cmd(newstr, head);
+	//	ft_printf("fevsavafsv/////////////////123");
+		return (1);
+	}
+	else
+		return (-1);
+}
+
+int					do_work_subshell(char **mas, t_memory *head)
+{
+	int		i;
+
+//	ft_printf("sas");
+	i = dop_subshell(mas[0], head);
+///	ft_printf("\nfff: %d \n rofler: %s\n", i, mas[0]);
+	if (i == 0)
+		return (0);
+	else if (i == -1)
+		return (-1);
+	if (mas[1] != NULL)
+		return (-1);
+	ft_printf("sas1");
+	return (1);
+}
+
+char				*do_zam_str_bax(char *str1, t_dop_str *t)
+{
 	int			start;
 	int			end;
 	int			dop;
 
 	dop = 0;
-	if (!(t = ft_memalloc(sizeof(t_dop_bax))))
-		return (NULL);
-	t->c = 0;
-	t->i = 0;
+	t->c_b = 0;
+	t->i_b = 0;
 	end = 0;
-	t->str = str1;
-	if (!(t->new = ft_strnew(1)))
+	t->str_b = str1;
+	if (!(t->new_b = ft_strnew(1)))
 		return (NULL);
-	while (t->str[t->i])
+	while (t->str_b[t->i_b])
 	{
-		if (t->str[t->i] == '$' && t->str[t->i - 1] != '\\' && t->str[t->i + 1] != '(')
+
+		if (t->str_b[t->i_b] == '$' && t->str_b[t->i_b - 1] != '\\' && t->str_b[t->i_b + 1] != '(')
 		{
-			if (t->str[t->i + 1] == '{')
+			if (t->str_b[t->i_b + 1] == '{')
 				dop++;
-			start = t->i + 1;
-			while (t->str[t->i] != '\0' && isword(t->str[t->i]) != 0 && t->str[t->i] != '}')
-			{
-				//ft_printf("\nsas1: %s\n", &t->str[t->i]);
-				t->i++;
-			}
-			end += t->i + (t->str[t->i] == '}');
-		//	ft_printf("\nsas1: %d %d\n", end, dop);
-			str1 = ft_strsub(t->str, start + (dop > 0 ? 1 : 0), end - (dop > 0 ? 2 : 0) - start);
-		//	ft_printf("\nsas1: %s    %d\n", str1, end - (dop + (t->str[t->i] == '}')) - start);
-			t->str = do_zam_str_by_str(start, end, t->str, ft_get_var(str1, g_all_var));
+			start = t->i_b + 1;
+			while (t->str_b[t->i_b] != '\0' && isword(t->str_b[t->i_b]) != 0 && t->str_b[t->i_b] != '}')
+				t->i_b++;
+			end += t->i_b + (t->str_b[t->i_b] == '}');
+			str1 = ft_strsub(t->str_b, start + (dop > 0 ? 1 : 0), end - (dop > 0 ? 2 : 0) - start);
+			t->str_b = do_zam_str_by_str(start, end, t->str_b, ft_get_var(str1, g_all_var));
 			ft_strdel(&str1);
-		//	ft_printf("\nsas1: %s\n", t->str);
-			return (ft_zach_dop_str(t->str, t));
+			return (t->str_b);
 		}
-		t->i++;
+		t->i_b++;
 	}
-	//ft_printf("\nsas1: %s\n", t->str);
-	return (ft_zach_dop_str(t->str, t));
+	return (t->str_b);
+}
+
+char				*do_zam_str_hist_var(char *str1, t_memory *q)
+{
+	char		*dop;
+
+	ft_printf("adadf\n");
+	while ((dop = ft_strstr(str1, "!!")))
+	{
+		str1 = do_zam_str_by_str(dop - str1, dop - str1 + 2, str1, ft_strdup(q->back->inp));
+		ft_printf("\n%s\n", str1);
+	}
+	ft_printf("\n////////////////////// :    %s\n", str1);
+	return (str1);
 }
 
 char				*do_obr_zamena_sp(char *line)

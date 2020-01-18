@@ -47,7 +47,6 @@
 # define WHT   "\x1B[37m"
 # define RESET "\x1B[0m"
 
-pid_t			g_pid;
 char			**g_alias;
 char			**g_env;
 char			*g_cp;
@@ -66,16 +65,14 @@ typedef struct	s_pipe
 char			*do_zam_str(char *str);
 void			ft_realloc_all(int k, char ***envl);
 void			ft_echo(char **str);
+int				do_cmd(char *input, t_memory *head);
 char			*ft_slash(char *str);
-char			*ft_quoter(char *str);
 char			*ft_hex(char *str);
 int				set_new_var(char *str1, char *str2, char ***envl);
 int				eval_expr(char *str);
 void			ft_cd(char **str);
 char			*ft_get_var(char *dop, char **env);
-void			ft_env(void);
 int				issc(char c);
-char			**ft_bb_que(char **str);
 int				sc_size(char *str, char b);
 int				ft_do_zam_eval(char **mas);
 void			ft_global_env(char **env, int argc);
@@ -86,23 +83,18 @@ int				ft_path_fork(char **argum, pid_t pid);
 void			ft_alias();
 int				ft_do_zam_alias(char **mas);
 void			ft_do_export(char **mas);
-//int				ft_unexport(char *str1);
 void			ft_global_dir(int flag, char *str);
-char			*ft_put_env(char *str);
-//int				ft_export_to(char *str1, char *str2);
 char			*ft_cd_home(char *str);
 int				ft_main_norm(int flag);
 int				ft_signal(int signo, char **input);
 void			ft_fork_signal(int signo);
 int				ft_main_what(t_exectoken *tmp, t_memory *q);
 int				ft_whatis(t_exectoken *tmp, t_memory *q);
+int				do_work_subshell(char **mas, t_memory *q);
 void			ft_do_change_alias(char **mas);
 char			*ft_strjoinch_i(char const *s1, char c, size_t k, size_t max);
 char			*ft_strjoin_i(char const *s1, char *c, size_t k, size_t max);
-void			ft_signal1(void);
-void			ft_signalhandle(int num);
 void			ft_infinit_pipe(t_exectoken *head);
-void			ft_realloc_str(int k);
 int				ft_distruct_tree(t_exectoken *q);
 int				ft_distr_lex(t_lextoken	*tmp);
 int				ft_distruct_memory(t_memory	*head);

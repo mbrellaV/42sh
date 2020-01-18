@@ -65,10 +65,3 @@ char			*do_zam_str(char *str)
 	ft_strdel(&str);
 	return (new);
 }
-
-t_exectoken		*ft_zach(t_exectoken *tmp, t_dop_str_for_cr_new *t_dop)
-{
-	if (t_dop != NULL)
-		free(t_dop);
-	return (tmp);
-}

@@ -51,6 +51,7 @@ t_memory	*ft_memory(t_memory *back, char *str)
 	t_memory *tmp;
 	t_memory *p;
 
+
 	tmp = (t_memory *)malloc(sizeof(t_memory));
 	if (!tmp)
 		return (NULL);
@@ -61,6 +62,9 @@ t_memory	*ft_memory(t_memory *back, char *str)
 	tmp->back = back;
 	if (p != NULL)
 		p->back = tmp;
+	ft_printf("\n///////////1 %s\n", (back)->inp);
+	(back)->inp = do_zam_str_hist_var((back)->inp, back);
+	//ft_printf("\n///////////2 %s\n", (back)->next->inp);
 	return (tmp);
 }
 
@@ -89,6 +93,7 @@ void		ft_dop_history(t_memory ***q, char ***input, t_flag **flag, int k)
 void		ft_putmemory(t_memory ***q, int sum, char ***input, t_flag **flag)
 {
 	static int		d = 0;
+
 
 	if (**q && (**q)->back && (**q)->back->back == NULL && sum == 183)
 		ft_dop_history(q, input, flag, 1);

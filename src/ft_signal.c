@@ -14,8 +14,10 @@
 
 void	ft_fork_signal(int signo)
 {
+	exit(0);
 	if (signo == SIGINT)
 	{
+
 		ft_putstr_fd("\n", 2);
 		signal(SIGINT, ft_fork_signal);
 	}
@@ -45,17 +47,4 @@ int		ft_signal(int signo, char **input)
 	return (404);
 }
 
-int		ft_main_what(t_exectoken *tmp, t_memory *q)
-{
-	int		i;
-
-	i = -1;
-	while (tmp)
-	{
-		if (ft_whatis(tmp, q) == -1)
-			return (-1);
-		tmp = tmp->right;
-	}
-	return (1);
-}
 

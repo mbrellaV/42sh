@@ -24,82 +24,113 @@ t_dop_str		*cr_dop_str(char **line1)
 		return (NULL);
 	if (!(tmp = ft_memalloc(sizeof(t_dop_str))))
 		return (NULL);
-	tmp->tmp = NULL;
-	tmp->dop = 0;
-	tmp->d = 0;
-	tmp->i = 0;
-	tmp->doptail = NULL;
-	tmp->tail = NULL;
+	tmp->tmp_c = NULL;
+	tmp->dop_c = 0;
+	tmp->d_c = 0;
+	tmp->i_c = 0;
+	tmp->doptail_c = NULL;
+	tmp->tail_c = NULL;
+	//ft_printf("\n\n\nsas: ");
+	//ft_printf("\n%s\n", line);
 	line = do_zamena_sp(line);
-	line = do_zam_str_bax(line);
+//	ft_printf("\n%s\n", line);
+	//line = do_zam_str_bax(line, tmp);
+	//ft_printf("\n%s\n", line);
 	line = do_zam_str(line);
+	//ft_printf("\n%s\n", line);
 	*line1 = line;
 	return (tmp);
 }
 
+int				do_zam_bax_and_hist_full(char **mas, t_memory *t)
+{
+	int			i;
+	t_dop_str	*tmp;
+
+	if (!mas)
+		return (-1);
+	if (!(tmp = ft_memalloc(sizeof(t_dop_str))))
+		return (-1);
+	i = 0;
+	while (mas[i])
+	{
+		mas[i] = do_zam_str_bax(mas[i], tmp);
+		mas[i] = do_zam_str_hist_var(mas[i], t);
+		i++;
+	}
+	return (0);
+}
+
 int				dop_lexer2(t_dop_str *tmp, char *line)
 {
-	tmp->tmp = ft_strsub(line, tmp->i, word_size(line + tmp->i));
-	if (is_cmd_delim(get_op_type(tmp->tmp)) == 0 && tmp->i != 0 &&
-		isword(line[tmp->i - 1]) && (get_op_type(tmp->tmp) > 6))
-		tmp->tail->is_near_opt = 1;
-	if (!(tmp->tail = add_token(tmp->tail, tmp->tmp, 0)))
+	tmp->tmp_c= ft_strsub(line, tmp->i_c, word_size(line + tmp->i_c));
+	if (is_cmd_delim(get_op_type(tmp->tmp_c)) == 0 && tmp->i_c != 0 &&
+		isword(line[tmp->i_c - 1]) && (get_op_type(tmp->tmp_c) > 6))
+		tmp->tail_c->is_near_opt = 1;
+	if (!(tmp->tail_c = add_token(tmp->tail_c, tmp->tmp_c, 0)))
 		return (-1);
-	tmp->tail->is_near_opt = 1;
-	if (tmp->tail->operator_type == 2 && tmp->tail->prev == NULL)
+	tmp->tail_c->is_near_opt = 1;
+	if (tmp->tail_c->operator_type == 2 && tmp->tail_c->prev == NULL)
 		return (ft_error(5, "\\n") == -1);
-	tmp->i += word_size(line + tmp->i);
+	tmp->i_c += word_size(line + tmp->i_c);
 	return (0);
 }
 
 int				dop_lexer(t_dop_str *tmp, char *line)
 {
-	if (isword(line[tmp->i]))
+	if (isword(line[tmp->i_c]))
 	{
-		tmp->tmp = ft_strsub(line, tmp->i + (ispar(line[tmp->i]) == 1 ? 1 : 0),
-			word_size(line + tmp->i));
-		if (tmp->tail != NULL && tmp->tail->operator_type > 2)
-			tmp->d = 1;
-		if (!(tmp->tail = add_token(tmp->tail, tmp->tmp, 1)))
+		tmp->tmp_c = ft_strsub(line, tmp->i_c + (ispar(line[tmp->i_c]) == 1 ? 1 : 0),
+			word_size(line + tmp->i_c));
+		if (tmp->tail_c != NULL && tmp->tail_c->operator_type > 2)
+			tmp->d_c = 1;
+		if (!(tmp->tail_c = add_token(tmp->tail_c, tmp->tmp_c, 1)))
 			return (-1);
-		tmp->tail->is_near_opt = tmp->d;
-		tmp->i += word_size(line + tmp->i) + (ispar(line[tmp->i]) == 1 ? 2 : 0);
-		tmp->d = 0;
+		tmp->tail_c->is_near_opt = tmp->d_c;
+		//ft_printf("\n\ndop1:  %d  %d\n\n", word_size(line + tmp->i_c), line[tmp->i_c]);
+		tmp->i_c += word_size(line + tmp->i_c) + (ispar(line[tmp->i_c]) == 1 ? 2 : 0) ;//+ (issc(line[tmp->i_c]) == 1 ? 1 : 0);
+	//	ft_printf("\n\ndop2:  %d  %d\n\n", word_size(line + tmp->i_c), line[tmp->i_c]);
+		tmp->d_c = 0;
 	}
-	else if (isoperator(line[tmp->i]))
+	else if (isoperator(line[tmp->i_c]))
 	{
+		ft_printf("da!!!!");
 		if (dop_lexer2(tmp, line) == -1)
 			return (-1);
 	}
 	else
-		tmp->i++;
-	if (tmp->dop == 0 && tmp->tail != NULL)
+		tmp->i_c++;
+	if (tmp->dop_c == 0 && tmp->tail_c != NULL)
 	{
-		tmp->doptail = tmp->tail;
-		tmp->dop = 1;
+		tmp->doptail_c = tmp->tail_c;
+		tmp->dop_c = 1;
 	}
 	return (0);
 }
 
-t_lextoken		*do_lexer(char *line, t_dop_str *tmp)
+t_lextoken		*do_lexer(char *line)
 {
+	t_dop_str	*tmp;
+
 	if (!(tmp = cr_dop_str(&line)))
 		return (NULL);
-	while (line[tmp->i] != '\0')
+	if (line == NULL)
+		return (NULL);
+	while (line[tmp->i_c] != '\0')
 	{
 		if (dop_lexer(tmp, line) == -1)
 			return (NULL);
 	}
-	if (tmp->tail != NULL && tmp->tail->operator_type == 2)
+	if (tmp->tail_c != NULL && tmp->tail_c->operator_type == 2)
 		return (ft_error(5, "\\n") == -1 ? NULL : 0);
-	tmp->tail = tmp->doptail;
-	while (tmp->tail)
+	tmp->tail_c = tmp->doptail_c;
+	while (tmp->tail_c)
 	{
-		if (tmp->tail->operator_type == -1)
-			return (ft_error(5, tmp->tail->line) == -1 ? NULL : 0);
-		tmp->tail->line = do_obr_zamena_sp(tmp->tail->line);
-		tmp->tail = tmp->tail->next;
+		if (tmp->tail_c->operator_type == -1)
+			return (ft_error(5, tmp->tail_c->line) == -1 ? NULL : 0);
+		tmp->tail_c->line = do_obr_zamena_sp(tmp->tail_c->line);
+		tmp->tail_c = tmp->tail_c->next;
 	}
 	ft_strdel(&line);
-	return (ft_zach_dop_str_orig(tmp, tmp->doptail));
+	return (ft_kill_str_dop(tmp, tmp->doptail_c));
 }

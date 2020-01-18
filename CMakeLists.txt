@@ -35,7 +35,8 @@ add_executable(21end
         src/ft_error_q.c
         src/ft_signal.c
         src/ft_take_arg.c
-        src/main.c src/builtins/allenv/main_env.c src/builtins/alias/ft_alias.c src/evaln/ft_do_zam_eval.c)
+        src/main.c src/builtins/allenv/main_env.c src/builtins/alias/ft_alias.c src/evaln/ft_do_zam_eval.c
+        src/evaln/atoimy.c src/evaln/inftopost.c src/evaln/calc.c src/evaln/dop.c)
 
 target_link_libraries(21end ${CMAKE_SOURCE_DIR}/libft/libft.a)
 target_link_libraries(21end termcap)

@@ -31,67 +31,57 @@ typedef struct				s_exectoken
 	char					**file_opt;
 }							t_exectoken;
 
-typedef struct				s_dop_str_for_cr_new
-{
-	int						f;
-	int						dopi;
-	t_lextoken				*dop;
-	t_exectoken				*tmp1;
-}							t_dop_str_for_cr_new;
-
-typedef struct				s_dop_bax
-{
-	int						i;
-	char					*new;
-	char					*tmp;
-	char					*tmp1;
-	int						c;
-	char					*str;
-}							t_dop_bax;
-
 typedef struct				s_dop_str
 {
-	int						i;
-	t_exectoken				*prevdot;
-	t_exectoken				*prev;
-	t_exectoken				*start;
-	char					*tmp;
-	int						dop;
-	int						d;
-	t_lextoken				*tail;
-	t_lextoken				*doptail;
+	///////////////s_dop_str_for
+	int						f_a;
+	int						dopi_a;
+	t_lextoken				*dop_a;
+	t_exectoken				*tmp1_a;
+	///////////////////////////////////////dop_bax
+	int						i_b;
+	char					*new_b;
+	char					*tmp_b;
+	char					*tmp1_b;
+	int						c_b;
+	char					*str_b;
+	/////////////////////////////////////////////
+	int						i_c;
+	t_exectoken				*prevdot_c;
+	t_exectoken				*prev_c;
+	t_exectoken				*start_c;
+	char					*tmp_c;
+	int						dop_c;
+	int						d_c;
+	t_lextoken				*tail_c;
+	t_lextoken				*doptail_c;
 }							t_dop_str;
 
+t_lextoken					*ft_kill_str_dop(t_dop_str *t, t_lextoken *tmp);
+t_lextoken					*do_lexer(char *line);
 void						ft_printf(const char *fmt, ...);
 t_exectoken					*all_parse(char *cmd);
 t_exectoken					*do_parser(t_lextoken *tmp);
+char						*do_zam_str_hist_var(char *str1, t_memory *q);
 int							get_op_type(char *operator);
-t_lextoken					*do_lexer(char *line, t_dop_str *tmp);
-t_lextoken					*ft_zach_dop_str_orig(t_dop_str *t,
-							t_lextoken *tmp);
 t_dop_str					*cr_dop_str_par(void);
 int							isoperator(char c);
 int							isword(char c);
 int							get_op_type(char *operator);
 char						*do_zamena_sp(char *line);
 int							ispar(char c);
-t_exectoken					*ft_zach(t_exectoken *tmp,
-							t_dop_str_for_cr_new *t_dop);
+t_exectoken					*ft_cr_new_exectoken(t_lextoken *tmp,
+							t_exectoken *prev, int op_type, t_dop_str *t);
 int							c_size(char *str, char b);
-char						*ft_zach_dop_str(char *tmp, t_dop_bax *t);
 int							word_size(char *str);
 t_lextoken					*add_token(t_lextoken *start,
 							char *line, int word_type);
-char						*do_zam_str_bax(char *str1);
 char						*do_obr_zamena_sp(char *line);
-char						*do_zam_str_bax(char *str1);
-t_exectoken					*ft_zach_yyy(t_exectoken *tmp, t_dop_str *t);
-void						dop_cr_new_exec(t_dop_str_for_cr_new *t,
+char						*do_zam_str_bax(char *str1, t_dop_str	*t);
+int							do_zam_bax_and_hist_full(char **mas, t_memory *t);
+void						dop_cr_new_exec(t_dop_str *t,
 							t_exectoken *prev, int op_type, int type);
-t_dop_str_for_cr_new		*cr_dop_str_par1(t_lextoken *tmp1);
-t_exectoken					*ft_cr_new_exectoken(t_lextoken *tmp,
-							t_exectoken *prev, int op_type);
-char						*find_var(char *dop);
+t_dop_str					*cr_dop_str_par1(t_lextoken *tmp1);
 int							ft_error(int error, char *dopline);
 int							is_cmd_delim(int i);
 

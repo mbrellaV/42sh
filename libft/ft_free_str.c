@@ -21,7 +21,7 @@ void	ft_free_str(char **arr)
 	i = -1;
 	while (arr[++i])
 	{
-		free(arr[i]);
+		ft_strdel(&arr[i]);
 	}
 	free(arr);
 	arr = NULL;

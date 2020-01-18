@@ -447,6 +447,58 @@ CMakeFiles/21end.dir/src/evaln/ft_do_zam_eval.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/21end.dir/src/evaln/ft_do_zam_eval.c.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/mbrella/Desktop/projects/21beta/42start/src/evaln/ft_do_zam_eval.c -o CMakeFiles/21end.dir/src/evaln/ft_do_zam_eval.c.s
 
+CMakeFiles/21end.dir/src/evaln/atoimy.c.o: CMakeFiles/21end.dir/flags.make
+CMakeFiles/21end.dir/src/evaln/atoimy.c.o: ../src/evaln/atoimy.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/mbrella/Desktop/projects/21beta/42start/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building C object CMakeFiles/21end.dir/src/evaln/atoimy.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/21end.dir/src/evaln/atoimy.c.o   -c /Users/mbrella/Desktop/projects/21beta/42start/src/evaln/atoimy.c
+
+CMakeFiles/21end.dir/src/evaln/atoimy.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/21end.dir/src/evaln/atoimy.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/mbrella/Desktop/projects/21beta/42start/src/evaln/atoimy.c > CMakeFiles/21end.dir/src/evaln/atoimy.c.i
+
+CMakeFiles/21end.dir/src/evaln/atoimy.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/21end.dir/src/evaln/atoimy.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/mbrella/Desktop/projects/21beta/42start/src/evaln/atoimy.c -o CMakeFiles/21end.dir/src/evaln/atoimy.c.s
+
+CMakeFiles/21end.dir/src/evaln/inftopost.c.o: CMakeFiles/21end.dir/flags.make
+CMakeFiles/21end.dir/src/evaln/inftopost.c.o: ../src/evaln/inftopost.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/mbrella/Desktop/projects/21beta/42start/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building C object CMakeFiles/21end.dir/src/evaln/inftopost.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/21end.dir/src/evaln/inftopost.c.o   -c /Users/mbrella/Desktop/projects/21beta/42start/src/evaln/inftopost.c
+
+CMakeFiles/21end.dir/src/evaln/inftopost.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/21end.dir/src/evaln/inftopost.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/mbrella/Desktop/projects/21beta/42start/src/evaln/inftopost.c > CMakeFiles/21end.dir/src/evaln/inftopost.c.i
+
+CMakeFiles/21end.dir/src/evaln/inftopost.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/21end.dir/src/evaln/inftopost.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/mbrella/Desktop/projects/21beta/42start/src/evaln/inftopost.c -o CMakeFiles/21end.dir/src/evaln/inftopost.c.s
+
+CMakeFiles/21end.dir/src/evaln/calc.c.o: CMakeFiles/21end.dir/flags.make
+CMakeFiles/21end.dir/src/evaln/calc.c.o: ../src/evaln/calc.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/mbrella/Desktop/projects/21beta/42start/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Building C object CMakeFiles/21end.dir/src/evaln/calc.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/21end.dir/src/evaln/calc.c.o   -c /Users/mbrella/Desktop/projects/21beta/42start/src/evaln/calc.c
+
+CMakeFiles/21end.dir/src/evaln/calc.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/21end.dir/src/evaln/calc.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/mbrella/Desktop/projects/21beta/42start/src/evaln/calc.c > CMakeFiles/21end.dir/src/evaln/calc.c.i
+
+CMakeFiles/21end.dir/src/evaln/calc.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/21end.dir/src/evaln/calc.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/mbrella/Desktop/projects/21beta/42start/src/evaln/calc.c -o CMakeFiles/21end.dir/src/evaln/calc.c.s
+
+CMakeFiles/21end.dir/src/evaln/dop.c.o: CMakeFiles/21end.dir/flags.make
+CMakeFiles/21end.dir/src/evaln/dop.c.o: ../src/evaln/dop.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/mbrella/Desktop/projects/21beta/42start/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Building C object CMakeFiles/21end.dir/src/evaln/dop.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/21end.dir/src/evaln/dop.c.o   -c /Users/mbrella/Desktop/projects/21beta/42start/src/evaln/dop.c
+
+CMakeFiles/21end.dir/src/evaln/dop.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/21end.dir/src/evaln/dop.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/mbrella/Desktop/projects/21beta/42start/src/evaln/dop.c > CMakeFiles/21end.dir/src/evaln/dop.c.i
+
+CMakeFiles/21end.dir/src/evaln/dop.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/21end.dir/src/evaln/dop.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/mbrella/Desktop/projects/21beta/42start/src/evaln/dop.c -o CMakeFiles/21end.dir/src/evaln/dop.c.s
+
 # Object files for target 21end
 21end_OBJECTS = \
 "CMakeFiles/21end.dir/src/builtins/ft_cd.c.o" \
@@ -478,7 +530,11 @@ CMakeFiles/21end.dir/src/evaln/ft_do_zam_eval.c.s: cmake_force
 "CMakeFiles/21end.dir/src/main.c.o" \
 "CMakeFiles/21end.dir/src/builtins/allenv/main_env.c.o" \
 "CMakeFiles/21end.dir/src/builtins/alias/ft_alias.c.o" \
-"CMakeFiles/21end.dir/src/evaln/ft_do_zam_eval.c.o"
+"CMakeFiles/21end.dir/src/evaln/ft_do_zam_eval.c.o" \
+"CMakeFiles/21end.dir/src/evaln/atoimy.c.o" \
+"CMakeFiles/21end.dir/src/evaln/inftopost.c.o" \
+"CMakeFiles/21end.dir/src/evaln/calc.c.o" \
+"CMakeFiles/21end.dir/src/evaln/dop.c.o"
 
 # External object files for target 21end
 21end_EXTERNAL_OBJECTS =
@@ -513,10 +569,14 @@ CMakeFiles/21end.dir/src/evaln/ft_do_zam_eval.c.s: cmake_force
 21end: CMakeFiles/21end.dir/src/builtins/allenv/main_env.c.o
 21end: CMakeFiles/21end.dir/src/builtins/alias/ft_alias.c.o
 21end: CMakeFiles/21end.dir/src/evaln/ft_do_zam_eval.c.o
+21end: CMakeFiles/21end.dir/src/evaln/atoimy.c.o
+21end: CMakeFiles/21end.dir/src/evaln/inftopost.c.o
+21end: CMakeFiles/21end.dir/src/evaln/calc.c.o
+21end: CMakeFiles/21end.dir/src/evaln/dop.c.o
 21end: CMakeFiles/21end.dir/build.make
 21end: ../libft/libft.a
 21end: CMakeFiles/21end.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/mbrella/Desktop/projects/21beta/42start/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Linking C executable 21end"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/mbrella/Desktop/projects/21beta/42start/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Linking C executable 21end"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/21end.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

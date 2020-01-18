@@ -12,21 +12,7 @@
 
 #include "../../inc/fshell.h"
 
-char			*ft_zach_dop_str(char *tmp, t_dop_bax *t)
-{
-	if (t != NULL)
-		free(t);
-	return (tmp);
-}
-
-t_lextoken		*ft_zach_dop_str_orig(t_dop_str *t, t_lextoken *tmp)
-{
-	if (t != NULL)
-		free(t);
-	return (tmp);
-}
-
-t_exectoken		*ft_zach_yyy(t_exectoken *tmp, t_dop_str *t)
+t_lextoken		*ft_kill_str_dop(t_dop_str *t, t_lextoken *tmp)
 {
 	if (t != NULL)
 		free(t);
