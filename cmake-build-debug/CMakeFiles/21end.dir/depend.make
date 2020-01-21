@@ -119,35 +119,71 @@ CMakeFiles/21end.dir/src/ft_take_arg.c.o: ../inc/parser.h
 CMakeFiles/21end.dir/src/ft_take_arg.c.o: ../libft/libft.h
 CMakeFiles/21end.dir/src/ft_take_arg.c.o: ../src/ft_take_arg.c
 
-CMakeFiles/21end.dir/src/lexer/dop_lexer0.c.o: ../inc/fshell.h
-CMakeFiles/21end.dir/src/lexer/dop_lexer0.c.o: ../inc/nucleus.h
-CMakeFiles/21end.dir/src/lexer/dop_lexer0.c.o: ../inc/parser.h
-CMakeFiles/21end.dir/src/lexer/dop_lexer0.c.o: ../libft/libft.h
-CMakeFiles/21end.dir/src/lexer/dop_lexer0.c.o: ../src/lexer/dop_lexer0.c
+CMakeFiles/21end.dir/src/lexer/change_dol.c.o: ../inc/fshell.h
+CMakeFiles/21end.dir/src/lexer/change_dol.c.o: ../inc/nucleus.h
+CMakeFiles/21end.dir/src/lexer/change_dol.c.o: ../inc/parser.h
+CMakeFiles/21end.dir/src/lexer/change_dol.c.o: ../libft/libft.h
+CMakeFiles/21end.dir/src/lexer/change_dol.c.o: ../src/lexer/change_dol.c
 
-CMakeFiles/21end.dir/src/lexer/dop_lexer1.c.o: ../inc/fshell.h
-CMakeFiles/21end.dir/src/lexer/dop_lexer1.c.o: ../inc/nucleus.h
-CMakeFiles/21end.dir/src/lexer/dop_lexer1.c.o: ../inc/parser.h
-CMakeFiles/21end.dir/src/lexer/dop_lexer1.c.o: ../libft/libft.h
-CMakeFiles/21end.dir/src/lexer/dop_lexer1.c.o: ../src/lexer/dop_lexer1.c
+CMakeFiles/21end.dir/src/lexer/change_hist_exp.c.o: ../inc/fshell.h
+CMakeFiles/21end.dir/src/lexer/change_hist_exp.c.o: ../inc/nucleus.h
+CMakeFiles/21end.dir/src/lexer/change_hist_exp.c.o: ../inc/parser.h
+CMakeFiles/21end.dir/src/lexer/change_hist_exp.c.o: ../libft/libft.h
+CMakeFiles/21end.dir/src/lexer/change_hist_exp.c.o: ../src/lexer/change_hist_exp.c
 
-CMakeFiles/21end.dir/src/lexer/dop_lexer2.c.o: ../inc/fshell.h
-CMakeFiles/21end.dir/src/lexer/dop_lexer2.c.o: ../inc/nucleus.h
-CMakeFiles/21end.dir/src/lexer/dop_lexer2.c.o: ../inc/parser.h
-CMakeFiles/21end.dir/src/lexer/dop_lexer2.c.o: ../libft/libft.h
-CMakeFiles/21end.dir/src/lexer/dop_lexer2.c.o: ../src/lexer/dop_lexer2.c
+CMakeFiles/21end.dir/src/lexer/change_spaces.c.o: ../inc/fshell.h
+CMakeFiles/21end.dir/src/lexer/change_spaces.c.o: ../inc/nucleus.h
+CMakeFiles/21end.dir/src/lexer/change_spaces.c.o: ../inc/parser.h
+CMakeFiles/21end.dir/src/lexer/change_spaces.c.o: ../libft/libft.h
+CMakeFiles/21end.dir/src/lexer/change_spaces.c.o: ../src/lexer/change_spaces.c
 
-CMakeFiles/21end.dir/src/lexer/dop_lexer3.c.o: ../inc/fshell.h
-CMakeFiles/21end.dir/src/lexer/dop_lexer3.c.o: ../inc/nucleus.h
-CMakeFiles/21end.dir/src/lexer/dop_lexer3.c.o: ../inc/parser.h
-CMakeFiles/21end.dir/src/lexer/dop_lexer3.c.o: ../libft/libft.h
-CMakeFiles/21end.dir/src/lexer/dop_lexer3.c.o: ../src/lexer/dop_lexer3.c
+CMakeFiles/21end.dir/src/lexer/change_str_by_str.c.o: ../inc/fshell.h
+CMakeFiles/21end.dir/src/lexer/change_str_by_str.c.o: ../inc/nucleus.h
+CMakeFiles/21end.dir/src/lexer/change_str_by_str.c.o: ../inc/parser.h
+CMakeFiles/21end.dir/src/lexer/change_str_by_str.c.o: ../libft/libft.h
+CMakeFiles/21end.dir/src/lexer/change_str_by_str.c.o: ../src/lexer/change_str_by_str.c
+
+CMakeFiles/21end.dir/src/lexer/cr_and_add_tokens.c.o: ../inc/fshell.h
+CMakeFiles/21end.dir/src/lexer/cr_and_add_tokens.c.o: ../inc/nucleus.h
+CMakeFiles/21end.dir/src/lexer/cr_and_add_tokens.c.o: ../inc/parser.h
+CMakeFiles/21end.dir/src/lexer/cr_and_add_tokens.c.o: ../libft/libft.h
+CMakeFiles/21end.dir/src/lexer/cr_and_add_tokens.c.o: ../src/lexer/cr_and_add_tokens.c
+
+CMakeFiles/21end.dir/src/lexer/do_subshell.c.o: ../inc/fshell.h
+CMakeFiles/21end.dir/src/lexer/do_subshell.c.o: ../inc/nucleus.h
+CMakeFiles/21end.dir/src/lexer/do_subshell.c.o: ../inc/parser.h
+CMakeFiles/21end.dir/src/lexer/do_subshell.c.o: ../libft/libft.h
+CMakeFiles/21end.dir/src/lexer/do_subshell.c.o: ../src/lexer/do_subshell.c
+
+CMakeFiles/21end.dir/src/lexer/dop_funs.c.o: ../inc/fshell.h
+CMakeFiles/21end.dir/src/lexer/dop_funs.c.o: ../inc/nucleus.h
+CMakeFiles/21end.dir/src/lexer/dop_funs.c.o: ../inc/parser.h
+CMakeFiles/21end.dir/src/lexer/dop_funs.c.o: ../libft/libft.h
+CMakeFiles/21end.dir/src/lexer/dop_funs.c.o: ../src/lexer/dop_funs.c
+
+CMakeFiles/21end.dir/src/lexer/get_opt_type.c.o: ../inc/fshell.h
+CMakeFiles/21end.dir/src/lexer/get_opt_type.c.o: ../inc/nucleus.h
+CMakeFiles/21end.dir/src/lexer/get_opt_type.c.o: ../inc/parser.h
+CMakeFiles/21end.dir/src/lexer/get_opt_type.c.o: ../libft/libft.h
+CMakeFiles/21end.dir/src/lexer/get_opt_type.c.o: ../src/lexer/get_opt_type.c
+
+CMakeFiles/21end.dir/src/lexer/kill_dop_structure.c.o: ../inc/fshell.h
+CMakeFiles/21end.dir/src/lexer/kill_dop_structure.c.o: ../inc/nucleus.h
+CMakeFiles/21end.dir/src/lexer/kill_dop_structure.c.o: ../inc/parser.h
+CMakeFiles/21end.dir/src/lexer/kill_dop_structure.c.o: ../libft/libft.h
+CMakeFiles/21end.dir/src/lexer/kill_dop_structure.c.o: ../src/lexer/kill_dop_structure.c
 
 CMakeFiles/21end.dir/src/lexer/lexer.c.o: ../inc/fshell.h
 CMakeFiles/21end.dir/src/lexer/lexer.c.o: ../inc/nucleus.h
 CMakeFiles/21end.dir/src/lexer/lexer.c.o: ../inc/parser.h
 CMakeFiles/21end.dir/src/lexer/lexer.c.o: ../libft/libft.h
 CMakeFiles/21end.dir/src/lexer/lexer.c.o: ../src/lexer/lexer.c
+
+CMakeFiles/21end.dir/src/lexer/word_sizes.c.o: ../inc/fshell.h
+CMakeFiles/21end.dir/src/lexer/word_sizes.c.o: ../inc/nucleus.h
+CMakeFiles/21end.dir/src/lexer/word_sizes.c.o: ../inc/parser.h
+CMakeFiles/21end.dir/src/lexer/word_sizes.c.o: ../libft/libft.h
+CMakeFiles/21end.dir/src/lexer/word_sizes.c.o: ../src/lexer/word_sizes.c
 
 CMakeFiles/21end.dir/src/main.c.o: ../inc/fshell.h
 CMakeFiles/21end.dir/src/main.c.o: ../inc/nucleus.h

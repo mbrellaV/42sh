@@ -119,36 +119,72 @@ CMakeFiles/21end.dir/src/ft_take_arg.c.o
  /Users/mbrella/Desktop/projects/21beta/42start/inc/parser.h
  /Users/mbrella/Desktop/projects/21beta/42start/libft/libft.h
  /Users/mbrella/Desktop/projects/21beta/42start/src/ft_take_arg.c
-CMakeFiles/21end.dir/src/lexer/dop_lexer0.c.o
+CMakeFiles/21end.dir/src/lexer/change_dol.c.o
  /Users/mbrella/Desktop/projects/21beta/42start/inc/fshell.h
  /Users/mbrella/Desktop/projects/21beta/42start/inc/nucleus.h
  /Users/mbrella/Desktop/projects/21beta/42start/inc/parser.h
  /Users/mbrella/Desktop/projects/21beta/42start/libft/libft.h
- /Users/mbrella/Desktop/projects/21beta/42start/src/lexer/dop_lexer0.c
-CMakeFiles/21end.dir/src/lexer/dop_lexer1.c.o
+ /Users/mbrella/Desktop/projects/21beta/42start/src/lexer/change_dol.c
+CMakeFiles/21end.dir/src/lexer/change_hist_exp.c.o
  /Users/mbrella/Desktop/projects/21beta/42start/inc/fshell.h
  /Users/mbrella/Desktop/projects/21beta/42start/inc/nucleus.h
  /Users/mbrella/Desktop/projects/21beta/42start/inc/parser.h
  /Users/mbrella/Desktop/projects/21beta/42start/libft/libft.h
- /Users/mbrella/Desktop/projects/21beta/42start/src/lexer/dop_lexer1.c
-CMakeFiles/21end.dir/src/lexer/dop_lexer2.c.o
+ /Users/mbrella/Desktop/projects/21beta/42start/src/lexer/change_hist_exp.c
+CMakeFiles/21end.dir/src/lexer/change_spaces.c.o
  /Users/mbrella/Desktop/projects/21beta/42start/inc/fshell.h
  /Users/mbrella/Desktop/projects/21beta/42start/inc/nucleus.h
  /Users/mbrella/Desktop/projects/21beta/42start/inc/parser.h
  /Users/mbrella/Desktop/projects/21beta/42start/libft/libft.h
- /Users/mbrella/Desktop/projects/21beta/42start/src/lexer/dop_lexer2.c
-CMakeFiles/21end.dir/src/lexer/dop_lexer3.c.o
+ /Users/mbrella/Desktop/projects/21beta/42start/src/lexer/change_spaces.c
+CMakeFiles/21end.dir/src/lexer/change_str_by_str.c.o
  /Users/mbrella/Desktop/projects/21beta/42start/inc/fshell.h
  /Users/mbrella/Desktop/projects/21beta/42start/inc/nucleus.h
  /Users/mbrella/Desktop/projects/21beta/42start/inc/parser.h
  /Users/mbrella/Desktop/projects/21beta/42start/libft/libft.h
- /Users/mbrella/Desktop/projects/21beta/42start/src/lexer/dop_lexer3.c
+ /Users/mbrella/Desktop/projects/21beta/42start/src/lexer/change_str_by_str.c
+CMakeFiles/21end.dir/src/lexer/cr_and_add_tokens.c.o
+ /Users/mbrella/Desktop/projects/21beta/42start/inc/fshell.h
+ /Users/mbrella/Desktop/projects/21beta/42start/inc/nucleus.h
+ /Users/mbrella/Desktop/projects/21beta/42start/inc/parser.h
+ /Users/mbrella/Desktop/projects/21beta/42start/libft/libft.h
+ /Users/mbrella/Desktop/projects/21beta/42start/src/lexer/cr_and_add_tokens.c
+CMakeFiles/21end.dir/src/lexer/do_subshell.c.o
+ /Users/mbrella/Desktop/projects/21beta/42start/inc/fshell.h
+ /Users/mbrella/Desktop/projects/21beta/42start/inc/nucleus.h
+ /Users/mbrella/Desktop/projects/21beta/42start/inc/parser.h
+ /Users/mbrella/Desktop/projects/21beta/42start/libft/libft.h
+ /Users/mbrella/Desktop/projects/21beta/42start/src/lexer/do_subshell.c
+CMakeFiles/21end.dir/src/lexer/dop_funs.c.o
+ /Users/mbrella/Desktop/projects/21beta/42start/inc/fshell.h
+ /Users/mbrella/Desktop/projects/21beta/42start/inc/nucleus.h
+ /Users/mbrella/Desktop/projects/21beta/42start/inc/parser.h
+ /Users/mbrella/Desktop/projects/21beta/42start/libft/libft.h
+ /Users/mbrella/Desktop/projects/21beta/42start/src/lexer/dop_funs.c
+CMakeFiles/21end.dir/src/lexer/get_opt_type.c.o
+ /Users/mbrella/Desktop/projects/21beta/42start/inc/fshell.h
+ /Users/mbrella/Desktop/projects/21beta/42start/inc/nucleus.h
+ /Users/mbrella/Desktop/projects/21beta/42start/inc/parser.h
+ /Users/mbrella/Desktop/projects/21beta/42start/libft/libft.h
+ /Users/mbrella/Desktop/projects/21beta/42start/src/lexer/get_opt_type.c
+CMakeFiles/21end.dir/src/lexer/kill_dop_structure.c.o
+ /Users/mbrella/Desktop/projects/21beta/42start/inc/fshell.h
+ /Users/mbrella/Desktop/projects/21beta/42start/inc/nucleus.h
+ /Users/mbrella/Desktop/projects/21beta/42start/inc/parser.h
+ /Users/mbrella/Desktop/projects/21beta/42start/libft/libft.h
+ /Users/mbrella/Desktop/projects/21beta/42start/src/lexer/kill_dop_structure.c
 CMakeFiles/21end.dir/src/lexer/lexer.c.o
  /Users/mbrella/Desktop/projects/21beta/42start/inc/fshell.h
  /Users/mbrella/Desktop/projects/21beta/42start/inc/nucleus.h
  /Users/mbrella/Desktop/projects/21beta/42start/inc/parser.h
  /Users/mbrella/Desktop/projects/21beta/42start/libft/libft.h
  /Users/mbrella/Desktop/projects/21beta/42start/src/lexer/lexer.c
+CMakeFiles/21end.dir/src/lexer/word_sizes.c.o
+ /Users/mbrella/Desktop/projects/21beta/42start/inc/fshell.h
+ /Users/mbrella/Desktop/projects/21beta/42start/inc/nucleus.h
+ /Users/mbrella/Desktop/projects/21beta/42start/inc/parser.h
+ /Users/mbrella/Desktop/projects/21beta/42start/libft/libft.h
+ /Users/mbrella/Desktop/projects/21beta/42start/src/lexer/word_sizes.c
 CMakeFiles/21end.dir/src/main.c.o
  /Users/mbrella/Desktop/projects/21beta/42start/inc/fshell.h
  /Users/mbrella/Desktop/projects/21beta/42start/inc/nucleus.h
