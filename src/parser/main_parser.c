@@ -79,16 +79,9 @@ t_exectoken		*all_parse(char *cmd)
 	//ft_printf("\n%s\n", tmp->line);
 	//ft_printf("\n%s\n", tmp->next->line);
 	free(t);
-	ft_printf("\nroflan: %s\n", tmp->line);
-	ft_printf("\nroflan123: %s\n", tmp->line);
-	//ft_printf("\nroflan: %s\n", tmp->next->line);
-	//ft_printf("\nroflan: %s\n", tmp->next->next->line);
+
 	extmp = do_parser(tmp);
-	ft_printf("\nroflan1: %s\n", extmp->file_args[0]);
-//	ft_printf("\nroflan2: %s\n", extmp->right->file_args[0]);
-	//exit(0);
-	//ft_printf("\n%s\n", extmp->file_args[0]);
-	//ft_printf("\n%s\n", extmp->file_args[1]);
+
 	ft_distr_lex(tmp);
 	return (extmp);
 }

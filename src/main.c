@@ -189,6 +189,26 @@ int		do_cmd(char *input, t_memory *head)
 	ft_dist_str(input) ? 0 : 1);
 }
 
+int		save_history(t_memory *q)
+{
+	int		fd;
+
+	ft_printf("sas123\n");
+	fd = open("./history/hist", 'w');
+	ft_printf("\nsas4:  %d\n", fd);
+	exit(0);
+	while (q->back != NULL)
+		q = q->back;
+	while (q != NULL)
+	{
+		write(fd, q->inp, sizeof(q->inp));
+		write(fd, "\n", 1);
+		q = q->next;
+	}
+	close(fd);
+	return (0);
+}
+
 int		main(int argc, char **argv, char **env)
 {
 	char		*input;
@@ -227,6 +247,7 @@ int		main(int argc, char **argv, char **env)
 		ft_distruct_tree(start_token);
 	
 	}
+	save_history(head);
 	return (ft_distruct_memory(head) && ft_distruct_tree(start_token) &&
 		ft_dist_str(input) ? 0 : 1);
 }

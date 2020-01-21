@@ -37,12 +37,38 @@ int			ft_put_n(int len, int i, int max)
 t_memory	*ft_head_memory(void)
 {
 	t_memory	*head;
+	int			fd;
+	char		*line;
 
+	fd = open("/Users/mbrella/Desktop/projects/21beta/42start/history/hist", 'r');
+	ft_printf("sas0/// %d\n", fd);
+	if (get_next_line(fd, &line) == -1)
+	{
+		ft_printf("sas1///");
+		if (!(head = (t_memory *)malloc(sizeof(t_memory))))
+			ft_error_q(2);
+		head->inp = NULL;
+		head->next = NULL;
+		head->back = NULL;
+		close (fd);
+		return (head);
+	}
+	ft_printf("sas2///");
 	if (!(head = (t_memory *)malloc(sizeof(t_memory))))
 		ft_error_q(2);
-	head->inp = NULL;
-	head->next = NULL;
+	head->inp = ft_strdup(line);
+	ft_strdel(&line);
 	head->back = NULL;
+	while (get_next_line(fd, &line) != -1)
+	{
+		if (!(head->next = (t_memory *)malloc(sizeof(t_memory))))
+			ft_error_q(2);
+		head->next->inp = ft_strdup(line);
+		ft_strdel(&line);
+		head->next->back = head;
+		head = head->next;
+	}
+	close (fd);
 	return (head);
 }
 
