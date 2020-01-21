@@ -200,7 +200,7 @@ int		main(int argc, char **argv, char **env)
 	ft_global_env(env, argc);
 	signal(SIGINT, ft_fork_signal);
 	head = ft_head_memory();
-	//set_new_var(ft_strdup("?"), ft_itoa(0));
+	set_new_var(ft_strdup("SHLVL"), ft_itoa(ft_atoi(ft_get_var("SHLVL", g_env)) + 1), &g_env);
 	while (1)
 	{
 		ft_check_cd();

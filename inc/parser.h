@@ -71,18 +71,45 @@ int							get_op_type(char *operator);
 char						*do_zamena_sp(char *line);
 int							ispar(char c);
 t_exectoken					*ft_cr_new_exectoken(t_lextoken *tmp,
-							t_exectoken *prev, int op_type, t_dop_str *t);
+													t_exectoken *prev, int op_type, t_dop_str *t);
 int							c_size(char *str, char b);
 int							word_size(char *str);
 t_lextoken					*add_token(t_lextoken *start,
-							char *line, int word_type);
+										 char *line, int word_type);
 char						*do_obr_zamena_sp(char *line);
 char						*do_zam_str_bax(char *str1, t_dop_str	*t);
 int							do_zam_bax_and_hist_full(char **mas, t_memory *t);
 void						dop_cr_new_exec(t_dop_str *t,
-							t_exectoken *prev, int op_type, int type);
+											t_exectoken *prev, int op_type, int type);
 t_dop_str					*cr_dop_str_par1(t_lextoken *tmp1);
 int							ft_error(int error, char *dopline);
 int							is_cmd_delim(int i);
+
+/////////////////////////////// lexer all funcs
+char						*do_zam_str_bax(char *str1, t_dop_str *t);
+char						*do_zam_str_hist_var(char *str1, t_memory *q);
+char						*do_obr_zamena_sp(char *line);
+char						*do_zamena_sp(char *line);
+char						*do_zam_str_by_str(int start, int end, char *str, char *zam_str);
+t_lextoken					*ft_cr_new_token(char *line, int word_type, int op_type);
+t_lextoken					*add_token(t_lextoken *start, char *line, int word_type);
+int							do_work_subshell(char **mas, t_memory *head);
+char						*do_obr_zamena_sp(char *line);
+int							ispar(char c);
+int							isword(char c);
+char						find_pair_sc(char c);
+int							isoperator(char c);
+int							issc(char c);
+int							get_op_type(char *operator);
+t_lextoken					*ft_kill_str_dop(t_dop_str *t, t_lextoken *tmp);
+t_lextoken					*do_lexer(char *line);
+int							dop_lexer2(t_dop_str *tmp, char *line);
+int							dop_lexer(t_dop_str *tmp, char *line);
+t_dop_str					*cr_dop_str(char **line1);
+int							do_zam_bax_and_hist_full(char **mas, t_memory *t);
+//////////////////////////////////////////////
+
+
+
 
 #endif

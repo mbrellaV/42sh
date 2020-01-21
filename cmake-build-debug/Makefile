@@ -636,113 +636,248 @@ src/ft_take_arg.c.s:
 	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/ft_take_arg.c.s
 .PHONY : src/ft_take_arg.c.s
 
-src/lexer/dop_lexer0.o: src/lexer/dop_lexer0.c.o
+src/lexer/change_dol.o: src/lexer/change_dol.c.o
 
-.PHONY : src/lexer/dop_lexer0.o
-
-# target to build an object file
-src/lexer/dop_lexer0.c.o:
-	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/lexer/dop_lexer0.c.o
-.PHONY : src/lexer/dop_lexer0.c.o
-
-src/lexer/dop_lexer0.i: src/lexer/dop_lexer0.c.i
-
-.PHONY : src/lexer/dop_lexer0.i
-
-# target to preprocess a source file
-src/lexer/dop_lexer0.c.i:
-	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/lexer/dop_lexer0.c.i
-.PHONY : src/lexer/dop_lexer0.c.i
-
-src/lexer/dop_lexer0.s: src/lexer/dop_lexer0.c.s
-
-.PHONY : src/lexer/dop_lexer0.s
-
-# target to generate assembly for a file
-src/lexer/dop_lexer0.c.s:
-	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/lexer/dop_lexer0.c.s
-.PHONY : src/lexer/dop_lexer0.c.s
-
-src/lexer/dop_lexer1.o: src/lexer/dop_lexer1.c.o
-
-.PHONY : src/lexer/dop_lexer1.o
+.PHONY : src/lexer/change_dol.o
 
 # target to build an object file
-src/lexer/dop_lexer1.c.o:
-	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/lexer/dop_lexer1.c.o
-.PHONY : src/lexer/dop_lexer1.c.o
+src/lexer/change_dol.c.o:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/lexer/change_dol.c.o
+.PHONY : src/lexer/change_dol.c.o
 
-src/lexer/dop_lexer1.i: src/lexer/dop_lexer1.c.i
+src/lexer/change_dol.i: src/lexer/change_dol.c.i
 
-.PHONY : src/lexer/dop_lexer1.i
+.PHONY : src/lexer/change_dol.i
 
 # target to preprocess a source file
-src/lexer/dop_lexer1.c.i:
-	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/lexer/dop_lexer1.c.i
-.PHONY : src/lexer/dop_lexer1.c.i
+src/lexer/change_dol.c.i:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/lexer/change_dol.c.i
+.PHONY : src/lexer/change_dol.c.i
 
-src/lexer/dop_lexer1.s: src/lexer/dop_lexer1.c.s
+src/lexer/change_dol.s: src/lexer/change_dol.c.s
 
-.PHONY : src/lexer/dop_lexer1.s
+.PHONY : src/lexer/change_dol.s
 
 # target to generate assembly for a file
-src/lexer/dop_lexer1.c.s:
-	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/lexer/dop_lexer1.c.s
-.PHONY : src/lexer/dop_lexer1.c.s
+src/lexer/change_dol.c.s:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/lexer/change_dol.c.s
+.PHONY : src/lexer/change_dol.c.s
 
-src/lexer/dop_lexer2.o: src/lexer/dop_lexer2.c.o
+src/lexer/change_hist_exp.o: src/lexer/change_hist_exp.c.o
 
-.PHONY : src/lexer/dop_lexer2.o
+.PHONY : src/lexer/change_hist_exp.o
 
 # target to build an object file
-src/lexer/dop_lexer2.c.o:
-	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/lexer/dop_lexer2.c.o
-.PHONY : src/lexer/dop_lexer2.c.o
+src/lexer/change_hist_exp.c.o:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/lexer/change_hist_exp.c.o
+.PHONY : src/lexer/change_hist_exp.c.o
 
-src/lexer/dop_lexer2.i: src/lexer/dop_lexer2.c.i
+src/lexer/change_hist_exp.i: src/lexer/change_hist_exp.c.i
 
-.PHONY : src/lexer/dop_lexer2.i
+.PHONY : src/lexer/change_hist_exp.i
 
 # target to preprocess a source file
-src/lexer/dop_lexer2.c.i:
-	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/lexer/dop_lexer2.c.i
-.PHONY : src/lexer/dop_lexer2.c.i
+src/lexer/change_hist_exp.c.i:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/lexer/change_hist_exp.c.i
+.PHONY : src/lexer/change_hist_exp.c.i
 
-src/lexer/dop_lexer2.s: src/lexer/dop_lexer2.c.s
+src/lexer/change_hist_exp.s: src/lexer/change_hist_exp.c.s
 
-.PHONY : src/lexer/dop_lexer2.s
+.PHONY : src/lexer/change_hist_exp.s
 
 # target to generate assembly for a file
-src/lexer/dop_lexer2.c.s:
-	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/lexer/dop_lexer2.c.s
-.PHONY : src/lexer/dop_lexer2.c.s
+src/lexer/change_hist_exp.c.s:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/lexer/change_hist_exp.c.s
+.PHONY : src/lexer/change_hist_exp.c.s
 
-src/lexer/dop_lexer3.o: src/lexer/dop_lexer3.c.o
+src/lexer/change_spaces.o: src/lexer/change_spaces.c.o
 
-.PHONY : src/lexer/dop_lexer3.o
+.PHONY : src/lexer/change_spaces.o
 
 # target to build an object file
-src/lexer/dop_lexer3.c.o:
-	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/lexer/dop_lexer3.c.o
-.PHONY : src/lexer/dop_lexer3.c.o
+src/lexer/change_spaces.c.o:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/lexer/change_spaces.c.o
+.PHONY : src/lexer/change_spaces.c.o
 
-src/lexer/dop_lexer3.i: src/lexer/dop_lexer3.c.i
+src/lexer/change_spaces.i: src/lexer/change_spaces.c.i
 
-.PHONY : src/lexer/dop_lexer3.i
+.PHONY : src/lexer/change_spaces.i
 
 # target to preprocess a source file
-src/lexer/dop_lexer3.c.i:
-	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/lexer/dop_lexer3.c.i
-.PHONY : src/lexer/dop_lexer3.c.i
+src/lexer/change_spaces.c.i:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/lexer/change_spaces.c.i
+.PHONY : src/lexer/change_spaces.c.i
 
-src/lexer/dop_lexer3.s: src/lexer/dop_lexer3.c.s
+src/lexer/change_spaces.s: src/lexer/change_spaces.c.s
 
-.PHONY : src/lexer/dop_lexer3.s
+.PHONY : src/lexer/change_spaces.s
 
 # target to generate assembly for a file
-src/lexer/dop_lexer3.c.s:
-	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/lexer/dop_lexer3.c.s
-.PHONY : src/lexer/dop_lexer3.c.s
+src/lexer/change_spaces.c.s:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/lexer/change_spaces.c.s
+.PHONY : src/lexer/change_spaces.c.s
+
+src/lexer/change_str_by_str.o: src/lexer/change_str_by_str.c.o
+
+.PHONY : src/lexer/change_str_by_str.o
+
+# target to build an object file
+src/lexer/change_str_by_str.c.o:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/lexer/change_str_by_str.c.o
+.PHONY : src/lexer/change_str_by_str.c.o
+
+src/lexer/change_str_by_str.i: src/lexer/change_str_by_str.c.i
+
+.PHONY : src/lexer/change_str_by_str.i
+
+# target to preprocess a source file
+src/lexer/change_str_by_str.c.i:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/lexer/change_str_by_str.c.i
+.PHONY : src/lexer/change_str_by_str.c.i
+
+src/lexer/change_str_by_str.s: src/lexer/change_str_by_str.c.s
+
+.PHONY : src/lexer/change_str_by_str.s
+
+# target to generate assembly for a file
+src/lexer/change_str_by_str.c.s:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/lexer/change_str_by_str.c.s
+.PHONY : src/lexer/change_str_by_str.c.s
+
+src/lexer/cr_and_add_tokens.o: src/lexer/cr_and_add_tokens.c.o
+
+.PHONY : src/lexer/cr_and_add_tokens.o
+
+# target to build an object file
+src/lexer/cr_and_add_tokens.c.o:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/lexer/cr_and_add_tokens.c.o
+.PHONY : src/lexer/cr_and_add_tokens.c.o
+
+src/lexer/cr_and_add_tokens.i: src/lexer/cr_and_add_tokens.c.i
+
+.PHONY : src/lexer/cr_and_add_tokens.i
+
+# target to preprocess a source file
+src/lexer/cr_and_add_tokens.c.i:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/lexer/cr_and_add_tokens.c.i
+.PHONY : src/lexer/cr_and_add_tokens.c.i
+
+src/lexer/cr_and_add_tokens.s: src/lexer/cr_and_add_tokens.c.s
+
+.PHONY : src/lexer/cr_and_add_tokens.s
+
+# target to generate assembly for a file
+src/lexer/cr_and_add_tokens.c.s:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/lexer/cr_and_add_tokens.c.s
+.PHONY : src/lexer/cr_and_add_tokens.c.s
+
+src/lexer/do_subshell.o: src/lexer/do_subshell.c.o
+
+.PHONY : src/lexer/do_subshell.o
+
+# target to build an object file
+src/lexer/do_subshell.c.o:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/lexer/do_subshell.c.o
+.PHONY : src/lexer/do_subshell.c.o
+
+src/lexer/do_subshell.i: src/lexer/do_subshell.c.i
+
+.PHONY : src/lexer/do_subshell.i
+
+# target to preprocess a source file
+src/lexer/do_subshell.c.i:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/lexer/do_subshell.c.i
+.PHONY : src/lexer/do_subshell.c.i
+
+src/lexer/do_subshell.s: src/lexer/do_subshell.c.s
+
+.PHONY : src/lexer/do_subshell.s
+
+# target to generate assembly for a file
+src/lexer/do_subshell.c.s:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/lexer/do_subshell.c.s
+.PHONY : src/lexer/do_subshell.c.s
+
+src/lexer/dop_funs.o: src/lexer/dop_funs.c.o
+
+.PHONY : src/lexer/dop_funs.o
+
+# target to build an object file
+src/lexer/dop_funs.c.o:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/lexer/dop_funs.c.o
+.PHONY : src/lexer/dop_funs.c.o
+
+src/lexer/dop_funs.i: src/lexer/dop_funs.c.i
+
+.PHONY : src/lexer/dop_funs.i
+
+# target to preprocess a source file
+src/lexer/dop_funs.c.i:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/lexer/dop_funs.c.i
+.PHONY : src/lexer/dop_funs.c.i
+
+src/lexer/dop_funs.s: src/lexer/dop_funs.c.s
+
+.PHONY : src/lexer/dop_funs.s
+
+# target to generate assembly for a file
+src/lexer/dop_funs.c.s:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/lexer/dop_funs.c.s
+.PHONY : src/lexer/dop_funs.c.s
+
+src/lexer/get_opt_type.o: src/lexer/get_opt_type.c.o
+
+.PHONY : src/lexer/get_opt_type.o
+
+# target to build an object file
+src/lexer/get_opt_type.c.o:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/lexer/get_opt_type.c.o
+.PHONY : src/lexer/get_opt_type.c.o
+
+src/lexer/get_opt_type.i: src/lexer/get_opt_type.c.i
+
+.PHONY : src/lexer/get_opt_type.i
+
+# target to preprocess a source file
+src/lexer/get_opt_type.c.i:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/lexer/get_opt_type.c.i
+.PHONY : src/lexer/get_opt_type.c.i
+
+src/lexer/get_opt_type.s: src/lexer/get_opt_type.c.s
+
+.PHONY : src/lexer/get_opt_type.s
+
+# target to generate assembly for a file
+src/lexer/get_opt_type.c.s:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/lexer/get_opt_type.c.s
+.PHONY : src/lexer/get_opt_type.c.s
+
+src/lexer/kill_dop_structure.o: src/lexer/kill_dop_structure.c.o
+
+.PHONY : src/lexer/kill_dop_structure.o
+
+# target to build an object file
+src/lexer/kill_dop_structure.c.o:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/lexer/kill_dop_structure.c.o
+.PHONY : src/lexer/kill_dop_structure.c.o
+
+src/lexer/kill_dop_structure.i: src/lexer/kill_dop_structure.c.i
+
+.PHONY : src/lexer/kill_dop_structure.i
+
+# target to preprocess a source file
+src/lexer/kill_dop_structure.c.i:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/lexer/kill_dop_structure.c.i
+.PHONY : src/lexer/kill_dop_structure.c.i
+
+src/lexer/kill_dop_structure.s: src/lexer/kill_dop_structure.c.s
+
+.PHONY : src/lexer/kill_dop_structure.s
+
+# target to generate assembly for a file
+src/lexer/kill_dop_structure.c.s:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/lexer/kill_dop_structure.c.s
+.PHONY : src/lexer/kill_dop_structure.c.s
 
 src/lexer/lexer.o: src/lexer/lexer.c.o
 
@@ -770,6 +905,33 @@ src/lexer/lexer.s: src/lexer/lexer.c.s
 src/lexer/lexer.c.s:
 	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/lexer/lexer.c.s
 .PHONY : src/lexer/lexer.c.s
+
+src/lexer/word_sizes.o: src/lexer/word_sizes.c.o
+
+.PHONY : src/lexer/word_sizes.o
+
+# target to build an object file
+src/lexer/word_sizes.c.o:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/lexer/word_sizes.c.o
+.PHONY : src/lexer/word_sizes.c.o
+
+src/lexer/word_sizes.i: src/lexer/word_sizes.c.i
+
+.PHONY : src/lexer/word_sizes.i
+
+# target to preprocess a source file
+src/lexer/word_sizes.c.i:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/lexer/word_sizes.c.i
+.PHONY : src/lexer/word_sizes.c.i
+
+src/lexer/word_sizes.s: src/lexer/word_sizes.c.s
+
+.PHONY : src/lexer/word_sizes.s
+
+# target to generate assembly for a file
+src/lexer/word_sizes.c.s:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/lexer/word_sizes.c.s
+.PHONY : src/lexer/word_sizes.c.s
 
 src/main.o: src/main.c.o
 
@@ -1107,21 +1269,39 @@ help:
 	@echo "... src/ft_take_arg.o"
 	@echo "... src/ft_take_arg.i"
 	@echo "... src/ft_take_arg.s"
-	@echo "... src/lexer/dop_lexer0.o"
-	@echo "... src/lexer/dop_lexer0.i"
-	@echo "... src/lexer/dop_lexer0.s"
-	@echo "... src/lexer/dop_lexer1.o"
-	@echo "... src/lexer/dop_lexer1.i"
-	@echo "... src/lexer/dop_lexer1.s"
-	@echo "... src/lexer/dop_lexer2.o"
-	@echo "... src/lexer/dop_lexer2.i"
-	@echo "... src/lexer/dop_lexer2.s"
-	@echo "... src/lexer/dop_lexer3.o"
-	@echo "... src/lexer/dop_lexer3.i"
-	@echo "... src/lexer/dop_lexer3.s"
+	@echo "... src/lexer/change_dol.o"
+	@echo "... src/lexer/change_dol.i"
+	@echo "... src/lexer/change_dol.s"
+	@echo "... src/lexer/change_hist_exp.o"
+	@echo "... src/lexer/change_hist_exp.i"
+	@echo "... src/lexer/change_hist_exp.s"
+	@echo "... src/lexer/change_spaces.o"
+	@echo "... src/lexer/change_spaces.i"
+	@echo "... src/lexer/change_spaces.s"
+	@echo "... src/lexer/change_str_by_str.o"
+	@echo "... src/lexer/change_str_by_str.i"
+	@echo "... src/lexer/change_str_by_str.s"
+	@echo "... src/lexer/cr_and_add_tokens.o"
+	@echo "... src/lexer/cr_and_add_tokens.i"
+	@echo "... src/lexer/cr_and_add_tokens.s"
+	@echo "... src/lexer/do_subshell.o"
+	@echo "... src/lexer/do_subshell.i"
+	@echo "... src/lexer/do_subshell.s"
+	@echo "... src/lexer/dop_funs.o"
+	@echo "... src/lexer/dop_funs.i"
+	@echo "... src/lexer/dop_funs.s"
+	@echo "... src/lexer/get_opt_type.o"
+	@echo "... src/lexer/get_opt_type.i"
+	@echo "... src/lexer/get_opt_type.s"
+	@echo "... src/lexer/kill_dop_structure.o"
+	@echo "... src/lexer/kill_dop_structure.i"
+	@echo "... src/lexer/kill_dop_structure.s"
 	@echo "... src/lexer/lexer.o"
 	@echo "... src/lexer/lexer.i"
 	@echo "... src/lexer/lexer.s"
+	@echo "... src/lexer/word_sizes.o"
+	@echo "... src/lexer/word_sizes.i"
+	@echo "... src/lexer/word_sizes.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

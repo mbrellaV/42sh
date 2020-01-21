@@ -17,10 +17,17 @@ add_executable(21end
         src/exec/ft_create_file.c
         src/exec/ft_do_pipe.c
         src/exec/ft_fun_fork.c
-        src/lexer/dop_lexer0.c
-        src/lexer/dop_lexer1.c
-        src/lexer/dop_lexer2.c
-        src/lexer/dop_lexer3.c
+        src/lexer/lexer.c
+        src/lexer/change_dol.c
+        src/lexer/change_spaces.c
+        src/lexer/cr_and_add_tokens.c
+        src/lexer/dop_funs.c
+        src/lexer/kill_dop_structure.c
+        src/lexer/word_sizes.c
+        src/lexer/change_hist_exp.c
+        src/lexer/change_str_by_str.c
+        src/lexer/do_subshell.c
+        src/lexer/get_opt_type.c
         src/lexer/lexer.c
         src/nucleus/ft_cutcopy.c
         src/nucleus/ft_read_8.c
