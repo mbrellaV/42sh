@@ -10,7 +10,7 @@ char				*get_num_from_hist_begin(t_memory *t, int num)
 	while (t->next != NULL)
 	{
 		if (i == num)
-			return (t->inp);
+			return (ft_strdup(t->inp));
 		t = t->next;
 		i++;
 	}
@@ -26,7 +26,7 @@ char				*get_num_from_hist_end(t_memory *t, int num)
 	while (t->back != NULL)
 	{
 		if (i == num)
-			return (t->inp);
+			return (ft_strdup(t->inp));
 		t = t->back;
 		i++;
 	}
@@ -41,7 +41,7 @@ char				*get_num_from_hist_starting(t_memory *t, char *name)
 	while (t->back != NULL)
 	{
 		if (t->inp != NULL && ft_strstr(t->inp, name) == t->inp)
-			return (t->inp);
+			return (ft_strdup(t->inp));
 		t = t->back;
 		i++;
 	}
@@ -57,7 +57,7 @@ char				*get_num_from_hist_cons(t_memory *t, char *name)
 	while (t->back != NULL)
 	{
 		if (ft_strstr(t->inp, name) != NULL)
-			return (t->inp);
+			return (ft_strdup(t->inp));
 		t = t->back;
 		i++;
 	}
@@ -73,7 +73,6 @@ char				*do_zam_str_hist_var(char *str1, t_memory *q)
 	if (str1 == NULL)
 		return (NULL);
 	i = 0;
-	c = 0;
 	while (str1[i] != '\0')
 	{
 		if (str1[i] == '!')
@@ -86,7 +85,8 @@ char				*do_zam_str_hist_var(char *str1, t_memory *q)
 				while (isword(str1[c]) != 0 && str1[c])
 					c++;
 				if (!(tmp = ft_strdup(get_num_from_hist_begin(q, ft_atoi(str1 + i)))))
-					return (NULL);
+					tmp = ft_strdup("\0");
+				ft_printf("\nvot ono : %s\n", tmp);
 				str1 = do_zam_str_by_str(i, c, str1, tmp);
 			}
 			else if (ft_atoi(str1 + i + 1) < 0)
@@ -95,7 +95,8 @@ char				*do_zam_str_hist_var(char *str1, t_memory *q)
 				while (isword(str1[c]) != 0 && str1[c])
 					c++;
 				if (!(tmp = ft_strdup(get_num_from_hist_end(q, ft_atoi(str1 + i + 1)))))
-					return (NULL);
+					tmp = ft_strdup("\0");
+				ft_printf("\nvot ono : %s\n", tmp);
 				str1 = do_zam_str_by_str(i, c, str1, tmp);
 			}
 			else if (isword(str1[i + 1]) != 0 && str1[i + 1] != '?')
@@ -104,8 +105,10 @@ char				*do_zam_str_hist_var(char *str1, t_memory *q)
 				while (isword(str1[c]) != 0 && str1[c] != '\0')
 					c++;
 				if (!(tmp = ft_strdup(get_num_from_hist_starting(q, ft_strsub(str1 + i + 1, 0, c - i - 1)))))
-					return (NULL);
+					tmp = ft_strdup("\0");
+				ft_printf("\nvot ono : %s\n", tmp);
 				str1 = do_zam_str_by_str(i, c, str1, tmp);
+				ft_printf("roflan: %d\n", str1[0]);
 			}
 			else if (str1[i + 1] == '?')
 			{
@@ -113,7 +116,8 @@ char				*do_zam_str_hist_var(char *str1, t_memory *q)
 				while (isword(str1[c]) != 0 && str1[c] != '\0')
 					c++;
 				if (!(tmp = ft_strdup(get_num_from_hist_cons(q, ft_strsub(str1 + i + 2, 0, c - i)))))
-					return (NULL);
+					tmp = ft_strdup("\0");
+				ft_printf("\nvot ono : %s\n", tmp);
 				str1 = do_zam_str_by_str(i, c, str1, tmp);
 			}
 		}

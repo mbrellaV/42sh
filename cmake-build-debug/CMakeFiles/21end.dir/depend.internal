@@ -5,48 +5,56 @@ CMakeFiles/21end.dir/src/builtins/alias/ft_alias.c.o
  /Users/mbrella/Desktop/projects/21beta/42start/inc/fshell.h
  /Users/mbrella/Desktop/projects/21beta/42start/inc/nucleus.h
  /Users/mbrella/Desktop/projects/21beta/42start/inc/parser.h
+ /Users/mbrella/Desktop/projects/21beta/42start/libft/get_next_line.h
  /Users/mbrella/Desktop/projects/21beta/42start/libft/libft.h
  /Users/mbrella/Desktop/projects/21beta/42start/src/builtins/alias/ft_alias.c
 CMakeFiles/21end.dir/src/builtins/allenv/ft_env.c.o
  /Users/mbrella/Desktop/projects/21beta/42start/inc/fshell.h
  /Users/mbrella/Desktop/projects/21beta/42start/inc/nucleus.h
  /Users/mbrella/Desktop/projects/21beta/42start/inc/parser.h
+ /Users/mbrella/Desktop/projects/21beta/42start/libft/get_next_line.h
  /Users/mbrella/Desktop/projects/21beta/42start/libft/libft.h
  /Users/mbrella/Desktop/projects/21beta/42start/src/builtins/allenv/ft_env.c
 CMakeFiles/21end.dir/src/builtins/allenv/main_env.c.o
  /Users/mbrella/Desktop/projects/21beta/42start/inc/fshell.h
  /Users/mbrella/Desktop/projects/21beta/42start/inc/nucleus.h
  /Users/mbrella/Desktop/projects/21beta/42start/inc/parser.h
+ /Users/mbrella/Desktop/projects/21beta/42start/libft/get_next_line.h
  /Users/mbrella/Desktop/projects/21beta/42start/libft/libft.h
  /Users/mbrella/Desktop/projects/21beta/42start/src/builtins/allenv/main_env.c
 CMakeFiles/21end.dir/src/builtins/ft_cd.c.o
  /Users/mbrella/Desktop/projects/21beta/42start/inc/fshell.h
  /Users/mbrella/Desktop/projects/21beta/42start/inc/nucleus.h
  /Users/mbrella/Desktop/projects/21beta/42start/inc/parser.h
+ /Users/mbrella/Desktop/projects/21beta/42start/libft/get_next_line.h
  /Users/mbrella/Desktop/projects/21beta/42start/libft/libft.h
  /Users/mbrella/Desktop/projects/21beta/42start/src/builtins/ft_cd.c
 CMakeFiles/21end.dir/src/builtins/ft_echo.c.o
  /Users/mbrella/Desktop/projects/21beta/42start/inc/fshell.h
  /Users/mbrella/Desktop/projects/21beta/42start/inc/nucleus.h
  /Users/mbrella/Desktop/projects/21beta/42start/inc/parser.h
+ /Users/mbrella/Desktop/projects/21beta/42start/libft/get_next_line.h
  /Users/mbrella/Desktop/projects/21beta/42start/libft/libft.h
  /Users/mbrella/Desktop/projects/21beta/42start/src/builtins/ft_echo.c
 CMakeFiles/21end.dir/src/builtins/ft_echo2.c.o
  /Users/mbrella/Desktop/projects/21beta/42start/inc/fshell.h
  /Users/mbrella/Desktop/projects/21beta/42start/inc/nucleus.h
  /Users/mbrella/Desktop/projects/21beta/42start/inc/parser.h
+ /Users/mbrella/Desktop/projects/21beta/42start/libft/get_next_line.h
  /Users/mbrella/Desktop/projects/21beta/42start/libft/libft.h
  /Users/mbrella/Desktop/projects/21beta/42start/src/builtins/ft_echo2.c
 CMakeFiles/21end.dir/src/errors/errror_handler.c.o
  /Users/mbrella/Desktop/projects/21beta/42start/inc/fshell.h
  /Users/mbrella/Desktop/projects/21beta/42start/inc/nucleus.h
  /Users/mbrella/Desktop/projects/21beta/42start/inc/parser.h
+ /Users/mbrella/Desktop/projects/21beta/42start/libft/get_next_line.h
  /Users/mbrella/Desktop/projects/21beta/42start/libft/libft.h
  /Users/mbrella/Desktop/projects/21beta/42start/src/errors/errror_handler.c
 CMakeFiles/21end.dir/src/evaln/atoimy.c.o
  /Users/mbrella/Desktop/projects/21beta/42start/inc/fshell.h
  /Users/mbrella/Desktop/projects/21beta/42start/inc/nucleus.h
  /Users/mbrella/Desktop/projects/21beta/42start/inc/parser.h
+ /Users/mbrella/Desktop/projects/21beta/42start/libft/get_next_line.h
  /Users/mbrella/Desktop/projects/21beta/42start/libft/libft.h
  /Users/mbrella/Desktop/projects/21beta/42start/src/evaln/atoimy.c
  /Users/mbrella/Desktop/projects/21beta/42start/src/evaln/eval_expr.h
@@ -54,6 +62,7 @@ CMakeFiles/21end.dir/src/evaln/calc.c.o
  /Users/mbrella/Desktop/projects/21beta/42start/inc/fshell.h
  /Users/mbrella/Desktop/projects/21beta/42start/inc/nucleus.h
  /Users/mbrella/Desktop/projects/21beta/42start/inc/parser.h
+ /Users/mbrella/Desktop/projects/21beta/42start/libft/get_next_line.h
  /Users/mbrella/Desktop/projects/21beta/42start/libft/libft.h
  /Users/mbrella/Desktop/projects/21beta/42start/src/evaln/calc.c
  /Users/mbrella/Desktop/projects/21beta/42start/src/evaln/eval_expr.h
@@ -61,6 +70,7 @@ CMakeFiles/21end.dir/src/evaln/dop.c.o
  /Users/mbrella/Desktop/projects/21beta/42start/inc/fshell.h
  /Users/mbrella/Desktop/projects/21beta/42start/inc/nucleus.h
  /Users/mbrella/Desktop/projects/21beta/42start/inc/parser.h
+ /Users/mbrella/Desktop/projects/21beta/42start/libft/get_next_line.h
  /Users/mbrella/Desktop/projects/21beta/42start/libft/libft.h
  /Users/mbrella/Desktop/projects/21beta/42start/src/evaln/dop.c
  /Users/mbrella/Desktop/projects/21beta/42start/src/evaln/eval_expr.h
@@ -68,12 +78,14 @@ CMakeFiles/21end.dir/src/evaln/ft_do_zam_eval.c.o
  /Users/mbrella/Desktop/projects/21beta/42start/inc/fshell.h
  /Users/mbrella/Desktop/projects/21beta/42start/inc/nucleus.h
  /Users/mbrella/Desktop/projects/21beta/42start/inc/parser.h
+ /Users/mbrella/Desktop/projects/21beta/42start/libft/get_next_line.h
  /Users/mbrella/Desktop/projects/21beta/42start/libft/libft.h
  /Users/mbrella/Desktop/projects/21beta/42start/src/evaln/ft_do_zam_eval.c
 CMakeFiles/21end.dir/src/evaln/inftopost.c.o
  /Users/mbrella/Desktop/projects/21beta/42start/inc/fshell.h
  /Users/mbrella/Desktop/projects/21beta/42start/inc/nucleus.h
  /Users/mbrella/Desktop/projects/21beta/42start/inc/parser.h
+ /Users/mbrella/Desktop/projects/21beta/42start/libft/get_next_line.h
  /Users/mbrella/Desktop/projects/21beta/42start/libft/libft.h
  /Users/mbrella/Desktop/projects/21beta/42start/src/evaln/eval_expr.h
  /Users/mbrella/Desktop/projects/21beta/42start/src/evaln/inftopost.c
@@ -81,167 +93,195 @@ CMakeFiles/21end.dir/src/exec/ft_create_file.c.o
  /Users/mbrella/Desktop/projects/21beta/42start/inc/fshell.h
  /Users/mbrella/Desktop/projects/21beta/42start/inc/nucleus.h
  /Users/mbrella/Desktop/projects/21beta/42start/inc/parser.h
+ /Users/mbrella/Desktop/projects/21beta/42start/libft/get_next_line.h
  /Users/mbrella/Desktop/projects/21beta/42start/libft/libft.h
  /Users/mbrella/Desktop/projects/21beta/42start/src/exec/ft_create_file.c
 CMakeFiles/21end.dir/src/exec/ft_do_pipe.c.o
  /Users/mbrella/Desktop/projects/21beta/42start/inc/fshell.h
  /Users/mbrella/Desktop/projects/21beta/42start/inc/nucleus.h
  /Users/mbrella/Desktop/projects/21beta/42start/inc/parser.h
+ /Users/mbrella/Desktop/projects/21beta/42start/libft/get_next_line.h
  /Users/mbrella/Desktop/projects/21beta/42start/libft/libft.h
  /Users/mbrella/Desktop/projects/21beta/42start/src/exec/ft_do_pipe.c
 CMakeFiles/21end.dir/src/exec/ft_fun_fork.c.o
  /Users/mbrella/Desktop/projects/21beta/42start/inc/fshell.h
  /Users/mbrella/Desktop/projects/21beta/42start/inc/nucleus.h
  /Users/mbrella/Desktop/projects/21beta/42start/inc/parser.h
+ /Users/mbrella/Desktop/projects/21beta/42start/libft/get_next_line.h
  /Users/mbrella/Desktop/projects/21beta/42start/libft/libft.h
  /Users/mbrella/Desktop/projects/21beta/42start/src/exec/ft_fun_fork.c
 CMakeFiles/21end.dir/src/ft_distruct.c.o
  /Users/mbrella/Desktop/projects/21beta/42start/inc/fshell.h
  /Users/mbrella/Desktop/projects/21beta/42start/inc/nucleus.h
  /Users/mbrella/Desktop/projects/21beta/42start/inc/parser.h
+ /Users/mbrella/Desktop/projects/21beta/42start/libft/get_next_line.h
  /Users/mbrella/Desktop/projects/21beta/42start/libft/libft.h
  /Users/mbrella/Desktop/projects/21beta/42start/src/ft_distruct.c
 CMakeFiles/21end.dir/src/ft_error_q.c.o
  /Users/mbrella/Desktop/projects/21beta/42start/inc/fshell.h
  /Users/mbrella/Desktop/projects/21beta/42start/inc/nucleus.h
  /Users/mbrella/Desktop/projects/21beta/42start/inc/parser.h
+ /Users/mbrella/Desktop/projects/21beta/42start/libft/get_next_line.h
  /Users/mbrella/Desktop/projects/21beta/42start/libft/libft.h
  /Users/mbrella/Desktop/projects/21beta/42start/src/ft_error_q.c
 CMakeFiles/21end.dir/src/ft_signal.c.o
  /Users/mbrella/Desktop/projects/21beta/42start/inc/fshell.h
  /Users/mbrella/Desktop/projects/21beta/42start/inc/nucleus.h
  /Users/mbrella/Desktop/projects/21beta/42start/inc/parser.h
+ /Users/mbrella/Desktop/projects/21beta/42start/libft/get_next_line.h
  /Users/mbrella/Desktop/projects/21beta/42start/libft/libft.h
  /Users/mbrella/Desktop/projects/21beta/42start/src/ft_signal.c
 CMakeFiles/21end.dir/src/ft_take_arg.c.o
  /Users/mbrella/Desktop/projects/21beta/42start/inc/fshell.h
  /Users/mbrella/Desktop/projects/21beta/42start/inc/nucleus.h
  /Users/mbrella/Desktop/projects/21beta/42start/inc/parser.h
+ /Users/mbrella/Desktop/projects/21beta/42start/libft/get_next_line.h
  /Users/mbrella/Desktop/projects/21beta/42start/libft/libft.h
  /Users/mbrella/Desktop/projects/21beta/42start/src/ft_take_arg.c
 CMakeFiles/21end.dir/src/lexer/change_dol.c.o
  /Users/mbrella/Desktop/projects/21beta/42start/inc/fshell.h
  /Users/mbrella/Desktop/projects/21beta/42start/inc/nucleus.h
  /Users/mbrella/Desktop/projects/21beta/42start/inc/parser.h
+ /Users/mbrella/Desktop/projects/21beta/42start/libft/get_next_line.h
  /Users/mbrella/Desktop/projects/21beta/42start/libft/libft.h
  /Users/mbrella/Desktop/projects/21beta/42start/src/lexer/change_dol.c
 CMakeFiles/21end.dir/src/lexer/change_hist_exp.c.o
  /Users/mbrella/Desktop/projects/21beta/42start/inc/fshell.h
  /Users/mbrella/Desktop/projects/21beta/42start/inc/nucleus.h
  /Users/mbrella/Desktop/projects/21beta/42start/inc/parser.h
+ /Users/mbrella/Desktop/projects/21beta/42start/libft/get_next_line.h
  /Users/mbrella/Desktop/projects/21beta/42start/libft/libft.h
  /Users/mbrella/Desktop/projects/21beta/42start/src/lexer/change_hist_exp.c
 CMakeFiles/21end.dir/src/lexer/change_spaces.c.o
  /Users/mbrella/Desktop/projects/21beta/42start/inc/fshell.h
  /Users/mbrella/Desktop/projects/21beta/42start/inc/nucleus.h
  /Users/mbrella/Desktop/projects/21beta/42start/inc/parser.h
+ /Users/mbrella/Desktop/projects/21beta/42start/libft/get_next_line.h
  /Users/mbrella/Desktop/projects/21beta/42start/libft/libft.h
  /Users/mbrella/Desktop/projects/21beta/42start/src/lexer/change_spaces.c
 CMakeFiles/21end.dir/src/lexer/change_str_by_str.c.o
  /Users/mbrella/Desktop/projects/21beta/42start/inc/fshell.h
  /Users/mbrella/Desktop/projects/21beta/42start/inc/nucleus.h
  /Users/mbrella/Desktop/projects/21beta/42start/inc/parser.h
+ /Users/mbrella/Desktop/projects/21beta/42start/libft/get_next_line.h
  /Users/mbrella/Desktop/projects/21beta/42start/libft/libft.h
  /Users/mbrella/Desktop/projects/21beta/42start/src/lexer/change_str_by_str.c
 CMakeFiles/21end.dir/src/lexer/cr_and_add_tokens.c.o
  /Users/mbrella/Desktop/projects/21beta/42start/inc/fshell.h
  /Users/mbrella/Desktop/projects/21beta/42start/inc/nucleus.h
  /Users/mbrella/Desktop/projects/21beta/42start/inc/parser.h
+ /Users/mbrella/Desktop/projects/21beta/42start/libft/get_next_line.h
  /Users/mbrella/Desktop/projects/21beta/42start/libft/libft.h
  /Users/mbrella/Desktop/projects/21beta/42start/src/lexer/cr_and_add_tokens.c
 CMakeFiles/21end.dir/src/lexer/do_subshell.c.o
  /Users/mbrella/Desktop/projects/21beta/42start/inc/fshell.h
  /Users/mbrella/Desktop/projects/21beta/42start/inc/nucleus.h
  /Users/mbrella/Desktop/projects/21beta/42start/inc/parser.h
+ /Users/mbrella/Desktop/projects/21beta/42start/libft/get_next_line.h
  /Users/mbrella/Desktop/projects/21beta/42start/libft/libft.h
  /Users/mbrella/Desktop/projects/21beta/42start/src/lexer/do_subshell.c
 CMakeFiles/21end.dir/src/lexer/dop_funs.c.o
  /Users/mbrella/Desktop/projects/21beta/42start/inc/fshell.h
  /Users/mbrella/Desktop/projects/21beta/42start/inc/nucleus.h
  /Users/mbrella/Desktop/projects/21beta/42start/inc/parser.h
+ /Users/mbrella/Desktop/projects/21beta/42start/libft/get_next_line.h
  /Users/mbrella/Desktop/projects/21beta/42start/libft/libft.h
  /Users/mbrella/Desktop/projects/21beta/42start/src/lexer/dop_funs.c
 CMakeFiles/21end.dir/src/lexer/get_opt_type.c.o
  /Users/mbrella/Desktop/projects/21beta/42start/inc/fshell.h
  /Users/mbrella/Desktop/projects/21beta/42start/inc/nucleus.h
  /Users/mbrella/Desktop/projects/21beta/42start/inc/parser.h
+ /Users/mbrella/Desktop/projects/21beta/42start/libft/get_next_line.h
  /Users/mbrella/Desktop/projects/21beta/42start/libft/libft.h
  /Users/mbrella/Desktop/projects/21beta/42start/src/lexer/get_opt_type.c
 CMakeFiles/21end.dir/src/lexer/kill_dop_structure.c.o
  /Users/mbrella/Desktop/projects/21beta/42start/inc/fshell.h
  /Users/mbrella/Desktop/projects/21beta/42start/inc/nucleus.h
  /Users/mbrella/Desktop/projects/21beta/42start/inc/parser.h
+ /Users/mbrella/Desktop/projects/21beta/42start/libft/get_next_line.h
  /Users/mbrella/Desktop/projects/21beta/42start/libft/libft.h
  /Users/mbrella/Desktop/projects/21beta/42start/src/lexer/kill_dop_structure.c
 CMakeFiles/21end.dir/src/lexer/lexer.c.o
  /Users/mbrella/Desktop/projects/21beta/42start/inc/fshell.h
  /Users/mbrella/Desktop/projects/21beta/42start/inc/nucleus.h
  /Users/mbrella/Desktop/projects/21beta/42start/inc/parser.h
+ /Users/mbrella/Desktop/projects/21beta/42start/libft/get_next_line.h
  /Users/mbrella/Desktop/projects/21beta/42start/libft/libft.h
  /Users/mbrella/Desktop/projects/21beta/42start/src/lexer/lexer.c
 CMakeFiles/21end.dir/src/lexer/word_sizes.c.o
  /Users/mbrella/Desktop/projects/21beta/42start/inc/fshell.h
  /Users/mbrella/Desktop/projects/21beta/42start/inc/nucleus.h
  /Users/mbrella/Desktop/projects/21beta/42start/inc/parser.h
+ /Users/mbrella/Desktop/projects/21beta/42start/libft/get_next_line.h
  /Users/mbrella/Desktop/projects/21beta/42start/libft/libft.h
  /Users/mbrella/Desktop/projects/21beta/42start/src/lexer/word_sizes.c
 CMakeFiles/21end.dir/src/main.c.o
  /Users/mbrella/Desktop/projects/21beta/42start/inc/fshell.h
  /Users/mbrella/Desktop/projects/21beta/42start/inc/nucleus.h
  /Users/mbrella/Desktop/projects/21beta/42start/inc/parser.h
+ /Users/mbrella/Desktop/projects/21beta/42start/libft/get_next_line.h
  /Users/mbrella/Desktop/projects/21beta/42start/libft/libft.h
  /Users/mbrella/Desktop/projects/21beta/42start/src/main.c
 CMakeFiles/21end.dir/src/nucleus/ft_cutcopy.c.o
  /Users/mbrella/Desktop/projects/21beta/42start/inc/fshell.h
  /Users/mbrella/Desktop/projects/21beta/42start/inc/nucleus.h
  /Users/mbrella/Desktop/projects/21beta/42start/inc/parser.h
+ /Users/mbrella/Desktop/projects/21beta/42start/libft/get_next_line.h
  /Users/mbrella/Desktop/projects/21beta/42start/libft/libft.h
  /Users/mbrella/Desktop/projects/21beta/42start/src/nucleus/ft_cutcopy.c
 CMakeFiles/21end.dir/src/nucleus/ft_read_8.c.o
  /Users/mbrella/Desktop/projects/21beta/42start/inc/fshell.h
  /Users/mbrella/Desktop/projects/21beta/42start/inc/nucleus.h
  /Users/mbrella/Desktop/projects/21beta/42start/inc/parser.h
+ /Users/mbrella/Desktop/projects/21beta/42start/libft/get_next_line.h
  /Users/mbrella/Desktop/projects/21beta/42start/libft/libft.h
  /Users/mbrella/Desktop/projects/21beta/42start/src/nucleus/ft_read_8.c
 CMakeFiles/21end.dir/src/nucleus/nucleus.c.o
  /Users/mbrella/Desktop/projects/21beta/42start/inc/fshell.h
  /Users/mbrella/Desktop/projects/21beta/42start/inc/nucleus.h
  /Users/mbrella/Desktop/projects/21beta/42start/inc/parser.h
+ /Users/mbrella/Desktop/projects/21beta/42start/libft/get_next_line.h
  /Users/mbrella/Desktop/projects/21beta/42start/libft/libft.h
  /Users/mbrella/Desktop/projects/21beta/42start/src/nucleus/nucleus.c
 CMakeFiles/21end.dir/src/nucleus/nucleus2.c.o
  /Users/mbrella/Desktop/projects/21beta/42start/inc/fshell.h
  /Users/mbrella/Desktop/projects/21beta/42start/inc/nucleus.h
  /Users/mbrella/Desktop/projects/21beta/42start/inc/parser.h
+ /Users/mbrella/Desktop/projects/21beta/42start/libft/get_next_line.h
  /Users/mbrella/Desktop/projects/21beta/42start/libft/libft.h
  /Users/mbrella/Desktop/projects/21beta/42start/src/nucleus/nucleus2.c
 CMakeFiles/21end.dir/src/nucleus/nucleus3.c.o
  /Users/mbrella/Desktop/projects/21beta/42start/inc/fshell.h
  /Users/mbrella/Desktop/projects/21beta/42start/inc/nucleus.h
  /Users/mbrella/Desktop/projects/21beta/42start/inc/parser.h
+ /Users/mbrella/Desktop/projects/21beta/42start/libft/get_next_line.h
  /Users/mbrella/Desktop/projects/21beta/42start/libft/libft.h
  /Users/mbrella/Desktop/projects/21beta/42start/src/nucleus/nucleus3.c
 CMakeFiles/21end.dir/src/nucleus/nucleus4.c.o
  /Users/mbrella/Desktop/projects/21beta/42start/inc/fshell.h
  /Users/mbrella/Desktop/projects/21beta/42start/inc/nucleus.h
  /Users/mbrella/Desktop/projects/21beta/42start/inc/parser.h
+ /Users/mbrella/Desktop/projects/21beta/42start/libft/get_next_line.h
  /Users/mbrella/Desktop/projects/21beta/42start/libft/libft.h
  /Users/mbrella/Desktop/projects/21beta/42start/src/nucleus/nucleus4.c
 CMakeFiles/21end.dir/src/parser/dop_parser.c.o
  /Users/mbrella/Desktop/projects/21beta/42start/inc/fshell.h
  /Users/mbrella/Desktop/projects/21beta/42start/inc/nucleus.h
  /Users/mbrella/Desktop/projects/21beta/42start/inc/parser.h
+ /Users/mbrella/Desktop/projects/21beta/42start/libft/get_next_line.h
  /Users/mbrella/Desktop/projects/21beta/42start/libft/libft.h
  /Users/mbrella/Desktop/projects/21beta/42start/src/parser/dop_parser.c
 CMakeFiles/21end.dir/src/parser/dop_parser1.c.o
  /Users/mbrella/Desktop/projects/21beta/42start/inc/fshell.h
  /Users/mbrella/Desktop/projects/21beta/42start/inc/nucleus.h
  /Users/mbrella/Desktop/projects/21beta/42start/inc/parser.h
+ /Users/mbrella/Desktop/projects/21beta/42start/libft/get_next_line.h
  /Users/mbrella/Desktop/projects/21beta/42start/libft/libft.h
  /Users/mbrella/Desktop/projects/21beta/42start/src/parser/dop_parser1.c
 CMakeFiles/21end.dir/src/parser/main_parser.c.o
  /Users/mbrella/Desktop/projects/21beta/42start/inc/fshell.h
  /Users/mbrella/Desktop/projects/21beta/42start/inc/nucleus.h
  /Users/mbrella/Desktop/projects/21beta/42start/inc/parser.h
+ /Users/mbrella/Desktop/projects/21beta/42start/libft/get_next_line.h
  /Users/mbrella/Desktop/projects/21beta/42start/libft/libft.h
  /Users/mbrella/Desktop/projects/21beta/42start/src/parser/main_parser.c

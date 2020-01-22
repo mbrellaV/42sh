@@ -42,7 +42,7 @@ t_dop_str		*cr_dop_str(char **line1)
 	return (tmp);
 }
 
-int				do_zam_bax_and_hist_full(char **mas, t_memory *t)
+int				do_zam_bax_and_hist_full(char **mas)
 {
 	int			i;
 	t_dop_str	*tmp;
@@ -55,7 +55,6 @@ int				do_zam_bax_and_hist_full(char **mas, t_memory *t)
 	while (mas[i])
 	{
 		mas[i] = do_zam_str_bax(mas[i], tmp);
-		mas[i] = do_zam_str_hist_var(mas[i], t);
 		i++;
 	}
 	return (0);

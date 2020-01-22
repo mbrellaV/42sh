@@ -78,7 +78,6 @@ t_lextoken					*add_token(t_lextoken *start,
 										 char *line, int word_type);
 char						*do_obr_zamena_sp(char *line);
 char						*do_zam_str_bax(char *str1, t_dop_str	*t);
-int							do_zam_bax_and_hist_full(char **mas, t_memory *t);
 void						dop_cr_new_exec(t_dop_str *t,
 											t_exectoken *prev, int op_type, int type);
 t_dop_str					*cr_dop_str_par1(t_lextoken *tmp1);
@@ -106,7 +105,7 @@ t_lextoken					*do_lexer(char *line);
 int							dop_lexer2(t_dop_str *tmp, char *line);
 int							dop_lexer(t_dop_str *tmp, char *line);
 t_dop_str					*cr_dop_str(char **line1);
-int							do_zam_bax_and_hist_full(char **mas, t_memory *t);
+int							do_zam_bax_and_hist_full(char **mas);
 //////////////////////////////////////////////
 
 

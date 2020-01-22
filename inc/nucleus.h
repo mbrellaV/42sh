@@ -36,7 +36,7 @@ int					ft_c(int c);
 void				reset_input_mode(void);
 void				set_input_mode(void);
 int					ft_put_n(int len, int i, int max);
-t_memory			*ft_memory(t_memory *back, char *str);
+t_memory			*ft_memory(t_memory *back, char **str);
 void				ft_cleanstr(int i);
 void				ft_putmemory(t_memory ***q, int sum,
 					char ***input, t_flag **flag);

@@ -62,6 +62,14 @@ parser.h
 
 /Users/mbrella/Desktop/projects/21beta/42start/inc/parser.h
 
+/Users/mbrella/Desktop/projects/21beta/42start/libft/get_next_line.h
+stdio.h
+/Users/mbrella/Desktop/projects/21beta/42start/libft/stdio.h
+libft.h
+/Users/mbrella/Desktop/projects/21beta/42start/libft/libft.h
+fcntl.h
+-
+
 /Users/mbrella/Desktop/projects/21beta/42start/libft/libft.h
 string.h
 -
@@ -69,6 +77,8 @@ unistd.h
 -
 stdlib.h
 -
+get_next_line.h
+/Users/mbrella/Desktop/projects/21beta/42start/libft/get_next_line.h
 
 /Users/mbrella/Desktop/projects/21beta/42start/src/builtins/alias/ft_alias.c
 ../../../inc/fshell.h

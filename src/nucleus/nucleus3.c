@@ -40,9 +40,8 @@ t_memory	*ft_head_memory(void)
 	int			fd;
 	char		*line;
 
-	fd = open("/Users/mbrella/Desktop/projects/21beta/42start/history/hist", 'r');
-	ft_printf("sas0/// %d\n", fd);
-	if (get_next_line(fd, &line) == -1)
+	fd = open("history/hist.txt", O_RDWR);
+	if (get_next_line(fd, &line) <= 0)
 	{
 		ft_printf("sas1///");
 		if (!(head = (t_memory *)malloc(sizeof(t_memory))))
@@ -53,26 +52,29 @@ t_memory	*ft_head_memory(void)
 		close (fd);
 		return (head);
 	}
-	ft_printf("sas2///");
 	if (!(head = (t_memory *)malloc(sizeof(t_memory))))
 		ft_error_q(2);
 	head->inp = ft_strdup(line);
 	ft_strdel(&line);
 	head->back = NULL;
-	while (get_next_line(fd, &line) != -1)
+	while (get_next_line(fd, &line))
 	{
+		ft_printf("\n%s\n", line);
 		if (!(head->next = (t_memory *)malloc(sizeof(t_memory))))
 			ft_error_q(2);
+
 		head->next->inp = ft_strdup(line);
 		ft_strdel(&line);
+		head->next->next = NULL;
 		head->next->back = head;
 		head = head->next;
 	}
+	show_history(head);
 	close (fd);
 	return (head);
 }
 
-t_memory	*ft_memory(t_memory *back, char *str)
+t_memory	*ft_memory(t_memory *back, char **str)
 {
 	t_memory *tmp;
 	t_memory *p;
@@ -83,13 +85,14 @@ t_memory	*ft_memory(t_memory *back, char *str)
 		return (NULL);
 	p = back->next;
 	back->next = tmp;
-	tmp->inp = ft_strdup(str);
+	tmp->inp = ft_strdup(*str);
+	tmp->inp = do_zam_str_hist_var(tmp->inp, back);
+	*str = ft_strdup(tmp->inp);
 	tmp->next = p;
 	tmp->back = back;
 	if (p != NULL)
 		p->back = tmp;
 	ft_printf("\n///////////1 %s\n", (back)->inp);
-	(back)->inp = do_zam_str_hist_var((back)->inp, back);
 	//ft_printf("\n///////////2 %s\n", (back)->next->inp);
 	return (tmp);
 }

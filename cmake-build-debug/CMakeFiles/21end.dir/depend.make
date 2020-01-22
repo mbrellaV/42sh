@@ -4,48 +4,56 @@
 CMakeFiles/21end.dir/src/builtins/alias/ft_alias.c.o: ../inc/fshell.h
 CMakeFiles/21end.dir/src/builtins/alias/ft_alias.c.o: ../inc/nucleus.h
 CMakeFiles/21end.dir/src/builtins/alias/ft_alias.c.o: ../inc/parser.h
+CMakeFiles/21end.dir/src/builtins/alias/ft_alias.c.o: ../libft/get_next_line.h
 CMakeFiles/21end.dir/src/builtins/alias/ft_alias.c.o: ../libft/libft.h
 CMakeFiles/21end.dir/src/builtins/alias/ft_alias.c.o: ../src/builtins/alias/ft_alias.c
 
 CMakeFiles/21end.dir/src/builtins/allenv/ft_env.c.o: ../inc/fshell.h
 CMakeFiles/21end.dir/src/builtins/allenv/ft_env.c.o: ../inc/nucleus.h
 CMakeFiles/21end.dir/src/builtins/allenv/ft_env.c.o: ../inc/parser.h
+CMakeFiles/21end.dir/src/builtins/allenv/ft_env.c.o: ../libft/get_next_line.h
 CMakeFiles/21end.dir/src/builtins/allenv/ft_env.c.o: ../libft/libft.h
 CMakeFiles/21end.dir/src/builtins/allenv/ft_env.c.o: ../src/builtins/allenv/ft_env.c
 
 CMakeFiles/21end.dir/src/builtins/allenv/main_env.c.o: ../inc/fshell.h
 CMakeFiles/21end.dir/src/builtins/allenv/main_env.c.o: ../inc/nucleus.h
 CMakeFiles/21end.dir/src/builtins/allenv/main_env.c.o: ../inc/parser.h
+CMakeFiles/21end.dir/src/builtins/allenv/main_env.c.o: ../libft/get_next_line.h
 CMakeFiles/21end.dir/src/builtins/allenv/main_env.c.o: ../libft/libft.h
 CMakeFiles/21end.dir/src/builtins/allenv/main_env.c.o: ../src/builtins/allenv/main_env.c
 
 CMakeFiles/21end.dir/src/builtins/ft_cd.c.o: ../inc/fshell.h
 CMakeFiles/21end.dir/src/builtins/ft_cd.c.o: ../inc/nucleus.h
 CMakeFiles/21end.dir/src/builtins/ft_cd.c.o: ../inc/parser.h
+CMakeFiles/21end.dir/src/builtins/ft_cd.c.o: ../libft/get_next_line.h
 CMakeFiles/21end.dir/src/builtins/ft_cd.c.o: ../libft/libft.h
 CMakeFiles/21end.dir/src/builtins/ft_cd.c.o: ../src/builtins/ft_cd.c
 
 CMakeFiles/21end.dir/src/builtins/ft_echo.c.o: ../inc/fshell.h
 CMakeFiles/21end.dir/src/builtins/ft_echo.c.o: ../inc/nucleus.h
 CMakeFiles/21end.dir/src/builtins/ft_echo.c.o: ../inc/parser.h
+CMakeFiles/21end.dir/src/builtins/ft_echo.c.o: ../libft/get_next_line.h
 CMakeFiles/21end.dir/src/builtins/ft_echo.c.o: ../libft/libft.h
 CMakeFiles/21end.dir/src/builtins/ft_echo.c.o: ../src/builtins/ft_echo.c
 
 CMakeFiles/21end.dir/src/builtins/ft_echo2.c.o: ../inc/fshell.h
 CMakeFiles/21end.dir/src/builtins/ft_echo2.c.o: ../inc/nucleus.h
 CMakeFiles/21end.dir/src/builtins/ft_echo2.c.o: ../inc/parser.h
+CMakeFiles/21end.dir/src/builtins/ft_echo2.c.o: ../libft/get_next_line.h
 CMakeFiles/21end.dir/src/builtins/ft_echo2.c.o: ../libft/libft.h
 CMakeFiles/21end.dir/src/builtins/ft_echo2.c.o: ../src/builtins/ft_echo2.c
 
 CMakeFiles/21end.dir/src/errors/errror_handler.c.o: ../inc/fshell.h
 CMakeFiles/21end.dir/src/errors/errror_handler.c.o: ../inc/nucleus.h
 CMakeFiles/21end.dir/src/errors/errror_handler.c.o: ../inc/parser.h
+CMakeFiles/21end.dir/src/errors/errror_handler.c.o: ../libft/get_next_line.h
 CMakeFiles/21end.dir/src/errors/errror_handler.c.o: ../libft/libft.h
 CMakeFiles/21end.dir/src/errors/errror_handler.c.o: ../src/errors/errror_handler.c
 
 CMakeFiles/21end.dir/src/evaln/atoimy.c.o: ../inc/fshell.h
 CMakeFiles/21end.dir/src/evaln/atoimy.c.o: ../inc/nucleus.h
 CMakeFiles/21end.dir/src/evaln/atoimy.c.o: ../inc/parser.h
+CMakeFiles/21end.dir/src/evaln/atoimy.c.o: ../libft/get_next_line.h
 CMakeFiles/21end.dir/src/evaln/atoimy.c.o: ../libft/libft.h
 CMakeFiles/21end.dir/src/evaln/atoimy.c.o: ../src/evaln/atoimy.c
 CMakeFiles/21end.dir/src/evaln/atoimy.c.o: ../src/evaln/eval_expr.h
@@ -53,6 +61,7 @@ CMakeFiles/21end.dir/src/evaln/atoimy.c.o: ../src/evaln/eval_expr.h
 CMakeFiles/21end.dir/src/evaln/calc.c.o: ../inc/fshell.h
 CMakeFiles/21end.dir/src/evaln/calc.c.o: ../inc/nucleus.h
 CMakeFiles/21end.dir/src/evaln/calc.c.o: ../inc/parser.h
+CMakeFiles/21end.dir/src/evaln/calc.c.o: ../libft/get_next_line.h
 CMakeFiles/21end.dir/src/evaln/calc.c.o: ../libft/libft.h
 CMakeFiles/21end.dir/src/evaln/calc.c.o: ../src/evaln/calc.c
 CMakeFiles/21end.dir/src/evaln/calc.c.o: ../src/evaln/eval_expr.h
@@ -60,6 +69,7 @@ CMakeFiles/21end.dir/src/evaln/calc.c.o: ../src/evaln/eval_expr.h
 CMakeFiles/21end.dir/src/evaln/dop.c.o: ../inc/fshell.h
 CMakeFiles/21end.dir/src/evaln/dop.c.o: ../inc/nucleus.h
 CMakeFiles/21end.dir/src/evaln/dop.c.o: ../inc/parser.h
+CMakeFiles/21end.dir/src/evaln/dop.c.o: ../libft/get_next_line.h
 CMakeFiles/21end.dir/src/evaln/dop.c.o: ../libft/libft.h
 CMakeFiles/21end.dir/src/evaln/dop.c.o: ../src/evaln/dop.c
 CMakeFiles/21end.dir/src/evaln/dop.c.o: ../src/evaln/eval_expr.h
@@ -67,12 +77,14 @@ CMakeFiles/21end.dir/src/evaln/dop.c.o: ../src/evaln/eval_expr.h
 CMakeFiles/21end.dir/src/evaln/ft_do_zam_eval.c.o: ../inc/fshell.h
 CMakeFiles/21end.dir/src/evaln/ft_do_zam_eval.c.o: ../inc/nucleus.h
 CMakeFiles/21end.dir/src/evaln/ft_do_zam_eval.c.o: ../inc/parser.h
+CMakeFiles/21end.dir/src/evaln/ft_do_zam_eval.c.o: ../libft/get_next_line.h
 CMakeFiles/21end.dir/src/evaln/ft_do_zam_eval.c.o: ../libft/libft.h
 CMakeFiles/21end.dir/src/evaln/ft_do_zam_eval.c.o: ../src/evaln/ft_do_zam_eval.c
 
 CMakeFiles/21end.dir/src/evaln/inftopost.c.o: ../inc/fshell.h
 CMakeFiles/21end.dir/src/evaln/inftopost.c.o: ../inc/nucleus.h
 CMakeFiles/21end.dir/src/evaln/inftopost.c.o: ../inc/parser.h
+CMakeFiles/21end.dir/src/evaln/inftopost.c.o: ../libft/get_next_line.h
 CMakeFiles/21end.dir/src/evaln/inftopost.c.o: ../libft/libft.h
 CMakeFiles/21end.dir/src/evaln/inftopost.c.o: ../src/evaln/eval_expr.h
 CMakeFiles/21end.dir/src/evaln/inftopost.c.o: ../src/evaln/inftopost.c
@@ -80,168 +92,196 @@ CMakeFiles/21end.dir/src/evaln/inftopost.c.o: ../src/evaln/inftopost.c
 CMakeFiles/21end.dir/src/exec/ft_create_file.c.o: ../inc/fshell.h
 CMakeFiles/21end.dir/src/exec/ft_create_file.c.o: ../inc/nucleus.h
 CMakeFiles/21end.dir/src/exec/ft_create_file.c.o: ../inc/parser.h
+CMakeFiles/21end.dir/src/exec/ft_create_file.c.o: ../libft/get_next_line.h
 CMakeFiles/21end.dir/src/exec/ft_create_file.c.o: ../libft/libft.h
 CMakeFiles/21end.dir/src/exec/ft_create_file.c.o: ../src/exec/ft_create_file.c
 
 CMakeFiles/21end.dir/src/exec/ft_do_pipe.c.o: ../inc/fshell.h
 CMakeFiles/21end.dir/src/exec/ft_do_pipe.c.o: ../inc/nucleus.h
 CMakeFiles/21end.dir/src/exec/ft_do_pipe.c.o: ../inc/parser.h
+CMakeFiles/21end.dir/src/exec/ft_do_pipe.c.o: ../libft/get_next_line.h
 CMakeFiles/21end.dir/src/exec/ft_do_pipe.c.o: ../libft/libft.h
 CMakeFiles/21end.dir/src/exec/ft_do_pipe.c.o: ../src/exec/ft_do_pipe.c
 
 CMakeFiles/21end.dir/src/exec/ft_fun_fork.c.o: ../inc/fshell.h
 CMakeFiles/21end.dir/src/exec/ft_fun_fork.c.o: ../inc/nucleus.h
 CMakeFiles/21end.dir/src/exec/ft_fun_fork.c.o: ../inc/parser.h
+CMakeFiles/21end.dir/src/exec/ft_fun_fork.c.o: ../libft/get_next_line.h
 CMakeFiles/21end.dir/src/exec/ft_fun_fork.c.o: ../libft/libft.h
 CMakeFiles/21end.dir/src/exec/ft_fun_fork.c.o: ../src/exec/ft_fun_fork.c
 
 CMakeFiles/21end.dir/src/ft_distruct.c.o: ../inc/fshell.h
 CMakeFiles/21end.dir/src/ft_distruct.c.o: ../inc/nucleus.h
 CMakeFiles/21end.dir/src/ft_distruct.c.o: ../inc/parser.h
+CMakeFiles/21end.dir/src/ft_distruct.c.o: ../libft/get_next_line.h
 CMakeFiles/21end.dir/src/ft_distruct.c.o: ../libft/libft.h
 CMakeFiles/21end.dir/src/ft_distruct.c.o: ../src/ft_distruct.c
 
 CMakeFiles/21end.dir/src/ft_error_q.c.o: ../inc/fshell.h
 CMakeFiles/21end.dir/src/ft_error_q.c.o: ../inc/nucleus.h
 CMakeFiles/21end.dir/src/ft_error_q.c.o: ../inc/parser.h
+CMakeFiles/21end.dir/src/ft_error_q.c.o: ../libft/get_next_line.h
 CMakeFiles/21end.dir/src/ft_error_q.c.o: ../libft/libft.h
 CMakeFiles/21end.dir/src/ft_error_q.c.o: ../src/ft_error_q.c
 
 CMakeFiles/21end.dir/src/ft_signal.c.o: ../inc/fshell.h
 CMakeFiles/21end.dir/src/ft_signal.c.o: ../inc/nucleus.h
 CMakeFiles/21end.dir/src/ft_signal.c.o: ../inc/parser.h
+CMakeFiles/21end.dir/src/ft_signal.c.o: ../libft/get_next_line.h
 CMakeFiles/21end.dir/src/ft_signal.c.o: ../libft/libft.h
 CMakeFiles/21end.dir/src/ft_signal.c.o: ../src/ft_signal.c
 
 CMakeFiles/21end.dir/src/ft_take_arg.c.o: ../inc/fshell.h
 CMakeFiles/21end.dir/src/ft_take_arg.c.o: ../inc/nucleus.h
 CMakeFiles/21end.dir/src/ft_take_arg.c.o: ../inc/parser.h
+CMakeFiles/21end.dir/src/ft_take_arg.c.o: ../libft/get_next_line.h
 CMakeFiles/21end.dir/src/ft_take_arg.c.o: ../libft/libft.h
 CMakeFiles/21end.dir/src/ft_take_arg.c.o: ../src/ft_take_arg.c
 
 CMakeFiles/21end.dir/src/lexer/change_dol.c.o: ../inc/fshell.h
 CMakeFiles/21end.dir/src/lexer/change_dol.c.o: ../inc/nucleus.h
 CMakeFiles/21end.dir/src/lexer/change_dol.c.o: ../inc/parser.h
+CMakeFiles/21end.dir/src/lexer/change_dol.c.o: ../libft/get_next_line.h
 CMakeFiles/21end.dir/src/lexer/change_dol.c.o: ../libft/libft.h
 CMakeFiles/21end.dir/src/lexer/change_dol.c.o: ../src/lexer/change_dol.c
 
 CMakeFiles/21end.dir/src/lexer/change_hist_exp.c.o: ../inc/fshell.h
 CMakeFiles/21end.dir/src/lexer/change_hist_exp.c.o: ../inc/nucleus.h
 CMakeFiles/21end.dir/src/lexer/change_hist_exp.c.o: ../inc/parser.h
+CMakeFiles/21end.dir/src/lexer/change_hist_exp.c.o: ../libft/get_next_line.h
 CMakeFiles/21end.dir/src/lexer/change_hist_exp.c.o: ../libft/libft.h
 CMakeFiles/21end.dir/src/lexer/change_hist_exp.c.o: ../src/lexer/change_hist_exp.c
 
 CMakeFiles/21end.dir/src/lexer/change_spaces.c.o: ../inc/fshell.h
 CMakeFiles/21end.dir/src/lexer/change_spaces.c.o: ../inc/nucleus.h
 CMakeFiles/21end.dir/src/lexer/change_spaces.c.o: ../inc/parser.h
+CMakeFiles/21end.dir/src/lexer/change_spaces.c.o: ../libft/get_next_line.h
 CMakeFiles/21end.dir/src/lexer/change_spaces.c.o: ../libft/libft.h
 CMakeFiles/21end.dir/src/lexer/change_spaces.c.o: ../src/lexer/change_spaces.c
 
 CMakeFiles/21end.dir/src/lexer/change_str_by_str.c.o: ../inc/fshell.h
 CMakeFiles/21end.dir/src/lexer/change_str_by_str.c.o: ../inc/nucleus.h
 CMakeFiles/21end.dir/src/lexer/change_str_by_str.c.o: ../inc/parser.h
+CMakeFiles/21end.dir/src/lexer/change_str_by_str.c.o: ../libft/get_next_line.h
 CMakeFiles/21end.dir/src/lexer/change_str_by_str.c.o: ../libft/libft.h
 CMakeFiles/21end.dir/src/lexer/change_str_by_str.c.o: ../src/lexer/change_str_by_str.c
 
 CMakeFiles/21end.dir/src/lexer/cr_and_add_tokens.c.o: ../inc/fshell.h
 CMakeFiles/21end.dir/src/lexer/cr_and_add_tokens.c.o: ../inc/nucleus.h
 CMakeFiles/21end.dir/src/lexer/cr_and_add_tokens.c.o: ../inc/parser.h
+CMakeFiles/21end.dir/src/lexer/cr_and_add_tokens.c.o: ../libft/get_next_line.h
 CMakeFiles/21end.dir/src/lexer/cr_and_add_tokens.c.o: ../libft/libft.h
 CMakeFiles/21end.dir/src/lexer/cr_and_add_tokens.c.o: ../src/lexer/cr_and_add_tokens.c
 
 CMakeFiles/21end.dir/src/lexer/do_subshell.c.o: ../inc/fshell.h
 CMakeFiles/21end.dir/src/lexer/do_subshell.c.o: ../inc/nucleus.h
 CMakeFiles/21end.dir/src/lexer/do_subshell.c.o: ../inc/parser.h
+CMakeFiles/21end.dir/src/lexer/do_subshell.c.o: ../libft/get_next_line.h
 CMakeFiles/21end.dir/src/lexer/do_subshell.c.o: ../libft/libft.h
 CMakeFiles/21end.dir/src/lexer/do_subshell.c.o: ../src/lexer/do_subshell.c
 
 CMakeFiles/21end.dir/src/lexer/dop_funs.c.o: ../inc/fshell.h
 CMakeFiles/21end.dir/src/lexer/dop_funs.c.o: ../inc/nucleus.h
 CMakeFiles/21end.dir/src/lexer/dop_funs.c.o: ../inc/parser.h
+CMakeFiles/21end.dir/src/lexer/dop_funs.c.o: ../libft/get_next_line.h
 CMakeFiles/21end.dir/src/lexer/dop_funs.c.o: ../libft/libft.h
 CMakeFiles/21end.dir/src/lexer/dop_funs.c.o: ../src/lexer/dop_funs.c
 
 CMakeFiles/21end.dir/src/lexer/get_opt_type.c.o: ../inc/fshell.h
 CMakeFiles/21end.dir/src/lexer/get_opt_type.c.o: ../inc/nucleus.h
 CMakeFiles/21end.dir/src/lexer/get_opt_type.c.o: ../inc/parser.h
+CMakeFiles/21end.dir/src/lexer/get_opt_type.c.o: ../libft/get_next_line.h
 CMakeFiles/21end.dir/src/lexer/get_opt_type.c.o: ../libft/libft.h
 CMakeFiles/21end.dir/src/lexer/get_opt_type.c.o: ../src/lexer/get_opt_type.c
 
 CMakeFiles/21end.dir/src/lexer/kill_dop_structure.c.o: ../inc/fshell.h
 CMakeFiles/21end.dir/src/lexer/kill_dop_structure.c.o: ../inc/nucleus.h
 CMakeFiles/21end.dir/src/lexer/kill_dop_structure.c.o: ../inc/parser.h
+CMakeFiles/21end.dir/src/lexer/kill_dop_structure.c.o: ../libft/get_next_line.h
 CMakeFiles/21end.dir/src/lexer/kill_dop_structure.c.o: ../libft/libft.h
 CMakeFiles/21end.dir/src/lexer/kill_dop_structure.c.o: ../src/lexer/kill_dop_structure.c
 
 CMakeFiles/21end.dir/src/lexer/lexer.c.o: ../inc/fshell.h
 CMakeFiles/21end.dir/src/lexer/lexer.c.o: ../inc/nucleus.h
 CMakeFiles/21end.dir/src/lexer/lexer.c.o: ../inc/parser.h
+CMakeFiles/21end.dir/src/lexer/lexer.c.o: ../libft/get_next_line.h
 CMakeFiles/21end.dir/src/lexer/lexer.c.o: ../libft/libft.h
 CMakeFiles/21end.dir/src/lexer/lexer.c.o: ../src/lexer/lexer.c
 
 CMakeFiles/21end.dir/src/lexer/word_sizes.c.o: ../inc/fshell.h
 CMakeFiles/21end.dir/src/lexer/word_sizes.c.o: ../inc/nucleus.h
 CMakeFiles/21end.dir/src/lexer/word_sizes.c.o: ../inc/parser.h
+CMakeFiles/21end.dir/src/lexer/word_sizes.c.o: ../libft/get_next_line.h
 CMakeFiles/21end.dir/src/lexer/word_sizes.c.o: ../libft/libft.h
 CMakeFiles/21end.dir/src/lexer/word_sizes.c.o: ../src/lexer/word_sizes.c
 
 CMakeFiles/21end.dir/src/main.c.o: ../inc/fshell.h
 CMakeFiles/21end.dir/src/main.c.o: ../inc/nucleus.h
 CMakeFiles/21end.dir/src/main.c.o: ../inc/parser.h
+CMakeFiles/21end.dir/src/main.c.o: ../libft/get_next_line.h
 CMakeFiles/21end.dir/src/main.c.o: ../libft/libft.h
 CMakeFiles/21end.dir/src/main.c.o: ../src/main.c
 
 CMakeFiles/21end.dir/src/nucleus/ft_cutcopy.c.o: ../inc/fshell.h
 CMakeFiles/21end.dir/src/nucleus/ft_cutcopy.c.o: ../inc/nucleus.h
 CMakeFiles/21end.dir/src/nucleus/ft_cutcopy.c.o: ../inc/parser.h
+CMakeFiles/21end.dir/src/nucleus/ft_cutcopy.c.o: ../libft/get_next_line.h
 CMakeFiles/21end.dir/src/nucleus/ft_cutcopy.c.o: ../libft/libft.h
 CMakeFiles/21end.dir/src/nucleus/ft_cutcopy.c.o: ../src/nucleus/ft_cutcopy.c
 
 CMakeFiles/21end.dir/src/nucleus/ft_read_8.c.o: ../inc/fshell.h
 CMakeFiles/21end.dir/src/nucleus/ft_read_8.c.o: ../inc/nucleus.h
 CMakeFiles/21end.dir/src/nucleus/ft_read_8.c.o: ../inc/parser.h
+CMakeFiles/21end.dir/src/nucleus/ft_read_8.c.o: ../libft/get_next_line.h
 CMakeFiles/21end.dir/src/nucleus/ft_read_8.c.o: ../libft/libft.h
 CMakeFiles/21end.dir/src/nucleus/ft_read_8.c.o: ../src/nucleus/ft_read_8.c
 
 CMakeFiles/21end.dir/src/nucleus/nucleus.c.o: ../inc/fshell.h
 CMakeFiles/21end.dir/src/nucleus/nucleus.c.o: ../inc/nucleus.h
 CMakeFiles/21end.dir/src/nucleus/nucleus.c.o: ../inc/parser.h
+CMakeFiles/21end.dir/src/nucleus/nucleus.c.o: ../libft/get_next_line.h
 CMakeFiles/21end.dir/src/nucleus/nucleus.c.o: ../libft/libft.h
 CMakeFiles/21end.dir/src/nucleus/nucleus.c.o: ../src/nucleus/nucleus.c
 
 CMakeFiles/21end.dir/src/nucleus/nucleus2.c.o: ../inc/fshell.h
 CMakeFiles/21end.dir/src/nucleus/nucleus2.c.o: ../inc/nucleus.h
 CMakeFiles/21end.dir/src/nucleus/nucleus2.c.o: ../inc/parser.h
+CMakeFiles/21end.dir/src/nucleus/nucleus2.c.o: ../libft/get_next_line.h
 CMakeFiles/21end.dir/src/nucleus/nucleus2.c.o: ../libft/libft.h
 CMakeFiles/21end.dir/src/nucleus/nucleus2.c.o: ../src/nucleus/nucleus2.c
 
 CMakeFiles/21end.dir/src/nucleus/nucleus3.c.o: ../inc/fshell.h
 CMakeFiles/21end.dir/src/nucleus/nucleus3.c.o: ../inc/nucleus.h
 CMakeFiles/21end.dir/src/nucleus/nucleus3.c.o: ../inc/parser.h
+CMakeFiles/21end.dir/src/nucleus/nucleus3.c.o: ../libft/get_next_line.h
 CMakeFiles/21end.dir/src/nucleus/nucleus3.c.o: ../libft/libft.h
 CMakeFiles/21end.dir/src/nucleus/nucleus3.c.o: ../src/nucleus/nucleus3.c
 
 CMakeFiles/21end.dir/src/nucleus/nucleus4.c.o: ../inc/fshell.h
 CMakeFiles/21end.dir/src/nucleus/nucleus4.c.o: ../inc/nucleus.h
 CMakeFiles/21end.dir/src/nucleus/nucleus4.c.o: ../inc/parser.h
+CMakeFiles/21end.dir/src/nucleus/nucleus4.c.o: ../libft/get_next_line.h
 CMakeFiles/21end.dir/src/nucleus/nucleus4.c.o: ../libft/libft.h
 CMakeFiles/21end.dir/src/nucleus/nucleus4.c.o: ../src/nucleus/nucleus4.c
 
 CMakeFiles/21end.dir/src/parser/dop_parser.c.o: ../inc/fshell.h
 CMakeFiles/21end.dir/src/parser/dop_parser.c.o: ../inc/nucleus.h
 CMakeFiles/21end.dir/src/parser/dop_parser.c.o: ../inc/parser.h
+CMakeFiles/21end.dir/src/parser/dop_parser.c.o: ../libft/get_next_line.h
 CMakeFiles/21end.dir/src/parser/dop_parser.c.o: ../libft/libft.h
 CMakeFiles/21end.dir/src/parser/dop_parser.c.o: ../src/parser/dop_parser.c
 
 CMakeFiles/21end.dir/src/parser/dop_parser1.c.o: ../inc/fshell.h
 CMakeFiles/21end.dir/src/parser/dop_parser1.c.o: ../inc/nucleus.h
 CMakeFiles/21end.dir/src/parser/dop_parser1.c.o: ../inc/parser.h
+CMakeFiles/21end.dir/src/parser/dop_parser1.c.o: ../libft/get_next_line.h
 CMakeFiles/21end.dir/src/parser/dop_parser1.c.o: ../libft/libft.h
 CMakeFiles/21end.dir/src/parser/dop_parser1.c.o: ../src/parser/dop_parser1.c
 
 CMakeFiles/21end.dir/src/parser/main_parser.c.o: ../inc/fshell.h
 CMakeFiles/21end.dir/src/parser/main_parser.c.o: ../inc/nucleus.h
 CMakeFiles/21end.dir/src/parser/main_parser.c.o: ../inc/parser.h
+CMakeFiles/21end.dir/src/parser/main_parser.c.o: ../libft/get_next_line.h
 CMakeFiles/21end.dir/src/parser/main_parser.c.o: ../libft/libft.h
 CMakeFiles/21end.dir/src/parser/main_parser.c.o: ../src/parser/main_parser.c
 
