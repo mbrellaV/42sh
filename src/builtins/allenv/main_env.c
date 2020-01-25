@@ -116,13 +116,15 @@ int		unset_var(char *str, char ***envl)
 
 int		set_new_var(char *str1, char *str2, char ***envl)
 {
-	char **env;
-	int i;
+	char	**env;
+	int		i;
+	char	*tmp;
 
 	env = *envl;
 	//ft_printf("\n/////////////////////////////////////s1: %s", str1);
 	str1 = ft_strjoinch(str1, '=');
 	i = ft_findenv(str1, env);
+	tmp = str1;
 	//ft_printf("\n////////////////////// %d /////\n", i);
 	//ft_printf("s2");
 	if (i != -404)
@@ -133,6 +135,7 @@ int		set_new_var(char *str1, char *str2, char ***envl)
 	//	ft_printf("s4");
 		env[i] = ft_strjoin(str1, str2);
 		ft_realloc_all(2, envl);
+		ft_strdel(&tmp);
 		//ft_printf("s5");
 	}
 	else
@@ -142,6 +145,7 @@ int		set_new_var(char *str1, char *str2, char ***envl)
 			i++;
 		env[i] = ft_strjoin(str1, str2);
 		ft_realloc_all(2, envl);
+		ft_strdel(&tmp);
 	}
 	return (0);
 }

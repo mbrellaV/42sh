@@ -30,14 +30,8 @@ t_dop_str		*cr_dop_str(char **line1)
 	tmp->i_c = 0;
 	tmp->doptail_c = NULL;
 	tmp->tail_c = NULL;
-	//ft_printf("\n\n\nsas: ");
-	//ft_printf("\n%s\n", line);
 	line = do_zamena_sp(line);
-//	ft_printf("\n%s\n", line);
-	//line = do_zam_str_bax(line, tmp);
-	//ft_printf("\n%s\n", line);
 	line = do_zam_str(line);
-	//ft_printf("\n%s\n", line);
 	*line1 = line;
 	return (tmp);
 }
@@ -57,12 +51,13 @@ int				do_zam_bax_and_hist_full(char **mas)
 		mas[i] = do_zam_str_bax(mas[i], tmp);
 		i++;
 	}
+	ft_kill_str_dop_lex(tmp, NULL);
 	return (0);
 }
 
 int				dop_lexer2(t_dop_str *tmp, char *line)
 {
-	tmp->tmp_c= ft_strsub(line, tmp->i_c, word_size(line + tmp->i_c));
+	tmp->tmp_c = ft_strsub(line, tmp->i_c, word_size(line + tmp->i_c));
 	if (is_cmd_delim(get_op_type(tmp->tmp_c)) == 0 && tmp->i_c != 0 &&
 		isword(line[tmp->i_c - 1]) && (get_op_type(tmp->tmp_c) > 6))
 		tmp->tail_c->is_near_opt = 1;
@@ -79,21 +74,18 @@ int				dop_lexer(t_dop_str *tmp, char *line)
 {
 	if (isword(line[tmp->i_c]))
 	{
-		tmp->tmp_c = ft_strsub(line, tmp->i_c + (ispar(line[tmp->i_c]) == 1 ? 1 : 0),
-			word_size(line + tmp->i_c));
+		tmp->tmp_c = ft_strsub(line, tmp->i_c +
+		(ispar(line[tmp->i_c]) == 1 ? 1 : 0), word_size(line + tmp->i_c));
 		if (tmp->tail_c != NULL && tmp->tail_c->operator_type > 2)
 			tmp->d_c = 1;
 		if (!(tmp->tail_c = add_token(tmp->tail_c, tmp->tmp_c, 1)))
 			return (-1);
 		tmp->tail_c->is_near_opt = tmp->d_c;
-		//ft_printf("\n\ndop1:  %d  %d\n\n", word_size(line + tmp->i_c), line[tmp->i_c]);
-		tmp->i_c += word_size(line + tmp->i_c) + (ispar(line[tmp->i_c]) == 1 ? 2 : 0) ;//+ (issc(line[tmp->i_c]) == 1 ? 1 : 0);
-	//	ft_printf("\n\ndop2:  %d  %d\n\n", word_size(line + tmp->i_c), line[tmp->i_c]);
+		tmp->i_c += word_size(line + tmp->i_c) + (ispar(line[tmp->i_c]) == 1 ? 2 : 0);
 		tmp->d_c = 0;
 	}
 	else if (isoperator(line[tmp->i_c]))
 	{
-		ft_printf("da!!!!");
 		if (dop_lexer2(tmp, line) == -1)
 			return (-1);
 	}
@@ -131,5 +123,5 @@ t_lextoken		*do_lexer(char *line)
 		tmp->tail_c = tmp->tail_c->next;
 	}
 	ft_strdel(&line);
-	return (ft_kill_str_dop(tmp, tmp->doptail_c));
+	return (ft_kill_str_dop_lex(tmp, tmp->doptail_c));
 }

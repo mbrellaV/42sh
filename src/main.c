@@ -216,6 +216,18 @@ int		save_history(t_memory *q)
 	return (0);
 }
 
+void	do_count_shell_lvl()
+{
+	char	*dop;
+	char	*dop1;
+
+	dop = ft_get_var("SHLVL", g_env);
+	dop1 = ft_itoa(ft_atoi(dop) + 1);
+	set_new_var("SHLVL", dop1, &g_env);
+	ft_strdel(&dop);
+	ft_strdel(&dop1);
+}
+
 int		main(int argc, char **argv, char **env)
 {
 	char		*input;
@@ -227,7 +239,7 @@ int		main(int argc, char **argv, char **env)
 	ft_global_env(env, argc);
 	signal(SIGINT, ft_fork_signal);
 	head = ft_head_memory();
-	set_new_var(ft_strdup("SHLVL"), ft_itoa(ft_atoi(ft_get_var("SHLVL", g_env)) + 1), &g_env);
+	do_count_shell_lvl();
 	while (1)
 	{
 		ft_check_cd();

@@ -63,7 +63,7 @@ t_exectoken		*do_parser(t_lextoken *tmp)
 		}
 		tmp = tmp->next;
 	}
-	return (t->start_c);
+	return (ft_kill_str_dop_exec(t, t->start_c));
 }
 
 t_exectoken		*all_parse(char *cmd)

@@ -97,7 +97,7 @@ t_exectoken				*ft_cr_new_exectoken(t_lextoken *tmp,
 		t->dop_a = t->dop_a->next;
 	}
 	dop_cr_new_exec(t, prev, op_type, 1);
-	return (t->tmp1_a);
+	return (ft_kill_str_dop_exec(t, t->tmp1_a));
 }
 
 t_dop_str				*cr_dop_str_par(void)

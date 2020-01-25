@@ -11,8 +11,6 @@ char				*do_zam_str_bax(char *str1, t_dop_str *t)
 	t->i_b = 0;
 	end = 0;
 	t->str_b = str1;
-	if (!(t->new_b = ft_strnew(1)))
-		return (NULL);
 	while (t->str_b[t->i_b])
 	{
 		if (t->str_b[t->i_b] == '$' && t->str_b[t->i_b - 1] != '\\' && t->str_b[t->i_b + 1] != '(')

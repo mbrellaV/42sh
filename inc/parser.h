@@ -57,7 +57,6 @@ typedef struct				s_dop_str
 	t_lextoken				*doptail_c;
 }							t_dop_str;
 
-t_lextoken					*ft_kill_str_dop(t_dop_str *t, t_lextoken *tmp);
 t_lextoken					*do_lexer(char *line);
 void						ft_printf(const char *fmt, ...);
 t_exectoken					*all_parse(char *cmd);
@@ -100,7 +99,8 @@ char						find_pair_sc(char c);
 int							isoperator(char c);
 int							issc(char c);
 int							get_op_type(char *operator);
-t_lextoken					*ft_kill_str_dop(t_dop_str *t, t_lextoken *tmp);
+t_lextoken		            *ft_kill_str_dop_lex(t_dop_str *t, t_lextoken *tmp);
+t_exectoken                 *ft_kill_str_dop_exec(t_dop_str *t, t_exectoken *tmpexec);
 t_lextoken					*do_lexer(char *line);
 int							dop_lexer2(t_dop_str *tmp, char *line);
 int							dop_lexer(t_dop_str *tmp, char *line);
