@@ -14,14 +14,13 @@
 
 int		ft_whatis(t_exectoken *tmp, t_memory *q)
 {
-	int		i;
-
-	i = do_work_subshell(tmp->file_args, q);
-	ft_printf("\nnysh: %d\n", i);
-	if (i == -1)
-		return (-3);
-	if (i == 1)
-		return (1);
+//	i = 0;
+	//i = do_work_subshell(tmp->file_args, q);
+//	ft_printf("\nnysh: %d\n", i);
+	//if (i == -1)
+	//	return (-3);
+	//if (i == 1)
+	//	return (1);
 	if (tmp->file_args == NULL)
 		return (ft_error_args(tmp));
 	if (do_zam_bax_and_hist_full(tmp->file_args) == -1)
@@ -159,10 +158,14 @@ void    ft_check_cd()
 	dop = ft_get_var("PWD", g_env);
 	getcwd(folder, 1024);
 	if (ft_strcmp(folder, dop) == 0)
-		return ;
+    {
+        ft_strdel(&dop);
+        return ;
+    }
 	res = ft_strjoin("cd ", dop);
 	tmp = ft_strsplit(res, " ");
 	ft_strdel(&res);
+    ft_strdel(&dop);
 	ft_cd(tmp);
 }
 
@@ -204,7 +207,6 @@ int		save_history(t_memory *q)
 	ft_printf("\nsas4:  |%s|\n", buf);
 	while (q->back->back != NULL)
 		q = q->back;
-	//write(fd, "edvsvfsxvdzxbdfxb\n", sizeof("edvsvfsxvdzxbdfxb\n"));
 	while (q != NULL)
 	{
 		ft_printf("%s | %d\n", q->inp, ft_strlen(q->inp));
@@ -244,28 +246,23 @@ int		main(int argc, char **argv, char **env)
 	{
 		ft_check_cd();
 		set_input_mode();
-
 		atexit(reset_input_mode);
-		
 		input = ft_read_8(ft_main_norm(0), head, 0);
 		write(2, "\n", 1);
 		input[0] != '\0' ? head = ft_memory(head, &input) : head;
 		while (ft_cheak_quote(input) != 1)
 			ft_add_intput_que(&input, head);
-	
 		reset_input_mode();
-
 		//ft_printf("rofl-1 %s\n", input);
 		//input = ft_strdup("(ls);ls");
 		start_token = all_parse(input);
-	
 		if (ft_main_what(start_token, head) == -1)
 			break ;
 		ft_strdel(&input);
 		ft_distruct_tree(start_token);
 	
 	}
-	//save_history(head);
+	save_history(head);
 	return (ft_distruct_memory(head) && ft_distruct_tree(start_token) &&
 		ft_dist_str(input) ? 0 : 1);
 }
