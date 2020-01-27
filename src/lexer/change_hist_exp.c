@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   change_hist_exp.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mbrella <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/01/27 15:12:00 by mbrella           #+#    #+#             */
+/*   Updated: 2020/01/27 15:12:02 by mbrella          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../../inc/fshell.h"
 
 char				*get_num_from_hist_begin(t_memory *t, int num)
@@ -86,7 +98,6 @@ char				*do_zam_str_hist_var(char *str1, t_memory *q)
 					c++;
 				if (!(tmp = ft_strdup(get_num_from_hist_begin(q, ft_atoi(str1 + i)))))
 					tmp = ft_strdup("\0");
-				ft_printf("\nvot ono : %s\n", tmp);
 				str1 = do_zam_str_by_str(i, c, str1, tmp);
 			}
 			else if (ft_atoi(str1 + i + 1) < 0)
@@ -96,7 +107,6 @@ char				*do_zam_str_hist_var(char *str1, t_memory *q)
 					c++;
 				if (!(tmp = ft_strdup(get_num_from_hist_end(q, ft_atoi(str1 + i + 1)))))
 					tmp = ft_strdup("\0");
-				ft_printf("\nvot ono : %s\n", tmp);
 				str1 = do_zam_str_by_str(i, c, str1, tmp);
 			}
 			else if (isword(str1[i + 1]) != 0 && str1[i + 1] != '?')
@@ -106,9 +116,7 @@ char				*do_zam_str_hist_var(char *str1, t_memory *q)
 					c++;
 				if (!(tmp = ft_strdup(get_num_from_hist_starting(q, ft_strsub(str1 + i + 1, 0, c - i - 1)))))
 					tmp = ft_strdup("\0");
-				ft_printf("\nvot ono : %s\n", tmp);
 				str1 = do_zam_str_by_str(i, c, str1, tmp);
-				ft_printf("roflan: %d\n", str1[0]);
 			}
 			else if (str1[i + 1] == '?')
 			{
@@ -117,7 +125,6 @@ char				*do_zam_str_hist_var(char *str1, t_memory *q)
 					c++;
 				if (!(tmp = ft_strdup(get_num_from_hist_cons(q, ft_strsub(str1 + i + 2, 0, c - i)))))
 					tmp = ft_strdup("\0");
-				ft_printf("\nvot ono : %s\n", tmp);
 				str1 = do_zam_str_by_str(i, c, str1, tmp);
 			}
 		}

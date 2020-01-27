@@ -54,7 +54,7 @@ SRC_BASE = builtins/ft_cd.c\
 	nucleus/nucleus3.c\
 	nucleus/nucleus4.c\
         parser/dop_parser.c\
-        parser/dop_parser1.c\
+        parser/change_tilda.c\
         parser/main_parser.c\
 	ft_distruct.c\
 	ft_error_q.c\

@@ -121,7 +121,8 @@ int		set_new_var(char *str1, char *str2, char ***envl)
 	char	*tmp;
 
 	env = *envl;
-	//ft_printf("\n/////////////////////////////////////s1: %s", str1);
+	ft_printf("\n/////////////////////////////////////s1: %s", str1);
+	ft_printf("\n/////////////////////////////////////s1: %s", str2);
 	str1 = ft_strjoinch(str1, '=');
 	i = ft_findenv(str1, env);
 	tmp = str1;
@@ -182,15 +183,24 @@ int		do_zam_ravno(char **str)
 		return (-1);
 	while (str[i])
 	{
-		if (ft_strstr(str[i], "="))
+		//ft_printf("\nroflan: |%s|", str[i]);
+		//ft_printf("\nroflan: |%s|", str[i]);
+		if (ft_strstr(str[i], "=") && ispar(str[i][ft_strfind_index(str[i], '=') + 1]) == 0)
 		{
-			ft_printf("sass");
+			//ft_printf("sass1: %d", issc(str[i][ft_strfind_index(str[i], '=') + 1]));
 			set_new_var(ft_strsub(str[i], 0, ft_strstr(str[i], "=") - str[i]),
 					ft_strsub(str[i], ft_strstr(str[i], "=") - str[i] + 1, ft_strlen(str[i])), &g_all_var);
 			if (!(str = realloc_and_unset(i, str)))
 				return (-1);
-			ft_printf("sassd");
 			i--;
+		}
+		if (ft_strstr(str[i], "=") && ispar(str[i][ft_strfind_index(str[i], '=') + 1]) == 1)
+		{
+			//ft_printf("sass2");
+			set_new_var(ft_strsub(str[i], 0, ft_strstr(str[i], "=") - str[i]),
+				ft_strsub(str[i], ft_strfind_index(str[i], '=') + 2, ft_strlen(str[i]) - ft_strfind_index(str[i], '=') - 3), &g_all_var);
+			if (!(str = realloc_and_unset(i, str)))
+				return (-1);
 		}
 		i++;
 	}

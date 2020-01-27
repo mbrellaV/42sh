@@ -1122,6 +1122,33 @@ src/nucleus/nucleus4.c.s:
 	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/nucleus/nucleus4.c.s
 .PHONY : src/nucleus/nucleus4.c.s
 
+src/parser/change_tilda.o: src/parser/change_tilda.c.o
+
+.PHONY : src/parser/change_tilda.o
+
+# target to build an object file
+src/parser/change_tilda.c.o:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/parser/change_tilda.c.o
+.PHONY : src/parser/change_tilda.c.o
+
+src/parser/change_tilda.i: src/parser/change_tilda.c.i
+
+.PHONY : src/parser/change_tilda.i
+
+# target to preprocess a source file
+src/parser/change_tilda.c.i:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/parser/change_tilda.c.i
+.PHONY : src/parser/change_tilda.c.i
+
+src/parser/change_tilda.s: src/parser/change_tilda.c.s
+
+.PHONY : src/parser/change_tilda.s
+
+# target to generate assembly for a file
+src/parser/change_tilda.c.s:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/parser/change_tilda.c.s
+.PHONY : src/parser/change_tilda.c.s
+
 src/parser/dop_parser.o: src/parser/dop_parser.c.o
 
 .PHONY : src/parser/dop_parser.o
@@ -1148,33 +1175,6 @@ src/parser/dop_parser.s: src/parser/dop_parser.c.s
 src/parser/dop_parser.c.s:
 	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/parser/dop_parser.c.s
 .PHONY : src/parser/dop_parser.c.s
-
-src/parser/dop_parser1.o: src/parser/dop_parser1.c.o
-
-.PHONY : src/parser/dop_parser1.o
-
-# target to build an object file
-src/parser/dop_parser1.c.o:
-	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/parser/dop_parser1.c.o
-.PHONY : src/parser/dop_parser1.c.o
-
-src/parser/dop_parser1.i: src/parser/dop_parser1.c.i
-
-.PHONY : src/parser/dop_parser1.i
-
-# target to preprocess a source file
-src/parser/dop_parser1.c.i:
-	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/parser/dop_parser1.c.i
-.PHONY : src/parser/dop_parser1.c.i
-
-src/parser/dop_parser1.s: src/parser/dop_parser1.c.s
-
-.PHONY : src/parser/dop_parser1.s
-
-# target to generate assembly for a file
-src/parser/dop_parser1.c.s:
-	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/parser/dop_parser1.c.s
-.PHONY : src/parser/dop_parser1.c.s
 
 src/parser/main_parser.o: src/parser/main_parser.c.o
 
@@ -1323,12 +1323,12 @@ help:
 	@echo "... src/nucleus/nucleus4.o"
 	@echo "... src/nucleus/nucleus4.i"
 	@echo "... src/nucleus/nucleus4.s"
+	@echo "... src/parser/change_tilda.o"
+	@echo "... src/parser/change_tilda.i"
+	@echo "... src/parser/change_tilda.s"
 	@echo "... src/parser/dop_parser.o"
 	@echo "... src/parser/dop_parser.i"
 	@echo "... src/parser/dop_parser.s"
-	@echo "... src/parser/dop_parser1.o"
-	@echo "... src/parser/dop_parser1.i"
-	@echo "... src/parser/dop_parser1.s"
 	@echo "... src/parser/main_parser.o"
 	@echo "... src/parser/main_parser.i"
 	@echo "... src/parser/main_parser.s"

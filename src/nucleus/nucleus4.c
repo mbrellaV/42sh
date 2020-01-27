@@ -45,22 +45,17 @@ int		show_history(t_memory *q)
 	i = 0;
 	sum = 0;
 	tmp = q;
-	//ft_printf("sasd0");
 	while (tmp->back)
 		tmp = tmp->back;
 	dop = tmp;
-	//ft_printf("sasd1");
 	while (tmp != NULL)
 	{
-		ft_printf("ebl\n");
 		sum++;
 		tmp = tmp->next;
 	}
 	tmp = dop;
-//	ft_printf("sasd2");
 	while (tmp)
 	{
-		//ft_printf("%d\t%s\n", i, tmp->inp);
 		if (sum - i < 16)
 			ft_printf("%d\t%s\n", i, tmp->inp);
 		tmp = tmp->next;

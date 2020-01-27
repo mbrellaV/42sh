@@ -43,7 +43,6 @@ t_memory	*ft_head_memory(void)
 	fd = open("history/hist.txt", O_RDWR);
 	if (get_next_line(fd, &line) <= 0)
 	{
-		ft_printf("sas1///");
 		if (!(head = (t_memory *)malloc(sizeof(t_memory))))
 			ft_error_q(2);
 		head->inp = NULL;
@@ -59,10 +58,8 @@ t_memory	*ft_head_memory(void)
 	head->back = NULL;
 	while (get_next_line(fd, &line))
 	{
-		ft_printf("\n%s\n", line);
 		if (!(head->next = (t_memory *)malloc(sizeof(t_memory))))
 			ft_error_q(2);
-
 		head->next->inp = ft_strdup(line);
 		ft_strdel(&line);
 		head->next->next = NULL;
@@ -92,8 +89,6 @@ t_memory	*ft_memory(t_memory *back, char **str)
 	tmp->back = back;
 	if (p != NULL)
 		p->back = tmp;
-	ft_printf("\n///////////1 %s\n", (back)->inp);
-	//ft_printf("\n///////////2 %s\n", (back)->next->inp);
 	return (tmp);
 }
 

@@ -395,18 +395,18 @@ CMakeFiles/21end.dir/src/parser/dop_parser.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/21end.dir/src/parser/dop_parser.c.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/mbrella/Desktop/projects/21beta/42start/src/parser/dop_parser.c -o CMakeFiles/21end.dir/src/parser/dop_parser.c.s
 
-CMakeFiles/21end.dir/src/parser/dop_parser1.c.o: CMakeFiles/21end.dir/flags.make
-CMakeFiles/21end.dir/src/parser/dop_parser1.c.o: ../src/parser/dop_parser1.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/mbrella/Desktop/projects/21beta/42start/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building C object CMakeFiles/21end.dir/src/parser/dop_parser1.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/21end.dir/src/parser/dop_parser1.c.o   -c /Users/mbrella/Desktop/projects/21beta/42start/src/parser/dop_parser1.c
+CMakeFiles/21end.dir/src/parser/change_tilda.c.o: CMakeFiles/21end.dir/flags.make
+CMakeFiles/21end.dir/src/parser/change_tilda.c.o: ../src/parser/change_tilda.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/mbrella/Desktop/projects/21beta/42start/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building C object CMakeFiles/21end.dir/src/parser/change_tilda.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/21end.dir/src/parser/change_tilda.c.o   -c /Users/mbrella/Desktop/projects/21beta/42start/src/parser/change_tilda.c
 
-CMakeFiles/21end.dir/src/parser/dop_parser1.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/21end.dir/src/parser/dop_parser1.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/mbrella/Desktop/projects/21beta/42start/src/parser/dop_parser1.c > CMakeFiles/21end.dir/src/parser/dop_parser1.c.i
+CMakeFiles/21end.dir/src/parser/change_tilda.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/21end.dir/src/parser/change_tilda.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/mbrella/Desktop/projects/21beta/42start/src/parser/change_tilda.c > CMakeFiles/21end.dir/src/parser/change_tilda.c.i
 
-CMakeFiles/21end.dir/src/parser/dop_parser1.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/21end.dir/src/parser/dop_parser1.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/mbrella/Desktop/projects/21beta/42start/src/parser/dop_parser1.c -o CMakeFiles/21end.dir/src/parser/dop_parser1.c.s
+CMakeFiles/21end.dir/src/parser/change_tilda.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/21end.dir/src/parser/change_tilda.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/mbrella/Desktop/projects/21beta/42start/src/parser/change_tilda.c -o CMakeFiles/21end.dir/src/parser/change_tilda.c.s
 
 CMakeFiles/21end.dir/src/parser/main_parser.c.o: CMakeFiles/21end.dir/flags.make
 CMakeFiles/21end.dir/src/parser/main_parser.c.o: ../src/parser/main_parser.c
@@ -605,7 +605,7 @@ CMakeFiles/21end.dir/src/evaln/dop.c.s: cmake_force
 "CMakeFiles/21end.dir/src/nucleus/nucleus3.c.o" \
 "CMakeFiles/21end.dir/src/nucleus/nucleus4.c.o" \
 "CMakeFiles/21end.dir/src/parser/dop_parser.c.o" \
-"CMakeFiles/21end.dir/src/parser/dop_parser1.c.o" \
+"CMakeFiles/21end.dir/src/parser/change_tilda.c.o" \
 "CMakeFiles/21end.dir/src/parser/main_parser.c.o" \
 "CMakeFiles/21end.dir/src/ft_distruct.c.o" \
 "CMakeFiles/21end.dir/src/ft_error_q.c.o" \
@@ -649,7 +649,7 @@ CMakeFiles/21end.dir/src/evaln/dop.c.s: cmake_force
 21end: CMakeFiles/21end.dir/src/nucleus/nucleus3.c.o
 21end: CMakeFiles/21end.dir/src/nucleus/nucleus4.c.o
 21end: CMakeFiles/21end.dir/src/parser/dop_parser.c.o
-21end: CMakeFiles/21end.dir/src/parser/dop_parser1.c.o
+21end: CMakeFiles/21end.dir/src/parser/change_tilda.c.o
 21end: CMakeFiles/21end.dir/src/parser/main_parser.c.o
 21end: CMakeFiles/21end.dir/src/ft_distruct.c.o
 21end: CMakeFiles/21end.dir/src/ft_error_q.c.o

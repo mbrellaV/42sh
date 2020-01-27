@@ -41,8 +41,8 @@ set(CMAKE_DEPENDS_CHECK_C
   "/Users/mbrella/Desktop/projects/21beta/42start/src/nucleus/nucleus2.c" "/Users/mbrella/Desktop/projects/21beta/42start/cmake-build-debug/CMakeFiles/21end.dir/src/nucleus/nucleus2.c.o"
   "/Users/mbrella/Desktop/projects/21beta/42start/src/nucleus/nucleus3.c" "/Users/mbrella/Desktop/projects/21beta/42start/cmake-build-debug/CMakeFiles/21end.dir/src/nucleus/nucleus3.c.o"
   "/Users/mbrella/Desktop/projects/21beta/42start/src/nucleus/nucleus4.c" "/Users/mbrella/Desktop/projects/21beta/42start/cmake-build-debug/CMakeFiles/21end.dir/src/nucleus/nucleus4.c.o"
+  "/Users/mbrella/Desktop/projects/21beta/42start/src/parser/change_tilda.c" "/Users/mbrella/Desktop/projects/21beta/42start/cmake-build-debug/CMakeFiles/21end.dir/src/parser/change_tilda.c.o"
   "/Users/mbrella/Desktop/projects/21beta/42start/src/parser/dop_parser.c" "/Users/mbrella/Desktop/projects/21beta/42start/cmake-build-debug/CMakeFiles/21end.dir/src/parser/dop_parser.c.o"
-  "/Users/mbrella/Desktop/projects/21beta/42start/src/parser/dop_parser1.c" "/Users/mbrella/Desktop/projects/21beta/42start/cmake-build-debug/CMakeFiles/21end.dir/src/parser/dop_parser1.c.o"
   "/Users/mbrella/Desktop/projects/21beta/42start/src/parser/main_parser.c" "/Users/mbrella/Desktop/projects/21beta/42start/cmake-build-debug/CMakeFiles/21end.dir/src/parser/main_parser.c.o"
   )
 set(CMAKE_C_COMPILER_ID "AppleClang")

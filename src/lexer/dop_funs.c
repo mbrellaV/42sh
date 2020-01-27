@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   dop_funs.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mbrella <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/01/27 13:45:06 by mbrella           #+#    #+#             */
+/*   Updated: 2020/01/27 13:45:07 by mbrella          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../../inc/fshell.h"
 
 int				ispar(char c)
@@ -7,7 +19,10 @@ int				ispar(char c)
 
 int				issc(char c)
 {
-	return (c == '(' || c == '{');
+	if (c == '(' || c == '{')
+		return (1);
+	else
+		return (0);
 }
 
 int				isoperator(char c)
@@ -30,7 +45,7 @@ int				isword(char c)
 		return (2);
 	if (issc(c) == 1)
 		return (3);
-	if (!isoperator(c) && c != ' ' && c != '\t')
+	if (!isoperator(c) && c != ' ' && c != '\t' && c != '\0')
 		return (1);
 	return (0);
 }

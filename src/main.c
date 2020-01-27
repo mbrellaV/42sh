@@ -14,13 +14,6 @@
 
 int		ft_whatis(t_exectoken *tmp, t_memory *q)
 {
-//	i = 0;
-	//i = do_work_subshell(tmp->file_args, q);
-//	ft_printf("\nnysh: %d\n", i);
-	//if (i == -1)
-	//	return (-3);
-	//if (i == 1)
-	//	return (1);
 	if (tmp->file_args == NULL)
 		return (ft_error_args(tmp));
 	if (do_zam_bax_and_hist_full(tmp->file_args) == -1)
@@ -29,11 +22,8 @@ int		ft_whatis(t_exectoken *tmp, t_memory *q)
 		ft_error_args(tmp);
 	if (do_zam_ravno(tmp->file_args) == -1)
 		ft_error_args(tmp);
-	if (ft_do_zam_alias(tmp->file_args) == -1)
-		ft_error_args(tmp);
 	if (tmp->file_args[0] == NULL)
 		return (0);
-	ft_printf("\nnysh1 \n");
 	if (ft_strcmp(tmp->file_args[0], "echo") == 0)
 		ft_echo(tmp->file_args);
 	else if (ft_strcmp(tmp->file_args[0], "set") == 0)
@@ -58,7 +48,6 @@ int		ft_whatis(t_exectoken *tmp, t_memory *q)
 		tputs(tgetstr("cl", NULL), 1, ft_c);
 	else
 		ft_infinit_pipe(tmp);
-	ft_printf("\nnysh2 \n");
 	return (1);
 }
 
@@ -199,17 +188,14 @@ int		save_history(t_memory *q)
 	int		fd;
 	char	buf[10];
 
-	ft_printf("sas123\n");
 	fd = open("history/hist.txt",  O_TRUNC);
 	close(fd);
 	fd = open("history/hist.txt",  O_RDWR);
 	read(fd, buf, sizeof(buf));
-	ft_printf("\nsas4:  |%s|\n", buf);
 	while (q->back->back != NULL)
 		q = q->back;
 	while (q != NULL)
 	{
-		ft_printf("%s | %d\n", q->inp, ft_strlen(q->inp));
 		write(fd, q->inp, ft_strlen(q->inp));
 		write(fd, "\n", 1);
 		q = q->next;
@@ -241,10 +227,9 @@ int		main(int argc, char **argv, char **env)
 	ft_global_env(env, argc);
 	signal(SIGINT, ft_fork_signal);
 	head = ft_head_memory();
-	do_count_shell_lvl();
+	//do_count_shell_lvl();
 	while (1)
 	{
-		ft_check_cd();
 		set_input_mode();
 		atexit(reset_input_mode);
 		input = ft_read_8(ft_main_norm(0), head, 0);
@@ -253,14 +238,12 @@ int		main(int argc, char **argv, char **env)
 		while (ft_cheak_quote(input) != 1)
 			ft_add_intput_que(&input, head);
 		reset_input_mode();
-		//ft_printf("rofl-1 %s\n", input);
-		//input = ft_strdup("(ls);ls");
+		//input = ft_strdup("ddd="ppp"");
 		start_token = all_parse(input);
 		if (ft_main_what(start_token, head) == -1)
 			break ;
 		ft_strdel(&input);
 		ft_distruct_tree(start_token);
-	
 	}
 	save_history(head);
 	return (ft_distruct_memory(head) && ft_distruct_tree(start_token) &&

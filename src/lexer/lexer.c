@@ -12,10 +12,32 @@
 
 #include "../../inc/fshell.h"
 
+char			*ft_join_str_mas(char **mas)
+{
+	char	*line;
+	int		i;
+	char	*tmp;
+
+	i = 0;
+	line = ft_strdup("");
+	while (mas[i])
+	{
+		tmp = line;
+		line = ft_strjoin(line, " ");
+		ft_strdel(&tmp);
+		tmp = line;
+		line = ft_strjoin(line, mas[i]);
+		ft_strdel(&tmp);
+		i++;
+	}
+	return (line);
+}
+
 t_dop_str		*cr_dop_str(char **line1)
 {
 	t_dop_str	*tmp;
 	char		*line;
+//	char		**mas;
 
 	line = *line1;
 	if (line == NULL)
@@ -32,6 +54,9 @@ t_dop_str		*cr_dop_str(char **line1)
 	tmp->tail_c = NULL;
 	line = do_zamena_sp(line);
 	line = do_zam_str(line);
+	//mas = ft_strsplit(line, "\t ");
+	//ft_do_zam_alias(mas);
+	//line = ft_join_str_mas(mas);
 	*line1 = line;
 	return (tmp);
 }
@@ -45,9 +70,12 @@ int				do_zam_bax_and_hist_full(char **mas)
 		return (-1);
 	if (!(tmp = ft_memalloc(sizeof(t_dop_str))))
 		return (-1);
+	tmp->c_b = 0;
+	tmp->i_b = -1;
 	i = 0;
 	while (mas[i])
 	{
+		tmp->str_b = mas[i];
 		mas[i] = do_zam_str_bax(mas[i], tmp);
 		i++;
 	}
@@ -74,6 +102,7 @@ int				dop_lexer(t_dop_str *tmp, char *line)
 {
 	if (isword(line[tmp->i_c]))
 	{
+		ft_printf("////////////////////// %d, %d\n", word_size(line + tmp->i_c), tmp->i_c);
 		tmp->tmp_c = ft_strsub(line, tmp->i_c +
 		(ispar(line[tmp->i_c]) == 1 ? 1 : 0), word_size(line + tmp->i_c));
 		if (tmp->tail_c != NULL && tmp->tail_c->operator_type > 2)
@@ -81,7 +110,7 @@ int				dop_lexer(t_dop_str *tmp, char *line)
 		if (!(tmp->tail_c = add_token(tmp->tail_c, tmp->tmp_c, 1)))
 			return (-1);
 		tmp->tail_c->is_near_opt = tmp->d_c;
-		tmp->i_c += word_size(line + tmp->i_c) + (ispar(line[tmp->i_c]) == 1 ? 2 : 0);
+		tmp->i_c += word_size(line + tmp->i_c) + (ispar(line[tmp->i_c]) ? 2 : 0);
 		tmp->d_c = 0;
 	}
 	else if (isoperator(line[tmp->i_c]))
@@ -123,5 +152,6 @@ t_lextoken		*do_lexer(char *line)
 		tmp->tail_c = tmp->tail_c->next;
 	}
 	ft_strdel(&line);
+	ft_printf("sas1");
 	return (ft_kill_str_dop_lex(tmp, tmp->doptail_c));
 }

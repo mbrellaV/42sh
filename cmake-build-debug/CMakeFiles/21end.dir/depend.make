@@ -264,19 +264,19 @@ CMakeFiles/21end.dir/src/nucleus/nucleus4.c.o: ../libft/get_next_line.h
 CMakeFiles/21end.dir/src/nucleus/nucleus4.c.o: ../libft/libft.h
 CMakeFiles/21end.dir/src/nucleus/nucleus4.c.o: ../src/nucleus/nucleus4.c
 
+CMakeFiles/21end.dir/src/parser/change_tilda.c.o: ../inc/fshell.h
+CMakeFiles/21end.dir/src/parser/change_tilda.c.o: ../inc/nucleus.h
+CMakeFiles/21end.dir/src/parser/change_tilda.c.o: ../inc/parser.h
+CMakeFiles/21end.dir/src/parser/change_tilda.c.o: ../libft/get_next_line.h
+CMakeFiles/21end.dir/src/parser/change_tilda.c.o: ../libft/libft.h
+CMakeFiles/21end.dir/src/parser/change_tilda.c.o: ../src/parser/change_tilda.c
+
 CMakeFiles/21end.dir/src/parser/dop_parser.c.o: ../inc/fshell.h
 CMakeFiles/21end.dir/src/parser/dop_parser.c.o: ../inc/nucleus.h
 CMakeFiles/21end.dir/src/parser/dop_parser.c.o: ../inc/parser.h
 CMakeFiles/21end.dir/src/parser/dop_parser.c.o: ../libft/get_next_line.h
 CMakeFiles/21end.dir/src/parser/dop_parser.c.o: ../libft/libft.h
 CMakeFiles/21end.dir/src/parser/dop_parser.c.o: ../src/parser/dop_parser.c
-
-CMakeFiles/21end.dir/src/parser/dop_parser1.c.o: ../inc/fshell.h
-CMakeFiles/21end.dir/src/parser/dop_parser1.c.o: ../inc/nucleus.h
-CMakeFiles/21end.dir/src/parser/dop_parser1.c.o: ../inc/parser.h
-CMakeFiles/21end.dir/src/parser/dop_parser1.c.o: ../libft/get_next_line.h
-CMakeFiles/21end.dir/src/parser/dop_parser1.c.o: ../libft/libft.h
-CMakeFiles/21end.dir/src/parser/dop_parser1.c.o: ../src/parser/dop_parser1.c
 
 CMakeFiles/21end.dir/src/parser/main_parser.c.o: ../inc/fshell.h
 CMakeFiles/21end.dir/src/parser/main_parser.c.o: ../inc/nucleus.h

@@ -36,7 +36,7 @@ add_executable(21end
         src/nucleus/nucleus3.c
         src/nucleus/nucleus4.c
         src/parser/dop_parser.c
-        src/parser/dop_parser1.c
+        src/parser/change_tilda.c
         src/parser/main_parser.c
         src/ft_distruct.c
         src/ft_error_q.c

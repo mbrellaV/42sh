@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   word_sizes.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mbrella <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/01/27 13:47:39 by mbrella           #+#    #+#             */
+/*   Updated: 2020/01/27 13:47:40 by mbrella          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../../inc/fshell.h"
 
 int				operator_size(char *str)
@@ -18,6 +30,7 @@ int				word_size(char *str)
 	int i;
 
 	i = 0;
+	ft_printf("fff:   %s\n", str);
 	if (isoperator(*str) > 0)
 		return (operator_size(str));
 	if (isword(*str) == 2)
@@ -26,6 +39,11 @@ int				word_size(char *str)
 		return (sc_size(str, *str));
 	while (*str)
 	{
+		if (*str == '=' && ispar(*(str + 1)) == 1)
+		{
+			ft_printf("fff:  %d  %s\n", c_size(str + 1, *(str + 1)), str);
+			return (3 + i + c_size(str + 1, *(str + 1)));
+		}
 		if (isword(*str) == 3)
 			return (i + sc_size(str, *str));
 		if (isword(*str) == 0)
@@ -62,7 +80,7 @@ int				sc_size(char *str, char b)
 	return (i + 1);
 }
 
-int					c_size(char *str, char b)
+int				c_size(char *str, char b)
 {
 	int i;
 

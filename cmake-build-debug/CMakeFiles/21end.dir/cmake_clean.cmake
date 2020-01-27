@@ -38,8 +38,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/21end.dir/src/nucleus/nucleus2.c.o"
   "CMakeFiles/21end.dir/src/nucleus/nucleus3.c.o"
   "CMakeFiles/21end.dir/src/nucleus/nucleus4.c.o"
+  "CMakeFiles/21end.dir/src/parser/change_tilda.c.o"
   "CMakeFiles/21end.dir/src/parser/dop_parser.c.o"
-  "CMakeFiles/21end.dir/src/parser/dop_parser1.c.o"
   "CMakeFiles/21end.dir/src/parser/main_parser.c.o"
 )
 
