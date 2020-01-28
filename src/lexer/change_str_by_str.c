@@ -25,7 +25,7 @@ char				*do_zam_str_by_str(int start, int end, char *str,
 		zam_str = ft_strdup("\0");
 	if (!(newstr = ft_memalloc((ft_strlen(str) +
 		ft_strlen(zam_str) + 2) * sizeof(char))))
-		return (NULL);
+        ft_error_q(2);
 	while (str[i] != '\0' && i < start - 1)
 	{
 		newstr[i] = str[i];

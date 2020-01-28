@@ -1,16 +1,4 @@
 ls
-ls
-ls
-ls
-ls
-ls
-ls
-ls
-ls
-ls
-ls
-ls
-ls
 pwd
 exit
 ls
@@ -259,4 +247,107 @@ ls
 pwd
 pwd
 ls -la
+pwd
+ls
+pwd
+pwd
+pwd
+ls -la
+pwd
+pwd
+wd
+pwd
+pwd
+pwd
+pwd
+pwd
+ls -la
+pwd
+pwd
+pwd
+pwd
+pwd
+ls -la
+pwd
+ls -la
+pwd
+"ls -a"
+"ls -a"
+"ls -a
+-r"
+~amatilda
+~amatilda
+dd="fffff"
+set
+dd="fffff
+"
+set
+dd="ffff
+"
+pwd
+pwd
+<<EOF
+<< stopr
+asda <<EOF
+l
+ll
+set
+alias
+ll
+l
+l
+make re
+fclean
+make fclean
+ls
+ls
+pwd
+ps
+sdfsdfsadf
+clear
+dasdasd
+:x
+ls
+pwd
+pwd
+pwd
+pwd
+pwd
+pwd
+pwd
+ls
+pwd
+pwd
+ls -la
+pwd
+ls -la
+pwd
+pwd
+ls
+pwd
+pwd
+pwd
+pwd
+pw
+pw
+dpwd
+pwd
+ls -la
+pwd
+make
+unset PATH
+ls
+set
+export
+make re
+ls
+pwd
+unset PATH
+ls
+set
+export
+make
+unset PATH
+ls
+ls
 pwd

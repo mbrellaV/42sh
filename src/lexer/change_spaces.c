@@ -25,7 +25,7 @@ char				*do_obr_zamena_sp(char *line)
 	while (line[i++] != '\0')
 		size++;
 	if (!(new = ft_memalloc(size * sizeof(char) + 1)))
-		return (NULL);
+        ft_error_q(2);
 	i = 0;
 	while (line[i])
 	{
@@ -48,7 +48,7 @@ char				*do_zamena_sp(char *line)
 	i = 0;
 	d = 0;
 	if (!(new = ft_memalloc(ft_strlen(line) * sizeof(char) + 1)))
-		return (NULL);
+        ft_error_q(2);
 	while (line[i])
 	{
 		if (line[i] == '\\' && line[i + 1] != '\0')

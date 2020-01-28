@@ -26,7 +26,6 @@ add_executable(21end
         src/lexer/word_sizes.c
         src/lexer/change_hist_exp.c
         src/lexer/change_str_by_str.c
-        src/lexer/do_subshell.c
         src/lexer/get_opt_type.c
         src/lexer/lexer.c
         src/nucleus/ft_cutcopy.c

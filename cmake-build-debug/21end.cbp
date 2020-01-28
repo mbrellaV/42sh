@@ -163,9 +163,6 @@
 		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/lexer/cr_and_add_tokens.c">
 			<Option target="21end"/>
 		</Unit>
-		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/lexer/do_subshell.c">
-			<Option target="21end"/>
-		</Unit>
 		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/lexer/dop_funs.c">
 			<Option target="21end"/>
 		</Unit>

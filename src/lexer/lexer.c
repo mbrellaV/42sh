@@ -37,7 +37,6 @@ t_dop_str		*cr_dop_str(char **line1)
 {
 	t_dop_str	*tmp;
 	char		*line;
-//	char		**mas;
 
 	line = *line1;
 	if (line == NULL)
@@ -45,7 +44,7 @@ t_dop_str		*cr_dop_str(char **line1)
 	if (line[0] == '\0')
 		return (NULL);
 	if (!(tmp = ft_memalloc(sizeof(t_dop_str))))
-		return (NULL);
+        ft_error_q(2);
 	tmp->tmp_c = NULL;
 	tmp->dop_c = 0;
 	tmp->d_c = 0;
@@ -66,7 +65,7 @@ int				do_zam_bax_and_hist_full(char **mas)
 	if (!mas)
 		return (-1);
 	if (!(tmp = ft_memalloc(sizeof(t_dop_str))))
-		return (-1);
+        ft_error_q(2);
 	tmp->c_b = 0;
 	tmp->i_b = -1;
 	i = 0;
@@ -86,8 +85,7 @@ int				dop_lexer2(t_dop_str *tmp, char *line)
 	if (is_cmd_delim(get_op_type(tmp->tmp_c)) == 0 && tmp->i_c != 0 &&
 		isword(line[tmp->i_c - 1]) && (get_op_type(tmp->tmp_c) > 6))
 		tmp->tail_c->is_near_opt = 1;
-	if (!(tmp->tail_c = add_token(tmp->tail_c, tmp->tmp_c, 0)))
-		return (-1);
+	tmp->tail_c = add_token(tmp->tail_c, tmp->tmp_c, 0);
 	tmp->tail_c->is_near_opt = 1;
 	if (tmp->tail_c->operator_type == 2 && tmp->tail_c->prev == NULL)
 		return (ft_error(5, "\\n") == -1);

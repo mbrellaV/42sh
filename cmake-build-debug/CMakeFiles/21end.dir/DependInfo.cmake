@@ -28,7 +28,6 @@ set(CMAKE_DEPENDS_CHECK_C
   "/Users/mbrella/Desktop/projects/21beta/42start/src/lexer/change_spaces.c" "/Users/mbrella/Desktop/projects/21beta/42start/cmake-build-debug/CMakeFiles/21end.dir/src/lexer/change_spaces.c.o"
   "/Users/mbrella/Desktop/projects/21beta/42start/src/lexer/change_str_by_str.c" "/Users/mbrella/Desktop/projects/21beta/42start/cmake-build-debug/CMakeFiles/21end.dir/src/lexer/change_str_by_str.c.o"
   "/Users/mbrella/Desktop/projects/21beta/42start/src/lexer/cr_and_add_tokens.c" "/Users/mbrella/Desktop/projects/21beta/42start/cmake-build-debug/CMakeFiles/21end.dir/src/lexer/cr_and_add_tokens.c.o"
-  "/Users/mbrella/Desktop/projects/21beta/42start/src/lexer/do_subshell.c" "/Users/mbrella/Desktop/projects/21beta/42start/cmake-build-debug/CMakeFiles/21end.dir/src/lexer/do_subshell.c.o"
   "/Users/mbrella/Desktop/projects/21beta/42start/src/lexer/dop_funs.c" "/Users/mbrella/Desktop/projects/21beta/42start/cmake-build-debug/CMakeFiles/21end.dir/src/lexer/dop_funs.c.o"
   "/Users/mbrella/Desktop/projects/21beta/42start/src/lexer/get_opt_type.c" "/Users/mbrella/Desktop/projects/21beta/42start/cmake-build-debug/CMakeFiles/21end.dir/src/lexer/get_opt_type.c.o"
   "/Users/mbrella/Desktop/projects/21beta/42start/src/lexer/kill_dop_structure.c" "/Users/mbrella/Desktop/projects/21beta/42start/cmake-build-debug/CMakeFiles/21end.dir/src/lexer/kill_dop_structure.c.o"

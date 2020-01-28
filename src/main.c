@@ -18,10 +18,6 @@ int		ft_whatis(t_exectoken *tmp, t_memory *q)
 		return (ft_error_args(tmp));
 	if (do_zam_bax_and_hist_full(tmp->file_args) == -1)
 		ft_error_args(tmp);
-//	if (ft_do_zam_eval(tmp->file_args) == -1)
-//		ft_error_args(tmp);
-	if (do_zam_ravno(tmp->file_args) == -1)
-		ft_error_args(tmp);
 	if (tmp->file_args[0] == NULL)
 		return (0);
 	if (ft_strcmp(tmp->file_args[0], "echo") == 0)
@@ -33,7 +29,10 @@ int		ft_whatis(t_exectoken *tmp, t_memory *q)
 	else if (ft_strcmp(tmp->file_args[0], "export") == 0)
 		ft_do_export(tmp->file_args);
 	else if (ft_strcmp(tmp->file_args[0], "unset") == 0 && tmp->file_args[1] != NULL)
-		unset_var(tmp->file_args[1], &g_all_var);
+    {
+        unset_var(tmp->file_args[1], &g_env);
+        unset_var(tmp->file_args[1], &g_all_var);
+    }
 	else if (ft_strcmp(tmp->file_args[0], "unexport") == 0 && tmp->file_args[1] != NULL)
 		unset_var(tmp->file_args[1], &g_env);
 	else if (ft_strcmp(tmp->file_args[0], "history") == 0)
@@ -45,7 +44,7 @@ int		ft_whatis(t_exectoken *tmp, t_memory *q)
 	else if (ft_strcmp(tmp->file_args[0], "exit") == 0)
 		return (-1);
 	else if (ft_strcmp(tmp->file_args[0], "clear") == 0)
-		tputs(tgetstr("cl", NULL), 1, ft_c);
+		ft_putstr_fd("\033[2J\033[H", 2);
 	else
 		ft_infinit_pipe(tmp);
 	return (1);
@@ -119,69 +118,6 @@ int		ft_main_what(t_exectoken *tmp, t_memory *q)
 	return (1);
 }
 
-char	**new_env_var(char **env)
-{
-	int		i;
-	char	**new_env;
-
-	i = -1;
-	if (!(new_env = (char **)ft_memalloc(sizeof(char *) * (ft_env_len(env) + 1))))
-		ft_error_q(1);
-	while (env[++i])
-	{
-		//ft_printf();
-		if (!(new_env[i] = ft_strdup(env[i])))
-			ft_error_q(1);
-	}
-
-	return (new_env);
-}
-
-void    ft_check_cd()
-{
-	char    folder[1024];
-	char	*dop;
-	char	*res;
-	char	**tmp;
-
-	dop = ft_get_var("PWD", g_env);
-	getcwd(folder, 1024);
-	if (ft_strcmp(folder, dop) == 0)
-    {
-        ft_strdel(&dop);
-        return ;
-    }
-	res = ft_strjoin("cd ", dop);
-	tmp = ft_strsplit(res, " ");
-	ft_strdel(&res);
-    ft_strdel(&dop);
-	ft_cd(tmp);
-}
-
-int		do_cmd(char *input, t_memory *head)
-{
-	t_exectoken		*start_token;
-	char			**g_alias_dop;
-	char			**g_env_dop;
-	char			*g_cp_dop;
-	char			**g_all_var_dop;
-
-	g_cp_dop = ft_strdup(g_cp);
-	g_alias_dop = new_env_var(g_alias);
-	g_env_dop = new_env_var(g_env);
-	g_all_var_dop = new_env_var(g_all_var);
-	ft_show_env(g_alias_dop);
-	start_token = all_parse(input);
-	ft_main_what(start_token, head);
-	g_alias = g_alias_dop;
-	g_env = g_env_dop;
-	g_cp = g_cp_dop;
-	g_all_var = g_all_var_dop;
-	return (0);
-	return (ft_distruct_tree(start_token) &&
-	ft_dist_str(input) ? 0 : 1);
-}
-
 int		save_history(t_memory *q)
 {
 	int		fd;
@@ -226,7 +162,7 @@ int		main(int argc, char **argv, char **env)
 	ft_global_env(env, argc);
 	signal(SIGINT, ft_fork_signal);
 	head = ft_head_memory();
-	//do_count_shell_lvl();
+	do_count_shell_lvl();
 	while (1)
 	{
 		set_input_mode();

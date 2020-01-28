@@ -66,7 +66,6 @@ t_memory	*ft_head_memory(void)
 		head->next->back = head;
 		head = head->next;
 	}
-	show_history(head);
 	close (fd);
 	return (head);
 }

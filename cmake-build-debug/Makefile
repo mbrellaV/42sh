@@ -771,33 +771,6 @@ src/lexer/cr_and_add_tokens.c.s:
 	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/lexer/cr_and_add_tokens.c.s
 .PHONY : src/lexer/cr_and_add_tokens.c.s
 
-src/lexer/do_subshell.o: src/lexer/do_subshell.c.o
-
-.PHONY : src/lexer/do_subshell.o
-
-# target to build an object file
-src/lexer/do_subshell.c.o:
-	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/lexer/do_subshell.c.o
-.PHONY : src/lexer/do_subshell.c.o
-
-src/lexer/do_subshell.i: src/lexer/do_subshell.c.i
-
-.PHONY : src/lexer/do_subshell.i
-
-# target to preprocess a source file
-src/lexer/do_subshell.c.i:
-	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/lexer/do_subshell.c.i
-.PHONY : src/lexer/do_subshell.c.i
-
-src/lexer/do_subshell.s: src/lexer/do_subshell.c.s
-
-.PHONY : src/lexer/do_subshell.s
-
-# target to generate assembly for a file
-src/lexer/do_subshell.c.s:
-	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/lexer/do_subshell.c.s
-.PHONY : src/lexer/do_subshell.c.s
-
 src/lexer/dop_funs.o: src/lexer/dop_funs.c.o
 
 .PHONY : src/lexer/dop_funs.o
@@ -1284,9 +1257,6 @@ help:
 	@echo "... src/lexer/cr_and_add_tokens.o"
 	@echo "... src/lexer/cr_and_add_tokens.i"
 	@echo "... src/lexer/cr_and_add_tokens.s"
-	@echo "... src/lexer/do_subshell.o"
-	@echo "... src/lexer/do_subshell.i"
-	@echo "... src/lexer/do_subshell.s"
 	@echo "... src/lexer/dop_funs.o"
 	@echo "... src/lexer/dop_funs.i"
 	@echo "... src/lexer/dop_funs.s"

@@ -45,7 +45,6 @@ SRC_BASE = builtins/ft_cd.c\
 	lexer/word_sizes.c\
 	lexer/change_hist_exp.c\
 	lexer/change_str_by_str.c\
-	lexer/do_subshell.c\
 	lexer/get_opt_type.c\
 	nucleus/ft_cutcopy.c\
 	nucleus/ft_read_8.c\
