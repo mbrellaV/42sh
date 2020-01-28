@@ -67,7 +67,7 @@ int		ft_heredoc(char *tmp)
 	{
 		j != 0 ? ft_putendl_fd(str, f[1]) : NULL;
 		free(str);
-		str = ft_read_8(ft_main_norm(2), NULL, 2);
+//		ft_read_8(ft_main_norm(2), NULL, 2);
 		write(2, "\n", 1);
 		j++;
 	}

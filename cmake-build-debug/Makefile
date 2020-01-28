@@ -48,10 +48,10 @@ RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/mbrella/Desktop/projects/21beta/42start
+CMAKE_SOURCE_DIR = /Users/qmartina/Desktop/42start
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/mbrella/Desktop/projects/21beta/42start/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/qmartina/Desktop/42start/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/mbrella/Desktop/projects/21beta/42start/cmake-build-debug/CMakeFiles /Users/mbrella/Desktop/projects/21beta/42start/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/qmartina/Desktop/42start/cmake-build-debug/CMakeFiles /Users/qmartina/Desktop/42start/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/mbrella/Desktop/projects/21beta/42start/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/qmartina/Desktop/42start/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -933,32 +933,707 @@ src/main.c.s:
 	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/main.c.s
 .PHONY : src/main.c.s
 
-src/nucleus/ft_cutcopy.o: src/nucleus/ft_cutcopy.c.o
+src/nucleus/del_readline.o: src/nucleus/del_readline.c.o
 
-.PHONY : src/nucleus/ft_cutcopy.o
+.PHONY : src/nucleus/del_readline.o
 
 # target to build an object file
-src/nucleus/ft_cutcopy.c.o:
-	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/nucleus/ft_cutcopy.c.o
-.PHONY : src/nucleus/ft_cutcopy.c.o
+src/nucleus/del_readline.c.o:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/nucleus/del_readline.c.o
+.PHONY : src/nucleus/del_readline.c.o
 
-src/nucleus/ft_cutcopy.i: src/nucleus/ft_cutcopy.c.i
+src/nucleus/del_readline.i: src/nucleus/del_readline.c.i
 
-.PHONY : src/nucleus/ft_cutcopy.i
+.PHONY : src/nucleus/del_readline.i
 
 # target to preprocess a source file
-src/nucleus/ft_cutcopy.c.i:
-	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/nucleus/ft_cutcopy.c.i
-.PHONY : src/nucleus/ft_cutcopy.c.i
+src/nucleus/del_readline.c.i:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/nucleus/del_readline.c.i
+.PHONY : src/nucleus/del_readline.c.i
 
-src/nucleus/ft_cutcopy.s: src/nucleus/ft_cutcopy.c.s
+src/nucleus/del_readline.s: src/nucleus/del_readline.c.s
 
-.PHONY : src/nucleus/ft_cutcopy.s
+.PHONY : src/nucleus/del_readline.s
 
 # target to generate assembly for a file
-src/nucleus/ft_cutcopy.c.s:
-	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/nucleus/ft_cutcopy.c.s
-.PHONY : src/nucleus/ft_cutcopy.c.s
+src/nucleus/del_readline.c.s:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/nucleus/del_readline.c.s
+.PHONY : src/nucleus/del_readline.c.s
+
+src/nucleus/do_add.o: src/nucleus/do_add.c.o
+
+.PHONY : src/nucleus/do_add.o
+
+# target to build an object file
+src/nucleus/do_add.c.o:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/nucleus/do_add.c.o
+.PHONY : src/nucleus/do_add.c.o
+
+src/nucleus/do_add.i: src/nucleus/do_add.c.i
+
+.PHONY : src/nucleus/do_add.i
+
+# target to preprocess a source file
+src/nucleus/do_add.c.i:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/nucleus/do_add.c.i
+.PHONY : src/nucleus/do_add.c.i
+
+src/nucleus/do_add.s: src/nucleus/do_add.c.s
+
+.PHONY : src/nucleus/do_add.s
+
+# target to generate assembly for a file
+src/nucleus/do_add.c.s:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/nucleus/do_add.c.s
+.PHONY : src/nucleus/do_add.c.s
+
+src/nucleus/ft_add_intput_que.o: src/nucleus/ft_add_intput_que.c.o
+
+.PHONY : src/nucleus/ft_add_intput_que.o
+
+# target to build an object file
+src/nucleus/ft_add_intput_que.c.o:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/nucleus/ft_add_intput_que.c.o
+.PHONY : src/nucleus/ft_add_intput_que.c.o
+
+src/nucleus/ft_add_intput_que.i: src/nucleus/ft_add_intput_que.c.i
+
+.PHONY : src/nucleus/ft_add_intput_que.i
+
+# target to preprocess a source file
+src/nucleus/ft_add_intput_que.c.i:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/nucleus/ft_add_intput_que.c.i
+.PHONY : src/nucleus/ft_add_intput_que.c.i
+
+src/nucleus/ft_add_intput_que.s: src/nucleus/ft_add_intput_que.c.s
+
+.PHONY : src/nucleus/ft_add_intput_que.s
+
+# target to generate assembly for a file
+src/nucleus/ft_add_intput_que.c.s:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/nucleus/ft_add_intput_que.c.s
+.PHONY : src/nucleus/ft_add_intput_que.c.s
+
+src/nucleus/ft_add_sumchar.o: src/nucleus/ft_add_sumchar.c.o
+
+.PHONY : src/nucleus/ft_add_sumchar.o
+
+# target to build an object file
+src/nucleus/ft_add_sumchar.c.o:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/nucleus/ft_add_sumchar.c.o
+.PHONY : src/nucleus/ft_add_sumchar.c.o
+
+src/nucleus/ft_add_sumchar.i: src/nucleus/ft_add_sumchar.c.i
+
+.PHONY : src/nucleus/ft_add_sumchar.i
+
+# target to preprocess a source file
+src/nucleus/ft_add_sumchar.c.i:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/nucleus/ft_add_sumchar.c.i
+.PHONY : src/nucleus/ft_add_sumchar.c.i
+
+src/nucleus/ft_add_sumchar.s: src/nucleus/ft_add_sumchar.c.s
+
+.PHONY : src/nucleus/ft_add_sumchar.s
+
+# target to generate assembly for a file
+src/nucleus/ft_add_sumchar.c.s:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/nucleus/ft_add_sumchar.c.s
+.PHONY : src/nucleus/ft_add_sumchar.c.s
+
+src/nucleus/ft_arrdel.o: src/nucleus/ft_arrdel.c.o
+
+.PHONY : src/nucleus/ft_arrdel.o
+
+# target to build an object file
+src/nucleus/ft_arrdel.c.o:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/nucleus/ft_arrdel.c.o
+.PHONY : src/nucleus/ft_arrdel.c.o
+
+src/nucleus/ft_arrdel.i: src/nucleus/ft_arrdel.c.i
+
+.PHONY : src/nucleus/ft_arrdel.i
+
+# target to preprocess a source file
+src/nucleus/ft_arrdel.c.i:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/nucleus/ft_arrdel.c.i
+.PHONY : src/nucleus/ft_arrdel.c.i
+
+src/nucleus/ft_arrdel.s: src/nucleus/ft_arrdel.c.s
+
+.PHONY : src/nucleus/ft_arrdel.s
+
+# target to generate assembly for a file
+src/nucleus/ft_arrdel.c.s:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/nucleus/ft_arrdel.c.s
+.PHONY : src/nucleus/ft_arrdel.c.s
+
+src/nucleus/ft_arrnew.o: src/nucleus/ft_arrnew.c.o
+
+.PHONY : src/nucleus/ft_arrnew.o
+
+# target to build an object file
+src/nucleus/ft_arrnew.c.o:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/nucleus/ft_arrnew.c.o
+.PHONY : src/nucleus/ft_arrnew.c.o
+
+src/nucleus/ft_arrnew.i: src/nucleus/ft_arrnew.c.i
+
+.PHONY : src/nucleus/ft_arrnew.i
+
+# target to preprocess a source file
+src/nucleus/ft_arrnew.c.i:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/nucleus/ft_arrnew.c.i
+.PHONY : src/nucleus/ft_arrnew.c.i
+
+src/nucleus/ft_arrnew.s: src/nucleus/ft_arrnew.c.s
+
+.PHONY : src/nucleus/ft_arrnew.s
+
+# target to generate assembly for a file
+src/nucleus/ft_arrnew.c.s:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/nucleus/ft_arrnew.c.s
+.PHONY : src/nucleus/ft_arrnew.c.s
+
+src/nucleus/ft_arrows.o: src/nucleus/ft_arrows.c.o
+
+.PHONY : src/nucleus/ft_arrows.o
+
+# target to build an object file
+src/nucleus/ft_arrows.c.o:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/nucleus/ft_arrows.c.o
+.PHONY : src/nucleus/ft_arrows.c.o
+
+src/nucleus/ft_arrows.i: src/nucleus/ft_arrows.c.i
+
+.PHONY : src/nucleus/ft_arrows.i
+
+# target to preprocess a source file
+src/nucleus/ft_arrows.c.i:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/nucleus/ft_arrows.c.i
+.PHONY : src/nucleus/ft_arrows.c.i
+
+src/nucleus/ft_arrows.s: src/nucleus/ft_arrows.c.s
+
+.PHONY : src/nucleus/ft_arrows.s
+
+# target to generate assembly for a file
+src/nucleus/ft_arrows.c.s:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/nucleus/ft_arrows.c.s
+.PHONY : src/nucleus/ft_arrows.c.s
+
+src/nucleus/ft_back_slovo.o: src/nucleus/ft_back_slovo.c.o
+
+.PHONY : src/nucleus/ft_back_slovo.o
+
+# target to build an object file
+src/nucleus/ft_back_slovo.c.o:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/nucleus/ft_back_slovo.c.o
+.PHONY : src/nucleus/ft_back_slovo.c.o
+
+src/nucleus/ft_back_slovo.i: src/nucleus/ft_back_slovo.c.i
+
+.PHONY : src/nucleus/ft_back_slovo.i
+
+# target to preprocess a source file
+src/nucleus/ft_back_slovo.c.i:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/nucleus/ft_back_slovo.c.i
+.PHONY : src/nucleus/ft_back_slovo.c.i
+
+src/nucleus/ft_back_slovo.s: src/nucleus/ft_back_slovo.c.s
+
+.PHONY : src/nucleus/ft_back_slovo.s
+
+# target to generate assembly for a file
+src/nucleus/ft_back_slovo.c.s:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/nucleus/ft_back_slovo.c.s
+.PHONY : src/nucleus/ft_back_slovo.c.s
+
+src/nucleus/ft_c.o: src/nucleus/ft_c.c.o
+
+.PHONY : src/nucleus/ft_c.o
+
+# target to build an object file
+src/nucleus/ft_c.c.o:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/nucleus/ft_c.c.o
+.PHONY : src/nucleus/ft_c.c.o
+
+src/nucleus/ft_c.i: src/nucleus/ft_c.c.i
+
+.PHONY : src/nucleus/ft_c.i
+
+# target to preprocess a source file
+src/nucleus/ft_c.c.i:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/nucleus/ft_c.c.i
+.PHONY : src/nucleus/ft_c.c.i
+
+src/nucleus/ft_c.s: src/nucleus/ft_c.c.s
+
+.PHONY : src/nucleus/ft_c.s
+
+# target to generate assembly for a file
+src/nucleus/ft_c.c.s:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/nucleus/ft_c.c.s
+.PHONY : src/nucleus/ft_c.c.s
+
+src/nucleus/ft_cheak_quote.o: src/nucleus/ft_cheak_quote.c.o
+
+.PHONY : src/nucleus/ft_cheak_quote.o
+
+# target to build an object file
+src/nucleus/ft_cheak_quote.c.o:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/nucleus/ft_cheak_quote.c.o
+.PHONY : src/nucleus/ft_cheak_quote.c.o
+
+src/nucleus/ft_cheak_quote.i: src/nucleus/ft_cheak_quote.c.i
+
+.PHONY : src/nucleus/ft_cheak_quote.i
+
+# target to preprocess a source file
+src/nucleus/ft_cheak_quote.c.i:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/nucleus/ft_cheak_quote.c.i
+.PHONY : src/nucleus/ft_cheak_quote.c.i
+
+src/nucleus/ft_cheak_quote.s: src/nucleus/ft_cheak_quote.c.s
+
+.PHONY : src/nucleus/ft_cheak_quote.s
+
+# target to generate assembly for a file
+src/nucleus/ft_cheak_quote.c.s:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/nucleus/ft_cheak_quote.c.s
+.PHONY : src/nucleus/ft_cheak_quote.c.s
+
+src/nucleus/ft_cleanstr.o: src/nucleus/ft_cleanstr.c.o
+
+.PHONY : src/nucleus/ft_cleanstr.o
+
+# target to build an object file
+src/nucleus/ft_cleanstr.c.o:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/nucleus/ft_cleanstr.c.o
+.PHONY : src/nucleus/ft_cleanstr.c.o
+
+src/nucleus/ft_cleanstr.i: src/nucleus/ft_cleanstr.c.i
+
+.PHONY : src/nucleus/ft_cleanstr.i
+
+# target to preprocess a source file
+src/nucleus/ft_cleanstr.c.i:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/nucleus/ft_cleanstr.c.i
+.PHONY : src/nucleus/ft_cleanstr.c.i
+
+src/nucleus/ft_cleanstr.s: src/nucleus/ft_cleanstr.c.s
+
+.PHONY : src/nucleus/ft_cleanstr.s
+
+# target to generate assembly for a file
+src/nucleus/ft_cleanstr.c.s:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/nucleus/ft_cleanstr.c.s
+.PHONY : src/nucleus/ft_cleanstr.c.s
+
+src/nucleus/ft_cut.o: src/nucleus/ft_cut.c.o
+
+.PHONY : src/nucleus/ft_cut.o
+
+# target to build an object file
+src/nucleus/ft_cut.c.o:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/nucleus/ft_cut.c.o
+.PHONY : src/nucleus/ft_cut.c.o
+
+src/nucleus/ft_cut.i: src/nucleus/ft_cut.c.i
+
+.PHONY : src/nucleus/ft_cut.i
+
+# target to preprocess a source file
+src/nucleus/ft_cut.c.i:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/nucleus/ft_cut.c.i
+.PHONY : src/nucleus/ft_cut.c.i
+
+src/nucleus/ft_cut.s: src/nucleus/ft_cut.c.s
+
+.PHONY : src/nucleus/ft_cut.s
+
+# target to generate assembly for a file
+src/nucleus/ft_cut.c.s:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/nucleus/ft_cut.c.s
+.PHONY : src/nucleus/ft_cut.c.s
+
+src/nucleus/ft_cut_copy.o: src/nucleus/ft_cut_copy.c.o
+
+.PHONY : src/nucleus/ft_cut_copy.o
+
+# target to build an object file
+src/nucleus/ft_cut_copy.c.o:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/nucleus/ft_cut_copy.c.o
+.PHONY : src/nucleus/ft_cut_copy.c.o
+
+src/nucleus/ft_cut_copy.i: src/nucleus/ft_cut_copy.c.i
+
+.PHONY : src/nucleus/ft_cut_copy.i
+
+# target to preprocess a source file
+src/nucleus/ft_cut_copy.c.i:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/nucleus/ft_cut_copy.c.i
+.PHONY : src/nucleus/ft_cut_copy.c.i
+
+src/nucleus/ft_cut_copy.s: src/nucleus/ft_cut_copy.c.s
+
+.PHONY : src/nucleus/ft_cut_copy.s
+
+# target to generate assembly for a file
+src/nucleus/ft_cut_copy.c.s:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/nucleus/ft_cut_copy.c.s
+.PHONY : src/nucleus/ft_cut_copy.c.s
+
+src/nucleus/ft_do_copy.o: src/nucleus/ft_do_copy.c.o
+
+.PHONY : src/nucleus/ft_do_copy.o
+
+# target to build an object file
+src/nucleus/ft_do_copy.c.o:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/nucleus/ft_do_copy.c.o
+.PHONY : src/nucleus/ft_do_copy.c.o
+
+src/nucleus/ft_do_copy.i: src/nucleus/ft_do_copy.c.i
+
+.PHONY : src/nucleus/ft_do_copy.i
+
+# target to preprocess a source file
+src/nucleus/ft_do_copy.c.i:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/nucleus/ft_do_copy.c.i
+.PHONY : src/nucleus/ft_do_copy.c.i
+
+src/nucleus/ft_do_copy.s: src/nucleus/ft_do_copy.c.s
+
+.PHONY : src/nucleus/ft_do_copy.s
+
+# target to generate assembly for a file
+src/nucleus/ft_do_copy.c.s:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/nucleus/ft_do_copy.c.s
+.PHONY : src/nucleus/ft_do_copy.c.s
+
+src/nucleus/ft_do_delch.o: src/nucleus/ft_do_delch.c.o
+
+.PHONY : src/nucleus/ft_do_delch.o
+
+# target to build an object file
+src/nucleus/ft_do_delch.c.o:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/nucleus/ft_do_delch.c.o
+.PHONY : src/nucleus/ft_do_delch.c.o
+
+src/nucleus/ft_do_delch.i: src/nucleus/ft_do_delch.c.i
+
+.PHONY : src/nucleus/ft_do_delch.i
+
+# target to preprocess a source file
+src/nucleus/ft_do_delch.c.i:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/nucleus/ft_do_delch.c.i
+.PHONY : src/nucleus/ft_do_delch.c.i
+
+src/nucleus/ft_do_delch.s: src/nucleus/ft_do_delch.c.s
+
+.PHONY : src/nucleus/ft_do_delch.s
+
+# target to generate assembly for a file
+src/nucleus/ft_do_delch.c.s:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/nucleus/ft_do_delch.c.s
+.PHONY : src/nucleus/ft_do_delch.c.s
+
+src/nucleus/ft_do_leftright.o: src/nucleus/ft_do_leftright.c.o
+
+.PHONY : src/nucleus/ft_do_leftright.o
+
+# target to build an object file
+src/nucleus/ft_do_leftright.c.o:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/nucleus/ft_do_leftright.c.o
+.PHONY : src/nucleus/ft_do_leftright.c.o
+
+src/nucleus/ft_do_leftright.i: src/nucleus/ft_do_leftright.c.i
+
+.PHONY : src/nucleus/ft_do_leftright.i
+
+# target to preprocess a source file
+src/nucleus/ft_do_leftright.c.i:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/nucleus/ft_do_leftright.c.i
+.PHONY : src/nucleus/ft_do_leftright.c.i
+
+src/nucleus/ft_do_leftright.s: src/nucleus/ft_do_leftright.c.s
+
+.PHONY : src/nucleus/ft_do_leftright.s
+
+# target to generate assembly for a file
+src/nucleus/ft_do_leftright.c.s:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/nucleus/ft_do_leftright.c.s
+.PHONY : src/nucleus/ft_do_leftright.c.s
+
+src/nucleus/ft_dop_history.o: src/nucleus/ft_dop_history.c.o
+
+.PHONY : src/nucleus/ft_dop_history.o
+
+# target to build an object file
+src/nucleus/ft_dop_history.c.o:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/nucleus/ft_dop_history.c.o
+.PHONY : src/nucleus/ft_dop_history.c.o
+
+src/nucleus/ft_dop_history.i: src/nucleus/ft_dop_history.c.i
+
+.PHONY : src/nucleus/ft_dop_history.i
+
+# target to preprocess a source file
+src/nucleus/ft_dop_history.c.i:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/nucleus/ft_dop_history.c.i
+.PHONY : src/nucleus/ft_dop_history.c.i
+
+src/nucleus/ft_dop_history.s: src/nucleus/ft_dop_history.c.s
+
+.PHONY : src/nucleus/ft_dop_history.s
+
+# target to generate assembly for a file
+src/nucleus/ft_dop_history.c.s:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/nucleus/ft_dop_history.c.s
+.PHONY : src/nucleus/ft_dop_history.c.s
+
+src/nucleus/ft_downcursor.o: src/nucleus/ft_downcursor.c.o
+
+.PHONY : src/nucleus/ft_downcursor.o
+
+# target to build an object file
+src/nucleus/ft_downcursor.c.o:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/nucleus/ft_downcursor.c.o
+.PHONY : src/nucleus/ft_downcursor.c.o
+
+src/nucleus/ft_downcursor.i: src/nucleus/ft_downcursor.c.i
+
+.PHONY : src/nucleus/ft_downcursor.i
+
+# target to preprocess a source file
+src/nucleus/ft_downcursor.c.i:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/nucleus/ft_downcursor.c.i
+.PHONY : src/nucleus/ft_downcursor.c.i
+
+src/nucleus/ft_downcursor.s: src/nucleus/ft_downcursor.c.s
+
+.PHONY : src/nucleus/ft_downcursor.s
+
+# target to generate assembly for a file
+src/nucleus/ft_downcursor.c.s:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/nucleus/ft_downcursor.c.s
+.PHONY : src/nucleus/ft_downcursor.c.s
+
+src/nucleus/ft_head_memory.o: src/nucleus/ft_head_memory.c.o
+
+.PHONY : src/nucleus/ft_head_memory.o
+
+# target to build an object file
+src/nucleus/ft_head_memory.c.o:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/nucleus/ft_head_memory.c.o
+.PHONY : src/nucleus/ft_head_memory.c.o
+
+src/nucleus/ft_head_memory.i: src/nucleus/ft_head_memory.c.i
+
+.PHONY : src/nucleus/ft_head_memory.i
+
+# target to preprocess a source file
+src/nucleus/ft_head_memory.c.i:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/nucleus/ft_head_memory.c.i
+.PHONY : src/nucleus/ft_head_memory.c.i
+
+src/nucleus/ft_head_memory.s: src/nucleus/ft_head_memory.c.s
+
+.PHONY : src/nucleus/ft_head_memory.s
+
+# target to generate assembly for a file
+src/nucleus/ft_head_memory.c.s:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/nucleus/ft_head_memory.c.s
+.PHONY : src/nucleus/ft_head_memory.c.s
+
+src/nucleus/ft_memory.o: src/nucleus/ft_memory.c.o
+
+.PHONY : src/nucleus/ft_memory.o
+
+# target to build an object file
+src/nucleus/ft_memory.c.o:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/nucleus/ft_memory.c.o
+.PHONY : src/nucleus/ft_memory.c.o
+
+src/nucleus/ft_memory.i: src/nucleus/ft_memory.c.i
+
+.PHONY : src/nucleus/ft_memory.i
+
+# target to preprocess a source file
+src/nucleus/ft_memory.c.i:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/nucleus/ft_memory.c.i
+.PHONY : src/nucleus/ft_memory.c.i
+
+src/nucleus/ft_memory.s: src/nucleus/ft_memory.c.s
+
+.PHONY : src/nucleus/ft_memory.s
+
+# target to generate assembly for a file
+src/nucleus/ft_memory.c.s:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/nucleus/ft_memory.c.s
+.PHONY : src/nucleus/ft_memory.c.s
+
+src/nucleus/ft_next_slovo.o: src/nucleus/ft_next_slovo.c.o
+
+.PHONY : src/nucleus/ft_next_slovo.o
+
+# target to build an object file
+src/nucleus/ft_next_slovo.c.o:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/nucleus/ft_next_slovo.c.o
+.PHONY : src/nucleus/ft_next_slovo.c.o
+
+src/nucleus/ft_next_slovo.i: src/nucleus/ft_next_slovo.c.i
+
+.PHONY : src/nucleus/ft_next_slovo.i
+
+# target to preprocess a source file
+src/nucleus/ft_next_slovo.c.i:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/nucleus/ft_next_slovo.c.i
+.PHONY : src/nucleus/ft_next_slovo.c.i
+
+src/nucleus/ft_next_slovo.s: src/nucleus/ft_next_slovo.c.s
+
+.PHONY : src/nucleus/ft_next_slovo.s
+
+# target to generate assembly for a file
+src/nucleus/ft_next_slovo.c.s:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/nucleus/ft_next_slovo.c.s
+.PHONY : src/nucleus/ft_next_slovo.c.s
+
+src/nucleus/ft_print_tab.o: src/nucleus/ft_print_tab.c.o
+
+.PHONY : src/nucleus/ft_print_tab.o
+
+# target to build an object file
+src/nucleus/ft_print_tab.c.o:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/nucleus/ft_print_tab.c.o
+.PHONY : src/nucleus/ft_print_tab.c.o
+
+src/nucleus/ft_print_tab.i: src/nucleus/ft_print_tab.c.i
+
+.PHONY : src/nucleus/ft_print_tab.i
+
+# target to preprocess a source file
+src/nucleus/ft_print_tab.c.i:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/nucleus/ft_print_tab.c.i
+.PHONY : src/nucleus/ft_print_tab.c.i
+
+src/nucleus/ft_print_tab.s: src/nucleus/ft_print_tab.c.s
+
+.PHONY : src/nucleus/ft_print_tab.s
+
+# target to generate assembly for a file
+src/nucleus/ft_print_tab.c.s:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/nucleus/ft_print_tab.c.s
+.PHONY : src/nucleus/ft_print_tab.c.s
+
+src/nucleus/ft_printf_helper.o: src/nucleus/ft_printf_helper.c.o
+
+.PHONY : src/nucleus/ft_printf_helper.o
+
+# target to build an object file
+src/nucleus/ft_printf_helper.c.o:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/nucleus/ft_printf_helper.c.o
+.PHONY : src/nucleus/ft_printf_helper.c.o
+
+src/nucleus/ft_printf_helper.i: src/nucleus/ft_printf_helper.c.i
+
+.PHONY : src/nucleus/ft_printf_helper.i
+
+# target to preprocess a source file
+src/nucleus/ft_printf_helper.c.i:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/nucleus/ft_printf_helper.c.i
+.PHONY : src/nucleus/ft_printf_helper.c.i
+
+src/nucleus/ft_printf_helper.s: src/nucleus/ft_printf_helper.c.s
+
+.PHONY : src/nucleus/ft_printf_helper.s
+
+# target to generate assembly for a file
+src/nucleus/ft_printf_helper.c.s:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/nucleus/ft_printf_helper.c.s
+.PHONY : src/nucleus/ft_printf_helper.c.s
+
+src/nucleus/ft_put_n.o: src/nucleus/ft_put_n.c.o
+
+.PHONY : src/nucleus/ft_put_n.o
+
+# target to build an object file
+src/nucleus/ft_put_n.c.o:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/nucleus/ft_put_n.c.o
+.PHONY : src/nucleus/ft_put_n.c.o
+
+src/nucleus/ft_put_n.i: src/nucleus/ft_put_n.c.i
+
+.PHONY : src/nucleus/ft_put_n.i
+
+# target to preprocess a source file
+src/nucleus/ft_put_n.c.i:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/nucleus/ft_put_n.c.i
+.PHONY : src/nucleus/ft_put_n.c.i
+
+src/nucleus/ft_put_n.s: src/nucleus/ft_put_n.c.s
+
+.PHONY : src/nucleus/ft_put_n.s
+
+# target to generate assembly for a file
+src/nucleus/ft_put_n.c.s:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/nucleus/ft_put_n.c.s
+.PHONY : src/nucleus/ft_put_n.c.s
+
+src/nucleus/ft_putcut.o: src/nucleus/ft_putcut.c.o
+
+.PHONY : src/nucleus/ft_putcut.o
+
+# target to build an object file
+src/nucleus/ft_putcut.c.o:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/nucleus/ft_putcut.c.o
+.PHONY : src/nucleus/ft_putcut.c.o
+
+src/nucleus/ft_putcut.i: src/nucleus/ft_putcut.c.i
+
+.PHONY : src/nucleus/ft_putcut.i
+
+# target to preprocess a source file
+src/nucleus/ft_putcut.c.i:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/nucleus/ft_putcut.c.i
+.PHONY : src/nucleus/ft_putcut.c.i
+
+src/nucleus/ft_putcut.s: src/nucleus/ft_putcut.c.s
+
+.PHONY : src/nucleus/ft_putcut.s
+
+# target to generate assembly for a file
+src/nucleus/ft_putcut.c.s:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/nucleus/ft_putcut.c.s
+.PHONY : src/nucleus/ft_putcut.c.s
+
+src/nucleus/ft_putmemory.o: src/nucleus/ft_putmemory.c.o
+
+.PHONY : src/nucleus/ft_putmemory.o
+
+# target to build an object file
+src/nucleus/ft_putmemory.c.o:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/nucleus/ft_putmemory.c.o
+.PHONY : src/nucleus/ft_putmemory.c.o
+
+src/nucleus/ft_putmemory.i: src/nucleus/ft_putmemory.c.i
+
+.PHONY : src/nucleus/ft_putmemory.i
+
+# target to preprocess a source file
+src/nucleus/ft_putmemory.c.i:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/nucleus/ft_putmemory.c.i
+.PHONY : src/nucleus/ft_putmemory.c.i
+
+src/nucleus/ft_putmemory.s: src/nucleus/ft_putmemory.c.s
+
+.PHONY : src/nucleus/ft_putmemory.s
+
+# target to generate assembly for a file
+src/nucleus/ft_putmemory.c.s:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/nucleus/ft_putmemory.c.s
+.PHONY : src/nucleus/ft_putmemory.c.s
 
 src/nucleus/ft_read_8.o: src/nucleus/ft_read_8.c.o
 
@@ -987,113 +1662,221 @@ src/nucleus/ft_read_8.c.s:
 	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/nucleus/ft_read_8.c.s
 .PHONY : src/nucleus/ft_read_8.c.s
 
-src/nucleus/nucleus.o: src/nucleus/nucleus.c.o
+src/nucleus/ft_realloc_buff.o: src/nucleus/ft_realloc_buff.c.o
 
-.PHONY : src/nucleus/nucleus.o
-
-# target to build an object file
-src/nucleus/nucleus.c.o:
-	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/nucleus/nucleus.c.o
-.PHONY : src/nucleus/nucleus.c.o
-
-src/nucleus/nucleus.i: src/nucleus/nucleus.c.i
-
-.PHONY : src/nucleus/nucleus.i
-
-# target to preprocess a source file
-src/nucleus/nucleus.c.i:
-	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/nucleus/nucleus.c.i
-.PHONY : src/nucleus/nucleus.c.i
-
-src/nucleus/nucleus.s: src/nucleus/nucleus.c.s
-
-.PHONY : src/nucleus/nucleus.s
-
-# target to generate assembly for a file
-src/nucleus/nucleus.c.s:
-	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/nucleus/nucleus.c.s
-.PHONY : src/nucleus/nucleus.c.s
-
-src/nucleus/nucleus2.o: src/nucleus/nucleus2.c.o
-
-.PHONY : src/nucleus/nucleus2.o
+.PHONY : src/nucleus/ft_realloc_buff.o
 
 # target to build an object file
-src/nucleus/nucleus2.c.o:
-	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/nucleus/nucleus2.c.o
-.PHONY : src/nucleus/nucleus2.c.o
+src/nucleus/ft_realloc_buff.c.o:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/nucleus/ft_realloc_buff.c.o
+.PHONY : src/nucleus/ft_realloc_buff.c.o
 
-src/nucleus/nucleus2.i: src/nucleus/nucleus2.c.i
+src/nucleus/ft_realloc_buff.i: src/nucleus/ft_realloc_buff.c.i
 
-.PHONY : src/nucleus/nucleus2.i
+.PHONY : src/nucleus/ft_realloc_buff.i
 
 # target to preprocess a source file
-src/nucleus/nucleus2.c.i:
-	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/nucleus/nucleus2.c.i
-.PHONY : src/nucleus/nucleus2.c.i
+src/nucleus/ft_realloc_buff.c.i:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/nucleus/ft_realloc_buff.c.i
+.PHONY : src/nucleus/ft_realloc_buff.c.i
 
-src/nucleus/nucleus2.s: src/nucleus/nucleus2.c.s
+src/nucleus/ft_realloc_buff.s: src/nucleus/ft_realloc_buff.c.s
 
-.PHONY : src/nucleus/nucleus2.s
+.PHONY : src/nucleus/ft_realloc_buff.s
 
 # target to generate assembly for a file
-src/nucleus/nucleus2.c.s:
-	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/nucleus/nucleus2.c.s
-.PHONY : src/nucleus/nucleus2.c.s
+src/nucleus/ft_realloc_buff.c.s:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/nucleus/ft_realloc_buff.c.s
+.PHONY : src/nucleus/ft_realloc_buff.c.s
 
-src/nucleus/nucleus3.o: src/nucleus/nucleus3.c.o
+src/nucleus/ft_realloc_tab.o: src/nucleus/ft_realloc_tab.c.o
 
-.PHONY : src/nucleus/nucleus3.o
+.PHONY : src/nucleus/ft_realloc_tab.o
 
 # target to build an object file
-src/nucleus/nucleus3.c.o:
-	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/nucleus/nucleus3.c.o
-.PHONY : src/nucleus/nucleus3.c.o
+src/nucleus/ft_realloc_tab.c.o:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/nucleus/ft_realloc_tab.c.o
+.PHONY : src/nucleus/ft_realloc_tab.c.o
 
-src/nucleus/nucleus3.i: src/nucleus/nucleus3.c.i
+src/nucleus/ft_realloc_tab.i: src/nucleus/ft_realloc_tab.c.i
 
-.PHONY : src/nucleus/nucleus3.i
+.PHONY : src/nucleus/ft_realloc_tab.i
 
 # target to preprocess a source file
-src/nucleus/nucleus3.c.i:
-	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/nucleus/nucleus3.c.i
-.PHONY : src/nucleus/nucleus3.c.i
+src/nucleus/ft_realloc_tab.c.i:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/nucleus/ft_realloc_tab.c.i
+.PHONY : src/nucleus/ft_realloc_tab.c.i
 
-src/nucleus/nucleus3.s: src/nucleus/nucleus3.c.s
+src/nucleus/ft_realloc_tab.s: src/nucleus/ft_realloc_tab.c.s
 
-.PHONY : src/nucleus/nucleus3.s
+.PHONY : src/nucleus/ft_realloc_tab.s
 
 # target to generate assembly for a file
-src/nucleus/nucleus3.c.s:
-	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/nucleus/nucleus3.c.s
-.PHONY : src/nucleus/nucleus3.c.s
+src/nucleus/ft_realloc_tab.c.s:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/nucleus/ft_realloc_tab.c.s
+.PHONY : src/nucleus/ft_realloc_tab.c.s
 
-src/nucleus/nucleus4.o: src/nucleus/nucleus4.c.o
+src/nucleus/ft_setcursor.o: src/nucleus/ft_setcursor.c.o
 
-.PHONY : src/nucleus/nucleus4.o
+.PHONY : src/nucleus/ft_setcursor.o
 
 # target to build an object file
-src/nucleus/nucleus4.c.o:
-	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/nucleus/nucleus4.c.o
-.PHONY : src/nucleus/nucleus4.c.o
+src/nucleus/ft_setcursor.c.o:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/nucleus/ft_setcursor.c.o
+.PHONY : src/nucleus/ft_setcursor.c.o
 
-src/nucleus/nucleus4.i: src/nucleus/nucleus4.c.i
+src/nucleus/ft_setcursor.i: src/nucleus/ft_setcursor.c.i
 
-.PHONY : src/nucleus/nucleus4.i
+.PHONY : src/nucleus/ft_setcursor.i
 
 # target to preprocess a source file
-src/nucleus/nucleus4.c.i:
-	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/nucleus/nucleus4.c.i
-.PHONY : src/nucleus/nucleus4.c.i
+src/nucleus/ft_setcursor.c.i:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/nucleus/ft_setcursor.c.i
+.PHONY : src/nucleus/ft_setcursor.c.i
 
-src/nucleus/nucleus4.s: src/nucleus/nucleus4.c.s
+src/nucleus/ft_setcursor.s: src/nucleus/ft_setcursor.c.s
 
-.PHONY : src/nucleus/nucleus4.s
+.PHONY : src/nucleus/ft_setcursor.s
 
 # target to generate assembly for a file
-src/nucleus/nucleus4.c.s:
-	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/nucleus/nucleus4.c.s
-.PHONY : src/nucleus/nucleus4.c.s
+src/nucleus/ft_setcursor.c.s:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/nucleus/ft_setcursor.c.s
+.PHONY : src/nucleus/ft_setcursor.c.s
+
+src/nucleus/ft_start_read.o: src/nucleus/ft_start_read.c.o
+
+.PHONY : src/nucleus/ft_start_read.o
+
+# target to build an object file
+src/nucleus/ft_start_read.c.o:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/nucleus/ft_start_read.c.o
+.PHONY : src/nucleus/ft_start_read.c.o
+
+src/nucleus/ft_start_read.i: src/nucleus/ft_start_read.c.i
+
+.PHONY : src/nucleus/ft_start_read.i
+
+# target to preprocess a source file
+src/nucleus/ft_start_read.c.i:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/nucleus/ft_start_read.c.i
+.PHONY : src/nucleus/ft_start_read.c.i
+
+src/nucleus/ft_start_read.s: src/nucleus/ft_start_read.c.s
+
+.PHONY : src/nucleus/ft_start_read.s
+
+# target to generate assembly for a file
+src/nucleus/ft_start_read.c.s:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/nucleus/ft_start_read.c.s
+.PHONY : src/nucleus/ft_start_read.c.s
+
+src/nucleus/ft_strsplit1.o: src/nucleus/ft_strsplit1.c.o
+
+.PHONY : src/nucleus/ft_strsplit1.o
+
+# target to build an object file
+src/nucleus/ft_strsplit1.c.o:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/nucleus/ft_strsplit1.c.o
+.PHONY : src/nucleus/ft_strsplit1.c.o
+
+src/nucleus/ft_strsplit1.i: src/nucleus/ft_strsplit1.c.i
+
+.PHONY : src/nucleus/ft_strsplit1.i
+
+# target to preprocess a source file
+src/nucleus/ft_strsplit1.c.i:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/nucleus/ft_strsplit1.c.i
+.PHONY : src/nucleus/ft_strsplit1.c.i
+
+src/nucleus/ft_strsplit1.s: src/nucleus/ft_strsplit1.c.s
+
+.PHONY : src/nucleus/ft_strsplit1.s
+
+# target to generate assembly for a file
+src/nucleus/ft_strsplit1.c.s:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/nucleus/ft_strsplit1.c.s
+.PHONY : src/nucleus/ft_strsplit1.c.s
+
+src/nucleus/ft_upcursor.o: src/nucleus/ft_upcursor.c.o
+
+.PHONY : src/nucleus/ft_upcursor.o
+
+# target to build an object file
+src/nucleus/ft_upcursor.c.o:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/nucleus/ft_upcursor.c.o
+.PHONY : src/nucleus/ft_upcursor.c.o
+
+src/nucleus/ft_upcursor.i: src/nucleus/ft_upcursor.c.i
+
+.PHONY : src/nucleus/ft_upcursor.i
+
+# target to preprocess a source file
+src/nucleus/ft_upcursor.c.i:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/nucleus/ft_upcursor.c.i
+.PHONY : src/nucleus/ft_upcursor.c.i
+
+src/nucleus/ft_upcursor.s: src/nucleus/ft_upcursor.c.s
+
+.PHONY : src/nucleus/ft_upcursor.s
+
+# target to generate assembly for a file
+src/nucleus/ft_upcursor.c.s:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/nucleus/ft_upcursor.c.s
+.PHONY : src/nucleus/ft_upcursor.c.s
+
+src/nucleus/input_mode.o: src/nucleus/input_mode.c.o
+
+.PHONY : src/nucleus/input_mode.o
+
+# target to build an object file
+src/nucleus/input_mode.c.o:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/nucleus/input_mode.c.o
+.PHONY : src/nucleus/input_mode.c.o
+
+src/nucleus/input_mode.i: src/nucleus/input_mode.c.i
+
+.PHONY : src/nucleus/input_mode.i
+
+# target to preprocess a source file
+src/nucleus/input_mode.c.i:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/nucleus/input_mode.c.i
+.PHONY : src/nucleus/input_mode.c.i
+
+src/nucleus/input_mode.s: src/nucleus/input_mode.c.s
+
+.PHONY : src/nucleus/input_mode.s
+
+# target to generate assembly for a file
+src/nucleus/input_mode.c.s:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/nucleus/input_mode.c.s
+.PHONY : src/nucleus/input_mode.c.s
+
+src/nucleus/show_history.o: src/nucleus/show_history.c.o
+
+.PHONY : src/nucleus/show_history.o
+
+# target to build an object file
+src/nucleus/show_history.c.o:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/nucleus/show_history.c.o
+.PHONY : src/nucleus/show_history.c.o
+
+src/nucleus/show_history.i: src/nucleus/show_history.c.i
+
+.PHONY : src/nucleus/show_history.i
+
+# target to preprocess a source file
+src/nucleus/show_history.c.i:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/nucleus/show_history.c.i
+.PHONY : src/nucleus/show_history.c.i
+
+src/nucleus/show_history.s: src/nucleus/show_history.c.s
+
+.PHONY : src/nucleus/show_history.s
+
+# target to generate assembly for a file
+src/nucleus/show_history.c.s:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/nucleus/show_history.c.s
+.PHONY : src/nucleus/show_history.c.s
 
 src/parser/change_tilda.o: src/parser/change_tilda.c.o
 
@@ -1275,24 +2058,111 @@ help:
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
-	@echo "... src/nucleus/ft_cutcopy.o"
-	@echo "... src/nucleus/ft_cutcopy.i"
-	@echo "... src/nucleus/ft_cutcopy.s"
+	@echo "... src/nucleus/del_readline.o"
+	@echo "... src/nucleus/del_readline.i"
+	@echo "... src/nucleus/del_readline.s"
+	@echo "... src/nucleus/do_add.o"
+	@echo "... src/nucleus/do_add.i"
+	@echo "... src/nucleus/do_add.s"
+	@echo "... src/nucleus/ft_add_intput_que.o"
+	@echo "... src/nucleus/ft_add_intput_que.i"
+	@echo "... src/nucleus/ft_add_intput_que.s"
+	@echo "... src/nucleus/ft_add_sumchar.o"
+	@echo "... src/nucleus/ft_add_sumchar.i"
+	@echo "... src/nucleus/ft_add_sumchar.s"
+	@echo "... src/nucleus/ft_arrdel.o"
+	@echo "... src/nucleus/ft_arrdel.i"
+	@echo "... src/nucleus/ft_arrdel.s"
+	@echo "... src/nucleus/ft_arrnew.o"
+	@echo "... src/nucleus/ft_arrnew.i"
+	@echo "... src/nucleus/ft_arrnew.s"
+	@echo "... src/nucleus/ft_arrows.o"
+	@echo "... src/nucleus/ft_arrows.i"
+	@echo "... src/nucleus/ft_arrows.s"
+	@echo "... src/nucleus/ft_back_slovo.o"
+	@echo "... src/nucleus/ft_back_slovo.i"
+	@echo "... src/nucleus/ft_back_slovo.s"
+	@echo "... src/nucleus/ft_c.o"
+	@echo "... src/nucleus/ft_c.i"
+	@echo "... src/nucleus/ft_c.s"
+	@echo "... src/nucleus/ft_cheak_quote.o"
+	@echo "... src/nucleus/ft_cheak_quote.i"
+	@echo "... src/nucleus/ft_cheak_quote.s"
+	@echo "... src/nucleus/ft_cleanstr.o"
+	@echo "... src/nucleus/ft_cleanstr.i"
+	@echo "... src/nucleus/ft_cleanstr.s"
+	@echo "... src/nucleus/ft_cut.o"
+	@echo "... src/nucleus/ft_cut.i"
+	@echo "... src/nucleus/ft_cut.s"
+	@echo "... src/nucleus/ft_cut_copy.o"
+	@echo "... src/nucleus/ft_cut_copy.i"
+	@echo "... src/nucleus/ft_cut_copy.s"
+	@echo "... src/nucleus/ft_do_copy.o"
+	@echo "... src/nucleus/ft_do_copy.i"
+	@echo "... src/nucleus/ft_do_copy.s"
+	@echo "... src/nucleus/ft_do_delch.o"
+	@echo "... src/nucleus/ft_do_delch.i"
+	@echo "... src/nucleus/ft_do_delch.s"
+	@echo "... src/nucleus/ft_do_leftright.o"
+	@echo "... src/nucleus/ft_do_leftright.i"
+	@echo "... src/nucleus/ft_do_leftright.s"
+	@echo "... src/nucleus/ft_dop_history.o"
+	@echo "... src/nucleus/ft_dop_history.i"
+	@echo "... src/nucleus/ft_dop_history.s"
+	@echo "... src/nucleus/ft_downcursor.o"
+	@echo "... src/nucleus/ft_downcursor.i"
+	@echo "... src/nucleus/ft_downcursor.s"
+	@echo "... src/nucleus/ft_head_memory.o"
+	@echo "... src/nucleus/ft_head_memory.i"
+	@echo "... src/nucleus/ft_head_memory.s"
+	@echo "... src/nucleus/ft_memory.o"
+	@echo "... src/nucleus/ft_memory.i"
+	@echo "... src/nucleus/ft_memory.s"
+	@echo "... src/nucleus/ft_next_slovo.o"
+	@echo "... src/nucleus/ft_next_slovo.i"
+	@echo "... src/nucleus/ft_next_slovo.s"
+	@echo "... src/nucleus/ft_print_tab.o"
+	@echo "... src/nucleus/ft_print_tab.i"
+	@echo "... src/nucleus/ft_print_tab.s"
+	@echo "... src/nucleus/ft_printf_helper.o"
+	@echo "... src/nucleus/ft_printf_helper.i"
+	@echo "... src/nucleus/ft_printf_helper.s"
+	@echo "... src/nucleus/ft_put_n.o"
+	@echo "... src/nucleus/ft_put_n.i"
+	@echo "... src/nucleus/ft_put_n.s"
+	@echo "... src/nucleus/ft_putcut.o"
+	@echo "... src/nucleus/ft_putcut.i"
+	@echo "... src/nucleus/ft_putcut.s"
+	@echo "... src/nucleus/ft_putmemory.o"
+	@echo "... src/nucleus/ft_putmemory.i"
+	@echo "... src/nucleus/ft_putmemory.s"
 	@echo "... src/nucleus/ft_read_8.o"
 	@echo "... src/nucleus/ft_read_8.i"
 	@echo "... src/nucleus/ft_read_8.s"
-	@echo "... src/nucleus/nucleus.o"
-	@echo "... src/nucleus/nucleus.i"
-	@echo "... src/nucleus/nucleus.s"
-	@echo "... src/nucleus/nucleus2.o"
-	@echo "... src/nucleus/nucleus2.i"
-	@echo "... src/nucleus/nucleus2.s"
-	@echo "... src/nucleus/nucleus3.o"
-	@echo "... src/nucleus/nucleus3.i"
-	@echo "... src/nucleus/nucleus3.s"
-	@echo "... src/nucleus/nucleus4.o"
-	@echo "... src/nucleus/nucleus4.i"
-	@echo "... src/nucleus/nucleus4.s"
+	@echo "... src/nucleus/ft_realloc_buff.o"
+	@echo "... src/nucleus/ft_realloc_buff.i"
+	@echo "... src/nucleus/ft_realloc_buff.s"
+	@echo "... src/nucleus/ft_realloc_tab.o"
+	@echo "... src/nucleus/ft_realloc_tab.i"
+	@echo "... src/nucleus/ft_realloc_tab.s"
+	@echo "... src/nucleus/ft_setcursor.o"
+	@echo "... src/nucleus/ft_setcursor.i"
+	@echo "... src/nucleus/ft_setcursor.s"
+	@echo "... src/nucleus/ft_start_read.o"
+	@echo "... src/nucleus/ft_start_read.i"
+	@echo "... src/nucleus/ft_start_read.s"
+	@echo "... src/nucleus/ft_strsplit1.o"
+	@echo "... src/nucleus/ft_strsplit1.i"
+	@echo "... src/nucleus/ft_strsplit1.s"
+	@echo "... src/nucleus/ft_upcursor.o"
+	@echo "... src/nucleus/ft_upcursor.i"
+	@echo "... src/nucleus/ft_upcursor.s"
+	@echo "... src/nucleus/input_mode.o"
+	@echo "... src/nucleus/input_mode.i"
+	@echo "... src/nucleus/input_mode.s"
+	@echo "... src/nucleus/show_history.o"
+	@echo "... src/nucleus/show_history.i"
+	@echo "... src/nucleus/show_history.s"
 	@echo "... src/parser/change_tilda.o"
 	@echo "... src/parser/change_tilda.i"
 	@echo "... src/parser/change_tilda.s"

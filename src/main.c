@@ -50,65 +50,8 @@ int		ft_whatis(t_exectoken *tmp, t_memory *q)
 	return (1);
 }
 
-int		ft_main_norm(int flag)
-{
-	if (flag == 1)
-	{
-		ft_putstr_fd("quote> ", 2);
-		return (ft_strlen("quote> "));
-	}
-	else if (flag == 0)
-		return (ft_put_info());
-	else if (flag == 2)
-	{
-		ft_putstr_fd("heredoc> ", 2);
-		return (ft_strlen("heredoc> "));
-	}
-	return (0);
-}
-
-int		ft_cheak_quote(char *input)
-{
-	int		k;
-	char	c;
-
-	k = -1;
-	while (input[++k])
-	{
-		if (input[k] == '\'' || input[k] == '\"')
-		{
-			c = input[k];
-			while (input[++k] && input[k] != c)
-				;
-			if (input[k] == '\0')
-				return (-1);
-		}
-	}
-	return (1);
-}
-
-void	ft_add_intput_que(char **input, t_memory *head)
-{
-	char	*tmp;
-	char	*t;
-
-	t = *input;
-	*input = ft_strjoinch(t, '\n');
-	free(t);
-	tmp = ft_read_8(ft_main_norm(1), head, 1);
-	write(2, "\n", 1);
-	t = *input;
-	*input = ft_strjoin(t, tmp);
-	free(t);
-	free(tmp);
-}
-
-
 int		ft_main_what(t_exectoken *tmp, t_memory *q)
 {
-	int		i;
-
-	i = -1;
 	while (tmp)
 	{
 		if (ft_whatis(tmp, q) == -1)
@@ -153,7 +96,7 @@ void	do_count_shell_lvl()
 
 int		main(int argc, char **argv, char **env)
 {
-	char		*input;
+	t_readline	p;
 	t_memory	*head;
 	t_exectoken	*start_token;
 
@@ -167,21 +110,21 @@ int		main(int argc, char **argv, char **env)
 	{
 		set_input_mode();
 		atexit(reset_input_mode);
-		input = ft_read_8(ft_main_norm(0), head, 0);
+		ft_start_read(&p);
+		ft_read_8(&p, head, 0);
 		write(2, "\n", 1);
-
-		while (ft_cheak_quote(input) != 1)
-			ft_add_intput_que(&input, head);
+		while (ft_cheak_quote(p.buff) != 1)
+			ft_add_intput_que(&p, head);
 		reset_input_mode();
 		//input = ft_strdup("ddd="ppp"");
-		start_token = all_parse(input);
+		start_token = all_parse(p.buff);
 		if (ft_main_what(start_token, head) == -1)
 			break ;
-        input[0] != '\0' ? head = ft_memory(head, &input) : head;
-		ft_strdel(&input);
+        p.buff[0] != '\0' ? head = ft_memory(head, &p.buff) : head;
+		del_readline(&p);
 		ft_distruct_tree(start_token);
 	}
 	save_history(head);
 	return (ft_distruct_memory(head) && ft_distruct_tree(start_token) &&
-		ft_dist_str(input) ? 0 : 1);
+		ft_dist_str(p.buff) ? 0 : 1);
 }

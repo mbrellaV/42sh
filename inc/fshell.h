@@ -30,7 +30,6 @@
 # include "time.h"
 # include <sys/wait.h>
 # include <sys/xattr.h>
-# include "../libft/libft.h"
 # include <dirent.h>
 # include <unistd.h>
 # include <stdlib.h>
@@ -38,8 +37,10 @@
 # include <termcap.h>
 # include <termios.h>
 # include <sys/ioctl.h>
-# include "nucleus.h"
+# include <dirent.h>
 # include "parser.h"
+# include "nucleus.h"
+# include "struct.h"
 # define RED   "\x1B[31m"
 # define GRN   "\x1B[32m"
 # define YEL   "\x1B[33m"
@@ -53,16 +54,6 @@ char			**g_alias;
 char			**g_env;
 char			*g_cp;
 char			**g_all_var;
-
-typedef struct	s_pipe
-{
-	int			flag;
-	int			i;
-	int			st;
-	int			fd;
-	int			b;
-	int			j;
-}				t_pipe;
 
 char			*do_zam_str(char *str);
 void			ft_realloc_all(int k, char ***envl);
@@ -113,5 +104,6 @@ void			do_all_var(char **env, int argc);
 int				ft_env_len(char **env);
 void			ft_show_env(char **env);
 int				do_zam_ravno(char **str);
+///////////////////////////////////////////////////////
 
 #endif

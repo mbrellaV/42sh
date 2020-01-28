@@ -13,49 +13,7 @@
 #ifndef PARSER_H
 # define PARSER_H
 
-typedef struct				s_lextoken
-{
-	struct s_lextoken		*prev;
-	struct s_lextoken		*next;
-	int						is_near_opt;
-	char					*line;
-	int						operator_type;
-	int						word_type;
-}							t_lextoken;
-
-typedef struct				s_exectoken
-{
-	struct s_exectoken		*left;
-	struct s_exectoken		*right;
-	char					**file_args;
-	char					**file_opt;
-}							t_exectoken;
-
-typedef struct				s_dop_str
-{
-	///////////////s_dop_str_for
-	int						f_a;
-	int						dopi_a;
-	t_lextoken				*dop_a;
-	t_exectoken				*tmp1_a;
-	///////////////////////////////////////dop_bax
-	int						i_b;
-	char					*new_b;
-	char					*tmp_b;
-	char					*tmp1_b;
-	int						c_b;
-	char					*str_b;
-	/////////////////////////////////////////////
-	int						i_c;
-	t_exectoken				*prevdot_c;
-	t_exectoken				*prev_c;
-	t_exectoken				*start_c;
-	char					*tmp_c;
-	int						dop_c;
-	int						d_c;
-	t_lextoken				*tail_c;
-	t_lextoken				*doptail_c;
-}							t_dop_str;
+# include "struct.h"
 
 t_lextoken					*do_lexer(char *line);
 void						ft_printf(const char *fmt, ...);
@@ -107,8 +65,5 @@ int							dop_lexer(t_dop_str *tmp, char *line);
 t_dop_str					*cr_dop_str(char **line1);
 int							do_zam_bax_and_hist_full(char **mas);
 //////////////////////////////////////////////
-
-
-
 
 #endif

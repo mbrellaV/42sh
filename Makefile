@@ -46,15 +46,43 @@ SRC_BASE = builtins/ft_cd.c\
 	lexer/change_hist_exp.c\
 	lexer/change_str_by_str.c\
 	lexer/get_opt_type.c\
-	nucleus/ft_cutcopy.c\
-	nucleus/ft_read_8.c\
-	nucleus/nucleus.c\
-	nucleus/nucleus2.c\
-	nucleus/nucleus3.c\
-	nucleus/nucleus4.c\
-        parser/dop_parser.c\
-        parser/change_tilda.c\
-        parser/main_parser.c\
+	src/nucleus/ft_read_8.c\
+	src/nucleus/ft_c.c\
+	src/nucleus/input_mode.c\
+	src/nucleus/do_add.c\
+	src/nucleus/ft_realloc_buff.c\
+	src/nucleus/ft_cleanstr.c\
+	src/nucleus/ft_setcursor.c\
+	src/nucleus/ft_add_sumchar.c\
+	src/nucleus/ft_put_n.c\
+	src/nucleus/ft_do_leftright.c\
+	src/nucleus/ft_upcursor.c\
+	src/nucleus/ft_downcursor.c\
+	src/nucleus/ft_back_slovo.c\
+	src/nucleus/ft_next_slovo.c\
+	src/nucleus/ft_arrows.c\
+	src/nucleus/ft_putcut.c\
+	src/nucleus/ft_cut.c\
+	src/nucleus/ft_do_delch.c\
+	src/nucleus/ft_cut_copy.c\
+	src/nucleus/ft_do_copy.c\
+	src/nucleus/ft_strsplit1.c\
+	src/nucleus/ft_print_tab.c\
+	src/nucleus/ft_realloc_tab.c\
+	src/nucleus/show_history.c\
+	src/nucleus/ft_head_memory.c\
+	src/nucleus/ft_memory.c\
+	src/nucleus/ft_dop_history.c\
+	src/nucleus/ft_putmemory.c\
+	src/nucleus/ft_start_read.c\
+	src/nucleus/ft_printf_helper.c\
+	src/nucleus/ft_cheak_quote.c\
+	src/nucleus/ft_add_intput_que.c\
+	src/nucleus/ft_arrnew.c\
+	src/nucleus/ft_arrdel.c\
+	parser/dop_parser.c\
+	parser/change_tilda.c\
+	parser/main_parser.c\
 	ft_distruct.c\
 	ft_error_q.c\
 	ft_signal.c\
