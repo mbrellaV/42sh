@@ -79,7 +79,7 @@ void			ft_do_export(char **mas);
 void			ft_global_dir(int flag, char *str);
 char			*ft_cd_home(char *str);
 int				ft_main_norm(int flag);
-int				ft_signal(int signo, char **input);
+int				ft_signal(int signo, t_readline *p);
 void			ft_fork_signal(int signo);
 int				ft_main_what(t_exectoken *tmp, t_memory *q);
 int				ft_whatis(t_exectoken *tmp, t_memory *q);

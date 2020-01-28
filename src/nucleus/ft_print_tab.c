@@ -22,8 +22,8 @@ int		ft_max_tab_len(t_readline *p)
 	while (++i < p->tab_max)
 	{
 //		dprintf(2, "len[%d]: %zu\n", i, ft_strlen(p->tab[i]));
-		if (len < ft_strlen(p->tab[i]))
-			len = ft_strlen(p->tab[i]);
+		if (len < (int)ft_strlen(p->tab[i]))
+			len = (int)ft_strlen(p->tab[i]);
 	}
 //	dprintf(2, "retlen: %d\n", len);
 	return (len);

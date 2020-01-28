@@ -46,40 +46,40 @@ SRC_BASE = builtins/ft_cd.c\
 	lexer/change_hist_exp.c\
 	lexer/change_str_by_str.c\
 	lexer/get_opt_type.c\
-	src/nucleus/ft_read_8.c\
-	src/nucleus/ft_c.c\
-	src/nucleus/input_mode.c\
-	src/nucleus/do_add.c\
-	src/nucleus/ft_realloc_buff.c\
-	src/nucleus/ft_cleanstr.c\
-	src/nucleus/ft_setcursor.c\
-	src/nucleus/ft_add_sumchar.c\
-	src/nucleus/ft_put_n.c\
-	src/nucleus/ft_do_leftright.c\
-	src/nucleus/ft_upcursor.c\
-	src/nucleus/ft_downcursor.c\
-	src/nucleus/ft_back_slovo.c\
-	src/nucleus/ft_next_slovo.c\
-	src/nucleus/ft_arrows.c\
-	src/nucleus/ft_putcut.c\
-	src/nucleus/ft_cut.c\
-	src/nucleus/ft_do_delch.c\
-	src/nucleus/ft_cut_copy.c\
-	src/nucleus/ft_do_copy.c\
-	src/nucleus/ft_strsplit1.c\
-	src/nucleus/ft_print_tab.c\
-	src/nucleus/ft_realloc_tab.c\
-	src/nucleus/show_history.c\
-	src/nucleus/ft_head_memory.c\
-	src/nucleus/ft_memory.c\
-	src/nucleus/ft_dop_history.c\
-	src/nucleus/ft_putmemory.c\
-	src/nucleus/ft_start_read.c\
-	src/nucleus/ft_printf_helper.c\
-	src/nucleus/ft_cheak_quote.c\
-	src/nucleus/ft_add_intput_que.c\
-	src/nucleus/ft_arrnew.c\
-	src/nucleus/ft_arrdel.c\
+	nucleus/ft_read_8.c\
+	nucleus/ft_c.c\
+	nucleus/input_mode.c\
+	nucleus/do_add.c\
+	nucleus/ft_realloc_buff.c\
+	nucleus/ft_cleanstr.c\
+	nucleus/ft_setcursor.c\
+	nucleus/ft_add_sumchar.c\
+	nucleus/ft_put_n.c\
+	nucleus/ft_do_leftright.c\
+	nucleus/ft_upcursor.c\
+	nucleus/ft_downcursor.c\
+	nucleus/ft_back_slovo.c\
+	nucleus/ft_next_slovo.c\
+	nucleus/ft_arrows.c\
+	nucleus/ft_putcut.c\
+	nucleus/ft_cut.c\
+	nucleus/ft_do_delch.c\
+	nucleus/ft_cut_copy.c\
+	nucleus/ft_do_copy.c\
+	nucleus/ft_strsplit1.c\
+	nucleus/ft_print_tab.c\
+	nucleus/ft_realloc_tab.c\
+	nucleus/show_history.c\
+	nucleus/ft_head_memory.c\
+	nucleus/ft_memory.c\
+	nucleus/ft_dop_history.c\
+	nucleus/ft_putmemory.c\
+	nucleus/ft_start_read.c\
+	nucleus/ft_printf_helper.c\
+	nucleus/ft_cheak_quote.c\
+	nucleus/ft_add_intput_que.c\
+	nucleus/ft_arrnew.c\
+	nucleus/ft_arrdel.c\
 	parser/dop_parser.c\
 	parser/change_tilda.c\
 	parser/main_parser.c\

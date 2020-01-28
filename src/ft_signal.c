@@ -23,28 +23,26 @@ void	ft_fork_signal(int signo)
 	}
 }
 
-int		ft_signal(int signo, char **input)
+int		ft_signal(int signo, t_readline *p)
 {
 	if (signo == 3)
 	{
-		free(*input);
-		*input = ft_strnew(1);
+		free(p->buff);
+		p->buff = ft_strnew(1);
 		return (1);
 	}
 	else if (signo == 4)
 	{
-		if (*input[0] == '\0')
+		if (p->buff[0] == '\0' || !p->buff[0] || p->index == 0)
 		{
-			free(*input);
-			*input = ft_strdup("exit");
+			free(p->buff);
+			p->buff = ft_strdup("exit");
 			return (1);
 		}
 		else
 			return (4);
 	}
-	else if (signo == 26 || signo == 9)
+	else if (signo == 26)
 		return (27);
 	return (404);
 }
-
-

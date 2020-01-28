@@ -12,24 +12,24 @@
 
 #include "../inc/fshell.h"
 
-void		ft_dop_history(t_memory ***q, char ***input, t_flag **flag, int k)
+void		ft_dop_history(t_memory *q, t_readline *p, int k)
 {
 	if (k == 1)
 	{
-		free(**input);
-		**input = ft_strdup((**q)->inp);
-		ft_cleanstr((*flag)->i);
-		(*flag)->i = ft_strlen(**input);
-		(*flag)->max = ft_strlen(**input);
-		ft_putstr_fd((**q)->inp, 2);
+		free(p->buff);
+		p->buff = ft_strdup((q)->inp);
+		ft_cleanstr(p->index);
+		p->index = (int)ft_strlen(p->buff);
+		p->len = (int)ft_strlen(p->buff);
+		ft_putstr_fd((q)->inp, 2);
 	}
 	else if (k == 2)
 	{
-		free(**input);
-		**input = ft_strnew(1);
-		ft_cleanstr((*flag)->i);
-		(*flag)->i = ft_strlen(**input);
-		(*flag)->max = ft_strlen(**input);
-		ft_putstr_fd(**input, 2);
+		free(p->buff);
+		p->buff = ft_strnew(1);
+		ft_cleanstr(p->index);
+		p->index = (int)ft_strlen(p->buff);
+		p->len = ft_strlen(p->buff);
+		ft_putstr_fd(p->buff, 2);
 	}
 }

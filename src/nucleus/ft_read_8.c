@@ -156,7 +156,7 @@ void	ft_cheak_tab(t_readline *p)
 		ft_find_dir(dir, name, p);
 	}
 //	dprintf(2, "\n");
-	if (ft_strlen(name) < is_add_str_tab(p))
+	if ((int)ft_strlen(name) < is_add_str_tab(p))
 	{
 		i = ft_strlen(name);
 		while (i < is_add_str_tab(p))
@@ -201,7 +201,7 @@ void	ft_read_8(t_readline *p, t_memory *head, int mod)
 		if (rt > 1)
 		{
 			p->sum_read == 186 || p->sum_read == 185 ? ft_do_leftright(p) : NULL;
-			p->sum_read == 183 || p->sum_read == 184 ? ft_putmemory(&h, t_readline p) : NULL;
+			p->sum_read == 183 || p->sum_read == 184 ? ft_putmemory(h, p) : NULL;
 			p->sum_read == 341 ? ft_upcursor(p) : NULL;
 			p->sum_read == 342 ? ft_downcursor(p) : NULL;
 			p->sum_read == 297 || p->sum_read == 298 || p->sum_read == 190 || p->sum_read == 188 ? ft_arrows(p) : NULL;
