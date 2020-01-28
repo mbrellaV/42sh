@@ -80,6 +80,7 @@ SRC_BASE = builtins/ft_cd.c\
 	nucleus/ft_add_intput_que.c\
 	nucleus/ft_arrnew.c\
 	nucleus/ft_arrdel.c\
+	nucleus/del_readline.c\
 	parser/dop_parser.c\
 	parser/change_tilda.c\
 	parser/main_parser.c\
