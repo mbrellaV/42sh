@@ -18,8 +18,8 @@ int		ft_whatis(t_exectoken *tmp, t_memory *q)
 		return (ft_error_args(tmp));
 	if (do_zam_bax_and_hist_full(tmp->file_args) == -1)
 		ft_error_args(tmp);
-	if (ft_do_zam_eval(tmp->file_args) == -1)
-		ft_error_args(tmp);
+//	if (ft_do_zam_eval(tmp->file_args) == -1)
+//		ft_error_args(tmp);
 	if (do_zam_ravno(tmp->file_args) == -1)
 		ft_error_args(tmp);
 	if (tmp->file_args[0] == NULL)
@@ -173,7 +173,6 @@ int		do_cmd(char *input, t_memory *head)
 	ft_show_env(g_alias_dop);
 	start_token = all_parse(input);
 	ft_main_what(start_token, head);
-	ft_printf("123\n");
 	g_alias = g_alias_dop;
 	g_env = g_env_dop;
 	g_cp = g_cp_dop;
@@ -234,7 +233,7 @@ int		main(int argc, char **argv, char **env)
 		atexit(reset_input_mode);
 		input = ft_read_8(ft_main_norm(0), head, 0);
 		write(2, "\n", 1);
-		input[0] != '\0' ? head = ft_memory(head, &input) : head;
+
 		while (ft_cheak_quote(input) != 1)
 			ft_add_intput_que(&input, head);
 		reset_input_mode();
@@ -242,6 +241,7 @@ int		main(int argc, char **argv, char **env)
 		start_token = all_parse(input);
 		if (ft_main_what(start_token, head) == -1)
 			break ;
+        input[0] != '\0' ? head = ft_memory(head, &input) : head;
 		ft_strdel(&input);
 		ft_distruct_tree(start_token);
 	}

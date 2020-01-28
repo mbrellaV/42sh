@@ -30,7 +30,6 @@ int				word_size(char *str)
 	int i;
 
 	i = 0;
-	ft_printf("fff:   %s\n", str);
 	if (isoperator(*str) > 0)
 		return (operator_size(str));
 	if (isword(*str) == 2)
@@ -40,10 +39,7 @@ int				word_size(char *str)
 	while (*str)
 	{
 		if (*str == '=' && ispar(*(str + 1)) == 1)
-		{
-			ft_printf("fff:  %d  %s\n", c_size(str + 1, *(str + 1)), str);
 			return (3 + i + c_size(str + 1, *(str + 1)));
-		}
 		if (isword(*str) == 3)
 			return (i + sc_size(str, *str));
 		if (isword(*str) == 0)

@@ -11,13 +11,6 @@ ls
 ls
 ls
 ls
-ls
-ls
-ls
-ls
-ls
-ls
-ls
 pwd
 exit
 ls
@@ -239,3 +232,31 @@ f="ls -la"
 set
 $f
 exit
+ls
+pwd
+history
+exit
+ls
+history
+pwd
+"ls
+"
+"ls
+"
+history
+f=ddd
+set
+f="ggg"
+set
+unset f
+ls
+ls
+env
+ls
+pwd
+make
+ls
+pwd
+pwd
+ls -la
+pwd

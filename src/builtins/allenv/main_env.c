@@ -121,8 +121,6 @@ int		set_new_var(char *str1, char *str2, char ***envl)
 	char	*tmp;
 
 	env = *envl;
-	ft_printf("\n/////////////////////////////////////s1: %s", str1);
-	ft_printf("\n/////////////////////////////////////s1: %s", str2);
 	str1 = ft_strjoinch(str1, '=');
 	i = ft_findenv(str1, env);
 	tmp = str1;

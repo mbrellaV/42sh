@@ -54,9 +54,6 @@ t_dop_str		*cr_dop_str(char **line1)
 	tmp->tail_c = NULL;
 	line = do_zamena_sp(line);
 	line = do_zam_str(line);
-	//mas = ft_strsplit(line, "\t ");
-	//ft_do_zam_alias(mas);
-	//line = ft_join_str_mas(mas);
 	*line1 = line;
 	return (tmp);
 }
@@ -102,7 +99,6 @@ int				dop_lexer(t_dop_str *tmp, char *line)
 {
 	if (isword(line[tmp->i_c]))
 	{
-		ft_printf("////////////////////// %d, %d\n", word_size(line + tmp->i_c), tmp->i_c);
 		tmp->tmp_c = ft_strsub(line, tmp->i_c +
 		(ispar(line[tmp->i_c]) == 1 ? 1 : 0), word_size(line + tmp->i_c));
 		if (tmp->tail_c != NULL && tmp->tail_c->operator_type > 2)
@@ -152,6 +148,5 @@ t_lextoken		*do_lexer(char *line)
 		tmp->tail_c = tmp->tail_c->next;
 	}
 	ft_strdel(&line);
-	ft_printf("sas1");
 	return (ft_kill_str_dop_lex(tmp, tmp->doptail_c));
 }
