@@ -84,6 +84,8 @@ SRC_BASE = builtins/ft_cd.c\
 	parser/dop_parser.c\
 	parser/change_tilda.c\
 	parser/main_parser.c\
+	hash/hash_table.c\
+	hash/hash_table_2.c\
 	ft_distruct.c\
 	ft_error_q.c\
 	ft_signal.c\

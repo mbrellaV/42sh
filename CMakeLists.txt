@@ -10,6 +10,7 @@ add_executable(21end
         inc/parser.h
         inc/nucleus.h
         inc/struct.h
+        inc/hash.h
         src/builtins/ft_cd.c
         src/builtins/ft_echo.c
         src/builtins/ft_echo2.c
@@ -67,6 +68,8 @@ add_executable(21end
         src/parser/dop_parser.c
         src/parser/change_tilda.c
         src/parser/main_parser.c
+        src/hash/hash_table.c
+        src/hash/hash_table_2.c
         src/ft_distruct.c
         src/ft_error_q.c
         src/ft_signal.c

@@ -17,6 +17,6 @@ void	ft_cut(t_readline *p)
 	free(g_cp);
 	g_cp = ft_strdup(p->buff);
 	free(p->buff);
-	ft_cleanstr(p->index);
+	ft_cleanstr(p->index, p);
 	ft_start_read(p);
 }

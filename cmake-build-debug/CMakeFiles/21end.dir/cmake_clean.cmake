@@ -20,6 +20,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/21end.dir/src/ft_error_q.c.o"
   "CMakeFiles/21end.dir/src/ft_signal.c.o"
   "CMakeFiles/21end.dir/src/ft_take_arg.c.o"
+  "CMakeFiles/21end.dir/src/hash/hash_table.c.o"
+  "CMakeFiles/21end.dir/src/hash/hash_table_2.c.o"
   "CMakeFiles/21end.dir/src/lexer/change_dol.c.o"
   "CMakeFiles/21end.dir/src/lexer/change_hist_exp.c.o"
   "CMakeFiles/21end.dir/src/lexer/change_spaces.c.o"

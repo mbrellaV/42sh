@@ -1,0 +1,382 @@
+ls
+pwd
+pwd
+pwd
+pwd
+pwd
+hisotry
+history
+pwd
+pwd
+pwd
+pwd
+exit
+ls
+pwd
+exit
+ls
+pwd
+history
+pwd
+ls -la
+pwd
+exit
+ls
+pwd
+exit
+ls
+wd
+exit
+ls
+pwdp
+pwd
+pwd
+pwd
+pwd
+exir
+exit
+ls > 12345
+cat 12345
+rm 12345
+ls
+pwd
+mkdir test ; cd test ; ls -a ; ls | cat | wc -c > fifi ; cat fifi
+rm -rf test
+mkdir test ; cd test ; ls -a ; ls | cat | wc -c > fifi ; cat fifi
+ls test
+ls
+pwd
+cd ..
+pwd
+ls
+cd ..
+pwd
+rm -rf test
+ls
+mkdir test ; cd test ; ls -a ; ls | cat | wc -c > fifi ; cat fifi
+ls
+pwd
+cd ..
+rm -rf test
+ls
+ls
+pwd
+cat R
+exit
+ls
+pwd
+exit
+ls
+pwd
+pwd
+pwd
+pwd
+pwd
+pwd
+pwd
+ls -la
+pwd
+pwd
+pwd
+ls -la
+pwd
+pwd
+pwd
+pwd
+pwd
+pwd
+pwd
+exit -l
+ls
+pwd
+pwd
+ls -la
+pwd
+pwd
+pwd
+pwd
+pwd
+pwd
+ls -la
+pwd
+pwd
+pwd
+pwd
+ls -lasrgarsarbszr`fv
+ls -lasrgarsarbszr
+ls -lasrgarsarb
+man ls
+ls -F
+pwd
+pwd
+pwd
+pwd
+pwd
+pwd
+ls -la
+pwd
+exit
+ls
+pwd
+exit
+exit
+ls
+pwd
+exit
+l
+ll
+pwd
+alias sas "ls -la"
+sas
+exit
+ll
+ll
+l
+ll
+ll -la
+ll    -la
+make
+exit
+ll
+l
+l -la
+pwd
+pwd
+alias sas "ls -la"
+sas
+alias
+alias ddd="ls -la"
+ls
+unalias ls
+alias
+alias sas=ls
+alias
+sas
+sas="ls -la"
+set
+exit
+set
+sas="ls -la"
+set
+make
+exit
+ssas="ls -la"
+make
+exit
+sas="ls -la"
+set
+make
+./21
+exit
+sas="ls -la"
+exit
+exit
+sas="ddddd"
+$sas
+make
+exit
+ls
+pwd
+make
+exit
+ls
+pwd
+sas="pwd"
+$pwd
+$sas
+pwd
+pwd
+sas="ls -la"
+env
+set
+f="ls -la"
+make
+exit
+f="ls -la"
+make
+exit
+f="ls -la"
+make
+exit
+lsmake
+exit
+f="ls -la"
+make
+./21
+exit
+f="ls -la"
+make
+exit
+sas="ls -la"
+make
+exit
+f="ls -la"
+set
+$f
+exit
+ls
+pwd
+history
+exit
+ls
+history
+pwd
+"ls
+"
+"ls
+"
+history
+f=ddd
+set
+f="ggg"
+set
+unset f
+ls
+ls
+env
+ls
+pwd
+make
+ls
+pwd
+pwd
+ls -la
+pwd
+ls
+pwd
+pwd
+pwd
+ls -la
+pwd
+pwd
+wd
+pwd
+pwd
+pwd
+pwd
+pwd
+ls -la
+pwd
+pwd
+pwd
+pwd
+pwd
+ls -la
+pwd
+ls -la
+pwd
+"ls -a"
+"ls -a"
+"ls -a
+-r"
+~amatilda
+~amatilda
+dd="fffff"
+set
+dd="fffff
+"
+set
+dd="ffff
+"
+pwd
+pwd
+<<EOF
+<< stopr
+asda <<EOF
+l
+ll
+set
+alias
+ll
+l
+l
+make re
+fclean
+make fclean
+ls
+ls
+pwd
+ps
+sdfsdfsadf
+clear
+dasdasd
+:x
+ls
+pwd
+pwd
+pwd
+pwd
+pwd
+pwd
+pwd
+ls
+pwd
+pwd
+ls -la
+pwd
+ls -la
+pwd
+pwd
+ls
+pwd
+pwd
+pwd
+pwd
+pw
+pw
+dpwd
+pwd
+ls -la
+pwd
+make
+unset PATH
+ls
+set
+export
+make re
+ls
+pwd
+unset PATH
+ls
+set
+export
+make
+unset PATH
+ls
+ls
+pwd
+fggfhgf
+echo Makefile
+cat Makefile
+pwd
+cat Makefile
+cat Makefile
+cat Makefile
+cat Makefile
+gjgjh"klk
+lklkl
+klkl
+"
+cat Makefile
+dfgf"gjhg
+hjhjh
+hjh
+"
+cat Makefile
+jjj"klkl
+kllkl"
+1
+2
+3
+4
+5
+6
+7
+8
+9
+8
+9
+fgfh
+hkml
+ls
+pwd

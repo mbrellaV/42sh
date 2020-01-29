@@ -108,6 +108,7 @@ int		main(int argc, char **argv, char **env)
 	signal(SIGINT, ft_fork_signal);
 	head = ft_head_memory();
 	do_count_shell_lvl();
+	hash_init();
 	while (1)
 	{
 		set_input_mode();
