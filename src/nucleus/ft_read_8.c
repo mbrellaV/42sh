@@ -59,15 +59,18 @@ void	ft_find_path(t_readline *p, char *name)
 {
 	char 	**path;
 	int 	i;
+	char	*tmp;
 
 	if (!*name)
 	{
 		return ;
 	}
-	path = ft_strsplit1("/Users/qmartina/.brew/bin:/Users/qmartina/.brew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/go/bin:/usr/local/munki", ':');
+	tmp = ft_get_var("PATH", g_env);
+	path = ft_strsplit1(tmp, ':');
 	i = -1;
 	while (path[++i])
 		ft_find_dir(path[i], name, p);
+	ft_strdel(&tmp);
 }
 
 char	*ft_directory(char *str)
@@ -80,7 +83,7 @@ char	*ft_directory(char *str)
 		if (str[k] == '/')
 		{
 			if (str[0] == '/')
-				return(ft_strjoin(".", ft_strndup(str, k + 1)));
+				return(ft_strndup(str, k + 1));
 			else if ((str[0] == '.' || str[0] == '~') && str[1] == '/')
 				return(ft_strndup(str, k + 1));
 			else if (str[0] == '.' && str[1] != '/')
@@ -112,7 +115,7 @@ int		is_add_str_tab(t_readline *p)
 	k = 0;
 	if (p->tab_max == 1)
 		return (-100);
-	while (p->tab[0][k])
+	while (p->tab[0] && p->tab[0][k])
 	{
 		i = 0;
 		while (i < p->tab_max && p->tab[0][k] && p->tab[i][k] && p->tab[0][k] == p->tab[i][k])
@@ -132,30 +135,29 @@ void	ft_cheak_tab(t_readline *p)
 	char 			*name;
 	char 			*dir;
 
-	while (p->index < p->len && p->buff[p->index] != ' ' && p->buff[p->index] != '|' && p->buff[p->index] != ';')
+	while (p->index < p->len && isword(p->buff[p->index]) == 1)
 	{
 		tputs(tgetstr("nd", NULL), 1, ft_c);
 		p->index++;
 	}
 	i = p->index;
-	while (--i > 0 && p->buff[i] != ' ' && p->buff[i] != ';' && p->buff[i] != '|')
+	while (--i > 0 && isword(p->buff[p->index]) == 1)
 		;
 	if (i != 0)
 		i++;
 	str = ft_strndup(&(p->buff[i]), p->index - i);
-//	dprintf(2, "str: !%s!\n", str);
 	while (--i > 0 && p->buff[i] == ' ')
 		;
 	p->tab_max = 0;
 	name = ft_name(str);
 	dir = ft_directory(str);
+	ft_printf("\n dir: %s\n", dir);
 	if (i == -1 || i == 0 || p->buff[i] == ';' || p->buff[i] == '|')
 		ft_find_path(p, str);
 	else
 	{
 		ft_find_dir(dir, name, p);
 	}
-//	dprintf(2, "\n");
 	if ((int)ft_strlen(name) < is_add_str_tab(p))
 	{
 		i = ft_strlen(name);
@@ -201,7 +203,7 @@ void	ft_read_8(t_readline *p, t_memory *head, int mod)
 		if (rt > 1)
 		{
 			p->sum_read == 186 || p->sum_read == 185 ? ft_do_leftright(p) : NULL;
-			p->sum_read == 183 || p->sum_read == 184 ? ft_putmemory(h, p) : NULL;
+			p->sum_read == 183 || p->sum_read == 184 ? ft_putmemory(&h, p) : NULL;
 			p->sum_read == 341 ? ft_upcursor(p) : NULL;
 			p->sum_read == 342 ? ft_downcursor(p) : NULL;
 			p->sum_read == 297 || p->sum_read == 298 || p->sum_read == 190 || p->sum_read == 188 ? ft_arrows(p) : NULL;
@@ -217,5 +219,4 @@ void	ft_read_8(t_readline *p, t_memory *head, int mod)
 		else if (ft_signal(p->sum_read, p) == 404)
 			ft_do_addch(p, buf[0]);
 	}
-//	p->buff[p->len] = '\0';
 }

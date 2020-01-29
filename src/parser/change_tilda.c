@@ -12,56 +12,25 @@
 
 #include "../../inc/fshell.h"
 
-char			*dop_zam_str(char *str, char *new, char *hp)
-{
-	int i;
-
-	i = 0;
-	while (str[i])
-	{
-		if (str[i] == '~')
-		{
-			ft_strcat(new, hp);
-			i += ft_strlen(hp);
-		}
-		else if (str[i] == '\\')
-		{
-			if (str[i + 1] == '~')
-			{
-				ft_strcat(new, "~");
-				i += ft_strlen("~");
-			}
-		}
-		else
-			new[i] = str[i];
-		i++;
-	}
-	new[i] = '\0';
-	return (new);
-}
-
-char			*do_zam_str(char *str)
+void			do_zam_str_with_tilda(char **mas)
 {
 	int		i;
 	char	*hp;
-	char	*new;
-	int		c;
+	char	*tmp;
 
-	c = 0;
-	if (!(hp = ft_get_var("HOME", g_env)))
-		return (NULL);
 	i = 0;
-	while (str[i])
+	if (!(hp = ft_get_var("HOME", g_env)))
+		return ;
+	while (mas[i])
 	{
-		if (str[i] == '~')
-			c++;
+		if (ft_strstr(mas[i], "~/") == mas[i] ||
+				ft_strcmp("~", mas[i]) == 0)
+		{
+			tmp = mas[i];
+			mas[i] = ft_strjoin(hp, &mas[i][1]);
+			ft_strdel(&tmp);
+		}
 		i++;
 	}
-	if (!(new = ft_memalloc((ft_strlen(hp) * c) + ft_strlen(str) + 1)))
-		return (NULL);
-	if (!(dop_zam_str(str, new, hp)))
-		return (NULL);
 	ft_strdel(&hp);
-	ft_strdel(&str);
-	return (new);
 }

@@ -104,6 +104,7 @@ void			do_all_var(char **env, int argc);
 int				ft_env_len(char **env);
 void			ft_show_env(char **env);
 int				do_zam_ravno(char **str);
+void			do_zam_str_with_tilda(char **mas);
 ///////////////////////////////////////////////////////
 
 #endif
