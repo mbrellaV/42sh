@@ -85,6 +85,9 @@
 		<Unit filename="/Users/qmartina/Desktop/42start/inc/fshell.h">
 			<Option target="21end"/>
 		</Unit>
+		<Unit filename="/Users/qmartina/Desktop/42start/inc/hash.h">
+			<Option target="21end"/>
+		</Unit>
 		<Unit filename="/Users/qmartina/Desktop/42start/inc/nucleus.h">
 			<Option target="21end"/>
 		</Unit>
@@ -151,6 +154,12 @@
 		<Unit filename="/Users/qmartina/Desktop/42start/src/ft_take_arg.c">
 			<Option target="21end"/>
 		</Unit>
+		<Unit filename="/Users/qmartina/Desktop/42start/src/hash/hash_table.c">
+			<Option target="21end"/>
+		</Unit>
+		<Unit filename="/Users/qmartina/Desktop/42start/src/hash/hash_table_2.c">
+			<Option target="21end"/>
+		</Unit>
 		<Unit filename="/Users/qmartina/Desktop/42start/src/lexer/change_dol.c">
 			<Option target="21end"/>
 		</Unit>
@@ -188,6 +197,9 @@
 			<Option target="21end"/>
 		</Unit>
 		<Unit filename="/Users/qmartina/Desktop/42start/src/nucleus/do_add.c">
+			<Option target="21end"/>
+		</Unit>
+		<Unit filename="/Users/qmartina/Desktop/42start/src/nucleus/find_history.c">
 			<Option target="21end"/>
 		</Unit>
 		<Unit filename="/Users/qmartina/Desktop/42start/src/nucleus/ft_add_intput_que.c">

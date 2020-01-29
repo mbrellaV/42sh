@@ -208,6 +208,12 @@ void	ft_read_8(t_readline *p, t_memory *head, int mod)
 		}
 		else if (p->sum_read == 9)
 			ft_cheak_tab(p);
+		else if (p->sum_read == 18)
+		{
+			find_history(p, h);
+			p->len_hint = ft_printf_helper(p->mod);
+			ft_putstr_fd(p->buff, 2);
+		}
 		else if (p->sum_read == 25 || p->sum_read == 23 || p->sum_read == 21 || p->sum_read == 127)
 			ft_cut_copy(p);
 		else if (ft_signal(p->sum_read, p) == 1)

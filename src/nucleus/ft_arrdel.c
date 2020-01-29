@@ -19,7 +19,7 @@ void	ft_arrdel(char **arr)
 	i = 0;
 	if (arr == NULL)
 		return; ;
-	while (arr[i])
+	while (arr[i] != NULL)
 	{
 //		dprintf(2, "i: %d\n", i);
 		free(arr[i]);

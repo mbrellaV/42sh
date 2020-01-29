@@ -53,26 +53,30 @@ void	ft_open_flag(char *str, int *flag, int **ff, int *fd)
 	}
 }
 
-int		ft_heredoc(char *tmp)
+/////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////
+
+int		ft_heredoc(char *tmp)////////////////////////cntr + D
 {
-	int		j;
-	int		f[2];
-	char	*str;
+	int			j;
+	int			f[2];
+	t_readline	h;
 
 	pipe(f);
 	j = 0;
-	str = ft_strnew(1);
+	ft_start_read(&h);
 	set_input_mode();
-	while (ft_strcmp(str, tmp) != 0)
+	while (ft_strcmp(h.buff, tmp) != 0)
 	{
-		j != 0 ? ft_putendl_fd(str, f[1]) : NULL;
-		free(str);
-//		ft_read_8(ft_main_norm(2), NULL, 2);
+		j != 0 ? ft_putendl_fd(h.buff, f[1]) : NULL;
+//		del_readline(&h);
+		ft_start_read(&h);
+		ft_read_8(&h, NULL, 2);
 		write(2, "\n", 1);
 		j++;
 	}
 	close(f[1]);
-	free(str);
+	del_readline(&h);
 	reset_input_mode();
 	return (f[0]);
 }

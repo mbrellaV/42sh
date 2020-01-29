@@ -636,6 +636,60 @@ src/ft_take_arg.c.s:
 	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/ft_take_arg.c.s
 .PHONY : src/ft_take_arg.c.s
 
+src/hash/hash_table.o: src/hash/hash_table.c.o
+
+.PHONY : src/hash/hash_table.o
+
+# target to build an object file
+src/hash/hash_table.c.o:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/hash/hash_table.c.o
+.PHONY : src/hash/hash_table.c.o
+
+src/hash/hash_table.i: src/hash/hash_table.c.i
+
+.PHONY : src/hash/hash_table.i
+
+# target to preprocess a source file
+src/hash/hash_table.c.i:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/hash/hash_table.c.i
+.PHONY : src/hash/hash_table.c.i
+
+src/hash/hash_table.s: src/hash/hash_table.c.s
+
+.PHONY : src/hash/hash_table.s
+
+# target to generate assembly for a file
+src/hash/hash_table.c.s:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/hash/hash_table.c.s
+.PHONY : src/hash/hash_table.c.s
+
+src/hash/hash_table_2.o: src/hash/hash_table_2.c.o
+
+.PHONY : src/hash/hash_table_2.o
+
+# target to build an object file
+src/hash/hash_table_2.c.o:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/hash/hash_table_2.c.o
+.PHONY : src/hash/hash_table_2.c.o
+
+src/hash/hash_table_2.i: src/hash/hash_table_2.c.i
+
+.PHONY : src/hash/hash_table_2.i
+
+# target to preprocess a source file
+src/hash/hash_table_2.c.i:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/hash/hash_table_2.c.i
+.PHONY : src/hash/hash_table_2.c.i
+
+src/hash/hash_table_2.s: src/hash/hash_table_2.c.s
+
+.PHONY : src/hash/hash_table_2.s
+
+# target to generate assembly for a file
+src/hash/hash_table_2.c.s:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/hash/hash_table_2.c.s
+.PHONY : src/hash/hash_table_2.c.s
+
 src/lexer/change_dol.o: src/lexer/change_dol.c.o
 
 .PHONY : src/lexer/change_dol.o
@@ -986,6 +1040,33 @@ src/nucleus/do_add.s: src/nucleus/do_add.c.s
 src/nucleus/do_add.c.s:
 	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/nucleus/do_add.c.s
 .PHONY : src/nucleus/do_add.c.s
+
+src/nucleus/find_history.o: src/nucleus/find_history.c.o
+
+.PHONY : src/nucleus/find_history.o
+
+# target to build an object file
+src/nucleus/find_history.c.o:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/nucleus/find_history.c.o
+.PHONY : src/nucleus/find_history.c.o
+
+src/nucleus/find_history.i: src/nucleus/find_history.c.i
+
+.PHONY : src/nucleus/find_history.i
+
+# target to preprocess a source file
+src/nucleus/find_history.c.i:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/nucleus/find_history.c.i
+.PHONY : src/nucleus/find_history.c.i
+
+src/nucleus/find_history.s: src/nucleus/find_history.c.s
+
+.PHONY : src/nucleus/find_history.s
+
+# target to generate assembly for a file
+src/nucleus/find_history.c.s:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/nucleus/find_history.c.s
+.PHONY : src/nucleus/find_history.c.s
 
 src/nucleus/ft_add_intput_que.o: src/nucleus/ft_add_intput_que.c.o
 
@@ -2025,6 +2106,12 @@ help:
 	@echo "... src/ft_take_arg.o"
 	@echo "... src/ft_take_arg.i"
 	@echo "... src/ft_take_arg.s"
+	@echo "... src/hash/hash_table.o"
+	@echo "... src/hash/hash_table.i"
+	@echo "... src/hash/hash_table.s"
+	@echo "... src/hash/hash_table_2.o"
+	@echo "... src/hash/hash_table_2.i"
+	@echo "... src/hash/hash_table_2.s"
 	@echo "... src/lexer/change_dol.o"
 	@echo "... src/lexer/change_dol.i"
 	@echo "... src/lexer/change_dol.s"
@@ -2064,6 +2151,9 @@ help:
 	@echo "... src/nucleus/do_add.o"
 	@echo "... src/nucleus/do_add.i"
 	@echo "... src/nucleus/do_add.s"
+	@echo "... src/nucleus/find_history.o"
+	@echo "... src/nucleus/find_history.i"
+	@echo "... src/nucleus/find_history.s"
 	@echo "... src/nucleus/ft_add_intput_que.o"
 	@echo "... src/nucleus/ft_add_intput_que.i"
 	@echo "... src/nucleus/ft_add_intput_que.s"
