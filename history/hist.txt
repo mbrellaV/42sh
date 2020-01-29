@@ -1,4 +1,3 @@
-ls -la
 pwd
 exit
 ls
@@ -368,3 +367,5 @@ cat << kk
 cat << kk
 dfd Makefile
 pwd
+ls
+hash
