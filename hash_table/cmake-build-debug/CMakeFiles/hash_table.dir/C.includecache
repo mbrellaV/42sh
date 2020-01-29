@@ -6,27 +6,27 @@
 
 #IncludeRegexTransform: 
 
-/Users/wstygg/Desktop/hash_table/ft.c
+/Users/qmartina/Desktop/42start/hash_table/ft.c
 main.h
-/Users/wstygg/Desktop/hash_table/main.h
+/Users/qmartina/Desktop/42start/hash_table/main.h
 
-/Users/wstygg/Desktop/hash_table/hash_table.c
+/Users/qmartina/Desktop/42start/hash_table/hash_table.c
 main.h
-/Users/wstygg/Desktop/hash_table/main.h
+/Users/qmartina/Desktop/42start/hash_table/main.h
 
-/Users/wstygg/Desktop/hash_table/hash_table_2.c
+/Users/qmartina/Desktop/42start/hash_table/hash_table_2.c
 main.h
-/Users/wstygg/Desktop/hash_table/main.h
+/Users/qmartina/Desktop/42start/hash_table/main.h
 
-/Users/wstygg/Desktop/hash_table/main.c
+/Users/qmartina/Desktop/42start/hash_table/main.c
 main.h
-/Users/wstygg/Desktop/hash_table/main.h
+/Users/qmartina/Desktop/42start/hash_table/main.h
 stdio.h
 -
 readline/readline.h
 -
 
-/Users/wstygg/Desktop/hash_table/main.h
+/Users/qmartina/Desktop/42start/hash_table/main.h
 unistd.h
 -
 stdlib.h

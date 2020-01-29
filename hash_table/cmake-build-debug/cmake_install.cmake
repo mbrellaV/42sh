@@ -1,4 +1,4 @@
-# Install script for directory: /Users/wstygg/Desktop/hash_table
+# Install script for directory: /Users/qmartina/Desktop/42start/hash_table
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -40,5 +40,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/Users/wstygg/Desktop/hash_table/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/Users/qmartina/Desktop/42start/hash_table/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

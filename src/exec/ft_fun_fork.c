@@ -19,14 +19,14 @@ void	ft_fun_fork(char *path, char **arg, pid_t pid)
 	else if (pid < 0)
 	{
 		free(path);
-		ft_putendl("Fork failed to create a new process.");
+		ft_putendl_fd("Fork failed to create a new process.", 2);
 		return ;
 	}
 	if (path)
 		free(path);
 }
 
-int		ft_path_while(char **path, char **argum, pid_t pid)
+/*int		ft_path_while(char **path, char **argum, pid_t pid)
 {
 	int			k;
 	struct stat mystat;
@@ -45,8 +45,8 @@ int		ft_path_while(char **path, char **argum, pid_t pid)
 				free(tmp);
 				return (1);
 			}
-			ft_putstr("21sh: permission denied: ");
-			ft_putendl(tmp);
+			ft_putstr_fd("21sh: permission denied: ", 2);
+			ft_putendl_fd(tmp, 2);
 			free(tmp);
 			return (1);
 		}
@@ -87,7 +87,7 @@ int		ft_path_fork(char **argum, pid_t pid)
 		ft_free_str(path);
 	}
 	return (-1);
-}
+}*/
 
 void	ft_norm_pipe(int p1, int *fd_in, int p0, t_exectoken **head)
 {
