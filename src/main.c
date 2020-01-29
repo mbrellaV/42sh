@@ -11,6 +11,9 @@
 /* ************************************************************************** */
 
 #include "../inc/fshell.h"
+#include <stdio.h>
+#include <readline/readline.h>
+#include <readline/history.h>
 
 int		ft_whatis(t_exectoken *tmp, t_memory *q)
 {
@@ -46,9 +49,32 @@ int		ft_whatis(t_exectoken *tmp, t_memory *q)
 		return (-1);
 	else if (ft_strcmp(tmp->file_args[0], "clear") == 0)
 		ft_putstr_fd("\033[2J\033[H", 2);
+	else if (ft_strcmp(tmp->file_args[0], "hash") == 0)
+		print_hash();
 	else
 		ft_infinit_pipe(tmp);
 	return (1);
+}
+
+void				print_hash()
+{
+	t_hash			*hash;
+	int				i;
+
+	i = -1;
+	while (++i < MAX_HASH)
+	{
+		if (g_hash[i] != NULL)
+		{
+			hash = g_hash[i];
+			while (hash)
+			{
+				dprintf(2, "hash - [%i]; key - [%s];  value - [%s]    ", str_to_hash(hash->key), hash->key, hash->value);
+				hash = hash->next;
+			}
+			ft_printf("\n");
+		}
+	}
 }
 
 int		ft_main_what(t_exectoken *tmp, t_memory *q)
