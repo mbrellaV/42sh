@@ -28,7 +28,7 @@ void	ft_do_delch(t_readline *p)
 //	**len = ft_main_norm((*flag)->mod);
 //	ft_putstr_fd(*input, 2);
 //	ft_setcursor((*flag)->i, (*flag)->max);
-	ft_cleanstr(p->index + p->len_hint);
+	ft_cleanstr(p->index + p->len_hint, p);
 	p->index--;
 	i = p->index;
 	while(i < p->len)

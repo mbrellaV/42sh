@@ -17,7 +17,6 @@
 
 struct termios		saved_attributes;
 
-
 void			ft_read_8(t_readline *p, t_memory *head, int mod);
 void			ft_start_read(t_readline *p);
 void			ft_do_addch(t_readline *p, char c);
@@ -30,7 +29,7 @@ void	reset_input_mode(void);
 void	set_input_mode(void);
 ////////////////////////////////////////////////
 void	ft_realloc_buff(t_readline *p);
-void	ft_cleanstr(int i);
+void	ft_cleanstr(int i, t_readline *p);
 void	ft_setcursor(int i, int max);
 int		ft_add_sumchar(char *str, int rt);
 int		ft_put_n(int len, int i, int max);

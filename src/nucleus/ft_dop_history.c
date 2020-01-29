@@ -18,7 +18,7 @@ void		ft_dop_history(t_memory *q, t_readline *p, int k)
 	{
 		free(p->buff);
 		p->buff = ft_strdup((q)->inp);
-		ft_cleanstr(p->index);
+		ft_cleanstr(p->index, p);
 		p->index = (int)ft_strlen(p->buff);
 		p->len = (int)ft_strlen(p->buff);
 		ft_putstr_fd((q)->inp, 2);
@@ -27,7 +27,7 @@ void		ft_dop_history(t_memory *q, t_readline *p, int k)
 	{
 		free(p->buff);
 		p->buff = ft_strnew(1);
-		ft_cleanstr(p->index);
+		ft_cleanstr(p->index, p);
 		p->index = (int)ft_strlen(p->buff);
 		p->len = ft_strlen(p->buff);
 		ft_putstr_fd(p->buff, 2);

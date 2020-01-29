@@ -25,7 +25,7 @@ void	ft_cut_copy(t_readline *p)
 		tmp = p->buff;
 		p->buff = ft_strndup(&tmp[p->index], (p->len - p->index));
 		free(tmp);
-		ft_cleanstr(p->index + p->len_hint);
+		ft_cleanstr(p->index + p->len_hint, p);
 		p->index = 0;
 		p->len = ft_strlen(p->buff);
 		p->buff_size = p->len;
