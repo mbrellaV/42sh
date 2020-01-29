@@ -24,6 +24,8 @@ int 	is_cmp(char *s1, char *s2)
 	int	i;
 
 	i = -1;
+	if (s1[0] == '\0')
+		return (1);
 	while (s1[++i] && s2[i])
 	{
 		if (s1[i] != s2[i])
@@ -39,12 +41,14 @@ void	ft_find_dir(char *dir, char *name, t_readline *p)
 	DIR				*mydir;
 	struct dirent	*myfile;
 
-//	dprintf(2, "\ndir: !%s!\nname: !%s!\n", dir, name);
+	//	dprintf(2, "\ndir: !%s!\nname: !%s!\n", dir, name);
+	//ft_printf("\n is_cmp: %d\n", is_cmp(name, name));
 	mydir = opendir(dir);
 	if (mydir != NULL)
 	{
 		while ((myfile = readdir(mydir)) != 0)
 		{
+			//ft_printf("\n is_cmp: %d\n", is_cmp(name, myfile->d_name));
 			if (is_cmp(name, myfile->d_name) && myfile->d_name[0] != '.')
 			{
 				ft_add_tab(p, myfile->d_name);
@@ -59,38 +63,48 @@ void	ft_find_path(t_readline *p, char *name)
 {
 	char 	**path;
 	int 	i;
+	char	*tmp;
 
 	if (!*name)
 	{
 		return ;
 	}
-	path = ft_strsplit1("/Users/qmartina/.brew/bin:/Users/qmartina/.brew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/go/bin:/usr/local/munki", ':');
+	tmp = ft_get_var("PATH", g_env);
+	path = ft_strsplit1(tmp, ':');
 	i = -1;
 	while (path[++i])
 		ft_find_dir(path[i], name, p);
+	ft_strdel(&tmp);
 }
 
-char	*ft_directory(char *str)
+char	*ft_directory(char *str, int *flag_dir)
 {
 	int 	k;
+	char	*tmp;
+	char	*hp;
+	char	*tmp1;
 
+	if (!(hp = ft_get_var("HOME", g_env)))
+		ft_error_q(5);
 	k = ft_strlen(str);
 	while (--k >= 0)
 	{
 		if (str[k] == '/')
 		{
-			if (str[0] == '/')
-				return(ft_strjoin(".", ft_strndup(str, k + 1)));
-			else if ((str[0] == '.' || str[0] == '~') && str[1] == '/')
-				return(ft_strndup(str, k + 1));
-			else if (str[0] == '.' && str[1] != '/')
-				return(ft_strjoin("./", ft_strndup(&str[1], k + 1)));
-			else if (str[0] == '~' && str[1] != '/')
-				return(ft_strjoin("~/", ft_strndup(&str[1], k + 1)));
+			if (str[0] == '~')
+			{
+				tmp = ft_strndup(&str[1], k - 1);
+				tmp1 = ft_strjoin(hp, tmp);
+				ft_strdel(&tmp);
+				return (tmp1);
+
+			}
 			else
-				return(ft_strjoin("./", ft_strndup(str, k + 1)));
+				return (ft_strndup(str, k + 1));
+
 		}
 	}
+	*flag_dir = 0;
 	return (ft_strdup("./"));
 }
 
@@ -99,7 +113,7 @@ char	*ft_name(char *str)
 	int		k;
 
 	k = ft_strlen(str);
-	while (--k >= 0 && str[k] != '/')
+	while (--k >= 0 && str[k] != '/' && isword(str[k]) == 1)
 		;
 	return (ft_strdup(&str[k + 1]));
 }
@@ -112,7 +126,7 @@ int		is_add_str_tab(t_readline *p)
 	k = 0;
 	if (p->tab_max == 1)
 		return (-100);
-	while (p->tab[0][k])
+	while (p->tab[0] && p->tab[0][k])
 	{
 		i = 0;
 		while (i < p->tab_max && p->tab[0][k] && p->tab[i][k] && p->tab[0][k] == p->tab[i][k])
@@ -131,37 +145,46 @@ void	ft_cheak_tab(t_readline *p)
 	char			*str;
 	char 			*name;
 	char 			*dir;
+	int				flag_dir;
+	int				flag_left_word;
+	int				i_dop;
 
-	while (p->index < p->len && p->buff[p->index] != ' ' && p->buff[p->index] != '|' && p->buff[p->index] != ';')
+	flag_dir = 1;
+	flag_left_word = 0;
+	while (p->index < p->len && isword(p->buff[p->index]) == 1)
 	{
 		tputs(tgetstr("nd", NULL), 1, ft_c);
 		p->index++;
 	}
 	i = p->index;
-	while (--i > 0 && p->buff[i] != ' ' && p->buff[i] != ';' && p->buff[i] != '|')
+	while (--i > 0 && isword(p->buff[i]) == 1)
 		;
+	i_dop = i;
+	while (--i_dop > 0 && isword(p->buff[i_dop]) != 1)
+		;
+	if (i_dop != 0)
+		flag_left_word = 1;
 	if (i != 0)
 		i++;
 	str = ft_strndup(&(p->buff[i]), p->index - i);
-//	dprintf(2, "str: !%s!\n", str);
-	while (--i > 0 && p->buff[i] == ' ')
-		;
 	p->tab_max = 0;
+	//if (flag_left_word == 1)
+	//	name = ft_strnew(1);
+	//else
 	name = ft_name(str);
-	dir = ft_directory(str);
-	if (i == -1 || i == 0 || p->buff[i] == ';' || p->buff[i] == '|')
+	dir = ft_directory(str, &flag_dir);
+	//dprintf(2, "\n dir: %s, %s, %d", dir, name, flag_left_word);
+	if (flag_dir == 0 && flag_left_word != 1)
 		ft_find_path(p, str);
 	else
 	{
 		ft_find_dir(dir, name, p);
 	}
-//	dprintf(2, "\n");
 	if ((int)ft_strlen(name) < is_add_str_tab(p))
 	{
 		i = ft_strlen(name);
 		while (i < is_add_str_tab(p))
 		{
-//			dprintf(2, "add: !%c!\n", p->tab[0][i]);
 			ft_do_addch(p, p->tab[0][i]);
 			i++;
 		}
@@ -223,5 +246,4 @@ void	ft_read_8(t_readline *p, t_memory *head, int mod)
 		else if (ft_signal(p->sum_read, p) == 404)
 			ft_do_addch(p, buf[0]);
 	}
-//	p->buff[p->len] = '\0';
 }

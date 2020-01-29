@@ -11,6 +11,9 @@
 /* ************************************************************************** */
 
 #include "../inc/fshell.h"
+#include <stdio.h>
+#include <readline/readline.h>
+#include <readline/history.h>
 
 int		ft_whatis(t_exectoken *tmp, t_memory *q)
 {
@@ -20,6 +23,7 @@ int		ft_whatis(t_exectoken *tmp, t_memory *q)
 		ft_error_args(tmp);
 	if (tmp->file_args[0] == NULL)
 		return (0);
+	do_zam_str_with_tilda(tmp->file_args);
 	if (ft_strcmp(tmp->file_args[0], "echo") == 0)
 		ft_echo(tmp->file_args);
 	else if (ft_strcmp(tmp->file_args[0], "set") == 0)
@@ -45,9 +49,32 @@ int		ft_whatis(t_exectoken *tmp, t_memory *q)
 		return (-1);
 	else if (ft_strcmp(tmp->file_args[0], "clear") == 0)
 		ft_putstr_fd("\033[2J\033[H", 2);
+	else if (ft_strcmp(tmp->file_args[0], "hash") == 0)
+		print_hash();
 	else
 		ft_infinit_pipe(tmp);
 	return (1);
+}
+
+void				print_hash()
+{
+	t_hash			*hash;
+	int				i;
+
+	i = -1;
+	while (++i < MAX_HASH)
+	{
+		if (g_hash[i] != NULL)
+		{
+			hash = g_hash[i];
+			while (hash)
+			{
+				dprintf(2, "hash - [%i]; key - [%s];  value - [%s]    ", str_to_hash(hash->key), hash->key, hash->value);
+				hash = hash->next;
+			}
+			ft_printf("\n");
+		}
+	}
 }
 
 int		ft_main_what(t_exectoken *tmp, t_memory *q)
@@ -87,7 +114,8 @@ void	do_count_shell_lvl()
 	char	*dop;
 	char	*dop1;
 
-	dop = ft_get_var("SHLVL", g_env);
+	if (!(dop = ft_get_var("SHLVL", g_env)))
+		return ;
 	dop1 = ft_itoa(ft_atoi(dop) + 1);
 	set_new_var("SHLVL", dop1, &g_env);
 	ft_strdel(&dop);
@@ -125,7 +153,7 @@ int		main(int argc, char **argv, char **env)
 		del_readline(&p);
 		ft_distruct_tree(start_token);
 	}
-	save_history(head);
+	//save_history(head);
 	return (ft_distruct_memory(head) && ft_distruct_tree(start_token) &&
 		ft_dist_str(p.buff) ? 0 : 1);
 }

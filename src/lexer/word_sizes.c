@@ -34,14 +34,14 @@ int				word_size(char *str)
 		return (operator_size(str));
 	if (isword(*str) == 2)
 		return (c_size(str, *str));
-	if (isword(*str) == 3)
-		return (sc_size(str, *str));
+	//if (isword(*str) == 3)
+	//	return (sc_size(str, *str));
 	while (*str)
 	{
-		if (*str == '=' && ispar(*(str + 1)) == 1)
+		if (*str == '=' && ispar(*(str + 1)) == 1) 
 			return (3 + i + c_size(str + 1, *(str + 1)));
-		if (isword(*str) == 3)
-			return (i + sc_size(str, *str));
+		//if (isword(*str) == 3)
+		//	return (i + sc_size(str, *str));
 		if (isword(*str) == 0)
 			return (i);
 		i++;

@@ -12,27 +12,6 @@
 
 #include "../../inc/fshell.h"
 
-char			*ft_join_str_mas(char **mas)
-{
-	char	*line;
-	int		i;
-	char	*tmp;
-
-	i = 0;
-	line = ft_strdup("");
-	while (mas[i])
-	{
-		tmp = line;
-		line = ft_strjoin(line, " ");
-		ft_strdel(&tmp);
-		tmp = line;
-		line = ft_strjoin(line, mas[i]);
-		ft_strdel(&tmp);
-		i++;
-	}
-	return (line);
-}
-
 t_dop_str		*cr_dop_str(char **line1)
 {
 	t_dop_str	*tmp;
@@ -52,7 +31,7 @@ t_dop_str		*cr_dop_str(char **line1)
 	tmp->doptail_c = NULL;
 	tmp->tail_c = NULL;
 	line = do_zamena_sp(line);
-	line = do_zam_str(line);
+	//line = do_zam_str(line);
 	*line1 = line;
 	return (tmp);
 }

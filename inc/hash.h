@@ -31,6 +31,7 @@ t_hash				*g_hash[MAX_HASH];
 char				*hash_get(char *key);
 void				hash_init(void);
 void				hash_clear(void);
+void				print_hash();
 
 char				*slash_cat(char *s1, char *s2);
 void				hash_free_by_key(char *key);
