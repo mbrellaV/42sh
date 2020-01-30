@@ -20,7 +20,7 @@ t_lextoken		*ft_cr_new_token(char *line, int word_type, int op_type)
         ft_error_q(2);
 	tmp->next = NULL;
 	tmp->line = line;
-	tmp->word_type = word_type;
+	word_type = 0;
 	tmp->operator_type = op_type;
 	tmp->is_near_opt = 0;
 	return (tmp);

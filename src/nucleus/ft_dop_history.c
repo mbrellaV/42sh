@@ -16,20 +16,24 @@ void		ft_dop_history(t_memory *q, t_readline *p, int k)
 {
 	if (k == 1)
 	{
+		ft_cleanstr(p->index, p);
 		free(p->buff);
 		p->buff = ft_strdup((q)->inp);
-		ft_cleanstr(p->index, p);
+//		ft_cleanstr(p->index, p);
 		p->index = (int)ft_strlen(p->buff);
 		p->len = (int)ft_strlen(p->buff);
+		p->len_hint = ft_printf_helper(p->mod);
 		ft_putstr_fd((q)->inp, 2);
 	}
 	else if (k == 2)
 	{
+		ft_cleanstr(p->index, p);
 		free(p->buff);
 		p->buff = ft_strnew(1);
-		ft_cleanstr(p->index, p);
+//		ft_cleanstr(p->index, p);
 		p->index = (int)ft_strlen(p->buff);
 		p->len = ft_strlen(p->buff);
+		p->len_hint = ft_printf_helper(p->mod);
 		ft_putstr_fd(p->buff, 2);
 	}
 }
