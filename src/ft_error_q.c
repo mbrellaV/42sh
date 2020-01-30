@@ -36,6 +36,11 @@ void	ft_error_pipe(int er, char *str)
 		ft_putstr_fd("21sh: command not found: ", 2);
 		ft_putendl_fd(str, 2);
 	}
+	if (er == 2)
+	{
+		ft_putstr_fd("21sh: permission denied: ", 2);
+		ft_putendl_fd(str, 2);
+	}
 }
 
 int		ft_error_args(t_exectoken *tmp)

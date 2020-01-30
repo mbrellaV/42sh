@@ -112,16 +112,18 @@ int		ft_fd_flag(char **av, int *fd_in)
 
 void	ft_infinit_pipe(t_exectoken *head)
 {
-	int		p[2];
-	pid_t	pid;
-	int		fd_in;
-	char 	*rt;
+	int			p[2];
+	pid_t		pid;
+	int			fd_in;
+	char 		*rt;
+	struct stat mystat;
 
 	fd_in = 0;
 	ft_file_create(head);
 	while (head)
 	{
-		rt = hash_get(head->file_args[0]);
+		if ((rt = hash_get(head->file_args[0])) != NULL)
+			lstat(rt, &mystat);
 		pipe(p);
 		if ((pid = fork()) == -1)
 			exit(1);
@@ -134,6 +136,8 @@ void	ft_infinit_pipe(t_exectoken *head)
 			ft_norm_pipe(-404, &fd_in, p[0], NULL);
 			if (rt == NULL)
 				ft_error_pipe(1, &(head->file_args[0][0]));
+			else if (!mystat.st_mode || !S_IXUSR || S_ISDIR(mystat.st_mode))
+				ft_error_pipe(2, &(head->file_args[0][0]));
 			else
 				ft_fun_fork(rt, head->file_args, pid);
 //			if (ft_path_fork(head->file_args, pid) == -1)
