@@ -45,11 +45,11 @@ int				do_zam_bax_and_hist_full(char **mas)
 		return (-1);
 	if (!(tmp = ft_memalloc(sizeof(t_dop_str))))
         ft_error_q(2);
-	tmp->c_b = 0;
-	tmp->i_b = -1;
 	i = 0;
 	while (mas[i])
 	{
+		tmp->c_b = 0;
+		tmp->i_b = -1;
 		tmp->str_b = mas[i];
 		mas[i] = do_zam_str_bax(mas[i], tmp);
 		mas[i] = do_obr_zamena_bax(mas[i]);

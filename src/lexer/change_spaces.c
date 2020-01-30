@@ -82,7 +82,7 @@ char				*do_obr_zamena_bax(char *line)
 	i = 0;
 	while (line[i] != '\0')
 	{
-		if (line[i] == -'$')
+		if (line[i] == -('$'))
 			new[d++] = -1 * (line[i++]);
 		else
 			new[d++] = line[i++];
