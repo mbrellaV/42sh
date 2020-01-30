@@ -23,20 +23,13 @@ void				hash_init(void)
 
 t_hash			*parse_path(char *key)
 {
-	char			*path[8] = (char *[8])
-			{
-					"/Users/wstygg/.brew/bin",
-					"/usr/local/bin",
-					"/usr/bin",
-					"/bin",
-					"/usr/sbin",
-					"/sbin",
-					"/usr/local/munki",
-					NULL
-			};
+	char			**path;
 	int				i;
 	char			*cat;
 
+	if (ft_findenv("PATH=", g_env) == -404)
+		return (NULL);
+	path = ft_strsplit(g_env[ft_findenv("PATH=", g_env)] + 5, ":");
 	i = -1;
 	if (!access(key, X_OK))
 		return (hash_create(ft_strdup(key), ft_strdup(key)));
