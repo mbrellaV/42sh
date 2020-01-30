@@ -27,9 +27,9 @@ char				*do_obr_zamena_sp(char *line)
 	if (!(new = ft_memalloc(size * sizeof(char) + 1)))
         ft_error_q(2);
 	i = 0;
-	while (line[i])
+	while (line[i] != '\0')
 	{
-		if (line[i] < 0)
+		if (line[i] < 0 && line[i] != -'$')
 			new[d++] = -1 * (line[i++]);
 		else
 			new[d++] = line[i++];
@@ -62,5 +62,32 @@ char				*do_zamena_sp(char *line)
 		d++;
 	}
 	new[d] = '\0';
+	return (new);
+}
+
+char				*do_obr_zamena_bax(char *line)
+{
+	int		i;
+	int		d;
+	int		size;
+	char	*new;
+
+	i = 0;
+	d = 0;
+	size = 0;
+	while (line[i++] != '\0')
+		size++;
+	if (!(new = ft_memalloc(size * sizeof(char) + 1)))
+		ft_error_q(2);
+	i = 0;
+	while (line[i] != '\0')
+	{
+		if (line[i] == -'$')
+			new[d++] = -1 * (line[i++]);
+		else
+			new[d++] = line[i++];
+	}
+	new[d] = '\0';
+	ft_strdel(&line);
 	return (new);
 }

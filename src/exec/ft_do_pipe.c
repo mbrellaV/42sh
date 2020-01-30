@@ -134,7 +134,6 @@ void	ft_infinit_pipe(t_exectoken *head)
 				ft_fun_fork(rt, head->file_args, pid);
 //			if (ft_path_fork(head->file_args, pid) == -1)
 //				ft_error_pipe(1, &(head->file_args[0][1]));
-			print_hash();
 			exit(0);
 		}
 		else

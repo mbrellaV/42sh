@@ -53,7 +53,7 @@ typedef struct				s_lextoken
 	int						is_near_opt;
 	char					*line;
 	int						operator_type;
-	int						word_type;
+	int						inhibitor_lvl;
 }							t_lextoken;
 
 typedef struct				s_exectoken

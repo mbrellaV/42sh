@@ -52,6 +52,7 @@ int				do_zam_bax_and_hist_full(char **mas)
 	{
 		tmp->str_b = mas[i];
 		mas[i] = do_zam_str_bax(mas[i], tmp);
+		mas[i] = do_obr_zamena_bax(mas[i]);
 		i++;
 	}
 	ft_kill_str_dop_lex(tmp, NULL);
