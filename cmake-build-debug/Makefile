@@ -1041,6 +1041,33 @@ src/nucleus/do_add.c.s:
 	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/nucleus/do_add.c.s
 .PHONY : src/nucleus/do_add.c.s
 
+src/nucleus/find_history.o: src/nucleus/find_history.c.o
+
+.PHONY : src/nucleus/find_history.o
+
+# target to build an object file
+src/nucleus/find_history.c.o:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/nucleus/find_history.c.o
+.PHONY : src/nucleus/find_history.c.o
+
+src/nucleus/find_history.i: src/nucleus/find_history.c.i
+
+.PHONY : src/nucleus/find_history.i
+
+# target to preprocess a source file
+src/nucleus/find_history.c.i:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/nucleus/find_history.c.i
+.PHONY : src/nucleus/find_history.c.i
+
+src/nucleus/find_history.s: src/nucleus/find_history.c.s
+
+.PHONY : src/nucleus/find_history.s
+
+# target to generate assembly for a file
+src/nucleus/find_history.c.s:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/nucleus/find_history.c.s
+.PHONY : src/nucleus/find_history.c.s
+
 src/nucleus/ft_add_intput_que.o: src/nucleus/ft_add_intput_que.c.o
 
 .PHONY : src/nucleus/ft_add_intput_que.o
@@ -2124,6 +2151,9 @@ help:
 	@echo "... src/nucleus/do_add.o"
 	@echo "... src/nucleus/do_add.i"
 	@echo "... src/nucleus/do_add.s"
+	@echo "... src/nucleus/find_history.o"
+	@echo "... src/nucleus/find_history.i"
+	@echo "... src/nucleus/find_history.s"
 	@echo "... src/nucleus/ft_add_intput_que.o"
 	@echo "... src/nucleus/ft_add_intput_que.i"
 	@echo "... src/nucleus/ft_add_intput_que.s"

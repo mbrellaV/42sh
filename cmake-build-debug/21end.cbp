@@ -199,6 +199,9 @@
 		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/nucleus/do_add.c">
 			<Option target="21end"/>
 		</Unit>
+		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/nucleus/find_history.c">
+			<Option target="21end"/>
+		</Unit>
 		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/nucleus/ft_add_intput_que.c">
 			<Option target="21end"/>
 		</Unit>

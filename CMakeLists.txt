@@ -65,6 +65,7 @@ add_executable(21end
         src/nucleus/ft_arrnew.c
         src/nucleus/ft_arrdel.c
         src/nucleus/del_readline.c
+        src/nucleus/find_history.c
         src/parser/dop_parser.c
         src/parser/change_tilda.c
         src/parser/main_parser.c

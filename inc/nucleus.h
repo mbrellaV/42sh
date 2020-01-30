@@ -67,5 +67,7 @@ void	ft_add_intput_que(t_readline *p, t_memory *head);
 char 	**ft_arrnew(size_t size);
 void	ft_arrdel(char **arr);
 int 	del_readline(t_readline *p);
+/////////////////////////////////////////////
+void 	find_history(t_readline *p, t_memory *q);
 
 #endif

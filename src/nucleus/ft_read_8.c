@@ -162,18 +162,14 @@ void	ft_cheak_tab(t_readline *p)
 	i_dop = i;
 	while (--i_dop > 0 && isword(p->buff[i_dop]) != 1)
 		;
-	if (i_dop != 0)
+	if (i_dop > 0)
 		flag_left_word = 1;
 	if (i != 0)
 		i++;
 	str = ft_strndup(&(p->buff[i]), p->index - i);
 	p->tab_max = 0;
-	//if (flag_left_word == 1)
-	//	name = ft_strnew(1);
-	//else
 	name = ft_name(str);
 	dir = ft_directory(str, &flag_dir);
-	//dprintf(2, "\n dir: %s, %s, %d", dir, name, flag_left_word);
 	if (flag_dir == 0 && flag_left_word != 1)
 		ft_find_path(p, str);
 	else
@@ -231,6 +227,12 @@ void	ft_read_8(t_readline *p, t_memory *head, int mod)
 		}
 		else if (p->sum_read == 9)
 			ft_cheak_tab(p);
+		else if (p->sum_read == 18)
+		{
+			find_history(p, h);
+			p->len_hint = ft_printf_helper(p->mod);
+			ft_putstr_fd(p->buff, 2);
+		}
 		else if (p->sum_read == 25 || p->sum_read == 23 || p->sum_read == 21 || p->sum_read == 127)
 			ft_cut_copy(p);
 		else if (ft_signal(p->sum_read, p) == 1)

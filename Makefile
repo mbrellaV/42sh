@@ -78,6 +78,7 @@ SRC_BASE = builtins/ft_cd.c\
 	nucleus/ft_printf_helper.c\
 	nucleus/ft_cheak_quote.c\
 	nucleus/ft_add_intput_que.c\
+	nucleus/find_history.c\
 	nucleus/ft_arrnew.c\
 	nucleus/ft_arrdel.c\
 	nucleus/del_readline.c\

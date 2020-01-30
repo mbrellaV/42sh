@@ -38,6 +38,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "/Users/mbrella/Desktop/projects/21beta/42start/src/main.c" "/Users/mbrella/Desktop/projects/21beta/42start/cmake-build-debug/CMakeFiles/21end.dir/src/main.c.o"
   "/Users/mbrella/Desktop/projects/21beta/42start/src/nucleus/del_readline.c" "/Users/mbrella/Desktop/projects/21beta/42start/cmake-build-debug/CMakeFiles/21end.dir/src/nucleus/del_readline.c.o"
   "/Users/mbrella/Desktop/projects/21beta/42start/src/nucleus/do_add.c" "/Users/mbrella/Desktop/projects/21beta/42start/cmake-build-debug/CMakeFiles/21end.dir/src/nucleus/do_add.c.o"
+  "/Users/mbrella/Desktop/projects/21beta/42start/src/nucleus/find_history.c" "/Users/mbrella/Desktop/projects/21beta/42start/cmake-build-debug/CMakeFiles/21end.dir/src/nucleus/find_history.c.o"
   "/Users/mbrella/Desktop/projects/21beta/42start/src/nucleus/ft_add_intput_que.c" "/Users/mbrella/Desktop/projects/21beta/42start/cmake-build-debug/CMakeFiles/21end.dir/src/nucleus/ft_add_intput_que.c.o"
   "/Users/mbrella/Desktop/projects/21beta/42start/src/nucleus/ft_add_sumchar.c" "/Users/mbrella/Desktop/projects/21beta/42start/cmake-build-debug/CMakeFiles/21end.dir/src/nucleus/ft_add_sumchar.c.o"
   "/Users/mbrella/Desktop/projects/21beta/42start/src/nucleus/ft_arrdel.c" "/Users/mbrella/Desktop/projects/21beta/42start/cmake-build-debug/CMakeFiles/21end.dir/src/nucleus/ft_arrdel.c.o"

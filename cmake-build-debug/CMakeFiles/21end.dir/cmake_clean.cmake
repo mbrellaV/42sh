@@ -35,6 +35,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/21end.dir/src/main.c.o"
   "CMakeFiles/21end.dir/src/nucleus/del_readline.c.o"
   "CMakeFiles/21end.dir/src/nucleus/do_add.c.o"
+  "CMakeFiles/21end.dir/src/nucleus/find_history.c.o"
   "CMakeFiles/21end.dir/src/nucleus/ft_add_intput_que.c.o"
   "CMakeFiles/21end.dir/src/nucleus/ft_add_sumchar.c.o"
   "CMakeFiles/21end.dir/src/nucleus/ft_arrdel.c.o"
