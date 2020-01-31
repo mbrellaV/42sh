@@ -21,16 +21,14 @@ void				hash_init(void)
 		g_hash[i] = NULL;
 }
 
-t_hash			*parse_path(char *key)
+t_hash				*parse_path(char *key, int i)
 {
 	char			**path;
-	int				i;
 	char			*cat;
 
 	if (ft_findenv("PATH=", g_env) == -404)
 		return (NULL);
 	path = ft_strsplit(g_env[ft_findenv("PATH=", g_env)] + 5, ":");
-	i = -1;
 	if (check_file(key, IS_X) == 1 && !check_file(key, IS_D))
 	{
 		ft_arrdel(path);
@@ -58,7 +56,7 @@ char				*hash_parse(char *key)
 
 	id = str_to_hash(key);
 	if (!g_hash[id])
-		return ((g_hash[id] = parse_path(key)) ? g_hash[id]->value : NULL);
+		return ((g_hash[id] = parse_path(key, -1)) ? g_hash[id]->value : NULL);
 	else
 	{
 		hash = g_hash[id];
@@ -70,7 +68,7 @@ char				*hash_parse(char *key)
 		}
 		if (!ft_strcmp(hash->key, key))
 			return (hash->value);
-		return ((hash->next = parse_path(key)) ? hash->next->value : NULL);
+		return ((hash->next = parse_path(key, -1)) ? hash->next->value : NULL);
 	}
 }
 
@@ -102,21 +100,14 @@ char				*hash_get(char *key)
 	if (ft_strchr(key, '/'))
 	{
 		if (check_file(key, IS_X) == -1)
-		{
-			ft_printf("21sh: no such file or directory: %s\n", key);
-			return (NULL);
-		}
+			return (hash_error(1, key));
 		if (!check_file(key, IS_D) && check_file(key, IS_X) == 1)
 			return (key);
-		ft_printf("21sh: permission denied: %s\n", key);
-		return (NULL);
+		return (hash_error(3, key));
 	}
 	var = hash_parse(key);
 	if (!var)
-	{
-		ft_printf("21sh: command not found: %s\n", key);
-		return (NULL);
-	}
+		return (hash_error(2, key));
 	else
 	{
 		if (check_file(var, IS_X) == 1 && !check_file(var, IS_D))
@@ -124,8 +115,7 @@ char				*hash_get(char *key)
 		else
 		{
 			hash_free_by_key(key);
-			ft_printf("21sh: permission denied: %s\n", key);
-			return (NULL);
+			return (hash_error(3, key));
 		}
 	}
 }

@@ -72,12 +72,13 @@ add_executable(21end
         src/parser/main_parser.c
         src/hash/hash_table.c
         src/hash/hash_table_2.c
+        src/hash/hash_error.c
         src/ft_distruct.c
         src/ft_error_q.c
         src/ft_signal.c
         src/ft_take_arg.c
-        src/main.c src/builtins/allenv/main_env.c src/builtins/alias/ft_alias.c src/evaln/ft_do_zam_eval.c
-        src/evaln/atoimy.c src/evaln/inftopost.c src/evaln/calc.c src/evaln/dop.c src/check_file.c src/lexer/history_search.c)
+        src/main.c src/builtins/allenv/main_env.c src/builtins/alias/ft_alias.c
+        src/check_file.c src/lexer/history_search.c)
 
 target_link_libraries(21end ${CMAKE_SOURCE_DIR}/libft/libft.a)
 target_link_libraries(21end termcap)

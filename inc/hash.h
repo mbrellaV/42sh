@@ -38,5 +38,6 @@ void				hash_free_by_key(char *key);
 void				free_hash(t_hash **hash);
 t_hash				*hash_create(char *key, char *value);
 unsigned char		str_to_hash(char *str);
+char 				*hash_error(int errno, char *key);
 
 #endif

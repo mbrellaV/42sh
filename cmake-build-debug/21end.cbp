@@ -121,21 +121,6 @@
 		<Unit filename="/Users/qmartina/Desktop/42start/src/errors/errror_handler.c">
 			<Option target="21end"/>
 		</Unit>
-		<Unit filename="/Users/qmartina/Desktop/42start/src/evaln/atoimy.c">
-			<Option target="21end"/>
-		</Unit>
-		<Unit filename="/Users/qmartina/Desktop/42start/src/evaln/calc.c">
-			<Option target="21end"/>
-		</Unit>
-		<Unit filename="/Users/qmartina/Desktop/42start/src/evaln/dop.c">
-			<Option target="21end"/>
-		</Unit>
-		<Unit filename="/Users/qmartina/Desktop/42start/src/evaln/ft_do_zam_eval.c">
-			<Option target="21end"/>
-		</Unit>
-		<Unit filename="/Users/qmartina/Desktop/42start/src/evaln/inftopost.c">
-			<Option target="21end"/>
-		</Unit>
 		<Unit filename="/Users/qmartina/Desktop/42start/src/exec/ft_create_file.c">
 			<Option target="21end"/>
 		</Unit>
@@ -155,6 +140,9 @@
 			<Option target="21end"/>
 		</Unit>
 		<Unit filename="/Users/qmartina/Desktop/42start/src/ft_take_arg.c">
+			<Option target="21end"/>
+		</Unit>
+		<Unit filename="/Users/qmartina/Desktop/42start/src/hash/hash_error.c">
 			<Option target="21end"/>
 		</Unit>
 		<Unit filename="/Users/qmartina/Desktop/42start/src/hash/hash_table.c">

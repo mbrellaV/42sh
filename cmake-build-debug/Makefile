@@ -339,141 +339,6 @@ src/errors/errror_handler.c.s:
 	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/errors/errror_handler.c.s
 .PHONY : src/errors/errror_handler.c.s
 
-src/evaln/atoimy.o: src/evaln/atoimy.c.o
-
-.PHONY : src/evaln/atoimy.o
-
-# target to build an object file
-src/evaln/atoimy.c.o:
-	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/evaln/atoimy.c.o
-.PHONY : src/evaln/atoimy.c.o
-
-src/evaln/atoimy.i: src/evaln/atoimy.c.i
-
-.PHONY : src/evaln/atoimy.i
-
-# target to preprocess a source file
-src/evaln/atoimy.c.i:
-	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/evaln/atoimy.c.i
-.PHONY : src/evaln/atoimy.c.i
-
-src/evaln/atoimy.s: src/evaln/atoimy.c.s
-
-.PHONY : src/evaln/atoimy.s
-
-# target to generate assembly for a file
-src/evaln/atoimy.c.s:
-	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/evaln/atoimy.c.s
-.PHONY : src/evaln/atoimy.c.s
-
-src/evaln/calc.o: src/evaln/calc.c.o
-
-.PHONY : src/evaln/calc.o
-
-# target to build an object file
-src/evaln/calc.c.o:
-	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/evaln/calc.c.o
-.PHONY : src/evaln/calc.c.o
-
-src/evaln/calc.i: src/evaln/calc.c.i
-
-.PHONY : src/evaln/calc.i
-
-# target to preprocess a source file
-src/evaln/calc.c.i:
-	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/evaln/calc.c.i
-.PHONY : src/evaln/calc.c.i
-
-src/evaln/calc.s: src/evaln/calc.c.s
-
-.PHONY : src/evaln/calc.s
-
-# target to generate assembly for a file
-src/evaln/calc.c.s:
-	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/evaln/calc.c.s
-.PHONY : src/evaln/calc.c.s
-
-src/evaln/dop.o: src/evaln/dop.c.o
-
-.PHONY : src/evaln/dop.o
-
-# target to build an object file
-src/evaln/dop.c.o:
-	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/evaln/dop.c.o
-.PHONY : src/evaln/dop.c.o
-
-src/evaln/dop.i: src/evaln/dop.c.i
-
-.PHONY : src/evaln/dop.i
-
-# target to preprocess a source file
-src/evaln/dop.c.i:
-	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/evaln/dop.c.i
-.PHONY : src/evaln/dop.c.i
-
-src/evaln/dop.s: src/evaln/dop.c.s
-
-.PHONY : src/evaln/dop.s
-
-# target to generate assembly for a file
-src/evaln/dop.c.s:
-	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/evaln/dop.c.s
-.PHONY : src/evaln/dop.c.s
-
-src/evaln/ft_do_zam_eval.o: src/evaln/ft_do_zam_eval.c.o
-
-.PHONY : src/evaln/ft_do_zam_eval.o
-
-# target to build an object file
-src/evaln/ft_do_zam_eval.c.o:
-	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/evaln/ft_do_zam_eval.c.o
-.PHONY : src/evaln/ft_do_zam_eval.c.o
-
-src/evaln/ft_do_zam_eval.i: src/evaln/ft_do_zam_eval.c.i
-
-.PHONY : src/evaln/ft_do_zam_eval.i
-
-# target to preprocess a source file
-src/evaln/ft_do_zam_eval.c.i:
-	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/evaln/ft_do_zam_eval.c.i
-.PHONY : src/evaln/ft_do_zam_eval.c.i
-
-src/evaln/ft_do_zam_eval.s: src/evaln/ft_do_zam_eval.c.s
-
-.PHONY : src/evaln/ft_do_zam_eval.s
-
-# target to generate assembly for a file
-src/evaln/ft_do_zam_eval.c.s:
-	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/evaln/ft_do_zam_eval.c.s
-.PHONY : src/evaln/ft_do_zam_eval.c.s
-
-src/evaln/inftopost.o: src/evaln/inftopost.c.o
-
-.PHONY : src/evaln/inftopost.o
-
-# target to build an object file
-src/evaln/inftopost.c.o:
-	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/evaln/inftopost.c.o
-.PHONY : src/evaln/inftopost.c.o
-
-src/evaln/inftopost.i: src/evaln/inftopost.c.i
-
-.PHONY : src/evaln/inftopost.i
-
-# target to preprocess a source file
-src/evaln/inftopost.c.i:
-	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/evaln/inftopost.c.i
-.PHONY : src/evaln/inftopost.c.i
-
-src/evaln/inftopost.s: src/evaln/inftopost.c.s
-
-.PHONY : src/evaln/inftopost.s
-
-# target to generate assembly for a file
-src/evaln/inftopost.c.s:
-	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/evaln/inftopost.c.s
-.PHONY : src/evaln/inftopost.c.s
-
 src/exec/ft_create_file.o: src/exec/ft_create_file.c.o
 
 .PHONY : src/exec/ft_create_file.o
@@ -662,6 +527,33 @@ src/ft_take_arg.s: src/ft_take_arg.c.s
 src/ft_take_arg.c.s:
 	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/ft_take_arg.c.s
 .PHONY : src/ft_take_arg.c.s
+
+src/hash/hash_error.o: src/hash/hash_error.c.o
+
+.PHONY : src/hash/hash_error.o
+
+# target to build an object file
+src/hash/hash_error.c.o:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/hash/hash_error.c.o
+.PHONY : src/hash/hash_error.c.o
+
+src/hash/hash_error.i: src/hash/hash_error.c.i
+
+.PHONY : src/hash/hash_error.i
+
+# target to preprocess a source file
+src/hash/hash_error.c.i:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/hash/hash_error.c.i
+.PHONY : src/hash/hash_error.c.i
+
+src/hash/hash_error.s: src/hash/hash_error.c.s
+
+.PHONY : src/hash/hash_error.s
+
+# target to generate assembly for a file
+src/hash/hash_error.c.s:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/hash/hash_error.c.s
+.PHONY : src/hash/hash_error.c.s
 
 src/hash/hash_table.o: src/hash/hash_table.c.o
 
@@ -2154,21 +2046,6 @@ help:
 	@echo "... src/errors/errror_handler.o"
 	@echo "... src/errors/errror_handler.i"
 	@echo "... src/errors/errror_handler.s"
-	@echo "... src/evaln/atoimy.o"
-	@echo "... src/evaln/atoimy.i"
-	@echo "... src/evaln/atoimy.s"
-	@echo "... src/evaln/calc.o"
-	@echo "... src/evaln/calc.i"
-	@echo "... src/evaln/calc.s"
-	@echo "... src/evaln/dop.o"
-	@echo "... src/evaln/dop.i"
-	@echo "... src/evaln/dop.s"
-	@echo "... src/evaln/ft_do_zam_eval.o"
-	@echo "... src/evaln/ft_do_zam_eval.i"
-	@echo "... src/evaln/ft_do_zam_eval.s"
-	@echo "... src/evaln/inftopost.o"
-	@echo "... src/evaln/inftopost.i"
-	@echo "... src/evaln/inftopost.s"
 	@echo "... src/exec/ft_create_file.o"
 	@echo "... src/exec/ft_create_file.i"
 	@echo "... src/exec/ft_create_file.s"
@@ -2190,6 +2067,9 @@ help:
 	@echo "... src/ft_take_arg.o"
 	@echo "... src/ft_take_arg.i"
 	@echo "... src/ft_take_arg.s"
+	@echo "... src/hash/hash_error.o"
+	@echo "... src/hash/hash_error.i"
+	@echo "... src/hash/hash_error.s"
 	@echo "... src/hash/hash_table.o"
 	@echo "... src/hash/hash_table.i"
 	@echo "... src/hash/hash_table.s"

@@ -53,10 +53,7 @@ void	ft_open_flag(char *str, int *flag, int **ff, int *fd)
 	}
 }
 
-/////////////////////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////////////
-
-int		ft_heredoc(char *tmp)////////////////////////cntr + D
+int		ft_heredoc(char *tmp)
 {
 	int			j;
 	int			f[2];
@@ -69,7 +66,7 @@ int		ft_heredoc(char *tmp)////////////////////////cntr + D
 	while (ft_strcmp(h.buff, tmp) != 0 && ft_strcmp(h.buff, "exit") != 0)
 	{
 		j != 0 ? ft_putendl_fd(h.buff, f[1]) : NULL;
-		del_readline(&h);////////////////////////////////////////////
+		del_readline(&h);
 		ft_start_read(&h);
 		ft_read_8(&h, NULL, 2);
 		write(2, "\n", 1);
@@ -115,7 +112,7 @@ void	ft_infinit_pipe(t_exectoken *head)
 	int			p[2];
 	pid_t		pid;
 	int			fd_in;
-	char 		*rt;
+	char		*rt;
 	struct stat mystat;
 
 	fd_in = 0;
