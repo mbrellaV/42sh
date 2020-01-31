@@ -98,7 +98,6 @@ SRC_BASE = builtins/ft_cd.c\
 	check_file.c\
 	main.c\
 	builtins/allenv/main_env.c\
-	builtins/alias/ft_alias.c\
 
 
 SRCS		=	$(addprefix $(SRC_DIR), $(SRC_BASE))

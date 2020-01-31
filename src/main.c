@@ -121,7 +121,6 @@ int		main(int argc, char **argv, char **env)
 	t_exectoken	*start_token;
 
 	argv[0] = NULL;
-	ft_alias();
 	ft_global_env(env, argc);
 	signal(SIGINT, ft_fork_signal);
 	head = ft_head_memory();
@@ -147,7 +146,6 @@ int		main(int argc, char **argv, char **env)
 	//save_history(head);
 	hash_clear();
 	free(g_cp);
-	ft_arrdel(g_alias);
 	ft_arrdel(g_env);
 	ft_arrdel(g_all_var);
 //	free(p.buff);
