@@ -39,19 +39,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake
+CMAKE_COMMAND = /Users/wstygg/Desktop/CLion.app/Contents/bin/cmake/mac/bin/cmake
 
 # The command to remove a file.
-RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E remove -f
+RM = /Users/wstygg/Desktop/CLion.app/Contents/bin/cmake/mac/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/qmartina/Desktop/42start
+CMAKE_SOURCE_DIR = /Users/wstygg/Desktop/42start
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/qmartina/Desktop/42start/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/wstygg/Desktop/42start/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -59,7 +59,7 @@ CMAKE_BINARY_DIR = /Users/qmartina/Desktop/42start/cmake-build-debug
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/Users/wstygg/Desktop/CLion.app/Contents/bin/cmake/mac/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -70,7 +70,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	/Users/wstygg/Desktop/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/qmartina/Desktop/42start/cmake-build-debug/CMakeFiles /Users/qmartina/Desktop/42start/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/wstygg/Desktop/42start/cmake-build-debug/CMakeFiles /Users/wstygg/Desktop/42start/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/qmartina/Desktop/42start/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/wstygg/Desktop/42start/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -284,6 +284,33 @@ src/builtins/ft_echo2.s: src/builtins/ft_echo2.c.s
 src/builtins/ft_echo2.c.s:
 	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/builtins/ft_echo2.c.s
 .PHONY : src/builtins/ft_echo2.c.s
+
+src/check_file.o: src/check_file.c.o
+
+.PHONY : src/check_file.o
+
+# target to build an object file
+src/check_file.c.o:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/check_file.c.o
+.PHONY : src/check_file.c.o
+
+src/check_file.i: src/check_file.c.i
+
+.PHONY : src/check_file.i
+
+# target to preprocess a source file
+src/check_file.c.i:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/check_file.c.i
+.PHONY : src/check_file.c.i
+
+src/check_file.s: src/check_file.c.s
+
+.PHONY : src/check_file.s
+
+# target to generate assembly for a file
+src/check_file.c.s:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/check_file.c.s
+.PHONY : src/check_file.c.s
 
 src/errors/errror_handler.o: src/errors/errror_handler.c.o
 
@@ -2067,6 +2094,9 @@ help:
 	@echo "... src/builtins/ft_echo2.o"
 	@echo "... src/builtins/ft_echo2.i"
 	@echo "... src/builtins/ft_echo2.s"
+	@echo "... src/check_file.o"
+	@echo "... src/check_file.i"
+	@echo "... src/check_file.s"
 	@echo "... src/errors/errror_handler.o"
 	@echo "... src/errors/errror_handler.i"
 	@echo "... src/errors/errror_handler.s"

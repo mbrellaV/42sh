@@ -94,14 +94,18 @@ char				*hash_get(char *key)
 
 	var = hash_parse(key);
 	if (!var)
+	{
+		ft_printf("21sh: command not found: %s\n", key);
 		return (NULL);
+	}
 	else
 	{
-		if (!access(var, X_OK))
+		if (check_file(var, IS_X) == 1 && !check_file(var, IS_D))
 			return (var);
 		else
 		{
 			hash_free_by_key(key);
+			ft_printf("21sh: permission denied: %s\n", key);
 			return (NULL);
 		}
 	}
