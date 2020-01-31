@@ -25,11 +25,27 @@ int					find_max(char **tab)
 	return (max);
 }
 
+void				ft_norm_tab(t_readline *p)
+{
+	write(2, "\n", 1);
+	p->len_hint = ft_printf_helper(p->mod);
+	write(2, p->buff, p->len);
+	ft_setcursor(p->index, p->len);
+}
+
+void				ft_times(int times, int one_w)
+{
+	int				i;
+
+	i = times;
+	while (i++ < one_w)
+		write(2, " ", 1);
+}
+
 void				ft_print_tab(t_readline *p)
 {
 	struct winsize	wins;
 	int				curr_w;
-	int				times;
 	int				one_w;
 	int				i;
 
@@ -49,12 +65,7 @@ void				ft_print_tab(t_readline *p)
 			curr_w = 0;
 			continue ;
 		}
-		times = ft_strlen(p->tab[i]);
-		while (times++ < one_w)
-			write(2, " ", 1);
+		ft_times((int)ft_strlen(p->tab[i]), one_w);
 	}
-	write(2, "\n", 1);
-	p->len_hint = ft_printf_helper(p->mod);
-	write(2, p->buff, p->len);
-	ft_setcursor(p->index, p->len);
+	ft_norm_tab(p);
 }
