@@ -41,14 +41,11 @@ void	ft_find_dir(char *dir, char *name, t_readline *p)
 	DIR				*mydir;
 	struct dirent	*myfile;
 
-	//	dprintf(2, "\ndir: !%s!\nname: !%s!\n", dir, name);
-	//ft_printf("\n is_cmp: %d\n", is_cmp(name, name));
 	mydir = opendir(dir);
 	if (mydir != NULL)
 	{
 		while ((myfile = readdir(mydir)) != 0)
 		{
-			//ft_printf("\n is_cmp: %d\n", is_cmp(name, myfile->d_name));
 			if (is_cmp(name, myfile->d_name) && myfile->d_name[0] != '.')
 			{
 				ft_add_tab(p, myfile->d_name);

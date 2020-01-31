@@ -11,16 +11,11 @@
 /* ************************************************************************** */
 
 #include "../inc/fshell.h"
-#include <stdio.h>
-#include <readline/readline.h>
-#include <readline/history.h>
 
 int		ft_whatis(t_exectoken *tmp, t_memory *q)
 {
 	if (tmp->file_args == NULL)
 		return (ft_error_args(tmp));
-	if (do_zam_bax_and_hist_full(tmp->file_args) == -1)
-		ft_error_args(tmp);
 	if (tmp->file_args[0] == NULL)
 		return (0);
 	do_zam_str_with_tilda(tmp->file_args);
@@ -153,7 +148,7 @@ int		main(int argc, char **argv, char **env)
 		del_readline(&p);
 		ft_distruct_tree(start_token);
 	}
-	//save_history(head);
+	save_history(head);
 	return (ft_distruct_memory(head) && ft_distruct_tree(start_token) &&
 		ft_dist_str(p.buff) ? 0 : 1);
 }
