@@ -36,6 +36,6 @@ char				*do_zam_str_bax(char *str1, t_dop_str *t)
 			ft_strdel(&str1);
 			return (t->str_b);
 		}
-	//ft_strdel(&str1);
+	ft_strdel(&str1);
 	return (t->str_b);
 }
