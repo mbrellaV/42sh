@@ -37,6 +37,7 @@ void 	ft_print_tab(t_readline *p)
 	if (ioctl(2, TIOCGWINSZ, &wins) == -1)
 		return ;
 	i = ft_max_tab_len(p) + 4;
+
 	i = wins.ws_col / i;
 	p->tab_i = -1;
 	if (p->tab_max == 0)

@@ -149,11 +149,13 @@ int		main(int argc, char **argv, char **env)
 		start_token = all_parse(p.buff);
 		if (ft_main_what(start_token, head) == -1)
 			break ;
-        p.buff[0] != '\0' ? head = ft_memory(head, &p.buff) : head;
+        p.buff[0] != '\0' ? head = ft_memory(head, p.buff) : head;
 		del_readline(&p);
 		ft_distruct_tree(start_token);
 	}
 	//save_history(head);
+//	del_readline(&p);
+	hash_clear();
 	return (ft_distruct_memory(head) && ft_distruct_tree(start_token) &&
 		ft_dist_str(p.buff) ? 0 : 1);
 }

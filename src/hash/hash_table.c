@@ -103,6 +103,6 @@ char				*hash_get(char *key)
 		{
 			hash_free_by_key(key);
 			return (NULL);
-		}
+	}
 	}
 }
