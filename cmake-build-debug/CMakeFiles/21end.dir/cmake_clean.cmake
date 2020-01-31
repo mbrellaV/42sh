@@ -1,7 +1,6 @@
 file(REMOVE_RECURSE
   "21end"
   "21end.pdb"
-  "CMakeFiles/21end.dir/src/builtins/alias/ft_alias.c.o"
   "CMakeFiles/21end.dir/src/builtins/allenv/ft_env.c.o"
   "CMakeFiles/21end.dir/src/builtins/allenv/global_env.c.o"
   "CMakeFiles/21end.dir/src/builtins/allenv/main_env.c.o"
@@ -17,6 +16,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/21end.dir/src/ft_error_q.c.o"
   "CMakeFiles/21end.dir/src/ft_signal.c.o"
   "CMakeFiles/21end.dir/src/ft_take_arg.c.o"
+  "CMakeFiles/21end.dir/src/hash/hash_error.c.o"
   "CMakeFiles/21end.dir/src/hash/hash_table.c.o"
   "CMakeFiles/21end.dir/src/hash/hash_table_2.c.o"
   "CMakeFiles/21end.dir/src/lexer/change_dol.c.o"
@@ -72,6 +72,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/21end.dir/src/parser/change_tilda.c.o"
   "CMakeFiles/21end.dir/src/parser/dop_parser.c.o"
   "CMakeFiles/21end.dir/src/parser/main_parser.c.o"
+  "CMakeFiles/21end.dir/src/shell_lvl.c.o"
 )
 
 # Per-language clean rules from dependency scanning.

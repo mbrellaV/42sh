@@ -48,10 +48,10 @@ RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/qmartina/Desktop/42start
+CMAKE_SOURCE_DIR = /Users/mbrella/Desktop/projects/21beta/42start
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/qmartina/Desktop/42start/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/mbrella/Desktop/projects/21beta/42start/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/qmartina/Desktop/42start/cmake-build-debug/CMakeFiles /Users/qmartina/Desktop/42start/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/mbrella/Desktop/projects/21beta/42start/cmake-build-debug/CMakeFiles /Users/mbrella/Desktop/projects/21beta/42start/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/qmartina/Desktop/42start/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/mbrella/Desktop/projects/21beta/42start/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -122,33 +122,6 @@ depend:
 21end/fast:
 	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/build
 .PHONY : 21end/fast
-
-src/builtins/alias/ft_alias.o: src/builtins/alias/ft_alias.c.o
-
-.PHONY : src/builtins/alias/ft_alias.o
-
-# target to build an object file
-src/builtins/alias/ft_alias.c.o:
-	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/builtins/alias/ft_alias.c.o
-.PHONY : src/builtins/alias/ft_alias.c.o
-
-src/builtins/alias/ft_alias.i: src/builtins/alias/ft_alias.c.i
-
-.PHONY : src/builtins/alias/ft_alias.i
-
-# target to preprocess a source file
-src/builtins/alias/ft_alias.c.i:
-	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/builtins/alias/ft_alias.c.i
-.PHONY : src/builtins/alias/ft_alias.c.i
-
-src/builtins/alias/ft_alias.s: src/builtins/alias/ft_alias.c.s
-
-.PHONY : src/builtins/alias/ft_alias.s
-
-# target to generate assembly for a file
-src/builtins/alias/ft_alias.c.s:
-	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/builtins/alias/ft_alias.c.s
-.PHONY : src/builtins/alias/ft_alias.c.s
 
 src/builtins/allenv/ft_env.o: src/builtins/allenv/ft_env.c.o
 
@@ -554,6 +527,33 @@ src/ft_take_arg.s: src/ft_take_arg.c.s
 src/ft_take_arg.c.s:
 	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/ft_take_arg.c.s
 .PHONY : src/ft_take_arg.c.s
+
+src/hash/hash_error.o: src/hash/hash_error.c.o
+
+.PHONY : src/hash/hash_error.o
+
+# target to build an object file
+src/hash/hash_error.c.o:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/hash/hash_error.c.o
+.PHONY : src/hash/hash_error.c.o
+
+src/hash/hash_error.i: src/hash/hash_error.c.i
+
+.PHONY : src/hash/hash_error.i
+
+# target to preprocess a source file
+src/hash/hash_error.c.i:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/hash/hash_error.c.i
+.PHONY : src/hash/hash_error.c.i
+
+src/hash/hash_error.s: src/hash/hash_error.c.s
+
+.PHONY : src/hash/hash_error.s
+
+# target to generate assembly for a file
+src/hash/hash_error.c.s:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/hash/hash_error.c.s
+.PHONY : src/hash/hash_error.c.s
 
 src/hash/hash_table.o: src/hash/hash_table.c.o
 
@@ -2040,6 +2040,33 @@ src/parser/main_parser.c.s:
 	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/parser/main_parser.c.s
 .PHONY : src/parser/main_parser.c.s
 
+src/shell_lvl.o: src/shell_lvl.c.o
+
+.PHONY : src/shell_lvl.o
+
+# target to build an object file
+src/shell_lvl.c.o:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/shell_lvl.c.o
+.PHONY : src/shell_lvl.c.o
+
+src/shell_lvl.i: src/shell_lvl.c.i
+
+.PHONY : src/shell_lvl.i
+
+# target to preprocess a source file
+src/shell_lvl.c.i:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/shell_lvl.c.i
+.PHONY : src/shell_lvl.c.i
+
+src/shell_lvl.s: src/shell_lvl.c.s
+
+.PHONY : src/shell_lvl.s
+
+# target to generate assembly for a file
+src/shell_lvl.c.s:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/shell_lvl.c.s
+.PHONY : src/shell_lvl.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -2049,9 +2076,6 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... 21end"
-	@echo "... src/builtins/alias/ft_alias.o"
-	@echo "... src/builtins/alias/ft_alias.i"
-	@echo "... src/builtins/alias/ft_alias.s"
 	@echo "... src/builtins/allenv/ft_env.o"
 	@echo "... src/builtins/allenv/ft_env.i"
 	@echo "... src/builtins/allenv/ft_env.s"
@@ -2097,6 +2121,9 @@ help:
 	@echo "... src/ft_take_arg.o"
 	@echo "... src/ft_take_arg.i"
 	@echo "... src/ft_take_arg.s"
+	@echo "... src/hash/hash_error.o"
+	@echo "... src/hash/hash_error.i"
+	@echo "... src/hash/hash_error.s"
 	@echo "... src/hash/hash_table.o"
 	@echo "... src/hash/hash_table.i"
 	@echo "... src/hash/hash_table.s"
@@ -2262,6 +2289,9 @@ help:
 	@echo "... src/parser/main_parser.o"
 	@echo "... src/parser/main_parser.i"
 	@echo "... src/parser/main_parser.s"
+	@echo "... src/shell_lvl.o"
+	@echo "... src/shell_lvl.i"
+	@echo "... src/shell_lvl.s"
 .PHONY : help
 
 

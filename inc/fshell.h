@@ -90,7 +90,7 @@ int				ft_main_norm(int flag);
 int				ft_signal(int signo, t_readline *p);
 void			ft_fork_signal(int signo);
 int				ft_main_what(t_exectoken *tmp, t_memory *q);
-int				ft_whatis(t_exectoken *tmp, t_memory *q);
+void			ft_whatis(t_exectoken *tmp, t_memory *q);
 int				do_work_subshell(char **mas, t_memory *q);
 void			ft_do_change_alias(char **mas);
 char			*ft_strjoinch_i(char const *s1, char c, size_t k, size_t max);
@@ -121,6 +121,8 @@ void			ft_find_dir(char *dir, char *name, t_readline *p);
 char			*ft_directory(char *str, int *flag_dir);
 char			*ft_name(char *str);
 void			ft_find_path(t_readline *p, char *name);
+int				save_history(t_memory *q);
+void			do_count_shell_lvl(void);
 
 ///////////////////////////////////////////////////////
 

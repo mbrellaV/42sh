@@ -52,3 +52,23 @@ t_memory	*ft_head_memory(void)
 	close(fd);
 	return (head);
 }
+
+int			save_history(t_memory *q)
+{
+	int		fd;
+
+	fd = open("history/hist.txt", O_TRUNC);
+	close(fd);
+	fd = open("history/hist.txt", O_RDWR);
+	while (q->back->back != NULL)
+		q = q->back;
+	while (q != NULL)
+	{
+		write(fd, q->inp, ft_strlen(q->inp));
+		ft_putchar_fd(-100, fd);
+		q = q->next;
+	}
+	ft_putchar_fd(0, fd);
+	close(fd);
+	return (0);
+}

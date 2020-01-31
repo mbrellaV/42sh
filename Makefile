@@ -91,6 +91,7 @@ SRC_BASE = builtins/ft_cd.c\
 	parser/main_parser.c\
 	hash/hash_table.c\
 	hash/hash_table_2.c\
+	hash/hash_error.c\
 	ft_distruct.c\
 	ft_error_q.c\
 	ft_signal.c\
@@ -98,7 +99,6 @@ SRC_BASE = builtins/ft_cd.c\
 	check_file.c\
 	main.c\
 	builtins/allenv/main_env.c\
-
 
 SRCS		=	$(addprefix $(SRC_DIR), $(SRC_BASE))
 OBJS		=	$(addprefix $(OBJ_DIR), $(SRC_BASE:.c=.o))
