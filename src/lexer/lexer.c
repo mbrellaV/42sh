@@ -30,30 +30,31 @@ t_dop_str		*cr_dop_str(char **line1)
 	tmp->i_c = 0;
 	tmp->doptail_c = NULL;
 	tmp->tail_c = NULL;
-	line = do_zamena_sp(line);
 	//line = do_zam_str(line);
 	*line1 = line;
 	return (tmp);
 }
 
-int				do_zam_bax_and_hist_full(char **mas)
+int				do_zam_bax_and_hist_full(t_lextoken *h)
 {
-	int			i;
 	t_dop_str	*tmp;
 
-	if (!mas)
+	if (!h)
 		return (-1);
 	if (!(tmp = ft_memalloc(sizeof(t_dop_str))))
         ft_error_q(2);
-	i = 0;
-	while (mas[i])
+	while (h != NULL)
 	{
 		tmp->c_b = 0;
 		tmp->i_b = -1;
-		tmp->str_b = mas[i];
-		mas[i] = do_zam_str_bax(mas[i], tmp);
-		mas[i] = do_obr_zamena_bax(mas[i]);
-		i++;
+		tmp->str_b = h->line;
+		if (h->inhibitor_lvl != 2)
+		{
+			h->line = do_zamena_sp(h->line);
+			h->line = do_zam_str_bax(h->line, tmp);
+			h->line = do_obr_zamena_bax(h->line);
+		}
+		h = h->next;
 	}
 	ft_kill_str_dop_lex(tmp, NULL);
 	return (0);
@@ -83,6 +84,8 @@ int				dop_lexer(t_dop_str *tmp, char *line)
 			tmp->d_c = 1;
 		if (!(tmp->tail_c = add_token(tmp->tail_c, tmp->tmp_c, 1)))
 			return (-1);
+		if (ispar(line[tmp->i_c]))
+			tmp->tail_c->inhibitor_lvl = line[tmp->i_c] == '"' ? 1 : 2;
 		tmp->tail_c->is_near_opt = tmp->d_c;
 		tmp->i_c += word_size(line + tmp->i_c) + (ispar(line[tmp->i_c]) ? 2 : 0);
 		tmp->d_c = 0;
@@ -125,6 +128,5 @@ t_lextoken		*do_lexer(char *line)
 		tmp->tail_c->line = do_obr_zamena_sp(tmp->tail_c->line);
 		tmp->tail_c = tmp->tail_c->next;
 	}
-	ft_strdel(&line);
 	return (ft_kill_str_dop_lex(tmp, tmp->doptail_c));
 }

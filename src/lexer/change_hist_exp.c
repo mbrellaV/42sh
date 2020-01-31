@@ -90,7 +90,7 @@ char				*do_zam_str_hist_var(char *str1, t_memory *q)
 		if (str1[i] == '!')
 		{
 			if (str1[i + 1] == '!')
-				str1 = do_zam_str_by_str(i, i + 2, str1, ft_strdup(q->back->inp));
+				str1 = do_zam_str_by_str(i, i + 2, str1, ft_strdup(q->inp));
 			else if (ft_atoi(str1 + i + 1) > 0)
 			{
 				c = i;

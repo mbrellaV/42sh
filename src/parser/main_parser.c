@@ -73,6 +73,7 @@ t_exectoken		*all_parse(char *cmd)
 	t = NULL;
 	if (!(tmp = do_lexer(cmd)))
 		return (NULL);
+	do_zam_bax_and_hist_full(tmp);
 	free(t);
 	extmp = do_parser(tmp);
 	ft_distr_lex(tmp);

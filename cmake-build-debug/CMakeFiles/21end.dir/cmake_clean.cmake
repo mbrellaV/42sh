@@ -70,6 +70,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/21end.dir/src/nucleus/ft_upcursor.c.o"
   "CMakeFiles/21end.dir/src/nucleus/input_mode.c.o"
   "CMakeFiles/21end.dir/src/nucleus/show_history.c.o"
+  "CMakeFiles/21end.dir/src/nucleus/tab.c.o"
   "CMakeFiles/21end.dir/src/parser/change_tilda.c.o"
   "CMakeFiles/21end.dir/src/parser/dop_parser.c.o"
   "CMakeFiles/21end.dir/src/parser/main_parser.c.o"

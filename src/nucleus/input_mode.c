@@ -17,23 +17,29 @@ void	reset_input_mode(void)
 	tcsetattr(0, TCSANOW, &saved_attributes);
 }
 
+void	error_term(int error)
+{
+	if (error == 1)
+	{
+		ft_putendl_fd("21sh: Not a terminal.\n", 2);
+		exit(1);
+	}
+}
+
 void	set_input_mode(void)
 {
 	struct termios tattr;
 
 	if (!isatty(0))
-	{
-		ft_putendl_fd("Not a terminal.\n", 2);
-		exit(1);
-	}
+		error_term(1);
 	if (tgetent(NULL, getenv("TERM")) < 1)
-		return ;
+		error_term(1);
 	if (tcgetattr(0, &saved_attributes) == -1)
-		return ;
+		error_term(1);
 	ft_memcpy(&tattr, &saved_attributes, sizeof(tattr));
 	tattr.c_lflag &= ~(ECHO | ECHOE | ECHOK | ECHONL | ICANON | ISIG | IEXTEN);
 	tattr.c_cc[VMIN] = 1;
 	tattr.c_cc[VTIME] = 0;
 	if (tcsetattr(0, 0, &tattr) == -1)
-		return ;
+		error_term(1);
 }

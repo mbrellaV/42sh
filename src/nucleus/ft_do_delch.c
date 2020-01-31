@@ -14,24 +14,12 @@
 
 void	ft_do_delch(t_readline *p)
 {
-//	char	tmp;
-	int 	i;
-//	char	*tmp;
-//
-//
-//	tmp = *input;
-//	(*flag)->i--;
-//	*input = ft_strdelch(tmp, (*flag)->i, (*flag)->max);
-//	free(tmp);
-//	(*flag)->max = ft_strlen(*input);
-//	ft_cleanstr((*flag)->i + 1 + **len);
-//	**len = ft_main_norm((*flag)->mod);
-//	ft_putstr_fd(*input, 2);
-//	ft_setcursor((*flag)->i, (*flag)->max);
+	int		i;
+
 	ft_cleanstr(p->index + p->len_hint, p);
 	p->index--;
 	i = p->index;
-	while(i < p->len)
+	while (i < p->len)
 	{
 		p->buff[i] = p->buff[i + 1];
 		i++;

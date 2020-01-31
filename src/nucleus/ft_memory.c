@@ -14,9 +14,8 @@
 
 t_memory	*ft_memory(t_memory *back, char **str)
 {
-	t_memory *tmp;
-	t_memory *p;
-
+	t_memory	*tmp;
+	t_memory	*p;
 
 	tmp = (t_memory *)malloc(sizeof(t_memory));
 	if (!tmp)
@@ -25,7 +24,7 @@ t_memory	*ft_memory(t_memory *back, char **str)
 	back->next = tmp;
 	tmp->inp = ft_strdup(*str);
 	tmp->inp = do_zam_str_hist_var(tmp->inp, back);
-//	ft_strdel(&str);
+	free(*str);
 	*str = ft_strdup(tmp->inp);
 	tmp->next = p;
 	tmp->back = back;

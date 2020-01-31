@@ -11,16 +11,11 @@
 /* ************************************************************************** */
 
 #include "../inc/fshell.h"
-#include <stdio.h>
-#include <readline/readline.h>
-#include <readline/history.h>
 
 int		ft_whatis(t_exectoken *tmp, t_memory *q)
 {
 	if (tmp->file_args == NULL)
 		return (ft_error_args(tmp));
-	if (do_zam_bax_and_hist_full(tmp->file_args) == -1)
-		ft_error_args(tmp);
 	if (tmp->file_args[0] == NULL)
 		return (0);
 	do_zam_str_with_tilda(tmp->file_args);
@@ -91,20 +86,19 @@ int		ft_main_what(t_exectoken *tmp, t_memory *q)
 int		save_history(t_memory *q)
 {
 	int		fd;
-	char	buf[10];
 
 	fd = open("history/hist.txt",  O_TRUNC);
 	close(fd);
 	fd = open("history/hist.txt",  O_RDWR);
-	read(fd, buf, sizeof(buf));
 	while (q->back->back != NULL)
 		q = q->back;
 	while (q != NULL)
 	{
 		write(fd, q->inp, ft_strlen(q->inp));
-		write(fd, "\n", 1);
+		ft_putchar_fd(-100, fd);
 		q = q->next;
 	}
+	ft_putchar_fd(0, fd);
 	close(fd);
 	return (0);
 }
@@ -145,7 +139,6 @@ int		main(int argc, char **argv, char **env)
 		while (ft_cheak_quote(p.buff) != 1)
 			ft_add_intput_que(&p, head);
 		reset_input_mode();
-		//input = ft_strdup("ddd="ppp"");
 		p.buff[0] != '\0' ? head = ft_memory(head, &p.buff) : head;
 		start_token = all_parse(p.buff);
 		if (ft_main_what(start_token, head) == -1)
@@ -153,12 +146,13 @@ int		main(int argc, char **argv, char **env)
 		del_readline(&p);
 		ft_distruct_tree(start_token);
 	}
-	//save_history(head);
+	save_history(head);
 	hash_clear();
 	free(g_cp);
 	ft_arrdel(g_alias);
 	ft_arrdel(g_env);
 	ft_arrdel(g_all_var);
-	return (ft_distruct_memory(head) && ft_distruct_tree(start_token) &&
-		del_readline(&p) ? 0 : 1);
+//	free(p.buff);
+	del_readline(&p);
+	return (ft_distruct_memory(head) && ft_distruct_tree(start_token) ? 0 : 1);
 }

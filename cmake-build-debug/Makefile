@@ -1986,6 +1986,33 @@ src/nucleus/show_history.c.s:
 	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/nucleus/show_history.c.s
 .PHONY : src/nucleus/show_history.c.s
 
+src/nucleus/tab.o: src/nucleus/tab.c.o
+
+.PHONY : src/nucleus/tab.o
+
+# target to build an object file
+src/nucleus/tab.c.o:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/nucleus/tab.c.o
+.PHONY : src/nucleus/tab.c.o
+
+src/nucleus/tab.i: src/nucleus/tab.c.i
+
+.PHONY : src/nucleus/tab.i
+
+# target to preprocess a source file
+src/nucleus/tab.c.i:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/nucleus/tab.c.i
+.PHONY : src/nucleus/tab.c.i
+
+src/nucleus/tab.s: src/nucleus/tab.c.s
+
+.PHONY : src/nucleus/tab.s
+
+# target to generate assembly for a file
+src/nucleus/tab.c.s:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/nucleus/tab.c.s
+.PHONY : src/nucleus/tab.c.s
+
 src/parser/change_tilda.o: src/parser/change_tilda.c.o
 
 .PHONY : src/parser/change_tilda.o
@@ -2283,6 +2310,9 @@ help:
 	@echo "... src/nucleus/show_history.o"
 	@echo "... src/nucleus/show_history.i"
 	@echo "... src/nucleus/show_history.s"
+	@echo "... src/nucleus/tab.o"
+	@echo "... src/nucleus/tab.i"
+	@echo "... src/nucleus/tab.s"
 	@echo "... src/parser/change_tilda.o"
 	@echo "... src/parser/change_tilda.i"
 	@echo "... src/parser/change_tilda.s"

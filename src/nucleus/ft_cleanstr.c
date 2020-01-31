@@ -15,8 +15,8 @@
 void	ft_cleanstr(int i, t_readline *p)
 {
 	struct winsize	wins;
-	int 			k;
-	int 			j;
+	int				k;
+	int				j;
 
 	k = 0;
 	j = -1;
@@ -36,12 +36,5 @@ void	ft_cleanstr(int i, t_readline *p)
 			tputs(tgetstr("up", NULL), 1, ft_c);
 		k--;
 	}
-//	while (i > 0)
-//	{
-//		if (p->buff[i] == '\n')
-//			tputs(tgetstr("up", NULL), 1, ft_c);
-//		write(2, "\b", 1);
-//		i--;
-//	}
 	tputs(tgetstr("cd", NULL), 1, ft_c);
 }

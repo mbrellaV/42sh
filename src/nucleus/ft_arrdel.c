@@ -14,14 +14,13 @@
 
 void	ft_arrdel(char **arr)
 {
-	int 	i;
+	int		i;
 
 	i = 0;
 	if (arr == NULL)
-		return; ;
+		return ;
 	while (arr[i] != NULL)
 	{
-//		dprintf(2, "i: %d\n", i);
 		free(arr[i]);
 		i++;
 	}

@@ -14,7 +14,6 @@
 
 void	ft_fork_signal(int signo)
 {
-	exit(0);
 	if (signo == SIGINT)
 	{
 

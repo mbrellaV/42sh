@@ -18,7 +18,6 @@ int		ft_cheak_quote(char *input)
 	char	c;
 
 	k = -1;
-//	dprintf(2, "CHEAK\n");
 	while (input[++k])
 	{
 		if (input[k] == '\'' || input[k] == '\"')
@@ -30,6 +29,5 @@ int		ft_cheak_quote(char *input)
 				return (-1);
 		}
 	}
-//	dprintf(2, "end\n");
 	return (1);
 }

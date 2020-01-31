@@ -31,7 +31,7 @@ int		show_history(t_memory *q)
 		tmp = tmp->next;
 	}
 	tmp = dop;
-	while (tmp)
+	while (tmp->next)
 	{
 		if (sum - i < 16)
 			ft_printf("%d\t%s\n", i, tmp->inp);

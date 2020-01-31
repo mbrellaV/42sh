@@ -73,6 +73,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "/Users/qmartina/Desktop/42start/src/nucleus/ft_upcursor.c" "/Users/qmartina/Desktop/42start/cmake-build-debug/CMakeFiles/21end.dir/src/nucleus/ft_upcursor.c.o"
   "/Users/qmartina/Desktop/42start/src/nucleus/input_mode.c" "/Users/qmartina/Desktop/42start/cmake-build-debug/CMakeFiles/21end.dir/src/nucleus/input_mode.c.o"
   "/Users/qmartina/Desktop/42start/src/nucleus/show_history.c" "/Users/qmartina/Desktop/42start/cmake-build-debug/CMakeFiles/21end.dir/src/nucleus/show_history.c.o"
+  "/Users/qmartina/Desktop/42start/src/nucleus/tab.c" "/Users/qmartina/Desktop/42start/cmake-build-debug/CMakeFiles/21end.dir/src/nucleus/tab.c.o"
   "/Users/qmartina/Desktop/42start/src/parser/change_tilda.c" "/Users/qmartina/Desktop/42start/cmake-build-debug/CMakeFiles/21end.dir/src/parser/change_tilda.c.o"
   "/Users/qmartina/Desktop/42start/src/parser/dop_parser.c" "/Users/qmartina/Desktop/42start/cmake-build-debug/CMakeFiles/21end.dir/src/parser/dop_parser.c.o"
   "/Users/qmartina/Desktop/42start/src/parser/main_parser.c" "/Users/qmartina/Desktop/42start/cmake-build-debug/CMakeFiles/21end.dir/src/parser/main_parser.c.o"
