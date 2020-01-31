@@ -31,16 +31,23 @@ t_hash			*parse_path(char *key)
 		return (NULL);
 	path = ft_strsplit(g_env[ft_findenv("PATH=", g_env)] + 5, ":");
 	i = -1;
-	if (!access(key, X_OK))
+	if (check_file(key, IS_X) == 1 && !check_file(key, IS_D))
+	{
+		ft_arrdel(path);
 		return (hash_create(ft_strdup(key), ft_strdup(key)));
+	}
 	else
 		while (path[++i])
 		{
 			cat = slash_cat(path[i], key);
-			if (!access(cat, X_OK))
+			if (check_file(cat, IS_X) == 1)
+			{
+				ft_arrdel(path);
 				return (hash_create(ft_strdup(key), cat));
+			}
 			free(cat);
 		}
+	ft_arrdel(path);
 	return (NULL);
 }
 
@@ -92,6 +99,18 @@ char				*hash_get(char *key)
 {
 	char			*var;
 
+	if (ft_strchr(key, '/'))
+	{
+		if (check_file(key, IS_X) == -1)
+		{
+			ft_printf("21sh: no such file or directory: %s\n", key);
+			return (NULL);
+		}
+		if (!check_file(key, IS_D) && check_file(key, IS_X) == 1)
+			return (key);
+		ft_printf("21sh: permission denied: %s\n", key);
+		return (NULL);
+	}
 	var = hash_parse(key);
 	if (!var)
 	{
@@ -107,6 +126,6 @@ char				*hash_get(char *key)
 			hash_free_by_key(key);
 			ft_printf("21sh: permission denied: %s\n", key);
 			return (NULL);
-	}
+		}
 	}
 }

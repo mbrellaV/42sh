@@ -146,7 +146,7 @@ int		main(int argc, char **argv, char **env)
 			ft_add_intput_que(&p, head);
 		reset_input_mode();
 		//input = ft_strdup("ddd="ppp"");
-		p.buff[0] != '\0' ? head = ft_memory(head, &p.buff) : head;
+//		p.buff[0] != '\0' ? head = ft_memory(head, &p.buff) : head;
 		start_token = all_parse(p.buff);
 		if (ft_main_what(start_token, head) == -1)
 			break ;

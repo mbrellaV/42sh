@@ -51,6 +51,7 @@
 # define WHT	"\x1B[37m"
 # define RESET	"\x1B[0m"
 
+# define IS_E	0
 # define IS_R	1
 # define IS_W	2
 # define IS_X	4
