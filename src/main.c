@@ -147,6 +147,12 @@ int		main(int argc, char **argv, char **env)
 		ft_distruct_tree(start_token);
 	}
 	save_history(head);
+	//save_history(head);
+	hash_clear();
+	free(g_cp);
+	ft_arrdel(g_alias);
+	ft_arrdel(g_env);
+	ft_arrdel(g_all_var);
 	return (ft_distruct_memory(head) && ft_distruct_tree(start_token) &&
-		ft_dist_str(p.buff) ? 0 : 1);
+		del_readline(&p) ? 0 : 1);
 }

@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 # Install script for directory: /Users/mbrella/Desktop/projects/21beta/42start
+=======
+# Install script for directory: /Users/qmartina/Desktop/42start
+>>>>>>> 252ca05ec7ce003a4e9061e0ce4a3f0acffbf1e5
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -40,5 +44,9 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
+<<<<<<< HEAD
 file(WRITE "/Users/mbrella/Desktop/projects/21beta/42start/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+=======
+file(WRITE "/Users/qmartina/Desktop/42start/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+>>>>>>> 252ca05ec7ce003a4e9061e0ce4a3f0acffbf1e5
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

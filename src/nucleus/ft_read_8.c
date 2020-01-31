@@ -72,6 +72,7 @@ void	ft_find_path(t_readline *p, char *name)
 	while (path[++i])
 		ft_find_dir(path[i], name, p);
 	ft_strdel(&tmp);
+	ft_arrdel(path);
 }
 
 char	*ft_directory(char *str, int *flag_dir)
@@ -81,8 +82,6 @@ char	*ft_directory(char *str, int *flag_dir)
 	char	*hp;
 	char	*tmp1;
 
-	if (!(hp = ft_get_var("HOME", g_env)))
-		ft_error_q(5);
 	k = ft_strlen(str);
 	while (--k >= 0)
 	{
@@ -90,15 +89,17 @@ char	*ft_directory(char *str, int *flag_dir)
 		{
 			if (str[0] == '~')
 			{
+				if (!(hp = ft_get_var("HOME", g_env)))
+					ft_error_q(5);
 				tmp = ft_strndup(&str[1], k - 1);
 				tmp1 = ft_strjoin(hp, tmp);
+				free(hp);
 				ft_strdel(&tmp);
 				return (tmp1);
 
 			}
 			else
 				return (ft_strndup(str, k + 1));
-
 		}
 	}
 	*flag_dir = 0;
