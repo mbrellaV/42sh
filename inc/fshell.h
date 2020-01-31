@@ -114,6 +114,14 @@ void			ft_show_env(char **env);
 int				do_zam_ravno(char **str);
 void			do_zam_str_with_tilda(char **mas);
 int				check_file(char *file, unsigned check);
+int 			is_cmp(char *s1, char *s2);
+int				is_add_str_tab(t_readline *p);
+void			ft_add_tab(t_readline *p, char *str);
+void			ft_find_dir(char *dir, char *name, t_readline *p);
+char			*ft_directory(char *str, int *flag_dir);
+char			*ft_name(char *str);
+void			ft_find_path(t_readline *p, char *name);
+
 ///////////////////////////////////////////////////////
 
 #endif

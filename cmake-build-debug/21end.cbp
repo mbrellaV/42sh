@@ -103,6 +103,9 @@
 		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/builtins/allenv/ft_env.c">
 			<Option target="21end"/>
 		</Unit>
+		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/builtins/allenv/global_env.c">
+			<Option target="21end"/>
+		</Unit>
 		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/builtins/allenv/main_env.c">
 			<Option target="21end"/>
 		</Unit>
@@ -119,21 +122,6 @@
 			<Option target="21end"/>
 		</Unit>
 		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/errors/errror_handler.c">
-			<Option target="21end"/>
-		</Unit>
-		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/evaln/atoimy.c">
-			<Option target="21end"/>
-		</Unit>
-		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/evaln/calc.c">
-			<Option target="21end"/>
-		</Unit>
-		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/evaln/dop.c">
-			<Option target="21end"/>
-		</Unit>
-		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/evaln/ft_do_zam_eval.c">
-			<Option target="21end"/>
-		</Unit>
-		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/evaln/inftopost.c">
 			<Option target="21end"/>
 		</Unit>
 		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/exec/ft_create_file.c">
@@ -203,6 +191,9 @@
 			<Option target="21end"/>
 		</Unit>
 		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/nucleus/do_add.c">
+			<Option target="21end"/>
+		</Unit>
+		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/nucleus/dop_tab_funs.c">
 			<Option target="21end"/>
 		</Unit>
 		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/nucleus/find_history.c">

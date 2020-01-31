@@ -32,6 +32,7 @@ SRC_BASE = builtins/ft_cd.c\
         builtins/ft_echo.c\
         builtins/ft_echo2.c\
         builtins/allenv/ft_env.c\
+ 	builtins/allenv/global_env.c\
         errors/errror_handler.c\
         exec/ft_create_file.c\
         exec/ft_do_pipe.c\
@@ -64,6 +65,7 @@ SRC_BASE = builtins/ft_cd.c\
 	nucleus/ft_arrows.c\
 	nucleus/ft_putcut.c\
 	nucleus/ft_cut.c\
+	nucleus/dop_tab_funs.c\
 	nucleus/ft_do_delch.c\
 	nucleus/ft_cut_copy.c\
 	nucleus/ft_do_copy.c\
@@ -97,11 +99,6 @@ SRC_BASE = builtins/ft_cd.c\
 	main.c\
 	builtins/allenv/main_env.c\
 	builtins/alias/ft_alias.c\
-	evaln/ft_do_zam_eval.c\
-	evaln/atoimy.c\
-	evaln/inftopost.c\
-	evaln/calc.c\
-	evaln/dop.c\
 
 
 SRCS		=	$(addprefix $(SRC_DIR), $(SRC_BASE))

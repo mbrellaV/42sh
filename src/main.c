@@ -38,8 +38,6 @@ int		ft_whatis(t_exectoken *tmp, t_memory *q)
 		show_history(q);
 	else if (ft_strcmp(tmp->file_args[0], "env") == 0)
 		ft_show_env(g_env);
-	else if (ft_strstr(tmp->file_args[0], "alias") != NULL)
-		ft_do_change_alias(tmp->file_args);
 	else if (ft_strcmp(tmp->file_args[0], "exit") == 0)
 		return (-1);
 	else if (ft_strcmp(tmp->file_args[0], "clear") == 0)

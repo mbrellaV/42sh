@@ -34,6 +34,9 @@ typedef struct	s_readline
 	int			tab_size;
 	int 		tab_i;
 	int 		tab_max;
+	int			flag_dir;
+	int			flag_left_word;
+	int			i_dop;
 }				t_readline;
 
 typedef struct	s_pipe

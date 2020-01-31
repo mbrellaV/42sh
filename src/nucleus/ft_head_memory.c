@@ -12,6 +12,19 @@
 
 #include "../inc/fshell.h"
 
+t_memory	*dop_memmory(int fd)
+{
+	t_memory *head;
+
+	if (!(head = (t_memory *)malloc(sizeof(t_memory))))
+		ft_error_q(2);
+	head->inp = NULL;
+	head->next = NULL;
+	head->back = NULL;
+	close(fd);
+	return (head);
+}
+
 t_memory	*ft_head_memory(void)
 {
 	t_memory	*head;
@@ -20,15 +33,7 @@ t_memory	*ft_head_memory(void)
 
 	fd = open("history/hist.txt", O_RDWR);
 	if (get_next_line_with_sym(fd, &line, -100) <= 0)
-	{
-		if (!(head = (t_memory *)malloc(sizeof(t_memory))))
-			ft_error_q(2);
-		head->inp = NULL;
-		head->next = NULL;
-		head->back = NULL;
-		close(fd);
-		return (head);
-	}
+		return (dop_memmory(fd));
 	if (!(head = (t_memory *)malloc(sizeof(t_memory))))
 		ft_error_q(2);
 	head->inp = ft_strdup(line);

@@ -12,7 +12,6 @@
 
 #include "../../../inc/fshell.h"
 
-
 char			*ft_get_var(char *dop, char **env)
 {
 	int		i;
@@ -27,7 +26,7 @@ char			*ft_get_var(char *dop, char **env)
 		if (ft_strstr(env[i], dopd) == env[i])
 		{
 			if (!(dop = ft_strsub(env[i], ft_strlen(dopd),
-								  ft_strlen(env[i]) - ft_strlen(dopd))))
+					ft_strlen(env[i]) - ft_strlen(dopd))))
 				return (NULL);
 			ft_strdel(&dopd);
 			return (dop);
@@ -38,7 +37,7 @@ char			*ft_get_var(char *dop, char **env)
 	return (NULL);
 }
 
-void	ft_do_export(char **mas)
+void			ft_do_export(char **mas)
 {
 	if (mas == NULL)
 		ft_error(15, "an error ocured");
