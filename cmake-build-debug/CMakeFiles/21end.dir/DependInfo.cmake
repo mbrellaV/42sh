@@ -10,6 +10,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "/Users/qmartina/Desktop/42start/src/builtins/ft_cd.c" "/Users/qmartina/Desktop/42start/cmake-build-debug/CMakeFiles/21end.dir/src/builtins/ft_cd.c.o"
   "/Users/qmartina/Desktop/42start/src/builtins/ft_echo.c" "/Users/qmartina/Desktop/42start/cmake-build-debug/CMakeFiles/21end.dir/src/builtins/ft_echo.c.o"
   "/Users/qmartina/Desktop/42start/src/builtins/ft_echo2.c" "/Users/qmartina/Desktop/42start/cmake-build-debug/CMakeFiles/21end.dir/src/builtins/ft_echo2.c.o"
+  "/Users/qmartina/Desktop/42start/src/check_file.c" "/Users/qmartina/Desktop/42start/cmake-build-debug/CMakeFiles/21end.dir/src/check_file.c.o"
   "/Users/qmartina/Desktop/42start/src/errors/errror_handler.c" "/Users/qmartina/Desktop/42start/cmake-build-debug/CMakeFiles/21end.dir/src/errors/errror_handler.c.o"
   "/Users/qmartina/Desktop/42start/src/evaln/atoimy.c" "/Users/qmartina/Desktop/42start/cmake-build-debug/CMakeFiles/21end.dir/src/evaln/atoimy.c.o"
   "/Users/qmartina/Desktop/42start/src/evaln/calc.c" "/Users/qmartina/Desktop/42start/cmake-build-debug/CMakeFiles/21end.dir/src/evaln/calc.c.o"

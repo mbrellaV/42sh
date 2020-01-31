@@ -42,14 +42,20 @@
 # include "nucleus.h"
 # include "struct.h"
 # include "hash.h"
-# define RED   "\x1B[31m"
-# define GRN   "\x1B[32m"
-# define YEL   "\x1B[33m"
-# define BLU   "\x1B[34m"
-# define MAG   "\x1B[35m"
-# define CYN   "\x1B[36m"
-# define WHT   "\x1B[37m"
-# define RESET "\x1B[0m"
+# define RED	"\x1B[31m"
+# define GRN	"\x1B[32m"
+# define YEL	"\x1B[33m"
+# define BLU	"\x1B[34m"
+# define MAG	"\x1B[35m"
+# define CYN	"\x1B[36m"
+# define WHT	"\x1B[37m"
+# define RESET	"\x1B[0m"
+
+# define IS_R	1
+# define IS_W	2
+# define IS_X	4
+# define IS_D	8
+# define IS_L	16
 
 char			**g_alias;
 char			**g_env;
@@ -106,6 +112,7 @@ int				ft_env_len(char **env);
 void			ft_show_env(char **env);
 int				do_zam_ravno(char **str);
 void			do_zam_str_with_tilda(char **mas);
+int				check_file(char *file, unsigned check);
 ///////////////////////////////////////////////////////
 
 #endif

@@ -285,6 +285,33 @@ src/builtins/ft_echo2.c.s:
 	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/builtins/ft_echo2.c.s
 .PHONY : src/builtins/ft_echo2.c.s
 
+src/check_file.o: src/check_file.c.o
+
+.PHONY : src/check_file.o
+
+# target to build an object file
+src/check_file.c.o:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/check_file.c.o
+.PHONY : src/check_file.c.o
+
+src/check_file.i: src/check_file.c.i
+
+.PHONY : src/check_file.i
+
+# target to preprocess a source file
+src/check_file.c.i:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/check_file.c.i
+.PHONY : src/check_file.c.i
+
+src/check_file.s: src/check_file.c.s
+
+.PHONY : src/check_file.s
+
+# target to generate assembly for a file
+src/check_file.c.s:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/check_file.c.s
+.PHONY : src/check_file.c.s
+
 src/errors/errror_handler.o: src/errors/errror_handler.c.o
 
 .PHONY : src/errors/errror_handler.o
@@ -2067,6 +2094,9 @@ help:
 	@echo "... src/builtins/ft_echo2.o"
 	@echo "... src/builtins/ft_echo2.i"
 	@echo "... src/builtins/ft_echo2.s"
+	@echo "... src/check_file.o"
+	@echo "... src/check_file.i"
+	@echo "... src/check_file.s"
 	@echo "... src/errors/errror_handler.o"
 	@echo "... src/errors/errror_handler.i"
 	@echo "... src/errors/errror_handler.s"
