@@ -57,7 +57,7 @@ void	ft_fun_fork(char *path, char **arg, pid_t pid)
 
 int		ft_fun_lstat(struct stat mystat, char **argum, pid_t pid)
 {
-	if (mystat.st_mode & S_IXUSR && !S_ISDIR(mystat.st_mode))
+	if (mystat.st_mode && S_IXUSR && !S_ISDIR(mystat.st_mode))
 	{
 		ft_fun_fork(ft_strdup(argum[0]), argum, pid);
 		return (1);

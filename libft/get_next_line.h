@@ -26,7 +26,10 @@ typedef struct	s_dop
 	size_t		dopi;
 }				t_dop;
 
+int				get_next_line_with_sym(const int fd, char **line, char c);
 int				get_next_line(const int fd, char **line);
 int				ft_strfind_index(char *s, char c);
+t_dop			*ft_cr_new_node(void);
+int				ft_dopdel(t_dop *d, char **mas);
 
 #endif

@@ -7,6 +7,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/21end.dir/src/builtins/ft_cd.c.o"
   "CMakeFiles/21end.dir/src/builtins/ft_echo.c.o"
   "CMakeFiles/21end.dir/src/builtins/ft_echo2.c.o"
+  "CMakeFiles/21end.dir/src/check_file.c.o"
   "CMakeFiles/21end.dir/src/errors/errror_handler.c.o"
   "CMakeFiles/21end.dir/src/evaln/atoimy.c.o"
   "CMakeFiles/21end.dir/src/evaln/calc.c.o"

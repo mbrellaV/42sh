@@ -115,6 +115,9 @@
 		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/builtins/ft_echo2.c">
 			<Option target="21end"/>
 		</Unit>
+		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/check_file.c">
+			<Option target="21end"/>
+		</Unit>
 		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/errors/errror_handler.c">
 			<Option target="21end"/>
 		</Unit>

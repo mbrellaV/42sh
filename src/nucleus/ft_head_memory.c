@@ -19,7 +19,7 @@ t_memory	*ft_head_memory(void)
 	char		*line;
 
 	fd = open("history/hist.txt", O_RDWR);
-	if (get_next_line(fd, &line) <= 0)
+	if (get_next_line_with_sym(fd, &line, -100) <= 0)
 	{
 		if (!(head = (t_memory *)malloc(sizeof(t_memory))))
 			ft_error_q(2);
@@ -34,7 +34,7 @@ t_memory	*ft_head_memory(void)
 	head->inp = ft_strdup(line);
 	ft_strdel(&line);
 	head->back = NULL;
-	while (get_next_line(fd, &line))
+	while (get_next_line_with_sym(fd, &line, -100))
 	{
 		if (!(head->next = (t_memory *)malloc(sizeof(t_memory))))
 			ft_error_q(2);

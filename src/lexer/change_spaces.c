@@ -62,6 +62,7 @@ char				*do_zamena_sp(char *line)
 		d++;
 	}
 	new[d] = '\0';
+	//ft_strdel(&line);
 	return (new);
 }
 

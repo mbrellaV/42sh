@@ -86,20 +86,19 @@ int		ft_main_what(t_exectoken *tmp, t_memory *q)
 int		save_history(t_memory *q)
 {
 	int		fd;
-	char	buf[10];
 
 	fd = open("history/hist.txt",  O_TRUNC);
 	close(fd);
 	fd = open("history/hist.txt",  O_RDWR);
-	read(fd, buf, sizeof(buf));
 	while (q->back->back != NULL)
 		q = q->back;
 	while (q != NULL)
 	{
 		write(fd, q->inp, ft_strlen(q->inp));
-		write(fd, "\n", 1);
+		ft_putchar_fd(-100, fd);
 		q = q->next;
 	}
+	ft_putchar_fd(0, fd);
 	close(fd);
 	return (0);
 }
@@ -140,11 +139,10 @@ int		main(int argc, char **argv, char **env)
 		while (ft_cheak_quote(p.buff) != 1)
 			ft_add_intput_que(&p, head);
 		reset_input_mode();
-		//input = ft_strdup("ddd="ppp"");
+		p.buff[0] != '\0' ? head = ft_memory(head, &p.buff) : head;
 		start_token = all_parse(p.buff);
 		if (ft_main_what(start_token, head) == -1)
 			break ;
-        p.buff[0] != '\0' ? head = ft_memory(head, &p.buff) : head;
 		del_readline(&p);
 		ft_distruct_tree(start_token);
 	}

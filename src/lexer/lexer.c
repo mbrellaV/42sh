@@ -37,14 +37,12 @@ t_dop_str		*cr_dop_str(char **line1)
 
 int				do_zam_bax_and_hist_full(t_lextoken *h)
 {
-	int			i;
 	t_dop_str	*tmp;
 
 	if (!h)
 		return (-1);
 	if (!(tmp = ft_memalloc(sizeof(t_dop_str))))
         ft_error_q(2);
-	i = 0;
 	while (h != NULL)
 	{
 		tmp->c_b = 0;
@@ -130,6 +128,5 @@ t_lextoken		*do_lexer(char *line)
 		tmp->tail_c->line = do_obr_zamena_sp(tmp->tail_c->line);
 		tmp->tail_c = tmp->tail_c->next;
 	}
-	//ft_strdel(&line);
 	return (ft_kill_str_dop_lex(tmp, tmp->doptail_c));
 }

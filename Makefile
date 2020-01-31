@@ -91,6 +91,7 @@ SRC_BASE = builtins/ft_cd.c\
 	ft_error_q.c\
 	ft_signal.c\
 	ft_take_arg.c\
+	check_file.c\
 	main.c\
 	builtins/allenv/main_env.c\
 	builtins/alias/ft_alias.c\
