@@ -69,7 +69,7 @@ int		ft_heredoc(char *tmp)////////////////////////cntr + D
 	while (ft_strcmp(h.buff, tmp) != 0 && ft_strcmp(h.buff, "exit") != 0)
 	{
 		j != 0 ? ft_putendl_fd(h.buff, f[1]) : NULL;
-//		del_readline(&h);////////////////////////////////////////////
+		del_readline(&h);////////////////////////////////////////////
 		ft_start_read(&h);
 		ft_read_8(&h, NULL, 2);
 		write(2, "\n", 1);

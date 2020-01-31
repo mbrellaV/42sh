@@ -12,7 +12,7 @@
 
 #include "../inc/fshell.h"
 
-t_memory	*ft_memory(t_memory *back, char *str)
+t_memory	*ft_memory(t_memory *back, char **str)
 {
 	t_memory *tmp;
 	t_memory *p;
@@ -23,9 +23,10 @@ t_memory	*ft_memory(t_memory *back, char *str)
 		return (NULL);
 	p = back->next;
 	back->next = tmp;
-	tmp->inp = ft_strdup(str);
+	tmp->inp = ft_strdup(*str);
 	tmp->inp = do_zam_str_hist_var(tmp->inp, back);
-//	*str = ft_strdup(tmp->inp);
+//	ft_strdel(&str);
+	*str = ft_strdup(tmp->inp);
 	tmp->next = p;
 	tmp->back = back;
 	if (p != NULL)

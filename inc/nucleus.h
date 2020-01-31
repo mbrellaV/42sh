@@ -57,7 +57,7 @@ int 	del_readline(t_readline *p);
 /////////////////////////////////////////
 int		show_history(t_memory *q);
 t_memory	*ft_head_memory(void);
-t_memory	*ft_memory(t_memory *back, char *str);
+t_memory	*ft_memory(t_memory *back, char **str);
 void		ft_dop_history(t_memory *q, t_readline *p, int k);
 void		ft_putmemory(t_memory **q, t_readline *p);
 //////////////////////////////////////
