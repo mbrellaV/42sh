@@ -1,5 +1,13 @@
 #include "../inc/fshell.h"
 
+int					ft_mini_check(char *key)
+{
+
+	ft_printf("21sh: no such file or directory: %s\n", key);
+	return (0);
+	return (1);
+}
+
 int					check_file(char *file, unsigned check)
 {
 	struct stat		st;
