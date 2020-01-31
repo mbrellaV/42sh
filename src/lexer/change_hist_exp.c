@@ -12,75 +12,50 @@
 
 #include "../../inc/fshell.h"
 
-char				*get_num_from_hist_begin(t_memory *t, int num)
+void				zm_history_numbers(int i, char **str1,
+		char type, t_memory *q)
 {
-	int		i;
+	int		c;
+	char	*tmp;
+	char	*str;
 
-	i = 0;
-	while (t->back->back != NULL)
-		t = t->back;
-	while (t->next != NULL)
-	{
-		if (i == num)
-			return (ft_strdup(t->inp));
-		t = t->next;
-		i++;
-	}
-	return (NULL);
+	str = *str1;
+	c = i + type;
+	while (isword(str[c]) != 0 && str[c])
+		c++;
+	tmp = ft_strdup("\0");
+	if (type == 0)
+		tmp = ft_strdup(get_num_from_hist_begin(q, ft_atoi(str + i + 1)));
+	if (type == 2)
+		tmp = ft_strdup(get_num_from_hist_end(q, ft_atoi(str + i + 1)));
+	str = do_zam_str_by_str(i, c, str, tmp);
+	*str1 = str;
 }
 
-char				*get_num_from_hist_end(t_memory *t, int num)
+void				zm_history_name(int i, char **str1, char type, t_memory *q)
 {
-	int		i;
+	int		c;
+	char	*tmp;
+	char	*str;
 
-	i = 0;
-	num = -num;
-	while (t->back != NULL)
-	{
-		if (i == num)
-			return (ft_strdup(t->inp));
-		t = t->back;
-		i++;
-	}
-	return (NULL);
-}
-
-char				*get_num_from_hist_starting(t_memory *t, char *name)
-{
-	int		i;
-
-	i = 0;
-	while (t->back != NULL)
-	{
-		if (t->inp != NULL && ft_strstr(t->inp, name) == t->inp)
-			return (ft_strdup(t->inp));
-		t = t->back;
-		i++;
-	}
-	return (NULL);
-}
-
-char				*get_num_from_hist_cons(t_memory *t, char *name)
-{
-	int		i;
-
-	i = 0;
-	t = t->back;
-	while (t->back != NULL)
-	{
-		if (ft_strstr(t->inp, name) != NULL)
-			return (ft_strdup(t->inp));
-		t = t->back;
-		i++;
-	}
-	return (NULL);
+	str = *str1;
+	c = i + type;
+	while (isword(str[c]) != 0 && str[c])
+		c++;
+	tmp = ft_strdup("\0");
+	if (type == 1)
+		tmp = ft_strdup(get_num_from_hist_starting(q,
+			ft_strsub(str + i + type, 0, c - i - 1)));
+	if (type == 2)
+		tmp = ft_strdup(get_num_from_hist_cons(q,
+			ft_strsub(str + i + 2, 0, c - i)));
+	str = do_zam_str_by_str(i, c, str, tmp);
+	*str1 = str;
 }
 
 char				*do_zam_str_hist_var(char *str1, t_memory *q)
 {
 	int			i;
-	int			c;
-	char		*tmp;
 
 	if (str1 == NULL)
 		return (NULL);
@@ -92,41 +67,13 @@ char				*do_zam_str_hist_var(char *str1, t_memory *q)
 			if (str1[i + 1] == '!')
 				str1 = do_zam_str_by_str(i, i + 2, str1, ft_strdup(q->inp));
 			else if (ft_atoi(str1 + i + 1) > 0)
-			{
-				c = i;
-				while (isword(str1[c]) != 0 && str1[c])
-					c++;
-				if (!(tmp = ft_strdup(get_num_from_hist_begin(q, ft_atoi(str1 + i)))))
-					tmp = ft_strdup("\0");
-				str1 = do_zam_str_by_str(i, c, str1, tmp);
-			}
+				zm_history_numbers(i, &str1, 0, q);
 			else if (ft_atoi(str1 + i + 1) < 0)
-			{
-				c = i + 2;
-				while (isword(str1[c]) != 0 && str1[c])
-					c++;
-				if (!(tmp = ft_strdup(get_num_from_hist_end(q, ft_atoi(str1 + i + 1)))))
-					tmp = ft_strdup("\0");
-				str1 = do_zam_str_by_str(i, c, str1, tmp);
-			}
+				zm_history_numbers(i, &str1, 2, q);
 			else if (isword(str1[i + 1]) != 0 && str1[i + 1] != '?')
-			{
-				c = i + 1;
-				while (isword(str1[c]) != 0 && str1[c] != '\0')
-					c++;
-				if (!(tmp = ft_strdup(get_num_from_hist_starting(q, ft_strsub(str1 + i + 1, 0, c - i - 1)))))
-					tmp = ft_strdup("\0");
-				str1 = do_zam_str_by_str(i, c, str1, tmp);
-			}
+				zm_history_name(i, &str1, 1, q);
 			else if (str1[i + 1] == '?')
-			{
-				c = i + 2;
-				while (isword(str1[c]) != 0 && str1[c] != '\0')
-					c++;
-				if (!(tmp = ft_strdup(get_num_from_hist_cons(q, ft_strsub(str1 + i + 2, 0, c - i)))))
-					tmp = ft_strdup("\0");
-				str1 = do_zam_str_by_str(i, c, str1, tmp);
-			}
+				zm_history_name(i, &str1, 2, q);
 		}
 		i++;
 	}

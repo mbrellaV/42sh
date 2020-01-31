@@ -65,6 +65,9 @@ int							dop_lexer(t_dop_str *tmp, char *line);
 t_dop_str					*cr_dop_str(char **line1);
 int							do_zam_bax_and_hist_full(t_lextoken *h);
 char						*get_num_from_hist_cons(t_memory *t, char *name);
+char						*get_num_from_hist_begin(t_memory *t, int num);
+char						*get_num_from_hist_end(t_memory *t, int num);
+char						*get_num_from_hist_starting(t_memory *t, char *name);
 //////////////////////////////////////////////
 
 #endif

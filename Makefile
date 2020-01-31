@@ -46,6 +46,7 @@ SRC_BASE = builtins/ft_cd.c\
 	lexer/change_hist_exp.c\
 	lexer/change_str_by_str.c\
 	lexer/get_opt_type.c\
+	lexer/history_search.c\
 	nucleus/ft_read_8.c\
 	nucleus/ft_c.c\
 	nucleus/input_mode.c\

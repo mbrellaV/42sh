@@ -146,7 +146,7 @@ int		main(int argc, char **argv, char **env)
 		del_readline(&p);
 		ft_distruct_tree(start_token);
 	}
-	save_history(head);
+	//save_history(head);
 	hash_clear();
 	free(g_cp);
 	ft_arrdel(g_alias);

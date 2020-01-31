@@ -17,7 +17,7 @@ t_lextoken		*ft_cr_new_token(char *line, int word_type, int op_type)
 	t_lextoken	*tmp;
 
 	if (!(tmp = ft_memalloc(sizeof(t_lextoken))))
-        ft_error_q(2);
+		ft_error_q(2);
 	tmp->next = NULL;
 	tmp->line = line;
 	word_type = 0;

@@ -23,14 +23,13 @@ t_dop_str		*cr_dop_str(char **line1)
 	if (line[0] == '\0')
 		return (NULL);
 	if (!(tmp = ft_memalloc(sizeof(t_dop_str))))
-        ft_error_q(2);
+		ft_error_q(2);
 	tmp->tmp_c = NULL;
 	tmp->dop_c = 0;
 	tmp->d_c = 0;
 	tmp->i_c = 0;
 	tmp->doptail_c = NULL;
 	tmp->tail_c = NULL;
-	//line = do_zam_str(line);
 	*line1 = line;
 	return (tmp);
 }
@@ -42,7 +41,7 @@ int				do_zam_bax_and_hist_full(t_lextoken *h)
 	if (!h)
 		return (-1);
 	if (!(tmp = ft_memalloc(sizeof(t_dop_str))))
-        ft_error_q(2);
+		ft_error_q(2);
 	while (h != NULL)
 	{
 		tmp->c_b = 0;
@@ -87,14 +86,12 @@ int				dop_lexer(t_dop_str *tmp, char *line)
 		if (ispar(line[tmp->i_c]))
 			tmp->tail_c->inhibitor_lvl = line[tmp->i_c] == '"' ? 1 : 2;
 		tmp->tail_c->is_near_opt = tmp->d_c;
-		tmp->i_c += word_size(line + tmp->i_c) + (ispar(line[tmp->i_c]) ? 2 : 0);
+		tmp->i_c += word_size(line + tmp->i_c) +
+			(ispar(line[tmp->i_c]) ? 2 : 0);
 		tmp->d_c = 0;
 	}
-	else if (isoperator(line[tmp->i_c]))
-	{
-		if (dop_lexer2(tmp, line) == -1)
-			return (-1);
-	}
+	else if (isoperator(line[tmp->i_c]) && dop_lexer2(tmp, line) == -1)
+		return (-1);
 	else
 		tmp->i_c++;
 	if (tmp->dop_c == 0 && tmp->tail_c != NULL)

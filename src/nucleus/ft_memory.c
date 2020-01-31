@@ -25,7 +25,7 @@ t_memory	*ft_memory(t_memory *back, char **str)
 	back->next = tmp;
 	tmp->inp = ft_strdup(*str);
 	tmp->inp = do_zam_str_hist_var(tmp->inp, back);
-//	ft_strdel(&str);
+	ft_strdel(str);
 	*str = ft_strdup(tmp->inp);
 	tmp->next = p;
 	tmp->back = back;
