@@ -14,9 +14,8 @@
 
 t_memory	*ft_memory(t_memory *back, char **str)
 {
-	t_memory *tmp;
-	t_memory *p;
-
+	t_memory	*tmp;
+	t_memory	*p;
 
 	tmp = (t_memory *)malloc(sizeof(t_memory));
 	if (!tmp)

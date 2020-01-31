@@ -26,7 +26,7 @@ t_memory	*ft_head_memory(void)
 		head->inp = NULL;
 		head->next = NULL;
 		head->back = NULL;
-		close (fd);
+		close(fd);
 		return (head);
 	}
 	if (!(head = (t_memory *)malloc(sizeof(t_memory))))
@@ -44,6 +44,6 @@ t_memory	*ft_head_memory(void)
 		head->next->back = head;
 		head = head->next;
 	}
-	close (fd);
+	close(fd);
 	return (head);
 }

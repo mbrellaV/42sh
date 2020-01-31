@@ -152,6 +152,7 @@ int		main(int argc, char **argv, char **env)
 	ft_arrdel(g_alias);
 	ft_arrdel(g_env);
 	ft_arrdel(g_all_var);
-	return (ft_distruct_memory(head) && ft_distruct_tree(start_token) &&
-		del_readline(&p) ? 0 : 1);
+//	free(p.buff);
+	del_readline(&p);
+	return (ft_distruct_memory(head) && ft_distruct_tree(start_token) ? 0 : 1);
 }

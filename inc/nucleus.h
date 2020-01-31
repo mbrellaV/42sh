@@ -49,6 +49,7 @@ char	**ft_strsplit1(char const *s, char c);
 void 	ft_print_tab(t_readline *p);
 void	ft_realloc_tab(t_readline *p);
 int		ft_max_tab_len(t_readline *p);
+void	ft_cheak_tab(t_readline *p);
 //////////////////////////////////////////////
 char 	**ft_arrnew(size_t size);
 void	ft_arrdel(char **arr);

@@ -23,30 +23,23 @@ void	ft_do_addstr(t_readline *p, char *str)
 
 void	ft_do_addch(t_readline *p, char c)
 {
-	char 	tmp;
-	char 	tmp2;
+	char	tmp;
+	char	tmp2;
 	int		i;
 
-	p->len++;
-	if (p->len == p->buff_size)
+	if (++p->len == p->buff_size)
 		ft_realloc_buff(p);
-	if ((p->len - 1) == p->index)
-		p->buff[p->index++] = c;
-	else
+	i = p->index++;
+	tmp = p->buff[i];
+	p->buff[i++] = c;
+	tmp2 = p->buff[i];
+	while (i < p->len)
 	{
-		i = p->index + 1;
-		tmp = p->buff[p->index];
-		p->buff[p->index++] = c;
-		tmp2 = p->buff[p->index];
-		while (p->index < p->len)
-		{
-			p->buff[p->index++] = tmp;
-			tmp = tmp2;
-			tmp2 = p->buff[p->index];
-		}
-		p->buff[p->index] = tmp2;
-		p->index = i;
+		p->buff[i++] = tmp;
+		tmp = tmp2;
+		tmp2 = p->buff[i];
 	}
+	p->buff[i] = tmp2;
 	ft_cleanstr(p->index + p->len_hint, p);
 	p->len_hint = ft_printf_helper(p->mod);
 	write(2, p->buff, p->len);

@@ -12,10 +12,9 @@
 
 #include "../inc/fshell.h"
 
-int 	del_readline(t_readline *p)
+int		del_readline(t_readline *p)
 {
 	free(p->buff);
 	ft_arrdel(p->tab);
-//	free(g_cp);
 	return (1);
 }

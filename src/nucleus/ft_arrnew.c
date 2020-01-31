@@ -12,9 +12,9 @@
 
 #include "../inc/fshell.h"
 
-char 	**ft_arrnew(size_t size)
+char	**ft_arrnew(size_t size)
 {
-	char 		**arr;
+	char		**arr;
 	size_t		i;
 
 	if (!(arr = (char **)malloc(sizeof(char *) * (size + 1))))

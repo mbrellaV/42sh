@@ -6,9 +6,5 @@ C_FLAGS = -g   -std=gnu99
 
 C_DEFINES = 
 
-<<<<<<< HEAD
 C_INCLUDES = -I/Users/mbrella/Desktop/projects/21beta/42start/inc 
-=======
-C_INCLUDES = -I/Users/qmartina/Desktop/42start/inc 
->>>>>>> 252ca05ec7ce003a4e9061e0ce4a3f0acffbf1e5
 

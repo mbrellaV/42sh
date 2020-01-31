@@ -1,12 +1,11 @@
 /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /Users/mbrella/Desktop/projects/21beta/42start
-CMake Error: Parse error in cache file /Users/mbrella/Desktop/projects/21beta/42start/cmake-build-debug/CMakeCache.txt on line 2. Offending entry: <<<<<<< HEAD
-CMake Error: Parse error in cache file /Users/mbrella/Desktop/projects/21beta/42start/cmake-build-debug/CMakeCache.txt on line 6. Offending entry: >>>>>>> 252ca05ec7ce003a4e9061e0ce4a3f0acffbf1e5
-CMake Error: Parse error in cache file /Users/mbrella/Desktop/projects/21beta/42start/cmake-build-debug/CMakeCache.txt on line 22. Offending entry: <<<<<<< HEAD
-CMake Error: Parse error in cache file /Users/mbrella/Desktop/projects/21beta/42start/cmake-build-debug/CMakeCache.txt on line 32. Offending entry: >>>>>>> 252ca05ec7ce003a4e9061e0ce4a3f0acffbf1e5
-CMake Error: Parse error in cache file /Users/mbrella/Desktop/projects/21beta/42start/cmake-build-debug/CMakeCache.txt on line 225. Offending entry: <<<<<<< HEAD
-CMake Error: Parse error in cache file /Users/mbrella/Desktop/projects/21beta/42start/cmake-build-debug/CMakeCache.txt on line 229. Offending entry: >>>>>>> 252ca05ec7ce003a4e9061e0ce4a3f0acffbf1e5
-CMake Error: Parse error in cache file /Users/mbrella/Desktop/projects/21beta/42start/cmake-build-debug/CMakeCache.txt on line 284. Offending entry: <<<<<<< HEAD
-CMake Error: Parse error in cache file /Users/mbrella/Desktop/projects/21beta/42start/cmake-build-debug/CMakeCache.txt on line 288. Offending entry: >>>>>>> 252ca05ec7ce003a4e9061e0ce4a3f0acffbf1e5
-CMake Error: The current CMakeCache.txt directory /Users/mbrella/Desktop/projects/21beta/42start/cmake-build-debug/CMakeCache.txt is different than the directory /Users/qmartina/Desktop/42start/cmake-build-debug where CMakeCache.txt was created. This may result in binaries being created in the wrong place. If you are not sure, reedit the CMakeCache.txt
-CMake Error: The source "/Users/mbrella/Desktop/projects/21beta/42start/CMakeLists.txt" does not match the source "/Users/qmartina/Desktop/42start/CMakeLists.txt" used to generate cache.  Re-run cmake with a different source directory.
-Cannot read project file /Users/mbrella/Desktop/projects/21beta/42start/cmake-build-debug/21end.cbp
+-- The C compiler identification is AppleClang 9.0.0.9000039
+-- Check for working C compiler: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc
+-- Check for working C compiler: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc -- works
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /Users/mbrella/Desktop/projects/21beta/42start/cmake-build-debug

@@ -48,17 +48,10 @@ RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-<<<<<<< HEAD
 CMAKE_SOURCE_DIR = /Users/mbrella/Desktop/projects/21beta/42start
 
 # The top-level build directory on which CMake was run.
 CMAKE_BINARY_DIR = /Users/mbrella/Desktop/projects/21beta/42start/cmake-build-debug
-=======
-CMAKE_SOURCE_DIR = /Users/qmartina/Desktop/42start
-
-# The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/qmartina/Desktop/42start/cmake-build-debug
->>>>>>> 252ca05ec7ce003a4e9061e0ce4a3f0acffbf1e5
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,15 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-<<<<<<< HEAD
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/mbrella/Desktop/projects/21beta/42start/cmake-build-debug/CMakeFiles /Users/mbrella/Desktop/projects/21beta/42start/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/mbrella/Desktop/projects/21beta/42start/cmake-build-debug/CMakeFiles 0
-=======
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/qmartina/Desktop/42start/cmake-build-debug/CMakeFiles /Users/qmartina/Desktop/42start/cmake-build-debug/CMakeFiles/progress.marks
-	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/qmartina/Desktop/42start/cmake-build-debug/CMakeFiles 0
->>>>>>> 252ca05ec7ce003a4e9061e0ce4a3f0acffbf1e5
 .PHONY : all
 
 # The main clean target
@@ -918,6 +905,33 @@ src/lexer/get_opt_type.s: src/lexer/get_opt_type.c.s
 src/lexer/get_opt_type.c.s:
 	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/lexer/get_opt_type.c.s
 .PHONY : src/lexer/get_opt_type.c.s
+
+src/lexer/history_search.o: src/lexer/history_search.c.o
+
+.PHONY : src/lexer/history_search.o
+
+# target to build an object file
+src/lexer/history_search.c.o:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/lexer/history_search.c.o
+.PHONY : src/lexer/history_search.c.o
+
+src/lexer/history_search.i: src/lexer/history_search.c.i
+
+.PHONY : src/lexer/history_search.i
+
+# target to preprocess a source file
+src/lexer/history_search.c.i:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/lexer/history_search.c.i
+.PHONY : src/lexer/history_search.c.i
+
+src/lexer/history_search.s: src/lexer/history_search.c.s
+
+.PHONY : src/lexer/history_search.s
+
+# target to generate assembly for a file
+src/lexer/history_search.c.s:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/lexer/history_search.c.s
+.PHONY : src/lexer/history_search.c.s
 
 src/lexer/kill_dop_structure.o: src/lexer/kill_dop_structure.c.o
 
@@ -1999,6 +2013,33 @@ src/nucleus/show_history.c.s:
 	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/nucleus/show_history.c.s
 .PHONY : src/nucleus/show_history.c.s
 
+src/nucleus/tab.o: src/nucleus/tab.c.o
+
+.PHONY : src/nucleus/tab.o
+
+# target to build an object file
+src/nucleus/tab.c.o:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/nucleus/tab.c.o
+.PHONY : src/nucleus/tab.c.o
+
+src/nucleus/tab.i: src/nucleus/tab.c.i
+
+.PHONY : src/nucleus/tab.i
+
+# target to preprocess a source file
+src/nucleus/tab.c.i:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/nucleus/tab.c.i
+.PHONY : src/nucleus/tab.c.i
+
+src/nucleus/tab.s: src/nucleus/tab.c.s
+
+.PHONY : src/nucleus/tab.s
+
+# target to generate assembly for a file
+src/nucleus/tab.c.s:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/nucleus/tab.c.s
+.PHONY : src/nucleus/tab.c.s
+
 src/parser/change_tilda.o: src/parser/change_tilda.c.o
 
 .PHONY : src/parser/change_tilda.o
@@ -2176,6 +2217,9 @@ help:
 	@echo "... src/lexer/get_opt_type.o"
 	@echo "... src/lexer/get_opt_type.i"
 	@echo "... src/lexer/get_opt_type.s"
+	@echo "... src/lexer/history_search.o"
+	@echo "... src/lexer/history_search.i"
+	@echo "... src/lexer/history_search.s"
 	@echo "... src/lexer/kill_dop_structure.o"
 	@echo "... src/lexer/kill_dop_structure.i"
 	@echo "... src/lexer/kill_dop_structure.s"
@@ -2296,6 +2340,9 @@ help:
 	@echo "... src/nucleus/show_history.o"
 	@echo "... src/nucleus/show_history.i"
 	@echo "... src/nucleus/show_history.s"
+	@echo "... src/nucleus/tab.o"
+	@echo "... src/nucleus/tab.i"
+	@echo "... src/nucleus/tab.s"
 	@echo "... src/parser/change_tilda.o"
 	@echo "... src/parser/change_tilda.i"
 	@echo "... src/parser/change_tilda.s"

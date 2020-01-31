@@ -14,19 +14,15 @@
 
 void	ft_realloc_tab(t_readline *p)
 {
-	char 	**tmp;
-	int 	i;
+	char	**tmp;
+	int		i;
 
 	tmp = p->tab;
 	p->tab_size += 10;
 	if (!(p->tab = ft_arrnew(p->tab_size)))
-		exit (2);
+		exit(2);
 	i = -1;
 	while (++i <= p->tab_max)
-	{
 		p->tab[i] = ft_strdup(tmp[i]);
-//		free(tmp[i]);
-	}
 	ft_arrdel(tmp);
-//	free(tmp);
 }
