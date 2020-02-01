@@ -48,6 +48,8 @@ int		unset_var(char *str, char ***envl)
 		return (-1);
 	else
 	{
+		if (ft_strequ(str, "PATH="))
+			hash_clear();
 		free(env[i]);
 		env[i] = NULL;
 		while (env[i + 1])
