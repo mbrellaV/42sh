@@ -15,7 +15,7 @@
 
 # include "struct.h"
 
-struct termios		saved_attributes;
+struct termios		g_saved_attributes;
 
 void				ft_read_8(t_readline *p, t_memory *head, int mod);
 void				ft_do_addch(t_readline *p, char c);

@@ -14,7 +14,7 @@
 
 void				reset_input_mode(void)
 {
-	tcsetattr(0, TCSANOW, &saved_attributes);
+	tcsetattr(0, TCSANOW, &g_saved_attributes);
 }
 
 void				error_term(int error)
@@ -35,9 +35,9 @@ void				set_input_mode(void)
 		error_term(1);
 	if (tgetent(NULL, getenv("TERM")) < 1)
 		error_term(1);
-	if (tcgetattr(0, &saved_attributes) == -1)
+	if (tcgetattr(0, &g_saved_attributes) == -1)
 		error_term(1);
-	ft_memcpy(&tattr, &saved_attributes, sizeof(tattr));
+	ft_memcpy(&tattr, &g_saved_attributes, sizeof(tattr));
 	tattr.c_lflag &= ~(ECHO | ECHOE | ECHOK | ECHONL | ICANON | ISIG | IEXTEN);
 	tattr.c_cc[VMIN] = 1;
 	tattr.c_cc[VTIME] = 0;
