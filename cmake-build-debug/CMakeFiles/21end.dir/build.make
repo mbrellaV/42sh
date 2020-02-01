@@ -928,22 +928,9 @@ CMakeFiles/21end.dir/src/builtins/allenv/main_env.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/21end.dir/src/builtins/allenv/main_env.c.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/qmartina/Desktop/42start/src/builtins/allenv/main_env.c -o CMakeFiles/21end.dir/src/builtins/allenv/main_env.c.s
 
-CMakeFiles/21end.dir/src/builtins/alias/ft_alias.c.o: CMakeFiles/21end.dir/flags.make
-CMakeFiles/21end.dir/src/builtins/alias/ft_alias.c.o: ../src/builtins/alias/ft_alias.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/qmartina/Desktop/42start/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_68) "Building C object CMakeFiles/21end.dir/src/builtins/alias/ft_alias.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/21end.dir/src/builtins/alias/ft_alias.c.o   -c /Users/qmartina/Desktop/42start/src/builtins/alias/ft_alias.c
-
-CMakeFiles/21end.dir/src/builtins/alias/ft_alias.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/21end.dir/src/builtins/alias/ft_alias.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/qmartina/Desktop/42start/src/builtins/alias/ft_alias.c > CMakeFiles/21end.dir/src/builtins/alias/ft_alias.c.i
-
-CMakeFiles/21end.dir/src/builtins/alias/ft_alias.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/21end.dir/src/builtins/alias/ft_alias.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/qmartina/Desktop/42start/src/builtins/alias/ft_alias.c -o CMakeFiles/21end.dir/src/builtins/alias/ft_alias.c.s
-
 CMakeFiles/21end.dir/src/check_file.c.o: CMakeFiles/21end.dir/flags.make
 CMakeFiles/21end.dir/src/check_file.c.o: ../src/check_file.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/qmartina/Desktop/42start/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_69) "Building C object CMakeFiles/21end.dir/src/check_file.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/qmartina/Desktop/42start/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_68) "Building C object CMakeFiles/21end.dir/src/check_file.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/21end.dir/src/check_file.c.o   -c /Users/qmartina/Desktop/42start/src/check_file.c
 
 CMakeFiles/21end.dir/src/check_file.c.i: cmake_force
@@ -956,7 +943,7 @@ CMakeFiles/21end.dir/src/check_file.c.s: cmake_force
 
 CMakeFiles/21end.dir/src/lexer/history_search.c.o: CMakeFiles/21end.dir/flags.make
 CMakeFiles/21end.dir/src/lexer/history_search.c.o: ../src/lexer/history_search.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/qmartina/Desktop/42start/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_70) "Building C object CMakeFiles/21end.dir/src/lexer/history_search.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/qmartina/Desktop/42start/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_69) "Building C object CMakeFiles/21end.dir/src/lexer/history_search.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/21end.dir/src/lexer/history_search.c.o   -c /Users/qmartina/Desktop/42start/src/lexer/history_search.c
 
 CMakeFiles/21end.dir/src/lexer/history_search.c.i: cmake_force
@@ -966,6 +953,45 @@ CMakeFiles/21end.dir/src/lexer/history_search.c.i: cmake_force
 CMakeFiles/21end.dir/src/lexer/history_search.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/21end.dir/src/lexer/history_search.c.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/qmartina/Desktop/42start/src/lexer/history_search.c -o CMakeFiles/21end.dir/src/lexer/history_search.c.s
+
+CMakeFiles/21end.dir/src/nucleus/dop_tab_funs.c.o: CMakeFiles/21end.dir/flags.make
+CMakeFiles/21end.dir/src/nucleus/dop_tab_funs.c.o: ../src/nucleus/dop_tab_funs.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/qmartina/Desktop/42start/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_70) "Building C object CMakeFiles/21end.dir/src/nucleus/dop_tab_funs.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/21end.dir/src/nucleus/dop_tab_funs.c.o   -c /Users/qmartina/Desktop/42start/src/nucleus/dop_tab_funs.c
+
+CMakeFiles/21end.dir/src/nucleus/dop_tab_funs.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/21end.dir/src/nucleus/dop_tab_funs.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/qmartina/Desktop/42start/src/nucleus/dop_tab_funs.c > CMakeFiles/21end.dir/src/nucleus/dop_tab_funs.c.i
+
+CMakeFiles/21end.dir/src/nucleus/dop_tab_funs.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/21end.dir/src/nucleus/dop_tab_funs.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/qmartina/Desktop/42start/src/nucleus/dop_tab_funs.c -o CMakeFiles/21end.dir/src/nucleus/dop_tab_funs.c.s
+
+CMakeFiles/21end.dir/src/builtins/allenv/global_env.c.o: CMakeFiles/21end.dir/flags.make
+CMakeFiles/21end.dir/src/builtins/allenv/global_env.c.o: ../src/builtins/allenv/global_env.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/qmartina/Desktop/42start/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_71) "Building C object CMakeFiles/21end.dir/src/builtins/allenv/global_env.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/21end.dir/src/builtins/allenv/global_env.c.o   -c /Users/qmartina/Desktop/42start/src/builtins/allenv/global_env.c
+
+CMakeFiles/21end.dir/src/builtins/allenv/global_env.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/21end.dir/src/builtins/allenv/global_env.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/qmartina/Desktop/42start/src/builtins/allenv/global_env.c > CMakeFiles/21end.dir/src/builtins/allenv/global_env.c.i
+
+CMakeFiles/21end.dir/src/builtins/allenv/global_env.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/21end.dir/src/builtins/allenv/global_env.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/qmartina/Desktop/42start/src/builtins/allenv/global_env.c -o CMakeFiles/21end.dir/src/builtins/allenv/global_env.c.s
+
+CMakeFiles/21end.dir/src/shell_lvl.c.o: CMakeFiles/21end.dir/flags.make
+CMakeFiles/21end.dir/src/shell_lvl.c.o: ../src/shell_lvl.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/qmartina/Desktop/42start/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_72) "Building C object CMakeFiles/21end.dir/src/shell_lvl.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/21end.dir/src/shell_lvl.c.o   -c /Users/qmartina/Desktop/42start/src/shell_lvl.c
+
+CMakeFiles/21end.dir/src/shell_lvl.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/21end.dir/src/shell_lvl.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/qmartina/Desktop/42start/src/shell_lvl.c > CMakeFiles/21end.dir/src/shell_lvl.c.i
+
+CMakeFiles/21end.dir/src/shell_lvl.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/21end.dir/src/shell_lvl.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/qmartina/Desktop/42start/src/shell_lvl.c -o CMakeFiles/21end.dir/src/shell_lvl.c.s
 
 # Object files for target 21end
 21end_OBJECTS = \
@@ -1036,9 +1062,11 @@ CMakeFiles/21end.dir/src/lexer/history_search.c.s: cmake_force
 "CMakeFiles/21end.dir/src/ft_take_arg.c.o" \
 "CMakeFiles/21end.dir/src/main.c.o" \
 "CMakeFiles/21end.dir/src/builtins/allenv/main_env.c.o" \
-"CMakeFiles/21end.dir/src/builtins/alias/ft_alias.c.o" \
 "CMakeFiles/21end.dir/src/check_file.c.o" \
-"CMakeFiles/21end.dir/src/lexer/history_search.c.o"
+"CMakeFiles/21end.dir/src/lexer/history_search.c.o" \
+"CMakeFiles/21end.dir/src/nucleus/dop_tab_funs.c.o" \
+"CMakeFiles/21end.dir/src/builtins/allenv/global_env.c.o" \
+"CMakeFiles/21end.dir/src/shell_lvl.c.o"
 
 # External object files for target 21end
 21end_EXTERNAL_OBJECTS =
@@ -1110,13 +1138,15 @@ CMakeFiles/21end.dir/src/lexer/history_search.c.s: cmake_force
 21end: CMakeFiles/21end.dir/src/ft_take_arg.c.o
 21end: CMakeFiles/21end.dir/src/main.c.o
 21end: CMakeFiles/21end.dir/src/builtins/allenv/main_env.c.o
-21end: CMakeFiles/21end.dir/src/builtins/alias/ft_alias.c.o
 21end: CMakeFiles/21end.dir/src/check_file.c.o
 21end: CMakeFiles/21end.dir/src/lexer/history_search.c.o
+21end: CMakeFiles/21end.dir/src/nucleus/dop_tab_funs.c.o
+21end: CMakeFiles/21end.dir/src/builtins/allenv/global_env.c.o
+21end: CMakeFiles/21end.dir/src/shell_lvl.c.o
 21end: CMakeFiles/21end.dir/build.make
 21end: ../libft/libft.a
 21end: CMakeFiles/21end.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/qmartina/Desktop/42start/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_71) "Linking C executable 21end"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/qmartina/Desktop/42start/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_73) "Linking C executable 21end"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/21end.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

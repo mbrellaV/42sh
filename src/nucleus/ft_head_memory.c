@@ -12,6 +12,19 @@
 
 #include "../inc/fshell.h"
 
+t_memory	*dop_memmory(int fd)
+{
+	t_memory *head;
+
+	if (!(head = (t_memory *)malloc(sizeof(t_memory))))
+		ft_error_q(2);
+	head->inp = NULL;
+	head->next = NULL;
+	head->back = NULL;
+	close(fd);
+	return (head);
+}
+
 t_memory	*ft_head_memory(void)
 {
 	t_memory	*head;
@@ -20,15 +33,7 @@ t_memory	*ft_head_memory(void)
 
 	fd = open("history/hist.txt", O_RDWR);
 	if (get_next_line_with_sym(fd, &line, -100) <= 0)
-	{
-		if (!(head = (t_memory *)malloc(sizeof(t_memory))))
-			ft_error_q(2);
-		head->inp = NULL;
-		head->next = NULL;
-		head->back = NULL;
-		close(fd);
-		return (head);
-	}
+		return (dop_memmory(fd));
 	if (!(head = (t_memory *)malloc(sizeof(t_memory))))
 		ft_error_q(2);
 	head->inp = ft_strdup(line);
@@ -46,4 +51,26 @@ t_memory	*ft_head_memory(void)
 	}
 	close(fd);
 	return (head);
+}
+
+int			save_history(t_memory *q)
+{
+	int		fd;
+
+	fd = open("history/hist.txt", O_CREAT | O_RDWR | O_TRUNC,
+			S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP |
+			S_IROTH | S_IWOTH);
+	if (fd < 0)
+		return (0);
+	while (q->back != NULL)
+		q = q->back;
+	while (q != NULL)
+	{
+		write(fd, q->inp, ft_strlen(q->inp));
+		ft_putchar_fd(-100, fd);
+		q = q->next;
+	}
+	ft_putchar_fd(0, fd);
+	close(fd);
+	return (0);
 }

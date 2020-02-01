@@ -17,13 +17,13 @@ char	*ft_strstr(const char *haystack, const char *needle)
 	char	*count;
 	int		i;
 
-	i = 0;
 	if (haystack == NULL)
 		return (NULL);
 	if (*needle == '\0')
 		return ((char*)haystack);
 	while (*haystack != '\0')
 	{
+		i = 0;
 		if (*haystack == needle[i])
 		{
 			count = (char*)haystack;
@@ -35,7 +35,6 @@ char	*ft_strstr(const char *haystack, const char *needle)
 			if (needle[i] == '\0')
 				return (count);
 			haystack = count;
-			i = 0;
 		}
 		haystack++;
 	}

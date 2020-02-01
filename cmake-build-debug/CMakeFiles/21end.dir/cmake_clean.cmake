@@ -1,8 +1,8 @@
 file(REMOVE_RECURSE
   "21end"
   "21end.pdb"
-  "CMakeFiles/21end.dir/src/builtins/alias/ft_alias.c.o"
   "CMakeFiles/21end.dir/src/builtins/allenv/ft_env.c.o"
+  "CMakeFiles/21end.dir/src/builtins/allenv/global_env.c.o"
   "CMakeFiles/21end.dir/src/builtins/allenv/main_env.c.o"
   "CMakeFiles/21end.dir/src/builtins/ft_cd.c.o"
   "CMakeFiles/21end.dir/src/builtins/ft_echo.c.o"
@@ -33,6 +33,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/21end.dir/src/main.c.o"
   "CMakeFiles/21end.dir/src/nucleus/del_readline.c.o"
   "CMakeFiles/21end.dir/src/nucleus/do_add.c.o"
+  "CMakeFiles/21end.dir/src/nucleus/dop_tab_funs.c.o"
   "CMakeFiles/21end.dir/src/nucleus/find_history.c.o"
   "CMakeFiles/21end.dir/src/nucleus/ft_add_intput_que.c.o"
   "CMakeFiles/21end.dir/src/nucleus/ft_add_sumchar.c.o"
@@ -71,6 +72,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/21end.dir/src/parser/change_tilda.c.o"
   "CMakeFiles/21end.dir/src/parser/dop_parser.c.o"
   "CMakeFiles/21end.dir/src/parser/main_parser.c.o"
+  "CMakeFiles/21end.dir/src/shell_lvl.c.o"
 )
 
 # Per-language clean rules from dependency scanning.

@@ -123,33 +123,6 @@ depend:
 	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/build
 .PHONY : 21end/fast
 
-src/builtins/alias/ft_alias.o: src/builtins/alias/ft_alias.c.o
-
-.PHONY : src/builtins/alias/ft_alias.o
-
-# target to build an object file
-src/builtins/alias/ft_alias.c.o:
-	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/builtins/alias/ft_alias.c.o
-.PHONY : src/builtins/alias/ft_alias.c.o
-
-src/builtins/alias/ft_alias.i: src/builtins/alias/ft_alias.c.i
-
-.PHONY : src/builtins/alias/ft_alias.i
-
-# target to preprocess a source file
-src/builtins/alias/ft_alias.c.i:
-	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/builtins/alias/ft_alias.c.i
-.PHONY : src/builtins/alias/ft_alias.c.i
-
-src/builtins/alias/ft_alias.s: src/builtins/alias/ft_alias.c.s
-
-.PHONY : src/builtins/alias/ft_alias.s
-
-# target to generate assembly for a file
-src/builtins/alias/ft_alias.c.s:
-	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/builtins/alias/ft_alias.c.s
-.PHONY : src/builtins/alias/ft_alias.c.s
-
 src/builtins/allenv/ft_env.o: src/builtins/allenv/ft_env.c.o
 
 .PHONY : src/builtins/allenv/ft_env.o
@@ -176,6 +149,33 @@ src/builtins/allenv/ft_env.s: src/builtins/allenv/ft_env.c.s
 src/builtins/allenv/ft_env.c.s:
 	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/builtins/allenv/ft_env.c.s
 .PHONY : src/builtins/allenv/ft_env.c.s
+
+src/builtins/allenv/global_env.o: src/builtins/allenv/global_env.c.o
+
+.PHONY : src/builtins/allenv/global_env.o
+
+# target to build an object file
+src/builtins/allenv/global_env.c.o:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/builtins/allenv/global_env.c.o
+.PHONY : src/builtins/allenv/global_env.c.o
+
+src/builtins/allenv/global_env.i: src/builtins/allenv/global_env.c.i
+
+.PHONY : src/builtins/allenv/global_env.i
+
+# target to preprocess a source file
+src/builtins/allenv/global_env.c.i:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/builtins/allenv/global_env.c.i
+.PHONY : src/builtins/allenv/global_env.c.i
+
+src/builtins/allenv/global_env.s: src/builtins/allenv/global_env.c.s
+
+.PHONY : src/builtins/allenv/global_env.s
+
+# target to generate assembly for a file
+src/builtins/allenv/global_env.c.s:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/builtins/allenv/global_env.c.s
+.PHONY : src/builtins/allenv/global_env.c.s
 
 src/builtins/allenv/main_env.o: src/builtins/allenv/main_env.c.o
 
@@ -986,6 +986,33 @@ src/nucleus/do_add.s: src/nucleus/do_add.c.s
 src/nucleus/do_add.c.s:
 	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/nucleus/do_add.c.s
 .PHONY : src/nucleus/do_add.c.s
+
+src/nucleus/dop_tab_funs.o: src/nucleus/dop_tab_funs.c.o
+
+.PHONY : src/nucleus/dop_tab_funs.o
+
+# target to build an object file
+src/nucleus/dop_tab_funs.c.o:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/nucleus/dop_tab_funs.c.o
+.PHONY : src/nucleus/dop_tab_funs.c.o
+
+src/nucleus/dop_tab_funs.i: src/nucleus/dop_tab_funs.c.i
+
+.PHONY : src/nucleus/dop_tab_funs.i
+
+# target to preprocess a source file
+src/nucleus/dop_tab_funs.c.i:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/nucleus/dop_tab_funs.c.i
+.PHONY : src/nucleus/dop_tab_funs.c.i
+
+src/nucleus/dop_tab_funs.s: src/nucleus/dop_tab_funs.c.s
+
+.PHONY : src/nucleus/dop_tab_funs.s
+
+# target to generate assembly for a file
+src/nucleus/dop_tab_funs.c.s:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/nucleus/dop_tab_funs.c.s
+.PHONY : src/nucleus/dop_tab_funs.c.s
 
 src/nucleus/find_history.o: src/nucleus/find_history.c.o
 
@@ -2013,6 +2040,33 @@ src/parser/main_parser.c.s:
 	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/parser/main_parser.c.s
 .PHONY : src/parser/main_parser.c.s
 
+src/shell_lvl.o: src/shell_lvl.c.o
+
+.PHONY : src/shell_lvl.o
+
+# target to build an object file
+src/shell_lvl.c.o:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/shell_lvl.c.o
+.PHONY : src/shell_lvl.c.o
+
+src/shell_lvl.i: src/shell_lvl.c.i
+
+.PHONY : src/shell_lvl.i
+
+# target to preprocess a source file
+src/shell_lvl.c.i:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/shell_lvl.c.i
+.PHONY : src/shell_lvl.c.i
+
+src/shell_lvl.s: src/shell_lvl.c.s
+
+.PHONY : src/shell_lvl.s
+
+# target to generate assembly for a file
+src/shell_lvl.c.s:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/shell_lvl.c.s
+.PHONY : src/shell_lvl.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -2022,12 +2076,12 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... 21end"
-	@echo "... src/builtins/alias/ft_alias.o"
-	@echo "... src/builtins/alias/ft_alias.i"
-	@echo "... src/builtins/alias/ft_alias.s"
 	@echo "... src/builtins/allenv/ft_env.o"
 	@echo "... src/builtins/allenv/ft_env.i"
 	@echo "... src/builtins/allenv/ft_env.s"
+	@echo "... src/builtins/allenv/global_env.o"
+	@echo "... src/builtins/allenv/global_env.i"
+	@echo "... src/builtins/allenv/global_env.s"
 	@echo "... src/builtins/allenv/main_env.o"
 	@echo "... src/builtins/allenv/main_env.i"
 	@echo "... src/builtins/allenv/main_env.s"
@@ -2118,6 +2172,9 @@ help:
 	@echo "... src/nucleus/do_add.o"
 	@echo "... src/nucleus/do_add.i"
 	@echo "... src/nucleus/do_add.s"
+	@echo "... src/nucleus/dop_tab_funs.o"
+	@echo "... src/nucleus/dop_tab_funs.i"
+	@echo "... src/nucleus/dop_tab_funs.s"
 	@echo "... src/nucleus/find_history.o"
 	@echo "... src/nucleus/find_history.i"
 	@echo "... src/nucleus/find_history.s"
@@ -2232,6 +2289,9 @@ help:
 	@echo "... src/parser/main_parser.o"
 	@echo "... src/parser/main_parser.i"
 	@echo "... src/parser/main_parser.s"
+	@echo "... src/shell_lvl.o"
+	@echo "... src/shell_lvl.i"
+	@echo "... src/shell_lvl.s"
 .PHONY : help
 
 

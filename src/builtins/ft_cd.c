@@ -39,7 +39,6 @@ void	ft_global_dir(int flag, char *str)
 			set_new_var("OLDPWD", tmp, &g_env);
 			getcwd(tmp, 4096);
 			set_new_var("PWD", tmp, &g_env);
-			set_new_var("PWD", tmp, &g_all_var);
 		}
 	}
 	else if (flag == 3)

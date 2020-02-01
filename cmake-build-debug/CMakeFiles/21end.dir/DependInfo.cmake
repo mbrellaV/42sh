@@ -4,8 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/Users/qmartina/Desktop/42start/src/builtins/alias/ft_alias.c" "/Users/qmartina/Desktop/42start/cmake-build-debug/CMakeFiles/21end.dir/src/builtins/alias/ft_alias.c.o"
   "/Users/qmartina/Desktop/42start/src/builtins/allenv/ft_env.c" "/Users/qmartina/Desktop/42start/cmake-build-debug/CMakeFiles/21end.dir/src/builtins/allenv/ft_env.c.o"
+  "/Users/qmartina/Desktop/42start/src/builtins/allenv/global_env.c" "/Users/qmartina/Desktop/42start/cmake-build-debug/CMakeFiles/21end.dir/src/builtins/allenv/global_env.c.o"
   "/Users/qmartina/Desktop/42start/src/builtins/allenv/main_env.c" "/Users/qmartina/Desktop/42start/cmake-build-debug/CMakeFiles/21end.dir/src/builtins/allenv/main_env.c.o"
   "/Users/qmartina/Desktop/42start/src/builtins/ft_cd.c" "/Users/qmartina/Desktop/42start/cmake-build-debug/CMakeFiles/21end.dir/src/builtins/ft_cd.c.o"
   "/Users/qmartina/Desktop/42start/src/builtins/ft_echo.c" "/Users/qmartina/Desktop/42start/cmake-build-debug/CMakeFiles/21end.dir/src/builtins/ft_echo.c.o"
@@ -36,6 +36,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "/Users/qmartina/Desktop/42start/src/main.c" "/Users/qmartina/Desktop/42start/cmake-build-debug/CMakeFiles/21end.dir/src/main.c.o"
   "/Users/qmartina/Desktop/42start/src/nucleus/del_readline.c" "/Users/qmartina/Desktop/42start/cmake-build-debug/CMakeFiles/21end.dir/src/nucleus/del_readline.c.o"
   "/Users/qmartina/Desktop/42start/src/nucleus/do_add.c" "/Users/qmartina/Desktop/42start/cmake-build-debug/CMakeFiles/21end.dir/src/nucleus/do_add.c.o"
+  "/Users/qmartina/Desktop/42start/src/nucleus/dop_tab_funs.c" "/Users/qmartina/Desktop/42start/cmake-build-debug/CMakeFiles/21end.dir/src/nucleus/dop_tab_funs.c.o"
   "/Users/qmartina/Desktop/42start/src/nucleus/find_history.c" "/Users/qmartina/Desktop/42start/cmake-build-debug/CMakeFiles/21end.dir/src/nucleus/find_history.c.o"
   "/Users/qmartina/Desktop/42start/src/nucleus/ft_add_intput_que.c" "/Users/qmartina/Desktop/42start/cmake-build-debug/CMakeFiles/21end.dir/src/nucleus/ft_add_intput_que.c.o"
   "/Users/qmartina/Desktop/42start/src/nucleus/ft_add_sumchar.c" "/Users/qmartina/Desktop/42start/cmake-build-debug/CMakeFiles/21end.dir/src/nucleus/ft_add_sumchar.c.o"
@@ -74,6 +75,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "/Users/qmartina/Desktop/42start/src/parser/change_tilda.c" "/Users/qmartina/Desktop/42start/cmake-build-debug/CMakeFiles/21end.dir/src/parser/change_tilda.c.o"
   "/Users/qmartina/Desktop/42start/src/parser/dop_parser.c" "/Users/qmartina/Desktop/42start/cmake-build-debug/CMakeFiles/21end.dir/src/parser/dop_parser.c.o"
   "/Users/qmartina/Desktop/42start/src/parser/main_parser.c" "/Users/qmartina/Desktop/42start/cmake-build-debug/CMakeFiles/21end.dir/src/parser/main_parser.c.o"
+  "/Users/qmartina/Desktop/42start/src/shell_lvl.c" "/Users/qmartina/Desktop/42start/cmake-build-debug/CMakeFiles/21end.dir/src/shell_lvl.c.o"
   )
 set(CMAKE_C_COMPILER_ID "AppleClang")
 

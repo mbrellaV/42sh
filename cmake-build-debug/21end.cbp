@@ -97,10 +97,10 @@
 		<Unit filename="/Users/qmartina/Desktop/42start/inc/struct.h">
 			<Option target="21end"/>
 		</Unit>
-		<Unit filename="/Users/qmartina/Desktop/42start/src/builtins/alias/ft_alias.c">
+		<Unit filename="/Users/qmartina/Desktop/42start/src/builtins/allenv/ft_env.c">
 			<Option target="21end"/>
 		</Unit>
-		<Unit filename="/Users/qmartina/Desktop/42start/src/builtins/allenv/ft_env.c">
+		<Unit filename="/Users/qmartina/Desktop/42start/src/builtins/allenv/global_env.c">
 			<Option target="21end"/>
 		</Unit>
 		<Unit filename="/Users/qmartina/Desktop/42start/src/builtins/allenv/main_env.c">
@@ -191,6 +191,9 @@
 			<Option target="21end"/>
 		</Unit>
 		<Unit filename="/Users/qmartina/Desktop/42start/src/nucleus/do_add.c">
+			<Option target="21end"/>
+		</Unit>
+		<Unit filename="/Users/qmartina/Desktop/42start/src/nucleus/dop_tab_funs.c">
 			<Option target="21end"/>
 		</Unit>
 		<Unit filename="/Users/qmartina/Desktop/42start/src/nucleus/find_history.c">
@@ -305,6 +308,9 @@
 			<Option target="21end"/>
 		</Unit>
 		<Unit filename="/Users/qmartina/Desktop/42start/src/parser/main_parser.c">
+			<Option target="21end"/>
+		</Unit>
+		<Unit filename="/Users/qmartina/Desktop/42start/src/shell_lvl.c">
 			<Option target="21end"/>
 		</Unit>
 		<Unit filename="/Users/qmartina/Desktop/42start/CMakeLists.txt">
