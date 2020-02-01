@@ -609,6 +609,33 @@ src/hash/hash_table_2.c.s:
 	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/hash/hash_table_2.c.s
 .PHONY : src/hash/hash_table_2.c.s
 
+src/lexer/all_bax_and_hist_change.o: src/lexer/all_bax_and_hist_change.c.o
+
+.PHONY : src/lexer/all_bax_and_hist_change.o
+
+# target to build an object file
+src/lexer/all_bax_and_hist_change.c.o:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/lexer/all_bax_and_hist_change.c.o
+.PHONY : src/lexer/all_bax_and_hist_change.c.o
+
+src/lexer/all_bax_and_hist_change.i: src/lexer/all_bax_and_hist_change.c.i
+
+.PHONY : src/lexer/all_bax_and_hist_change.i
+
+# target to preprocess a source file
+src/lexer/all_bax_and_hist_change.c.i:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/lexer/all_bax_and_hist_change.c.i
+.PHONY : src/lexer/all_bax_and_hist_change.c.i
+
+src/lexer/all_bax_and_hist_change.s: src/lexer/all_bax_and_hist_change.c.s
+
+.PHONY : src/lexer/all_bax_and_hist_change.s
+
+# target to generate assembly for a file
+src/lexer/all_bax_and_hist_change.c.s:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/lexer/all_bax_and_hist_change.c.s
+.PHONY : src/lexer/all_bax_and_hist_change.c.s
+
 src/lexer/change_dol.o: src/lexer/change_dol.c.o
 
 .PHONY : src/lexer/change_dol.o
@@ -2130,6 +2157,9 @@ help:
 	@echo "... src/hash/hash_table_2.o"
 	@echo "... src/hash/hash_table_2.i"
 	@echo "... src/hash/hash_table_2.s"
+	@echo "... src/lexer/all_bax_and_hist_change.o"
+	@echo "... src/lexer/all_bax_and_hist_change.i"
+	@echo "... src/lexer/all_bax_and_hist_change.s"
 	@echo "... src/lexer/change_dol.o"
 	@echo "... src/lexer/change_dol.i"
 	@echo "... src/lexer/change_dol.s"

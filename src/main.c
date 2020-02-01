@@ -21,7 +21,7 @@ void	ft_whatis(t_exectoken *tmp, t_memory *q)
 	else if (ft_strcmp(tmp->file_args[0], "export") == 0)
 		ft_do_export(tmp->file_args);
 	else if (ft_strcmp(tmp->file_args[0], "unexport") == 0 &&
-			 tmp->file_args[1] != NULL)
+			tmp->file_args[1] != NULL)
 		unset_var(tmp->file_args[1], &g_env);
 	else if (ft_strcmp(tmp->file_args[0], "history") == 0)
 		show_history(q);

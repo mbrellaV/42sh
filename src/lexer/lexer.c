@@ -34,31 +34,6 @@ t_dop_str		*cr_dop_str(char **line1)
 	return (tmp);
 }
 
-int				do_zam_bax_and_hist_full(t_lextoken *h)
-{
-	t_dop_str	*tmp;
-
-	if (!h)
-		return (-1);
-	if (!(tmp = ft_memalloc(sizeof(t_dop_str))))
-		ft_error_q(2);
-	while (h != NULL)
-	{
-		tmp->c_b = 0;
-		tmp->i_b = -1;
-		tmp->str_b = h->line;
-		if (h->inhibitor_lvl != 2)
-		{
-			h->line = do_zamena_sp(h->line);
-			h->line = do_zam_str_bax(h->line, tmp);
-			h->line = do_obr_zamena_bax(h->line);
-		}
-		h = h->next;
-	}
-	ft_kill_str_dop_lex(tmp, NULL);
-	return (0);
-}
-
 int				dop_lexer2(t_dop_str *tmp, char *line)
 {
 	tmp->tmp_c = ft_strsub(line, tmp->i_c, word_size(line + tmp->i_c));
@@ -73,25 +48,35 @@ int				dop_lexer2(t_dop_str *tmp, char *line)
 	return (0);
 }
 
+int				dop_lexer1(t_dop_str *tmp, char *line)
+{
+	tmp->tmp_c = ft_strsub(line, tmp->i_c +
+	(ispar(line[tmp->i_c]) == 1 ? 1 : 0), word_size(line + tmp->i_c));
+	if (tmp->tail_c != NULL && tmp->tail_c->operator_type > 2)
+		tmp->d_c = 1;
+	if (!(tmp->tail_c = add_token(tmp->tail_c, tmp->tmp_c, 1)))
+		return (-1);
+	if (ispar(line[tmp->i_c]))
+		tmp->tail_c->inhibitor_lvl = line[tmp->i_c] == '"' ? 1 : 2;
+	tmp->tail_c->is_near_opt = tmp->d_c;
+	tmp->i_c += word_size(line + tmp->i_c) +
+				(ispar(line[tmp->i_c]) ? 2 : 0);
+	tmp->d_c = 0;
+	return (0);
+}
+
 int				dop_lexer(t_dop_str *tmp, char *line)
 {
 	if (isword(line[tmp->i_c]))
 	{
-		tmp->tmp_c = ft_strsub(line, tmp->i_c +
-		(ispar(line[tmp->i_c]) == 1 ? 1 : 0), word_size(line + tmp->i_c));
-		if (tmp->tail_c != NULL && tmp->tail_c->operator_type > 2)
-			tmp->d_c = 1;
-		if (!(tmp->tail_c = add_token(tmp->tail_c, tmp->tmp_c, 1)))
+		if (dop_lexer1(tmp, line) == -1)
 			return (-1);
-		if (ispar(line[tmp->i_c]))
-			tmp->tail_c->inhibitor_lvl = line[tmp->i_c] == '"' ? 1 : 2;
-		tmp->tail_c->is_near_opt = tmp->d_c;
-		tmp->i_c += word_size(line + tmp->i_c) +
-			(ispar(line[tmp->i_c]) ? 2 : 0);
-		tmp->d_c = 0;
 	}
-	else if (isoperator(line[tmp->i_c]) && dop_lexer2(tmp, line) == -1)
-		return (-1);
+	else if (isoperator(line[tmp->i_c]))
+	{
+		if (dop_lexer2(tmp, line) == -1)
+			return (-1);
+	}
 	else
 		tmp->i_c++;
 	if (tmp->dop_c == 0 && tmp->tail_c != NULL)

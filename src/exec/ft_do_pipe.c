@@ -61,6 +61,7 @@ int		ft_heredoc(char *tmp)
 
 	pipe(f);
 	j = 0;
+	h.mod = 2;
 	ft_start_read(&h);
 	set_input_mode();
 	while (ft_strcmp(h.buff, tmp) != 0 && ft_strcmp(h.buff, "exit") != 0)
