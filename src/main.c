@@ -21,7 +21,7 @@ void	ft_whatis(t_exectoken *tmp, t_memory *q)
 	else if (ft_strcmp(tmp->file_args[0], "export") == 0)
 		ft_do_export(tmp->file_args);
 	else if (ft_strcmp(tmp->file_args[0], "unexport") == 0 &&
-			tmp->file_args[1] != NULL)
+	tmp->file_args[1] != NULL)
 		unset_var(tmp->file_args[1], &g_env);
 	else if (ft_strcmp(tmp->file_args[0], "history") == 0)
 		show_history(q);
@@ -32,7 +32,7 @@ void	ft_whatis(t_exectoken *tmp, t_memory *q)
 	else if (ft_strcmp(tmp->file_args[0], "hash") == 0)
 		print_hash();
 	else
-		ft_infinit_pipe(tmp, hash_get(tmp->file_args[0]));
+		ft_infinit_pipe(tmp);
 }
 
 void	print_hash(void)
@@ -49,7 +49,7 @@ void	print_hash(void)
 			while (hash)
 			{
 				dprintf(2, "hash - [%i]; key - [%s];  value - [%s]    ",
-						str_to_hash(hash->key), hash->key, hash->value);
+					str_to_hash(hash->key), hash->key, hash->value);
 				hash = hash->next;
 			}
 			ft_printf("\n");
@@ -120,5 +120,5 @@ int		main(int argc, char **argv, char **env)
 	ft_arrdel(g_env);
 	del_readline(&p);
 	return (ft_distruct_memory(head->next) &&
-			ft_distruct_tree(start_token) ? 0 : 1);
+		ft_distruct_tree(start_token) ? 0 : 1);
 }

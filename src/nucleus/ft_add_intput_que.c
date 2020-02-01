@@ -17,7 +17,6 @@ void	ft_add_intput_que(t_readline *p, t_memory *head)
 	t_readline	q;
 	int			i;
 
-	q.mod = 1;
 	ft_start_read(&q);
 	if (p->len == p->buff_size)
 		ft_realloc_buff(p);

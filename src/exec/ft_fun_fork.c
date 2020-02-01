@@ -26,7 +26,7 @@ void	ft_fun_fork(char *path, char **arg, pid_t pid)
 		free(path);
 }
 
-void	ft_norm_pipe(int p1, int *fd_in, int p0, t_exectoken **head)
+int		ft_norm_pipe(int p1, int *fd_in, int p0, t_exectoken **head)
 {
 	if (p0 == -404 && head == NULL)
 	{
@@ -45,4 +45,5 @@ void	ft_norm_pipe(int p1, int *fd_in, int p0, t_exectoken **head)
 		*fd_in = p0;
 		*head = (*head)->left;
 	}
+	return (1);
 }

@@ -12,12 +12,12 @@
 
 #include "../../inc/fshell.h"
 
-void				reset_input_mode(void)
+void	reset_input_mode(void)
 {
-	tcsetattr(0, TCSANOW, &g_saved_attributes);
+	tcsetattr(0, TCSANOW, &saved_attributes);
 }
 
-void				error_term(int error)
+void	error_term(int error)
 {
 	if (error == 1)
 	{
@@ -26,28 +26,20 @@ void				error_term(int error)
 	}
 }
 
-void				set_input_mode(void)
+void	set_input_mode(void)
 {
-	struct termios	tattr;
-	char			*str;
+	struct termios tattr;
 
 	if (!isatty(0))
 		error_term(1);
 	if (tgetent(NULL, getenv("TERM")) < 1)
 		error_term(1);
-	if (tcgetattr(0, &g_saved_attributes) == -1)
+	if (tcgetattr(0, &saved_attributes) == -1)
 		error_term(1);
-	ft_memcpy(&tattr, &g_saved_attributes, sizeof(tattr));
+	ft_memcpy(&tattr, &saved_attributes, sizeof(tattr));
 	tattr.c_lflag &= ~(ECHO | ECHOE | ECHOK | ECHONL | ICANON | ISIG | IEXTEN);
 	tattr.c_cc[VMIN] = 1;
 	tattr.c_cc[VTIME] = 0;
-	if (!(str =
-			tgetstr("nd", NULL)))
-		error_term(1);
-	if (!(str = tgetstr("up", NULL)))
-		error_term(1);
-	if (!(str = tgetstr("cd", NULL)))
-		error_term(1);
 	if (tcsetattr(0, 0, &tattr) == -1)
 		error_term(1);
 }
