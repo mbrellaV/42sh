@@ -47,7 +47,7 @@ int		ft_whatis(t_exectoken *tmp, t_memory *q)
 	else if (ft_strcmp(tmp->file_args[0], "hash") == 0)
 		print_hash();
 	else
-		ft_infinit_pipe(tmp);
+		ft_infinit_pipe(tmp, hash_get(tmp->file_args[0]));
 	return (1);
 }
 
@@ -145,12 +145,10 @@ int		main(int argc, char **argv, char **env)
 		del_readline(&p);
 		ft_distruct_tree(start_token);
 	}
-	//save_history(head);
+	save_history(head);
 	hash_clear();
 	free(g_cp);
-	ft_arrdel(g_alias);
 	ft_arrdel(g_env);
-	ft_arrdel(g_all_var);
 	del_readline(&p);
 	return (ft_distruct_memory(head) && ft_distruct_tree(start_token) ? 0 : 1);
 }

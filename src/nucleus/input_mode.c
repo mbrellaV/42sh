@@ -29,6 +29,7 @@ void	error_term(int error)
 void	set_input_mode(void)
 {
 	struct termios tattr;
+	char			*str;
 
 	if (!isatty(0))
 		error_term(1);
@@ -40,6 +41,12 @@ void	set_input_mode(void)
 	tattr.c_lflag &= ~(ECHO | ECHOE | ECHOK | ECHONL | ICANON | ISIG | IEXTEN);
 	tattr.c_cc[VMIN] = 1;
 	tattr.c_cc[VTIME] = 0;
+	if (!(str = tgetstr("nd", NULL)))
+		error_term(1);
+	if (!(str = tgetstr("up", NULL)))
+		error_term(1);
+	if (!(str = tgetstr("cd", NULL)))
+		error_term(1);
 	if (tcsetattr(0, 0, &tattr) == -1)
 		error_term(1);
 }

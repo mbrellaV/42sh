@@ -95,7 +95,7 @@ int				do_work_subshell(char **mas, t_memory *q);
 void			ft_do_change_alias(char **mas);
 char			*ft_strjoinch_i(char const *s1, char c, size_t k, size_t max);
 char			*ft_strjoin_i(char const *s1, char *c, size_t k, size_t max);
-void			ft_infinit_pipe(t_exectoken *head);
+void			ft_infinit_pipe(t_exectoken *head, char *rt);
 int				ft_distruct_tree(t_exectoken *q);
 int				ft_distr_lex(t_lextoken	*tmp);
 int				ft_distruct_memory(t_memory	*head);

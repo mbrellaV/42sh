@@ -78,7 +78,7 @@ int		ft_heredoc(char *tmp)
 	return (f[0]);
 }
 
-int		ft_fd_flag(char **av, int *fd_in)
+int		ft_fd_flag(char **av, int *fd_in, char *rt)
 {
 	t_pipe	p;
 
@@ -91,7 +91,7 @@ int		ft_fd_flag(char **av, int *fd_in)
 			p.flag = ft_what_flag(av[p.i], &(p.b));
 		else if (p.b == 1 && p.flag != 0)
 		{
-			ft_open_flag(av[p.i], &(p.flag), &fd_in, &p.fd);
+			ft_open_flag(rt, &(p.flag), &fd_in, &p.fd);
 			if (p.flag == 1 || p.flag == 2)
 				dup2(p.fd, p.st);
 			else if (p.flag == 6)
@@ -107,20 +107,16 @@ int		ft_fd_flag(char **av, int *fd_in)
 	return (p.fd);
 }
 
-void	ft_infinit_pipe(t_exectoken *head)
+void	ft_infinit_pipe(t_exectoken *head, char *rt)
 {
 	int			p[2];
 	pid_t		pid;
 	int			fd_in;
-	char		*rt;
-	struct stat mystat;
 
 	fd_in = 0;
 	ft_file_create(head);
 	while (head)
 	{
-		if ((rt = hash_get(head->file_args[0])) != NULL)
-			lstat(rt, &mystat);
 		pipe(p);
 		if ((pid = fork()) == -1)
 			exit(1);
@@ -129,11 +125,9 @@ void	ft_infinit_pipe(t_exectoken *head)
 			if (head->left != NULL)
 				ft_norm_pipe(p[1], &fd_in, -404, NULL);
 			if (head->file_opt)
-				ft_fd_flag(head->file_opt, &fd_in);
+				ft_fd_flag(head->file_opt, &fd_in, rt);
 			ft_norm_pipe(-404, &fd_in, p[0], NULL);
-			if (rt == NULL)
-				;
-			else
+			if (rt != NULL)
 				ft_fun_fork(rt, head->file_args, pid);
 			exit(0);
 		}
