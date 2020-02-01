@@ -58,6 +58,7 @@
 
 char			**g_env;
 char			*g_cp;
+int				g_his_d;
 
 void			ft_realloc_all(int k, char ***envl);
 void			ft_echo(char **str);
@@ -84,7 +85,7 @@ int				ft_distruct_tree(t_exectoken *q);
 int				ft_distr_lex(t_lextoken	*tmp);
 int				ft_distruct_memory(t_memory	*head);
 void			ft_error_q(int er);
-void			ft_norm_pipe(int p1, int *fd_in, int p0, t_exectoken **head);
+int				ft_norm_pipe(int p1, int *fd_in, int p0, t_exectoken **head);
 int				ft_error_args(t_exectoken *tmp);
 void			ft_file_create(t_exectoken *head);
 int				ft_what_flag(char *str, int *b);

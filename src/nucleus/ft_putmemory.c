@@ -14,28 +14,26 @@
 
 void		ft_putmemory(t_memory **q, t_readline *p)
 {
-	static int		d = 0;
-
 	if (*q && (*q)->back && (*q)->back->back == NULL && p->sum_read == 183)
 		ft_dop_history((*q), p, 1);
 	else if ((*q) && p->sum_read == 183 && (*q)->back && (*q)->back->back)
 	{
-		if (d != 0)
+		if (g_his_d != 0)
 			*q = (*q)->back;
 		ft_dop_history(*q, p, 1);
 		if ((*q)->next == NULL)
-			d = 1;
+			g_his_d = 1;
 	}
 	else if ((*q) && p->sum_read == 184 && (*q)->next)
 	{
 		if ((*q)->next == NULL)
-			d = 0;
+			g_his_d = 0;
 		(*q) = (*q)->next;
 		ft_dop_history((*q), p, 1);
 	}
 	else if (p->sum_read == 184)
 	{
 		ft_dop_history((*q), p, 2);
-		d = 0;
+		g_his_d = 0;
 	}
 }

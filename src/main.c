@@ -103,6 +103,7 @@ int		main(int argc, char **argv, char **env)
 	t_memory	*head;
 	t_exectoken	*start_token;
 
+	g_his_d = 0;
 	argv[0] = NULL;
 	start_token = NULL;
 	ft_global_env(env, argc);

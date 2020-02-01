@@ -61,11 +61,13 @@ int		ft_heredoc(char *tmp)
 
 	pipe(f);
 	j = 0;
+	h.mod = -100;
 	ft_start_read(&h);
 	set_input_mode();
 	while (ft_strcmp(h.buff, tmp) != 0 && ft_strcmp(h.buff, "exit") != 0)
 	{
 		j != 0 ? ft_putendl_fd(h.buff, f[1]) : NULL;
+		h.mod = 2;
 		del_readline(&h);
 		ft_start_read(&h);
 		ft_read_8(&h, NULL, 2);
@@ -113,16 +115,13 @@ void	ft_infinit_pipe(t_exectoken *head)
 	pid_t		pid;
 	int			fd_in;
 	char		*rt;
-	struct stat mystat;
 
 	fd_in = 0;
 	ft_file_create(head);
 	while (head)
 	{
-		if ((rt = hash_get(head->file_args[0])) != NULL)
-			lstat(rt, &mystat);
-		pipe(p);
-		if ((pid = fork()) == -1)
+		rt = hash_get(head->file_args[0]);
+		if (pipe(p) == -1 || (pid = fork()) == -1)
 			exit(1);
 		else if (pid == 0)
 		{
@@ -130,10 +129,7 @@ void	ft_infinit_pipe(t_exectoken *head)
 				ft_norm_pipe(p[1], &fd_in, -404, NULL);
 			if (head->file_opt)
 				ft_fd_flag(head->file_opt, &fd_in);
-			ft_norm_pipe(-404, &fd_in, p[0], NULL);
-			if (rt == NULL)
-				;
-			else
+			if (ft_norm_pipe(-404, &fd_in, p[0], NULL) && rt != NULL)
 				ft_fun_fork(rt, head->file_args, pid);
 			exit(0);
 		}

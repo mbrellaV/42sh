@@ -8,43 +8,43 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/Users/mbrella/Desktop/projects/21beta/42start/cmake-build-debug"/>
+				<Option working_dir="/Users/qmartina/Desktop/42start/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/mbrella/Desktop/projects/21beta/42start/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/mbrella/Desktop/projects/21beta/42start/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/mbrella/Desktop/projects/21beta/42start/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/mbrella/Desktop/projects/21beta/42start/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/qmartina/Desktop/42start/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/qmartina/Desktop/42start/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/qmartina/Desktop/42start/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/qmartina/Desktop/42start/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/Users/mbrella/Desktop/projects/21beta/42start/cmake-build-debug"/>
+				<Option working_dir="/Users/qmartina/Desktop/42start/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/mbrella/Desktop/projects/21beta/42start/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/mbrella/Desktop/projects/21beta/42start/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/mbrella/Desktop/projects/21beta/42start/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/mbrella/Desktop/projects/21beta/42start/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/qmartina/Desktop/42start/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/qmartina/Desktop/42start/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/qmartina/Desktop/42start/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/qmartina/Desktop/42start/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/Users/mbrella/Desktop/projects/21beta/42start/cmake-build-debug"/>
+				<Option working_dir="/Users/qmartina/Desktop/42start/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/mbrella/Desktop/projects/21beta/42start/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/mbrella/Desktop/projects/21beta/42start/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/mbrella/Desktop/projects/21beta/42start/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/mbrella/Desktop/projects/21beta/42start/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/qmartina/Desktop/42start/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/qmartina/Desktop/42start/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/qmartina/Desktop/42start/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/qmartina/Desktop/42start/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="21end">
-				<Option output="/Users/mbrella/Desktop/projects/21beta/42start/cmake-build-debug/21end" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/mbrella/Desktop/projects/21beta/42start/cmake-build-debug"/>
+				<Option output="/Users/qmartina/Desktop/42start/cmake-build-debug/21end" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/qmartina/Desktop/42start/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/Users/mbrella/Desktop/projects/21beta/42start/inc"/>
+					<Add directory="/Users/qmartina/Desktop/42start/inc"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.0.0/include"/>
 					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
@@ -53,20 +53,20 @@
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/mbrella/Desktop/projects/21beta/42start/cmake-build-debug/Makefile&quot;  VERBOSE=1 21end"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/mbrella/Desktop/projects/21beta/42start/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/mbrella/Desktop/projects/21beta/42start/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/mbrella/Desktop/projects/21beta/42start/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/qmartina/Desktop/42start/cmake-build-debug/Makefile&quot;  VERBOSE=1 21end"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/qmartina/Desktop/42start/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/qmartina/Desktop/42start/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/qmartina/Desktop/42start/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="21end/fast">
-				<Option output="/Users/mbrella/Desktop/projects/21beta/42start/cmake-build-debug/21end" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/mbrella/Desktop/projects/21beta/42start/cmake-build-debug"/>
+				<Option output="/Users/qmartina/Desktop/42start/cmake-build-debug/21end" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/qmartina/Desktop/42start/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/Users/mbrella/Desktop/projects/21beta/42start/inc"/>
+					<Add directory="/Users/qmartina/Desktop/42start/inc"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.0.0/include"/>
 					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
@@ -75,248 +75,248 @@
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/mbrella/Desktop/projects/21beta/42start/cmake-build-debug/Makefile&quot;  VERBOSE=1 21end/fast"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/mbrella/Desktop/projects/21beta/42start/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/mbrella/Desktop/projects/21beta/42start/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/mbrella/Desktop/projects/21beta/42start/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/qmartina/Desktop/42start/cmake-build-debug/Makefile&quot;  VERBOSE=1 21end/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/qmartina/Desktop/42start/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/qmartina/Desktop/42start/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/qmartina/Desktop/42start/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/inc/fshell.h">
+		<Unit filename="/Users/qmartina/Desktop/42start/inc/fshell.h">
 			<Option target="21end"/>
 		</Unit>
-		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/inc/hash.h">
+		<Unit filename="/Users/qmartina/Desktop/42start/inc/hash.h">
 			<Option target="21end"/>
 		</Unit>
-		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/inc/nucleus.h">
+		<Unit filename="/Users/qmartina/Desktop/42start/inc/nucleus.h">
 			<Option target="21end"/>
 		</Unit>
-		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/inc/parser.h">
+		<Unit filename="/Users/qmartina/Desktop/42start/inc/parser.h">
 			<Option target="21end"/>
 		</Unit>
-		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/inc/struct.h">
+		<Unit filename="/Users/qmartina/Desktop/42start/inc/struct.h">
 			<Option target="21end"/>
 		</Unit>
-		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/builtins/allenv/ft_env.c">
+		<Unit filename="/Users/qmartina/Desktop/42start/src/builtins/allenv/ft_env.c">
 			<Option target="21end"/>
 		</Unit>
-		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/builtins/allenv/global_env.c">
+		<Unit filename="/Users/qmartina/Desktop/42start/src/builtins/allenv/global_env.c">
 			<Option target="21end"/>
 		</Unit>
-		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/builtins/allenv/main_env.c">
+		<Unit filename="/Users/qmartina/Desktop/42start/src/builtins/allenv/main_env.c">
 			<Option target="21end"/>
 		</Unit>
-		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/builtins/ft_cd.c">
+		<Unit filename="/Users/qmartina/Desktop/42start/src/builtins/ft_cd.c">
 			<Option target="21end"/>
 		</Unit>
-		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/builtins/ft_echo.c">
+		<Unit filename="/Users/qmartina/Desktop/42start/src/builtins/ft_echo.c">
 			<Option target="21end"/>
 		</Unit>
-		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/builtins/ft_echo2.c">
+		<Unit filename="/Users/qmartina/Desktop/42start/src/builtins/ft_echo2.c">
 			<Option target="21end"/>
 		</Unit>
-		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/check_file.c">
+		<Unit filename="/Users/qmartina/Desktop/42start/src/check_file.c">
 			<Option target="21end"/>
 		</Unit>
-		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/errors/errror_handler.c">
+		<Unit filename="/Users/qmartina/Desktop/42start/src/errors/errror_handler.c">
 			<Option target="21end"/>
 		</Unit>
-		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/exec/ft_create_file.c">
+		<Unit filename="/Users/qmartina/Desktop/42start/src/exec/ft_create_file.c">
 			<Option target="21end"/>
 		</Unit>
-		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/exec/ft_do_pipe.c">
+		<Unit filename="/Users/qmartina/Desktop/42start/src/exec/ft_do_pipe.c">
 			<Option target="21end"/>
 		</Unit>
-		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/exec/ft_fun_fork.c">
+		<Unit filename="/Users/qmartina/Desktop/42start/src/exec/ft_fun_fork.c">
 			<Option target="21end"/>
 		</Unit>
-		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/ft_distruct.c">
+		<Unit filename="/Users/qmartina/Desktop/42start/src/ft_distruct.c">
 			<Option target="21end"/>
 		</Unit>
-		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/ft_error_q.c">
+		<Unit filename="/Users/qmartina/Desktop/42start/src/ft_error_q.c">
 			<Option target="21end"/>
 		</Unit>
-		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/ft_signal.c">
+		<Unit filename="/Users/qmartina/Desktop/42start/src/ft_signal.c">
 			<Option target="21end"/>
 		</Unit>
-		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/ft_take_arg.c">
+		<Unit filename="/Users/qmartina/Desktop/42start/src/ft_take_arg.c">
 			<Option target="21end"/>
 		</Unit>
-		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/hash/hash_error.c">
+		<Unit filename="/Users/qmartina/Desktop/42start/src/hash/hash_error.c">
 			<Option target="21end"/>
 		</Unit>
-		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/hash/hash_table.c">
+		<Unit filename="/Users/qmartina/Desktop/42start/src/hash/hash_table.c">
 			<Option target="21end"/>
 		</Unit>
-		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/hash/hash_table_2.c">
+		<Unit filename="/Users/qmartina/Desktop/42start/src/hash/hash_table_2.c">
 			<Option target="21end"/>
 		</Unit>
-		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/lexer/all_bax_and_hist_change.c">
+		<Unit filename="/Users/qmartina/Desktop/42start/src/lexer/all_bax_and_hist_change.c">
 			<Option target="21end"/>
 		</Unit>
-		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/lexer/change_dol.c">
+		<Unit filename="/Users/qmartina/Desktop/42start/src/lexer/change_dol.c">
 			<Option target="21end"/>
 		</Unit>
-		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/lexer/change_hist_exp.c">
+		<Unit filename="/Users/qmartina/Desktop/42start/src/lexer/change_hist_exp.c">
 			<Option target="21end"/>
 		</Unit>
-		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/lexer/change_spaces.c">
+		<Unit filename="/Users/qmartina/Desktop/42start/src/lexer/change_spaces.c">
 			<Option target="21end"/>
 		</Unit>
-		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/lexer/change_str_by_str.c">
+		<Unit filename="/Users/qmartina/Desktop/42start/src/lexer/change_str_by_str.c">
 			<Option target="21end"/>
 		</Unit>
-		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/lexer/cr_and_add_tokens.c">
+		<Unit filename="/Users/qmartina/Desktop/42start/src/lexer/cr_and_add_tokens.c">
 			<Option target="21end"/>
 		</Unit>
-		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/lexer/dop_funs.c">
+		<Unit filename="/Users/qmartina/Desktop/42start/src/lexer/dop_funs.c">
 			<Option target="21end"/>
 		</Unit>
-		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/lexer/get_opt_type.c">
+		<Unit filename="/Users/qmartina/Desktop/42start/src/lexer/get_opt_type.c">
 			<Option target="21end"/>
 		</Unit>
-		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/lexer/history_search.c">
+		<Unit filename="/Users/qmartina/Desktop/42start/src/lexer/history_search.c">
 			<Option target="21end"/>
 		</Unit>
-		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/lexer/kill_dop_structure.c">
+		<Unit filename="/Users/qmartina/Desktop/42start/src/lexer/kill_dop_structure.c">
 			<Option target="21end"/>
 		</Unit>
-		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/lexer/lexer.c">
+		<Unit filename="/Users/qmartina/Desktop/42start/src/lexer/lexer.c">
 			<Option target="21end"/>
 		</Unit>
-		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/lexer/word_sizes.c">
+		<Unit filename="/Users/qmartina/Desktop/42start/src/lexer/word_sizes.c">
 			<Option target="21end"/>
 		</Unit>
-		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/main.c">
+		<Unit filename="/Users/qmartina/Desktop/42start/src/main.c">
 			<Option target="21end"/>
 		</Unit>
-		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/nucleus/del_readline.c">
+		<Unit filename="/Users/qmartina/Desktop/42start/src/nucleus/del_readline.c">
 			<Option target="21end"/>
 		</Unit>
-		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/nucleus/do_add.c">
+		<Unit filename="/Users/qmartina/Desktop/42start/src/nucleus/do_add.c">
 			<Option target="21end"/>
 		</Unit>
-		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/nucleus/dop_tab_funs.c">
+		<Unit filename="/Users/qmartina/Desktop/42start/src/nucleus/dop_tab_funs.c">
 			<Option target="21end"/>
 		</Unit>
-		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/nucleus/find_history.c">
+		<Unit filename="/Users/qmartina/Desktop/42start/src/nucleus/find_history.c">
 			<Option target="21end"/>
 		</Unit>
-		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/nucleus/ft_add_intput_que.c">
+		<Unit filename="/Users/qmartina/Desktop/42start/src/nucleus/ft_add_intput_que.c">
 			<Option target="21end"/>
 		</Unit>
-		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/nucleus/ft_add_sumchar.c">
+		<Unit filename="/Users/qmartina/Desktop/42start/src/nucleus/ft_add_sumchar.c">
 			<Option target="21end"/>
 		</Unit>
-		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/nucleus/ft_arrdel.c">
+		<Unit filename="/Users/qmartina/Desktop/42start/src/nucleus/ft_arrdel.c">
 			<Option target="21end"/>
 		</Unit>
-		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/nucleus/ft_arrnew.c">
+		<Unit filename="/Users/qmartina/Desktop/42start/src/nucleus/ft_arrnew.c">
 			<Option target="21end"/>
 		</Unit>
-		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/nucleus/ft_arrows.c">
+		<Unit filename="/Users/qmartina/Desktop/42start/src/nucleus/ft_arrows.c">
 			<Option target="21end"/>
 		</Unit>
-		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/nucleus/ft_back_slovo.c">
+		<Unit filename="/Users/qmartina/Desktop/42start/src/nucleus/ft_back_slovo.c">
 			<Option target="21end"/>
 		</Unit>
-		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/nucleus/ft_c.c">
+		<Unit filename="/Users/qmartina/Desktop/42start/src/nucleus/ft_c.c">
 			<Option target="21end"/>
 		</Unit>
-		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/nucleus/ft_cheak_quote.c">
+		<Unit filename="/Users/qmartina/Desktop/42start/src/nucleus/ft_cheak_quote.c">
 			<Option target="21end"/>
 		</Unit>
-		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/nucleus/ft_cleanstr.c">
+		<Unit filename="/Users/qmartina/Desktop/42start/src/nucleus/ft_cleanstr.c">
 			<Option target="21end"/>
 		</Unit>
-		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/nucleus/ft_cut.c">
+		<Unit filename="/Users/qmartina/Desktop/42start/src/nucleus/ft_cut.c">
 			<Option target="21end"/>
 		</Unit>
-		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/nucleus/ft_cut_copy.c">
+		<Unit filename="/Users/qmartina/Desktop/42start/src/nucleus/ft_cut_copy.c">
 			<Option target="21end"/>
 		</Unit>
-		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/nucleus/ft_do_copy.c">
+		<Unit filename="/Users/qmartina/Desktop/42start/src/nucleus/ft_do_copy.c">
 			<Option target="21end"/>
 		</Unit>
-		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/nucleus/ft_do_delch.c">
+		<Unit filename="/Users/qmartina/Desktop/42start/src/nucleus/ft_do_delch.c">
 			<Option target="21end"/>
 		</Unit>
-		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/nucleus/ft_do_leftright.c">
+		<Unit filename="/Users/qmartina/Desktop/42start/src/nucleus/ft_do_leftright.c">
 			<Option target="21end"/>
 		</Unit>
-		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/nucleus/ft_dop_history.c">
+		<Unit filename="/Users/qmartina/Desktop/42start/src/nucleus/ft_dop_history.c">
 			<Option target="21end"/>
 		</Unit>
-		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/nucleus/ft_downcursor.c">
+		<Unit filename="/Users/qmartina/Desktop/42start/src/nucleus/ft_downcursor.c">
 			<Option target="21end"/>
 		</Unit>
-		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/nucleus/ft_head_memory.c">
+		<Unit filename="/Users/qmartina/Desktop/42start/src/nucleus/ft_head_memory.c">
 			<Option target="21end"/>
 		</Unit>
-		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/nucleus/ft_memory.c">
+		<Unit filename="/Users/qmartina/Desktop/42start/src/nucleus/ft_memory.c">
 			<Option target="21end"/>
 		</Unit>
-		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/nucleus/ft_next_slovo.c">
+		<Unit filename="/Users/qmartina/Desktop/42start/src/nucleus/ft_next_slovo.c">
 			<Option target="21end"/>
 		</Unit>
-		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/nucleus/ft_print_tab.c">
+		<Unit filename="/Users/qmartina/Desktop/42start/src/nucleus/ft_print_tab.c">
 			<Option target="21end"/>
 		</Unit>
-		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/nucleus/ft_printf_helper.c">
+		<Unit filename="/Users/qmartina/Desktop/42start/src/nucleus/ft_printf_helper.c">
 			<Option target="21end"/>
 		</Unit>
-		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/nucleus/ft_put_n.c">
+		<Unit filename="/Users/qmartina/Desktop/42start/src/nucleus/ft_put_n.c">
 			<Option target="21end"/>
 		</Unit>
-		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/nucleus/ft_putcut.c">
+		<Unit filename="/Users/qmartina/Desktop/42start/src/nucleus/ft_putcut.c">
 			<Option target="21end"/>
 		</Unit>
-		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/nucleus/ft_putmemory.c">
+		<Unit filename="/Users/qmartina/Desktop/42start/src/nucleus/ft_putmemory.c">
 			<Option target="21end"/>
 		</Unit>
-		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/nucleus/ft_read_8.c">
+		<Unit filename="/Users/qmartina/Desktop/42start/src/nucleus/ft_read_8.c">
 			<Option target="21end"/>
 		</Unit>
-		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/nucleus/ft_realloc_buff.c">
+		<Unit filename="/Users/qmartina/Desktop/42start/src/nucleus/ft_realloc_buff.c">
 			<Option target="21end"/>
 		</Unit>
-		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/nucleus/ft_realloc_tab.c">
+		<Unit filename="/Users/qmartina/Desktop/42start/src/nucleus/ft_realloc_tab.c">
 			<Option target="21end"/>
 		</Unit>
-		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/nucleus/ft_setcursor.c">
+		<Unit filename="/Users/qmartina/Desktop/42start/src/nucleus/ft_setcursor.c">
 			<Option target="21end"/>
 		</Unit>
-		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/nucleus/ft_start_read.c">
+		<Unit filename="/Users/qmartina/Desktop/42start/src/nucleus/ft_start_read.c">
 			<Option target="21end"/>
 		</Unit>
-		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/nucleus/ft_strsplit1.c">
+		<Unit filename="/Users/qmartina/Desktop/42start/src/nucleus/ft_strsplit1.c">
 			<Option target="21end"/>
 		</Unit>
-		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/nucleus/ft_upcursor.c">
+		<Unit filename="/Users/qmartina/Desktop/42start/src/nucleus/ft_upcursor.c">
 			<Option target="21end"/>
 		</Unit>
-		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/nucleus/input_mode.c">
+		<Unit filename="/Users/qmartina/Desktop/42start/src/nucleus/input_mode.c">
 			<Option target="21end"/>
 		</Unit>
-		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/nucleus/show_history.c">
+		<Unit filename="/Users/qmartina/Desktop/42start/src/nucleus/show_history.c">
 			<Option target="21end"/>
 		</Unit>
-		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/nucleus/tab.c">
+		<Unit filename="/Users/qmartina/Desktop/42start/src/nucleus/tab.c">
 			<Option target="21end"/>
 		</Unit>
-		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/parser/change_tilda.c">
+		<Unit filename="/Users/qmartina/Desktop/42start/src/parser/change_tilda.c">
 			<Option target="21end"/>
 		</Unit>
-		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/parser/dop_parser.c">
+		<Unit filename="/Users/qmartina/Desktop/42start/src/parser/dop_parser.c">
 			<Option target="21end"/>
 		</Unit>
-		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/parser/main_parser.c">
+		<Unit filename="/Users/qmartina/Desktop/42start/src/parser/main_parser.c">
 			<Option target="21end"/>
 		</Unit>
-		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/shell_lvl.c">
+		<Unit filename="/Users/qmartina/Desktop/42start/src/shell_lvl.c">
 			<Option target="21end"/>
 		</Unit>
-		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/CMakeLists.txt">
+		<Unit filename="/Users/qmartina/Desktop/42start/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

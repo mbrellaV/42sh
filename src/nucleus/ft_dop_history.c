@@ -18,7 +18,9 @@ void		ft_dop_history(t_memory *q, t_readline *p, int k)
 	{
 		ft_cleanstr(p->index, p);
 		free(p->buff);
-		p->buff = ft_strdup((q)->inp);
+		p->buff_size = 8 + (int)ft_strlen((q)->inp);
+		p->buff = ft_strnew(p->buff_size);
+		ft_strcpy(p->buff, (q)->inp);
 		p->index = (int)ft_strlen(p->buff);
 		p->len = (int)ft_strlen(p->buff);
 		p->len_hint = ft_printf_helper(p->mod);
