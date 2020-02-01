@@ -42,6 +42,7 @@ SRC_BASE = builtins/ft_cd.c\
 	lexer/change_spaces.c\
 	lexer/cr_and_add_tokens.c\
 	lexer/dop_funs.c\
+	lexer/all_bax_and_hist_change.c\
 	lexer/kill_dop_structure.c\
 	lexer/word_sizes.c\
 	lexer/change_hist_exp.c\
