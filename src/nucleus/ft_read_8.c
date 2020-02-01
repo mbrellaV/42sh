@@ -12,10 +12,10 @@
 
 #include "../../inc/fshell.h"
 
-void	ft_cheak_sum(t_readline *p, t_memory *h)
+void	ft_cheak_sum(t_readline *p, t_memory **h)
 {
 	p->sum_read == 186 || p->sum_read == 185 ? ft_do_leftright(p) : NULL;
-	p->sum_read == 183 || p->sum_read == 184 ? ft_putmemory(&h, p) : NULL;
+	p->sum_read == 183 || p->sum_read == 184 ? ft_putmemory(h, p) : NULL;
 	p->sum_read == 341 ? ft_upcursor(p) : NULL;
 	p->sum_read == 342 ? ft_downcursor(p) : NULL;
 	p->sum_read == 297 || p->sum_read == 298 || p->sum_read == 190 ||
@@ -42,7 +42,7 @@ void	ft_read_8(t_readline *p, t_memory *head, int mod)
 	{
 		p->sum_read = ft_add_sumchar(buf, rt);
 		if (rt > 1)
-			ft_cheak_sum(p, h);
+			ft_cheak_sum(p, &h);
 		else if (p->sum_read == 9)
 			ft_cheak_tab(p);
 		else if (p->sum_read == 18)

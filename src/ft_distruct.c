@@ -50,7 +50,6 @@ int		ft_distr_lex(t_lextoken *tmp)
 int		ft_dist_str(char *input)
 {
 	ft_free_str(g_env);
-	ft_free_str(g_all_var);
 	free(input);
 	free(g_cp);
 	return (1);

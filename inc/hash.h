@@ -10,14 +10,13 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HASH_TABLE_MAIN_H
-# define HASH_TABLE_MAIN_H
+#ifndef HASH_H
+# define HASH_H
 
 # include <unistd.h>
 # include <stdlib.h>
 
 # define MAX_HASH	255
-
 
 typedef struct		s_hash
 {
@@ -38,6 +37,6 @@ void				hash_free_by_key(char *key);
 void				free_hash(t_hash **hash);
 t_hash				*hash_create(char *key, char *value);
 unsigned char		str_to_hash(char *str);
-char 				*hash_error(int errno, char *key);
+char				*hash_error(int errno, char *key);
 
 #endif

@@ -42,8 +42,9 @@ t_exectoken		*do_parser(t_lextoken *tmp)
 {
 	t_dop_str	*t;
 
-	if (!(t = cr_dop_str_par()) || !(do_parser_dop(t, tmp)))
-		return (NULL);
+	if (!(t = cr_dop_str_par()) ||
+	!(t->prev_c = do_parser_dop(t, tmp)))
+		ft_error_q(5);
 	while (tmp != NULL)
 	{
 		if (is_cmd_delim(tmp->operator_type))
@@ -54,7 +55,7 @@ t_exectoken		*do_parser(t_lextoken *tmp)
 				if (!(t->prev_c = ft_cr_new_exectoken(tmp,
 						t->prev_c, t->i_c, t)))
 					return (NULL);
-			if (t->i_c == 1 && !(t->prevdot_c = ft_cr_new_exectoken(tmp,
+			if (t->i_c == 1 && (t->prevdot_c = ft_cr_new_exectoken(tmp,
 					t->prevdot_c, t->i_c, t)))
 				t->prev_c = t->prevdot_c;
 			t->i_c = -1;

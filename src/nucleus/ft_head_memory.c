@@ -57,10 +57,12 @@ int			save_history(t_memory *q)
 {
 	int		fd;
 
-	fd = open("history/hist.txt", O_TRUNC);
-	close(fd);
-	fd = open("history/hist.txt", O_RDWR);
-	while (q->back->back != NULL)
+	fd = open("history/hist.txt", O_CREAT | O_RDWR | O_TRUNC,
+			S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP |
+			S_IROTH | S_IWOTH);
+	if (fd < 0)
+		return (0);
+	while (q->back != NULL)
 		q = q->back;
 	while (q != NULL)
 	{
