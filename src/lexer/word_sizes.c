@@ -38,7 +38,7 @@ int				word_size(char *str)
 	{
 		if (*str == '=' && ispar(*(str + 1)) == 1)
 			return (3 + i + c_size(str + 1, *(str + 1)));
-		if (isword(*str) == 0)
+		if (isword(*str) != 1)
 			return (i);
 		i++;
 		str++;

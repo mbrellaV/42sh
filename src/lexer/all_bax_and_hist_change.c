@@ -22,6 +22,7 @@ int				do_zam_bax_and_hist_full(t_lextoken *h)
 		ft_error_q(2);
 	while (h != NULL)
 	{
+		dprintf(2, "lextoken: |%s, %d|\n", h->line, h->is_near_opt);
 		tmp->c_b = 0;
 		tmp->i_b = -1;
 		tmp->str_b = h->line;
