@@ -79,9 +79,7 @@ void	ft_cd(char **str)
 	}
 	if (!str[1])
 		return (ft_cd1());
-	if (str[1][0] == '~')
-		tmp = ft_cd_home(str[1]);
-	else if (str[1][0] == '-')
+	if (str[1][0] == '-')
 		return (ft_global_dir(3, NULL));
 	else
 		tmp = ft_strdup(str[1]);

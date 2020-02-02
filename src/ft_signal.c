@@ -42,5 +42,7 @@ int		ft_signal(int signo, t_readline *p)
 	}
 	else if (signo == 26)
 		return (27);
+	else if (signo >= 0 && signo <= 30)
+		return (42);
 	return (404);
 }

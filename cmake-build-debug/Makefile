@@ -48,10 +48,10 @@ RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/qmartina/Desktop/42start
+CMAKE_SOURCE_DIR = /Users/mbrella/Desktop/projects/21beta/42start
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/qmartina/Desktop/42start/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/mbrella/Desktop/projects/21beta/42start/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/qmartina/Desktop/42start/cmake-build-debug/CMakeFiles /Users/qmartina/Desktop/42start/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/mbrella/Desktop/projects/21beta/42start/cmake-build-debug/CMakeFiles /Users/mbrella/Desktop/projects/21beta/42start/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/qmartina/Desktop/42start/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/mbrella/Desktop/projects/21beta/42start/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -122,6 +122,33 @@ depend:
 21end/fast:
 	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/build
 .PHONY : 21end/fast
+
+src/builtins/alias/alias.o: src/builtins/alias/alias.c.o
+
+.PHONY : src/builtins/alias/alias.o
+
+# target to build an object file
+src/builtins/alias/alias.c.o:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/builtins/alias/alias.c.o
+.PHONY : src/builtins/alias/alias.c.o
+
+src/builtins/alias/alias.i: src/builtins/alias/alias.c.i
+
+.PHONY : src/builtins/alias/alias.i
+
+# target to preprocess a source file
+src/builtins/alias/alias.c.i:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/builtins/alias/alias.c.i
+.PHONY : src/builtins/alias/alias.c.i
+
+src/builtins/alias/alias.s: src/builtins/alias/alias.c.s
+
+.PHONY : src/builtins/alias/alias.s
+
+# target to generate assembly for a file
+src/builtins/alias/alias.c.s:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/builtins/alias/alias.c.s
+.PHONY : src/builtins/alias/alias.c.s
 
 src/builtins/allenv/ft_env.o: src/builtins/allenv/ft_env.c.o
 
@@ -2103,6 +2130,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... 21end"
+	@echo "... src/builtins/alias/alias.o"
+	@echo "... src/builtins/alias/alias.i"
+	@echo "... src/builtins/alias/alias.s"
 	@echo "... src/builtins/allenv/ft_env.o"
 	@echo "... src/builtins/allenv/ft_env.i"
 	@echo "... src/builtins/allenv/ft_env.s"

@@ -31,6 +31,8 @@ int				do_zam_bax_and_hist_full(t_lextoken *h)
 			h->line = do_zam_str_bax(h->line, tmp);
 			h->line = do_obr_zamena_bax(h->line);
 		}
+		if (h->inhibitor_lvl == 0)
+			h->line = ft_do_zam_alias(h->line);
 		h = h->next;
 	}
 	ft_kill_str_dop_lex(tmp, NULL);

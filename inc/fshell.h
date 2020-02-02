@@ -59,7 +59,12 @@
 char			**g_env;
 char			*g_cp;
 int				g_his_d;
+char			**g_alias;
+char			**g_all_var;
 
+void			ft_alias();
+char			*ft_do_zam_alias(char *str);
+int				ft_do_change_alias(char **mas);
 void			ft_realloc_all(int k, char ***envl);
 void			ft_echo(char **str);
 char			*ft_slash(char *str);

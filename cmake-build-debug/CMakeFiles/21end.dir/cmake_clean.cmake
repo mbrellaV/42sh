@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "21end"
   "21end.pdb"
+  "CMakeFiles/21end.dir/src/builtins/alias/alias.c.o"
   "CMakeFiles/21end.dir/src/builtins/allenv/ft_env.c.o"
   "CMakeFiles/21end.dir/src/builtins/allenv/global_env.c.o"
   "CMakeFiles/21end.dir/src/builtins/allenv/main_env.c.o"

@@ -14,6 +14,7 @@
 
 void	ft_fun_fork(char *path, char **arg, pid_t pid)
 {
+	signal(SIGINT, ft_fork_signal);
 	if (pid == 0)
 		execve(path, arg, g_env);
 	else if (pid < 0)

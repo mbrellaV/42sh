@@ -32,6 +32,7 @@ SRC_BASE = builtins/ft_cd.c\
         builtins/ft_echo.c\
         builtins/ft_echo2.c\
         builtins/allenv/ft_env.c\
+	builtins/alias/alias.c\
  	builtins/allenv/global_env.c\
         errors/errror_handler.c\
         exec/ft_create_file.c\
