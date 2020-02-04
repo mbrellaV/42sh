@@ -15,7 +15,7 @@
 void	ft_whatis(t_exectoken *tmp, t_memory *q)
 {
 	if (ft_strcmp(tmp->file_args[0], "alias") == 0 || ft_strcmp(tmp->file_args[0], "unalias") == 0)
-		;
+		ft_do_change_alias(tmp->file_args);
 	else if (ft_strcmp(tmp->file_args[0], "echo") == 0)
 		ft_echo(tmp->file_args);
 	else if (ft_strcmp(tmp->file_args[0], "cd") == 0)
@@ -72,7 +72,6 @@ int		ft_main_what(t_exectoken *tmp, t_memory *q)
 			return (-1);
 		if (ft_strcmp(tmp->file_args[0], "exit") == 0)
 			return (-1);
-		ft_do_change_alias(tmp->file_args);
 		do_zam_str_with_tilda(tmp->file_args);
 		ft_whatis(tmp, q);
 		tmp = tmp->right;
