@@ -29,6 +29,8 @@ INC_DIR		=	inc/
 OBJ_DIR		=	objs/
 
 SRC_BASE = builtins/ft_cd.c\
+        builtins/ft_cd_2.c\
+        builtins/ft_cd_3.c\
         builtins/ft_echo.c\
         builtins/ft_echo2.c\
         builtins/allenv/ft_env.c\
