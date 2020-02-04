@@ -39,19 +39,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake
+CMAKE_COMMAND = /Users/plettie/Desktop/CLion.app/Contents/bin/cmake/mac/bin/cmake
 
 # The command to remove a file.
-RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E remove -f
+RM = /Users/plettie/Desktop/CLion.app/Contents/bin/cmake/mac/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/mbrella/Desktop/projects/21beta/42start
+CMAKE_SOURCE_DIR = /Users/plettie/Desktop/42
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/mbrella/Desktop/projects/21beta/42start/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/plettie/Desktop/42/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -59,7 +59,7 @@ CMAKE_BINARY_DIR = /Users/mbrella/Desktop/projects/21beta/42start/cmake-build-de
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/Users/plettie/Desktop/CLion.app/Contents/bin/cmake/mac/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -70,7 +70,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	/Users/plettie/Desktop/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/mbrella/Desktop/projects/21beta/42start/cmake-build-debug/CMakeFiles /Users/mbrella/Desktop/projects/21beta/42start/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/plettie/Desktop/42/cmake-build-debug/CMakeFiles /Users/plettie/Desktop/42/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/mbrella/Desktop/projects/21beta/42start/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/plettie/Desktop/42/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -257,6 +257,33 @@ src/builtins/ft_cd.s: src/builtins/ft_cd.c.s
 src/builtins/ft_cd.c.s:
 	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/builtins/ft_cd.c.s
 .PHONY : src/builtins/ft_cd.c.s
+
+src/builtins/ft_cd_3.o: src/builtins/ft_cd_3.c.o
+
+.PHONY : src/builtins/ft_cd_3.o
+
+# target to build an object file
+src/builtins/ft_cd_3.c.o:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/builtins/ft_cd_3.c.o
+.PHONY : src/builtins/ft_cd_3.c.o
+
+src/builtins/ft_cd_3.i: src/builtins/ft_cd_3.c.i
+
+.PHONY : src/builtins/ft_cd_3.i
+
+# target to preprocess a source file
+src/builtins/ft_cd_3.c.i:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/builtins/ft_cd_3.c.i
+.PHONY : src/builtins/ft_cd_3.c.i
+
+src/builtins/ft_cd_3.s: src/builtins/ft_cd_3.c.s
+
+.PHONY : src/builtins/ft_cd_3.s
+
+# target to generate assembly for a file
+src/builtins/ft_cd_3.c.s:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/builtins/ft_cd_3.c.s
+.PHONY : src/builtins/ft_cd_3.c.s
 
 src/builtins/ft_echo.o: src/builtins/ft_echo.c.o
 
@@ -2145,6 +2172,9 @@ help:
 	@echo "... src/builtins/ft_cd.o"
 	@echo "... src/builtins/ft_cd.i"
 	@echo "... src/builtins/ft_cd.s"
+	@echo "... src/builtins/ft_cd_3.o"
+	@echo "... src/builtins/ft_cd_3.i"
+	@echo "... src/builtins/ft_cd_3.s"
 	@echo "... src/builtins/ft_echo.o"
 	@echo "... src/builtins/ft_echo.i"
 	@echo "... src/builtins/ft_echo.s"

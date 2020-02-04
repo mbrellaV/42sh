@@ -6,5 +6,5 @@ C_FLAGS = -g   -std=gnu99
 
 C_DEFINES = 
 
-C_INCLUDES = -I/Users/mbrella/Desktop/projects/21beta/42start/inc 
+C_INCLUDES = -I/Users/plettie/Desktop/42/inc 
 

@@ -13,6 +13,12 @@
 #ifndef STRUCT_H
 # define STRUCT_H
 
+typedef	struct				s_cd
+{
+	int 					cd_p;
+	int 					link;
+}							t_cd;
+
 typedef struct				s_memory
 {
 	char					*inp;
