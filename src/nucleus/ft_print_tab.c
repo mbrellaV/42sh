@@ -49,7 +49,7 @@ void				ft_print_tab(t_readline *p)
 	int				one_w;
 	int				i;
 
-	if (ioctl(2, TIOCGWINSZ, &wins) == -1)
+	if (ioctl(2, TIOCGWINSZ, &wins) == -1 || !p->tab || !p->tab[0])
 		return ;
 	write(2, "\n", 1);
 	one_w = (find_max(p->tab) / 8 + 1) * 8;

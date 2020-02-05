@@ -61,11 +61,13 @@ int		ft_heredoc(char *tmp)
 
 	pipe(f);
 	j = 0;
+	h.mod = -100;
 	ft_start_read(&h);
 	set_input_mode();
 	while (ft_strcmp(h.buff, tmp) != 0 && ft_strcmp(h.buff, "exit") != 0)
 	{
 		j != 0 ? ft_putendl_fd(h.buff, f[1]) : NULL;
+		h.mod = 2;
 		del_readline(&h);
 		ft_start_read(&h);
 		ft_read_8(&h, NULL, 2);

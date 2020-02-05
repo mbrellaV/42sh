@@ -58,6 +58,7 @@
 
 char			**g_env;
 char			*g_cp;
+int				g_his_d;
 
 void			ft_realloc_all(int k, char ***envl);
 void			ft_echo(char **str);
