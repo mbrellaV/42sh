@@ -12,6 +12,7 @@ add_executable(21end
         inc/struct.h
         inc/hash.h
         src/builtins/ft_cd.c
+        src/builtins/ft_cd_2.c
         src/builtins/ft_echo.c
         src/builtins/ft_echo2.c
         src/builtins/allenv/ft_env.c

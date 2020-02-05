@@ -37,17 +37,26 @@ int			flags_cd(char *str, t_cd *cd, int j)
 int			change_path(char *path, t_cd *cd)
 {
 	char	*tmp;
+	char	*pwd_env;
 
 	if (path)
 	{
-		tmp = is_pwd(cd);
-		if (chdir(path) == -1)
+		pwd_env = NULL;
+		if ((tmp = get_oldpwd(cd)) && chdir(path) == -1)
 		{
 			free(tmp);
 			return (ft_cd_error(path, 6, 0));
 		}
+		if (cd->cd_p && cd->link && (pwd_env = getcwd(NULL, 0)))
+			if (chdir(pwd_env) == -1)
+			{
+				free(tmp);
+				return (ft_cd_error(pwd_env, 6, 1));
+			}
 		set_new_var("OLDPWD", tmp, &g_env);
+		pwd_env ? set_new_var("PWD", pwd_env, &g_env) :
 		set_new_var("PWD", path, &g_env);
+		free(pwd_env);
 		free(tmp);
 		return (0);
 	}
@@ -56,22 +65,20 @@ int			change_path(char *path, t_cd *cd)
 
 int			change_env(char *env, t_cd *cd)
 {
-	char	*tmp;
+	char	*pwd;
 	int		k;
 
 	if ((k = ft_findenv(env, g_env)) != -404)
 	{
-		tmp = is_pwd(cd);
-		if (!ft_strcmp("OLDPWD=", env))
-			ft_printf("%s\n", g_env[k] + ft_strlen(env));
+		pwd = get_oldpwd(cd);
 		if (chdir(g_env[k] + ft_strlen(env)) == -1)
 		{
-			free(tmp);
+			free(pwd);
 			return (ft_cd_error(g_env[k] + ft_strlen(env), 6, 0));
 		}
-		set_new_var("OLDPWD", tmp, &g_env);
+		set_new_var("OLDPWD", pwd, &g_env);
 		set_new_var("PWD", g_env[k] + ft_strlen(env), &g_env);
-		free(tmp);
+		free(pwd);
 		return (0);
 	}
 	return (ft_cd_error(env, 2, 0));
@@ -88,9 +95,7 @@ int			ft_cd(char **str)
 	cd.cd_p = 0;
 	while (str[++i] && !(j = 0))
 	{
-		if (!(ft_strcmp(str[i], "-")))
-			return (change_env("OLDPWD=", &cd));
-		else if (str[i][j] == '-')
+		if (str[i][j] == '-' && ft_strcmp(str[i], "-"))
 		{
 			while (str[i][++j])
 				if (!flags_cd(str[i], &cd, j))

@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /Users/mbrella/Desktop/projects/21beta/42start
-=======
-/Users/plettie/Desktop/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /Users/plettie/Desktop/42
->>>>>>> 55b40b2fbdb9872a24232ef63c5d8927cca9264a
+/Users/plettie/Desktop/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /Users/plettie/Desktop/422
 -- Configuring done
 -- Generating done
--- Build files have been written to: /Users/plettie/Desktop/42/cmake-build-debug
+-- Build files have been written to: /Users/plettie/Desktop/422/cmake-build-debug

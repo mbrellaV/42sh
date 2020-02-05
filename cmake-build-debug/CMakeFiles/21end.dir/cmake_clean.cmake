@@ -6,6 +6,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/21end.dir/src/builtins/allenv/global_env.c.o"
   "CMakeFiles/21end.dir/src/builtins/allenv/main_env.c.o"
   "CMakeFiles/21end.dir/src/builtins/ft_cd.c.o"
+  "CMakeFiles/21end.dir/src/builtins/ft_cd_2.c.o"
   "CMakeFiles/21end.dir/src/builtins/ft_cd_3.c.o"
   "CMakeFiles/21end.dir/src/builtins/ft_echo.c.o"
   "CMakeFiles/21end.dir/src/builtins/ft_echo2.c.o"
