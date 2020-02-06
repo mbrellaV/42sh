@@ -93,21 +93,21 @@ void				hash_clear(void)
 		}
 }
 
-char				*hash_get(char *key)
+char				*hash_get(char *key, int no_error)
 {
 	char			*var;
 
 	if (ft_strchr(key, '/'))
 	{
 		if (check_file(key, IS_X) == -1)
-			return (hash_error(1, key));
+			return (hash_error(1, key, no_error));
 		if (!check_file(key, IS_D) && check_file(key, IS_X) == 1)
 			return (key);
-		return (hash_error(3, key));
+		return (hash_error(3, key, no_error));
 	}
 	var = hash_parse(key);
 	if (!var)
-		return (hash_error(2, key));
+		return (hash_error(2, key, no_error));
 	else
 	{
 		if (check_file(var, IS_X) == 1 && !check_file(var, IS_D))
@@ -115,7 +115,7 @@ char				*hash_get(char *key)
 		else
 		{
 			hash_free_by_key(key);
-			return (hash_error(3, key));
+			return (hash_error(3, key, no_error));
 		}
 	}
 }

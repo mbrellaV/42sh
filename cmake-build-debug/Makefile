@@ -39,19 +39,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /Users/plettie/Desktop/CLion.app/Contents/bin/cmake/mac/bin/cmake
+CMAKE_COMMAND = /Users/wstygg/Desktop/CLion.app/Contents/bin/cmake/mac/bin/cmake
 
 # The command to remove a file.
-RM = /Users/plettie/Desktop/CLion.app/Contents/bin/cmake/mac/bin/cmake -E remove -f
+RM = /Users/wstygg/Desktop/CLion.app/Contents/bin/cmake/mac/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/plettie/Desktop/422
+CMAKE_SOURCE_DIR = /Users/wstygg/Desktop/42start
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/plettie/Desktop/422/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/wstygg/Desktop/42start/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -59,7 +59,7 @@ CMAKE_BINARY_DIR = /Users/plettie/Desktop/422/cmake-build-debug
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/Users/plettie/Desktop/CLion.app/Contents/bin/cmake/mac/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/Users/wstygg/Desktop/CLion.app/Contents/bin/cmake/mac/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -70,7 +70,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/Users/plettie/Desktop/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	/Users/wstygg/Desktop/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/plettie/Desktop/422/cmake-build-debug/CMakeFiles /Users/plettie/Desktop/422/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/wstygg/Desktop/42start/cmake-build-debug/CMakeFiles /Users/wstygg/Desktop/42start/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/plettie/Desktop/422/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/wstygg/Desktop/42start/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -366,6 +366,33 @@ src/builtins/ft_echo2.c.s:
 	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/builtins/ft_echo2.c.s
 .PHONY : src/builtins/ft_echo2.c.s
 
+src/builtins/ft_type.o: src/builtins/ft_type.c.o
+
+.PHONY : src/builtins/ft_type.o
+
+# target to build an object file
+src/builtins/ft_type.c.o:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/builtins/ft_type.c.o
+.PHONY : src/builtins/ft_type.c.o
+
+src/builtins/ft_type.i: src/builtins/ft_type.c.i
+
+.PHONY : src/builtins/ft_type.i
+
+# target to preprocess a source file
+src/builtins/ft_type.c.i:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/builtins/ft_type.c.i
+.PHONY : src/builtins/ft_type.c.i
+
+src/builtins/ft_type.s: src/builtins/ft_type.c.s
+
+.PHONY : src/builtins/ft_type.s
+
+# target to generate assembly for a file
+src/builtins/ft_type.c.s:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/builtins/ft_type.c.s
+.PHONY : src/builtins/ft_type.c.s
+
 src/check_file.o: src/check_file.c.o
 
 .PHONY : src/check_file.o
@@ -608,6 +635,33 @@ src/ft_take_arg.s: src/ft_take_arg.c.s
 src/ft_take_arg.c.s:
 	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/ft_take_arg.c.s
 .PHONY : src/ft_take_arg.c.s
+
+src/g_builtins.o: src/g_builtins.c.o
+
+.PHONY : src/g_builtins.o
+
+# target to build an object file
+src/g_builtins.c.o:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/g_builtins.c.o
+.PHONY : src/g_builtins.c.o
+
+src/g_builtins.i: src/g_builtins.c.i
+
+.PHONY : src/g_builtins.i
+
+# target to preprocess a source file
+src/g_builtins.c.i:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/g_builtins.c.i
+.PHONY : src/g_builtins.c.i
+
+src/g_builtins.s: src/g_builtins.c.s
+
+.PHONY : src/g_builtins.s
+
+# target to generate assembly for a file
+src/g_builtins.c.s:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/g_builtins.c.s
+.PHONY : src/g_builtins.c.s
 
 src/hash/hash_error.o: src/hash/hash_error.c.o
 
@@ -2211,6 +2265,9 @@ help:
 	@echo "... src/builtins/ft_echo2.o"
 	@echo "... src/builtins/ft_echo2.i"
 	@echo "... src/builtins/ft_echo2.s"
+	@echo "... src/builtins/ft_type.o"
+	@echo "... src/builtins/ft_type.i"
+	@echo "... src/builtins/ft_type.s"
 	@echo "... src/check_file.o"
 	@echo "... src/check_file.i"
 	@echo "... src/check_file.s"
@@ -2238,6 +2295,9 @@ help:
 	@echo "... src/ft_take_arg.o"
 	@echo "... src/ft_take_arg.i"
 	@echo "... src/ft_take_arg.s"
+	@echo "... src/g_builtins.o"
+	@echo "... src/g_builtins.i"
+	@echo "... src/g_builtins.s"
 	@echo "... src/hash/hash_error.o"
 	@echo "... src/hash/hash_error.i"
 	@echo "... src/hash/hash_error.s"

@@ -33,6 +33,8 @@ void	ft_whatis(t_exectoken *tmp, t_memory *q)
 		ft_putstr_fd("\033[2J\033[H", 2);
 	else if (ft_strcmp(tmp->file_args[0], "hash") == 0)
 		print_hash();
+	else if (!ft_strcmp(tmp->file_args[0], "type"))
+		ft_type(tmp->file_args);
 	else
 		ft_infinit_pipe(tmp);
 }

@@ -120,7 +120,7 @@ void	ft_infinit_pipe(t_exectoken *head)
 	ft_file_create(head);
 	while (head)
 	{
-		rt = hash_get(head->file_args[0]);
+		rt = hash_get(head->file_args[0], 0);
 		if (pipe(p) == -1 || (pid = fork()) == -1)
 			exit(1);
 		else if (pid == 0)
