@@ -1,3 +1,3 @@
-/Users/wstygg/Desktop/42start/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/Users/wstygg/Desktop/42start/cmake-build-debug/CMakeFiles/edit_cache.dir
-/Users/wstygg/Desktop/42start/cmake-build-debug/CMakeFiles/21end.dir
+/Users/plettie/Desktop/42пше/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/plettie/Desktop/42пше/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/plettie/Desktop/42пше/cmake-build-debug/CMakeFiles/21end.dir

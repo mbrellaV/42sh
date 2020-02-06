@@ -13,11 +13,13 @@
 #ifndef STRUCT_H
 # define STRUCT_H
 
-typedef	struct				s_cd
+typedef	struct				s_builtins
 {
 	int 					cd_p;
 	int 					link;
-}							t_cd;
+	int 					echo_n;
+	int 					echo_c;
+}							t_builtins;
 
 typedef struct				s_memory
 {

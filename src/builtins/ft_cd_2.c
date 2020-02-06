@@ -58,7 +58,7 @@ char		*full_path_helper(char *ret, char *all, char *path)
 	return (ret);
 }
 
-char		*full_path_helper_2(char *path, t_cd *cd)
+char		*full_path_helper_2(char *path, t_builtins *cd)
 {
 	char		*ret;
 
@@ -91,7 +91,7 @@ char		*full_path_3(char *path, char **all)
 	return (NULL);
 }
 
-char		*create_full_path(char *path, t_cd *cd)
+char		*create_full_path(char *path, t_builtins *cd)
 {
 	int			i;
 	char		*ret;

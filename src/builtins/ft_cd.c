@@ -25,7 +25,7 @@ int			ft_cd_error(char *tmp, int err, int to_free)
 	return (0);
 }
 
-int			flags_cd(char *str, t_cd *cd, int j)
+int			flags_cd(char *str, t_builtins *cd, int j)
 {
 	if (str[j] == 'P')
 		cd->cd_p = 1;
@@ -34,7 +34,7 @@ int			flags_cd(char *str, t_cd *cd, int j)
 	return (1);
 }
 
-int			change_path(char *path, t_cd *cd)
+int			change_path(char *path, t_builtins *cd)
 {
 	char	*tmp;
 	char	*pwd_env;
@@ -63,7 +63,7 @@ int			change_path(char *path, t_cd *cd)
 	return (0);
 }
 
-int			change_env(char *env, t_cd *cd)
+int			change_env(char *env, t_builtins *cd)
 {
 	char	*pwd;
 	int		k;
@@ -86,7 +86,7 @@ int			change_env(char *env, t_cd *cd)
 
 int			ft_cd(char **str)
 {
-	t_cd	cd;
+	t_builtins	cd;
 	int		i;
 	int		j;
 

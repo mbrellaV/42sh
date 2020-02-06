@@ -41,7 +41,7 @@ char		*ft_strjoin_cd(char const *s1, char const *s2, int to_free)
 	return (str);
 }
 
-char		*get_pwd(t_cd *cd)
+char		*get_pwd(t_builtins *cd)
 {
 	int			k;
 	int			res_l;
@@ -55,7 +55,7 @@ char		*get_pwd(t_cd *cd)
 		return (getcwd(NULL, 0));
 }
 
-char		*get_oldpwd(t_cd *cd)
+char		*get_oldpwd(t_builtins *cd)
 {
 	int			k;
 	int			res_l;
@@ -69,7 +69,7 @@ char		*get_oldpwd(t_cd *cd)
 		return (getcwd(NULL, 0));
 }
 
-int			do_cd(t_cd *cd, char *str)
+int			do_cd(t_builtins *cd, char *str)
 {
 	char		*full_path;
 	int			res_d;
