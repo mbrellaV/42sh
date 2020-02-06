@@ -12,8 +12,10 @@
 
 #include "../../inc/fshell.h"
 
-char	*hash_error(int err, char *key)
+char	*hash_error(int err, char *key, int no_error)
 {
+	if (no_error)
+		return (NULL);
 	if (err == 1)
 	{
 		ft_printf("21sh: no such file or directory: %s\n", key);

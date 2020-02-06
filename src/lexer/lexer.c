@@ -37,9 +37,9 @@ t_dop_str		*cr_dop_str(char **line1)
 int				dop_lexer2(t_dop_str *tmp, char *line)
 {
 	tmp->tmp_c = ft_strsub(line, tmp->i_c, word_size(line + tmp->i_c));
-	if (is_cmd_delim(get_op_type(tmp->tmp_c)) == 0 && tmp->i_c != 0 &&
-		isword(line[tmp->i_c - 1]) && (get_op_type(tmp->tmp_c) > 6))
-		tmp->tail_c->is_near_opt = 1;
+	if (tmp->i_c != 0 &&
+		isword(line[tmp->i_c - 1]) == 1 && (get_op_type(tmp->tmp_c) > 6))
+			tmp->tail_c->is_near_opt = 1;
 	tmp->tail_c = add_token(tmp->tail_c, tmp->tmp_c, 0);
 	tmp->tail_c->is_near_opt = 1;
 	if (tmp->tail_c->operator_type == 2 && tmp->tail_c->prev == NULL)
@@ -50,6 +50,11 @@ int				dop_lexer2(t_dop_str *tmp, char *line)
 
 int				dop_lexer1(t_dop_str *tmp, char *line)
 {
+	if (word_size(line + tmp->i_c) == -2)
+	{
+		tmp->i_c += 2;
+		return (0);
+	}
 	tmp->tmp_c = ft_strsub(line, tmp->i_c +
 	(ispar(line[tmp->i_c]) == 1 ? 1 : 0), word_size(line + tmp->i_c));
 	if (tmp->tail_c != NULL && tmp->tail_c->operator_type > 2)

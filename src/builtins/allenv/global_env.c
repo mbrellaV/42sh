@@ -27,7 +27,8 @@ void	ft_global_env(char **env, int argc)
 			ft_error_q(1);
 		k++;
 	}
-	ft_global_dir(0, "HOME=");
+	if (((k = ft_findenv("HOME=", g_env)) != -404))
+		set_new_var("OLDPWD", &g_env[k][5], &g_env);
 	g_cp = ft_strnew(1);
 }
 

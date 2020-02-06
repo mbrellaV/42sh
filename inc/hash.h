@@ -27,7 +27,7 @@ typedef struct		s_hash
 
 t_hash				*g_hash[MAX_HASH];
 
-char				*hash_get(char *key);
+char				*hash_get(char *key, int no_error);
 void				hash_init(void);
 void				hash_clear(void);
 void				print_hash();
@@ -37,6 +37,6 @@ void				hash_free_by_key(char *key);
 void				free_hash(t_hash **hash);
 t_hash				*hash_create(char *key, char *value);
 unsigned char		str_to_hash(char *str);
-char				*hash_error(int errno, char *key);
+char				*hash_error(int errno, char *key, int no_error);
 
 #endif

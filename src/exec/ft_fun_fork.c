@@ -14,10 +14,7 @@
 
 void	ft_fun_fork(char *path, char **arg, pid_t pid)
 {
-//	int 	status;
-
 	signal(SIGINT, ft_fork_signal);
-//	dprintf(2, "pid: %d\n", pid);
 	if (pid == 0)
 	{
 //		dprintf(2, "START0:\n");

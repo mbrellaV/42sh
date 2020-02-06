@@ -4,12 +4,14 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
+  "/Users/qmartina/Desktop/42start/src/builtins/alias/alias.c" "/Users/qmartina/Desktop/42start/cmake-build-debug/CMakeFiles/21end.dir/src/builtins/alias/alias.c.o"
   "/Users/qmartina/Desktop/42start/src/builtins/allenv/ft_env.c" "/Users/qmartina/Desktop/42start/cmake-build-debug/CMakeFiles/21end.dir/src/builtins/allenv/ft_env.c.o"
   "/Users/qmartina/Desktop/42start/src/builtins/allenv/global_env.c" "/Users/qmartina/Desktop/42start/cmake-build-debug/CMakeFiles/21end.dir/src/builtins/allenv/global_env.c.o"
   "/Users/qmartina/Desktop/42start/src/builtins/allenv/main_env.c" "/Users/qmartina/Desktop/42start/cmake-build-debug/CMakeFiles/21end.dir/src/builtins/allenv/main_env.c.o"
   "/Users/qmartina/Desktop/42start/src/builtins/ft_cd.c" "/Users/qmartina/Desktop/42start/cmake-build-debug/CMakeFiles/21end.dir/src/builtins/ft_cd.c.o"
-  "/Users/qmartina/Desktop/42start/src/builtins/ft_echo.c" "/Users/qmartina/Desktop/42start/cmake-build-debug/CMakeFiles/21end.dir/src/builtins/ft_echo.c.o"
-  "/Users/qmartina/Desktop/42start/src/builtins/ft_echo2.c" "/Users/qmartina/Desktop/42start/cmake-build-debug/CMakeFiles/21end.dir/src/builtins/ft_echo2.c.o"
+  "/Users/qmartina/Desktop/42start/src/builtins/ft_cd_2.c" "/Users/qmartina/Desktop/42start/cmake-build-debug/CMakeFiles/21end.dir/src/builtins/ft_cd_2.c.o"
+  "/Users/qmartina/Desktop/42start/src/builtins/ft_cd_3.c" "/Users/qmartina/Desktop/42start/cmake-build-debug/CMakeFiles/21end.dir/src/builtins/ft_cd_3.c.o"
+  "/Users/qmartina/Desktop/42start/src/builtins/ft_type.c" "/Users/qmartina/Desktop/42start/cmake-build-debug/CMakeFiles/21end.dir/src/builtins/ft_type.c.o"
   "/Users/qmartina/Desktop/42start/src/check_file.c" "/Users/qmartina/Desktop/42start/cmake-build-debug/CMakeFiles/21end.dir/src/check_file.c.o"
   "/Users/qmartina/Desktop/42start/src/errors/errror_handler.c" "/Users/qmartina/Desktop/42start/cmake-build-debug/CMakeFiles/21end.dir/src/errors/errror_handler.c.o"
   "/Users/qmartina/Desktop/42start/src/exec/ft_create_file.c" "/Users/qmartina/Desktop/42start/cmake-build-debug/CMakeFiles/21end.dir/src/exec/ft_create_file.c.o"
@@ -19,6 +21,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "/Users/qmartina/Desktop/42start/src/ft_error_q.c" "/Users/qmartina/Desktop/42start/cmake-build-debug/CMakeFiles/21end.dir/src/ft_error_q.c.o"
   "/Users/qmartina/Desktop/42start/src/ft_signal.c" "/Users/qmartina/Desktop/42start/cmake-build-debug/CMakeFiles/21end.dir/src/ft_signal.c.o"
   "/Users/qmartina/Desktop/42start/src/ft_take_arg.c" "/Users/qmartina/Desktop/42start/cmake-build-debug/CMakeFiles/21end.dir/src/ft_take_arg.c.o"
+  "/Users/qmartina/Desktop/42start/src/g_builtins.c" "/Users/qmartina/Desktop/42start/cmake-build-debug/CMakeFiles/21end.dir/src/g_builtins.c.o"
   "/Users/qmartina/Desktop/42start/src/hash/hash_error.c" "/Users/qmartina/Desktop/42start/cmake-build-debug/CMakeFiles/21end.dir/src/hash/hash_error.c.o"
   "/Users/qmartina/Desktop/42start/src/hash/hash_table.c" "/Users/qmartina/Desktop/42start/cmake-build-debug/CMakeFiles/21end.dir/src/hash/hash_table.c.o"
   "/Users/qmartina/Desktop/42start/src/hash/hash_table_2.c" "/Users/qmartina/Desktop/42start/cmake-build-debug/CMakeFiles/21end.dir/src/hash/hash_table_2.c.o"

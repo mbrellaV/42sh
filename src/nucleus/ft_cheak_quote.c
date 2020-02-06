@@ -26,8 +26,12 @@ int		ft_cheak_quote(char *input)
 			while (input[++k] && input[k] != c)
 				;
 			if (input[k] == '\0')
-				return (-1);
+			{
+//				printf("return 0\n");
+				return (0);
+			}
 		}
 	}
+//	printf("return 1\n");
 	return (1);
 }

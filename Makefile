@@ -29,9 +29,12 @@ INC_DIR		=	inc/
 OBJ_DIR		=	objs/
 
 SRC_BASE = builtins/ft_cd.c\
+        builtins/ft_cd_2.c\
+        builtins/ft_cd_3.c\
         builtins/ft_echo.c\
         builtins/ft_echo2.c\
         builtins/allenv/ft_env.c\
+	builtins/alias/alias.c\
  	builtins/allenv/global_env.c\
         errors/errror_handler.c\
         exec/ft_create_file.c\
@@ -101,6 +104,8 @@ SRC_BASE = builtins/ft_cd.c\
 	main.c\
 	shell_lvl.c\
 	builtins/allenv/main_env.c\
+	builtins/ft_type.c\
+	g_builtins.c\
 
 SRCS		=	$(addprefix $(SRC_DIR), $(SRC_BASE))
 OBJS		=	$(addprefix $(OBJ_DIR), $(SRC_BASE:.c=.o))

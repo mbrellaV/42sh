@@ -97,6 +97,9 @@
 		<Unit filename="/Users/qmartina/Desktop/42start/inc/struct.h">
 			<Option target="21end"/>
 		</Unit>
+		<Unit filename="/Users/qmartina/Desktop/42start/src/builtins/alias/alias.c">
+			<Option target="21end"/>
+		</Unit>
 		<Unit filename="/Users/qmartina/Desktop/42start/src/builtins/allenv/ft_env.c">
 			<Option target="21end"/>
 		</Unit>
@@ -109,10 +112,13 @@
 		<Unit filename="/Users/qmartina/Desktop/42start/src/builtins/ft_cd.c">
 			<Option target="21end"/>
 		</Unit>
-		<Unit filename="/Users/qmartina/Desktop/42start/src/builtins/ft_echo.c">
+		<Unit filename="/Users/qmartina/Desktop/42start/src/builtins/ft_cd_2.c">
 			<Option target="21end"/>
 		</Unit>
-		<Unit filename="/Users/qmartina/Desktop/42start/src/builtins/ft_echo2.c">
+		<Unit filename="/Users/qmartina/Desktop/42start/src/builtins/ft_cd_3.c">
+			<Option target="21end"/>
+		</Unit>
+		<Unit filename="/Users/qmartina/Desktop/42start/src/builtins/ft_type.c">
 			<Option target="21end"/>
 		</Unit>
 		<Unit filename="/Users/qmartina/Desktop/42start/src/check_file.c">
@@ -140,6 +146,9 @@
 			<Option target="21end"/>
 		</Unit>
 		<Unit filename="/Users/qmartina/Desktop/42start/src/ft_take_arg.c">
+			<Option target="21end"/>
+		</Unit>
+		<Unit filename="/Users/qmartina/Desktop/42start/src/g_builtins.c">
 			<Option target="21end"/>
 		</Unit>
 		<Unit filename="/Users/qmartina/Desktop/42start/src/hash/hash_error.c">

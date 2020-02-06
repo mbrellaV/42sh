@@ -14,7 +14,9 @@
 
 int	ft_whatis2(t_exectoken *tmp, t_memory *q)
 {
-	if (ft_strcmp(tmp->file_args[0], "echo") == 0)
+	if (ft_strcmp(tmp->file_args[0], "alias") == 0 || ft_strcmp(tmp->file_args[0], "unalias") == 0)
+		ft_do_change_alias(tmp->file_args);
+	else if (ft_strcmp(tmp->file_args[0], "echo") == 0)
 		ft_echo(tmp->file_args);
 	else if (ft_strcmp(tmp->file_args[0], "cd") == 0)
 		ft_cd(tmp->file_args);
@@ -31,6 +33,8 @@ int	ft_whatis2(t_exectoken *tmp, t_memory *q)
 		ft_putstr_fd("\033[2J\033[H", 2);
 	else if (ft_strcmp(tmp->file_args[0], "hash") == 0)
 		print_hash();
+	else if (!ft_strcmp(tmp->file_args[0], "type"))
+		ft_type(tmp->file_args);
 	else
 		return (1);
 	return (0);
@@ -72,11 +76,14 @@ void	print_hash(void)
 			hash = g_hash[i];
 			while (hash)
 			{
-				dprintf(2, "hash - [%i]; key - [%s];  value - [%s]    ",
-					str_to_hash(hash->key), hash->key, hash->value);
+				ft_putstr_fd(hash->key, 1);
+				ft_putstr_fd("=", 1);
+				ft_putstr_fd(hash->value, 1);
+				if (hash->next)
+					ft_putstr_fd("    ", 1);
 				hash = hash->next;
 			}
-			ft_printf("\n");
+			ft_putstr_fd("\n", 1);
 		}
 	}
 }
@@ -128,6 +135,8 @@ int		main(int argc, char **argv, char **env)
 	t_memory	*head;
 	t_exectoken	*start_token;
 
+	g_his_d = 0;
+	ft_alias();
 	argv[0] = NULL;
 	start_token = NULL;
 	ft_global_env(env, argc);

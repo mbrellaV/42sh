@@ -123,6 +123,33 @@ depend:
 	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/build
 .PHONY : 21end/fast
 
+src/builtins/alias/alias.o: src/builtins/alias/alias.c.o
+
+.PHONY : src/builtins/alias/alias.o
+
+# target to build an object file
+src/builtins/alias/alias.c.o:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/builtins/alias/alias.c.o
+.PHONY : src/builtins/alias/alias.c.o
+
+src/builtins/alias/alias.i: src/builtins/alias/alias.c.i
+
+.PHONY : src/builtins/alias/alias.i
+
+# target to preprocess a source file
+src/builtins/alias/alias.c.i:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/builtins/alias/alias.c.i
+.PHONY : src/builtins/alias/alias.c.i
+
+src/builtins/alias/alias.s: src/builtins/alias/alias.c.s
+
+.PHONY : src/builtins/alias/alias.s
+
+# target to generate assembly for a file
+src/builtins/alias/alias.c.s:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/builtins/alias/alias.c.s
+.PHONY : src/builtins/alias/alias.c.s
+
 src/builtins/allenv/ft_env.o: src/builtins/allenv/ft_env.c.o
 
 .PHONY : src/builtins/allenv/ft_env.o
@@ -231,59 +258,86 @@ src/builtins/ft_cd.c.s:
 	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/builtins/ft_cd.c.s
 .PHONY : src/builtins/ft_cd.c.s
 
-src/builtins/ft_echo.o: src/builtins/ft_echo.c.o
+src/builtins/ft_cd_2.o: src/builtins/ft_cd_2.c.o
 
-.PHONY : src/builtins/ft_echo.o
-
-# target to build an object file
-src/builtins/ft_echo.c.o:
-	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/builtins/ft_echo.c.o
-.PHONY : src/builtins/ft_echo.c.o
-
-src/builtins/ft_echo.i: src/builtins/ft_echo.c.i
-
-.PHONY : src/builtins/ft_echo.i
-
-# target to preprocess a source file
-src/builtins/ft_echo.c.i:
-	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/builtins/ft_echo.c.i
-.PHONY : src/builtins/ft_echo.c.i
-
-src/builtins/ft_echo.s: src/builtins/ft_echo.c.s
-
-.PHONY : src/builtins/ft_echo.s
-
-# target to generate assembly for a file
-src/builtins/ft_echo.c.s:
-	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/builtins/ft_echo.c.s
-.PHONY : src/builtins/ft_echo.c.s
-
-src/builtins/ft_echo2.o: src/builtins/ft_echo2.c.o
-
-.PHONY : src/builtins/ft_echo2.o
+.PHONY : src/builtins/ft_cd_2.o
 
 # target to build an object file
-src/builtins/ft_echo2.c.o:
-	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/builtins/ft_echo2.c.o
-.PHONY : src/builtins/ft_echo2.c.o
+src/builtins/ft_cd_2.c.o:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/builtins/ft_cd_2.c.o
+.PHONY : src/builtins/ft_cd_2.c.o
 
-src/builtins/ft_echo2.i: src/builtins/ft_echo2.c.i
+src/builtins/ft_cd_2.i: src/builtins/ft_cd_2.c.i
 
-.PHONY : src/builtins/ft_echo2.i
+.PHONY : src/builtins/ft_cd_2.i
 
 # target to preprocess a source file
-src/builtins/ft_echo2.c.i:
-	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/builtins/ft_echo2.c.i
-.PHONY : src/builtins/ft_echo2.c.i
+src/builtins/ft_cd_2.c.i:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/builtins/ft_cd_2.c.i
+.PHONY : src/builtins/ft_cd_2.c.i
 
-src/builtins/ft_echo2.s: src/builtins/ft_echo2.c.s
+src/builtins/ft_cd_2.s: src/builtins/ft_cd_2.c.s
 
-.PHONY : src/builtins/ft_echo2.s
+.PHONY : src/builtins/ft_cd_2.s
 
 # target to generate assembly for a file
-src/builtins/ft_echo2.c.s:
-	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/builtins/ft_echo2.c.s
-.PHONY : src/builtins/ft_echo2.c.s
+src/builtins/ft_cd_2.c.s:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/builtins/ft_cd_2.c.s
+.PHONY : src/builtins/ft_cd_2.c.s
+
+src/builtins/ft_cd_3.o: src/builtins/ft_cd_3.c.o
+
+.PHONY : src/builtins/ft_cd_3.o
+
+# target to build an object file
+src/builtins/ft_cd_3.c.o:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/builtins/ft_cd_3.c.o
+.PHONY : src/builtins/ft_cd_3.c.o
+
+src/builtins/ft_cd_3.i: src/builtins/ft_cd_3.c.i
+
+.PHONY : src/builtins/ft_cd_3.i
+
+# target to preprocess a source file
+src/builtins/ft_cd_3.c.i:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/builtins/ft_cd_3.c.i
+.PHONY : src/builtins/ft_cd_3.c.i
+
+src/builtins/ft_cd_3.s: src/builtins/ft_cd_3.c.s
+
+.PHONY : src/builtins/ft_cd_3.s
+
+# target to generate assembly for a file
+src/builtins/ft_cd_3.c.s:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/builtins/ft_cd_3.c.s
+.PHONY : src/builtins/ft_cd_3.c.s
+
+src/builtins/ft_type.o: src/builtins/ft_type.c.o
+
+.PHONY : src/builtins/ft_type.o
+
+# target to build an object file
+src/builtins/ft_type.c.o:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/builtins/ft_type.c.o
+.PHONY : src/builtins/ft_type.c.o
+
+src/builtins/ft_type.i: src/builtins/ft_type.c.i
+
+.PHONY : src/builtins/ft_type.i
+
+# target to preprocess a source file
+src/builtins/ft_type.c.i:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/builtins/ft_type.c.i
+.PHONY : src/builtins/ft_type.c.i
+
+src/builtins/ft_type.s: src/builtins/ft_type.c.s
+
+.PHONY : src/builtins/ft_type.s
+
+# target to generate assembly for a file
+src/builtins/ft_type.c.s:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/builtins/ft_type.c.s
+.PHONY : src/builtins/ft_type.c.s
 
 src/check_file.o: src/check_file.c.o
 
@@ -527,6 +581,33 @@ src/ft_take_arg.s: src/ft_take_arg.c.s
 src/ft_take_arg.c.s:
 	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/ft_take_arg.c.s
 .PHONY : src/ft_take_arg.c.s
+
+src/g_builtins.o: src/g_builtins.c.o
+
+.PHONY : src/g_builtins.o
+
+# target to build an object file
+src/g_builtins.c.o:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/g_builtins.c.o
+.PHONY : src/g_builtins.c.o
+
+src/g_builtins.i: src/g_builtins.c.i
+
+.PHONY : src/g_builtins.i
+
+# target to preprocess a source file
+src/g_builtins.c.i:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/g_builtins.c.i
+.PHONY : src/g_builtins.c.i
+
+src/g_builtins.s: src/g_builtins.c.s
+
+.PHONY : src/g_builtins.s
+
+# target to generate assembly for a file
+src/g_builtins.c.s:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/g_builtins.c.s
+.PHONY : src/g_builtins.c.s
 
 src/hash/hash_error.o: src/hash/hash_error.c.o
 
@@ -2103,6 +2184,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... 21end"
+	@echo "... src/builtins/alias/alias.o"
+	@echo "... src/builtins/alias/alias.i"
+	@echo "... src/builtins/alias/alias.s"
 	@echo "... src/builtins/allenv/ft_env.o"
 	@echo "... src/builtins/allenv/ft_env.i"
 	@echo "... src/builtins/allenv/ft_env.s"
@@ -2115,12 +2199,15 @@ help:
 	@echo "... src/builtins/ft_cd.o"
 	@echo "... src/builtins/ft_cd.i"
 	@echo "... src/builtins/ft_cd.s"
-	@echo "... src/builtins/ft_echo.o"
-	@echo "... src/builtins/ft_echo.i"
-	@echo "... src/builtins/ft_echo.s"
-	@echo "... src/builtins/ft_echo2.o"
-	@echo "... src/builtins/ft_echo2.i"
-	@echo "... src/builtins/ft_echo2.s"
+	@echo "... src/builtins/ft_cd_2.o"
+	@echo "... src/builtins/ft_cd_2.i"
+	@echo "... src/builtins/ft_cd_2.s"
+	@echo "... src/builtins/ft_cd_3.o"
+	@echo "... src/builtins/ft_cd_3.i"
+	@echo "... src/builtins/ft_cd_3.s"
+	@echo "... src/builtins/ft_type.o"
+	@echo "... src/builtins/ft_type.i"
+	@echo "... src/builtins/ft_type.s"
 	@echo "... src/check_file.o"
 	@echo "... src/check_file.i"
 	@echo "... src/check_file.s"
@@ -2148,6 +2235,9 @@ help:
 	@echo "... src/ft_take_arg.o"
 	@echo "... src/ft_take_arg.i"
 	@echo "... src/ft_take_arg.s"
+	@echo "... src/g_builtins.o"
+	@echo "... src/g_builtins.i"
+	@echo "... src/g_builtins.s"
 	@echo "... src/hash/hash_error.o"
 	@echo "... src/hash/hash_error.i"
 	@echo "... src/hash/hash_error.s"

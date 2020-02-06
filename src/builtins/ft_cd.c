@@ -12,79 +12,101 @@
 
 #include "../../inc/fshell.h"
 
-void	ft_cd_error(char *tmp)
+int			ft_cd_error(char *tmp, int err, int to_free)
 {
-	if (access(tmp, 0) == -1)
-		ft_putstr("cd: no such file or directory: ");
-	else if (access(tmp, 3) == -1)
-		ft_putstr("cd: permission denied: ");
-	else
-		ft_putstr("cd: not a directory: ");
-	ft_putendl(tmp);
+	err == 1 ? ft_printf("42sh : cd: no such file or directory: %s\n", tmp) : 0;
+	err == 2 ? ft_printf("42sh: cd: %s not set\n", tmp) : 0;
+	err == 3 ? ft_printf("42sh: cd: not a directory: %s\n", tmp) : 0;
+	err == 4 ? ft_printf("42sh: cd: no such file or directory: %s\n", tmp) : 0;
+	err == 6 ? ft_printf("42sh: cd: permission denied: %s\n", tmp) : 0;
+	err == 7 ? ft_printf("cd: string not in pwd: %s\n", tmp) : 0;
+	err == 9 ? ft_printf("42sh: cd: too many arguments\n") : 0;
+	to_free ? free(tmp) : 0;
+	return (0);
 }
 
-void	ft_global_dir(int flag, char *str)
+int			flags_cd(char *str, t_builtins *cd, int j)
 {
-	int		k;
-	char	tmp[4097];
-
-	getcwd(tmp, 4096);
-	if (flag == 2)
-	{
-		k = chdir(str);
-		if (k == -1)
-			ft_cd_error(str);
-		else
-		{
-			set_new_var("OLDPWD", tmp, &g_env);
-			getcwd(tmp, 4096);
-			set_new_var("PWD", tmp, &g_env);
-		}
-	}
-	else if (flag == 3)
-	{
-		if ((k = ft_findenv("OLDPWD=", g_env)) == -404)
-			ft_putendl("cd: no such OLDPWD directory");
-		else
-			ft_global_dir(2, &g_env[k][7]);
-	}
-	else if (flag == 0 && ((k = ft_findenv("HOME=", g_env)) != -404))
-		set_new_var("OLDPWD", &g_env[k][5], &g_env);
+	if (str[j] == 'P')
+		cd->cd_p = 1;
+	else if (str[j] != 'L')
+		return (ft_cd_error(str, 1, 0));
+	return (1);
 }
 
-void	ft_cd1(void)
-{
-	int k;
-
-	k = ft_findenv("HOME=, g_env", g_env);
-	if (k == -404)
-		ft_putendl("cd: no such HOME directory");
-	else
-		ft_global_dir(2, &g_env[k][5]);
-}
-
-void	ft_cd(char **str)
+int			change_path(char *path, t_builtins *cd)
 {
 	char	*tmp;
+	char	*pwd_env;
+
+	if (path)
+	{
+		pwd_env = NULL;
+		if ((tmp = get_oldpwd(cd)) && chdir(path) == -1)
+		{
+			free(tmp);
+			return (ft_cd_error(path, 6, 0));
+		}
+		if (cd->cd_p && cd->link && (pwd_env = getcwd(NULL, 0)))
+			if (chdir(pwd_env) == -1)
+			{
+				free(tmp);
+				return (ft_cd_error(pwd_env, 6, 1));
+			}
+		set_new_var("OLDPWD", tmp, &g_env);
+		pwd_env ? set_new_var("PWD", pwd_env, &g_env) :
+		set_new_var("PWD", path, &g_env);
+		free(pwd_env);
+		free(tmp);
+		return (0);
+	}
+	return (0);
+}
+
+int			change_env(char *env, t_builtins *cd)
+{
+	char	*pwd;
+	int		k;
+
+	if ((k = ft_findenv(env, g_env)) != -404)
+	{
+		pwd = get_oldpwd(cd);
+		if (chdir(g_env[k] + ft_strlen(env)) == -1)
+		{
+			free(pwd);
+			return (ft_cd_error(g_env[k] + ft_strlen(env), 6, 0));
+		}
+		set_new_var("OLDPWD", pwd, &g_env);
+		set_new_var("PWD", g_env[k] + ft_strlen(env), &g_env);
+		free(pwd);
+		return (0);
+	}
+	return (ft_cd_error(env, 2, 0));
+}
+
+int			ft_cd(char **str)
+{
+	t_builtins	cd;
 	int		i;
+	int		j;
 
 	i = 0;
-	while (str[i])
-		i++;
-	if (i > 2)
+	cd.link = 0;
+	cd.cd_p = 0;
+	while (str[++i] && !(j = 0))
 	{
-		ft_putstr_fd("cd: string not in pwd: ", 2);
-		ft_putendl_fd(str[1], 2);
-		return ;
+		if (str[i][j] == '-' && ft_strcmp(str[i], "-"))
+		{
+			while (str[i][++j])
+				if (!flags_cd(str[i], &cd, j))
+					return (1);
+		}
+		else if (str[i] && str[i + 1] && !str[i + 2])
+			return (ft_cd_error(str[1], 7, 0));
+		else if (str[i] && str[i + 1] && str[i + 2])
+			return (ft_cd_error(NULL, 9, 0));
+		else
+			return (do_cd(&cd, str[i]));
 	}
-	if (!str[1])
-		return (ft_cd1());
-	if (str[1][0] == '~')
-		tmp = ft_cd_home(str[1]);
-	else if (str[1][0] == '-')
-		return (ft_global_dir(3, NULL));
-	else
-		tmp = ft_strdup(str[1]);
-	ft_global_dir(2, tmp);
-	free(tmp);
+	return (change_env("HOME=", &cd));
 }

@@ -183,7 +183,7 @@ void	ft_infinit_pipe2(t_exectoken *head, t_memory *q)
 				exit(0);
 			}
 			else
-				rt = hash_get(head->file_args[0]);
+				rt = hash_get(head->file_args[0], 0);
 			if (rt != NULL)
 				ft_fun_fork(rt, head->file_args, pid);
 			exit(0);
@@ -198,7 +198,7 @@ void	ft_infinit_pipe2(t_exectoken *head, t_memory *q)
 				g_exit_code = WEXITSTATUS(status);
 				if (rt == NULL)
 					g_exit_code = 127;
-				printf("%sExit status of the child was %d%s\n", YEL, g_exit_code, RESET);
+//				printf("%sExit status of the child was %d%s\n", YEL, g_exit_code, RESET);
 			}
 			close(p[1]);
 			fd_in = p[0];
