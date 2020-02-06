@@ -59,6 +59,7 @@
 char			**g_env;
 char			*g_cp;
 int				g_his_d;
+int 			g_exit_code;
 
 void			ft_realloc_all(int k, char ***envl);
 void			ft_echo(char **str);
@@ -104,5 +105,9 @@ char			*ft_name(char *str);
 void			ft_find_path(t_readline *p, char *name);
 int				save_history(t_memory *q);
 void			do_count_shell_lvl(void);
+
+/////////////////////////
+void	ft_infinit_pipe2(t_exectoken *head, t_memory *q);
+int		ft_whatis2(t_exectoken *tmp, t_memory *q);
 
 #endif
