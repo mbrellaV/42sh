@@ -109,16 +109,34 @@ int		ft_main_what(t_exectoken *tmp, t_memory *q)
 int		main_cycle(t_readline *p, t_memory **head, t_exectoken **start_token)
 {
 	t_memory	*headin;
+//	char 		buf;
 
 	headin = *head;
-	set_input_mode();
-	atexit(reset_input_mode);
-	ft_start_read(p);
-	ft_read_8(p, headin, 0);
-	write(2, "\n", 1);
-	while (ft_cheak_quote(p->buff) != 1)
-		ft_add_intput_que(p, headin);
-	reset_input_mode();
+//	printf("%d\n", fileno(stdin));
+//	while (read(STDIN_FILENO, &buf, 1) > 0)
+//		printf("%c", buf);
+	if (!set_input_mode())
+	{
+		ft_start_read(p);
+		ft_read_8(p, headin, 0);
+		write(2, "\n", 1);
+		while (ft_cheak_quote(p->buff) != 1)
+			ft_add_intput_que(p, headin);
+		reset_input_mode();
+	}
+	else
+	{
+		while (get_next_line(STDIN_FILENO, &p->buff))
+		{
+			ft_cleanstr(15, p);
+			*start_token = all_parse(p->buff);
+			if (ft_main_what(*start_token, headin) == -1)
+				return (-1);
+			del_readline(p);
+			ft_distruct_tree(*start_token);
+		}
+		exit (0);
+	}
 	p->buff[0] != '\0' ? headin = ft_memory(headin, &(p->buff)) : headin;
 	*start_token = all_parse(p->buff);
 	if (ft_main_what(*start_token, headin) == -1)

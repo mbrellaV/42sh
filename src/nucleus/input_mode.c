@@ -26,12 +26,12 @@ void	error_term(int error)
 	}
 }
 
-void	set_input_mode(void)
+int		set_input_mode(void)
 {
 	struct termios tattr;
 
 	if (!isatty(0))
-		error_term(1);
+		return (1);
 	if (tgetent(NULL, getenv("TERM")) < 1)
 		error_term(1);
 	if (tcgetattr(0, &saved_attributes) == -1)
@@ -42,4 +42,6 @@ void	set_input_mode(void)
 	tattr.c_cc[VTIME] = 0;
 	if (tcsetattr(0, 0, &tattr) == -1)
 		error_term(1);
+	atexit(reset_input_mode);
+	return (0);
 }
