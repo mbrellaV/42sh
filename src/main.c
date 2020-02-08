@@ -128,11 +128,12 @@ int		main_cycle(t_readline *p, t_memory **head, t_exectoken **start_token)
 	{
 		while (get_next_line(STDIN_FILENO, &p->buff))
 		{
+//			ft_start_read(p);
 			ft_cleanstr(15, p);
 			*start_token = all_parse(p->buff);
 			if (ft_main_what(*start_token, headin) == -1)
 				return (-1);
-			del_readline(p);
+			free(p->buff);
 			ft_distruct_tree(*start_token);
 		}
 		exit (0);
