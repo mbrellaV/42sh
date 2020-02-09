@@ -167,7 +167,7 @@ int		main(int argc, char **argv, char **env)
 	head = ft_head_memory();
 	do_count_shell_lvl();
 	hash_init();
-	if (!set_input_mode())
+	if (isatty(0))
 		ft_put_info();
 	while (1)
 		if (main_cycle(&p, &head, &start_token) == -1)
