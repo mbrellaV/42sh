@@ -35,6 +35,8 @@ int	ft_whatis2(t_exectoken *tmp, t_memory *q)
 		print_hash();
 	else if (!ft_strcmp(tmp->file_args[0], "type"))
 		ft_type(tmp->file_args);
+	else if (ft_strcmp(tmp->file_args[0], "fg") == 0)
+		ft_fork_signal(SIGCONT);
 	else
 		return (1);
 	return (0);
@@ -128,11 +130,13 @@ int		main_cycle(t_readline *p, t_memory **head, t_exectoken **start_token)
 	{
 		while (get_next_line(STDIN_FILENO, &p->buff))
 		{
+//			write(1, "\n", 1);
 //			ft_start_read(p);
-			ft_cleanstr(15, p);
+//			ft_cleanstr(50, p);
 			*start_token = all_parse(p->buff);
 			if (ft_main_what(*start_token, headin) == -1)
 				return (-1);
+//			write(1, "\n", 1);
 			free(p->buff);
 			ft_distruct_tree(*start_token);
 		}
@@ -163,7 +167,8 @@ int		main(int argc, char **argv, char **env)
 	head = ft_head_memory();
 	do_count_shell_lvl();
 	hash_init();
-	ft_put_info();
+	if (!set_input_mode())
+		ft_put_info();
 	while (1)
 		if (main_cycle(&p, &head, &start_token) == -1)
 			break ;

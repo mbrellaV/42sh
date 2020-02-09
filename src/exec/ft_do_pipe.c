@@ -190,8 +190,18 @@ void	ft_infinit_pipe2(t_exectoken *head, t_memory *q)
 		}
 		else
 		{
+			g_pid = pid;
+			setpgid(g_pid, getpgid(g_pid) + 100);
+			signal(SIGINT, ft_fork_signal);
+			signal(SIGSTOP, SIG_IGN);/////?????
+			signal(SIGTSTP, ft_fork_signal);////cntrl+Z
+			signal(SIGCONT,	ft_fork_signal);
+//			signal(SIGTERM, SIG_IGN);
+//			signal(SIGTTIN, SIG_IGN);
+//			signal(SIGTTOU, SIG_IGN);
 //			printf("%spid: %d%s\n", RED, pid, RESET);
-			waitpid(pid, &status, 0);
+			if (g_pid != -1)
+				waitpid(pid, &status, 0);
 //			printf("%sstatus: %d%s\n", RED, status, RESET);
 			if (WIFEXITED(status))
 			{

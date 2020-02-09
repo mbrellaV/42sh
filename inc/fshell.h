@@ -56,11 +56,12 @@
 # define IS_D	8
 # define IS_L	16
 
-
+# define SHELL_NAME "42sh"
 char			**g_env;
 char			*g_cp;
 int				g_his_d;
 int 			g_exit_code;
+int 			g_pid;
 
 char				**g_env;
 char				*g_cp;
