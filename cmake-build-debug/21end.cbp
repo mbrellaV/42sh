@@ -112,6 +112,9 @@
 		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/builtins/ft_cd.c">
 			<Option target="21end"/>
 		</Unit>
+		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/builtins/ft_cd_2.c">
+			<Option target="21end"/>
+		</Unit>
 		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/builtins/ft_cd_3.c">
 			<Option target="21end"/>
 		</Unit>
@@ -119,6 +122,9 @@
 			<Option target="21end"/>
 		</Unit>
 		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/builtins/ft_echo2.c">
+			<Option target="21end"/>
+		</Unit>
+		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/builtins/ft_type.c">
 			<Option target="21end"/>
 		</Unit>
 		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/check_file.c">
@@ -146,6 +152,9 @@
 			<Option target="21end"/>
 		</Unit>
 		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/ft_take_arg.c">
+			<Option target="21end"/>
+		</Unit>
+		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/g_builtins.c">
 			<Option target="21end"/>
 		</Unit>
 		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/hash/hash_error.c">

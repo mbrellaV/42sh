@@ -12,54 +12,27 @@
 
 #include "../../inc/fshell.h"
 
-char		*ft_strjoin_cd(char const *s1, char const *s2, int to_free)
-{
-	char		*str;
-	size_t		i;
-	size_t		k;
-
-	if (!s1 || !s2)
-		return (NULL);
-	if (!(str = (char*)malloc(ft_strlen((char*)s1) + ft_strlen((char*)s2) + 1)))
-		return (NULL);
-	i = 0;
-	k = 0;
-	while (s1[i])
-		str[k++] = s1[i++];
-	i = 0;
-	while (s2[i])
-		str[k++] = s2[i++];
-	str[k] = '\0';
-	(to_free == 1) ? free((void*)s1) : 0;
-	(to_free == 2) ? free((void*)s2) : 0;
-	if (to_free == 3)
-	{
-		free((void*)s1);
-		free((void*)s2);
-	}
-	return (str);
-}
-
 char		*cd_back(char *old)
 {
 	int			i;
 	char		*new;
 	int			j;
 
-	j = 0;
+	j = -1;
 	if (old)
 	{
 		i = ft_strlen(old);
 		while (old[i] != '/')
 			i--;
-		if (!(new = malloc(sizeof(char *) * i + 1)))
-			return (NULL);
-		while (j < i)
+		if (i == 0)
 		{
-			new[j] = old[j];
-			j++;
+			free(old);
+			return (ft_strdup("/"));
 		}
-		j++;
+		else if (!(new = malloc(sizeof(char *) * i + 1)))
+			return (NULL);
+		while (++j < i)
+			new[j] = old[j];
 		new[j] = '\0';
 		free(old);
 		return (new);
@@ -69,9 +42,9 @@ char		*cd_back(char *old)
 
 char		*full_path_helper(char *ret, char *all, char *path)
 {
-	if (!ft_strcmp(all, ".."))
+	if (all && !ft_strcmp(all, ".."))
 		ret = cd_back(ret);
-	else if (ft_strcmp(all, "."))
+	else if (all && ft_strcmp(all, "."))
 	{
 		ft_strcmp(ret, "/") ? ret = ft_strjoin_cd(ret, "/", 1) : 0;
 		ret = ft_strjoin_cd(ret, all, 1);
@@ -85,23 +58,40 @@ char		*full_path_helper(char *ret, char *all, char *path)
 	return (ret);
 }
 
-char		*full_path_helper_2(char *path, char **all_path, t_cd *cd)
+char		*full_path_helper_2(char *path, t_builtins *cd)
 {
 	char		*ret;
 
-	if (!all_path[0])
+	if (path)
 	{
-		ft_free_str(all_path);
-		return (ft_strdup("/"));
+		if (path[0] != '/')
+			ret = get_pwd(cd);
+		else
+			ret = ft_strdup("/");
+		return (ret);
 	}
-	if (path[0] != '/')
-		ret = is_pwd(cd);
-	else
-		ret = ft_strdup("/");
-	return (ret);
+	return (NULL);
 }
 
-char		*create_full_path(char *path, t_cd *cd)
+char		*full_path_3(char *path, char **all)
+{
+	int			k;
+
+	if (!ft_strcmp(path, "-"))
+		if ((k = ft_findenv("OLDPWD=", g_env)) != -404)
+		{
+			ft_free_str(all);
+			return (ft_strdup(g_env[k] + 7));
+		}
+	if (!all[0])
+	{
+		ft_free_str(all);
+		return (ft_strdup("/"));
+	}
+	return (NULL);
+}
+
+char		*create_full_path(char *path, t_builtins *cd)
 {
 	int			i;
 	char		*ret;
@@ -111,8 +101,9 @@ char		*create_full_path(char *path, t_cd *cd)
 	if (path)
 	{
 		all_path = ft_strsplit1(path, '/');
-		if ((ret = full_path_helper_2(path, all_path, cd)) && !all_path[0])
+		if ((ret = full_path_3(path, all_path)))
 			return (ret);
+		ret = full_path_helper_2(path, cd);
 		while (all_path[++i])
 			if (!(ret = full_path_helper(ret, all_path[i], path)))
 			{
@@ -120,11 +111,8 @@ char		*create_full_path(char *path, t_cd *cd)
 				return (NULL);
 			}
 		ft_free_str(all_path);
-		if (!(check_file(ret, IS_E)))
-		{
-			ft_cd_error(ret, 6, 1);
+		if (!(check_file(ret, IS_E)) && !(ft_cd_error(ret, 6, 1)))
 			return (NULL);
-		}
 		return (ret);
 	}
 	return (NULL);

@@ -20,14 +20,18 @@ int		ft_cheak_quote(char *input)
 	k = -1;
 	while (input[++k])
 	{
-		if (input[k] == '\'' || input[k] == '\"')
+		if ((input[k] == '\'' || input[k] == '\"') && input[k - 1] != '\\')
 		{
 			c = input[k];
 			while (input[++k] && input[k] != c)
 				;
 			if (input[k] == '\0')
-				return (-1);
+			{
+//				printf("return 0\n");
+				return (0);
+			}
 		}
 	}
+//	printf("return 1\n");
 	return (1);
 }

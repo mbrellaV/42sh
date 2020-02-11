@@ -104,6 +104,8 @@ SRC_BASE = builtins/ft_cd.c\
 	main.c\
 	shell_lvl.c\
 	builtins/allenv/main_env.c\
+	builtins/ft_type.c\
+	g_builtins.c\
 
 SRCS		=	$(addprefix $(SRC_DIR), $(SRC_BASE))
 OBJS		=	$(addprefix $(OBJ_DIR), $(SRC_BASE:.c=.o))

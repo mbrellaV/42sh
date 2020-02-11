@@ -32,7 +32,7 @@ char				*do_zam_str_bax(char *str1, t_dop_str *t)
 			str1 = ft_strsub(t->str_b, start + (dop > 0 ? 1 : 0),
 				end - (dop > 0 ? 2 : 0) - start);
 			t->str_b = do_zam_str_by_str(start, end,
-				t->str_b, ft_get_var(str1, g_env));
+				t->str_b, ft_get_var(str1, g_all_var));
 			ft_strdel(&str1);
 			return (t->str_b);
 		}

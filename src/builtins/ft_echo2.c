@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_echo2.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: qmartina <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: plettie <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/04 13:23:56 by qmartina          #+#    #+#             */
-/*   Updated: 2019/11/04 13:24:00 by qmartina         ###   ########.fr       */
+/*   Created: 2020/02/06 12:05:01 by plettie           #+#    #+#             */
+/*   Updated: 2020/02/06 12:05:08 by plettie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_hex(char *str)
 {
-	int	i;
+	int		i;
 
 	i = 0;
 	str++;
@@ -41,43 +41,33 @@ char	*ft_hex(char *str)
 	return (str);
 }
 
-char	*ft_put_env(char *str)
+char	*ft_flag_echo(char *str, t_builtins *echo)
 {
-	char	*tmp;
-	int		k;
-	char	*buf;
-	int		len;
+	int		i;
 
-	str++;
-	buf = ft_strjoin_cmp(str, ' ' & '\"');
-	len = ft_strlen(buf);
-	tmp = buf;
-	buf = ft_strjoinch(tmp, '=');
-	free(tmp);
-	k = ft_findenv(buf, g_env);
-	if (k != -404)
+	i = 0;
+	while (str[++i])
 	{
-		ft_putstr(&g_env[k][len + 1]);
+		if (str[i] != 'n')
+			return (str);
 	}
-	str = str + len - 1;
-	free(buf);
-	return (str);
+	echo->echo_n = 1;
+	return (str + i);
 }
 
-char	*ft_cd_home(char *str)
+char	*distribute_echo(char **str, int k, int flag, t_builtins *echo)
 {
-	char	*tmp;
-	int		k;
-	char	*buf;
-
-	if (*(str + 1) != '/')
-		tmp = ft_strjoin("/", (str + 1));
-	k = ft_findenv("HOME=", g_env);
-	if (k != -404)
+	while (str[k] && *str[k])
 	{
-		buf = tmp;
-		tmp = ft_strjoin(&g_env[k][5], buf);
-		free(buf);
+		if (*str[k] == '\\' && (flag = 1))
+			str[k] = ft_slash(str[k], echo);
+		else if (*str[k] == '-' && flag == 0)
+			str[k] = ft_flag_echo(str[k], echo);
+		else if ((flag = 1))
+		{
+			*str[k] != '\"' ? ft_putchar(*str[k]) : NULL;
+			str[k]++;
+		}
 	}
-	return (tmp);
+	return (str[k]);
 }

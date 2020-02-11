@@ -12,8 +12,9 @@
 
 #include "../inc/fshell.h"
 
-void	ft_whatis(t_exectoken *tmp, t_memory *q)
+int	ft_whatis2(t_exectoken *tmp, t_memory *q)
 {
+
 	if (ft_strcmp(tmp->file_args[0], "alias") == 0 || ft_strcmp(tmp->file_args[0], "unalias") == 0)
 		ft_do_change_alias(tmp->file_args);
 	else if (ft_strcmp(tmp->file_args[0], "echo") == 0)
@@ -22,20 +23,53 @@ void	ft_whatis(t_exectoken *tmp, t_memory *q)
 		ft_cd(tmp->file_args);
 	else if (ft_strcmp(tmp->file_args[0], "export") == 0)
 		ft_do_export(tmp->file_args);
-	else if (ft_strcmp(tmp->file_args[0], "unexport") == 0 &&
-	tmp->file_args[1] != NULL)
-		unset_var(tmp->file_args[1], &g_env);
+	else if (ft_strcmp(tmp->file_args[0], "unset") == 0 &&
+			 tmp->file_args[1] != NULL)
+    {
+        unset_var(tmp->file_args[1], &g_env);
+        unset_var(tmp->file_args[1], &g_all_var);
+    }
 	else if (ft_strcmp(tmp->file_args[0], "history") == 0)
 		show_history(q);
 	else if (ft_strcmp(tmp->file_args[0], "env") == 0)
 		ft_show_env(g_env);
+	else if (ft_strcmp(tmp->file_args[0], "set") == 0)
+		ft_show_env(g_all_var);
 	else if (ft_strcmp(tmp->file_args[0], "clear") == 0)
 		ft_putstr_fd("\033[2J\033[H", 2);
 	else if (ft_strcmp(tmp->file_args[0], "hash") == 0)
 		print_hash();
+	else if (!ft_strcmp(tmp->file_args[0], "type"))
+		ft_type(tmp->file_args);
+	else if (ft_strcmp(tmp->file_args[0], "fg") == 0)
+		ft_fork_signal(SIGCONT);
 	else
-		ft_infinit_pipe(tmp);
+		return (1);
+	return (0);
 }
+
+//void	ft_whatis(t_exectoken *tmp, t_memory *q)
+//{
+//	if (ft_strcmp(tmp->file_args[0], "echo") == 0)
+//		ft_echo(tmp->file_args);
+//	else if (ft_strcmp(tmp->file_args[0], "cd") == 0)
+//		ft_cd(tmp->file_args);
+//	else if (ft_strcmp(tmp->file_args[0], "export") == 0)
+//		ft_do_export(tmp->file_args);
+//	else if (ft_strcmp(tmp->file_args[0], "unexport") == 0 &&
+//	tmp->file_args[1] != NULL)
+//		unset_var(tmp->file_args[1], &g_env);
+//	else if (ft_strcmp(tmp->file_args[0], "history") == 0)
+//		show_history(q);
+//	else if (ft_strcmp(tmp->file_args[0], "env") == 0)
+//		ft_show_env(g_env);
+//	else if (ft_strcmp(tmp->file_args[0], "clear") == 0)
+//		ft_putstr_fd("\033[2J\033[H", 2);
+//	else if (ft_strcmp(tmp->file_args[0], "hash") == 0)
+//		print_hash();
+//	else
+//		ft_infinit_pipe(tmp);
+//}
 
 void	print_hash(void)
 {
@@ -73,7 +107,8 @@ int		ft_main_what(t_exectoken *tmp, t_memory *q)
 		if (ft_strcmp(tmp->file_args[0], "exit") == 0)
 			return (-1);
 		do_zam_str_with_tilda(tmp->file_args);
-		ft_whatis(tmp, q);
+//		ft_whatis(tmp, q);
+		ft_infinit_pipe2(tmp, q);
 		tmp = tmp->right;
 	}
 	return (1);
@@ -82,16 +117,37 @@ int		ft_main_what(t_exectoken *tmp, t_memory *q)
 int		main_cycle(t_readline *p, t_memory **head, t_exectoken **start_token)
 {
 	t_memory	*headin;
+//	char 		buf;
 
 	headin = *head;
-	set_input_mode();
-	atexit(reset_input_mode);
-	ft_start_read(p);
-	ft_read_8(p, headin, 0);
-	write(2, "\n", 1);
-	while (ft_cheak_quote(p->buff) != 1)
-		ft_add_intput_que(p, headin);
-	reset_input_mode();
+//	printf("%d\n", fileno(stdin));
+//	while (read(STDIN_FILENO, &buf, 1) > 0)
+//		printf("%c", buf);
+	if (!set_input_mode())
+	{
+		ft_start_read(p);
+		ft_read_8(p, headin, 0);
+		write(2, "\n", 1);
+		while (ft_cheak_quote(p->buff) != 1)
+			ft_add_intput_que(p, headin);
+		reset_input_mode();
+	}
+	else
+	{
+		while (get_next_line(STDIN_FILENO, &p->buff))
+		{
+//			write(1, "\n", 1);
+//			ft_start_read(p);
+//			ft_cleanstr(50, p);
+			*start_token = all_parse(p->buff);
+			if (ft_main_what(*start_token, headin) == -1)
+				return (-1);
+//			write(1, "\n", 1);
+			free(p->buff);
+			ft_distruct_tree(*start_token);
+		}
+		exit (0);
+	}
 	p->buff[0] != '\0' ? headin = ft_memory(headin, &(p->buff)) : headin;
 	*start_token = all_parse(p->buff);
 	if (ft_main_what(*start_token, headin) == -1)
@@ -99,6 +155,7 @@ int		main_cycle(t_readline *p, t_memory **head, t_exectoken **start_token)
 	del_readline(p);
 	ft_distruct_tree(*start_token);
 	*head = headin;
+    print_hash();
 	return (0);
 }
 
@@ -117,7 +174,8 @@ int		main(int argc, char **argv, char **env)
 	head = ft_head_memory();
 	do_count_shell_lvl();
 	hash_init();
-	ft_put_info();
+	if (isatty(0))
+		ft_put_info();
 	while (1)
 		if (main_cycle(&p, &head, &start_token) == -1)
 			break ;

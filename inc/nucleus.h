@@ -24,7 +24,7 @@ int					ft_put_info(void);
 int					ft_printf_helper(int flag);
 int					ft_c(int c);
 void				reset_input_mode(void);
-void				set_input_mode(void);
+int					set_input_mode(void);
 void				ft_realloc_buff(t_readline *p);
 void				ft_cleanstr(int i, t_readline *p);
 void				ft_setcursor(int i, int max);

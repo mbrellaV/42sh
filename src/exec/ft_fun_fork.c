@@ -14,17 +14,43 @@
 
 void	ft_fun_fork(char *path, char **arg, pid_t pid)
 {
-	signal(SIGINT, ft_fork_signal);
+//	signal(SIGINT, ft_fork_signal);
+//	signal(SIGSTOP, SIG_IGN);
+//	signal(SIGTSTP, SIG_IGN);
+//	signal(SIGTERM, SIG_IGN);
+//	signal(SIGTTIN, SIG_IGN);
+//	signal(SIGTTOU, SIG_IGN);
+//	signal(SIGTSTP, SIG_IGN);
+//	signal(SIGTSTP, SIG_IGN);
+//	signal(SIGTSTP, SIG_IGN);
 	if (pid == 0)
+	{
+//		dprintf(2, "START0:\n");
 		execve(path, arg, g_env);
+//		dprintf(2, "START01:\n");
+//		waitpid(pid, &status, 0);
+//		if (WIFEXITED(status))
+//		{
+//			g_exit_code = WEXITSTATUS(status);
+//			printf("Exit status of the child was %d\n", g_exit_code);
+//		}
+	}
 	else if (pid < 0)
 	{
 		free(path);
 		ft_putendl_fd("Fork failed to create a new process.", 2);
 		return ;
 	}
-	if (path)
-		free(path);
+//	dprintf(2, "START1:\n");
+//	if (path)
+//		free(path);
+//	dprintf(2, "START2:\n");
+//	waitpid(pid, &status, 0);
+//	if (WIFEXITED(status))
+//	{
+//		g_exit_code = WEXITSTATUS(status);
+//		printf("Exit status of the child was %d\n", g_exit_code);
+//	}
 }
 
 int		ft_norm_pipe(int p1, int *fd_in, int p0, t_exectoken **head)

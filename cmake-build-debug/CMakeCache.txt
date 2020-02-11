@@ -20,6 +20,12 @@
 //Value Computed by CMake
 21end_SOURCE_DIR:STATIC=/Users/mbrella/Desktop/projects/21beta/42start
 
+//Value Computed by CMake
+42start_BINARY_DIR:STATIC=/Users/mbrella/Desktop/projects/21beta/42start/cmake-build-debug
+
+//Value Computed by CMake
+42start_SOURCE_DIR:STATIC=/Users/mbrella/Desktop/projects/21beta/42start
+
 //Path to a program.
 CMAKE_AR:FILEPATH=/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ar
 
