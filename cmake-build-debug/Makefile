@@ -690,6 +690,33 @@ src/hash/hash_table_2.c.s:
 	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/hash/hash_table_2.c.s
 .PHONY : src/hash/hash_table_2.c.s
 
+src/init_shell.o: src/init_shell.c.o
+
+.PHONY : src/init_shell.o
+
+# target to build an object file
+src/init_shell.c.o:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/init_shell.c.o
+.PHONY : src/init_shell.c.o
+
+src/init_shell.i: src/init_shell.c.i
+
+.PHONY : src/init_shell.i
+
+# target to preprocess a source file
+src/init_shell.c.i:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/init_shell.c.i
+.PHONY : src/init_shell.c.i
+
+src/init_shell.s: src/init_shell.c.s
+
+.PHONY : src/init_shell.s
+
+# target to generate assembly for a file
+src/init_shell.c.s:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/init_shell.c.s
+.PHONY : src/init_shell.c.s
+
 src/lexer/all_bax_and_hist_change.o: src/lexer/all_bax_and_hist_change.c.o
 
 .PHONY : src/lexer/all_bax_and_hist_change.o
@@ -2247,6 +2274,9 @@ help:
 	@echo "... src/hash/hash_table_2.o"
 	@echo "... src/hash/hash_table_2.i"
 	@echo "... src/hash/hash_table_2.s"
+	@echo "... src/init_shell.o"
+	@echo "... src/init_shell.i"
+	@echo "... src/init_shell.s"
 	@echo "... src/lexer/all_bax_and_hist_change.o"
 	@echo "... src/lexer/all_bax_and_hist_change.i"
 	@echo "... src/lexer/all_bax_and_hist_change.s"

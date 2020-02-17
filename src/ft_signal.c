@@ -25,9 +25,9 @@ void	ft_fork_signal(int signo)
 	{
 //		g_pid = getpid();
 //		signal(SIGTSTP, SIG_DFL);
-		dprintf(2, "PID_STATIC = %d\n", g_pid);
-		dprintf(2, "G_PID = %d\n", getpgrp());
-		dprintf(2, "G_PID = %d\n", getpgid(g_pid));
+//		dprintf(2, "PID_STATIC = %d\n", g_pid);
+//		dprintf(2, "G_PID = %d\n", getpgrp());
+//		dprintf(2, "G_PID = %d\n", getpgid(g_pid));
 //		kill(g_pid, SIGTSTP);
 		//g_pid = -1;
 //		signal(SIGINT, ft_fork_signal);
@@ -40,8 +40,8 @@ void	ft_fork_signal(int signo)
 	}
 	else if (signo == SIGCONT)
 	{
-		dprintf(2, "PID = %d", g_pid);
-		kill(g_pid, SIGCONT);
+//		dprintf(2, "PID = %d", g_pid);
+//		kill(g_pid, SIGCONT);
 	}
 }
 

@@ -25,6 +25,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "/Users/qmartina/Desktop/42start/src/hash/hash_error.c" "/Users/qmartina/Desktop/42start/cmake-build-debug/CMakeFiles/21end.dir/src/hash/hash_error.c.o"
   "/Users/qmartina/Desktop/42start/src/hash/hash_table.c" "/Users/qmartina/Desktop/42start/cmake-build-debug/CMakeFiles/21end.dir/src/hash/hash_table.c.o"
   "/Users/qmartina/Desktop/42start/src/hash/hash_table_2.c" "/Users/qmartina/Desktop/42start/cmake-build-debug/CMakeFiles/21end.dir/src/hash/hash_table_2.c.o"
+  "/Users/qmartina/Desktop/42start/src/init_shell.c" "/Users/qmartina/Desktop/42start/cmake-build-debug/CMakeFiles/21end.dir/src/init_shell.c.o"
   "/Users/qmartina/Desktop/42start/src/lexer/all_bax_and_hist_change.c" "/Users/qmartina/Desktop/42start/cmake-build-debug/CMakeFiles/21end.dir/src/lexer/all_bax_and_hist_change.c.o"
   "/Users/qmartina/Desktop/42start/src/lexer/change_dol.c" "/Users/qmartina/Desktop/42start/cmake-build-debug/CMakeFiles/21end.dir/src/lexer/change_dol.c.o"
   "/Users/qmartina/Desktop/42start/src/lexer/change_hist_exp.c" "/Users/qmartina/Desktop/42start/cmake-build-debug/CMakeFiles/21end.dir/src/lexer/change_hist_exp.c.o"

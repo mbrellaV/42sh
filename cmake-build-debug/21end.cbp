@@ -160,6 +160,9 @@
 		<Unit filename="/Users/qmartina/Desktop/42start/src/hash/hash_table_2.c">
 			<Option target="21end"/>
 		</Unit>
+		<Unit filename="/Users/qmartina/Desktop/42start/src/init_shell.c">
+			<Option target="21end"/>
+		</Unit>
 		<Unit filename="/Users/qmartina/Desktop/42start/src/lexer/all_bax_and_hist_change.c">
 			<Option target="21end"/>
 		</Unit>

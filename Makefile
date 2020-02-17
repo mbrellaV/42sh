@@ -29,17 +29,17 @@ INC_DIR		=	inc/
 OBJ_DIR		=	objs/
 
 SRC_BASE = builtins/ft_cd.c\
-        builtins/ft_cd_2.c\
-        builtins/ft_cd_3.c\
-        builtins/ft_echo.c\
-        builtins/ft_echo2.c\
-        builtins/allenv/ft_env.c\
+	builtins/ft_cd_2.c\
+	builtins/ft_cd_3.c\
+	builtins/ft_echo.c\
+	builtins/ft_echo2.c\
+	builtins/allenv/ft_env.c\
 	builtins/alias/alias.c\
  	builtins/allenv/global_env.c\
-        errors/errror_handler.c\
-        exec/ft_create_file.c\
-        exec/ft_do_pipe.c\
-        exec/ft_fun_fork.c\
+ 	errors/errror_handler.c\
+ 	exec/ft_create_file.c\
+ 	exec/ft_do_pipe.c\
+ 	exec/ft_fun_fork.c\
 	lexer/lexer.c\
 	lexer/change_dol.c\
 	lexer/change_spaces.c\
@@ -103,6 +103,7 @@ SRC_BASE = builtins/ft_cd.c\
 	check_file.c\
 	main.c\
 	shell_lvl.c\
+	init_shell.c\
 	builtins/allenv/main_env.c\
 	builtins/ft_type.c\
 	g_builtins.c\

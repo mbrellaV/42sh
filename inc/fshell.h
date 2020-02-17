@@ -57,12 +57,15 @@
 # define IS_L	16
 
 # define SHELL_NAME "42sh"
-char			**g_env;
-char			*g_cp;
-int				g_his_d;
-int 			g_exit_code;
-int 			g_pid;
 
+///////////////////////////
+int 			g_exit_code;
+///////////
+pid_t shell_pgid;
+struct termios shell_tmodes;
+int shell_terminal;
+int shell_is_interactive;
+////////////////
 char				**g_env;
 char				*g_cp;
 int					g_his_d;
@@ -128,5 +131,6 @@ void				do_count_shell_lvl(void);
 /////////////////////////
 void	ft_infinit_pipe2(t_exectoken *head, t_memory *q);
 int		ft_whatis2(t_exectoken *tmp, t_memory *q);
+void	init_shell(void);
 
 #endif

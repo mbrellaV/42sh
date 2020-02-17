@@ -117,6 +117,7 @@ int		main_cycle(t_readline *p, t_memory **head, t_exectoken **start_token)
 //	printf("%d\n", fileno(stdin));
 //	while (read(STDIN_FILENO, &buf, 1) > 0)
 //		printf("%c", buf);
+	init_shell();
 	if (!set_input_mode())
 	{
 		ft_start_read(p);
@@ -167,6 +168,7 @@ int		main(int argc, char **argv, char **env)
 	head = ft_head_memory();
 	do_count_shell_lvl();
 	hash_init();
+//	init_shell();
 	if (isatty(0))
 		ft_put_info();
 	while (1)

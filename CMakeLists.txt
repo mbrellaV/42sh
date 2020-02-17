@@ -76,6 +76,7 @@ add_executable(21end
         src/ft_error_q.c
         src/ft_signal.c
         src/ft_take_arg.c
+        src/init_shell.c
         src/main.c src/builtins/allenv/main_env.c src/check_file.c src/lexer/history_search.c src/nucleus/dop_tab_funs.c src/builtins/allenv/global_env.c src/shell_lvl.c src/lexer/all_bax_and_hist_change.c src/builtins/alias/alias.c src/builtins/ft_cd_3.c src/g_builtins.c src/builtins/ft_type.c)
 
 

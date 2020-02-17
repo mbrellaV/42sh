@@ -12,6 +12,7 @@
 
 #include "../../inc/fshell.h"
 #include <stdio.h>
+#include <errno.h>
 
 int		ft_what_flag(char *str, int *b)
 {
@@ -158,17 +159,41 @@ void	ft_infinit_pipe2(t_exectoken *head, t_memory *q)
 	pid_t		pid;
 	int			fd_in;
 	char		*rt;
-	int			status;
+//	int			status;
+	pid_t		gr_pid;
 
 	fd_in = 0;
 	ft_file_create(head);
 	rt = NULL;
+	gr_pid = 0;
+	dprintf(2, "getpgrp: %d\n", getpgrp());
 	while (head)
 	{
+		rt = hash_get(head->file_args[0], 0);
 		if (pipe(p) == -1 || (pid = fork()) == -1)
+		{
+			ft_putstr_fd("ERROR pipe or fork", 2);
 			exit(1);
+		}
 		else if (pid == 0)
 		{
+//			setpgrp();
+//			setpgid(0, 0);
+//			ioctl (STDIN_FILENO, TIOCSPGRP, &gr_pid);
+//			signal(SIGTSTP, SIG_DFL);
+//			signal(SIGINT, SIG_DFL);
+			//dprintf(2, "FF: %d\n", setpgid(0, gr_pid));
+			pid = getpid ();
+			if (gr_pid == 0)
+				gr_pid = pid;
+			setpgid (pid, gr_pid);
+			tcsetpgrp (shell_terminal, gr_pid);
+			signal (SIGINT, SIG_DFL);
+			signal (SIGQUIT, SIG_DFL);
+			signal (SIGTSTP, SIG_DFL);
+			signal (SIGTTIN, SIG_DFL);
+			signal (SIGTTOU, SIG_DFL);
+			signal (SIGCHLD, SIG_DFL);
 			if (head->left != NULL)
 			{
 				dup2(p[1], 1);
@@ -179,40 +204,48 @@ void	ft_infinit_pipe2(t_exectoken *head, t_memory *q)
 			dup2(fd_in, 0);
 			close(p[0]);
 			if (ft_whatis2(head, q) == 0)
-			{
 				exit(0);
-			}
-			else
-				rt = hash_get(head->file_args[0], 0);
 			if (rt != NULL)
 				ft_fun_fork(rt, head->file_args, pid);
-			exit(0);
+			exit(1);
 		}
 		else
 		{
-			g_pid = pid;
-			setpgid(g_pid, getpgid(g_pid) + 100);
-			signal(SIGINT, ft_fork_signal);
-			signal(SIGSTOP, SIG_IGN);/////?????
-			signal(SIGTSTP, ft_fork_signal);////cntrl+Z
-			signal(SIGCONT,	ft_fork_signal);
-//			signal(SIGTERM, SIG_IGN);
-//			signal(SIGTTIN, SIG_IGN);
-//			signal(SIGTTOU, SIG_IGN);
+//			if (gr_pid == 0)
+//			{
+//				gr_pid = setsid();
+//				gr_pid = pid;
+//				ioctl (0, TIOCGPGRP, &gr_pid);
+//				tcsetpgrp(0, gr_pid);
+//				dprintf(2, "gr_pid= %d\n", gr_pid);
+				//if (setpgid(0, 0) == -1)
+				//	dprintf(2, "error if\n");
+//			}
+			if (gr_pid == 0)
+				gr_pid = pid;
+			setpgid (pid, gr_pid);
+//			if (setpgid(pid, pid) == -1)
+//				dprintf(2, "error setpgid: %s\n", strerror(errno));
+//			else
+//				dprintf(2, "good setpgid\n");
+//			signal(SIGINT, SIG_DFL);
+//			signal(SIGSTOP, SIG_IGN);/////?????
+//			signal(SIGTSTP, SIG_DFL);////cntrl+Z
 //			printf("%spid: %d%s\n", RED, pid, RESET);
-			if (g_pid != -1)
-				waitpid(pid, &status, 0);
+			/*waitpid(pid, &status, 0);
 //			printf("%sstatus: %d%s\n", RED, status, RESET);
 			if (WIFEXITED(status))
 			{
 				g_exit_code = WEXITSTATUS(status);
-				if (rt == NULL)
-					g_exit_code = 127;
-//				printf("%sExit status of the child was %d%s\n", YEL, g_exit_code, RESET);
-			}
+//				if (rt == NULL)
+//					g_exit_code = 127;
+				printf("%sExit status of the child was %d%s\n", YEL, g_exit_code, RESET);
+			}*/
 			close(p[1]);
 			fd_in = p[0];
 			head = (head)->left;
 		}
 	}
+	while (tcgetpgrp(shell_terminal) != (shell_pgid = getpgrp ()))
+		kill(- shell_pgid, SIGTTIN);
 }
