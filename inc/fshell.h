@@ -57,12 +57,15 @@
 # define IS_L	16
 
 # define SHELL_NAME "42sh"
-char			**g_env;
-char			*g_cp;
-int				g_his_d;
-int 			g_exit_code;
-int 			g_pid;
 
+///////////////////////////
+int 			g_exit_code;
+///////////
+pid_t shell_pgid;
+struct termios shell_tmodes;
+int shell_terminal;
+int shell_is_interactive;
+////////////////
 char				**g_env;
 char				*g_cp;
 int					g_his_d;
@@ -93,7 +96,7 @@ char				*ft_get_var(char *dop, char **env);
 int					issc(char c);
 void				ft_global_env(char **env, int argc);
 int					unset_var(char *str, char ***envl);
-void				ft_fun_fork(char *path, char **arg, pid_t pid);
+void				ft_fun_fork(char *path, char **arg, pid_t pgid, int foreground);
 int					ft_findenv(char *s, char **env);
 void				ft_do_export(char **mas);
 int					ft_signal(int signo, t_readline *p);
@@ -126,8 +129,13 @@ void				ft_find_path(t_readline *p, char *name);
 int					save_history(t_memory *q);
 void				do_count_shell_lvl(void);
 
+//////////////////
+
+int		launch_job (t_job *j, int foreground, t_memory *q);
+
 /////////////////////////
 void	ft_infinit_pipe2(t_exectoken *head, t_memory *q);
-int		ft_whatis2(t_exectoken *tmp, t_memory *q);
+int		ft_whatis2(t_process *tmp, t_memory *q);
+void	init_shell(void);
 
 #endif

@@ -12,9 +12,25 @@
 
 #include "../inc/fshell.h"
 
-int	ft_whatis2(t_exectoken *tmp, t_memory *q)
+int			check_file_args(t_process *tmp)
 {
+	if (tmp->file_args == NULL)
+		return (0);
+	if (tmp->file_args[0] == NULL)
+		return (0);
+	if (ft_strcmp(tmp->file_args[0], "exit") == 0)
+		return (-1);
+	return (1);
+}
 
+int	ft_whatis2(t_process *tmp, t_memory *q)
+{
+	if (tmp->file_args == NULL)
+		return (-2);
+	if (tmp->file_args[0] == NULL)
+		return (-2);
+	if (ft_strcmp(tmp->file_args[0], "exit") == 0)
+		return (-1);
 	if (ft_strcmp(tmp->file_args[0], "alias") == 0 || ft_strcmp(tmp->file_args[0], "unalias") == 0)
 		ft_do_change_alias(tmp->file_args);
 	else if (ft_strcmp(tmp->file_args[0], "echo") == 0)
@@ -44,32 +60,9 @@ int	ft_whatis2(t_exectoken *tmp, t_memory *q)
 	else if (ft_strcmp(tmp->file_args[0], "fg") == 0)
 		ft_fork_signal(SIGCONT);
 	else
-		return (1);
-	return (0);
+		return (0);
+	return (1);
 }
-
-//void	ft_whatis(t_exectoken *tmp, t_memory *q)
-//{
-//	if (ft_strcmp(tmp->file_args[0], "echo") == 0)
-//		ft_echo(tmp->file_args);
-//	else if (ft_strcmp(tmp->file_args[0], "cd") == 0)
-//		ft_cd(tmp->file_args);
-//	else if (ft_strcmp(tmp->file_args[0], "export") == 0)
-//		ft_do_export(tmp->file_args);
-//	else if (ft_strcmp(tmp->file_args[0], "unexport") == 0 &&
-//	tmp->file_args[1] != NULL)
-//		unset_var(tmp->file_args[1], &g_env);
-//	else if (ft_strcmp(tmp->file_args[0], "history") == 0)
-//		show_history(q);
-//	else if (ft_strcmp(tmp->file_args[0], "env") == 0)
-//		ft_show_env(g_env);
-//	else if (ft_strcmp(tmp->file_args[0], "clear") == 0)
-//		ft_putstr_fd("\033[2J\033[H", 2);
-//	else if (ft_strcmp(tmp->file_args[0], "hash") == 0)
-//		print_hash();
-//	else
-//		ft_infinit_pipe(tmp);
-//}
 
 void	print_hash(void)
 {
@@ -96,22 +89,181 @@ void	print_hash(void)
 	}
 }
 
-int		ft_main_what(t_exectoken *tmp, t_memory *q)
+t_process	*create_process_list(t_exectoken *tmp)
 {
+	t_process	*proc;
+	t_process	*fir;
+
+
+	if (!(fir = ft_memalloc(sizeof(t_process))))
+		ft_error_q(5);
+	fir->file_args = tmp->file_args;
+	if (check_file_args(fir) == 0)
+		return (NULL);
+	do_zam_str_with_tilda(tmp->file_args);
+	fir->pid = -1;
+	fir->completed = 0;
+	fir->next = NULL;
+	proc = fir;
+	tmp = tmp->left;
 	while (tmp)
 	{
-		if (tmp->file_args == NULL)
-			return (ft_error_args(tmp));
-		if (tmp->file_args[0] == NULL)
-			return (-1);
-		if (ft_strcmp(tmp->file_args[0], "exit") == 0)
-			return (-1);
-		do_zam_str_with_tilda(tmp->file_args);
-//		ft_whatis(tmp, q);
-		ft_infinit_pipe2(tmp, q);
-		tmp = tmp->right;
+		if (!(proc->next = ft_memalloc(sizeof(t_process))))
+			ft_error_q(5);
+		proc->next->file_args = tmp->file_args;
+		proc->next->pid = -1;
+		proc->next->completed = 0;
+		proc->next->next = NULL;
+		proc = proc->next;
+		tmp = tmp->left;
+	}
+	return (fir);
+}
+
+t_job	*create_job(t_exectoken *head)
+{
+	t_job	*new_job;
+
+	if (head == NULL)
+		return (NULL);
+	if (!(new_job = ft_memalloc(sizeof(t_job))))
+		ft_error_q(5);
+	new_job->first_process = create_process_list(head);
+	new_job->pgid = -1;
+	new_job->command = NULL;
+	return (new_job);
+}
+
+t_job	*turn_exectokens_to_jobs(t_exectoken *exec)
+{
+	t_job *tmp;
+	//t_exectoken *tmp_exec;
+	t_job *start_job;
+
+	if (exec == NULL)
+		return (NULL);
+	//tmp = NULL;
+	//start_job = NULL;
+	tmp = create_job(exec);
+	start_job = tmp;
+	exec = exec->right;
+	while (exec)
+	{
+		tmp->next = create_job(exec);
+		tmp = tmp->next;
+		exec = exec->right;
+	}
+	return (start_job);
+}
+
+int		ft_main_what(t_exectoken *tmp, t_memory *q)
+{
+	t_job	*jobs;
+	int		sas;
+
+	jobs = turn_exectokens_to_jobs(tmp);
+	while (jobs)
+	{
+		//dprintf(2, "\nsas: |%s|", jobs->first_process->file_args[0]);
+		sas = launch_job(jobs, 1, q);
+		//dprintf(2, "\nsas: |%d|", sas);
+		if (sas == -1)
+			exit(0);
+		jobs = jobs->next;
 	}
 	return (1);
+}
+
+int		launch_process (t_process *p, pid_t pgid,
+				int infile, int outfile, int errfile,
+				int foreground)
+{
+	pid_t		pid;
+	char		*rt;
+
+	rt = NULL;
+	infile = 0;
+	outfile = 0;
+	errfile = 0;
+	do_zam_str_with_tilda(p->file_args);
+	//dprintf(2, "\nkek: |%s|", p->file_args[0]);
+	if (shell_is_interactive)
+	{
+
+		if (!(rt = hash_get(p->file_args[0], 0)))
+			return (0);
+		//dprintf(2, "\n\n\n\\n\n\n\n\n\\n\n\n\n\n\nn\n\nsasasasas\n\n\n\n\n\n");
+		/* Put the process into the process group and give the process group
+		   the terminal, if appropriate.
+		   This has to be done both by the shell and in the individual
+		   child processes because of potential race conditions.  */
+		pid = getpid();
+		if (pgid == 0) pgid = pid;
+		setpgid (pid, pgid);
+		if (foreground)
+			tcsetpgrp (shell_terminal, pgid);
+
+		/* Set the handling for job control signals back to the default.  */
+		signal (SIGINT, SIG_DFL);
+		signal (SIGQUIT, SIG_DFL);
+		signal (SIGTSTP, SIG_DFL);
+		signal (SIGTTIN, SIG_DFL);
+		signal (SIGTTOU, SIG_DFL);
+		signal (SIGCHLD, SIG_DFL);
+	}
+	/* Exec the new process.  Make sure we exit.  */
+	execve(rt, p->file_args, g_env);
+	exit(1);
+}
+
+int		launch_job (t_job *j, int foreground, t_memory *q)
+{
+	t_process *p;
+	pid_t pid;
+	int infile, outfile;
+	int dop;
+	int d;
+
+	d = 0;
+	infile = j->stdin;
+	//dprintf(2, "\ncheburek:");
+	for (p = j->first_process; p; p = p->next)
+	{
+		d++;
+		/* Set up pipes, if necessary.  */
+		//dprintf(2, "\nlol: |%s|, |%d|, |%d|, |%p|", p->file_args[0], getpid(), d, p);
+		outfile = j->stdout;
+		dop = ft_whatis2(p, q);
+		if (dop == 1)
+			continue ;
+		if (dop == -2)
+			continue ;
+		if (dop == -1)
+			return (-1);
+		/* Fork the child processes.  */
+		pid = fork();
+		if (pid == 0)
+			/* This is the child process.  */
+			launch_process (p, j->pgid, infile,
+							outfile, j->stderr, foreground);
+		else if (pid < 0)
+		{
+			exit(1);
+		}
+		else
+		{
+			/* This is the parent process.  */
+//			p->pid = pid;
+//			if (shell_is_interactive)
+//			{
+//				if (!j->pgid)
+//					j->pgid = pid;
+//				setpgid (pid, j->pgid);
+//			}
+			wait(&pid);
+		}
+	}
+	return (0);
 }
 
 int		main_cycle(t_readline *p, t_memory **head, t_exectoken **start_token)
@@ -123,6 +275,7 @@ int		main_cycle(t_readline *p, t_memory **head, t_exectoken **start_token)
 //	printf("%d\n", fileno(stdin));
 //	while (read(STDIN_FILENO, &buf, 1) > 0)
 //		printf("%c", buf);
+	init_shell();
 	if (!set_input_mode())
 	{
 		ft_start_read(p);
@@ -174,6 +327,7 @@ int		main(int argc, char **argv, char **env)
 	head = ft_head_memory();
 	do_count_shell_lvl();
 	hash_init();
+	init_shell();
 	if (isatty(0))
 		ft_put_info();
 	while (1)

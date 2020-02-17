@@ -12,6 +12,7 @@
 
 #include "../../inc/fshell.h"
 #include <stdio.h>
+#include <errno.h>
 
 int		ft_what_flag(char *str, int *b)
 {
@@ -108,111 +109,96 @@ int		ft_fd_flag(char **av, int *fd_in)
 	}
 	return (p.fd);
 }
-
-//void	ft_infinit_pipe(t_exectoken *head)
-//{
-//	int			p[2];
-//	pid_t		pid;
-//	int			fd_in;
-//	char		*rt;
-//	int			status;
 //
-//	fd_in = 0;
-//	ft_file_create(head);
-//	while (head)
+//void launch_job (job *j, int foreground)
+//{
+//	process *p;
+//	pid_t pid;
+//	int mypipe[2], infile, outfile;
+//
+//	infile = j->stdin;
+//	for (p = j->first_process; p; p = p->next)
 //	{
-//		rt = hash_get(head->file_args[0]);
-//		if (pipe(p) == -1 || (pid = fork()) == -1)
-//			exit(1);
-//		else if (pid == 0)
+//		/* Set up pipes, if necessary.  */
+//		if (p->next)
 //		{
-//			if (head->left != NULL)
-//				ft_norm_pipe(p[1], &fd_in, -404, NULL);
-//			if (head->file_opt)
-//				ft_fd_flag(head->file_opt, &fd_in);
-//			if (ft_norm_pipe(-404, &fd_in, p[0], NULL) && rt != NULL)
-//				ft_fun_fork(rt, head->file_args, pid);
-//			exit(0);
+//			if (pipe (mypipe) < 0)
+//			{
+//				perror ("pipe");
+//				exit (1);
+//			}
+//			outfile = mypipe[1];
+//		}
+//		else
+//			outfile = j->stdout;
+//
+//		/* Fork the child processes.  */
+//		pid = fork ();
+//		if (pid == 0)
+//			/* This is the child process.  */
+//			launch_process (p, j->pgid, infile,
+//							outfile, j->stderr, foreground);
+//		else if (pid < 0)
+//		{
+//			/* The fork failed.  */
+//			perror ("fork");
+//			exit (1);
 //		}
 //		else
 //		{
-////			ft_norm_pipe(p[1], &fd_in, p[0], &head);
-//			printf("%spid: %d%s\n", RED, pid, RESET);
-//			waitpid(pid, &status, 0);
-//			printf("%sstatus: %d%s\n", RED, status, RESET);
-//			if (WIFEXITED(status))
+//			/* This is the parent process.  */
+//			p->pid = pid;
+//			if (shell_is_interactive)
 //			{
-//				g_exit_code = WEXITSTATUS(status);
-//				if (rt == NULL)
-//					g_exit_code = 127;
-//				printf("%sExit status of the child was %d%s\n", YEL, g_exit_code, RESET);
+//				if (!j->pgid)
+//					j->pgid = pid;
+//				setpgid (pid, j->pgid);
 //			}
-//			ft_norm_pipe(p[1], &fd_in, p[0], &head);
 //		}
 //	}
 //}
-
-void	ft_infinit_pipe2(t_exectoken *head, t_memory *q)
-{
-	int			p[2];
-	pid_t		pid;
-	int			fd_in;
-	char		*rt;
-	int			status;
-
-	fd_in = 0;
-	ft_file_create(head);
-	rt = NULL;
-	while (head)
-	{
-		if (pipe(p) == -1 || (pid = fork()) == -1)
-			exit(1);
-		else if (pid == 0)
-		{
-			if (head->left != NULL)
-			{
-				dup2(p[1], 1);
-				close(p[1]);
-			}
-			if (head->file_opt)
-				ft_fd_flag(head->file_opt, &fd_in);
-			dup2(fd_in, 0);
-			close(p[0]);
-			if (ft_whatis2(head, q) == 0)
-			{
-				exit(0);
-			}
-			else
-				rt = hash_get(head->file_args[0], 0);
-			if (rt != NULL)
-				ft_fun_fork(rt, head->file_args, pid);
-			exit(0);
-		}
-		else
-		{
-			g_pid = pid;
-			setpgid(g_pid, getpgid(g_pid) + 100);
-			signal(SIGINT, ft_fork_signal);
-			signal(SIGSTOP, SIG_IGN);/////?????
-			signal(SIGTSTP, ft_fork_signal);////cntrl+Z
-			signal(SIGCONT,	ft_fork_signal);
-//			signal(SIGTERM, SIG_IGN);
-//			signal(SIGTTIN, SIG_IGN);
-//			signal(SIGTTOU, SIG_IGN);
-//			printf("%spid: %d%s\n", RED, pid, RESET);
-			if (g_pid != -1)
-				waitpid(pid, &status, 0);
-//			printf("%sstatus: %d%s\n", RED, status, RESET);
-			if (WIFEXITED(status))
-			{
-				g_exit_code = WEXITSTATUS(status);
-				if (rt == NULL)
-					g_exit_code = 127;
+//
+//void	ft_infinit_pipe2(t_exectoken *head, t_memory *q)
+//{
+//	pid_t		pid;
+//	char		*rt;
+//	pid_t		gr_pid;
+//	int			status;
+//
+//	ft_file_create(head);
+//	gr_pid = 0;
+//	dprintf(2, "getpgrp: %d\n", getpgrp());
+//	while (head)
+//	{
+//		rt = hash_get(head->file_args[0], 0);
+//		if ((pid = fork()) == -1)
+//		{
+//			ft_putstr_fd("ERROR pipe or fork", 2);
+//			exit(1);
+//		}
+//		else if (pid == 0)
+//		{
+//			dprintf(2, "getpgrp1: %d\n", getpgrp());
+//			//if (ft_whatis2(head, q) == 0)
+//			//	exit(0);
+//			if (rt != NULL)
+//				ft_fun_fork(rt, head->file_args, pid, 0);
+//			exit(127);
+//		}
+//		else if (pid > 0)
+//		{
+//			if (gr_pid == 0)
+//				gr_pid = pid;
+//			setpgid (pid, gr_pid);
+//			waitpid(pid, &status, 0);
+//			if (WIFEXITED(status))
+//			{
+//				g_exit_code = WEXITSTATUS(status);
 //				printf("%sExit status of the child was %d%s\n", YEL, g_exit_code, RESET);
-			}
-			close(p[1]);
-			fd_in = p[0];
-			head = (head)->left;
-		}
-	}
-}
+//			}
+//			head = (head)->left;
+//		}
+//	}
+//	while (tcgetpgrp(shell_terminal) != (shell_pgid = getpgrp ()))
+//		kill(- shell_pgid, SIGTTIN);
+//}

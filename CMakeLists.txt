@@ -77,6 +77,7 @@ add_executable(21end
         src/ft_error_q.c
         src/ft_signal.c
         src/ft_take_arg.c
+        src/init_shell.c
         src/builtins/ft_echo.c
         src/builtins/ft_echo2.c
         src/builtins/ft_type.c
