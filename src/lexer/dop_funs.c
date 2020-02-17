@@ -41,8 +41,8 @@ int				isword(char c)
 {
 	if (ispar(c) == 1)
 		return (2);
-	if (issc(c) == 1)
-		return (3);
+	//if (issc(c) == 1)
+	//	return (3);
 	if (!isoperator(c) && c != ' ' && c != '\t' && c != '\0')
 		return (1);
 	return (0);

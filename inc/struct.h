@@ -65,6 +65,7 @@ typedef struct				s_lextoken
 	char					*line;
 	int						operator_type;
 	int						inhibitor_lvl;
+	int						is_near_word;
 }							t_lextoken;
 
 typedef struct				s_exectoken

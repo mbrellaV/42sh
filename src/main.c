@@ -14,6 +14,7 @@
 
 int	ft_whatis2(t_exectoken *tmp, t_memory *q)
 {
+
 	if (ft_strcmp(tmp->file_args[0], "alias") == 0 || ft_strcmp(tmp->file_args[0], "unalias") == 0)
 		ft_do_change_alias(tmp->file_args);
 	else if (ft_strcmp(tmp->file_args[0], "echo") == 0)
@@ -22,13 +23,18 @@ int	ft_whatis2(t_exectoken *tmp, t_memory *q)
 		ft_cd(tmp->file_args);
 	else if (ft_strcmp(tmp->file_args[0], "export") == 0)
 		ft_do_export(tmp->file_args);
-	else if (ft_strcmp(tmp->file_args[0], "unexport") == 0 &&
+	else if (ft_strcmp(tmp->file_args[0], "unset") == 0 &&
 			 tmp->file_args[1] != NULL)
-		unset_var(tmp->file_args[1], &g_env);
+    {
+        unset_var(tmp->file_args[1], &g_env);
+        unset_var(tmp->file_args[1], &g_all_var);
+    }
 	else if (ft_strcmp(tmp->file_args[0], "history") == 0)
 		show_history(q);
 	else if (ft_strcmp(tmp->file_args[0], "env") == 0)
 		ft_show_env(g_env);
+	else if (ft_strcmp(tmp->file_args[0], "set") == 0)
+		ft_show_env(g_all_var);
 	else if (ft_strcmp(tmp->file_args[0], "clear") == 0)
 		ft_putstr_fd("\033[2J\033[H", 2);
 	else if (ft_strcmp(tmp->file_args[0], "hash") == 0)
@@ -78,14 +84,14 @@ void	print_hash(void)
 			hash = g_hash[i];
 			while (hash)
 			{
-				ft_putstr_fd(hash->key, 1);
-				ft_putstr_fd("=", 1);
-				ft_putstr_fd(hash->value, 1);
+				ft_putstr_fd(hash->key, 2);
+				ft_putstr_fd("=", 2);
+				ft_putstr_fd(hash->value, 2);
 				if (hash->next)
-					ft_putstr_fd("    ", 1);
+					ft_putstr_fd("    ", 2);
 				hash = hash->next;
 			}
-			ft_putstr_fd("\n", 1);
+			ft_putstr_fd("\n", 2);
 		}
 	}
 }
@@ -150,6 +156,7 @@ int		main_cycle(t_readline *p, t_memory **head, t_exectoken **start_token)
 	del_readline(p);
 	ft_distruct_tree(*start_token);
 	*head = headin;
+    print_hash();
 	return (0);
 }
 

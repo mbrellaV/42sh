@@ -20,7 +20,7 @@ int		ft_cheak_quote(char *input)
 	k = -1;
 	while (input[++k])
 	{
-		if (input[k] == '\'' || input[k] == '\"')
+		if ((input[k] == '\'' || input[k] == '\"') && input[k - 1] != '\\')
 		{
 			c = input[k];
 			while (input[++k] && input[k] != c)

@@ -48,10 +48,10 @@ RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/qmartina/Desktop/42start
+CMAKE_SOURCE_DIR = /Users/mbrella/Desktop/projects/21beta/42start
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/qmartina/Desktop/42start/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/mbrella/Desktop/projects/21beta/42start/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/qmartina/Desktop/42start/cmake-build-debug/CMakeFiles /Users/qmartina/Desktop/42start/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/mbrella/Desktop/projects/21beta/42start/cmake-build-debug/CMakeFiles /Users/mbrella/Desktop/projects/21beta/42start/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/qmartina/Desktop/42start/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/mbrella/Desktop/projects/21beta/42start/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -311,6 +311,60 @@ src/builtins/ft_cd_3.s: src/builtins/ft_cd_3.c.s
 src/builtins/ft_cd_3.c.s:
 	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/builtins/ft_cd_3.c.s
 .PHONY : src/builtins/ft_cd_3.c.s
+
+src/builtins/ft_echo.o: src/builtins/ft_echo.c.o
+
+.PHONY : src/builtins/ft_echo.o
+
+# target to build an object file
+src/builtins/ft_echo.c.o:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/builtins/ft_echo.c.o
+.PHONY : src/builtins/ft_echo.c.o
+
+src/builtins/ft_echo.i: src/builtins/ft_echo.c.i
+
+.PHONY : src/builtins/ft_echo.i
+
+# target to preprocess a source file
+src/builtins/ft_echo.c.i:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/builtins/ft_echo.c.i
+.PHONY : src/builtins/ft_echo.c.i
+
+src/builtins/ft_echo.s: src/builtins/ft_echo.c.s
+
+.PHONY : src/builtins/ft_echo.s
+
+# target to generate assembly for a file
+src/builtins/ft_echo.c.s:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/builtins/ft_echo.c.s
+.PHONY : src/builtins/ft_echo.c.s
+
+src/builtins/ft_echo2.o: src/builtins/ft_echo2.c.o
+
+.PHONY : src/builtins/ft_echo2.o
+
+# target to build an object file
+src/builtins/ft_echo2.c.o:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/builtins/ft_echo2.c.o
+.PHONY : src/builtins/ft_echo2.c.o
+
+src/builtins/ft_echo2.i: src/builtins/ft_echo2.c.i
+
+.PHONY : src/builtins/ft_echo2.i
+
+# target to preprocess a source file
+src/builtins/ft_echo2.c.i:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/builtins/ft_echo2.c.i
+.PHONY : src/builtins/ft_echo2.c.i
+
+src/builtins/ft_echo2.s: src/builtins/ft_echo2.c.s
+
+.PHONY : src/builtins/ft_echo2.s
+
+# target to generate assembly for a file
+src/builtins/ft_echo2.c.s:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/builtins/ft_echo2.c.s
+.PHONY : src/builtins/ft_echo2.c.s
 
 src/builtins/ft_type.o: src/builtins/ft_type.c.o
 
@@ -2232,6 +2286,12 @@ help:
 	@echo "... src/builtins/ft_cd_3.o"
 	@echo "... src/builtins/ft_cd_3.i"
 	@echo "... src/builtins/ft_cd_3.s"
+	@echo "... src/builtins/ft_echo.o"
+	@echo "... src/builtins/ft_echo.i"
+	@echo "... src/builtins/ft_echo.s"
+	@echo "... src/builtins/ft_echo2.o"
+	@echo "... src/builtins/ft_echo2.i"
+	@echo "... src/builtins/ft_echo2.s"
 	@echo "... src/builtins/ft_type.o"
 	@echo "... src/builtins/ft_type.i"
 	@echo "... src/builtins/ft_type.s"

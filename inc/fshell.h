@@ -84,6 +84,7 @@ char 				*distribute_echo(char **str, int k, int flag, t_builtins *echo);
 char				*ft_hex(char *str);
 int					set_new_var(char *str1, char *str2, char ***envl);
 int					ft_cd(char **str);
+void	            do_all_var(char **env);
 int					do_cd(t_builtins *cd, char *str);
 char				*get_pwd(t_builtins *cd);
 char				*get_oldpwd(t_builtins *cd);

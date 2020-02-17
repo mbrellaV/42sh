@@ -1,3 +1,4 @@
+  
 cmake_minimum_required(VERSION 3.14)
 project(21end C)
 
@@ -76,7 +77,13 @@ add_executable(21end
         src/ft_error_q.c
         src/ft_signal.c
         src/ft_take_arg.c
+<<<<<<< HEAD
         src/init_shell.c
+=======
+        src/builtins/ft_echo.c
+        src/builtins/ft_echo2.c
+        src/builtins/ft_type.c
+>>>>>>> 5e40a86ba3ded1eb8ee67a2581ee145222fa948f
         src/main.c src/builtins/allenv/main_env.c src/check_file.c src/lexer/history_search.c src/nucleus/dop_tab_funs.c src/builtins/allenv/global_env.c src/shell_lvl.c src/lexer/all_bax_and_hist_change.c src/builtins/alias/alias.c src/builtins/ft_cd_3.c src/g_builtins.c src/builtins/ft_type.c)
 
 

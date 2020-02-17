@@ -85,16 +85,25 @@
 		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/inc/fshell.h">
 			<Option target="42start"/>
 		</Unit>
+		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/inc/hash.h">
+			<Option target="42start"/>
+		</Unit>
 		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/inc/nucleus.h">
 			<Option target="42start"/>
 		</Unit>
 		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/inc/parser.h">
 			<Option target="42start"/>
 		</Unit>
-		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/builtins/alias/ft_alias.c">
+		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/inc/struct.h">
+			<Option target="42start"/>
+		</Unit>
+		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/builtins/alias/alias.c">
 			<Option target="42start"/>
 		</Unit>
 		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/builtins/allenv/ft_env.c">
+			<Option target="42start"/>
+		</Unit>
+		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/builtins/allenv/global_env.c">
 			<Option target="42start"/>
 		</Unit>
 		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/builtins/allenv/main_env.c">
@@ -103,16 +112,25 @@
 		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/builtins/ft_cd.c">
 			<Option target="42start"/>
 		</Unit>
+		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/builtins/ft_cd_2.c">
+			<Option target="42start"/>
+		</Unit>
+		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/builtins/ft_cd_3.c">
+			<Option target="42start"/>
+		</Unit>
 		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/builtins/ft_echo.c">
 			<Option target="42start"/>
 		</Unit>
 		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/builtins/ft_echo2.c">
 			<Option target="42start"/>
 		</Unit>
-		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/errors/errror_handler.c">
+		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/builtins/ft_type.c">
 			<Option target="42start"/>
 		</Unit>
-		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/eval/ft_do_zam_eval.c">
+		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/check_file.c">
+			<Option target="42start"/>
+		</Unit>
+		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/errors/errror_handler.c">
 			<Option target="42start"/>
 		</Unit>
 		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/exec/ft_create_file.c">
@@ -136,49 +154,181 @@
 		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/ft_take_arg.c">
 			<Option target="42start"/>
 		</Unit>
-		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/lexer/dop_lexer0.c">
+		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/g_builtins.c">
 			<Option target="42start"/>
 		</Unit>
-		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/lexer/dop_lexer1.c">
+		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/hash/hash_error.c">
 			<Option target="42start"/>
 		</Unit>
-		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/lexer/dop_lexer2.c">
+		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/hash/hash_table.c">
 			<Option target="42start"/>
 		</Unit>
-		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/lexer/dop_lexer3.c">
+		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/hash/hash_table_2.c">
+			<Option target="42start"/>
+		</Unit>
+		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/lexer/all_bax_and_hist_change.c">
+			<Option target="42start"/>
+		</Unit>
+		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/lexer/change_dol.c">
+			<Option target="42start"/>
+		</Unit>
+		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/lexer/change_hist_exp.c">
+			<Option target="42start"/>
+		</Unit>
+		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/lexer/change_spaces.c">
+			<Option target="42start"/>
+		</Unit>
+		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/lexer/change_str_by_str.c">
+			<Option target="42start"/>
+		</Unit>
+		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/lexer/cr_and_add_tokens.c">
+			<Option target="42start"/>
+		</Unit>
+		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/lexer/dop_funs.c">
+			<Option target="42start"/>
+		</Unit>
+		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/lexer/get_opt_type.c">
+			<Option target="42start"/>
+		</Unit>
+		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/lexer/history_search.c">
+			<Option target="42start"/>
+		</Unit>
+		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/lexer/kill_dop_structure.c">
 			<Option target="42start"/>
 		</Unit>
 		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/lexer/lexer.c">
 			<Option target="42start"/>
 		</Unit>
+		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/lexer/word_sizes.c">
+			<Option target="42start"/>
+		</Unit>
 		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/main.c">
 			<Option target="42start"/>
 		</Unit>
-		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/nucleus/ft_cutcopy.c">
+		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/nucleus/del_readline.c">
+			<Option target="42start"/>
+		</Unit>
+		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/nucleus/do_add.c">
+			<Option target="42start"/>
+		</Unit>
+		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/nucleus/dop_tab_funs.c">
+			<Option target="42start"/>
+		</Unit>
+		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/nucleus/find_history.c">
+			<Option target="42start"/>
+		</Unit>
+		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/nucleus/ft_add_intput_que.c">
+			<Option target="42start"/>
+		</Unit>
+		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/nucleus/ft_add_sumchar.c">
+			<Option target="42start"/>
+		</Unit>
+		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/nucleus/ft_arrdel.c">
+			<Option target="42start"/>
+		</Unit>
+		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/nucleus/ft_arrnew.c">
+			<Option target="42start"/>
+		</Unit>
+		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/nucleus/ft_arrows.c">
+			<Option target="42start"/>
+		</Unit>
+		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/nucleus/ft_back_slovo.c">
+			<Option target="42start"/>
+		</Unit>
+		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/nucleus/ft_c.c">
+			<Option target="42start"/>
+		</Unit>
+		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/nucleus/ft_cheak_quote.c">
+			<Option target="42start"/>
+		</Unit>
+		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/nucleus/ft_cleanstr.c">
+			<Option target="42start"/>
+		</Unit>
+		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/nucleus/ft_cut.c">
+			<Option target="42start"/>
+		</Unit>
+		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/nucleus/ft_cut_copy.c">
+			<Option target="42start"/>
+		</Unit>
+		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/nucleus/ft_do_copy.c">
+			<Option target="42start"/>
+		</Unit>
+		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/nucleus/ft_do_delch.c">
+			<Option target="42start"/>
+		</Unit>
+		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/nucleus/ft_do_leftright.c">
+			<Option target="42start"/>
+		</Unit>
+		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/nucleus/ft_dop_history.c">
+			<Option target="42start"/>
+		</Unit>
+		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/nucleus/ft_downcursor.c">
+			<Option target="42start"/>
+		</Unit>
+		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/nucleus/ft_head_memory.c">
+			<Option target="42start"/>
+		</Unit>
+		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/nucleus/ft_memory.c">
+			<Option target="42start"/>
+		</Unit>
+		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/nucleus/ft_next_slovo.c">
+			<Option target="42start"/>
+		</Unit>
+		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/nucleus/ft_print_tab.c">
+			<Option target="42start"/>
+		</Unit>
+		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/nucleus/ft_printf_helper.c">
+			<Option target="42start"/>
+		</Unit>
+		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/nucleus/ft_put_n.c">
+			<Option target="42start"/>
+		</Unit>
+		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/nucleus/ft_putcut.c">
+			<Option target="42start"/>
+		</Unit>
+		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/nucleus/ft_putmemory.c">
 			<Option target="42start"/>
 		</Unit>
 		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/nucleus/ft_read_8.c">
 			<Option target="42start"/>
 		</Unit>
-		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/nucleus/nucleus.c">
+		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/nucleus/ft_realloc_buff.c">
 			<Option target="42start"/>
 		</Unit>
-		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/nucleus/nucleus2.c">
+		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/nucleus/ft_realloc_tab.c">
 			<Option target="42start"/>
 		</Unit>
-		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/nucleus/nucleus3.c">
+		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/nucleus/ft_setcursor.c">
 			<Option target="42start"/>
 		</Unit>
-		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/nucleus/nucleus4.c">
+		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/nucleus/ft_start_read.c">
+			<Option target="42start"/>
+		</Unit>
+		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/nucleus/ft_strsplit1.c">
+			<Option target="42start"/>
+		</Unit>
+		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/nucleus/ft_upcursor.c">
+			<Option target="42start"/>
+		</Unit>
+		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/nucleus/input_mode.c">
+			<Option target="42start"/>
+		</Unit>
+		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/nucleus/show_history.c">
+			<Option target="42start"/>
+		</Unit>
+		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/nucleus/tab.c">
+			<Option target="42start"/>
+		</Unit>
+		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/parser/change_tilda.c">
 			<Option target="42start"/>
 		</Unit>
 		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/parser/dop_parser.c">
 			<Option target="42start"/>
 		</Unit>
-		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/parser/dop_parser1.c">
+		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/parser/main_parser.c">
 			<Option target="42start"/>
 		</Unit>
-		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/parser/main_parser.c">
+		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/shell_lvl.c">
 			<Option target="42start"/>
 		</Unit>
 		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/CMakeLists.txt">
