@@ -133,6 +133,9 @@
 		<Unit filename="/Users/qmartina/Desktop/42start/src/errors/errror_handler.c">
 			<Option target="21end"/>
 		</Unit>
+		<Unit filename="/Users/qmartina/Desktop/42start/src/exec/continuing_stopped_jobs.c">
+			<Option target="21end"/>
+		</Unit>
 		<Unit filename="/Users/qmartina/Desktop/42start/src/exec/ft_create_file.c">
 			<Option target="21end"/>
 		</Unit>
@@ -140,6 +143,24 @@
 			<Option target="21end"/>
 		</Unit>
 		<Unit filename="/Users/qmartina/Desktop/42start/src/exec/ft_fun_fork.c">
+			<Option target="21end"/>
+		</Unit>
+		<Unit filename="/Users/qmartina/Desktop/42start/src/exec/launch_job.c">
+			<Option target="21end"/>
+		</Unit>
+		<Unit filename="/Users/qmartina/Desktop/42start/src/exec/launch_process.c">
+			<Option target="21end"/>
+		</Unit>
+		<Unit filename="/Users/qmartina/Desktop/42start/src/exec/operating_job.c">
+			<Option target="21end"/>
+		</Unit>
+		<Unit filename="/Users/qmartina/Desktop/42start/src/exec/put_job_in_background.c">
+			<Option target="21end"/>
+		</Unit>
+		<Unit filename="/Users/qmartina/Desktop/42start/src/exec/put_job_in_foreground.c">
+			<Option target="21end"/>
+		</Unit>
+		<Unit filename="/Users/qmartina/Desktop/42start/src/exec/stopped_and_terminated_jobs.c">
 			<Option target="21end"/>
 		</Unit>
 		<Unit filename="/Users/qmartina/Desktop/42start/src/ft_distruct.c">

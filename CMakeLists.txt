@@ -81,6 +81,13 @@ add_executable(21end
         src/builtins/ft_echo.c
         src/builtins/ft_echo2.c
         src/builtins/ft_type.c
+        src/exec/launch_process.c
+        src/exec/launch_job.c
+        src/exec/put_job_in_foreground.c
+        src/exec/put_job_in_background.c
+        src/exec/stopped_and_terminated_jobs.c
+        src/exec/continuing_stopped_jobs.c
+        src/exec/operating_job.c
         src/main.c src/builtins/allenv/main_env.c src/check_file.c src/lexer/history_search.c src/nucleus/dop_tab_funs.c src/builtins/allenv/global_env.c src/shell_lvl.c src/lexer/all_bax_and_hist_change.c src/builtins/alias/alias.c src/builtins/ft_cd_3.c src/g_builtins.c src/builtins/ft_type.c)
 
 

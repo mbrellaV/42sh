@@ -44,7 +44,7 @@ int		unset_var(char *str, char ***envl)
 	env = *envl;
 	str = ft_strjoinch(str, '=');
 	i = ft_findenv(str, env);
-	dprintf(2, "sas123: |%d|\n", i);
+//	dprintf(2, "sas123: |%d|\n", i);
 	if (i == -404)
 		return (-1);
 	else

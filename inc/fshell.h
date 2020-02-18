@@ -65,6 +65,7 @@ pid_t shell_pgid;
 struct termios shell_tmodes;
 int shell_terminal;
 int shell_is_interactive;
+t_job *g_f_job = NULL;
 ////////////////
 char				**g_env;
 char				*g_cp;
@@ -130,8 +131,21 @@ int					save_history(t_memory *q);
 void				do_count_shell_lvl(void);
 
 //////////////////
-
+int		launch_process (t_process *p, pid_t pgid,
+						   int foreground, t_memory *q);
 int		launch_job (t_job *j, int foreground, t_memory *q);
+void	put_job_in_foreground (t_job *j, int cont);
+void	put_job_in_background (t_job *j, int cont);
+int mark_process_status (pid_t pid, int status);
+void	update_status (void);
+void wait_for_job (t_job *j);
+void format_job_info (t_job *j, const char *status);
+void do_job_notification (void);
+void	continue_job (t_job *j, int foreground);
+void	mark_job_as_running (t_job *j);
+t_job * find_job (pid_t pgid);
+int	job_is_stopped (t_job *j);
+int	job_is_completed (t_job *j);
 
 /////////////////////////
 void	ft_infinit_pipe2(t_exectoken *head, t_memory *q);

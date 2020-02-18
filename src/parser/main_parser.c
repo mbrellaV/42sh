@@ -75,7 +75,7 @@ t_exectoken		*all_parse(char *cmd)
 	if (!(tmp = do_lexer(cmd)))
 		return (NULL);
 	tmp = do_zam_bax_and_hist_full(tmp);
-	dprintf(2, "\n|%p|\n", tmp);
+//	dprintf(2, "\n|%p|\n", tmp);
 	free(t);
 	//exit(0);
 	extmp = do_parser(tmp);

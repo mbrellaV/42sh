@@ -39,7 +39,14 @@ SRC_BASE = builtins/ft_cd.c\
  	errors/errror_handler.c\
  	exec/ft_create_file.c\
  	exec/ft_do_pipe.c\
+ 	exec/stopped_and_terminated_jobs.c\
+ 	exec/continuing_stopped_jobs.c\
+ 	exec/operating_job.c\
  	exec/ft_fun_fork.c\
+ 	exec/launch_job.c\
+ 	exec/put_job_in_foreground.c\
+ 	exec/put_job_in_background.c\
+ 	exec/launch_process.c\
 	lexer/lexer.c\
 	lexer/change_dol.c\
 	lexer/change_spaces.c\

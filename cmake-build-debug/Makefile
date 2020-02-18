@@ -447,6 +447,33 @@ src/errors/errror_handler.c.s:
 	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/errors/errror_handler.c.s
 .PHONY : src/errors/errror_handler.c.s
 
+src/exec/continuing_stopped_jobs.o: src/exec/continuing_stopped_jobs.c.o
+
+.PHONY : src/exec/continuing_stopped_jobs.o
+
+# target to build an object file
+src/exec/continuing_stopped_jobs.c.o:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/exec/continuing_stopped_jobs.c.o
+.PHONY : src/exec/continuing_stopped_jobs.c.o
+
+src/exec/continuing_stopped_jobs.i: src/exec/continuing_stopped_jobs.c.i
+
+.PHONY : src/exec/continuing_stopped_jobs.i
+
+# target to preprocess a source file
+src/exec/continuing_stopped_jobs.c.i:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/exec/continuing_stopped_jobs.c.i
+.PHONY : src/exec/continuing_stopped_jobs.c.i
+
+src/exec/continuing_stopped_jobs.s: src/exec/continuing_stopped_jobs.c.s
+
+.PHONY : src/exec/continuing_stopped_jobs.s
+
+# target to generate assembly for a file
+src/exec/continuing_stopped_jobs.c.s:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/exec/continuing_stopped_jobs.c.s
+.PHONY : src/exec/continuing_stopped_jobs.c.s
+
 src/exec/ft_create_file.o: src/exec/ft_create_file.c.o
 
 .PHONY : src/exec/ft_create_file.o
@@ -527,6 +554,168 @@ src/exec/ft_fun_fork.s: src/exec/ft_fun_fork.c.s
 src/exec/ft_fun_fork.c.s:
 	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/exec/ft_fun_fork.c.s
 .PHONY : src/exec/ft_fun_fork.c.s
+
+src/exec/launch_job.o: src/exec/launch_job.c.o
+
+.PHONY : src/exec/launch_job.o
+
+# target to build an object file
+src/exec/launch_job.c.o:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/exec/launch_job.c.o
+.PHONY : src/exec/launch_job.c.o
+
+src/exec/launch_job.i: src/exec/launch_job.c.i
+
+.PHONY : src/exec/launch_job.i
+
+# target to preprocess a source file
+src/exec/launch_job.c.i:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/exec/launch_job.c.i
+.PHONY : src/exec/launch_job.c.i
+
+src/exec/launch_job.s: src/exec/launch_job.c.s
+
+.PHONY : src/exec/launch_job.s
+
+# target to generate assembly for a file
+src/exec/launch_job.c.s:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/exec/launch_job.c.s
+.PHONY : src/exec/launch_job.c.s
+
+src/exec/launch_process.o: src/exec/launch_process.c.o
+
+.PHONY : src/exec/launch_process.o
+
+# target to build an object file
+src/exec/launch_process.c.o:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/exec/launch_process.c.o
+.PHONY : src/exec/launch_process.c.o
+
+src/exec/launch_process.i: src/exec/launch_process.c.i
+
+.PHONY : src/exec/launch_process.i
+
+# target to preprocess a source file
+src/exec/launch_process.c.i:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/exec/launch_process.c.i
+.PHONY : src/exec/launch_process.c.i
+
+src/exec/launch_process.s: src/exec/launch_process.c.s
+
+.PHONY : src/exec/launch_process.s
+
+# target to generate assembly for a file
+src/exec/launch_process.c.s:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/exec/launch_process.c.s
+.PHONY : src/exec/launch_process.c.s
+
+src/exec/operating_job.o: src/exec/operating_job.c.o
+
+.PHONY : src/exec/operating_job.o
+
+# target to build an object file
+src/exec/operating_job.c.o:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/exec/operating_job.c.o
+.PHONY : src/exec/operating_job.c.o
+
+src/exec/operating_job.i: src/exec/operating_job.c.i
+
+.PHONY : src/exec/operating_job.i
+
+# target to preprocess a source file
+src/exec/operating_job.c.i:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/exec/operating_job.c.i
+.PHONY : src/exec/operating_job.c.i
+
+src/exec/operating_job.s: src/exec/operating_job.c.s
+
+.PHONY : src/exec/operating_job.s
+
+# target to generate assembly for a file
+src/exec/operating_job.c.s:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/exec/operating_job.c.s
+.PHONY : src/exec/operating_job.c.s
+
+src/exec/put_job_in_background.o: src/exec/put_job_in_background.c.o
+
+.PHONY : src/exec/put_job_in_background.o
+
+# target to build an object file
+src/exec/put_job_in_background.c.o:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/exec/put_job_in_background.c.o
+.PHONY : src/exec/put_job_in_background.c.o
+
+src/exec/put_job_in_background.i: src/exec/put_job_in_background.c.i
+
+.PHONY : src/exec/put_job_in_background.i
+
+# target to preprocess a source file
+src/exec/put_job_in_background.c.i:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/exec/put_job_in_background.c.i
+.PHONY : src/exec/put_job_in_background.c.i
+
+src/exec/put_job_in_background.s: src/exec/put_job_in_background.c.s
+
+.PHONY : src/exec/put_job_in_background.s
+
+# target to generate assembly for a file
+src/exec/put_job_in_background.c.s:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/exec/put_job_in_background.c.s
+.PHONY : src/exec/put_job_in_background.c.s
+
+src/exec/put_job_in_foreground.o: src/exec/put_job_in_foreground.c.o
+
+.PHONY : src/exec/put_job_in_foreground.o
+
+# target to build an object file
+src/exec/put_job_in_foreground.c.o:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/exec/put_job_in_foreground.c.o
+.PHONY : src/exec/put_job_in_foreground.c.o
+
+src/exec/put_job_in_foreground.i: src/exec/put_job_in_foreground.c.i
+
+.PHONY : src/exec/put_job_in_foreground.i
+
+# target to preprocess a source file
+src/exec/put_job_in_foreground.c.i:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/exec/put_job_in_foreground.c.i
+.PHONY : src/exec/put_job_in_foreground.c.i
+
+src/exec/put_job_in_foreground.s: src/exec/put_job_in_foreground.c.s
+
+.PHONY : src/exec/put_job_in_foreground.s
+
+# target to generate assembly for a file
+src/exec/put_job_in_foreground.c.s:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/exec/put_job_in_foreground.c.s
+.PHONY : src/exec/put_job_in_foreground.c.s
+
+src/exec/stopped_and_terminated_jobs.o: src/exec/stopped_and_terminated_jobs.c.o
+
+.PHONY : src/exec/stopped_and_terminated_jobs.o
+
+# target to build an object file
+src/exec/stopped_and_terminated_jobs.c.o:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/exec/stopped_and_terminated_jobs.c.o
+.PHONY : src/exec/stopped_and_terminated_jobs.c.o
+
+src/exec/stopped_and_terminated_jobs.i: src/exec/stopped_and_terminated_jobs.c.i
+
+.PHONY : src/exec/stopped_and_terminated_jobs.i
+
+# target to preprocess a source file
+src/exec/stopped_and_terminated_jobs.c.i:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/exec/stopped_and_terminated_jobs.c.i
+.PHONY : src/exec/stopped_and_terminated_jobs.c.i
+
+src/exec/stopped_and_terminated_jobs.s: src/exec/stopped_and_terminated_jobs.c.s
+
+.PHONY : src/exec/stopped_and_terminated_jobs.s
+
+# target to generate assembly for a file
+src/exec/stopped_and_terminated_jobs.c.s:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/exec/stopped_and_terminated_jobs.c.s
+.PHONY : src/exec/stopped_and_terminated_jobs.c.s
 
 src/ft_distruct.o: src/ft_distruct.c.o
 
@@ -2301,6 +2490,9 @@ help:
 	@echo "... src/errors/errror_handler.o"
 	@echo "... src/errors/errror_handler.i"
 	@echo "... src/errors/errror_handler.s"
+	@echo "... src/exec/continuing_stopped_jobs.o"
+	@echo "... src/exec/continuing_stopped_jobs.i"
+	@echo "... src/exec/continuing_stopped_jobs.s"
 	@echo "... src/exec/ft_create_file.o"
 	@echo "... src/exec/ft_create_file.i"
 	@echo "... src/exec/ft_create_file.s"
@@ -2310,6 +2502,24 @@ help:
 	@echo "... src/exec/ft_fun_fork.o"
 	@echo "... src/exec/ft_fun_fork.i"
 	@echo "... src/exec/ft_fun_fork.s"
+	@echo "... src/exec/launch_job.o"
+	@echo "... src/exec/launch_job.i"
+	@echo "... src/exec/launch_job.s"
+	@echo "... src/exec/launch_process.o"
+	@echo "... src/exec/launch_process.i"
+	@echo "... src/exec/launch_process.s"
+	@echo "... src/exec/operating_job.o"
+	@echo "... src/exec/operating_job.i"
+	@echo "... src/exec/operating_job.s"
+	@echo "... src/exec/put_job_in_background.o"
+	@echo "... src/exec/put_job_in_background.i"
+	@echo "... src/exec/put_job_in_background.s"
+	@echo "... src/exec/put_job_in_foreground.o"
+	@echo "... src/exec/put_job_in_foreground.i"
+	@echo "... src/exec/put_job_in_foreground.s"
+	@echo "... src/exec/stopped_and_terminated_jobs.o"
+	@echo "... src/exec/stopped_and_terminated_jobs.i"
+	@echo "... src/exec/stopped_and_terminated_jobs.s"
 	@echo "... src/ft_distruct.o"
 	@echo "... src/ft_distruct.i"
 	@echo "... src/ft_distruct.s"
