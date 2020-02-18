@@ -226,6 +226,7 @@ int		main(int argc, char **argv, char **env)
 
 	g_his_d = 0;
 	ft_alias();
+	f_job = NULL;
 	argv[0] = NULL;
 	start_token = NULL;
 	ft_global_env(env, argc);

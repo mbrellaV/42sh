@@ -65,7 +65,6 @@ pid_t shell_pgid;
 struct termios shell_tmodes;
 int shell_terminal;
 int shell_is_interactive;
-t_job *g_f_job = NULL;
 ////////////////
 char				**g_env;
 char				*g_cp;
@@ -73,6 +72,7 @@ int					g_his_d;
 char				**g_alias;
 char				**g_all_var;
 extern const char	*g_builtins[12];
+t_job *f_job;
 
 
 void				ft_alias();

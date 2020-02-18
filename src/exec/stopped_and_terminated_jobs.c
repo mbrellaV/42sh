@@ -24,7 +24,7 @@ int mark_process_status (pid_t pid, int status)
 	if (pid > 0)
 	{
 		/* Update the record for the process.  */
-		for (j = g_f_job; j; j = j->next)
+		for (j = f_job; j; j = j->next)
 			for (p = j->first_process; p; p = p->next)
 				if (p->pid == pid)
 				{
@@ -100,7 +100,7 @@ void do_job_notification (void)
 	update_status ();
 
 	jlast = NULL;
-	for (j = g_f_job; j; j = jnext)
+	for (j = f_job; j; j = jnext)
 	{
 		jnext = j->next;
 
@@ -111,7 +111,7 @@ void do_job_notification (void)
 			if (jlast)
 				jlast->next = jnext;
 			else
-				g_f_job = jnext;
+				f_job = jnext;
 //			free_job(j);
 		}
 
