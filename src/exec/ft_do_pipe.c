@@ -179,8 +179,8 @@ int		ft_fd_flag(char **av, int *fd_in)
 //		else if (pid == 0)
 //		{
 //			dprintf(2, "getpgrp1: %d\n", getpgrp());
-//			//if (ft_whatis2(head, q) == 0)
-//			//	exit(0);
+//			if (ft_whatis2(head, q) == 0)
+//				exit(0);
 //			if (rt != NULL)
 //				ft_fun_fork(rt, head->file_args, pid, 0);
 //			exit(127);

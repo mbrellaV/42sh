@@ -174,24 +174,25 @@ int		ft_main_what(t_exectoken *tmp, t_memory *q)
 	return (1);
 }
 
-int		launch_process (t_process *p, pid_t pgid,
-				int infile, int outfile, int errfile,
-				int foreground)
+int		launch_process (t_process *p, pid_t pgid, int infile, int outfile, int errfile,
+				int foreground, t_memory *q)
 {
 	pid_t		pid;
 	char		*rt;
 
 	rt = NULL;
-	infile = 0;
-	outfile = 0;
-	errfile = 0;
+//	infile = 0;
+//	outfile = 0;
+//	errfile = 0;
 	do_zam_str_with_tilda(p->file_args);
-	//dprintf(2, "\nkek: |%s|", p->file_args[0]);
+	dprintf(2, "\nkek: |%s|\n", p->file_args[0]);
+	dprintf(2, "\nkek: |%d|\n", outfile);
 	if (shell_is_interactive)
 	{
-
+		if (ft_whatis2(p, q) == 0)
+			exit(0);
 		if (!(rt = hash_get(p->file_args[0], 0)))
-			return (0);
+			exit(1);
 		//dprintf(2, "\n\n\n\\n\n\n\n\n\\n\n\n\n\n\nn\n\nsasasasas\n\n\n\n\n\n");
 		/* Put the process into the process group and give the process group
 		   the terminal, if appropriate.
@@ -199,7 +200,7 @@ int		launch_process (t_process *p, pid_t pgid,
 		   child processes because of potential race conditions.  */
 		pid = getpid();
 		if (pgid == 0) pgid = pid;
-		setpgid (pid, pgid);
+			setpgid (pid, pgid);
 		if (foreground)
 			tcsetpgrp (shell_terminal, pgid);
 
@@ -211,44 +212,78 @@ int		launch_process (t_process *p, pid_t pgid,
 		signal (SIGTTOU, SIG_DFL);
 		signal (SIGCHLD, SIG_DFL);
 	}
+	/* Set the standard input/output channels of the new process.  */
+	if (infile != STDIN_FILENO)
+	{
+		dup2 (infile, STDIN_FILENO);
+		close (infile);
+	}
+	if (outfile != STDOUT_FILENO)
+	{
+		dup2 (outfile, STDOUT_FILENO);
+		close (outfile);
+	}
+	if (errfile != STDERR_FILENO)
+	{
+		dup2 (errfile, STDERR_FILENO);
+		close (errfile);
+	}
 	/* Exec the new process.  Make sure we exit.  */
 	execve(rt, p->file_args, g_env);
+	perror ("execve");
 	exit(1);
 }
 
 int		launch_job (t_job *j, int foreground, t_memory *q)
 {
-	t_process *p;
-	pid_t pid;
-	int infile, outfile;
-	int dop;
-	int d;
+	t_process	*p;
+	pid_t		pid;
+	int			dop;
+	int			status;
+	int mypipe[2], infile, outfile;
 
-	d = 0;
+	j->stdout = 1;
 	infile = j->stdin;
+	//ft_file_create();
 	//dprintf(2, "\ncheburek:");
-	for (p = j->first_process; p; p = p->next)
+	p = j->first_process;
+	while(p)
 	{
-		d++;
 		/* Set up pipes, if necessary.  */
+		if (p->next)
+		{
+			if (pipe (mypipe) < 0)
+			{
+				perror ("pipe");
+				exit (1);
+			}
+			outfile = mypipe[1];
+		}
+		else
+			outfile = j->stdout;
 		//dprintf(2, "\nlol: |%s|, |%d|, |%d|, |%p|", p->file_args[0], getpid(), d, p);
-		outfile = j->stdout;
 		dop = ft_whatis2(p, q);
 		if (dop == 1)
+		{
+			p = p->next;
 			continue ;
+		}
 		if (dop == -2)
+		{
+			p = p->next;
 			continue ;
+		}
 		if (dop == -1)
 			return (-1);
 		/* Fork the child processes.  */
-		pid = fork();
-		if (pid == 0)
-			/* This is the child process.  */
-			launch_process (p, j->pgid, infile,
-							outfile, j->stderr, foreground);
-		else if (pid < 0)
-		{
+		if ((pid = fork()) == -1)
 			exit(1);
+		else if (pid < 0)
+			exit(1);
+		else if (pid == 0)
+			/* This is the child process.  */
+		{
+			launch_process (p, j->pgid, infile, outfile, j->stderr, foreground, q);
 		}
 		else
 		{
@@ -260,8 +295,21 @@ int		launch_job (t_job *j, int foreground, t_memory *q)
 //					j->pgid = pid;
 //				setpgid (pid, j->pgid);
 //			}
-			wait(&pid);
+			waitpid(pid, &status, 0);
+//			printf("%sstatus: %d%s\n", RED, status, RESET);
+			if (WIFEXITED(status))
+			{
+				g_exit_code = WEXITSTATUS(status);
+				dprintf(2, "%sExit status of the child was %d%s\n", YEL, g_exit_code, RESET);
+			}
+			p = p->next;
 		}
+		/* Clean up after pipes.  */
+		if (infile != j->stdin)
+			close (infile);
+		if (outfile != j->stdout)
+			close (outfile);
+		infile = mypipe[0];
 	}
 	return (0);
 }
