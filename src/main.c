@@ -181,9 +181,9 @@ int		launch_process (t_process *p, pid_t pgid, int infile, int outfile, int errf
 	char		*rt;
 
 	rt = NULL;
-//	infile = 0;
-//	outfile = 0;
-//	errfile = 0;
+	infile = 0;
+	outfile = 0;
+	errfile = 0;
 	do_zam_str_with_tilda(p->file_args);
 	dprintf(2, "\nkek: |%s|\n", p->file_args[0]);
 	dprintf(2, "\nkek: |%d|\n", outfile);
@@ -213,21 +213,21 @@ int		launch_process (t_process *p, pid_t pgid, int infile, int outfile, int errf
 		signal (SIGCHLD, SIG_DFL);
 	}
 	/* Set the standard input/output channels of the new process.  */
-	if (infile != STDIN_FILENO)
-	{
-		dup2 (infile, STDIN_FILENO);
-		close (infile);
-	}
-	if (outfile != STDOUT_FILENO)
-	{
-		dup2 (outfile, STDOUT_FILENO);
-		close (outfile);
-	}
-	if (errfile != STDERR_FILENO)
-	{
-		dup2 (errfile, STDERR_FILENO);
-		close (errfile);
-	}
+//	if (infile != STDIN_FILENO)
+//	{
+//		dup2 (infile, STDIN_FILENO);
+//		close (infile);
+//	}
+//	if (outfile != STDOUT_FILENO)
+//	{
+//		dup2 (outfile, STDOUT_FILENO);
+//		close (outfile);
+//	}
+//	if (errfile != STDERR_FILENO)
+//	{
+//		dup2 (errfile, STDERR_FILENO);
+//		close (errfile);
+//	}
 	/* Exec the new process.  Make sure we exit.  */
 	execve(rt, p->file_args, g_env);
 	perror ("execve");
@@ -242,24 +242,26 @@ int		launch_job (t_job *j, int foreground, t_memory *q)
 	int			status;
 	int mypipe[2], infile, outfile;
 
-	j->stdout = 1;
+//	j->stdout = 1;
+//	infile = j->stdin;
 	infile = j->stdin;
 	//ft_file_create();
 	//dprintf(2, "\ncheburek:");
 	p = j->first_process;
+	pipe(mypipe);
 	while(p)
 	{
 		/* Set up pipes, if necessary.  */
-		if (p->next)
-		{
-			if (pipe (mypipe) < 0)
-			{
-				perror ("pipe");
-				exit (1);
-			}
-			outfile = mypipe[1];
-		}
-		else
+//		if (p->next)
+//		{
+//			if (pipe(mypipe) < 0)
+//			{
+//				perror ("pipe");
+//				exit (1);
+//			}
+//			outfile = mypipe[1];
+//		}
+//		else
 			outfile = j->stdout;
 		//dprintf(2, "\nlol: |%s|, |%d|, |%d|, |%p|", p->file_args[0], getpid(), d, p);
 		dop = ft_whatis2(p, q);
@@ -305,11 +307,11 @@ int		launch_job (t_job *j, int foreground, t_memory *q)
 			p = p->next;
 		}
 		/* Clean up after pipes.  */
-		if (infile != j->stdin)
-			close (infile);
-		if (outfile != j->stdout)
-			close (outfile);
-		infile = mypipe[0];
+//		if (infile != j->stdin)
+//			close (infile);
+//		if (outfile != j->stdout)
+//			close (outfile);
+//		infile = mypipe[0];
 	}
 	return (0);
 }
