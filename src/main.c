@@ -58,7 +58,7 @@ int	ft_whatis2(t_process *tmp, t_memory *q)
 	else if (!ft_strcmp(tmp->file_args[0], "type"))
 		ft_type(tmp->file_args);
 	else if (ft_strcmp(tmp->file_args[0], "fg") == 0)
-		ft_fork_signal(SIGCONT);
+		continue_job(get_last_job(), get_last_job()->first_process->foreground);
     else if (ft_strcmp(tmp->file_args[0], "jobs") == 0)
         do_job_notification();
 	else
@@ -157,7 +157,8 @@ t_job	*turn_exectokens_to_jobs(t_exectoken *exec)
 {
 	t_job *tmp;
 	//t_exectoken *tmp_exec;
-	t_job *start_job;
+	t_job	*start_job;
+	t_job	*dop;
 
 	if (exec == NULL)
 		return (NULL);
@@ -172,6 +173,15 @@ t_job	*turn_exectokens_to_jobs(t_exectoken *exec)
 		tmp = tmp->next;
 		exec = exec->right;
 	}
+	if (f_job != NULL)
+	{
+		dop = f_job;
+		while (dop->next)
+			dop = dop->next;
+		dop->next = start_job;
+	}
+	else
+		f_job = start_job;
 	return (start_job);
 }
 
@@ -183,12 +193,13 @@ int		ft_main_what(t_exectoken *tmp, t_memory *q)
 	jobs = turn_exectokens_to_jobs(tmp);
 	while (jobs)
 	{
-		dprintf(2, "\nrofl: |%d|", jobs->first_process->foreground);
+		dprintf(2, "\nrofl: |%d|\n", jobs->first_process->foreground);
 		sas = launch_job(jobs, jobs->first_process->foreground, q);
 		if (sas == -1)
 			exit(0);
 		jobs = jobs->next;
 	}
+	do_job_notification();
 	return (1);
 }
 

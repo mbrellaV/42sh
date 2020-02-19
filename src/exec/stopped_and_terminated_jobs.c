@@ -69,29 +69,56 @@ void	update_status (void)
 /* Check for processes that have status information available,
    blocking until all processes in the given job have reported.  */
 
-void wait_for_job (t_job *j)
+void	wait_for_job (t_job *j)
 {
-	int status;
+	int status = 0;
 	pid_t pid;
+	pid = -1;
 
 	do
-		pid = waitpid (WAIT_ANY, &status, WUNTRACED);
+	{
+		dprintf(2, "\nsas123: |%d|\n", status);
+
+		pid = waitpid(j->pgid, &status, 0);
+
+		int err = errno;
+		if (err == ECHILD)
+			dprintf(2, "\nerr1\n");
+		if (err == EFAULT)
+			dprintf(2, "\nerr2\n");
+		if (err == EINVAL)
+			dprintf(2, "\nerr3\n");
+		if (err == EINTR)
+			dprintf(2, "\nerr4\n");
+		dprintf(2, "\nsas1234: |%d|, |%d|\n", status, pid);
+
+	}
 	while (!mark_process_status (pid, status)
-		   && !job_is_stopped(j)
-		   && !job_is_completed(j));
+		   && !job_is_stopped (j)
+		   && !job_is_completed (j));
+
+//	while (1)
+//	{
+//		dprintf(2, "\nsas123: |%d|\n", status);
+//		pid = waitpid(WAIT_ANY, &status, WUNTRACED);
+//		dprintf(2, "\nsas1234: |%d|, |%d|\n", status, pid);
+//		fprintf(stderr, "\nda|%d|\n", WIFEXITED(status));
+//		if (mark_process_status(pid, status) < 1 && job_is_stopped(j) < 1 && job_is_completed(j) < 1)
+//			break ;
+//	}
 }
 
 /* Format information about job status for the user to look at.  */
 
 void format_job_info (t_job *j, const char *status)
 {
-	fprintf (stderr, "%ld (%s): %s\n", (long)j->pgid, status, j->command);
+	fprintf (stderr, "||%ld (%s): %s\n", (long)j->pgid, status, j->command);
 }
 
 /* Notify the user about stopped or terminated jobs.
    Delete terminated jobs from the active job list.  */
 
-void do_job_notification (void)
+void    do_job_notification (void)
 {
 	t_job *j, *jlast, *jnext;
 //	t_process *p;
@@ -103,7 +130,7 @@ void do_job_notification (void)
 	for (j = f_job; j; j = jnext)
 	{
 		jnext = j->next;
-
+        dprintf(2, "sas\n");
 		/* If all processes have completed, tell the user the job has
 		   completed and delete it from the list of active jobs.  */
 		if (job_is_completed (j)) {
@@ -112,7 +139,7 @@ void do_job_notification (void)
 				jlast->next = jnext;
 			else
 				f_job = jnext;
-//			free_job(j);
+			//free_job(j);
 		}
 
 			/* Notify the user about stopped jobs,
@@ -126,5 +153,24 @@ void do_job_notification (void)
 			/* Don’t say anything about jobs that are still running.  */
 		else
 			jlast = j;
+		dprintf(2, "sas1\n");
 	}
+}
+
+/* Find the active job with the indicated pgid.  */
+
+
+t_job		*get_last_job()
+{
+	t_job *j;
+
+	j = f_job;
+	while (j->next)
+	{
+		j = j->next;
+	}
+	dprintf(2, "2roflan");
+	if (j == NULL)
+		dprintf(2, "2roflan");
+	return (j);
 }

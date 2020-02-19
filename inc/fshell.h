@@ -87,6 +87,7 @@ int					set_new_var(char *str1, char *str2, char ***envl);
 int					ft_cd(char **str);
 void	            do_all_var(char **env);
 int					do_cd(t_builtins *cd, char *str);
+t_job		*get_last_job();
 char				*get_pwd(t_builtins *cd);
 char				*get_oldpwd(t_builtins *cd);
 int					ft_cd_error(char *tmp, int err, int to_free);

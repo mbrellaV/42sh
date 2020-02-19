@@ -20,11 +20,12 @@ int		launch_process (t_process *p, pid_t pgid,
 	char		*rt;
 
 	rt = NULL;
+	q = NULL;
 	do_zam_str_with_tilda(p->file_args);
 	if (shell_is_interactive)
 	{
-		if (ft_whatis2(p, q) == 1)
-			exit(0);
+		//if (ft_whatis2(p, q) == 1)
+		//	exit(0);
 		if (!(rt = hash_get(p->file_args[0], 0)))
 			exit(1);
 		/* Put the process into the process group and give the process group
@@ -63,6 +64,5 @@ int		launch_process (t_process *p, pid_t pgid,
 	}
 	/* Exec the new process.  Make sure we exit.  */
 	execve(rt, p->file_args, g_env);
-	perror ("execve");
 	exit(1);
 }
