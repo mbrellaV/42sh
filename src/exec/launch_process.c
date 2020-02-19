@@ -13,6 +13,7 @@
 #include "../../inc/fshell.h"
 
 int		launch_process (t_process *p, pid_t pgid,
+						   int infile, int outfile, int errfile,
 						   int foreground, t_memory *q)
 {
 	pid_t		pid;
@@ -43,6 +44,22 @@ int		launch_process (t_process *p, pid_t pgid,
 		signal (SIGTTIN, SIG_DFL);
 		signal (SIGTTOU, SIG_DFL);
 		signal (SIGCHLD, SIG_DFL);
+
+		if (infile != STDIN_FILENO)
+		{
+			dup2 (infile, STDIN_FILENO);
+			close (infile);
+		}
+		if (outfile != STDOUT_FILENO)
+		{
+			dup2 (outfile, STDOUT_FILENO);
+			close (outfile);
+		}
+		if (errfile != STDERR_FILENO)
+		{
+			dup2 (errfile, STDERR_FILENO);
+			close (errfile);
+		}
 	}
 	/* Exec the new process.  Make sure we exit.  */
 	execve(rt, p->file_args, g_env);

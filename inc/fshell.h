@@ -132,11 +132,13 @@ void				do_count_shell_lvl(void);
 
 //////////////////
 int		launch_process (t_process *p, pid_t pgid,
+						   int infile, int outfile, int errfile,
 						   int foreground, t_memory *q);
 int		launch_job (t_job *j, int foreground, t_memory *q);
 void	put_job_in_foreground (t_job *j, int cont);
 void	put_job_in_background (t_job *j, int cont);
 int mark_process_status (pid_t pid, int status);
+int		ft_fd_flag(char **av, int *fd_in);
 void	update_status (void);
 void wait_for_job (t_job *j);
 void format_job_info (t_job *j, const char *status);

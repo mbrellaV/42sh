@@ -59,6 +59,8 @@ int	ft_whatis2(t_process *tmp, t_memory *q)
 		ft_type(tmp->file_args);
 	else if (ft_strcmp(tmp->file_args[0], "fg") == 0)
 		ft_fork_signal(SIGCONT);
+    else if (ft_strcmp(tmp->file_args[0], "jobs") == 0)
+        do_job_notification();
 	else
 		return (0);
 	return (1);
@@ -101,9 +103,18 @@ t_process	*create_process_list(t_exectoken *tmp)
 	if (check_file_args(fir) == 0)
 		return (NULL);
 	do_zam_str_with_tilda(tmp->file_args);
+	fir->foreground = 1;
+	ft_show_env(tmp->file_args);
+	if (tmp->file_opt)
+		ft_show_env(tmp->file_opt);
+	if (tmp->file_opt && ft_strcmp(tmp->file_opt[ft_env_len(tmp->file_opt) - 1], "&") == 0)
+		fir->foreground = 0;
 	fir->pid = -1;
 	fir->completed = 0;
 	fir->next = NULL;
+	fir->completed = 0;
+	fir->stopped = 0;
+    fir->file_opt = tmp->file_opt;
 	proc = fir;
 	tmp = tmp->left;
 	while (tmp)
@@ -112,7 +123,12 @@ t_process	*create_process_list(t_exectoken *tmp)
 			ft_error_q(5);
 		proc->next->file_args = tmp->file_args;
 		proc->next->pid = -1;
+        proc->next->file_opt = tmp->file_opt;
+		if (tmp->file_opt && ft_strcmp(tmp->file_opt[ft_env_len(tmp->file_opt) - 1], "&") == 0)
+			fir->foreground = 0;
 		proc->next->completed = 0;
+		proc->next->completed = 0;
+		proc->next->stopped = 0;
 		proc->next->next = NULL;
 		proc = proc->next;
 		tmp = tmp->left;
@@ -131,6 +147,9 @@ t_job	*create_job(t_exectoken *head)
 	new_job->first_process = create_process_list(head);
 	new_job->pgid = -1;
 	new_job->command = NULL;
+	new_job->stdinc = 0;
+	new_job->stdoutc = 1;
+	new_job->stderrc = 2;
 	return (new_job);
 }
 
@@ -164,7 +183,8 @@ int		ft_main_what(t_exectoken *tmp, t_memory *q)
 	jobs = turn_exectokens_to_jobs(tmp);
 	while (jobs)
 	{
-		sas = launch_job(jobs, 1, q);
+		dprintf(2, "\nrofl: |%d|", jobs->first_process->foreground);
+		sas = launch_job(jobs, jobs->first_process->foreground, q);
 		if (sas == -1)
 			exit(0);
 		jobs = jobs->next;

@@ -15,8 +15,8 @@
 int				get_op_type(char *operator)
 {
 	int			i;
-	static char	operators[9][5] = {";;", ";", "|",\
-		"<<", "<", ">>", ">", ">&", "<&"};
+	static char	operators[10][5] = {";;", ";", "|",\
+		"<<", "<", ">>", ">", ">&", "<&", "&"};
 	i = 0;
 	if (ft_strstr(operator, operators[i]) != NULL)
 		return (-1);

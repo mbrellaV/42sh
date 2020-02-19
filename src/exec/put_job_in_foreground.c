@@ -36,6 +36,6 @@ void	put_job_in_foreground (t_job *j, int cont)
 	tcsetpgrp (shell_terminal, shell_pgid);
 
 	/* Restore the shell’s terminal modes.  */
-	tcgetattr (shell_terminal, &j->tmodes);
-	tcsetattr (shell_terminal, TCSADRAIN, &shell_tmodes);
+	//tcgetattr (shell_terminal, &j->tmodes);
+	//tcsetattr (shell_terminal, TCSADRAIN, &shell_tmodes);
 }
