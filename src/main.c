@@ -23,6 +23,41 @@ int			check_file_args(t_process *tmp)
 	return (1);
 }
 
+int		ft_whatis3(t_process *tmp)
+{
+	if (tmp->file_args == NULL)
+		return (-2);
+	if (tmp->file_args[0] == NULL)
+		return (-2);
+	if (ft_strcmp(tmp->file_args[0], "exit") == 0)
+		return (-1);
+	if (ft_strcmp(tmp->file_args[0], "alias") == 0 || ft_strcmp(tmp->file_args[0], "unalias") == 0)
+		ft_do_change_alias(tmp->file_args);
+	else if (ft_strcmp(tmp->file_args[0], "cd") == 0)
+		ft_cd(tmp->file_args);
+	else if (ft_strcmp(tmp->file_args[0], "export") == 0)
+		ft_do_export(tmp->file_args);
+	else if (ft_strcmp(tmp->file_args[0], "unset") == 0 &&
+			 tmp->file_args[1] != NULL)
+	{
+		unset_var(tmp->file_args[1], &g_env);
+		unset_var(tmp->file_args[1], &g_all_var);
+	}
+	else if (ft_strcmp(tmp->file_args[0], "set") == 0)
+		ft_show_env(g_all_var);
+	else if (ft_strcmp(tmp->file_args[0], "fg") == 0)
+	{
+		ft_putstr_fd("\n", 2);
+		dprintf(2, "");
+		continue_job(get_last_job(), get_last_job()->first_process->foreground);
+	}
+	else if (ft_strcmp(tmp->file_args[0], "jobs") == 0)
+		do_job_notification();
+	else
+		return (0);
+	return (1);
+}
+
 int	ft_whatis2(t_process *tmp, t_memory *q)
 {
 	if (tmp->file_args == NULL)
@@ -33,34 +68,38 @@ int	ft_whatis2(t_process *tmp, t_memory *q)
 		return (-1);
 	if (ft_strcmp(tmp->file_args[0], "alias") == 0 || ft_strcmp(tmp->file_args[0], "unalias") == 0)
 		ft_do_change_alias(tmp->file_args);
-	else if (ft_strcmp(tmp->file_args[0], "echo") == 0)
-		ft_echo(tmp->file_args);
 	else if (ft_strcmp(tmp->file_args[0], "cd") == 0)
 		ft_cd(tmp->file_args);
 	else if (ft_strcmp(tmp->file_args[0], "export") == 0)
 		ft_do_export(tmp->file_args);
 	else if (ft_strcmp(tmp->file_args[0], "unset") == 0 &&
 			 tmp->file_args[1] != NULL)
-    {
-        unset_var(tmp->file_args[1], &g_env);
-        unset_var(tmp->file_args[1], &g_all_var);
-    }
+	{
+		unset_var(tmp->file_args[1], &g_env);
+		unset_var(tmp->file_args[1], &g_all_var);
+	}
+	else if (ft_strcmp(tmp->file_args[0], "set") == 0)
+		ft_show_env(g_all_var);
+	else if (ft_strcmp(tmp->file_args[0], "fg") == 0)
+	{
+		ft_putstr_fd("\n", 2);
+		dprintf(2, "");
+		continue_job(get_last_job(), get_last_job()->first_process->foreground);
+	}
+	else if (ft_strcmp(tmp->file_args[0], "jobs") == 0)
+		do_job_notification();
+	else if (ft_strcmp(tmp->file_args[0], "echo") == 0)
+		ft_echo(tmp->file_args);
 	else if (ft_strcmp(tmp->file_args[0], "history") == 0)
 		show_history(q);
 	else if (ft_strcmp(tmp->file_args[0], "env") == 0)
 		ft_show_env(g_env);
-	else if (ft_strcmp(tmp->file_args[0], "set") == 0)
-		ft_show_env(g_all_var);
 	else if (ft_strcmp(tmp->file_args[0], "clear") == 0)
 		ft_putstr_fd("\033[2J\033[H", 2);
 	else if (ft_strcmp(tmp->file_args[0], "hash") == 0)
 		print_hash();
 	else if (!ft_strcmp(tmp->file_args[0], "type"))
 		ft_type(tmp->file_args);
-	else if (ft_strcmp(tmp->file_args[0], "fg") == 0)
-		continue_job(get_last_job(), get_last_job()->first_process->foreground);
-    else if (ft_strcmp(tmp->file_args[0], "jobs") == 0)
-        do_job_notification();
 	else
 		return (0);
 	return (1);
@@ -145,7 +184,7 @@ t_job	*create_job(t_exectoken *head)
 	if (!(new_job = ft_memalloc(sizeof(t_job))))
 		ft_error_q(5);
 	new_job->first_process = create_process_list(head);
-	new_job->pgid = -1;
+	new_job->pgid = shell_pgid;
 	new_job->command = NULL;
 	new_job->stdinc = 0;
 	new_job->stdoutc = 1;
@@ -199,7 +238,7 @@ int		ft_main_what(t_exectoken *tmp, t_memory *q)
 			exit(0);
 		jobs = jobs->next;
 	}
-	do_job_notification();
+	//do_job_notification();
 	return (1);
 }
 

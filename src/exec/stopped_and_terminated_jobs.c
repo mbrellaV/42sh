@@ -30,7 +30,10 @@ int mark_process_status (pid_t pid, int status)
 				{
 					p->status = status;
 					if (WIFSTOPPED (status))
+					{
 						p->stopped = 1;
+						//dprintf(2, "\ndapoluch\n");
+					}
 					else
 					{
 						p->completed = 1;
@@ -72,30 +75,57 @@ void	update_status (void)
 void	wait_for_job (t_job *j)
 {
 	int status = 0;
+	t_process *p;
 	pid_t pid;
-	pid = -1;
 
-	do
+	pid = 0;
+	p = j->first_process;
+	while (p)
 	{
-		dprintf(2, "\nsas123: |%d|\n", status);
-
-		pid = waitpid(j->pgid, &status, 0);
-
-		int err = errno;
-		if (err == ECHILD)
-			dprintf(2, "\nerr1\n");
-		if (err == EFAULT)
-			dprintf(2, "\nerr2\n");
-		if (err == EINVAL)
-			dprintf(2, "\nerr3\n");
-		if (err == EINTR)
-			dprintf(2, "\nerr4\n");
-		dprintf(2, "\nsas1234: |%d|, |%d|\n", status, pid);
-
+		//dprintf(2, "\n\n\ndas123: |%d|, |%s|\n\n\n", p->pid, p->file_args[0]);
+		p = p->next;
 	}
-	while (!mark_process_status (pid, status)
-		   && !job_is_stopped (j)
-		   && !job_is_completed (j));
+	//sleep(3);
+	p = j->first_process;
+	while (p)
+	{
+		//dprintf(2, "\n\n\nrodlan\n\n\n");
+		if (job_is_stopped(j))
+			break ;
+		if (p->stopped == 0 && p->completed == 0)
+		{
+			pid = 0;
+			status = 0;
+			pid = waitpid(-1, &status, WCONTINUED | WUNTRACED);
+			mark_process_status (p->pid, status);
+			//dprintf(2, "\n\n\nsas123: |%d|, |%d|, |%d|\n\n\n", pid, status, p->pid);
+			//break ;
+		}
+		p = p->next;
+		if (p == NULL)
+			p = j->first_process;
+	}
+//	do
+//	{
+//		dprintf(2, "\nsas123: |%d|\n", status);
+//
+//		//pid = waitpid(j->pgid, &status, 0);
+//		//wait(&pid);
+//		int err = errno;
+//		if (err == ECHILD)
+//			dprintf(2, "\nerr1\n");
+//		if (err == EFAULT)
+//			dprintf(2, "\nerr2\n");
+//		if (err == EINVAL)
+//			dprintf(2, "\nerr3\n");
+//		if (err == EINTR)
+//			dprintf(2, "\nerr4\n");
+//		dprintf(2, "\nsas1234: |%d|, |%d|\n", status, pid);
+//
+//	}
+//	while (!mark_process_status (pid, status)
+//		   && !job_is_stopped (j)
+//		   && !job_is_completed (j));
 
 //	while (1)
 //	{
@@ -112,7 +142,7 @@ void	wait_for_job (t_job *j)
 
 void format_job_info (t_job *j, const char *status)
 {
-	fprintf (stderr, "||%ld (%s): %s\n", (long)j->pgid, status, j->command);
+	fprintf (stderr, "%ld (%s): %s\n", (long)j->pgid, status, j->command);
 }
 
 /* Notify the user about stopped or terminated jobs.
@@ -131,6 +161,7 @@ void    do_job_notification (void)
 	{
 		jnext = j->next;
         dprintf(2, "sas\n");
+
 		/* If all processes have completed, tell the user the job has
 		   completed and delete it from the list of active jobs.  */
 		if (job_is_completed (j)) {
@@ -165,11 +196,10 @@ t_job		*get_last_job()
 	t_job *j;
 
 	j = f_job;
-	while (j->next)
+	while (j && j->next && j->next->next)
 	{
 		j = j->next;
 	}
-	dprintf(2, "2roflan");
 	if (j == NULL)
 		dprintf(2, "2roflan");
 	return (j);

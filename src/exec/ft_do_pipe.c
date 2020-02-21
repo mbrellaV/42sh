@@ -81,10 +81,11 @@ int		ft_heredoc(char *tmp)
 	return (f[0]);
 }
 
-int		ft_fd_flag(char **av, int *fd_in)
+int		ft_fd_flag(char **av, int *fd_in, int *infile, int *outfile)
 {
 	t_pipe	p;
 
+	dprintf(2, "\n\nda1|%d|, |%d|", *infile, *outfile);
 	p = (t_pipe){0, -1, 1, 0, 0, 0};
 	while (av[++(p.i)])
 	{
@@ -96,17 +97,16 @@ int		ft_fd_flag(char **av, int *fd_in)
 		{
 			ft_open_flag(av[p.i], &(p.flag), &fd_in, &p.fd);
 			if (p.flag == 1 || p.flag == 2)
-				dup2(p.fd, p.st);
-			else if (p.flag == 6)
 			{
-				dup2(p.fd, 1);
-				dup2(p.fd, 2);
+				*infile = p.st;
+				*outfile = p.fd;
 			}
 			else if (p.flag == 4)
 				*fd_in = ft_heredoc(av[p.i]);
 			p = (t_pipe){0, p.i, 1, p.fd, 0, p.j};
 		}
 	}
+	dprintf(2, "\n\nda2|%d|, |%d|", *infile, *outfile);
 	return (p.fd);
 }
 //
