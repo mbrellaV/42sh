@@ -64,7 +64,7 @@ int				ft_do_change_alias(char **mas)
 	else if (mas[1] && mas[2] && mas[3] == NULL)
 	{
 		set_new_var(mas[1], mas[2], &g_alias);
-		ft_show_env(g_alias);
+		//ft_show_env(g_alias);
 	}
 	else
 		ft_error(15, "parse error");

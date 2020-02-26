@@ -57,6 +57,8 @@
 # define IS_L	16
 
 # define SHELL_NAME "42sh"
+# define BIL_NUM 15
+
 
 ///////////////////////////
 int 			g_exit_code;
@@ -71,8 +73,12 @@ char				*g_cp;
 int					g_his_d;
 char				**g_alias;
 char				**g_all_var;
-extern const char	*g_builtins[12];
+t_memory			*memory_head;
+extern const char	*g_builtins[BIL_NUM];
 t_job *f_job;
+
+
+int		is_builtin(char *str);
 
 
 void				ft_alias();
@@ -87,7 +93,7 @@ int					set_new_var(char *str1, char *str2, char ***envl);
 int					ft_cd(char **str);
 void	            do_all_var(char **env);
 int					do_cd(t_builtins *cd, char *str);
-t_job		*get_last_job();
+t_job				*get_last_job();
 char				*get_pwd(t_builtins *cd);
 char				*get_oldpwd(t_builtins *cd);
 int					ft_cd_error(char *tmp, int err, int to_free);
@@ -103,7 +109,7 @@ int					ft_findenv(char *s, char **env);
 void				ft_do_export(char **mas);
 int					ft_signal(int signo, t_readline *p);
 void				ft_fork_signal(int signo);
-int					ft_main_what(t_exectoken *tmp, t_memory *q);
+int		ft_main_what(t_exectoken *tmp);
 void				ft_whatis(t_exectoken *tmp, t_memory *q);
 void				ft_infinit_pipe(t_exectoken *head);
 int					ft_distruct_tree(t_exectoken *q);
@@ -132,10 +138,14 @@ int					save_history(t_memory *q);
 void				do_count_shell_lvl(void);
 
 //////////////////
+t_job		*get_job_by_number(int n);
+int		do_fg(char **mas);
+int		do_bg(char **mas);
 int		launch_process (t_process *p, pid_t pgid,
 						   int infile, int outfile, int errfile,
-						   int foreground, t_memory *q, int dop);
-int		launch_job (t_job *j, int foreground, t_memory *q);
+						   int foreground, char *rt);
+int		launch_job(t_job *j, int foreground);
+int		do_job_del();
 
 int		ft_whatis3(t_process *tmp);
 
@@ -148,7 +158,7 @@ int mark_process_status (pid_t pid, int status);
 //int		ft_fd_flag(char **av, int *fd_in);
 void	update_status (void);
 void wait_for_job (t_job *j);
-void format_job_info (t_job *j, const char *status);
+void format_job_info (t_job *j, const char *status, int num);
 void do_job_notification (void);
 void	continue_job (t_job *j, int foreground);
 void	mark_job_as_running (t_job *j);
@@ -158,7 +168,7 @@ int	job_is_completed (t_job *j);
 
 /////////////////////////
 void	ft_infinit_pipe2(t_exectoken *head, t_memory *q);
-int		ft_whatis2(t_process *tmp, t_memory *q);
+int		ft_whatis2(t_process *tmp);
 void	init_shell(void);
 
 #endif

@@ -14,14 +14,11 @@
 
 int		launch_process (t_process *p, pid_t pgid,
 						   int infile, int outfile, int errfile,
-						   int foreground, t_memory *q, int dop)
+						   int foreground, char *rt)
 {
 	pid_t		pid;
-	char		*rt;
 	int dop1;
 
-	rt = NULL;
-	q = NULL;
 	do_zam_str_with_tilda(p->file_args);
 	if (shell_is_interactive)
 	{
@@ -31,8 +28,6 @@ int		launch_process (t_process *p, pid_t pgid,
 		{
 			ft_fd_flag(p->file_opt, &infile, &infile, &outfile);
 		}
-		if (!(rt = hash_get(p->file_args[0], 0)))
-			exit(1);
 		/* Put the process into the process group and give the process group
 		   the terminal, if appropriate.
 		   This has to be done both by the shell and in the individual
@@ -50,7 +45,7 @@ int		launch_process (t_process *p, pid_t pgid,
 		signal (SIGTSTP, SIG_DFL);
 		signal (SIGTTIN, SIG_DFL);
 		signal (SIGTTOU, SIG_DFL);
-		signal (SIGCHLD, SIG_DFL);
+		//signal (SIGCHLD, SIG_DFL);
 
 		if (infile != STDIN_FILENO)
 		{
@@ -69,12 +64,10 @@ int		launch_process (t_process *p, pid_t pgid,
 		}
 	}
 	/* Exec the new process.  Make sure we exit.  */
-	if (dop == 1)
-		exit(0);
-	dop1 = ft_whatis2(p, q);
+	dop1 = ft_whatis2(p);
 	if (dop1 == 1)
 		exit(0);
 	if (dop1 == 0)
 		execve(rt, p->file_args, g_env);
-	exit(1);
+	exit(127);
 }

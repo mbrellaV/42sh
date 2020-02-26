@@ -1175,6 +1175,32 @@ CMakeFiles/21end.dir/src/g_builtins.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/21end.dir/src/g_builtins.c.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/mbrella/Desktop/projects/21beta/42start/src/g_builtins.c -o CMakeFiles/21end.dir/src/g_builtins.c.s
 
+CMakeFiles/21end.dir/src/builtins/fg_builtin.c.o: CMakeFiles/21end.dir/flags.make
+CMakeFiles/21end.dir/src/builtins/fg_builtin.c.o: ../src/builtins/fg_builtin.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/mbrella/Desktop/projects/21beta/42start/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_87) "Building C object CMakeFiles/21end.dir/src/builtins/fg_builtin.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/21end.dir/src/builtins/fg_builtin.c.o   -c /Users/mbrella/Desktop/projects/21beta/42start/src/builtins/fg_builtin.c
+
+CMakeFiles/21end.dir/src/builtins/fg_builtin.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/21end.dir/src/builtins/fg_builtin.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/mbrella/Desktop/projects/21beta/42start/src/builtins/fg_builtin.c > CMakeFiles/21end.dir/src/builtins/fg_builtin.c.i
+
+CMakeFiles/21end.dir/src/builtins/fg_builtin.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/21end.dir/src/builtins/fg_builtin.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/mbrella/Desktop/projects/21beta/42start/src/builtins/fg_builtin.c -o CMakeFiles/21end.dir/src/builtins/fg_builtin.c.s
+
+CMakeFiles/21end.dir/src/builtins/bg_builtin.c.o: CMakeFiles/21end.dir/flags.make
+CMakeFiles/21end.dir/src/builtins/bg_builtin.c.o: ../src/builtins/bg_builtin.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/mbrella/Desktop/projects/21beta/42start/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_88) "Building C object CMakeFiles/21end.dir/src/builtins/bg_builtin.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/21end.dir/src/builtins/bg_builtin.c.o   -c /Users/mbrella/Desktop/projects/21beta/42start/src/builtins/bg_builtin.c
+
+CMakeFiles/21end.dir/src/builtins/bg_builtin.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/21end.dir/src/builtins/bg_builtin.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/mbrella/Desktop/projects/21beta/42start/src/builtins/bg_builtin.c > CMakeFiles/21end.dir/src/builtins/bg_builtin.c.i
+
+CMakeFiles/21end.dir/src/builtins/bg_builtin.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/21end.dir/src/builtins/bg_builtin.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/mbrella/Desktop/projects/21beta/42start/src/builtins/bg_builtin.c -o CMakeFiles/21end.dir/src/builtins/bg_builtin.c.s
+
 # Object files for target 21end
 21end_OBJECTS = \
 "CMakeFiles/21end.dir/src/builtins/ft_cd.c.o" \
@@ -1262,7 +1288,9 @@ CMakeFiles/21end.dir/src/g_builtins.c.s: cmake_force
 "CMakeFiles/21end.dir/src/lexer/all_bax_and_hist_change.c.o" \
 "CMakeFiles/21end.dir/src/builtins/alias/alias.c.o" \
 "CMakeFiles/21end.dir/src/builtins/ft_cd_3.c.o" \
-"CMakeFiles/21end.dir/src/g_builtins.c.o"
+"CMakeFiles/21end.dir/src/g_builtins.c.o" \
+"CMakeFiles/21end.dir/src/builtins/fg_builtin.c.o" \
+"CMakeFiles/21end.dir/src/builtins/bg_builtin.c.o"
 
 # External object files for target 21end
 21end_EXTERNAL_OBJECTS =
@@ -1353,10 +1381,12 @@ CMakeFiles/21end.dir/src/g_builtins.c.s: cmake_force
 21end: CMakeFiles/21end.dir/src/builtins/alias/alias.c.o
 21end: CMakeFiles/21end.dir/src/builtins/ft_cd_3.c.o
 21end: CMakeFiles/21end.dir/src/g_builtins.c.o
+21end: CMakeFiles/21end.dir/src/builtins/fg_builtin.c.o
+21end: CMakeFiles/21end.dir/src/builtins/bg_builtin.c.o
 21end: CMakeFiles/21end.dir/build.make
 21end: ../libft/libft.a
 21end: CMakeFiles/21end.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/mbrella/Desktop/projects/21beta/42start/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_87) "Linking C executable 21end"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/mbrella/Desktop/projects/21beta/42start/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_89) "Linking C executable 21end"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/21end.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

@@ -39,7 +39,8 @@ void	ft_find_path(t_readline *p, char *name)
 	{
 		return ;
 	}
-	tmp = ft_get_var("PATH", g_env);
+	if (!(tmp = ft_get_var("PATH", g_env)))
+		return ;
 	path = ft_strsplit1(tmp, ':');
 	i = -1;
 	while (path[++i])

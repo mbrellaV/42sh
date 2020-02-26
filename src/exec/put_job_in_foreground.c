@@ -32,8 +32,10 @@ void	put_job_in_foreground (t_job *j, int cont)
 	//dprintf(2, "\n\n\ndadadadad : |%p|\n", j);
 	//dprintf(2, "\n\n\ndadadadad : |%p|\n", j->first_process);
 	/* Wait for it to report.  */
+	//wait_for_job(f_job);
 	wait_for_job(j);
 	//dprintf(2, "\n\n\ndadadadad : |%p|\n", j);
+
 
 	/* Put the shell back in the foreground.  */
 	tcsetpgrp (shell_terminal, shell_pgid);

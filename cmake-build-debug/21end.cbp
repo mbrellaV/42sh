@@ -109,6 +109,12 @@
 		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/builtins/allenv/main_env.c">
 			<Option target="21end"/>
 		</Unit>
+		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/builtins/bg_builtin.c">
+			<Option target="21end"/>
+		</Unit>
+		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/builtins/fg_builtin.c">
+			<Option target="21end"/>
+		</Unit>
 		<Unit filename="/Users/mbrella/Desktop/projects/21beta/42start/src/builtins/ft_cd.c">
 			<Option target="21end"/>
 		</Unit>

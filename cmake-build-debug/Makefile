@@ -231,6 +231,60 @@ src/builtins/allenv/main_env.c.s:
 	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/builtins/allenv/main_env.c.s
 .PHONY : src/builtins/allenv/main_env.c.s
 
+src/builtins/bg_builtin.o: src/builtins/bg_builtin.c.o
+
+.PHONY : src/builtins/bg_builtin.o
+
+# target to build an object file
+src/builtins/bg_builtin.c.o:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/builtins/bg_builtin.c.o
+.PHONY : src/builtins/bg_builtin.c.o
+
+src/builtins/bg_builtin.i: src/builtins/bg_builtin.c.i
+
+.PHONY : src/builtins/bg_builtin.i
+
+# target to preprocess a source file
+src/builtins/bg_builtin.c.i:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/builtins/bg_builtin.c.i
+.PHONY : src/builtins/bg_builtin.c.i
+
+src/builtins/bg_builtin.s: src/builtins/bg_builtin.c.s
+
+.PHONY : src/builtins/bg_builtin.s
+
+# target to generate assembly for a file
+src/builtins/bg_builtin.c.s:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/builtins/bg_builtin.c.s
+.PHONY : src/builtins/bg_builtin.c.s
+
+src/builtins/fg_builtin.o: src/builtins/fg_builtin.c.o
+
+.PHONY : src/builtins/fg_builtin.o
+
+# target to build an object file
+src/builtins/fg_builtin.c.o:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/builtins/fg_builtin.c.o
+.PHONY : src/builtins/fg_builtin.c.o
+
+src/builtins/fg_builtin.i: src/builtins/fg_builtin.c.i
+
+.PHONY : src/builtins/fg_builtin.i
+
+# target to preprocess a source file
+src/builtins/fg_builtin.c.i:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/builtins/fg_builtin.c.i
+.PHONY : src/builtins/fg_builtin.c.i
+
+src/builtins/fg_builtin.s: src/builtins/fg_builtin.c.s
+
+.PHONY : src/builtins/fg_builtin.s
+
+# target to generate assembly for a file
+src/builtins/fg_builtin.c.s:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/builtins/fg_builtin.c.s
+.PHONY : src/builtins/fg_builtin.c.s
+
 src/builtins/ft_cd.o: src/builtins/ft_cd.c.o
 
 .PHONY : src/builtins/ft_cd.o
@@ -2466,6 +2520,12 @@ help:
 	@echo "... src/builtins/allenv/main_env.o"
 	@echo "... src/builtins/allenv/main_env.i"
 	@echo "... src/builtins/allenv/main_env.s"
+	@echo "... src/builtins/bg_builtin.o"
+	@echo "... src/builtins/bg_builtin.i"
+	@echo "... src/builtins/bg_builtin.s"
+	@echo "... src/builtins/fg_builtin.o"
+	@echo "... src/builtins/fg_builtin.i"
+	@echo "... src/builtins/fg_builtin.s"
 	@echo "... src/builtins/ft_cd.o"
 	@echo "... src/builtins/ft_cd.i"
 	@echo "... src/builtins/ft_cd.s"

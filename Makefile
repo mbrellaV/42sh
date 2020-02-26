@@ -42,6 +42,8 @@ SRC_BASE = builtins/ft_cd.c\
  	exec/stopped_and_terminated_jobs.c\
  	exec/continuing_stopped_jobs.c\
  	exec/operating_job.c\
+	builtins/fg_builtin.c\
+	builtins/bg_builtin.c\
  	exec/ft_fun_fork.c\
  	exec/launch_job.c\
  	exec/put_job_in_foreground.c\
@@ -131,7 +133,6 @@ $(NAME):		$(LIBFT_LIB) $(OBJ_DIR) $(OBJS)
 		$(LIBS) \
 		$(LIBFT_LIB) \
 		$(FLAGS) $(D_FLAGS)
-	@strip -x $@
 	@printf "\r\033[48;5;15;38;5;25m✅ MAKE $(NAME)\033[0m\033[K\n"
 
 $(LIBFT_LIB):

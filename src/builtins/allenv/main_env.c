@@ -63,7 +63,7 @@ int		unset_var(char *str, char ***envl)
 		}
 	}
 	*envl = env;
-	ft_show_env(env);
+	//ft_show_env(env);
 	return (0);
 }
 

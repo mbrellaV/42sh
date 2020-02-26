@@ -30,7 +30,7 @@ void	init_shell(void)
 		signal(SIGTSTP, SIG_IGN);
 		signal(SIGTTIN, SIG_IGN);
 		signal(SIGTTOU, SIG_IGN);
-		signal(SIGCHLD, SIG_IGN);
+		//signal(SIGCHLD, SIG_IGN);
 
 		/* Put ourselves in our own process group.  */
 		shell_pgid = getpid();

@@ -12,22 +12,25 @@
 
 #include "../../inc/fshell.h"
 
-int		launch_job (t_job *j, int foreground, t_memory *q)
+int		launch_job(t_job *j, int foreground)
 {
 	t_process	*p;
 	pid_t		pid;
-	int			dop;
 	int			status;
+	char		*rt;
 	int mypipe[2], infile, outfile;
 
 	status = 127;
 	infile = j->stdinc;
 	p = j->first_process;
+	//j->pgid = 0;
 	while (p)
 	{
-		dop = ft_whatis3(p);
-		if (dop == -1)
-			return (-1);
+		if (!(rt = hash_get(p->file_args[0], 0)))
+		{
+			//ft_putstr_fd("", 2)
+			return (-2);
+		}
 		if (p->next)
 		{
 			if (pipe (mypipe) < 0)
@@ -46,7 +49,7 @@ int		launch_job (t_job *j, int foreground, t_memory *q)
 		/* Fork the child processes.  */
 		pid = fork();
 		if (pid == 0)
-			launch_process(p, j->pgid, infile, outfile, j->stderrc, foreground, q, dop);
+			launch_process(p, j->pgid, infile, outfile, j->stderrc, foreground, rt);
 		else if (pid < 0)
 			/* This is the child process.  */
 		{
@@ -58,7 +61,7 @@ int		launch_job (t_job *j, int foreground, t_memory *q)
 			p->pid = pid;
 			if (shell_is_interactive)
 			{
-				if (!j->pgid)
+				if (j->pgid <= 0)
 					j->pgid = pid;
 				setpgid (pid, j->pgid);
 			}
@@ -76,14 +79,12 @@ int		launch_job (t_job *j, int foreground, t_memory *q)
 			close (outfile);
 		//close(fd);
 		infile = mypipe[0];
-		outfile = mypipe[1];
+		//outfile = mypipe[1];
 		//dprintf(2, "\n\ndad13|%d|, |%d|", infile, outfile);
 
 		p = p->next;
 	}
-	dop = 0;
-	//dop = waitpid(, &status, 0);
-	format_job_info (j, "launched");
+	//format_job_info (j, "launched", 0);
 	if (!shell_is_interactive)
 		wait_for_job (j);
 	if (foreground)

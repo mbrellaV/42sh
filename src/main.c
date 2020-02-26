@@ -23,6 +23,55 @@ int			check_file_args(t_process *tmp)
 	return (1);
 }
 
+int		ft_whatis4(t_exectoken *tmp)
+{
+	if (tmp->file_args == NULL)
+		return (-2);
+	if (tmp->file_args[0] == NULL)
+		return (-2);
+	if (ft_strcmp(tmp->file_args[0], "exit") == 0)
+		return (-1);
+	if (ft_strcmp(tmp->file_args[0], "alias") == 0 || ft_strcmp(tmp->file_args[0], "unalias") == 0)
+		ft_do_change_alias(tmp->file_args);
+	else if (ft_strcmp(tmp->file_args[0], "cd") == 0)
+		ft_cd(tmp->file_args);
+	else if (ft_strcmp(tmp->file_args[0], "export") == 0)
+		ft_do_export(tmp->file_args);
+	else if (ft_strcmp(tmp->file_args[0], "unset") == 0 &&
+			 tmp->file_args[1] != NULL)
+	{
+		unset_var(tmp->file_args[1], &g_env);
+		unset_var(tmp->file_args[1], &g_all_var);
+	}
+	else if (ft_strcmp(tmp->file_args[0], "set") == 0)
+		ft_show_env(g_all_var);
+	else if (ft_strcmp(tmp->file_args[0], "fg") == 0)
+	{
+		do_fg(tmp->file_args);
+	}
+	else if (ft_strcmp(tmp->file_args[0], "bg") == 0)
+	{
+		do_bg(tmp->file_args);
+	}
+	else if (ft_strcmp(tmp->file_args[0], "jobs") == 0)
+		do_job_notification();
+	else if (ft_strcmp(tmp->file_args[0], "echo") == 0)
+		ft_echo(tmp->file_args);
+	else if (ft_strcmp(tmp->file_args[0], "history") == 0)
+		show_history(memory_head);
+	else if (ft_strcmp(tmp->file_args[0], "env") == 0)
+		ft_show_env(g_env);
+	else if (ft_strcmp(tmp->file_args[0], "clear") == 0)
+		ft_putstr_fd("\033[2J\033[H", 2);
+	else if (ft_strcmp(tmp->file_args[0], "hash") == 0)
+		print_hash();
+	else if (!ft_strcmp(tmp->file_args[0], "type"))
+		ft_type(tmp->file_args);
+	else
+		return (0);
+	return (1);
+}
+
 int		ft_whatis3(t_process *tmp)
 {
 	if (tmp->file_args == NULL)
@@ -46,11 +95,9 @@ int		ft_whatis3(t_process *tmp)
 	else if (ft_strcmp(tmp->file_args[0], "set") == 0)
 		ft_show_env(g_all_var);
 	else if (ft_strcmp(tmp->file_args[0], "fg") == 0)
-	{
-		ft_putstr_fd("\n", 2);
-		dprintf(2, "");
-		continue_job(get_last_job(), get_last_job()->first_process->foreground);
-	}
+		do_fg(tmp->file_args);
+	else if (ft_strcmp(tmp->file_args[0], "bg") == 0)
+		do_bg(tmp->file_args);
 	else if (ft_strcmp(tmp->file_args[0], "jobs") == 0)
 		do_job_notification();
 	else
@@ -58,7 +105,7 @@ int		ft_whatis3(t_process *tmp)
 	return (1);
 }
 
-int	ft_whatis2(t_process *tmp, t_memory *q)
+int		ft_whatis2(t_process *tmp)
 {
 	if (tmp->file_args == NULL)
 		return (-2);
@@ -82,16 +129,18 @@ int	ft_whatis2(t_process *tmp, t_memory *q)
 		ft_show_env(g_all_var);
 	else if (ft_strcmp(tmp->file_args[0], "fg") == 0)
 	{
-		ft_putstr_fd("\n", 2);
-		dprintf(2, "");
-		continue_job(get_last_job(), get_last_job()->first_process->foreground);
+		;
+	}
+	else if (ft_strcmp(tmp->file_args[0], "bg") == 0)
+	{
+		;
 	}
 	else if (ft_strcmp(tmp->file_args[0], "jobs") == 0)
 		do_job_notification();
 	else if (ft_strcmp(tmp->file_args[0], "echo") == 0)
 		ft_echo(tmp->file_args);
 	else if (ft_strcmp(tmp->file_args[0], "history") == 0)
-		show_history(q);
+		show_history(memory_head);
 	else if (ft_strcmp(tmp->file_args[0], "env") == 0)
 		ft_show_env(g_env);
 	else if (ft_strcmp(tmp->file_args[0], "clear") == 0)
@@ -143,9 +192,7 @@ t_process	*create_process_list(t_exectoken *tmp)
 		return (NULL);
 	do_zam_str_with_tilda(tmp->file_args);
 	fir->foreground = 1;
-	ft_show_env(tmp->file_args);
-	if (tmp->file_opt)
-		ft_show_env(tmp->file_opt);
+	//ft_show_env(tmp->file_args);
 	if (tmp->file_opt && ft_strcmp(tmp->file_opt[ft_env_len(tmp->file_opt) - 1], "&") == 0)
 		fir->foreground = 0;
 	fir->pid = -1;
@@ -161,7 +208,7 @@ t_process	*create_process_list(t_exectoken *tmp)
 		if (!(proc->next = ft_memalloc(sizeof(t_process))))
 			ft_error_q(5);
 		proc->next->file_args = tmp->file_args;
-		proc->next->pid = -1;
+		proc->next->pid = 0;
         proc->next->file_opt = tmp->file_opt;
 		if (tmp->file_opt && ft_strcmp(tmp->file_opt[ft_env_len(tmp->file_opt) - 1], "&") == 0)
 			fir->foreground = 0;
@@ -175,6 +222,21 @@ t_process	*create_process_list(t_exectoken *tmp)
 	return (fir);
 }
 
+char	*create_command(t_exectoken *head)
+{
+	char *new_str;
+	//char *tmp;
+
+	if (!(new_str = ft_strnew(1)))
+		ft_error_q(5);
+	while (head)
+	{
+		new_str = ft_strjoin(new_str, head->file_args[0]);
+		head = head->left;
+	}
+	return (new_str);
+}
+
 t_job	*create_job(t_exectoken *head)
 {
 	t_job	*new_job;
@@ -184,8 +246,8 @@ t_job	*create_job(t_exectoken *head)
 	if (!(new_job = ft_memalloc(sizeof(t_job))))
 		ft_error_q(5);
 	new_job->first_process = create_process_list(head);
-	new_job->pgid = shell_pgid;
-	new_job->command = NULL;
+	new_job->pgid = -1;
+	new_job->command = create_command(head);
 	new_job->stdinc = 0;
 	new_job->stdoutc = 1;
 	new_job->stderrc = 2;
@@ -224,41 +286,51 @@ t_job	*turn_exectokens_to_jobs(t_exectoken *exec)
 	return (start_job);
 }
 
-int		ft_main_what(t_exectoken *tmp, t_memory *q)
+int		ft_main_what(t_exectoken *tmp)
 {
-	t_job	*jobs;
+	t_job	*job;
 	int		sas;
 
-	jobs = turn_exectokens_to_jobs(tmp);
-	while (jobs)
+	//jobs = turn_exectokens_to_jobs(tmp);
+	sas = 0;
+	while (tmp)
 	{
-		dprintf(2, "\nrofl: |%d|\n", jobs->first_process->foreground);
-		sas = launch_job(jobs, jobs->first_process->foreground, q);
+		//dprintf(2, "\nrofl: |%s|\n", jobs->command);
+		if (is_builtin(tmp->file_args[0]) == 0)
+		{
+			//dprintf(2, "sas: |%d|", sas);
+			job = create_job(tmp);
+			if (f_job != NULL)
+				get_last_job()->next = job;
+			else
+				f_job = job;
+			sas = launch_job(job, job->first_process->foreground);
+		}
+		else if (tmp->left == NULL && is_builtin(tmp->file_args[0]) == 1)
+		{
+			sas = ft_whatis4(tmp);
+			//dprintf(2, "sas: |%d|", sas);
+		}
+		//sas = launch_job(jobs, jobs->first_process->foreground, q);
 		if (sas == -1)
 			exit(0);
-		jobs = jobs->next;
+		tmp = tmp->right;
 	}
+	do_job_del();
 	//do_job_notification();
 	return (1);
 }
 
-int		main_cycle(t_readline *p, t_memory **head, t_exectoken **start_token)
+int		main_cycle(t_readline *p, t_exectoken **start_token)
 {
-	t_memory	*headin;
-//	char 		buf;
-
-	headin = *head;
-//	printf("%d\n", fileno(stdin));
-//	while (read(STDIN_FILENO, &buf, 1) > 0)
-//		printf("%c", buf);
 	init_shell();
 	if (!set_input_mode())
 	{
 		ft_start_read(p);
-		ft_read_8(p, headin, 0);
+		ft_read_8(p, memory_head, 0);
 		write(2, "\n", 1);
 		while (ft_cheak_quote(p->buff) != 1)
-			ft_add_intput_que(p, headin);
+			ft_add_intput_que(p, memory_head);
 		reset_input_mode();
 	}
 	else
@@ -269,7 +341,7 @@ int		main_cycle(t_readline *p, t_memory **head, t_exectoken **start_token)
 //			ft_start_read(p);
 //			ft_cleanstr(50, p);
 			*start_token = all_parse(p->buff);
-			if (ft_main_what(*start_token, headin) == -1)
+			if (ft_main_what(*start_token) == -1)
 				return (-1);
 //			write(1, "\n", 1);
 			free(p->buff);
@@ -277,21 +349,18 @@ int		main_cycle(t_readline *p, t_memory **head, t_exectoken **start_token)
 		}
 		exit (0);
 	}
-	p->buff[0] != '\0' ? headin = ft_memory(headin, &(p->buff)) : headin;
+	p->buff[0] != '\0' ? memory_head = ft_memory(memory_head, &(p->buff)) : memory_head;
 	*start_token = all_parse(p->buff);
-	if (ft_main_what(*start_token, headin) == -1)
+	if (ft_main_what(*start_token) == -1)
 		return (-1);
 	del_readline(p);
 	ft_distruct_tree(*start_token);
-	*head = headin;
-    print_hash();
 	return (0);
 }
 
 int		main(int argc, char **argv, char **env)
 {
 	t_readline	p;
-	t_memory	*head;
 	t_exectoken	*start_token;
 
 	g_his_d = 0;
@@ -300,21 +369,20 @@ int		main(int argc, char **argv, char **env)
 	argv[0] = NULL;
 	start_token = NULL;
 	ft_global_env(env, argc);
-	signal(SIGINT, ft_fork_signal);
-	head = ft_head_memory();
+	memory_head = ft_head_memory();
 	do_count_shell_lvl();
 	hash_init();
 	init_shell();
 	if (isatty(0))
 		ft_put_info();
 	while (1)
-		if (main_cycle(&p, &head, &start_token) == -1)
+		if (main_cycle(&p, &start_token) == -1)
 			break ;
-	save_history(head);
+	save_history(memory_head);
 	hash_clear();
 	free(g_cp);
 	ft_arrdel(g_env);
 	del_readline(&p);
-	return (ft_distruct_memory(head->next) &&
+	return (ft_distruct_memory(memory_head->next) &&
 		ft_distruct_tree(start_token) ? 0 : 1);
 }

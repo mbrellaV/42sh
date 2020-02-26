@@ -38,8 +38,12 @@ void	ft_read_8(t_readline *p, t_memory *head, int mod)
 
 	p->mod = mod;
 	h = head;
-	while ((rt = read(0, buf, 8)) && buf[0] != '\n')
+	do_job_del();
+
+	while (do_job_del() && (rt = read(0, buf, 8)) && buf[0] != '\n')
 	{
+		//dprintf(2, "\nsas1");
+		//do_job_del();
 		p->sum_read = ft_add_sumchar(buf, rt);
 		if (rt > 1)
 			ft_cheak_sum(p, &h);
@@ -56,5 +60,7 @@ void	ft_read_8(t_readline *p, t_memory *head, int mod)
 			ft_do_copy(p);
 		else if (ft_signal(p->sum_read, p) == 404)
 			ft_do_addch(p, buf[0]);
+		do_job_del();
+		//dprintf(2, "\nsas2");
 	}
 }

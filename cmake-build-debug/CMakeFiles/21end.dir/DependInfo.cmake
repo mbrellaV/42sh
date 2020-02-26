@@ -8,6 +8,8 @@ set(CMAKE_DEPENDS_CHECK_C
   "/Users/mbrella/Desktop/projects/21beta/42start/src/builtins/allenv/ft_env.c" "/Users/mbrella/Desktop/projects/21beta/42start/cmake-build-debug/CMakeFiles/21end.dir/src/builtins/allenv/ft_env.c.o"
   "/Users/mbrella/Desktop/projects/21beta/42start/src/builtins/allenv/global_env.c" "/Users/mbrella/Desktop/projects/21beta/42start/cmake-build-debug/CMakeFiles/21end.dir/src/builtins/allenv/global_env.c.o"
   "/Users/mbrella/Desktop/projects/21beta/42start/src/builtins/allenv/main_env.c" "/Users/mbrella/Desktop/projects/21beta/42start/cmake-build-debug/CMakeFiles/21end.dir/src/builtins/allenv/main_env.c.o"
+  "/Users/mbrella/Desktop/projects/21beta/42start/src/builtins/bg_builtin.c" "/Users/mbrella/Desktop/projects/21beta/42start/cmake-build-debug/CMakeFiles/21end.dir/src/builtins/bg_builtin.c.o"
+  "/Users/mbrella/Desktop/projects/21beta/42start/src/builtins/fg_builtin.c" "/Users/mbrella/Desktop/projects/21beta/42start/cmake-build-debug/CMakeFiles/21end.dir/src/builtins/fg_builtin.c.o"
   "/Users/mbrella/Desktop/projects/21beta/42start/src/builtins/ft_cd.c" "/Users/mbrella/Desktop/projects/21beta/42start/cmake-build-debug/CMakeFiles/21end.dir/src/builtins/ft_cd.c.o"
   "/Users/mbrella/Desktop/projects/21beta/42start/src/builtins/ft_cd_2.c" "/Users/mbrella/Desktop/projects/21beta/42start/cmake-build-debug/CMakeFiles/21end.dir/src/builtins/ft_cd_2.c.o"
   "/Users/mbrella/Desktop/projects/21beta/42start/src/builtins/ft_cd_3.c" "/Users/mbrella/Desktop/projects/21beta/42start/cmake-build-debug/CMakeFiles/21end.dir/src/builtins/ft_cd_3.c.o"

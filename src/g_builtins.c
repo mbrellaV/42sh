@@ -1,6 +1,6 @@
 #include "../inc/fshell.h"
 
-const char		*g_builtins[12] =
+const char		*g_builtins[BIL_NUM] =
 {
 	"alias",
 	"export",
@@ -13,5 +13,22 @@ const char		*g_builtins[12] =
 	"echo",
 	"exit",
 	"type",
+	"fg",
+	"bg",
+	"jobs",
 	NULL
 };
+
+int		is_builtin(char *str)
+{
+	int i;
+
+	i = 0;
+	while (i < BIL_NUM - 1)
+	{
+		if (ft_strcmp(str, g_builtins[i]) == 0)
+			return (1);
+		i++;
+	}
+	return (0);
+}
