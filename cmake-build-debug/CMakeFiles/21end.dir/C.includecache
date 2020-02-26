@@ -202,6 +202,14 @@ get_next_line.h
 ../../../inc/fshell.h
 /Users/mbrella/Desktop/projects/21beta/42start/inc/fshell.h
 
+/Users/mbrella/Desktop/projects/21beta/42start/src/builtins/bg_builtin.c
+../../inc/fshell.h
+/Users/mbrella/Desktop/projects/21beta/42start/inc/fshell.h
+
+/Users/mbrella/Desktop/projects/21beta/42start/src/builtins/fg_builtin.c
+../../inc/fshell.h
+/Users/mbrella/Desktop/projects/21beta/42start/inc/fshell.h
+
 /Users/mbrella/Desktop/projects/21beta/42start/src/builtins/ft_cd.c
 ../../inc/fshell.h
 /Users/mbrella/Desktop/projects/21beta/42start/inc/fshell.h
@@ -339,8 +347,6 @@ fshell.h
 /Users/mbrella/Desktop/projects/21beta/42start/src/lexer/cr_and_add_tokens.c
 ../../inc/fshell.h
 /Users/mbrella/Desktop/projects/21beta/42start/inc/fshell.h
-
-/Users/mbrella/Desktop/projects/21beta/42start/src/lexer/dop_funs.c
 
 /Users/mbrella/Desktop/projects/21beta/42start/src/lexer/get_opt_type.c
 ../../inc/fshell.h

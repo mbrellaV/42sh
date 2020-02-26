@@ -37,6 +37,24 @@ CMakeFiles/21end.dir/src/builtins/allenv/main_env.c.o
  /Users/mbrella/Desktop/projects/21beta/42start/libft/get_next_line.h
  /Users/mbrella/Desktop/projects/21beta/42start/libft/libft.h
  /Users/mbrella/Desktop/projects/21beta/42start/src/builtins/allenv/main_env.c
+CMakeFiles/21end.dir/src/builtins/bg_builtin.c.o
+ /Users/mbrella/Desktop/projects/21beta/42start/inc/fshell.h
+ /Users/mbrella/Desktop/projects/21beta/42start/inc/hash.h
+ /Users/mbrella/Desktop/projects/21beta/42start/inc/nucleus.h
+ /Users/mbrella/Desktop/projects/21beta/42start/inc/parser.h
+ /Users/mbrella/Desktop/projects/21beta/42start/inc/struct.h
+ /Users/mbrella/Desktop/projects/21beta/42start/libft/get_next_line.h
+ /Users/mbrella/Desktop/projects/21beta/42start/libft/libft.h
+ /Users/mbrella/Desktop/projects/21beta/42start/src/builtins/bg_builtin.c
+CMakeFiles/21end.dir/src/builtins/fg_builtin.c.o
+ /Users/mbrella/Desktop/projects/21beta/42start/inc/fshell.h
+ /Users/mbrella/Desktop/projects/21beta/42start/inc/hash.h
+ /Users/mbrella/Desktop/projects/21beta/42start/inc/nucleus.h
+ /Users/mbrella/Desktop/projects/21beta/42start/inc/parser.h
+ /Users/mbrella/Desktop/projects/21beta/42start/inc/struct.h
+ /Users/mbrella/Desktop/projects/21beta/42start/libft/get_next_line.h
+ /Users/mbrella/Desktop/projects/21beta/42start/libft/libft.h
+ /Users/mbrella/Desktop/projects/21beta/42start/src/builtins/fg_builtin.c
 CMakeFiles/21end.dir/src/builtins/ft_cd.c.o
  /Users/mbrella/Desktop/projects/21beta/42start/inc/fshell.h
  /Users/mbrella/Desktop/projects/21beta/42start/inc/hash.h

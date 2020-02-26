@@ -37,15 +37,15 @@ t_dop_str		*cr_dop_str(char **line1)
 int				dop_lexer2(t_dop_str *tmp, char *line)
 {
 	tmp->tmp_c = ft_strsub(line, tmp->i_c, word_size(line + tmp->i_c));
-	if (tmp->tail_c->operator_type == 9 && get_op_type(tmp->tmp_c) == 2)
-		return (ft_error(5, "|") == -1);
+	if (tmp->tail_c && needs_something_before(tmp->tail_c->operator_type) && get_op_type(tmp->tmp_c) == 2)
+		return (ft_error(5, tmp->tmp_c));
 	if (tmp->i_c != 0 &&
 		isword(line[tmp->i_c - 1]) == 1 && (get_op_type(tmp->tmp_c) > 6 && get_op_type(tmp->tmp_c) < 8))
 			tmp->tail_c->is_near_opt = 1;
 	tmp->tail_c = add_token(tmp->tail_c, tmp->tmp_c, 0);
 	tmp->tail_c->is_near_opt = 1;
-	if (tmp->tail_c->operator_type == 2 && tmp->tail_c->prev == NULL)
-		return (ft_error(5, "\\n") == -1);
+	if (needs_something_before(tmp->tail_c->operator_type) && tmp->tail_c->prev == NULL)
+		return (ft_error(5, tmp->tail_c->line));
 	tmp->i_c += word_size(line + tmp->i_c);
 	return (0);
 }
@@ -59,7 +59,7 @@ int				dop_lexer1(t_dop_str *tmp, char *line)
 	}
 	tmp->tmp_c = ft_strsub(line, tmp->i_c +
 	(ispar(line[tmp->i_c]) == 1 ? 1 : 0), word_size(line + tmp->i_c));
-	if (tmp->tail_c != NULL && tmp->tail_c->operator_type > 2)
+	if (tmp->tail_c != NULL && tmp->tail_c->operator_type > 2 && tmp->tail_c->operator_type < 9)
 		tmp->d_c = 1;
 	if (!(tmp->tail_c = add_token(tmp->tail_c, tmp->tmp_c, 1)))
 		return (-1);

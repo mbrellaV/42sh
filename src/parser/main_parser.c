@@ -55,7 +55,7 @@ t_exectoken		*do_parser(t_lextoken *tmp)
 				if (!(t->prev_c = ft_cr_new_exectoken(tmp,
 						t->prev_c, t->i_c, t)))
 					return (NULL);
-			if ((t->i_c == 1 || t->i_c == 9) && (t->prevdot_c = ft_cr_new_exectoken(tmp,
+			if ((t->i_c == 1 || t->i_c >= 9) && (t->prevdot_c = ft_cr_new_exectoken(tmp,
 					t->prevdot_c, t->i_c, t)) )
 				t->prev_c = t->prevdot_c;
 			t->i_c = -1;
@@ -74,11 +74,21 @@ t_exectoken		*all_parse(char *cmd)
 	t = NULL;
 	if (!(tmp = do_lexer(cmd)))
 		return (NULL);
+	//dprintf(2, "sas");
+//	while (tmp)
+//	{
+//		dprintf(2, "|%s, %d| ", tmp->line, tmp->is_near_opt);
+//		tmp = tmp->next;
+//	}
+//	exit(0);
 	tmp = do_zam_bax_and_hist_full(tmp);
-//	dprintf(2, "\n|%p|\n", tmp);
+	//dprintf(2, "1\n|%p|\n", tmp);
 	free(t);
 	//exit(0);
 	extmp = do_parser(tmp);
+	//dprintf(2, "2\n|%p|\n", extmp);
+	//dprintf(2, "2\n|%p|\n", extmp->file_args);
+
 	ft_distr_lex(tmp);
 	return (extmp);
 }

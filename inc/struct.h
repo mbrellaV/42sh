@@ -70,6 +70,8 @@ typedef struct				s_lextoken
 
 typedef struct				s_exectoken
 {
+	int						should_wait_and;
+	int						should_wait_or;
 	struct s_exectoken		*left;
 	struct s_exectoken		*right;
 	char					**file_args;

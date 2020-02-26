@@ -295,10 +295,25 @@ int		ft_main_what(t_exectoken *tmp)
 	sas = 0;
 	while (tmp)
 	{
-		//dprintf(2, "\nrofl: |%s|\n", jobs->command);
+		//dprintf(2, "\nrofl: ||\n");
+		if (tmp->file_args == NULL)
+		{
+			tmp = tmp->right;
+			continue ;
+		}
 		if (is_builtin(tmp->file_args[0]) == 0)
 		{
 			//dprintf(2, "sas: |%d|", sas);
+			if (tmp->should_wait_and == 1 && ft_atoi(ft_get_var("?", g_all_var)) > 0)
+			{
+				tmp = tmp->right;
+				continue ;
+			}
+			else if (tmp->should_wait_or == 1 && ft_atoi(ft_get_var("?", g_all_var)) == 0)
+			{
+				tmp = tmp->right;
+				continue ;
+			}
 			job = create_job(tmp);
 			if (f_job != NULL)
 				get_last_job()->next = job;
@@ -350,7 +365,8 @@ int		main_cycle(t_readline *p, t_exectoken **start_token)
 		exit (0);
 	}
 	p->buff[0] != '\0' ? memory_head = ft_memory(memory_head, &(p->buff)) : memory_head;
-	*start_token = all_parse(p->buff);
+	if ((*start_token = all_parse(p->buff)) == NULL)
+		return (0);
 	if (ft_main_what(*start_token) == -1)
 		return (-1);
 	del_readline(p);

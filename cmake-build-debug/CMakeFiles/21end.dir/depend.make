@@ -37,6 +37,24 @@ CMakeFiles/21end.dir/src/builtins/allenv/main_env.c.o: ../libft/get_next_line.h
 CMakeFiles/21end.dir/src/builtins/allenv/main_env.c.o: ../libft/libft.h
 CMakeFiles/21end.dir/src/builtins/allenv/main_env.c.o: ../src/builtins/allenv/main_env.c
 
+CMakeFiles/21end.dir/src/builtins/bg_builtin.c.o: ../inc/fshell.h
+CMakeFiles/21end.dir/src/builtins/bg_builtin.c.o: ../inc/hash.h
+CMakeFiles/21end.dir/src/builtins/bg_builtin.c.o: ../inc/nucleus.h
+CMakeFiles/21end.dir/src/builtins/bg_builtin.c.o: ../inc/parser.h
+CMakeFiles/21end.dir/src/builtins/bg_builtin.c.o: ../inc/struct.h
+CMakeFiles/21end.dir/src/builtins/bg_builtin.c.o: ../libft/get_next_line.h
+CMakeFiles/21end.dir/src/builtins/bg_builtin.c.o: ../libft/libft.h
+CMakeFiles/21end.dir/src/builtins/bg_builtin.c.o: ../src/builtins/bg_builtin.c
+
+CMakeFiles/21end.dir/src/builtins/fg_builtin.c.o: ../inc/fshell.h
+CMakeFiles/21end.dir/src/builtins/fg_builtin.c.o: ../inc/hash.h
+CMakeFiles/21end.dir/src/builtins/fg_builtin.c.o: ../inc/nucleus.h
+CMakeFiles/21end.dir/src/builtins/fg_builtin.c.o: ../inc/parser.h
+CMakeFiles/21end.dir/src/builtins/fg_builtin.c.o: ../inc/struct.h
+CMakeFiles/21end.dir/src/builtins/fg_builtin.c.o: ../libft/get_next_line.h
+CMakeFiles/21end.dir/src/builtins/fg_builtin.c.o: ../libft/libft.h
+CMakeFiles/21end.dir/src/builtins/fg_builtin.c.o: ../src/builtins/fg_builtin.c
+
 CMakeFiles/21end.dir/src/builtins/ft_cd.c.o: ../inc/fshell.h
 CMakeFiles/21end.dir/src/builtins/ft_cd.c.o: ../inc/hash.h
 CMakeFiles/21end.dir/src/builtins/ft_cd.c.o: ../inc/nucleus.h

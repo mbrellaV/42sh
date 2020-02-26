@@ -37,6 +37,7 @@ int mark_process_status (pid_t pid, int status)
 					if (WIFSTOPPED (status))
 					{
 						p->stopped = 1;
+						set_new_var("?", ft_itoa(WEXITSTATUS(status)), &g_all_var);
 						//dprintf(2, "\ndapoluch1: |%D|\n", WSTOPSIG(status));
 					}
 					else

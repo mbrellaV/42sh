@@ -13,6 +13,7 @@ const char		*g_builtins[BIL_NUM] =
 	"echo",
 	"exit",
 	"type",
+	"set",
 	"fg",
 	"bg",
 	"jobs",

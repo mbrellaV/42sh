@@ -57,7 +57,7 @@
 # define IS_L	16
 
 # define SHELL_NAME "42sh"
-# define BIL_NUM 15
+# define BIL_NUM 16
 
 
 ///////////////////////////
@@ -145,6 +145,7 @@ int		launch_process (t_process *p, pid_t pgid,
 						   int infile, int outfile, int errfile,
 						   int foreground, char *rt);
 int		launch_job(t_job *j, int foreground);
+int		needs_something_before(int n);
 int		do_job_del();
 
 int		ft_whatis3(t_process *tmp);

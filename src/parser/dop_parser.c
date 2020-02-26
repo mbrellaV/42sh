@@ -14,7 +14,7 @@
 
 int						is_cmd_delim(int i)
 {
-	return (i == 1 || i == 2);
+	return (i == 1 || i == 2 || i >= 9);
 }
 
 t_dop_str				*cr_dop_str_par1(t_lextoken *tmp1)
@@ -54,13 +54,19 @@ void					dop_cr_new_exec(t_dop_str *t,
 			return ;
 		t->tmp1_a->left = NULL;
 		t->tmp1_a->right = NULL;
+		t->tmp1_a->should_wait_and = 0;
+		t->tmp1_a->should_wait_or = 0;
+		if (op_type == 10)
+			t->tmp1_a->should_wait_and = 1;
+		if (op_type == 11)
+			t->tmp1_a->should_wait_or = 1;
 		t->dopi_a = 0;
 		t->f_a = 0;
 		if (prev != NULL)
 		{
 			if (op_type == get_op_type("|"))
 				prev->left = t->tmp1_a;
-			else if (op_type == get_op_type(";"))
+			else if (op_type == get_op_type(";") || op_type >= 9)
 				prev->right = t->tmp1_a;
 		}
 		return ;
