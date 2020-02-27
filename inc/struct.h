@@ -76,6 +76,7 @@ typedef struct				s_exectoken
 	struct s_exectoken		*right;
 	char					**file_args;
 	char					**file_opt;
+	int						foreground;
 }							t_exectoken;
 
 typedef struct				s_dop_str
@@ -123,6 +124,7 @@ typedef struct				s_job
 	char notified;              /* true if user told about stopped job */
 	struct termios tmodes;      /* saved terminal modes */
 	int stdinc, stdoutc, stderrc;  /* standard i/o channels */
+	int	foreground;
 }							t_job;
 
 

@@ -84,7 +84,8 @@ int		launch_job(t_job *j, int foreground)
 
 		p = p->next;
 	}
-	//format_job_info (j, "launched", 0);
+	if (j->foreground == 0)
+		format_job_info(j, "launched", 1);
 	if (!shell_is_interactive)
 		wait_for_job (j);
 	if (foreground)

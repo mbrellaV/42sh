@@ -52,6 +52,7 @@ void					dop_cr_new_exec(t_dop_str *t,
 		if (!(t->tmp1_a->file_args =
 				(char**)ft_memalloc((t->f_a + 1) * sizeof(char *))))
 			return ;
+		t->tmp1_a->foreground = 1;
 		t->tmp1_a->left = NULL;
 		t->tmp1_a->right = NULL;
 		t->tmp1_a->should_wait_and = 0;
@@ -71,11 +72,14 @@ void					dop_cr_new_exec(t_dop_str *t,
 		}
 		return ;
 	}
+	if (t->dop_a && t->dop_a->operator_type == 9)
+		t->tmp1_a->foreground = 0;
 	t->tmp1_a->file_args[t->f_a] = NULL;
 	if (t->dopi_a != 0)
 		t->tmp1_a->file_opt[t->dopi_a] = NULL;
 	if (t->dopi_a == 0)
 		t->tmp1_a->file_opt = NULL;
+	//dprintf(2, "\n|%d|, |%d|\n", t->tmp1_a->foreground, op_type);
 }
 
 t_exectoken				*ft_cr_new_exectoken(t_lextoken *tmp,

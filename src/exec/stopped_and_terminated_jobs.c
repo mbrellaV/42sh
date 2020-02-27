@@ -236,12 +236,11 @@ int		do_job_del()
 		jnext = j->next;
 		if (job_is_completed (j))
 		{
-			if (j->first_process->foreground == 0)
+			if (j->foreground == 0)
 			{
 				//ft_putchar_fd(, 2);
 				format_job_info(j, "completed", d);
 			}
-
 			//kill(j->pgid, SIGCONT);
 			if (jlast)
 				jlast->next = jnext;
