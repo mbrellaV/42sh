@@ -141,6 +141,7 @@ void				do_count_shell_lvl(void);
 t_job		*get_job_by_number(int n);
 int		do_fg(char **mas);
 int		do_bg(char **mas);
+void    do_zam_ravno(t_exectoken *h);
 int		launch_process (t_process *p, pid_t pgid,
 						   int infile, int outfile, int errfile,
 						   int foreground, char *rt);

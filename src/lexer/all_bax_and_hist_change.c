@@ -33,42 +33,44 @@ t_lextoken		*do_zam_join_par(t_lextoken *h)
 			free(lextmp);
 			h->is_near_word = 0;
 			h->inhibitor_lvl = 0;
-			//dprintf(2, "\nsas: |%s|\n", h->line);
 		}
     	else
     		h = h->next;
 	}
-  //  dprintf(2, "\ndopsas: |%p|, |%s|\n", lextmp1->next, lextmp1->line);
 	return (lextmp1);
 }
 
-t_lextoken		*do_zam_ravno(t_lextoken *h)
+void        del_one_node(char **str, int node_to_del)
 {
-    t_lextoken  *lextmp1;
+    int i;
+    int tmp;
+
+    i = 0;
+    tmp = 0;
+    while (str[i])
+    {
+        if (node_to_del == i)
+            tmp = 1;
+        if (tmp)
+            str[i] = str[i + 1];
+        i++;
+    }
+}
+
+void        do_zam_ravno(t_exectoken *h)
+{
     char		*tmp1;
     char		*tmp2;
 
-    lextmp1 = h;
-    while (h)
+    if (h != NULL && ft_strstr(h->file_args[0], "="))
     {
-        if (ft_strstr(h->line, "="))
-        {
-        	dprintf(2, "sas1");
-        	tmp1 = ft_strsub(h->line, 0, ft_strstr(h->line, "=") - h->line);
-			dprintf(2, "sas2");
-        	tmp2 = ft_strsub(h->line, ft_strstr(h->line, "=") - h->line + 1, ft_strlen(h->line));
-			dprintf(2, "sas3");
-        	set_new_var(tmp1, tmp2, &g_all_var);
-			dprintf(2, "sas4");
-            lextmp1 = h->next;
-            ft_strdel(&h->line);
-            free(h);
-            h = lextmp1;
-        }
-        else
-        	h = h->next;
+        tmp1 = ft_strsub(h->file_args[0], 0, ft_strstr(h->file_args[0], "=") - h->file_args[0]);
+        tmp2 = ft_strsub(h->file_args[0], ft_strstr(h->file_args[0], "=") - h->file_args[0] + 1, ft_strlen(h->file_args[0]));
+        set_new_var(tmp1, tmp2, &g_all_var);
+        del_one_node(h->file_args, 0);
+        do_zam_ravno(h->right);
+        do_zam_ravno(h->left);
     }
-    return (lextmp1);
 }
 
 t_lextoken		*do_zam_bax_and_hist_full(t_lextoken *h)
@@ -97,8 +99,6 @@ t_lextoken		*do_zam_bax_and_hist_full(t_lextoken *h)
 		h = h->next;
 	}
     h = do_zam_join_par(htmp);
-	h = do_zam_ravno(h);
-	//dprintf(2, "\n|%p|\n", h);
 	ft_kill_str_dop_lex(tmp, NULL);
 	return (h);
 }

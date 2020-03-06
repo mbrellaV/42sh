@@ -4,12 +4,10 @@ int		do_fg(char **mas)
 {
 	if (mas[0] != NULL && mas[1] == NULL)
 	{
-		ft_putstr_fd("\n", 2);
 		continue_job(get_last_job(), 1);
 	}
 	else if (mas[0] != NULL && mas[1] != NULL && mas[2] == NULL)
 	{
-		ft_putstr_fd("\n", 2);
 		continue_job(get_job_by_number(ft_atoi(mas[1])), 1);
 	}
 	else

@@ -62,7 +62,7 @@ int mark_process_status (pid_t pid, int status)
 		}
 
 		fprintf (stderr, "No child process %d.\n", pid);
-		return -1;
+		return (-1);
 	}
 	else if (pid == 0 || errno == ECHILD)
 		/* No processes ready to report.  */
@@ -218,6 +218,7 @@ void    do_job_notification (void)
 			jlast = j;
 		//dprintf(2, "sas1\n");
 	}
+	dprintf(2, "\n|%d, %s|\n", job_count, f_job->command);
 	//f_job = j;
 }
 
@@ -236,6 +237,7 @@ int		do_job_del()
 		jnext = j->next;
 		if (job_is_completed (j))
 		{
+            //format_job_info(j, "completed", d);
 			if (j->foreground == 0)
 			{
 				//ft_putchar_fd(, 2);
@@ -283,7 +285,9 @@ t_job		*get_last_job()
 	t_job *j;
 
 	j = f_job;
-	while (j && j->next && j->next->next)
+	if (j == NULL)
+        return (NULL);
+	while (j->next && !job_is_stopped(j) && job_is_completed(j))
 	{
 		j = j->next;
 	}

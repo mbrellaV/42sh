@@ -2,7 +2,7 @@
 
 void	ft_alias()
 {
-	if (!(g_alias = (char **)ft_memalloc(3 * sizeof(char*))))
+	if (!(g_alias = (char **)ft_memalloc(4 * sizeof(char *))))
 		ft_error(15, "malloc error alias");
 	g_alias[0] = ft_strdup("ll=ls");
 	g_alias[1] = ft_strdup("l=ls");
@@ -21,7 +21,7 @@ char			*ft_get_alias(char *dop)
 		if (ft_strstr(g_alias[i], dopd) == g_alias[i])
 		{
 			if (!(dop = ft_strsub(g_alias[i], ft_strlen(dopd),
-								  ft_strlen(g_alias[i]) - ft_strlen(dopd))))
+			        ft_strlen(g_alias[i]) - ft_strlen(dopd))))
 				return (NULL);
 			ft_strdel(&dopd);
 			return (dop);
@@ -49,22 +49,31 @@ char			*ft_do_zam_alias(char *str)
 	return (str);
 }
 
+void            alias_usage()
+{
+    dprintf(2, "alias [alias-name[=string]...]\n");
+}
+
 int				ft_do_change_alias(char **mas)
 {
+    char *tmp1;
+    char *tmp2;
 	if (mas[1] == NULL && ft_strcmp(mas[0], "alias") == 0)
 		ft_show_env(g_alias);
-	else if (mas[1] && ft_findenv(mas[1], g_env) != -404 && mas[2] == NULL)
-	{
-		set_new_var(mas[1], ft_get_var(mas[1], g_env), &g_alias);
-	}
-	else if (ft_strcmp(mas[0], "unalias") == 0 && mas[1] != NULL && mas[2] == NULL)
+	else if (ft_strcmp(mas[0], "unalias") == 0 && mas[1] != NULL && mas[2] == NULL && ft_strstr(mas[1], "=") == NULL)
 	{
 		unset_var(mas[1], &g_alias);
 	}
-	else if (mas[1] && mas[2] && mas[3] == NULL)
+	else if (ft_strcmp(mas[0], "alias") == 0 && mas[1] && mas[2] == NULL)
 	{
-		set_new_var(mas[1], mas[2], &g_alias);
-		//ft_show_env(g_alias);
+        if (ft_strstr(mas[1], "=") != NULL)
+        {
+            tmp1 = ft_strsub(mas[1], 0, ft_strstr(mas[1], "=") - mas[1]);
+            tmp2 = ft_strsub(mas[1], ft_strstr(mas[1], "=") - mas[1] + 1, ft_strlen(mas[1]));
+            set_new_var(tmp1, tmp2, &g_alias);
+        }
+        else
+            alias_usage();
 	}
 	else
 		ft_error(15, "parse error");

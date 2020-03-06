@@ -72,39 +72,6 @@ int		ft_whatis4(t_exectoken *tmp)
 	return (1);
 }
 
-int		ft_whatis3(t_process *tmp)
-{
-	if (tmp->file_args == NULL)
-		return (-2);
-	if (tmp->file_args[0] == NULL)
-		return (-2);
-	if (ft_strcmp(tmp->file_args[0], "exit") == 0)
-		return (-1);
-	if (ft_strcmp(tmp->file_args[0], "alias") == 0 || ft_strcmp(tmp->file_args[0], "unalias") == 0)
-		ft_do_change_alias(tmp->file_args);
-	else if (ft_strcmp(tmp->file_args[0], "cd") == 0)
-		ft_cd(tmp->file_args);
-	else if (ft_strcmp(tmp->file_args[0], "export") == 0)
-		ft_do_export(tmp->file_args);
-	else if (ft_strcmp(tmp->file_args[0], "unset") == 0 &&
-			 tmp->file_args[1] != NULL)
-	{
-		unset_var(tmp->file_args[1], &g_env);
-		unset_var(tmp->file_args[1], &g_all_var);
-	}
-	else if (ft_strcmp(tmp->file_args[0], "set") == 0)
-		ft_show_env(g_all_var);
-	else if (ft_strcmp(tmp->file_args[0], "fg") == 0)
-		do_fg(tmp->file_args);
-	else if (ft_strcmp(tmp->file_args[0], "bg") == 0)
-		do_bg(tmp->file_args);
-	else if (ft_strcmp(tmp->file_args[0], "jobs") == 0)
-		do_job_notification();
-	else
-		return (0);
-	return (1);
-}
-
 int		ft_whatis2(t_process *tmp)
 {
 	if (tmp->file_args == NULL)
@@ -254,54 +221,54 @@ t_job	*create_job(t_exectoken *head)
 	return (new_job);
 }
 
-t_job	*turn_exectokens_to_jobs(t_exectoken *exec)
-{
-	t_job *tmp;
-	//t_exectoken *tmp_exec;
-	t_job	*start_job;
-	t_job	*dop;
-
-	if (exec == NULL)
-		return (NULL);
-	//tmp = NULL;
-	//start_job = NULL;
-	tmp = create_job(exec);
-	start_job = tmp;
-	exec = exec->right;
-	while (exec)
-	{
-		tmp->next = create_job(exec);
-		tmp = tmp->next;
-		exec = exec->right;
-	}
-	if (f_job != NULL)
-	{
-		dop = f_job;
-		while (dop->next)
-			dop = dop->next;
-		dop->next = start_job;
-	}
-	else
-		f_job = start_job;
-	return (start_job);
-}
+//t_job	*turn_exectokens_to_jobs(t_exectoken *exec)
+//{
+//	t_job *tmp;
+//	//t_exectoken *tmp_exec;
+//	t_job	*start_job;
+//	t_job	*dop;
+//
+//	if (exec == NULL)
+//		return (NULL);
+//	//tmp = NULL;
+//	//start_job = NULL;
+//	tmp = create_job(exec);
+//	start_job = tmp;
+//	exec = exec->right;
+//	while (exec)
+//	{
+//		tmp->next = create_job(exec);
+//		tmp = tmp->next;
+//		exec = exec->right;
+//	}
+//	if (f_job != NULL)
+//	{
+//		dop = f_job;
+//		while (dop->next)
+//			dop = dop->next;
+//		dop->next = start_job;
+//	}
+//	else
+//		f_job = start_job;
+//	return (start_job);
+//}
 
 int		ft_main_what(t_exectoken *tmp)
 {
 	t_job	*job;
 	int		sas;
 
-	//jobs = turn_exectokens_to_jobs(tmp);
 	sas = 0;
-	while (tmp)
+    do_zam_ravno(tmp);
+    while (tmp)
 	{
 		//dprintf(2, "\nrofl: ||\n");
-		if (tmp->file_args == NULL)
+		if (tmp->file_args == NULL || tmp->file_args[0] == NULL)
 		{
 			tmp = tmp->right;
 			continue ;
 		}
-		if (is_builtin(tmp->file_args[0]) == 0)
+		if (is_builtin(tmp->file_args[0]) == 0 || tmp->file_opt != NULL)
 		{
 			//dprintf(2, "sas: |%d|", sas);
 			if (tmp->should_wait_and == 1 && ft_atoi(ft_get_var("?", g_all_var)) > 0)
@@ -332,7 +299,6 @@ int		ft_main_what(t_exectoken *tmp)
 		tmp = tmp->right;
 	}
 	do_job_del();
-	//do_job_notification();
 	return (1);
 }
 

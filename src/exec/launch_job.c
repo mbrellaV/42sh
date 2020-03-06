@@ -16,21 +16,19 @@ int		launch_job(t_job *j, int foreground)
 {
 	t_process	*p;
 	pid_t		pid;
-	int			status;
 	char		*rt;
 	int mypipe[2], infile, outfile;
 
-	status = 127;
 	infile = j->stdinc;
 	p = j->first_process;
-	//j->pgid = 0;
 	while (p)
 	{
-		if (!(rt = hash_get(p->file_args[0], 0)))
-		{
-			//ft_putstr_fd("", 2)
-			return (-2);
-		}
+		if (is_builtin(p->file_args[0]) == 0 && !(rt = hash_get(p->file_args[0], 0)))
+        {
+		    p->completed = 1;
+            p = p->next;
+		    continue ;
+        }
 		if (p->next)
 		{
 			if (pipe (mypipe) < 0)
@@ -41,12 +39,6 @@ int		launch_job(t_job *j, int foreground)
 		}
 		else
 			outfile = j->stdoutc;
-		//dprintf(2, "\n\ndad12|%d|, |%d|", infile, outfile);
-
-
-		//dprintf(2, "\n\ndad22|%d|, |%d|", infile, outfile);
-
-		/* Fork the child processes.  */
 		pid = fork();
 		if (pid == 0)
 			launch_process(p, j->pgid, infile, outfile, j->stderrc, foreground, rt);

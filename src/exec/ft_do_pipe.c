@@ -85,7 +85,6 @@ int		ft_fd_flag(char **av, int *fd_in, int *infile, int *outfile)
 {
 	t_pipe	p;
 
-	dprintf(2, "\n\nda1|%d|, |%d|", *infile, *outfile);
 	p = (t_pipe){0, -1, 1, 0, 0, 0};
 	while (av[++(p.i)])
 	{
@@ -106,7 +105,6 @@ int		ft_fd_flag(char **av, int *fd_in, int *infile, int *outfile)
 			p = (t_pipe){0, p.i, 1, p.fd, 0, p.j};
 		}
 	}
-	dprintf(2, "\n\nda2|%d|, |%d|", *infile, *outfile);
 	return (p.fd);
 }
 //
