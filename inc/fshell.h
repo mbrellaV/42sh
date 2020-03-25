@@ -136,6 +136,10 @@ void				ft_type(char **argv);
 void				ft_find_path(t_readline *p, char *name);
 int					save_history(t_memory *q);
 void				do_count_shell_lvl(void);
+char		        *ft_do_zam_eval(char *mas);
+int				    sc_size(char *str, char b);
+char			    find_pair_sc(char c);
+
 
 //////////////////
 t_job		*get_job_by_number(int n);

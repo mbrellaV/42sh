@@ -30,7 +30,10 @@ t_dop_str		*cr_dop_str(char **line1)
 	tmp->i_c = 0;
 	tmp->doptail_c = NULL;
 	tmp->tail_c = NULL;
-	*line1 = line;
+	//dprintf(2, "\n%s", line);
+	//line = ft_do_zam_eval(line);
+	//*line1 = line;
+    //dprintf(2, "\n%s", line);
 	return (tmp);
 }
 
@@ -57,6 +60,9 @@ int				dop_lexer1(t_dop_str *tmp, char *line)
 		tmp->i_c += 2;
 		return (0);
 	}
+	//dprintf(2, "\n123: |%d|, |%c|\n", word_size(line + tmp->i_c), *(line + tmp->i_c));
+	if (word_size(line + tmp->i_c) == -1)
+		return (-1);
 	tmp->tmp_c = ft_strsub(line, tmp->i_c +
 	(ispar(line[tmp->i_c]) == 1 ? 1 : 0), word_size(line + tmp->i_c));
 	if (tmp->tail_c != NULL && tmp->tail_c->operator_type > 2 && tmp->tail_c->operator_type < 9)
@@ -64,8 +70,6 @@ int				dop_lexer1(t_dop_str *tmp, char *line)
 	if (!(tmp->tail_c = add_token(tmp->tail_c, tmp->tmp_c, 1)))
 		return (-1);
 	if (ispar(line[tmp->i_c]) && isword(line[tmp->i_c - 1]))
-		tmp->tail_c->is_near_word = 1;
-	if (ispar(line[tmp->i_c - 1]) && isword(line[tmp->i_c]))
 		tmp->tail_c->is_near_word = 1;
 	if (ispar(line[tmp->i_c]))
 		tmp->tail_c->inhibitor_lvl = line[tmp->i_c] == '"' ? 1 : 2;

@@ -21,12 +21,12 @@ char				*do_zam_str_bax(char *str1, t_dop_str *t)
 	dop = 0;
 	end = 0;
 	while (t->str_b[++t->i_b])
-		if (t->str_b[t->i_b] == '$' && t->str_b[t->i_b - 1] != '\\')
+		if (t->str_b[t->i_b] == '$' && t->str_b[t->i_b - 1] != '\\' && t->str_b[t->i_b + 1] != '(')
 		{
 			if (t->str_b[t->i_b + 1] == '{')
 				dop++;
 			start = t->i_b + 1;
-			while (isword(t->str_b[t->i_b]) != 0 && t->str_b[t->i_b] != '}')
+			while (isword(t->str_b[t->i_b]) != 0 && t->str_b[t->i_b] != '}' && t->str_b[t->i_b] != ')')
 				t->i_b++;
 			end += t->i_b + (t->str_b[t->i_b] == '}');
 			str1 = ft_strsub(t->str_b, start + (dop > 0 ? 1 : 0),

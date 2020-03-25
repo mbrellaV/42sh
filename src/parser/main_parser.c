@@ -71,10 +71,31 @@ t_exectoken		*all_parse(char *cmd)
 	t_lextoken	*tmp;
 	t_exectoken	*extmp;
 	t_dop_str	*t;
+	t_lextoken	*dop_tmp;
 
 	t = NULL;
+	//dprintf(2, "\n1|%s|\n", cmd);
 	if (!(tmp = do_lexer(cmd)))
 		return (NULL);
+	//dprintf(2, "\n10|%s|\n", cmd);
+	tmp = do_zam_bax_and_hist_full(tmp);
+	//dprintf(2, "\n20|%s|\n", cmd);
+	dop_tmp = tmp;
+	cmd = ft_strdup("");
+	while (dop_tmp)
+	{
+		//dprintf(2, "|%s|\n", dop_tmp->line);
+		if (dop_tmp->line != NULL)
+			ft_strcat(cmd, dop_tmp->line);
+		if (dop_tmp->next != NULL)
+			ft_strcat(cmd, " ");
+		dop_tmp = dop_tmp->next;
+	}
+	//dprintf(2, "\n2|%s|\n", cmd);
+	cmd = ft_do_zam_eval(cmd);
+	if (!(tmp = do_lexer(cmd)))
+		return (NULL);
+	//tmp = do_zam_bax_and_hist_full(tmp);
 	//dprintf(2, "sas");
 //	while (tmp)
 //	{
@@ -82,7 +103,8 @@ t_exectoken		*all_parse(char *cmd)
 //		tmp = tmp->next;
 //	}
 //	exit(0);
-	tmp = do_zam_bax_and_hist_full(tmp);
+	//exit(0);
+	//tmp = do_zam_bax_and_hist_full(tmp);
 	//dprintf(2, "1\n|%p|\n", tmp);
 	free(t);
 	//exit(0);

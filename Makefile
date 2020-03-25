@@ -13,7 +13,7 @@
 NAME		=	21sh
 
 CC			=	gcc
-FLAGS		=	-Wall -Wextra -Werror
+FLAGS		=	-Wall
 D_FLAGS		=	-g
 
 DELTA		=	$$(echo "$$(tput cols)-47"|bc)
@@ -50,6 +50,11 @@ SRC_BASE = builtins/ft_cd.c\
  	exec/put_job_in_background.c\
  	exec/launch_process.c\
 	lexer/lexer.c\
+	evaln/dop.c\
+    evaln/calc.c\
+    evaln/atoimy.c\
+    evaln/inftopost.c\
+    evaln/ft_do_zam_eval.c\
 	lexer/change_dol.c\
 	lexer/change_spaces.c\
 	lexer/cr_and_add_tokens.c\
