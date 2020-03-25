@@ -365,6 +365,7 @@ int		main(int argc, char **argv, char **env)
 	save_history(memory_head);
 	hash_clear();
 	free(g_cp);
+	ft_strdel(&p.buff);
 	ft_arrdel(g_env);
 	del_readline(&p);
 	ft_arrdel(g_alias);

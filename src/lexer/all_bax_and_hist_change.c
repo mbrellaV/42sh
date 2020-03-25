@@ -62,7 +62,7 @@ void        do_zam_ravno(t_exectoken *h)
     char		*tmp1;
     char		*tmp2;
 
-    if (h != NULL && ft_strstr(h->file_args[0], "="))
+    if (h != NULL && h->file_args != NULL && ft_strstr(h->file_args[0], "="))
     {
         tmp1 = ft_strsub(h->file_args[0], 0, ft_strstr(h->file_args[0], "=") - h->file_args[0]);
         tmp2 = ft_strsub(h->file_args[0], ft_strstr(h->file_args[0], "=") - h->file_args[0] + 1, ft_strlen(h->file_args[0]));
