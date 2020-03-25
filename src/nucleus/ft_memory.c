@@ -18,7 +18,7 @@ t_memory	*ft_memory(t_memory *back, char **str)
 	t_memory	*p;
 
 	g_his_d = 0;
-	tmp = (t_memory *)malloc(sizeof(t_memory));
+	tmp = ft_memalloc(sizeof(t_memory));
 	if (!tmp)
 		return (NULL);
 	p = back->next;

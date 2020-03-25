@@ -31,7 +31,10 @@ int		launch_process (t_process *p, pid_t pgid,
 		/* Put the process into the process group and give the process group
 		   the terminal, if appropriate.
 		   This has to be done both by the shell and in the individual
-		   child processes because of potential race conditions.  */
+		   child processes because of potential race conditions.
+		   Поместите процесс в группу процессов и при необходимости дайте
+		   группе процессов терминал. Это должно быть сделано как оболочкой,
+		   так и в отдельных дочерних процессах из-за возможных состояний гонки.*/
 		pid = getpid();
 		if (pgid == 0)
 			pgid = pid;

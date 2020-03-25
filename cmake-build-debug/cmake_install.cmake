@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 # Install script for directory: /home/petruha2001/42sh
+=======
+# Install script for directory: /home/pro/CLionProjects/42sh
+>>>>>>> f2f4bcd239356ec3c9e7f4b7ccb9d50331cb8cdd
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +49,9 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
+<<<<<<< HEAD
 file(WRITE "/home/petruha2001/42sh/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+=======
+file(WRITE "/home/pro/CLionProjects/42sh/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+>>>>>>> f2f4bcd239356ec3c9e7f4b7ccb9d50331cb8cdd
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

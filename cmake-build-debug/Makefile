@@ -39,19 +39,33 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
+<<<<<<< HEAD
 CMAKE_COMMAND = /home/petruha2001/Templates/clion-2019.3.5/bin/cmake/linux/bin/cmake
 
 # The command to remove a file.
 RM = /home/petruha2001/Templates/clion-2019.3.5/bin/cmake/linux/bin/cmake -E remove -f
+=======
+CMAKE_COMMAND = /home/pro/Загрузки/clion-2019.3.5/bin/cmake/linux/bin/cmake
+
+# The command to remove a file.
+RM = /home/pro/Загрузки/clion-2019.3.5/bin/cmake/linux/bin/cmake -E remove -f
+>>>>>>> f2f4bcd239356ec3c9e7f4b7ccb9d50331cb8cdd
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
+<<<<<<< HEAD
 CMAKE_SOURCE_DIR = /home/petruha2001/42sh
 
 # The top-level build directory on which CMake was run.
 CMAKE_BINARY_DIR = /home/petruha2001/42sh/cmake-build-debug
+=======
+CMAKE_SOURCE_DIR = /home/pro/CLionProjects/42sh
+
+# The top-level build directory on which CMake was run.
+CMAKE_BINARY_DIR = /home/pro/CLionProjects/42sh/cmake-build-debug
+>>>>>>> f2f4bcd239356ec3c9e7f4b7ccb9d50331cb8cdd
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -59,7 +73,11 @@ CMAKE_BINARY_DIR = /home/petruha2001/42sh/cmake-build-debug
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+<<<<<<< HEAD
 	/home/petruha2001/Templates/clion-2019.3.5/bin/cmake/linux/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+=======
+	/home/pro/Загрузки/clion-2019.3.5/bin/cmake/linux/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+>>>>>>> f2f4bcd239356ec3c9e7f4b7ccb9d50331cb8cdd
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -70,7 +88,11 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+<<<<<<< HEAD
 	/home/petruha2001/Templates/clion-2019.3.5/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+=======
+	/home/pro/Загрузки/clion-2019.3.5/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+>>>>>>> f2f4bcd239356ec3c9e7f4b7ccb9d50331cb8cdd
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -80,9 +102,15 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
+<<<<<<< HEAD
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/petruha2001/42sh/cmake-build-debug/CMakeFiles /home/petruha2001/42sh/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/petruha2001/42sh/cmake-build-debug/CMakeFiles 0
+=======
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pro/CLionProjects/42sh/cmake-build-debug/CMakeFiles /home/pro/CLionProjects/42sh/cmake-build-debug/CMakeFiles/progress.marks
+	$(MAKE) -f CMakeFiles/Makefile2 all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pro/CLionProjects/42sh/cmake-build-debug/CMakeFiles 0
+>>>>>>> f2f4bcd239356ec3c9e7f4b7ccb9d50331cb8cdd
 .PHONY : all
 
 # The main clean target
