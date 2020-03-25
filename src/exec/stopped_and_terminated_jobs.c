@@ -280,7 +280,7 @@ t_job		*get_job_by_number(int n)
 	return (j);
 }
 
-t_job		*get_last_job()
+t_job		*get_last_job(void)
 {
 	t_job *j;
 

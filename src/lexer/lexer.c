@@ -65,8 +65,8 @@ int				dop_lexer1(t_dop_str *tmp, char *line)
 		return (-1);
 	if (ispar(line[tmp->i_c]) && isword(line[tmp->i_c - 1]))
 		tmp->tail_c->is_near_word = 1;
-	if (ispar(line[tmp->i_c - 1]) && isword(line[tmp->i_c]))
-		tmp->tail_c->is_near_word = 1;
+//	if (ispar(line[tmp->i_c - 1]) && isword(line[tmp->i_c]))
+//		tmp->tail_c->is_near_word = 1;
 	if (ispar(line[tmp->i_c]))
 		tmp->tail_c->inhibitor_lvl = line[tmp->i_c] == '"' ? 1 : 2;
 	tmp->tail_c->is_near_opt = tmp->d_c;

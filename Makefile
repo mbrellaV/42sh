@@ -13,7 +13,7 @@
 NAME		=	21sh
 
 CC			=	gcc
-FLAGS		=	-Wall -Wextra -Werror
+# FLAGS		=	-Wall -Wextra -Werror
 D_FLAGS		=	-g
 
 DELTA		=	$$(echo "$$(tput cols)-47"|bc)

@@ -18,8 +18,8 @@ int		ft_distruct_tree(t_exectoken *q)
 	{
 		ft_distruct_tree(q->left);
 		ft_distruct_tree(q->right);
-		ft_free_str(q->file_args);
-		ft_free_str(q->file_opt);
+		ft_arrdel(q->file_args);
+		ft_arrdel(q->file_opt);
 		free(q);
 	}
 	return (1);
@@ -32,6 +32,41 @@ int		ft_distruct_memory(t_memory *head)
 		ft_distruct_memory(head->back);
 		free(head->inp);
 		free(head);
+	}
+	return (1);
+}
+
+int		ft_distruct_job(t_job *head)
+{
+	t_job *j, *jlast, *jnext;
+	int d;
+
+	d = 0;
+//	update_status();
+	jlast = NULL;
+	j = head;
+	while (j)
+	{
+		d++;
+		jnext = j->next;
+		if (job_is_completed (j))
+		{
+			//format_job_info(j, "completed", d);
+			if (j->foreground == 0)
+			{
+				//ft_putchar_fd(, 2);
+				format_job_info(j, "completed", d);
+			}
+			//kill(j->pgid, SIGCONT);
+			if (jlast)
+				jlast->next = jnext;
+			else
+				head = jnext;
+		}
+		else
+			jlast = j;
+
+		j = j->next;
 	}
 	return (1);
 }

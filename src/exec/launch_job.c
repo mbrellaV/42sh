@@ -21,6 +21,7 @@ int		launch_job(t_job *j, int foreground)
 
 	infile = j->stdinc;
 	p = j->first_process;
+	rt = NULL;
 	while (p)
 	{
 		if (is_builtin(p->file_args[0]) == 0 && !(rt = hash_get(p->file_args[0], 0)))
@@ -32,9 +33,7 @@ int		launch_job(t_job *j, int foreground)
 		if (p->next)
 		{
 			if (pipe (mypipe) < 0)
-			{
 				exit (1);
-			}
 			outfile = mypipe[1];
 		}
 		else
@@ -84,5 +83,7 @@ int		launch_job(t_job *j, int foreground)
 		put_job_in_foreground (j, 0);
 	else
 		put_job_in_background (j, 0);
+//	if (rt != NULL)
+//		free(rt);
 	return (0);
 }

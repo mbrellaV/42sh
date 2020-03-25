@@ -96,7 +96,7 @@ stdlib.h
 get_next_line.h
 ../libft/get_next_line.h
 
-/Users/mbrella/Desktop/projects/21beta/42start/inc/fshell.h
+/home/pro/CLionProjects/42sh/inc/fshell.h
 stdio.h
 -
 dirent.h
@@ -110,19 +110,19 @@ fcntl.h
 string.h
 -
 ../libft/libft.h
-/Users/mbrella/Desktop/projects/21beta/42start/libft/libft.h
+/home/pro/CLionProjects/42sh/libft/libft.h
 signal.h
 -
 pwd.h
-/Users/mbrella/Desktop/projects/21beta/42start/inc/pwd.h
+/home/pro/CLionProjects/42sh/inc/pwd.h
 grp.h
-/Users/mbrella/Desktop/projects/21beta/42start/inc/grp.h
+/home/pro/CLionProjects/42sh/inc/grp.h
 sys/stat.h
 -
 sys/types.h
 -
 time.h
-/Users/mbrella/Desktop/projects/21beta/42start/inc/time.h
+/home/pro/CLionProjects/42sh/inc/time.h
 sys/wait.h
 -
 sys/xattr.h
@@ -144,39 +144,39 @@ sys/ioctl.h
 dirent.h
 -
 parser.h
-/Users/mbrella/Desktop/projects/21beta/42start/inc/parser.h
+/home/pro/CLionProjects/42sh/inc/parser.h
 nucleus.h
-/Users/mbrella/Desktop/projects/21beta/42start/inc/nucleus.h
+/home/pro/CLionProjects/42sh/inc/nucleus.h
 struct.h
-/Users/mbrella/Desktop/projects/21beta/42start/inc/struct.h
+/home/pro/CLionProjects/42sh/inc/struct.h
 hash.h
-/Users/mbrella/Desktop/projects/21beta/42start/inc/hash.h
+/home/pro/CLionProjects/42sh/inc/hash.h
 
-/Users/mbrella/Desktop/projects/21beta/42start/inc/hash.h
+/home/pro/CLionProjects/42sh/inc/hash.h
 unistd.h
 -
 stdlib.h
 -
 
-/Users/mbrella/Desktop/projects/21beta/42start/inc/nucleus.h
+/home/pro/CLionProjects/42sh/inc/nucleus.h
 struct.h
-/Users/mbrella/Desktop/projects/21beta/42start/inc/struct.h
+/home/pro/CLionProjects/42sh/inc/struct.h
 
-/Users/mbrella/Desktop/projects/21beta/42start/inc/parser.h
+/home/pro/CLionProjects/42sh/inc/parser.h
 struct.h
-/Users/mbrella/Desktop/projects/21beta/42start/inc/struct.h
+/home/pro/CLionProjects/42sh/inc/struct.h
 
-/Users/mbrella/Desktop/projects/21beta/42start/inc/struct.h
+/home/pro/CLionProjects/42sh/inc/struct.h
 
-/Users/mbrella/Desktop/projects/21beta/42start/libft/get_next_line.h
+/home/pro/CLionProjects/42sh/libft/get_next_line.h
 stdio.h
-/Users/mbrella/Desktop/projects/21beta/42start/libft/stdio.h
+/home/pro/CLionProjects/42sh/libft/stdio.h
 libft.h
-/Users/mbrella/Desktop/projects/21beta/42start/libft/libft.h
+/home/pro/CLionProjects/42sh/libft/libft.h
 fcntl.h
 -
 
-/Users/mbrella/Desktop/projects/21beta/42start/libft/libft.h
+/home/pro/CLionProjects/42sh/libft/libft.h
 string.h
 -
 unistd.h
@@ -184,359 +184,361 @@ unistd.h
 stdlib.h
 -
 get_next_line.h
-/Users/mbrella/Desktop/projects/21beta/42start/libft/get_next_line.h
+/home/pro/CLionProjects/42sh/libft/get_next_line.h
 
-/Users/mbrella/Desktop/projects/21beta/42start/src/builtins/alias/alias.c
+/home/pro/CLionProjects/42sh/src/builtins/alias/alias.c
 ../../../inc/fshell.h
-/Users/mbrella/Desktop/projects/21beta/42start/inc/fshell.h
+/home/pro/CLionProjects/42sh/inc/fshell.h
 
-/Users/mbrella/Desktop/projects/21beta/42start/src/builtins/allenv/ft_env.c
+/home/pro/CLionProjects/42sh/src/builtins/allenv/ft_env.c
 ../../../inc/fshell.h
-/Users/mbrella/Desktop/projects/21beta/42start/inc/fshell.h
+/home/pro/CLionProjects/42sh/inc/fshell.h
 
-/Users/mbrella/Desktop/projects/21beta/42start/src/builtins/allenv/global_env.c
+/home/pro/CLionProjects/42sh/src/builtins/allenv/global_env.c
 ../../../inc/fshell.h
-/Users/mbrella/Desktop/projects/21beta/42start/inc/fshell.h
+/home/pro/CLionProjects/42sh/inc/fshell.h
 
-/Users/mbrella/Desktop/projects/21beta/42start/src/builtins/allenv/main_env.c
+/home/pro/CLionProjects/42sh/src/builtins/allenv/main_env.c
 ../../../inc/fshell.h
-/Users/mbrella/Desktop/projects/21beta/42start/inc/fshell.h
+/home/pro/CLionProjects/42sh/inc/fshell.h
 
-/Users/mbrella/Desktop/projects/21beta/42start/src/builtins/bg_builtin.c
+/home/pro/CLionProjects/42sh/src/builtins/bg_builtin.c
 ../../inc/fshell.h
-/Users/mbrella/Desktop/projects/21beta/42start/inc/fshell.h
+/home/pro/CLionProjects/42sh/inc/fshell.h
 
-/Users/mbrella/Desktop/projects/21beta/42start/src/builtins/fg_builtin.c
+/home/pro/CLionProjects/42sh/src/builtins/fg_builtin.c
 ../../inc/fshell.h
-/Users/mbrella/Desktop/projects/21beta/42start/inc/fshell.h
+/home/pro/CLionProjects/42sh/inc/fshell.h
 
-/Users/mbrella/Desktop/projects/21beta/42start/src/builtins/ft_cd.c
+/home/pro/CLionProjects/42sh/src/builtins/ft_cd.c
 ../../inc/fshell.h
-/Users/mbrella/Desktop/projects/21beta/42start/inc/fshell.h
+/home/pro/CLionProjects/42sh/inc/fshell.h
 
-/Users/mbrella/Desktop/projects/21beta/42start/src/builtins/ft_cd_2.c
+/home/pro/CLionProjects/42sh/src/builtins/ft_cd_2.c
 ../../inc/fshell.h
-/Users/mbrella/Desktop/projects/21beta/42start/inc/fshell.h
+/home/pro/CLionProjects/42sh/inc/fshell.h
 
-/Users/mbrella/Desktop/projects/21beta/42start/src/builtins/ft_cd_3.c
+/home/pro/CLionProjects/42sh/src/builtins/ft_cd_3.c
 ../../inc/fshell.h
-/Users/mbrella/Desktop/projects/21beta/42start/inc/fshell.h
+/home/pro/CLionProjects/42sh/inc/fshell.h
 
-/Users/mbrella/Desktop/projects/21beta/42start/src/builtins/ft_echo.c
+/home/pro/CLionProjects/42sh/src/builtins/ft_echo.c
 ../../inc/fshell.h
-/Users/mbrella/Desktop/projects/21beta/42start/inc/fshell.h
+/home/pro/CLionProjects/42sh/inc/fshell.h
 
-/Users/mbrella/Desktop/projects/21beta/42start/src/builtins/ft_echo2.c
+/home/pro/CLionProjects/42sh/src/builtins/ft_echo2.c
 ../../inc/fshell.h
-/Users/mbrella/Desktop/projects/21beta/42start/inc/fshell.h
+/home/pro/CLionProjects/42sh/inc/fshell.h
 
-/Users/mbrella/Desktop/projects/21beta/42start/src/builtins/ft_type.c
+/home/pro/CLionProjects/42sh/src/builtins/ft_type.c
 ../inc/fshell.h
-/Users/mbrella/Desktop/projects/21beta/42start/src/inc/fshell.h
+/home/pro/CLionProjects/42sh/src/inc/fshell.h
 
-/Users/mbrella/Desktop/projects/21beta/42start/src/check_file.c
+/home/pro/CLionProjects/42sh/src/check_file.c
 ../inc/fshell.h
-/Users/mbrella/Desktop/projects/21beta/42start/inc/fshell.h
+/home/pro/CLionProjects/42sh/inc/fshell.h
 
-/Users/mbrella/Desktop/projects/21beta/42start/src/errors/errror_handler.c
+/home/pro/CLionProjects/42sh/src/errors/errror_handler.c
 ../../inc/fshell.h
-/Users/mbrella/Desktop/projects/21beta/42start/inc/fshell.h
+/home/pro/CLionProjects/42sh/inc/fshell.h
 
-/Users/mbrella/Desktop/projects/21beta/42start/src/exec/continuing_stopped_jobs.c
+/home/pro/CLionProjects/42sh/src/exec/continuing_stopped_jobs.c
 ../../inc/fshell.h
-/Users/mbrella/Desktop/projects/21beta/42start/inc/fshell.h
+/home/pro/CLionProjects/42sh/inc/fshell.h
 
-/Users/mbrella/Desktop/projects/21beta/42start/src/exec/ft_create_file.c
+/home/pro/CLionProjects/42sh/src/exec/ft_create_file.c
 ../../inc/fshell.h
-/Users/mbrella/Desktop/projects/21beta/42start/inc/fshell.h
+/home/pro/CLionProjects/42sh/inc/fshell.h
 
-/Users/mbrella/Desktop/projects/21beta/42start/src/exec/ft_do_pipe.c
+/home/pro/CLionProjects/42sh/src/exec/ft_do_pipe.c
 ../../inc/fshell.h
-/Users/mbrella/Desktop/projects/21beta/42start/inc/fshell.h
+/home/pro/CLionProjects/42sh/inc/fshell.h
 stdio.h
 -
 errno.h
 -
 
-/Users/mbrella/Desktop/projects/21beta/42start/src/exec/ft_fun_fork.c
+/home/pro/CLionProjects/42sh/src/exec/ft_fun_fork.c
 ../../inc/fshell.h
-/Users/mbrella/Desktop/projects/21beta/42start/inc/fshell.h
+/home/pro/CLionProjects/42sh/inc/fshell.h
 
-/Users/mbrella/Desktop/projects/21beta/42start/src/exec/launch_job.c
+/home/pro/CLionProjects/42sh/src/exec/launch_job.c
 ../../inc/fshell.h
-/Users/mbrella/Desktop/projects/21beta/42start/inc/fshell.h
+/home/pro/CLionProjects/42sh/inc/fshell.h
 
-/Users/mbrella/Desktop/projects/21beta/42start/src/exec/launch_process.c
+/home/pro/CLionProjects/42sh/src/exec/launch_process.c
 ../../inc/fshell.h
-/Users/mbrella/Desktop/projects/21beta/42start/inc/fshell.h
+/home/pro/CLionProjects/42sh/inc/fshell.h
 
-/Users/mbrella/Desktop/projects/21beta/42start/src/exec/operating_job.c
+/home/pro/CLionProjects/42sh/src/exec/operating_job.c
 ../../inc/fshell.h
-/Users/mbrella/Desktop/projects/21beta/42start/inc/fshell.h
+/home/pro/CLionProjects/42sh/inc/fshell.h
 
-/Users/mbrella/Desktop/projects/21beta/42start/src/exec/put_job_in_background.c
+/home/pro/CLionProjects/42sh/src/exec/put_job_in_background.c
 ../../inc/fshell.h
-/Users/mbrella/Desktop/projects/21beta/42start/inc/fshell.h
+/home/pro/CLionProjects/42sh/inc/fshell.h
 
-/Users/mbrella/Desktop/projects/21beta/42start/src/exec/put_job_in_foreground.c
+/home/pro/CLionProjects/42sh/src/exec/put_job_in_foreground.c
 ../../inc/fshell.h
-/Users/mbrella/Desktop/projects/21beta/42start/inc/fshell.h
+/home/pro/CLionProjects/42sh/inc/fshell.h
 
-/Users/mbrella/Desktop/projects/21beta/42start/src/exec/stopped_and_terminated_jobs.c
+/home/pro/CLionProjects/42sh/src/exec/stopped_and_terminated_jobs.c
 .././inc/fshell.h
-/Users/mbrella/Desktop/projects/21beta/42start/src/inc/fshell.h
+/home/pro/CLionProjects/42sh/src/inc/fshell.h
 errno.h
 -
 
-/Users/mbrella/Desktop/projects/21beta/42start/src/ft_distruct.c
+/home/pro/CLionProjects/42sh/src/ft_distruct.c
 ../inc/fshell.h
-/Users/mbrella/Desktop/projects/21beta/42start/inc/fshell.h
+/home/pro/CLionProjects/42sh/inc/fshell.h
 
-/Users/mbrella/Desktop/projects/21beta/42start/src/ft_error_q.c
+/home/pro/CLionProjects/42sh/src/ft_error_q.c
 ../inc/fshell.h
-/Users/mbrella/Desktop/projects/21beta/42start/inc/fshell.h
+/home/pro/CLionProjects/42sh/inc/fshell.h
 
-/Users/mbrella/Desktop/projects/21beta/42start/src/ft_signal.c
+/home/pro/CLionProjects/42sh/src/ft_signal.c
 ../inc/fshell.h
-/Users/mbrella/Desktop/projects/21beta/42start/inc/fshell.h
+/home/pro/CLionProjects/42sh/inc/fshell.h
 
-/Users/mbrella/Desktop/projects/21beta/42start/src/ft_take_arg.c
+/home/pro/CLionProjects/42sh/src/ft_take_arg.c
 ../inc/fshell.h
-/Users/mbrella/Desktop/projects/21beta/42start/inc/fshell.h
+/home/pro/CLionProjects/42sh/inc/fshell.h
 
-/Users/mbrella/Desktop/projects/21beta/42start/src/g_builtins.c
+/home/pro/CLionProjects/42sh/src/g_builtins.c
 ../inc/fshell.h
-/Users/mbrella/Desktop/projects/21beta/42start/inc/fshell.h
+/home/pro/CLionProjects/42sh/inc/fshell.h
 
-/Users/mbrella/Desktop/projects/21beta/42start/src/hash/hash_error.c
+/home/pro/CLionProjects/42sh/src/hash/hash_error.c
 ../../inc/fshell.h
-/Users/mbrella/Desktop/projects/21beta/42start/inc/fshell.h
+/home/pro/CLionProjects/42sh/inc/fshell.h
 
-/Users/mbrella/Desktop/projects/21beta/42start/src/hash/hash_table.c
+/home/pro/CLionProjects/42sh/src/hash/hash_table.c
 ../../inc/fshell.h
-/Users/mbrella/Desktop/projects/21beta/42start/inc/fshell.h
+/home/pro/CLionProjects/42sh/inc/fshell.h
 
-/Users/mbrella/Desktop/projects/21beta/42start/src/hash/hash_table_2.c
+/home/pro/CLionProjects/42sh/src/hash/hash_table_2.c
 ../../inc/fshell.h
-/Users/mbrella/Desktop/projects/21beta/42start/inc/fshell.h
+/home/pro/CLionProjects/42sh/inc/fshell.h
 
-/Users/mbrella/Desktop/projects/21beta/42start/src/init_shell.c
+/home/pro/CLionProjects/42sh/src/init_shell.c
 fshell.h
-/Users/mbrella/Desktop/projects/21beta/42start/src/fshell.h
+/home/pro/CLionProjects/42sh/src/fshell.h
 
-/Users/mbrella/Desktop/projects/21beta/42start/src/lexer/all_bax_and_hist_change.c
+/home/pro/CLionProjects/42sh/src/lexer/all_bax_and_hist_change.c
 ../../inc/fshell.h
-/Users/mbrella/Desktop/projects/21beta/42start/inc/fshell.h
+/home/pro/CLionProjects/42sh/inc/fshell.h
 
-/Users/mbrella/Desktop/projects/21beta/42start/src/lexer/change_dol.c
+/home/pro/CLionProjects/42sh/src/lexer/change_dol.c
 ../../inc/fshell.h
-/Users/mbrella/Desktop/projects/21beta/42start/inc/fshell.h
+/home/pro/CLionProjects/42sh/inc/fshell.h
 
-/Users/mbrella/Desktop/projects/21beta/42start/src/lexer/change_hist_exp.c
+/home/pro/CLionProjects/42sh/src/lexer/change_hist_exp.c
 ../../inc/fshell.h
-/Users/mbrella/Desktop/projects/21beta/42start/inc/fshell.h
+/home/pro/CLionProjects/42sh/inc/fshell.h
 
-/Users/mbrella/Desktop/projects/21beta/42start/src/lexer/change_spaces.c
+/home/pro/CLionProjects/42sh/src/lexer/change_spaces.c
 ../../inc/fshell.h
-/Users/mbrella/Desktop/projects/21beta/42start/inc/fshell.h
+/home/pro/CLionProjects/42sh/inc/fshell.h
 
-/Users/mbrella/Desktop/projects/21beta/42start/src/lexer/change_str_by_str.c
+/home/pro/CLionProjects/42sh/src/lexer/change_str_by_str.c
 ../../inc/fshell.h
-/Users/mbrella/Desktop/projects/21beta/42start/inc/fshell.h
+/home/pro/CLionProjects/42sh/inc/fshell.h
 
-/Users/mbrella/Desktop/projects/21beta/42start/src/lexer/cr_and_add_tokens.c
+/home/pro/CLionProjects/42sh/src/lexer/cr_and_add_tokens.c
 ../../inc/fshell.h
-/Users/mbrella/Desktop/projects/21beta/42start/inc/fshell.h
+/home/pro/CLionProjects/42sh/inc/fshell.h
 
-/Users/mbrella/Desktop/projects/21beta/42start/src/lexer/get_opt_type.c
+/home/pro/CLionProjects/42sh/src/lexer/dop_funs.c
+
+/home/pro/CLionProjects/42sh/src/lexer/get_opt_type.c
 ../../inc/fshell.h
-/Users/mbrella/Desktop/projects/21beta/42start/inc/fshell.h
+/home/pro/CLionProjects/42sh/inc/fshell.h
 
-/Users/mbrella/Desktop/projects/21beta/42start/src/lexer/history_search.c
+/home/pro/CLionProjects/42sh/src/lexer/history_search.c
 ../../inc/fshell.h
-/Users/mbrella/Desktop/projects/21beta/42start/inc/fshell.h
+/home/pro/CLionProjects/42sh/inc/fshell.h
 
-/Users/mbrella/Desktop/projects/21beta/42start/src/lexer/kill_dop_structure.c
+/home/pro/CLionProjects/42sh/src/lexer/kill_dop_structure.c
 ../../inc/fshell.h
-/Users/mbrella/Desktop/projects/21beta/42start/inc/fshell.h
+/home/pro/CLionProjects/42sh/inc/fshell.h
 
-/Users/mbrella/Desktop/projects/21beta/42start/src/lexer/lexer.c
+/home/pro/CLionProjects/42sh/src/lexer/lexer.c
 ../../inc/fshell.h
-/Users/mbrella/Desktop/projects/21beta/42start/inc/fshell.h
+/home/pro/CLionProjects/42sh/inc/fshell.h
 
-/Users/mbrella/Desktop/projects/21beta/42start/src/lexer/word_sizes.c
+/home/pro/CLionProjects/42sh/src/lexer/word_sizes.c
 ../../inc/fshell.h
-/Users/mbrella/Desktop/projects/21beta/42start/inc/fshell.h
+/home/pro/CLionProjects/42sh/inc/fshell.h
 
-/Users/mbrella/Desktop/projects/21beta/42start/src/main.c
+/home/pro/CLionProjects/42sh/src/main.c
 ../inc/fshell.h
-/Users/mbrella/Desktop/projects/21beta/42start/inc/fshell.h
+/home/pro/CLionProjects/42sh/inc/fshell.h
 
-/Users/mbrella/Desktop/projects/21beta/42start/src/nucleus/del_readline.c
+/home/pro/CLionProjects/42sh/src/nucleus/del_readline.c
 ../inc/fshell.h
-/Users/mbrella/Desktop/projects/21beta/42start/src/inc/fshell.h
+/home/pro/CLionProjects/42sh/src/inc/fshell.h
 
-/Users/mbrella/Desktop/projects/21beta/42start/src/nucleus/do_add.c
+/home/pro/CLionProjects/42sh/src/nucleus/do_add.c
 ../../inc/fshell.h
-/Users/mbrella/Desktop/projects/21beta/42start/inc/fshell.h
+/home/pro/CLionProjects/42sh/inc/fshell.h
 
-/Users/mbrella/Desktop/projects/21beta/42start/src/nucleus/dop_tab_funs.c
+/home/pro/CLionProjects/42sh/src/nucleus/dop_tab_funs.c
 ../../inc/fshell.h
-/Users/mbrella/Desktop/projects/21beta/42start/inc/fshell.h
+/home/pro/CLionProjects/42sh/inc/fshell.h
 
-/Users/mbrella/Desktop/projects/21beta/42start/src/nucleus/find_history.c
+/home/pro/CLionProjects/42sh/src/nucleus/find_history.c
 ../inc/fshell.h
-/Users/mbrella/Desktop/projects/21beta/42start/src/inc/fshell.h
+/home/pro/CLionProjects/42sh/src/inc/fshell.h
 
-/Users/mbrella/Desktop/projects/21beta/42start/src/nucleus/ft_add_intput_que.c
+/home/pro/CLionProjects/42sh/src/nucleus/ft_add_intput_que.c
 ../inc/fshell.h
-/Users/mbrella/Desktop/projects/21beta/42start/src/inc/fshell.h
+/home/pro/CLionProjects/42sh/src/inc/fshell.h
 
-/Users/mbrella/Desktop/projects/21beta/42start/src/nucleus/ft_add_sumchar.c
+/home/pro/CLionProjects/42sh/src/nucleus/ft_add_sumchar.c
 ../../inc/fshell.h
-/Users/mbrella/Desktop/projects/21beta/42start/inc/fshell.h
+/home/pro/CLionProjects/42sh/inc/fshell.h
 
-/Users/mbrella/Desktop/projects/21beta/42start/src/nucleus/ft_arrdel.c
+/home/pro/CLionProjects/42sh/src/nucleus/ft_arrdel.c
 ../inc/fshell.h
-/Users/mbrella/Desktop/projects/21beta/42start/src/inc/fshell.h
+/home/pro/CLionProjects/42sh/src/inc/fshell.h
 
-/Users/mbrella/Desktop/projects/21beta/42start/src/nucleus/ft_arrnew.c
+/home/pro/CLionProjects/42sh/src/nucleus/ft_arrnew.c
 ../inc/fshell.h
-/Users/mbrella/Desktop/projects/21beta/42start/src/inc/fshell.h
+/home/pro/CLionProjects/42sh/src/inc/fshell.h
 
-/Users/mbrella/Desktop/projects/21beta/42start/src/nucleus/ft_arrows.c
+/home/pro/CLionProjects/42sh/src/nucleus/ft_arrows.c
 ../../inc/fshell.h
-/Users/mbrella/Desktop/projects/21beta/42start/inc/fshell.h
+/home/pro/CLionProjects/42sh/inc/fshell.h
 
-/Users/mbrella/Desktop/projects/21beta/42start/src/nucleus/ft_back_slovo.c
+/home/pro/CLionProjects/42sh/src/nucleus/ft_back_slovo.c
 ../../inc/fshell.h
-/Users/mbrella/Desktop/projects/21beta/42start/inc/fshell.h
+/home/pro/CLionProjects/42sh/inc/fshell.h
 
-/Users/mbrella/Desktop/projects/21beta/42start/src/nucleus/ft_c.c
+/home/pro/CLionProjects/42sh/src/nucleus/ft_c.c
 ../../inc/fshell.h
-/Users/mbrella/Desktop/projects/21beta/42start/inc/fshell.h
+/home/pro/CLionProjects/42sh/inc/fshell.h
 
-/Users/mbrella/Desktop/projects/21beta/42start/src/nucleus/ft_cheak_quote.c
+/home/pro/CLionProjects/42sh/src/nucleus/ft_cheak_quote.c
 ../inc/fshell.h
-/Users/mbrella/Desktop/projects/21beta/42start/src/inc/fshell.h
+/home/pro/CLionProjects/42sh/src/inc/fshell.h
 
-/Users/mbrella/Desktop/projects/21beta/42start/src/nucleus/ft_cleanstr.c
+/home/pro/CLionProjects/42sh/src/nucleus/ft_cleanstr.c
 ../../inc/fshell.h
-/Users/mbrella/Desktop/projects/21beta/42start/inc/fshell.h
+/home/pro/CLionProjects/42sh/inc/fshell.h
 
-/Users/mbrella/Desktop/projects/21beta/42start/src/nucleus/ft_cut.c
+/home/pro/CLionProjects/42sh/src/nucleus/ft_cut.c
 ../../inc/fshell.h
-/Users/mbrella/Desktop/projects/21beta/42start/inc/fshell.h
+/home/pro/CLionProjects/42sh/inc/fshell.h
 
-/Users/mbrella/Desktop/projects/21beta/42start/src/nucleus/ft_cut_copy.c
+/home/pro/CLionProjects/42sh/src/nucleus/ft_cut_copy.c
 ../../inc/fshell.h
-/Users/mbrella/Desktop/projects/21beta/42start/inc/fshell.h
+/home/pro/CLionProjects/42sh/inc/fshell.h
 
-/Users/mbrella/Desktop/projects/21beta/42start/src/nucleus/ft_do_copy.c
+/home/pro/CLionProjects/42sh/src/nucleus/ft_do_copy.c
 ../../inc/fshell.h
-/Users/mbrella/Desktop/projects/21beta/42start/inc/fshell.h
+/home/pro/CLionProjects/42sh/inc/fshell.h
 
-/Users/mbrella/Desktop/projects/21beta/42start/src/nucleus/ft_do_delch.c
+/home/pro/CLionProjects/42sh/src/nucleus/ft_do_delch.c
 ../../inc/fshell.h
-/Users/mbrella/Desktop/projects/21beta/42start/inc/fshell.h
+/home/pro/CLionProjects/42sh/inc/fshell.h
 
-/Users/mbrella/Desktop/projects/21beta/42start/src/nucleus/ft_do_leftright.c
+/home/pro/CLionProjects/42sh/src/nucleus/ft_do_leftright.c
 ../../inc/fshell.h
-/Users/mbrella/Desktop/projects/21beta/42start/inc/fshell.h
+/home/pro/CLionProjects/42sh/inc/fshell.h
 
-/Users/mbrella/Desktop/projects/21beta/42start/src/nucleus/ft_dop_history.c
+/home/pro/CLionProjects/42sh/src/nucleus/ft_dop_history.c
 ../inc/fshell.h
-/Users/mbrella/Desktop/projects/21beta/42start/src/inc/fshell.h
+/home/pro/CLionProjects/42sh/src/inc/fshell.h
 
-/Users/mbrella/Desktop/projects/21beta/42start/src/nucleus/ft_downcursor.c
+/home/pro/CLionProjects/42sh/src/nucleus/ft_downcursor.c
 ../../inc/fshell.h
-/Users/mbrella/Desktop/projects/21beta/42start/inc/fshell.h
+/home/pro/CLionProjects/42sh/inc/fshell.h
 
-/Users/mbrella/Desktop/projects/21beta/42start/src/nucleus/ft_head_memory.c
+/home/pro/CLionProjects/42sh/src/nucleus/ft_head_memory.c
 ../inc/fshell.h
-/Users/mbrella/Desktop/projects/21beta/42start/src/inc/fshell.h
+/home/pro/CLionProjects/42sh/src/inc/fshell.h
 
-/Users/mbrella/Desktop/projects/21beta/42start/src/nucleus/ft_memory.c
+/home/pro/CLionProjects/42sh/src/nucleus/ft_memory.c
 ../inc/fshell.h
-/Users/mbrella/Desktop/projects/21beta/42start/src/inc/fshell.h
+/home/pro/CLionProjects/42sh/src/inc/fshell.h
 
-/Users/mbrella/Desktop/projects/21beta/42start/src/nucleus/ft_next_slovo.c
+/home/pro/CLionProjects/42sh/src/nucleus/ft_next_slovo.c
 ../../inc/fshell.h
-/Users/mbrella/Desktop/projects/21beta/42start/inc/fshell.h
+/home/pro/CLionProjects/42sh/inc/fshell.h
 
-/Users/mbrella/Desktop/projects/21beta/42start/src/nucleus/ft_print_tab.c
+/home/pro/CLionProjects/42sh/src/nucleus/ft_print_tab.c
 ../../inc/fshell.h
-/Users/mbrella/Desktop/projects/21beta/42start/inc/fshell.h
+/home/pro/CLionProjects/42sh/inc/fshell.h
 
-/Users/mbrella/Desktop/projects/21beta/42start/src/nucleus/ft_printf_helper.c
+/home/pro/CLionProjects/42sh/src/nucleus/ft_printf_helper.c
 ../inc/fshell.h
-/Users/mbrella/Desktop/projects/21beta/42start/src/inc/fshell.h
+/home/pro/CLionProjects/42sh/src/inc/fshell.h
 
-/Users/mbrella/Desktop/projects/21beta/42start/src/nucleus/ft_put_n.c
+/home/pro/CLionProjects/42sh/src/nucleus/ft_put_n.c
 ../../inc/fshell.h
-/Users/mbrella/Desktop/projects/21beta/42start/inc/fshell.h
+/home/pro/CLionProjects/42sh/inc/fshell.h
 
-/Users/mbrella/Desktop/projects/21beta/42start/src/nucleus/ft_putcut.c
+/home/pro/CLionProjects/42sh/src/nucleus/ft_putcut.c
 ../../inc/fshell.h
-/Users/mbrella/Desktop/projects/21beta/42start/inc/fshell.h
+/home/pro/CLionProjects/42sh/inc/fshell.h
 
-/Users/mbrella/Desktop/projects/21beta/42start/src/nucleus/ft_putmemory.c
+/home/pro/CLionProjects/42sh/src/nucleus/ft_putmemory.c
 ../inc/fshell.h
-/Users/mbrella/Desktop/projects/21beta/42start/src/inc/fshell.h
+/home/pro/CLionProjects/42sh/src/inc/fshell.h
 
-/Users/mbrella/Desktop/projects/21beta/42start/src/nucleus/ft_read_8.c
+/home/pro/CLionProjects/42sh/src/nucleus/ft_read_8.c
 ../../inc/fshell.h
-/Users/mbrella/Desktop/projects/21beta/42start/inc/fshell.h
+/home/pro/CLionProjects/42sh/inc/fshell.h
 
-/Users/mbrella/Desktop/projects/21beta/42start/src/nucleus/ft_realloc_buff.c
+/home/pro/CLionProjects/42sh/src/nucleus/ft_realloc_buff.c
 ../../inc/fshell.h
-/Users/mbrella/Desktop/projects/21beta/42start/inc/fshell.h
+/home/pro/CLionProjects/42sh/inc/fshell.h
 
-/Users/mbrella/Desktop/projects/21beta/42start/src/nucleus/ft_realloc_tab.c
+/home/pro/CLionProjects/42sh/src/nucleus/ft_realloc_tab.c
 ../../inc/fshell.h
-/Users/mbrella/Desktop/projects/21beta/42start/inc/fshell.h
+/home/pro/CLionProjects/42sh/inc/fshell.h
 
-/Users/mbrella/Desktop/projects/21beta/42start/src/nucleus/ft_setcursor.c
+/home/pro/CLionProjects/42sh/src/nucleus/ft_setcursor.c
 ../../inc/fshell.h
-/Users/mbrella/Desktop/projects/21beta/42start/inc/fshell.h
+/home/pro/CLionProjects/42sh/inc/fshell.h
 
-/Users/mbrella/Desktop/projects/21beta/42start/src/nucleus/ft_start_read.c
+/home/pro/CLionProjects/42sh/src/nucleus/ft_start_read.c
 ../inc/fshell.h
-/Users/mbrella/Desktop/projects/21beta/42start/src/inc/fshell.h
+/home/pro/CLionProjects/42sh/src/inc/fshell.h
 
-/Users/mbrella/Desktop/projects/21beta/42start/src/nucleus/ft_strsplit1.c
+/home/pro/CLionProjects/42sh/src/nucleus/ft_strsplit1.c
 ../../inc/fshell.h
-/Users/mbrella/Desktop/projects/21beta/42start/inc/fshell.h
+/home/pro/CLionProjects/42sh/inc/fshell.h
 
-/Users/mbrella/Desktop/projects/21beta/42start/src/nucleus/ft_upcursor.c
+/home/pro/CLionProjects/42sh/src/nucleus/ft_upcursor.c
 ../../inc/fshell.h
-/Users/mbrella/Desktop/projects/21beta/42start/inc/fshell.h
+/home/pro/CLionProjects/42sh/inc/fshell.h
 
-/Users/mbrella/Desktop/projects/21beta/42start/src/nucleus/input_mode.c
+/home/pro/CLionProjects/42sh/src/nucleus/input_mode.c
 ../../inc/fshell.h
-/Users/mbrella/Desktop/projects/21beta/42start/inc/fshell.h
+/home/pro/CLionProjects/42sh/inc/fshell.h
 
-/Users/mbrella/Desktop/projects/21beta/42start/src/nucleus/show_history.c
+/home/pro/CLionProjects/42sh/src/nucleus/show_history.c
 ../inc/fshell.h
-/Users/mbrella/Desktop/projects/21beta/42start/src/inc/fshell.h
+/home/pro/CLionProjects/42sh/src/inc/fshell.h
 
-/Users/mbrella/Desktop/projects/21beta/42start/src/nucleus/tab.c
+/home/pro/CLionProjects/42sh/src/nucleus/tab.c
 ../../inc/fshell.h
-/Users/mbrella/Desktop/projects/21beta/42start/inc/fshell.h
+/home/pro/CLionProjects/42sh/inc/fshell.h
 
-/Users/mbrella/Desktop/projects/21beta/42start/src/parser/change_tilda.c
+/home/pro/CLionProjects/42sh/src/parser/change_tilda.c
 ../../inc/fshell.h
-/Users/mbrella/Desktop/projects/21beta/42start/inc/fshell.h
+/home/pro/CLionProjects/42sh/inc/fshell.h
 
-/Users/mbrella/Desktop/projects/21beta/42start/src/parser/dop_parser.c
+/home/pro/CLionProjects/42sh/src/parser/dop_parser.c
 ../../inc/fshell.h
-/Users/mbrella/Desktop/projects/21beta/42start/inc/fshell.h
+/home/pro/CLionProjects/42sh/inc/fshell.h
 
-/Users/mbrella/Desktop/projects/21beta/42start/src/parser/main_parser.c
+/home/pro/CLionProjects/42sh/src/parser/main_parser.c
 ../../inc/fshell.h
-/Users/mbrella/Desktop/projects/21beta/42start/inc/fshell.h
+/home/pro/CLionProjects/42sh/inc/fshell.h
 
-/Users/mbrella/Desktop/projects/21beta/42start/src/shell_lvl.c
+/home/pro/CLionProjects/42sh/src/shell_lvl.c
 ../inc/fshell.h
-/Users/mbrella/Desktop/projects/21beta/42start/inc/fshell.h
+/home/pro/CLionProjects/42sh/inc/fshell.h
 

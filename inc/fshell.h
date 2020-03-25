@@ -167,6 +167,7 @@ void	mark_job_as_running (t_job *j);
 t_job * find_job (pid_t pgid);
 int	job_is_stopped (t_job *j);
 int	job_is_completed (t_job *j);
+int		ft_distruct_job(t_job *head);
 
 /////////////////////////
 void	ft_infinit_pipe2(t_exectoken *head, t_memory *q);
