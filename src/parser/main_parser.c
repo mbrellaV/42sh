@@ -72,6 +72,9 @@ t_exectoken		*all_parse(char *cmd)
 	t_exectoken	*extmp;
 	t_dop_str	*t;
 	t_lextoken	*dop_tmp;
+	t_lextoken	*token_for_del;
+	char		*str_for_del;
+
 
 	t = NULL;
 	//dprintf(2, "\n1|%s|\n", cmd);
@@ -81,8 +84,8 @@ t_exectoken		*all_parse(char *cmd)
 	tmp = do_zam_bax_and_hist_full(tmp);
 	//dprintf(2, "\n20|%s|\n", cmd);
 	dop_tmp = tmp;
-	ft_strdel(&cmd);
-	if ((cmd = (char *)ft_memalloc(1000)) == NULL)
+	//ft_strdel(&cmd);
+	if ((cmd = (char *)ft_memalloc(13000)) == NULL)
 		ft_error_q(15);
 	while (dop_tmp)
 	{
@@ -91,12 +94,19 @@ t_exectoken		*all_parse(char *cmd)
 			ft_strcat(cmd, dop_tmp->line);
 		if (dop_tmp->next != NULL)
 			ft_strcat(cmd, " ");
+		ft_strdel(&dop_tmp->line);
+		token_for_del = dop_tmp;
 		dop_tmp = dop_tmp->next;
+		free(token_for_del);
 	}
 	//dprintf(2, "\n2|%s|\n", cmd);
+	str_for_del = cmd;
 	cmd = ft_do_zam_eval(cmd);
 	if (!(tmp = do_lexer(cmd)))
 		return (NULL);
+	ft_strdel(&str_for_del);
+	//ft_strdel(&cmd);
+
 	//tmp = do_zam_bax_and_hist_full(tmp);
 	//dprintf(2, "sas");
 //	while (tmp)

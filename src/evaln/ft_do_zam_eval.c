@@ -30,24 +30,11 @@ char	*ft_do_cut(char *tmp, int *d)
 			{
 				dprintf(2, "\n3|%s|\n", str_for_rec);
 				*d += ft_strlen(tmp);
-				return (ft_itoa(eval_expr(str_for_rec)));
+				str = ft_itoa(eval_expr(str_for_rec));
+				ft_strdel(&str_for_rec);
+				return (str);
 			}
         }
-	    else
-        {
-            return (NULL);
-        }
-//		dopi += 2;
-//		while (tmp[dopi] != '\0')
-//		{
-//			dopi++;
-//			if (tmp[dopi] == ')' && tmp[dopi + 1] == ')' && tmp[dopi + 2] == '\0')
-//				break;
-//		}
-//		if (tmp[dopi] != '\0')
-//		{
-//			str = ft_strsub(tmp, 2, dopi - 2);
-//		}
 	}
     return (NULL);
 }
@@ -71,7 +58,10 @@ char        *ft_main_calc_rec(char *mas)
 			cut_str = ft_do_cut(&mas[d + 1], &d);
 			dprintf(2, "\n|%s|\n", cut_str);
 			if (cut_str == NULL)
+			{
+				ft_strdel(&newstr);
 				return (NULL);
+			}
 			ft_strcat(newstr, cut_str);
 		}
 		else
@@ -81,7 +71,10 @@ char        *ft_main_calc_rec(char *mas)
 		}
 	}
 	if (i == 0)
+	{
+		ft_strdel(&newstr);
 		return (NULL);
+	}
 	return (newstr);
 }
 
@@ -90,6 +83,6 @@ char        *ft_do_zam_eval(char *mas)
 	char *newstr;
 
     if ((newstr = ft_main_calc_rec(mas)) == NULL)
-        return (mas);
+		return (mas);
     return (newstr);
 }

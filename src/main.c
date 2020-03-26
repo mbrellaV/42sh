@@ -190,14 +190,16 @@ t_process	*create_process_list(t_exectoken *tmp)
 char	*create_command(t_exectoken *head)
 {
 	char *new_str;
-	//char *tmp;
+	char *tmp;
 
 	if (!(new_str = ft_strnew(1)))
 		ft_error_q(5);
 	while (head)
 	{
+		tmp = new_str;
 		new_str = ft_strjoin(new_str, head->file_args[0]);
 		head = head->left;
+		ft_strdel(&tmp);
 	}
 	return (new_str);
 }
@@ -287,6 +289,7 @@ int		ft_main_what(t_exectoken *tmp)
 			else
 				f_job = job;
 			sas = launch_job(job, job->foreground);
+			//dprintf(2, "\n|%s|\n", tmp->file_args[0]);
 		}
 		else if (tmp->left == NULL && is_builtin(tmp->file_args[0]) == 1)
 		{
@@ -333,9 +336,14 @@ int		main_cycle(t_readline *p, t_exectoken **start_token)
 	}
 	p->buff[0] != '\0' ? memory_head = ft_memory(memory_head, &(p->buff)) : memory_head;
 	if ((*start_token = all_parse(p->buff)) == NULL)
+	{
+		del_readline(p);
+		ft_distruct_tree(*start_token);
 		return (0);
+	}
 	if (ft_main_what(*start_token) == -1)
 		return (-1);
+	//ft_strdel(&p->buff);
 	del_readline(p);
 	ft_distruct_tree(*start_token);
 	return (0);
