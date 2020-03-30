@@ -60,7 +60,6 @@ int				dop_lexer1(t_dop_str *tmp, char *line)
 		tmp->i_c += 2;
 		return (0);
 	}
-	//dprintf(2, "\n123: |%d|, |%c|\n", word_size(line + tmp->i_c), *(line + tmp->i_c));
 	if (word_size(line + tmp->i_c) == -1)
 		return (-1);
 	tmp->tmp_c = ft_strsub(line, tmp->i_c +
@@ -84,7 +83,12 @@ int				dop_lexer(t_dop_str *tmp, char *line)
 {
 	if (isword(line[tmp->i_c]) > 0)
 	{
-		if (dop_lexer1(tmp, line) == -1)
+		if (isoperator(line[tmp->i_c + 1]) > 0)
+		{
+			if (dop_lexer2(tmp, line) == -1)
+				return (-1);
+		}
+		else if (dop_lexer1(tmp, line) == -1)
 			return (-1);
 	}
 	else if (isoperator(line[tmp->i_c]))

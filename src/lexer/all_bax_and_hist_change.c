@@ -77,6 +77,7 @@ t_lextoken		*do_zam_bax_and_hist_full(t_lextoken *h)
 {
 	t_dop_str	*tmp;
 	t_lextoken  *htmp;
+	char		*str_for_del;
 
 	if (!h)
 		return (NULL);
@@ -91,9 +92,8 @@ t_lextoken		*do_zam_bax_and_hist_full(t_lextoken *h)
 		if (h->inhibitor_lvl != 2)
 		{
 			h->line = do_zamena_sp(h->line);
-			//h->line = do_zam_str_bax(h->line, tmp);
-			//h->line = do_obr_zamena_bax(h->line);
-			//h->line = ft_do_zam_eval(h->line);
+			h->line = do_zam_str_bax(&h->line, tmp);
+			h->line = do_obr_zamena_bax(h->line);
 		}
 		if (h->inhibitor_lvl == 0)
 			h->line = ft_do_zam_alias(h->line);

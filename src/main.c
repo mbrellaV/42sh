@@ -259,6 +259,7 @@ int		ft_main_what(t_exectoken *tmp)
 {
 	t_job	*job;
 	int		sas;
+	char	*str_to_del;
 
 	sas = 0;
     do_zam_ravno(tmp);
@@ -272,14 +273,16 @@ int		ft_main_what(t_exectoken *tmp)
 		}
 		if (is_builtin(tmp->file_args[0]) == 0 || tmp->file_opt != NULL)
 		{
-			//dprintf(2, "sas: |%d|", sas);
-			if (tmp->should_wait_and == 1 && ft_atoi(ft_get_var("?", g_all_var)) > 0)
+			str_to_del = ft_get_var("?", g_all_var);
+			if (tmp->should_wait_and == 1 && ft_atoi(str_to_del) > 0)
 			{
+				ft_strdel(&str_to_del);
 				tmp = tmp->right;
 				continue ;
 			}
-			else if (tmp->should_wait_or == 1 && ft_atoi(ft_get_var("?", g_all_var)) == 0)
+			else if (tmp->should_wait_or == 1 && ft_atoi(str_to_del) == 0)
 			{
+				ft_strdel(&str_to_del);
 				tmp = tmp->right;
 				continue ;
 			}
@@ -289,6 +292,7 @@ int		ft_main_what(t_exectoken *tmp)
 			else
 				f_job = job;
 			sas = launch_job(job, job->foreground);
+			ft_strdel(&str_to_del);
 			//dprintf(2, "\n|%s|\n", tmp->file_args[0]);
 		}
 		else if (tmp->left == NULL && is_builtin(tmp->file_args[0]) == 1)
@@ -322,9 +326,6 @@ int		main_cycle(t_readline *p, t_exectoken **start_token)
 	{
 		while (get_next_line(STDIN_FILENO, &p->buff))
 		{
-//			write(1, "\n", 1);
-//			ft_start_read(p);
-//			ft_cleanstr(50, p);
 			*start_token = all_parse(p->buff);
 			if (ft_main_what(*start_token) == -1)
 				return (-1);

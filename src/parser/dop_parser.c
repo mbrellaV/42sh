@@ -99,8 +99,7 @@ t_exectoken				*ft_cr_new_exectoken(t_lextoken *tmp,
 		}
 		else if (t->dop_a->is_near_opt == 1)
 		{
-			if (!(t->tmp1_a->file_opt[t->dopi_a] = ft_strsub(t->dop_a->line,
-					0, ft_strlen(t->dop_a->line))))
+			if (!(t->tmp1_a->file_opt[t->dopi_a] = ft_strdup(t->dop_a->line)))
 				return (ft_kill_str_dop_exec(t, NULL));
 			t->dopi_a++;
 		}

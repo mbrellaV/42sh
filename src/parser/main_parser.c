@@ -72,14 +72,16 @@ t_exectoken		*all_parse(char *cmd)
 	t_exectoken	*extmp;
 	t_dop_str	*t;
 	t_lextoken	*dop_tmp;
+	//t_exectoken	*exdop;
 	t_lextoken	*token_for_del;
 	char		*str_for_del;
 
 
 	t = NULL;
 	//dprintf(2, "\n1|%s|\n", cmd);
-	if (!(tmp = (cmd)))
+	if (!(tmp = do_lexer(cmd)))
 		return (NULL);
+
 	//dprintf(2, "\n10|%s|\n", cmd);
 	tmp = do_zam_bax_and_hist_full(tmp);
 	//dprintf(2, "\n20|%s|\n", cmd);
@@ -92,7 +94,7 @@ t_exectoken		*all_parse(char *cmd)
 		//dprintf(2, "|%s|\n", dop_tmp->line);
 		if (dop_tmp->line != NULL)
 			ft_strcat(cmd, dop_tmp->line);
-		if (dop_tmp->next != NULL)
+		if (dop_tmp->next != NULL && dop_tmp->is_near_opt != 1)
 			ft_strcat(cmd, " ");
 		ft_strdel(&dop_tmp->line);
 		token_for_del = dop_tmp;
@@ -104,26 +106,25 @@ t_exectoken		*all_parse(char *cmd)
 	cmd = ft_do_zam_eval(cmd);
 	if (!(tmp = do_lexer(cmd)))
 		return (NULL);
-	ft_strdel(&str_for_del);
-	//ft_strdel(&cmd);
-
-	//tmp = do_zam_bax_and_hist_full(tmp);
-	//dprintf(2, "sas");
-//	while (tmp)
+//	dop_tmp = tmp;
+//	while (dop_tmp)
 //	{
-//		dprintf(2, "|%s, %d| ", tmp->line, tmp->is_near_opt);
-//		tmp = tmp->next;
+//		dprintf(2, "\n|%d, %s|\n", dop_tmp->is_near_opt, dop_tmp->line);
+//		dop_tmp = dop_tmp->next;
 //	}
-//	exit(0);
-	//exit(0);
-	//tmp = do_zam_bax_and_hist_full(tmp);
-	//dprintf(2, "1\n|%p|\n", tmp);
+	ft_strdel(&str_for_del);
 	free(t);
-	//exit(0);
 	extmp = do_parser(tmp);
-	//dprintf(2, "2\n|%p|\n", extmp);
-	//dprintf(2, "2\n|%p|\n", extmp->file_args);
-
+	//exdop = extmp;
+//	while (exdop)
+//	{
+//		dprintf(2, "\n//");
+//		ft_show_env(exdop->file_args);
+//		dprintf(2, "\n//");
+//		ft_show_env(exdop->file_opt);
+//		dprintf(2, "\n//");
+//		exdop = exdop->right;
+//	}
 	ft_distr_lex(tmp);
 	return (extmp);
 }
