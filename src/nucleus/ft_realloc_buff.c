@@ -18,7 +18,9 @@ void	ft_realloc_buff(t_readline *p)
 	int		i;
 
 	p->buff_size *= 2;
-	tmp = ft_strnew(p->buff_size + 1);
+//	ft_putendl("\n*\n*\n*\nREALLOC_BUFF");
+	if (!(tmp = ft_strnew(p->buff_size + 1)))
+		exit(1);
 	i = -1;
 	while (++i <= p->len)
 		tmp[i] = p->buff[i];

@@ -10,27 +10,6 @@ set(CMAKE_MAKEFILE_DEPENDS
   "../CMakeLists.txt"
   "CMakeFiles/3.15.3/CMakeCCompiler.cmake"
   "CMakeFiles/3.15.3/CMakeSystem.cmake"
-<<<<<<< HEAD
-  "/home/petruha2001/Templates/clion-2019.3.5/bin/cmake/linux/share/cmake-3.15/Modules/CMakeCInformation.cmake"
-  "/home/petruha2001/Templates/clion-2019.3.5/bin/cmake/linux/share/cmake-3.15/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake"
-  "/home/petruha2001/Templates/clion-2019.3.5/bin/cmake/linux/share/cmake-3.15/Modules/CMakeCommonLanguageInclude.cmake"
-  "/home/petruha2001/Templates/clion-2019.3.5/bin/cmake/linux/share/cmake-3.15/Modules/CMakeExtraGeneratorDetermineCompilerMacrosAndIncludeDirs.cmake"
-  "/home/petruha2001/Templates/clion-2019.3.5/bin/cmake/linux/share/cmake-3.15/Modules/CMakeFindCodeBlocks.cmake"
-  "/home/petruha2001/Templates/clion-2019.3.5/bin/cmake/linux/share/cmake-3.15/Modules/CMakeGenericSystem.cmake"
-  "/home/petruha2001/Templates/clion-2019.3.5/bin/cmake/linux/share/cmake-3.15/Modules/CMakeInitializeConfigs.cmake"
-  "/home/petruha2001/Templates/clion-2019.3.5/bin/cmake/linux/share/cmake-3.15/Modules/CMakeLanguageInformation.cmake"
-  "/home/petruha2001/Templates/clion-2019.3.5/bin/cmake/linux/share/cmake-3.15/Modules/CMakeSystemSpecificInformation.cmake"
-  "/home/petruha2001/Templates/clion-2019.3.5/bin/cmake/linux/share/cmake-3.15/Modules/CMakeSystemSpecificInitialize.cmake"
-  "/home/petruha2001/Templates/clion-2019.3.5/bin/cmake/linux/share/cmake-3.15/Modules/Compiler/CMakeCommonCompilerMacros.cmake"
-  "/home/petruha2001/Templates/clion-2019.3.5/bin/cmake/linux/share/cmake-3.15/Modules/Compiler/GNU-C.cmake"
-  "/home/petruha2001/Templates/clion-2019.3.5/bin/cmake/linux/share/cmake-3.15/Modules/Compiler/GNU.cmake"
-  "/home/petruha2001/Templates/clion-2019.3.5/bin/cmake/linux/share/cmake-3.15/Modules/Internal/CMakeCheckCompilerFlag.cmake"
-  "/home/petruha2001/Templates/clion-2019.3.5/bin/cmake/linux/share/cmake-3.15/Modules/Platform/Linux-GNU-C.cmake"
-  "/home/petruha2001/Templates/clion-2019.3.5/bin/cmake/linux/share/cmake-3.15/Modules/Platform/Linux-GNU.cmake"
-  "/home/petruha2001/Templates/clion-2019.3.5/bin/cmake/linux/share/cmake-3.15/Modules/Platform/Linux.cmake"
-  "/home/petruha2001/Templates/clion-2019.3.5/bin/cmake/linux/share/cmake-3.15/Modules/Platform/UnixPaths.cmake"
-  "/home/petruha2001/Templates/clion-2019.3.5/bin/cmake/linux/share/cmake-3.15/Modules/ProcessorCount.cmake"
-=======
   "/home/pro/Загрузки/clion-2019.3.5/bin/cmake/linux/share/cmake-3.15/Modules/CMakeCCompiler.cmake.in"
   "/home/pro/Загрузки/clion-2019.3.5/bin/cmake/linux/share/cmake-3.15/Modules/CMakeCCompilerABI.c"
   "/home/pro/Загрузки/clion-2019.3.5/bin/cmake/linux/share/cmake-3.15/Modules/CMakeCInformation.cmake"
@@ -101,7 +80,6 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/home/pro/Загрузки/clion-2019.3.5/bin/cmake/linux/share/cmake-3.15/Modules/Platform/Linux.cmake"
   "/home/pro/Загрузки/clion-2019.3.5/bin/cmake/linux/share/cmake-3.15/Modules/Platform/UnixPaths.cmake"
   "/home/pro/Загрузки/clion-2019.3.5/bin/cmake/linux/share/cmake-3.15/Modules/ProcessorCount.cmake"
->>>>>>> f2f4bcd239356ec3c9e7f4b7ccb9d50331cb8cdd
   )
 
 # The corresponding makefile is:

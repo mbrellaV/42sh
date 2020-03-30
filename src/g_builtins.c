@@ -4,7 +4,7 @@ const char		*g_builtins[BIL_NUM] =
 {
 	"alias",
 	"export",
-	"unexport",
+	"unset",
 	"history",
 	"env",
 	"clear",
