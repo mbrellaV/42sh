@@ -12,17 +12,17 @@
 
 #include "../inc/fshell.h"
 
-void	ft_add_intput_que(t_readline *p, t_memory *head)
+void	ft_add_intput_que(t_readline *p, t_memory *head, int mod)
 {
 	t_readline	q;
 	int			i;
 
-	q.mod = 1;
+	q.mod = mod;
 	ft_start_read(&q);
 	if (p->len >= p->buff_size)
 		ft_realloc_buff(p);
 	p->buff[p->index++] = '\n';
-	ft_read_8(&q, head, 1);
+	ft_read_8(&q, head, mod);
 //	dprintf(2, "\nGG111\n");
 //	dprintf(open("start_que.txt", O_CREAT | O_RDWR | O_TRUNC,
 //			S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP |

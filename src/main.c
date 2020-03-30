@@ -319,7 +319,9 @@ int		main_cycle(t_readline *p, t_exectoken **start_token)
 		ft_read_8(p, memory_head, 0);
 		write(2, "\n", 1);
 		while (ft_cheak_quote(p->buff) != 1)
-			ft_add_intput_que(p, memory_head);
+			ft_add_intput_que(p, memory_head, 1);
+		while (p->buff[p->index - 1] == '\\')
+			ft_add_intput_que(p, memory_head, 11);
 		reset_input_mode();
 	}
 	else

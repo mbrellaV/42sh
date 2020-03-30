@@ -56,7 +56,7 @@ void				ft_dop_history(t_memory *q, t_readline *p, int k);
 void				ft_putmemory(t_memory **q, t_readline *p);
 void				ft_start_read(t_readline *p);
 int					ft_cheak_quote(char *input);
-void				ft_add_intput_que(t_readline *p, t_memory *head);
+void				ft_add_intput_que(t_readline *p, t_memory *head, int mod);
 char				**ft_arrnew(size_t size);
 void				ft_arrdel(char **arr);
 int					del_readline(t_readline *p);

@@ -28,5 +28,10 @@ int		ft_printf_helper(int flag)
 		ft_putstr_fd("heredoc> ", 2);
 		return (ft_strlen("heredoc> "));
 	}
+	else if (flag == 11)
+	{
+		ft_putstr_fd("> ", 2);
+		return (ft_strlen("> "));
+	}
 	return (0);
 }
