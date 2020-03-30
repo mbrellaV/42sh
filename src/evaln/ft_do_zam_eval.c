@@ -8,11 +8,8 @@ char	*ft_do_cut(char *tmp, int *d)
 	char    *str_for_rec;
 
 	dopi = 0;
-	str = 0;
-    dprintf(2, "\n|%s|\n", tmp);
     if (tmp[dopi] == '(' && tmp[dopi + 1] == '(')
 	{
-        dprintf(2, "\n|%d|, |%d|\n", sc_size(&tmp[dopi], '('), sc_size(&tmp[dopi + 1], '('));
         if (sc_size(&tmp[dopi], '(') != -1 && sc_size(&tmp[dopi + 1], '(') != -1)
         {
             dopi = sc_size(&tmp[dopi], '(') - 3;
@@ -60,9 +57,11 @@ char        *ft_main_calc_rec(char *mas)
 			if (cut_str == NULL)
 			{
 				ft_strdel(&newstr);
+				ft_strdel(&cut_str);
 				return (NULL);
 			}
 			ft_strcat(newstr, cut_str);
+			ft_strdel(&cut_str);
 		}
 		else
 		{

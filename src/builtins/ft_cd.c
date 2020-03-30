@@ -14,6 +14,7 @@
 
 int			ft_cd_error(char *tmp, int err, int to_free)
 {
+	set_new_var("?", "2", &g_all_var);
 	err == 1 ? ft_printf("42sh : cd: no such file or directory: %s\n", tmp) : 0;
 	err == 2 ? ft_printf("42sh: cd: %s not set\n", tmp) : 0;
 	err == 3 ? ft_printf("42sh: cd: not a directory: %s\n", tmp) : 0;

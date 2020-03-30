@@ -44,8 +44,10 @@ int		eval_expr(char *str)
 	char	**strp;
 
 	l = cr_new_el();
-	stackos = (int*)ft_memalloc(4 * ft_strlen(str));
-	stackzn = (int*)ft_memalloc(4 * ft_strlen(str));
+	if (!(stackos = (int*)ft_memalloc(4 * ft_strlen(str))))
+		return (-1);
+	if (!(stackzn = (int*)ft_memalloc(4 * ft_strlen(str))))
+		return (-1);
 	strp = &str;
 	while (*str != '\0')
 	{
@@ -59,7 +61,7 @@ int		eval_expr(char *str)
 			dostack(stackos, stackzn, opr_znak(&str), l);
 		str++;
 	}
-	calcend(stackos, stackzn, l);
+	calcend(&stackos, &stackzn, &l);
 	return (stackos[0]);
 }
 

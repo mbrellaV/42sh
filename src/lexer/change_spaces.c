@@ -22,6 +22,8 @@ char				*do_obr_zamena_sp(char *line)
 	i = 0;
 	d = 0;
 	size = 0;
+	if (line == NULL)
+		return (NULL);
 	while (line[i++] != '\0')
 		size++;
 	if (!(new = ft_memalloc(size * sizeof(char) + 1)))
@@ -47,6 +49,8 @@ char				*do_zamena_sp(char *line)
 
 	i = 0;
 	d = 0;
+	if (line == NULL)
+		return (ft_strnew(1));
 	if (!(new = ft_memalloc(ft_strlen(line) * sizeof(char) + 1)))
 		ft_error_q(2);
 	while (line[i])
@@ -75,6 +79,8 @@ char				*do_obr_zamena_bax(char *line)
 	i = 0;
 	d = 0;
 	size = 0;
+	if (line == NULL)
+		return (ft_strnew(1));
 	while (line[i++] != '\0')
 		size++;
 	if (!(new = ft_memalloc(size * sizeof(char) + 1)))

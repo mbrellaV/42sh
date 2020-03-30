@@ -20,6 +20,8 @@ char				*do_zam_str_bax(char *str1, t_dop_str *t)
 
 	dop = 0;
 	end = 0;
+	if (str1 == NULL)
+		return (ft_strnew(1));
 	while (t->str_b[++t->i_b])
 		if (t->str_b[t->i_b] == '$' && t->str_b[t->i_b - 1] != '\\' && t->str_b[t->i_b + 1] != '(')
 		{

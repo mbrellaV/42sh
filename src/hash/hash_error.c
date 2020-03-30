@@ -16,6 +16,7 @@ char	*hash_error(int err, char *key, int no_error)
 {
 	if (no_error)
 		return (NULL);
+	set_new_var("?", "2", &g_all_var);
 	if (err == 1)
 	{
 		ft_printf("21sh: no such file or directory: %s\n", key);

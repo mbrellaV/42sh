@@ -75,11 +75,14 @@ void	dostack(int *stackos, int *stackzn, int c, t_int *lastint)
 		lastint->i = 1;
 }
 
-void	calcend(int *stackos, int *stackzn, t_int *str)
+void	calcend(int **stackos, int **stackzn, t_int **str)
 {
-	while (str->stackoslast > 1)
+	while ((*str)->stackoslast > 1)
 	{
-		calc(stackos, str, stackzn[str->stackznlast - 1]);
-		subzn(stackzn, str);
+		calc(*stackos, *str, *stackzn[(*str)->stackznlast - 1]);
+		subzn(*stackzn, *str);
 	}
+	free(*stackos);
+	free(*stackzn);
+	free(*str);
 }

@@ -25,7 +25,7 @@ typedef struct		s_int
 int					is_znak(int c);
 int					eval_expr(char *str);
 void				dostack(int *stackos, int *stackzn, int c, t_int *lastint);
-void				calcend(int *stackos, int *stackzn, t_int *str);
+void				calcend(int **stackos, int **stackzn, t_int **str);
 char        		*ft_main_calc_rec(char *mas);
 int					prior(int c);
 int					ft_atoi_with(char **str);
