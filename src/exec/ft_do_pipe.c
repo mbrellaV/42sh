@@ -94,7 +94,10 @@ int		ft_fd_flag(char **av, int *fd_in)
 			p.flag = ft_what_flag(av[p.i], &(p.b));
 		else if (p.b == 1 && p.flag != 0)
 		{
-			ft_open_flag(av[p.i], &(p.flag), &fd_in, &p.fd);
+			if (av[p.i][0] >= '0' && av[p.i][0] <= '9')
+				p.fd = ft_atoi(av[p.i]);
+			else
+				ft_open_flag(av[p.i], &(p.flag), &fd_in, &p.fd);
 			if (p.flag == 1 || p.flag == 2)
 				dup2(p.fd, p.st);
 			else if (p.flag == 6)
