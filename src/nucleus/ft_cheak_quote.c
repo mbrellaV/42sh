@@ -18,9 +18,9 @@ int		ft_cheak_quote(char *input)
 	char	c;
 
 	k = -1;
-//	dprintf(open("ch_que.txt", O_CREAT | O_RDWR | O_TRUNC,
-//			S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP |
-//					S_IROTH | S_IWOTH), "start:\n%s\nend\n", input);
+	dprintf(open("ch_que.txt", O_CREAT | O_RDWR | O_TRUNC,
+			S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP |
+					S_IROTH | S_IWOTH), "start:\n%s\nend\n", input);
 	while (input[++k])
 	{
 		if ((input[k] == '\'' || input[k] == '\"') && input[k - 1] != '\\')
