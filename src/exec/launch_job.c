@@ -20,6 +20,7 @@ int		launch_job(t_job *j, int foreground)
 	int mypipe[2], infile, outfile;
 
 	infile = j->stdinc;
+	outfile = j->stdoutc;
 	p = j->first_process;
 	rt = NULL;
 	while (p)
@@ -30,21 +31,28 @@ int		launch_job(t_job *j, int foreground)
             p = p->next;
 		    continue ;
         }
-		if (p->next)
+//		if (p->next)
+//		{
+//			if (pipe (mypipe) < 0)
+//				exit (1);
+//			outfile = mypipe[1];
+//		}
+//		else
+//			outfile = j->stdoutc;
+		if (pipe(mypipe) <= -1 || (pid = fork()) <= -1)
+			exit (1);
+		else if (pid == 0)
 		{
-			if (pipe (mypipe) < 0)
-				exit (1);
-			outfile = mypipe[1];
-		}
-		else
-			outfile = j->stdoutc;
-		pid = fork();
-		if (pid == 0)
+			if (p->next != NULL)
+			{
+				dup2(mypipe[1], 1);
+				close(mypipe[1]);
+			}
+			if (p->file_opt)
+				ft_fd_flag(p->file_opt, &infile);
+			dup2(infile, 0);
+			close(mypipe[0]);
 			launch_process(p, j->pgid, infile, outfile, j->stderrc, foreground, rt);
-		else if (pid < 0)
-			/* This is the child process.  */
-		{
-			exit(0);
 		}
 		else
 		{
@@ -56,23 +64,14 @@ int		launch_job(t_job *j, int foreground)
 					j->pgid = pid;
 				setpgid (pid, j->pgid);
 			}
-		//	wait(&pid);
-			//printf("%sstatus: %d%s\n", RED, pid, RESET);
-//			if (WIFEXITED(status))
-//			{
-//				g_exit_code = WEXITSTATUS(status);
-//				printf("%sExit status of the child was %d%s\n", YEL, g_exit_code, RESET);
-//			}
 		}
-		if (infile != j->stdinc)
-			close (infile);
-		if (outfile != j->stdoutc)
-			close (outfile);
-		//close(fd);
+		close(mypipe[1]);
 		infile = mypipe[0];
-		//outfile = mypipe[1];
-		//dprintf(2, "\n\ndad13|%d|, |%d|", infile, outfile);
-
+//		if (infile != j->stdinc)
+//			close (infile);
+//		if (outfile != j->stdoutc)
+//			close (outfile);
+//		infile = mypipe[0];
 		p = p->next;
 	}
 	if (j->foreground == 0)
@@ -83,7 +82,5 @@ int		launch_job(t_job *j, int foreground)
 		put_job_in_foreground (j, 0);
 	else
 		put_job_in_background (j, 0);
-//	if (rt != NULL)
-//		free(rt);
 	return (0);
 }

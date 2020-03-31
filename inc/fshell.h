@@ -155,7 +155,7 @@ int		do_job_del();
 
 int		ft_whatis3(t_process *tmp);
 
-int					ft_fd_flag(char **av, int *fd_in, int *infile, int *outfile);
+int					ft_fd_flag(char **av, int *fd_in);
 
 
 void	put_job_in_foreground (t_job *j, int cont);

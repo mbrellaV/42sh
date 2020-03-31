@@ -21,8 +21,9 @@ void	ft_add_intput_que(t_readline *p, t_memory *head, int mod)
 	ft_start_read(&q);
 	if (p->len >= p->buff_size)
 		ft_realloc_buff(p);
-	p->buff[p->index++] = '\n';
-	p->len++;
+	mod == 1 ? p->buff[p->index++] = '\n' : 0;
+	mod == 1 ? p->len++ : 0;
+	mod == 11? p->index-- : 0;
 	ft_read_8(&q, head, mod);
 //	dprintf(2, "\nGG111\n");
 	dprintf(open("start_que.txt", O_CREAT | O_RDWR | O_TRUNC,

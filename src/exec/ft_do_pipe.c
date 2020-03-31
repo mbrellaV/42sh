@@ -81,7 +81,7 @@ int		ft_heredoc(char *tmp)
 	return (f[0]);
 }
 
-int		ft_fd_flag(char **av, int *fd_in, int *infile, int *outfile)
+int		ft_fd_flag(char **av, int *fd_in)
 {
 	t_pipe	p;
 
@@ -96,9 +96,11 @@ int		ft_fd_flag(char **av, int *fd_in, int *infile, int *outfile)
 		{
 			ft_open_flag(av[p.i], &(p.flag), &fd_in, &p.fd);
 			if (p.flag == 1 || p.flag == 2)
+				dup2(p.fd, p.st);
+			else if (p.flag == 6)
 			{
-				*infile = p.st;
-				*outfile = p.fd;
+				dup2(p.fd, 1);
+				dup2(p.fd, 2);
 			}
 			else if (p.flag == 4)
 				*fd_in = ft_heredoc(av[p.i]);
