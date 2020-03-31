@@ -33,7 +33,7 @@ char			find_pair_sc(char c)
 	if (c == '(')
 		return (')');
 	if (c == '{')
-		return ('{');
+		return ('}');
 	return (0);
 }
 

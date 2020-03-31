@@ -61,7 +61,6 @@ int		eval_expr(char *str)
 			dostack(stackos, stackzn, opr_znak(&str), l);
 		str++;
 	}
-	calcend(&stackos, &stackzn, &l);
-	return (stackos[0]);
+	return (calcend(&stackos, &stackzn, &l));
 }
 

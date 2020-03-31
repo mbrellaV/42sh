@@ -109,7 +109,6 @@ int				sc_size(char *str, char b)
 		if (*str == b)
 			cn--;
 	}
-	//dprintf(2, "\nno: |%d|\n", i);
 	if (*str == '\0' && cn != 0)
 		return (-1);
 	return (i + 2);

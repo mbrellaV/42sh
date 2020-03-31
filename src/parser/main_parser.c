@@ -81,7 +81,6 @@ t_exectoken		*all_parse(char *cmd)
 	//dprintf(2, "\n1|%s|\n", cmd);
 	if (!(tmp = do_lexer(cmd)))
 		return (NULL);
-
 	//dprintf(2, "\n10|%s|\n", cmd);
 	tmp = do_zam_bax_and_hist_full(tmp);
 	//dprintf(2, "\n20|%s|\n", cmd);
