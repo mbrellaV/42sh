@@ -23,13 +23,18 @@ t_lextoken		*do_zam_join_par(t_lextoken *h)
 	{
     	if (h->next && h->next->is_near_word == 1)
 		{
-
 			tmp = h->line;
 			h->next->line = ft_strjoin(h->line, h->next->line);
+			if (h->prev != NULL)
+			{
+				h->prev->next = h->next;
+				h->next->prev = h->prev;
+			}
+			else
+				lextmp1 = h;
 			ft_strdel(&tmp);
 			lextmp = h;
 			h = h->next;
-			lextmp1 = h;
 			free(lextmp);
 			h->is_near_word = 0;
 			h->inhibitor_lvl = 0;

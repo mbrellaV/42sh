@@ -1,19 +1,4 @@
 startADD:
-ls "gfasghdrgvsbdn
-dshfdgsfsg
-d
-fds
-gdf
-xfg
-bhfn
-gvb
-dfv
-dbngbdsvzbnbffb gvsb f"vdxbfgavsbndgbsssd"
-sdbghsfdgb
-fd
-g
-dfg
-hf
-hd
-fhfdg
-fd
+ls "123
+456 789
+123456789"123 456"
