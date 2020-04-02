@@ -32,6 +32,8 @@ int		prior(int c)
 		return (2);
 	else if ((c - 300) == '%')
 		return (2);
+	else if (issc((char)(c - 300)))
+		return (0);
 	else if (c > 300 && c < 800)
 		return (1);
 	else
@@ -49,6 +51,7 @@ int		is_znak(int c)
 
 void	dostack(int *stackos, int *stackzn, int c, t_int *lastint)
 {
+	//dprintf(2, "\nc: |%d, %d, %d|\n", c, stackzn[lastint->stackznlast - 1], prior(stackzn[lastint->stackznlast - 1]));
 	if ((c - 300) == '(')
 		addzn(stackzn, c, lastint);
 	else if ((c - 300) == ')')
@@ -60,7 +63,7 @@ void	dostack(int *stackos, int *stackzn, int c, t_int *lastint)
 		}
 		subzn(stackzn, lastint);
 	}
-	else if (prior(stackzn[lastint->stackznlast - 1]) < prior(c))
+	else if (lastint->stackznlast != 0 && prior(stackzn[lastint->stackznlast - 1]) < prior(c))
 		addzn(stackzn, c, lastint);
 	else
 	{
@@ -68,17 +71,18 @@ void	dostack(int *stackos, int *stackzn, int c, t_int *lastint)
 		{
 			calc(stackos, lastint, stackzn[lastint->stackznlast - 1]);
 			subzn(stackzn, lastint);
+			//exit(0);
 		}
 		addzn(stackzn, c, lastint);
 	}
 	if (is_znak(c))
 		lastint->i = 1;
+
 }
 
 int		calcend(int **stackos, int **stackzn, t_int **str)
 {
 	int		result;
-
 
 	while ((*str)->stackoslast > 1)
 	{

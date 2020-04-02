@@ -12,27 +12,23 @@
 
 #include "eval_expr.h"
 
-int		opr_znak(char **dstr)
+int		opr_znak(char *dstr, int *marker)
 {
 	int		i;
-	char	*newstr;
 	int		sum;
 	char	*str;
 
-	i = 0;
-	str = *dstr;
+	i = *marker;
+	str = dstr;
 	sum = 300;
-	while (str[i] != '\0' && is_znak(str[i]))
-		i++;
-	newstr = ft_strsub(str, 0, i);
-	i = 0;
-	while (newstr[i])
+	dprintf(2, "\nobc: |%s, %s, %d|\n", str, &str[i], i);
+	while (str[i] && (is_znak(str[i]) || issc(str[i])))
 	{
-		sum += newstr[i];
-		(*dstr)++;
+		dprintf(2, "\nbuk: |%d|\n", str[i]);
+		sum += str[i];
+		(*marker)++;
 		i++;
 	}
-	ft_strdel(&newstr);
 	return (sum);
 }
 
@@ -41,25 +37,33 @@ int		eval_expr(char *str)
 	int		*stackos;
 	int		*stackzn;
 	t_int	*l;
-	char	**strp;
+	int		i;
 
+	i = 0;
+	dprintf(2, "\nsas: |%s, %zu|", str, ft_strlen(str));
 	l = cr_new_el();
 	if (!(stackos = (int*)ft_memalloc(4 * ft_strlen(str))))
 		return (-1);
 	if (!(stackzn = (int*)ft_memalloc(4 * ft_strlen(str))))
 		return (-1);
-	strp = &str;
-	while (*str != '\0')
+	//(lastint->stackznlast == 0 ? 0 : 1)
+	while (i < ft_strlen(str) && str[i] != '\0')
 	{
-		if ((*str >= '0' && *str <= '9') || ((*str == '-' || *str == '+') &&
-			(*(str + 1) >= '0' && *(str + 1) <= '9') && l->i == 1))
+		dprintf(2, "\nto: |%s, %d, %d|", str + i, is_znak(str[i]), l->i);
+		if ((str[i] >= '0' && str[i] <= '9') || ((str[i] == '-' || str[i] == '+') &&
+				str[i + 1] != '\0' && (str[i + 1] >= '0' && str[i + 1] <= '9') && l->i == 1))
 		{
-			addos(stackos, ft_atoi_with(strp), l);
+			dprintf(2, "\nvash: |%d|", str[i]);
+			addos(stackos, ft_atoi_with(str + i, &i), l);
 			l->i = 0;
 		}
-		if ((is_znak(*str) && l->i == 0) || (*str == '(' || *str == ')'))
-			dostack(stackos, stackzn, opr_znak(&str), l);
-		str++;
+		if ((is_znak(str[i]) && l->i == 0) || (str[i] == '(' || str[i] == ')'))
+		{
+			dprintf(2, "\nnormznak: |%d|\n", str[i]);
+			dostack(stackos, stackzn, opr_znak(str, &i), l);
+		}
+		else
+			i++;
 	}
 	return (calcend(&stackos, &stackzn, &l));
 }

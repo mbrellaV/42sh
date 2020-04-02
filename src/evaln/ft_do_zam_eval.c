@@ -21,7 +21,9 @@ char	*ft_do_cut(char *tmp, int *d)
 			{
                 dprintf(2, "\n2|%s|\n", str_for_rec);
                 *d += ft_strlen(tmp);
-                return (ft_itoa(eval_expr(dop)));
+                str = ft_itoa(eval_expr(dop));
+				ft_strdel(&dop);
+				return (str);
             }
 			else
 			{

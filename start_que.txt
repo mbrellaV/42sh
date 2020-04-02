@@ -1,15 +1,4 @@
 startADD:
 ls "123
-svdsv
-s
-v
-ds
-v
-dvsv
-sdvsdv"sdvsdvsv"
-asdvsd
-vs
-dv
-s
-dv
-ds
+456 789
+123456789"123 456"

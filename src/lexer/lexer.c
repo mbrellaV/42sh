@@ -68,7 +68,7 @@ int				dop_lexer1(t_dop_str *tmp, char *line)
 		tmp->d_c = 1;
 	if (!(tmp->tail_c = add_token(tmp->tail_c, tmp->tmp_c, 1)))
 		return (-1);
-	if (ispar(line[tmp->i_c]) && isword(line[tmp->i_c - 1]))
+	if (ispar(line[tmp->i_c]) && tmp->i_c > 0 && isword(line[tmp->i_c - 1]))
 		tmp->tail_c->is_near_word = 1;
 	if (isword(line[tmp->i_c]) && tmp->i_c > 0 && ispar(line[tmp->i_c - 1]))
 		tmp->tail_c->is_near_word = 1;

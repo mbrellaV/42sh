@@ -28,7 +28,7 @@ void				dostack(int *stackos, int *stackzn, int c, t_int *lastint);
 int					calcend(int **stackos, int **stackzn, t_int **str);
 char        		*ft_main_calc_rec(char *mas);
 int					prior(int c);
-int					ft_atoi_with(char **str);
+int					ft_atoi_with(char *str, int *marker);
 t_int				*cr_new_el();
 void				calc(int *stackos, t_int *str, int c);
 void				addos(int *stackos, int c, t_int *lastint);
