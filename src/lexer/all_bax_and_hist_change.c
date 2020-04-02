@@ -45,6 +45,44 @@ t_lextoken		*do_zam_join_par(t_lextoken *h)
 	return (lextmp1);
 }
 
+int			check_if_in_sc(char *line, int i)
+{
+	int d;
+	int marker;
+
+	d = i;
+	marker = 0;
+	while (line[d])
+	{
+		if (line[d] == '(')
+			marker++;
+		d--;
+	}
+	d = i;
+	while (line[d])
+	{
+		if (line[d] == ')')
+			marker++;
+		d++;
+	}
+	if (marker == 2)
+		return (1);
+	return (0);
+}
+
+void		change_enters_in_sc(char *line)
+{
+	int i;
+
+	i = 0;
+	while (line[i] != '\0')
+	{
+		if (line[i] == '\n' && check_if_in_sc(line, i))
+			line[i] = ';';
+		i++;
+	}
+}
+
 void        del_one_node(char **str, int node_to_del)
 {
     int i;
