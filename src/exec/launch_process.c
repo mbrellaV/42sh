@@ -12,9 +12,7 @@
 
 #include "../../inc/fshell.h"
 
-int		launch_process (t_process *p, pid_t pgid,
-						   int infile, int outfile, int errfile,
-						   int foreground, char *rt)
+int		launch_process (t_process *p, pid_t pgid, int foreground, char *rt)
 {
 	pid_t		pid;
 	int dop1;

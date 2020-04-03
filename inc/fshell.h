@@ -140,6 +140,7 @@ void				do_count_shell_lvl(void);
 char		        *ft_do_zam_eval(char *mas);
 int				    sc_size(char *str, char b);
 char			    find_pair_sc(char c);
+int					check_bracket(char *str);
 
 
 //////////////////
@@ -147,9 +148,7 @@ t_job		*get_job_by_number(int n);
 int		do_fg(char **mas);
 int		do_bg(char **mas);
 void    do_zam_ravno(t_exectoken *h);
-int		launch_process (t_process *p, pid_t pgid,
-						   int infile, int outfile, int errfile,
-						   int foreground, char *rt);
+int		launch_process (t_process *p, pid_t pgid, int foreground, char *rt);
 int		launch_job(t_job *j, int foreground);
 int		needs_something_before(int n);
 int		do_job_del();

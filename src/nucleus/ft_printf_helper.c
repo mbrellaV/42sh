@@ -33,5 +33,10 @@ int		ft_printf_helper(int flag)
 		ft_putstr_fd("> ", 2);
 		return (ft_strlen("> "));
 	}
+	else if (flag == 20)
+	{
+		ft_putstr_fd("subsh> ", 2);
+		return (ft_strlen("subsh> "));
+	}
 	return (0);
 }
