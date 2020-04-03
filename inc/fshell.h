@@ -139,6 +139,7 @@ void				do_count_shell_lvl(void);
 char		        *ft_do_zam_eval(char *mas);
 int				    sc_size(char *str, char b);
 char			    find_pair_sc(char c);
+int					check_bracket(char *str);
 
 
 //////////////////

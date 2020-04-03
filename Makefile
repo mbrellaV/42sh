@@ -108,6 +108,7 @@ SRC_BASE = builtins/ft_cd.c\
 	parser/dop_parser.c\
 	parser/change_tilda.c\
 	parser/main_parser.c\
+	parser/check_bracket.c\
 	hash/hash_table.c\
 	hash/hash_table_2.c\
 	hash/hash_error.c\
