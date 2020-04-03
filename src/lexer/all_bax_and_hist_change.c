@@ -146,9 +146,10 @@ t_lextoken		*do_zam_bax_and_hist_full(t_lextoken *h)
 		tmp->str_b = h->line;
 		if (h->inhibitor_lvl != 2)
 		{
-			h->line = do_zamena_sp(h->line);
-			h->line = do_zam_str_bax(&h->line, tmp);
-			h->line = do_obr_zamena_bax(h->line);
+			dprintf(2, "\nsas: |%s|\n", h->line);
+			h->line = do_zam_str_bax(h->line, tmp);
+			dprintf(2, "\nsas: |%s|\n", h->line);
+
 		}
 		if (h->inhibitor_lvl == 0)
 			h->line = ft_do_zam_alias(h->line);

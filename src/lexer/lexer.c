@@ -131,12 +131,12 @@ t_lextoken		*do_lexer(char *line)
 	if (tmp->tail_c != NULL && tmp->tail_c->operator_type == 2)
 		return (ft_error(5, "\\n") == -1 ? NULL : 0);
 	tmp->tail_c = tmp->doptail_c;
-	while (tmp->tail_c)
-	{
-		if (tmp->tail_c->operator_type == -1)
-			return (ft_error(5, tmp->tail_c->line) == -1 ? NULL : 0);
-		tmp->tail_c->line = do_obr_zamena_sp(tmp->tail_c->line);
-		tmp->tail_c = tmp->tail_c->next;
-	}
+//	while (tmp->tail_c)
+//	{
+//		if (tmp->tail_c->operator_type == -1)
+//			return (ft_error(5, tmp->tail_c->line) == -1 ? NULL : 0);
+//		tmp->tail_c->line = do_obr_zamena_sp(tmp->tail_c->line);
+//		tmp->tail_c = tmp->tail_c->next;
+//	}
 	return (ft_kill_str_dop_lex(tmp, tmp->doptail_c));
 }

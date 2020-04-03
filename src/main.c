@@ -399,6 +399,7 @@ int		main_cycle(t_readline *p, t_exectoken **start_token)
 		ft_start_read(p);
 		ft_read_8(p, memory_head, 0);
 		write(2, "\n", 1);
+		//p->buff = do_zamena_slash(p->buff);
 		while (ft_cheak_quote(p->buff) != 1)
 			ft_add_intput_que(p, memory_head, 1);
 		while (p->index > 0 && p->buff[p->index - 1] == '\\')

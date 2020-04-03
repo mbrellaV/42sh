@@ -79,10 +79,17 @@ t_exectoken		*all_parse(char *cmd)
 
 
 	t = NULL;
+	if (*cmd == '\0')
+		return (NULL);
+	cmd = do_zamena_slash(cmd);
+	str_for_del = cmd;
+	//ft_strdel(&str_for_del);
 	//change_enters_in_sc(cmd);
 //	dprintf(2, "\n1|%s|\n", cmd);
+
 	if (!(tmp = do_lexer(cmd)))
 		return (NULL);
+	ft_strdel(&str_for_del);
 //	dop_tmp = tmp;
 //	while (dop_tmp)
 //	{
@@ -131,6 +138,8 @@ t_exectoken		*all_parse(char *cmd)
 	ft_strdel(&cmd);
 	free(t);
 	extmp = do_parser(tmp);
+	do_obr_zamena_slash(extmp);
+
 	//exdop = extmp;
 //	while (exdop)
 //	{
