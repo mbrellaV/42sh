@@ -18,7 +18,6 @@ int		ft_atoi_with(char *str, int *marker)
 	int en;
 
 	en = 0;
-	dprintf(2, "\nstratoi: |%s|", str);
 	while ((*str < 33 || *str == '-' || *str == '+' || *str > 126) &&
 			en == 0)
 	{
@@ -32,7 +31,6 @@ int		ft_atoi_with(char *str, int *marker)
 		(str)++;
 		(*marker)++;
 	}
-	dprintf(2, "\nnum: |%d|", *str);
 	if (en == 0)
 		en++;
 	res = 0;
@@ -42,6 +40,5 @@ int		ft_atoi_with(char *str, int *marker)
 		str++;
 		(*marker)++;
 	}
-	dprintf(2, "\nnum: |%d|", res * en);
 	return (res * en);
 }

@@ -67,7 +67,7 @@ void	dostack(int *stackos, int *stackzn, int c, t_int *lastint)
 		addzn(stackzn, c, lastint);
 	else
 	{
-		while (prior(stackzn[lastint->stackznlast - 1]) >= prior(c))
+		while (lastint->stackznlast > 0 && prior(stackzn[lastint->stackznlast - 1]) >= prior(c))
 		{
 			calc(stackos, lastint, stackzn[lastint->stackznlast - 1]);
 			subzn(stackzn, lastint);

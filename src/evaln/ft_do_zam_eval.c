@@ -14,12 +14,12 @@ char	*ft_do_cut(char *tmp, int *d)
         {
             dopi = sc_size(&tmp[dopi], '(') - 3;
             dop = ft_strsub(tmp, 2, dopi - 2);
-            dprintf(2, "\n|%s|\n", dop);
+           // dprintf(2, "\n|%s|\n", dop);
             str_for_rec = ft_main_calc_rec(dop);
-			dprintf(2, "\n1|%s|\n", str_for_rec);
+			//dprintf(2, "\n1|%s|\n", str_for_rec);
 			if (str_for_rec == NULL)
 			{
-                dprintf(2, "\n2|%s|\n", str_for_rec);
+                //dprintf(2, "\n2|%s|\n", str_for_rec);
                 *d += ft_strlen(tmp);
                 str = ft_itoa(eval_expr(dop));
 				ft_strdel(&dop);
@@ -27,7 +27,7 @@ char	*ft_do_cut(char *tmp, int *d)
             }
 			else
 			{
-				dprintf(2, "\n3|%s|\n", str_for_rec);
+				//dprintf(2, "\n3|%s|\n", str_for_rec);
 				*d += ft_strlen(tmp);
 				str = ft_itoa(eval_expr(str_for_rec));
 				ft_strdel(&str_for_rec);
@@ -55,7 +55,7 @@ char        *ft_main_calc_rec(char *mas)
 		{
 			i++;
 			cut_str = ft_do_cut(&mas[d + 1], &d);
-			dprintf(2, "\n|%s|\n", cut_str);
+			//dprintf(2, "\n|%s|\n", cut_str);
 			if (cut_str == NULL)
 			{
 				ft_strdel(&newstr);

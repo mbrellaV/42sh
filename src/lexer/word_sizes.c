@@ -57,6 +57,8 @@ int				word_size(char *str)
 		return (size_with_bax(str));
 	if (*str == ')' || *str == '}')
 		return (-1);
+	if (issc(*str))
+		return (sc_size(str, *str));
 //	if (isword(*str) == '(')
 //		return (1);
 	//dprintf(2, "\nno: |%c|\n", *str);

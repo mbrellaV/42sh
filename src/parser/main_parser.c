@@ -79,6 +79,7 @@ t_exectoken		*all_parse(char *cmd)
 
 
 	t = NULL;
+	//change_enters_in_sc(cmd);
 //	dprintf(2, "\n1|%s|\n", cmd);
 	if (!(tmp = do_lexer(cmd)))
 		return (NULL);
@@ -108,7 +109,6 @@ t_exectoken		*all_parse(char *cmd)
 			ft_strcat(cmd, char_for_cat);
 		if (dop_tmp->next != NULL && dop_tmp->is_near_opt != 1 && *char_for_cat == '\0')
 			ft_strcat(cmd, " ");
-
 		ft_strdel(&dop_tmp->line);
 		token_for_del = dop_tmp;
 		dop_tmp = dop_tmp->next;

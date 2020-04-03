@@ -45,23 +45,23 @@ t_lextoken		*do_zam_join_par(t_lextoken *h)
 	return (lextmp1);
 }
 
-int			check_if_in_sc(char *line, int i)
+int			check_if_in_par(char *line, int i)
 {
 	int d;
 	int marker;
 
 	d = i;
 	marker = 0;
-	while (line[d])
+	while (d > -1 && line[d])
 	{
-		if (line[d] == '(')
+		if (ispar(line[d]))
 			marker++;
 		d--;
 	}
 	d = i;
 	while (line[d])
 	{
-		if (line[d] == ')')
+		if (ispar(line[d]))
 			marker++;
 		d++;
 	}
@@ -77,8 +77,8 @@ void		change_enters_in_sc(char *line)
 	i = 0;
 	while (line[i] != '\0')
 	{
-		if (line[i] == '\n' && check_if_in_sc(line, i))
-			line[i] = ';';
+		if (issc(line[i]) && !check_if_in_par(line, i))
+			line[i] = ' ';
 		i++;
 	}
 }
@@ -87,13 +87,23 @@ void        del_one_node(char **str, int node_to_del)
 {
     int i;
     int tmp;
+    int to_del;
 
     i = 0;
     tmp = 0;
+    to_del = 0;
     while (str[i])
     {
         if (node_to_del == i)
-            tmp = 1;
+		{
+			tmp = 1;
+			to_del = 1;
+		}
+        if (to_del == 1)
+		{
+			ft_strdel(&str[i]);
+			to_del = 0;
+		}
         if (tmp)
             str[i] = str[i + 1];
         i++;
@@ -110,6 +120,8 @@ void        do_zam_ravno(t_exectoken *h)
         tmp1 = ft_strsub(h->file_args[0], 0, ft_strstr(h->file_args[0], "=") - h->file_args[0]);
         tmp2 = ft_strsub(h->file_args[0], ft_strstr(h->file_args[0], "=") - h->file_args[0] + 1, ft_strlen(h->file_args[0]));
         set_new_var(tmp1, tmp2, &g_all_var);
+        ft_strdel(&tmp1);
+		ft_strdel(&tmp2);
         del_one_node(h->file_args, 0);
         do_zam_ravno(h->right);
         do_zam_ravno(h->left);

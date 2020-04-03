@@ -55,6 +55,11 @@ int				dop_lexer2(t_dop_str *tmp, char *line)
 
 int				dop_lexer1(t_dop_str *tmp, char *line)
 {
+	int plus_to_word;
+
+	plus_to_word = 0;
+	if (issc(line[tmp->i_c]) || ispar(line[tmp->i_c]))
+		plus_to_word = 1;
 	if (word_size(line + tmp->i_c) == -2)
 	{
 		tmp->i_c += 2;
@@ -63,7 +68,7 @@ int				dop_lexer1(t_dop_str *tmp, char *line)
 	if (word_size(line + tmp->i_c) == -1)
 		return (-1);
 	tmp->tmp_c = ft_strsub(line, tmp->i_c +
-	(ispar(line[tmp->i_c]) == 1 ? 1 : 0), word_size(line + tmp->i_c));
+	(plus_to_word), word_size(line + tmp->i_c) - (issc(line[tmp->i_c]) == 1 ? 3 : 0));
 	if (tmp->tail_c != NULL && tmp->tail_c->operator_type > 2 && tmp->tail_c->operator_type < 9)
 		tmp->d_c = 1;
 	if (!(tmp->tail_c = add_token(tmp->tail_c, tmp->tmp_c, 1)))
@@ -75,8 +80,10 @@ int				dop_lexer1(t_dop_str *tmp, char *line)
 	if (ispar(line[tmp->i_c]))
 		tmp->tail_c->inhibitor_lvl = line[tmp->i_c] == '"' ? 1 : 2;
 	tmp->tail_c->is_near_opt = tmp->d_c;
+	if (plus_to_word != 0)
+		plus_to_word += ispar(line[tmp->i_c]) == 1 ? 1 : -2;
 	tmp->i_c += word_size(line + tmp->i_c) +
-				(ispar(line[tmp->i_c]) ? 2 : 0);
+				(plus_to_word);
 	tmp->d_c = 0;
 	return (0);
 }

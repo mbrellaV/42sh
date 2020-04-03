@@ -46,7 +46,10 @@ int		unset_var(char *str, char ***envl)
 	i = ft_findenv(str, env);
 //	dprintf(2, "sas123: |%d|\n", i);
 	if (i == -404)
+	{
+		ft_strdel(&str);
 		return (-1);
+	}
 	else
 	{
 		if (ft_strequ(str, "PATH="))
@@ -56,13 +59,17 @@ int		unset_var(char *str, char ***envl)
 		while (env[i + 1])
 		{
 			if (!(env[i] = ft_strdup(env[i + 1])))
+			{
+				ft_strdel(&str);
 				return (-1);
+			}
 			free(env[i + 1]);
 			env[i + 1] = NULL;
 			i++;
 		}
 	}
 	*envl = env;
+	ft_strdel(&str);
 	//ft_show_env(env);
 	return (0);
 }
