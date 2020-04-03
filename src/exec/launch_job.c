@@ -17,10 +17,9 @@ int		launch_job(t_job *j, int foreground)
 	t_process	*p;
 	pid_t		pid;
 	char		*rt;
-	int mypipe[2], infile, outfile;
+	int mypipe[2], infile;
 
 	infile = j->stdinc;
-	outfile = j->stdoutc;
 	p = j->first_process;
 	rt = NULL;
 	while (p)
@@ -31,14 +30,6 @@ int		launch_job(t_job *j, int foreground)
             p = p->next;
 		    continue ;
         }
-//		if (p->next)
-//		{
-//			if (pipe (mypipe) < 0)
-//				exit (1);
-//			outfile = mypipe[1];
-//		}
-//		else
-//			outfile = j->stdoutc;
 		if (pipe(mypipe) <= -1 || (pid = fork()) <= -1)
 			exit (1);
 		else if (pid == 0)
@@ -52,7 +43,7 @@ int		launch_job(t_job *j, int foreground)
 				ft_fd_flag(p->file_opt, &infile);
 			dup2(infile, 0);
 			close(mypipe[0]);
-			launch_process(p, j->pgid, infile, outfile, j->stderrc, foreground, rt);
+			launch_process(p, j->pgid, foreground, rt);
 		}
 		else
 		{
@@ -67,11 +58,6 @@ int		launch_job(t_job *j, int foreground)
 		}
 		close(mypipe[1]);
 		infile = mypipe[0];
-//		if (infile != j->stdinc)
-//			close (infile);
-//		if (outfile != j->stdoutc)
-//			close (outfile);
-//		infile = mypipe[0];
 		p = p->next;
 	}
 	if (j->foreground == 0)

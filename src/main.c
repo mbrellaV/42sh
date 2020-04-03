@@ -310,6 +310,83 @@ int		ft_main_what(t_exectoken *tmp)
 	return (1);
 }
 
+int	ck_br(const char *str)
+{
+	char	*s;
+	int		i;
+	int		k = 0;
+	char	c;
+
+	s = ft_strdup(str);
+	i = -1;
+	while (s[++i])
+	{
+		if (s[i] == '\"' || s[i] == '\'')
+		{
+			c = s[i];
+			s[i] = 'F';
+			while (s[++i] != c)
+				s[i] = 'a';
+			s[i] = 'F';
+		}
+	}
+	////////////////////////////////////////////////////////
+	///тут будет чекаться валидность расположения кавычек///
+	////////////////////////////////////////////////////////
+
+	while (1)
+	{
+		i = -1;
+		while (s[++i])
+			if (s[i] == '(')
+				k = i;
+		if (s[k] && s[k] == '(')
+		{
+			i = k;
+			while (s[++i] && s[i] != ')')
+				;
+		}
+		else
+			break ;
+		if (s[i] && s[i] == ')')
+		{
+			s[k] = 'A';
+			s[i] = 'A';
+		}
+		else
+			return (0);
+	}
+	i = -1;
+	while (s[++i])
+		if (s[i] == ')')
+			return (-2);
+	return(1);
+}
+
+int		ft_ck_addline(t_readline *p)
+{
+	int 	f;
+
+	f = 4242;
+	while (f != 1)
+	{
+		while (ft_cheak_quote(p->buff) != 1)
+			ft_add_intput_que(p, memory_head, 1);
+		while (p->buff[p->index - 1] == '\\')
+			ft_add_intput_que(p, memory_head, 11);
+		f = ck_br(p->buff);
+		if (f == 0)
+			ft_add_intput_que(p, memory_head, 20);
+		else if (f == -1 || f == -2)
+		{
+			ft_putstr_fd("Error \"()\"\n", 2);
+			free(p->buff);
+			return 0;
+		}
+	}
+	return (1);
+}
+
 int		main_cycle(t_readline *p, t_exectoken **start_token)
 {
 	init_shell();
@@ -318,10 +395,12 @@ int		main_cycle(t_readline *p, t_exectoken **start_token)
 		ft_start_read(p);
 		ft_read_8(p, memory_head, 0);
 		write(2, "\n", 1);
-		while (ft_cheak_quote(p->buff) != 1)
-			ft_add_intput_que(p, memory_head, 1);
-		while (p->buff[p->index - 1] == '\\')
-			ft_add_intput_que(p, memory_head, 11);
+		if (!ft_ck_addline(p))
+			p->buff = ft_strnew(1);
+//		while (ft_cheak_quote(p->buff) != 1)
+//			ft_add_intput_que(p, memory_head, 1);
+//		while (p->buff[p->index - 1] == '\\')
+//			ft_add_intput_que(p, memory_head, 11);
 		reset_input_mode();
 	}
 	else

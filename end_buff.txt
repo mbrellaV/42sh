@@ -1,2 +1,2 @@
 startADD:
-exit
+git commit -am "add_brackets"
