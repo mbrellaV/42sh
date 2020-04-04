@@ -61,8 +61,8 @@ char				*do_zamena_slash(char *line)
 	i = 0;
 	d = 0;
 	if (line == NULL)
-		return (ft_strnew(3));
-	if (!(new = ft_memalloc(ft_strlen(line) * sizeof(char) + 2)))
+		return (ft_strnew(130000));
+	if (!(new = ft_memalloc(130000)))
 		ft_error_q(2);
 	while (line[i])
 	{

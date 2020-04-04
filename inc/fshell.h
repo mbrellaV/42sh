@@ -84,6 +84,7 @@ int		is_builtin(char *str);
 void				ft_alias();
 char				*ft_do_zam_alias(char *str);
 int					ft_do_change_alias(char **mas);
+char				*do_obr_zamena(char *line);
 void				ft_realloc_all(int k, char ***envl);
 void				ft_echo(char **str);
 char				*ft_slash(char *str, t_builtins *echo);

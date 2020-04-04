@@ -37,13 +37,13 @@ char			*ft_do_zam_alias(char *str)
 	char	*tmp;
 
 	if (str == NULL)
-		return (NULL);
+		return (ft_memalloc(130000));
 	if (ft_findenv(str, g_alias) != -404 && ft_strcmp(str, "unalias") != 0 && ft_strcmp(str, "export") != 0 &&
 	ft_strcmp(str, "unset") != 0 && ft_strcmp(str, "unexport") != 0 && ft_strcmp(str, "alias") != 0)
 	{
 		tmp = str;
 		if (!(str = ft_get_alias(str)))
-			return (NULL);
+			return (ft_memalloc(130000));
 		ft_strdel(&tmp);
 	}
 	return (str);
@@ -71,6 +71,8 @@ int				ft_do_change_alias(char **mas)
             tmp1 = ft_strsub(mas[1], 0, ft_strstr(mas[1], "=") - mas[1]);
             tmp2 = ft_strsub(mas[1], ft_strstr(mas[1], "=") - mas[1] + 1, ft_strlen(mas[1]));
             set_new_var(tmp1, tmp2, &g_alias);
+            ft_strdel(&tmp1);
+			ft_strdel(&tmp2);
         }
         else
             alias_usage();

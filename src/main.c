@@ -331,9 +331,15 @@ int	ck_br(const char *str)
 		}
 	}
 	if ((i = check_bracket(s)) && i == -2)
+	{
+		ft_strdel(&s);
 		return (-2);
+	}
 	else if (i == -1)
+	{
+		ft_strdel(&s);
 		return (-1);
+	}
 	////////////////////////////////////////////////////////
 	///тут будет чекаться валидность расположения кавычек///
 	////////////////////////////////////////////////////////
@@ -358,12 +364,19 @@ int	ck_br(const char *str)
 			s[i] = 'A';
 		}
 		else
+		{
+			ft_strdel(&s);
 			return (0);
+		}
 	}
 	i = -1;
 	while (s[++i])
 		if (s[i] == ')')
+		{
+			ft_strdel(&s);
 			return (-2);
+		}
+	ft_strdel(&s);
 	return(1);
 }
 
@@ -393,18 +406,22 @@ int		ft_ck_addline(t_readline *p)
 
 int		main_cycle(t_readline *p, t_exectoken **start_token)
 {
+	char	*str_for_del;
 	init_shell();
 	if (!set_input_mode())
 	{
 		ft_start_read(p);
 		ft_read_8(p, memory_head, 0);
 		write(2, "\n", 1);
-		while (ft_cheak_quote(p->buff) != 1)
-			ft_add_intput_que(p, memory_head, 1);
-		while (p->index > 0 && p->buff[p->index - 1] == '\\')
-			ft_add_intput_que(p, memory_head, 11);
+		str_for_del = p->buff;
+		p->buff = do_zamena_slash(p->buff);
+		ft_strdel(&str_for_del);
+//		while (ft_cheak_quote(p->buff) != 1)
+//			ft_add_intput_que(p, memory_head, 1);
+//		while (p->index > 0 && p->buff[p->index - 1] == '\\')
+//			ft_add_intput_que(p, memory_head, 11);
 		if (!ft_ck_addline(p))
-			p->buff = ft_strnew(1);
+			p->buff = ft_strnew(130000);
 		reset_input_mode();
 	}
 	else

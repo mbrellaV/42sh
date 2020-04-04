@@ -146,12 +146,19 @@ t_lextoken		*do_zam_bax_and_hist_full(t_lextoken *h)
 		tmp->str_b = h->line;
 		if (h->inhibitor_lvl != 2)
 		{
-			h->line = do_zam_str_bax(h->line, tmp);
 			//dprintf(2, "\nsas: |%s|\n", h->line);
+			h->line = do_zam_str_bax(h->line, tmp);
 
 		}
+		str_for_del = h->line;
 		if (h->inhibitor_lvl == 0)
+		{
 			h->line = ft_do_zam_alias(h->line);
+			if (h->line != str_for_del)
+				ft_strdel(&str_for_del);
+		}
+
+
 		h = h->next;
 	}
     h = do_zam_join_par(htmp);

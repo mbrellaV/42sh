@@ -16,17 +16,20 @@ t_memory	*ft_memory(t_memory *back, char **str)
 {
 	t_memory	*tmp;
 	t_memory	*p;
+	char		*dopstr;
 
 	g_his_d = 0;
+	dopstr = ft_strdup(*str);
 	tmp = ft_memalloc(sizeof(t_memory));
 	if (!tmp)
 		return (NULL);
 	p = back->next;
 	back->next = tmp;
-	tmp->inp = ft_strdup(*str);
-	tmp->inp = do_zam_str_hist_var(tmp->inp, back);
-	ft_strdel(str);
-	*str = ft_strdup(tmp->inp);
+	//tmp->inp = dopstr;
+	tmp->inp = do_zam_str_hist_var(*str, back);
+	tmp->inp = do_obr_zamena(tmp->inp);
+	//ft_strdel(str);
+	*str = dopstr;
 	tmp->next = p;
 	tmp->back = back;
 	if (p != NULL)

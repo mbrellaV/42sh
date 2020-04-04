@@ -81,15 +81,15 @@ t_exectoken		*all_parse(char *cmd)
 	t = NULL;
 	if (*cmd == '\0')
 		return (NULL);
-	cmd = do_zamena_slash(cmd);
-	str_for_del = cmd;
+	//cmd = do_zamena_slash(cmd);
+	//str_for_del = cmd;
 	//ft_strdel(&str_for_del);
 	//change_enters_in_sc(cmd);
 //	dprintf(2, "\n1|%s|\n", cmd);
 
 	if (!(tmp = do_lexer(cmd)))
 		return (NULL);
-	ft_strdel(&str_for_del);
+	//ft_strdel(&str_for_del);
 //	dop_tmp = tmp;
 //	while (dop_tmp)
 //	{
@@ -100,8 +100,10 @@ t_exectoken		*all_parse(char *cmd)
 	tmp = do_zam_bax_and_hist_full(tmp);
 	dop_tmp = tmp;
 	//ft_strdel(&cmd);
-	if ((cmd = (char *)ft_memalloc(13000)) == NULL)
+	if ((cmd = (char *)ft_memalloc(130000)) == NULL)
 		ft_error_q(15);
+	//dprintf(2, "\n1|%p|\n", cmd);
+
 	while (dop_tmp)
 	{
 		char_for_cat = "";
@@ -121,18 +123,18 @@ t_exectoken		*all_parse(char *cmd)
 		dop_tmp = dop_tmp->next;
 		free(token_for_del);
 	}
-//	dprintf(2, "\n2|%s|\n", cmd);
 	str_for_del = cmd;
 	cmd = ft_do_zam_eval(cmd);
+
 	if (!(tmp = do_lexer(cmd)))
-		return (NULL);
-//	dprintf(2, "/////");
-	dop_tmp = tmp;
-	while (dop_tmp)
 	{
-//		dprintf(2, "\n|%d, %s|\n", dop_tmp->is_near_opt, dop_tmp->line);
-		dop_tmp = dop_tmp->next;
+		if (str_for_del != cmd)
+			ft_strdel(&str_for_del);
+		ft_strdel(&cmd);
+		return (NULL);
 	}
+
+
 	if (str_for_del != cmd)
 		ft_strdel(&str_for_del);
 	ft_strdel(&cmd);

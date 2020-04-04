@@ -22,6 +22,7 @@ int mark_process_status (pid_t pid, int status)
 	t_process *p;
 	t_process *ptmp;
 	int job_count;
+	char		*str_for_del;
 
 	job_count = 0;
 	if (pid > 0)
@@ -37,14 +38,18 @@ int mark_process_status (pid_t pid, int status)
 					if (WIFSTOPPED (status))
 					{
 						p->stopped = 1;
-						set_new_var("?", ft_itoa(WEXITSTATUS(status)), &g_all_var);
+						str_for_del = ft_itoa(WEXITSTATUS(status));
+						set_new_var("?", str_for_del, &g_all_var);
+						ft_strdel(&str_for_del);
 						//dprintf(2, "\ndapoluch1: |%D|\n", WSTOPSIG(status));
 					}
 					else
 					{
 						p->completed = 1;
 						p->status = WEXITSTATUS(status);
-						set_new_var("?", ft_itoa(p->status), &g_all_var);
+						str_for_del = ft_itoa(p->status);
+						set_new_var("?", str_for_del, &g_all_var);
+						ft_strdel(&str_for_del);
 						//dprintf(2, "\nstatus: |%d|\n", WEXITSTATUS(status));
 						ptmp = j->first_process;
 						while (ptmp != p)
@@ -62,7 +67,7 @@ int mark_process_status (pid_t pid, int status)
 		}
 
 		fprintf (stderr, "No child process %d.\n", pid);
-		return -1;
+		return (-1);
 	}
 	else if (pid == 0 || errno == ECHILD)
 		/* No processes ready to report.  */
@@ -140,30 +145,6 @@ void	wait_for_job (t_job *j)
 	}
 
 
-//	pid = 0;
-//	//sleep(3);
-//	p = j->first_process;
-//	while (p)
-//	{
-//		//dprintf(2, "\n\n\nrodlan\n\n\n");
-//		if (job_is_stopped(j))
-//			break ;
-//		if (p->stopped == 0 && p->completed == 0)
-//		{
-//			pid = getpid();
-//			status = 0;
-//			//dprintf(2, "\ncurrent pid: |%d|, |%d|, |%d|\n", pid, p->pid, f_job->first_process->pid);
-//			pid = -1;
-//			pid = waitpid(p->pid, &status, WUNTRACED);
-//			//dprintf(2, "\npidsas: |%d|\n", pid);
-//			mark_process_status (p->pid, status);
-//			//dprintf(2, "\n\n\nsas123: |%d|, |%d|, |%d|\n\n\n", pid, status, p->pid);
-//			//break ;
-//		}
-//		p = p->next;
-//		if (p == NULL)
-//			p = j->first_process;
-//	}
 
 
 }
@@ -221,9 +202,35 @@ void    do_job_notification (void)
 	//f_job = j;
 }
 
+
+void	free_process(t_process *tmp)
+{
+	t_process	*process_for_del;
+
+	while (tmp)
+	{
+		//ft_free_str(tmp->file_args);
+		//ft_free_str(tmp->file_opt);
+		process_for_del = tmp;
+		tmp = tmp->next;
+		free(process_for_del);
+	}
+
+}
+
+void	free_job(t_job *tmp)
+{
+	if (tmp)
+	{
+		free_process(tmp->first_process);
+		ft_strdel(&tmp->command);
+		free(tmp);
+	}
+}
+
 int		do_job_del()
 {
-	t_job *j, *jlast, *jnext;
+	t_job *j, *jlast, *jnext, *jdop;
 	int d;
 
 	d = 0;
@@ -233,25 +240,30 @@ int		do_job_del()
 	while (j)
 	{
 		d++;
+		//dprintf(2, "\ncmd: |%s|\n", j->command);
 		jnext = j->next;
-		if (job_is_completed (j))
+		jdop = NULL;
+		if (job_is_completed(j))
 		{
 			if (j->first_process->foreground == 0)
 			{
 				//ft_putchar_fd(, 2);
 				format_job_info(j, "completed", d);
 			}
-
+			//dprintf(2, "\nsas: |%s|\n", j->command);
 			//kill(j->pgid, SIGCONT);
 			if (jlast)
 				jlast->next = jnext;
 			else
 				f_job = jnext;
+			jdop = j;
+
 		}
 		else
 			jlast = j;
-
 		j = j->next;
+		if (jdop != NULL)
+			free_job(jdop);
 	}
 	return (1);
 	//dprintf(2, "\n");
@@ -284,7 +296,7 @@ t_job		*get_last_job()
 	t_job *j;
 
 	j = f_job;
-	while (j && j->next && j->next->next)
+	while (j && j->next)
 	{
 		j = j->next;
 	}
