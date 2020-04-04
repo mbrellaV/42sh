@@ -102,6 +102,7 @@ char				*create_full_path(char *path, t_builtins *cd);
 char				*ft_strjoin_cd(char const *s1, char const *s2, int to_free);
 char				*ft_get_var(char *dop, char **env);
 int					issc(char c);
+void       			do_zam_ravno(t_exectoken *h);
 void				ft_global_env(char **env, int argc);
 int					unset_var(char *str, char ***envl);
 void				ft_fun_fork(char *path, char **arg, pid_t pgid, int foreground);
@@ -148,17 +149,18 @@ void				do_obr_zamena_slash(t_exectoken *tmp);
 t_job		*get_job_by_number(int n);
 int		do_fg(char **mas);
 int		do_bg(char **mas);
-void    do_zam_ravno(t_exectoken *h);
-int		launch_process (t_process *p, pid_t pgid, int foreground, char *rt);
+int		launch_process (t_process *p, pid_t pgid,
+						   int infile, int outfile, int errfile,
+						   int foreground, char *rt);
 int		launch_job(t_job *j, int foreground);
 int		needs_something_before(int n);
 int		do_job_del();
 
 int		ft_whatis3(t_process *tmp);
 
-int					ft_fd_flag(char **av, int *fd_in);
+//int					ft_fd_flag(char **av, int *fd_in);
 
-
+int		ft_fd_flag(char **av, int *fd_in, int *infile, int *outfile);
 void	put_job_in_foreground (t_job *j, int cont);
 void	put_job_in_background (t_job *j, int cont);
 int mark_process_status (pid_t pid, int status);

@@ -399,17 +399,13 @@ int		main_cycle(t_readline *p, t_exectoken **start_token)
 		ft_start_read(p);
 		ft_read_8(p, memory_head, 0);
 		write(2, "\n", 1);
-		//p->buff = do_zamena_slash(p->buff);
 		while (ft_cheak_quote(p->buff) != 1)
 			ft_add_intput_que(p, memory_head, 1);
 		while (p->index > 0 && p->buff[p->index - 1] == '\\')
 			ft_add_intput_que(p, memory_head, 11);
 		if (!ft_ck_addline(p))
 			p->buff = ft_strnew(1);
-//		while (ft_cheak_quote(p->buff) != 1)
-//			ft_add_intput_que(p, memory_head, 1);
-//		while (p->buff[p->index - 1] == '\\')
-//			ft_add_intput_que(p, memory_head, 11);
+		reset_input_mode();
 	}
 	else
 	{
@@ -424,9 +420,6 @@ int		main_cycle(t_readline *p, t_exectoken **start_token)
 		}
 		exit (0);
 	}
-	dprintf(open("end_buff.txt", O_CREAT | O_RDWR | O_TRUNC,
-			S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP |
-					S_IROTH | S_IWOTH), "startADD:\n%s", p->buff);
 	p->buff[0] != '\0' ? memory_head = ft_memory(memory_head, &(p->buff)) : memory_head;
 	if ((*start_token = all_parse(p->buff)) == NULL)
 	{
@@ -473,5 +466,5 @@ int		main(int argc, char **argv, char **env)
 	ft_arrdel(g_all_var);
 	ft_distruct_job(f_job);
 	return (ft_distruct_memory(memory_head->next) &&
-		ft_distruct_tree(start_token) ? 0 : 1);
+			ft_distruct_tree(start_token) ? 0 : 1);
 }

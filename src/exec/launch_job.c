@@ -17,33 +17,41 @@ int		launch_job(t_job *j, int foreground)
 	t_process	*p;
 	pid_t		pid;
 	char		*rt;
-	int mypipe[2], infile;
+	int mypipe[2], infile, outfile;
 
 	infile = j->stdinc;
 	p = j->first_process;
-	rt = NULL;
+	//j->pgid = 0;
 	while (p)
 	{
-		if (is_builtin(p->file_args[0]) == 0 && !(rt = hash_get(p->file_args[0], 0)))
-        {
-		    p->completed = 1;
-            p = p->next;
-		    continue ;
-        }
-		if (pipe(mypipe) <= -1 || (pid = fork()) <= -1)
-			exit (1);
-		else if (pid == 0)
+		if (!(rt = hash_get(p->file_args[0], 0)))
 		{
-			if (p->next != NULL)
+			//ft_putstr_fd("", 2)
+			return (-2);
+		}
+		if (p->next)
+		{
+			if (pipe (mypipe) < 0)
 			{
-				dup2(mypipe[1], 1);
-				close(mypipe[1]);
+				exit (1);
 			}
-			if (p->file_opt)
-				ft_fd_flag(p->file_opt, &infile);
-			dup2(infile, 0);
-			close(mypipe[0]);
-			launch_process(p, j->pgid, foreground, rt);
+			outfile = mypipe[1];
+		}
+		else
+			outfile = j->stdoutc;
+		//dprintf(2, "\n\ndad12|%d|, |%d|", infile, outfile);
+
+
+		//dprintf(2, "\n\ndad22|%d|, |%d|", infile, outfile);
+
+		/* Fork the child processes.  */
+		pid = fork();
+		if (pid == 0)
+			launch_process(p, j->pgid, infile, outfile, j->stderrc, foreground, rt);
+		else if (pid < 0)
+			/* This is the child process.  */
+		{
+			exit(0);
 		}
 		else
 		{
@@ -55,13 +63,26 @@ int		launch_job(t_job *j, int foreground)
 					j->pgid = pid;
 				setpgid (pid, j->pgid);
 			}
+		//	wait(&pid);
+			//printf("%sstatus: %d%s\n", RED, pid, RESET);
+//			if (WIFEXITED(status))
+//			{
+//				g_exit_code = WEXITSTATUS(status);
+//				printf("%sExit status of the child was %d%s\n", YEL, g_exit_code, RESET);
+//			}
 		}
-		close(mypipe[1]);
+		if (infile != j->stdinc)
+			close (infile);
+		if (outfile != j->stdoutc)
+			close (outfile);
+		//close(fd);
 		infile = mypipe[0];
+		//outfile = mypipe[1];
+		//dprintf(2, "\n\ndad13|%d|, |%d|", infile, outfile);
+
 		p = p->next;
 	}
-	if (j->foreground == 0)
-		format_job_info(j, "launched", 1);
+	//format_job_info (j, "launched", 0);
 	if (!shell_is_interactive)
 		wait_for_job (j);
 	if (foreground)
