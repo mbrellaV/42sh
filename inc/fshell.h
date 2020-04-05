@@ -82,6 +82,7 @@ int		is_builtin(char *str);
 
 
 void				ft_alias();
+t_lextoken			*do_zam_join_par(t_lextoken *h);
 char				*ft_do_zam_alias(char *str);
 int					ft_do_change_alias(char **mas);
 char				*do_obr_zamena(char *line);

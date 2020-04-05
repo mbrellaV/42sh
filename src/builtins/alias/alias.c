@@ -34,17 +34,14 @@ char			*ft_get_alias(char *dop)
 
 char			*ft_do_zam_alias(char *str)
 {
-	char	*tmp;
-
 	if (str == NULL)
 		return (ft_memalloc(130000));
 	if (ft_findenv(str, g_alias) != -404 && ft_strcmp(str, "unalias") != 0 && ft_strcmp(str, "export") != 0 &&
 	ft_strcmp(str, "unset") != 0 && ft_strcmp(str, "unexport") != 0 && ft_strcmp(str, "alias") != 0)
 	{
-		tmp = str;
 		if (!(str = ft_get_alias(str)))
 			return (ft_memalloc(130000));
-		ft_strdel(&tmp);
+		//ft_strdel(&tmp);
 	}
 	return (str);
 }
@@ -58,6 +55,7 @@ int				ft_do_change_alias(char **mas)
 {
     char *tmp1;
     char *tmp2;
+
 	if (mas[1] == NULL && ft_strcmp(mas[0], "alias") == 0)
 		ft_show_env(g_alias);
 	else if (ft_strcmp(mas[0], "unalias") == 0 && mas[1] != NULL && mas[2] == NULL && ft_strstr(mas[1], "=") == NULL)

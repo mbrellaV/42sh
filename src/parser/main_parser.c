@@ -72,77 +72,34 @@ t_exectoken		*all_parse(char *cmd)
 	t_exectoken	*extmp;
 	t_dop_str	*t;
 	t_lextoken	*dop_tmp;
-	char		*char_for_cat;
-	//t_exectoken	*exdop;
-	t_lextoken	*token_for_del;
-	char		*str_for_del;
-
 
 	t = NULL;
 	if (*cmd == '\0')
 		return (NULL);
-	//cmd = do_zamena_slash(cmd);
-	//str_for_del = cmd;
-	//ft_strdel(&str_for_del);
-	//change_enters_in_sc(cmd);
-//	dprintf(2, "\n1|%s|\n", cmd);
-
+	//dprintf(2, "\ncmd|%s|\n", cmd);
 	if (!(tmp = do_lexer(cmd)))
 		return (NULL);
 	//ft_strdel(&str_for_del);
+//	dprintf(2, "\n10|%s|\n", cmd);
 //	dop_tmp = tmp;
 //	while (dop_tmp)
 //	{
-//		dprintf(2, "\n|%d, %s|\n", dop_tmp->is_near_word, dop_tmp->line);
+//		dprintf(2, "\n|%d, %s|\n", dop_tmp->is_near_opt, dop_tmp->line);
 //		dop_tmp = dop_tmp->next;
 //	}
-//	dprintf(2, "\n10|%s|\n", cmd);
 	tmp = do_zam_bax_and_hist_full(tmp);
-	dop_tmp = tmp;
-	//ft_strdel(&cmd);
-	if ((cmd = (char *)ft_memalloc(130000)) == NULL)
-		ft_error_q(15);
-	//dprintf(2, "\n1|%p|\n", cmd);
 
-	while (dop_tmp)
-	{
-		char_for_cat = "";
-//		dprintf(2, "|%s|\n", dop_tmp->line);
-		if (dop_tmp->inhibitor_lvl != 0)
-			char_for_cat = dop_tmp->inhibitor_lvl == 1 ? "\"" : "\'";
-		if (*char_for_cat != '\0')
-			ft_strcat(cmd, char_for_cat);
-		if (dop_tmp->line != NULL)
-			ft_strcat(cmd, dop_tmp->line);
-		if (*char_for_cat != '\0')
-			ft_strcat(cmd, char_for_cat);
-		if (dop_tmp->next != NULL && dop_tmp->is_near_opt != 1 && *char_for_cat == '\0')
-			ft_strcat(cmd, " ");
-		ft_strdel(&dop_tmp->line);
-		token_for_del = dop_tmp;
-		dop_tmp = dop_tmp->next;
-		free(token_for_del);
-	}
-	str_for_del = cmd;
-	cmd = ft_do_zam_eval(cmd);
+//	dop_tmp = tmp;
+//	while (dop_tmp)
+//	{
+//		dprintf(2, "\n|%d, %s|\n", dop_tmp->is_near_opt, dop_tmp->line);
+//		dop_tmp = dop_tmp->next;
+//	}
 
-	if (!(tmp = do_lexer(cmd)))
-	{
-		if (str_for_del != cmd)
-			ft_strdel(&str_for_del);
-		ft_strdel(&cmd);
-		return (NULL);
-	}
-
-
-	if (str_for_del != cmd)
-		ft_strdel(&str_for_del);
-	ft_strdel(&cmd);
 	free(t);
 	extmp = do_parser(tmp);
 	do_obr_zamena_slash(extmp);
-
-	//exdop = extmp;
+//	t_exectoken *exdop = extmp;
 //	while (exdop)
 //	{
 //		dprintf(2, "\n//");

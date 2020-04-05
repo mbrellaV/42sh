@@ -23,15 +23,17 @@ t_lextoken		*do_zam_join_par(t_lextoken *h)
 	{
     	if (h->next && h->next->is_near_word == 1)
 		{
-			tmp = h->line;
+			tmp = h->next->line;
 			h->next->line = ft_strjoin(h->line, h->next->line);
+			ft_strdel(&tmp);
+			tmp = h->line;
 			if (h->prev != NULL)
 			{
 				h->prev->next = h->next;
 				h->next->prev = h->prev;
 			}
 			else
-				lextmp1 = h;
+				lextmp1 = h->next;
 			ft_strdel(&tmp);
 			lextmp = h;
 			h = h->next;
@@ -148,17 +150,21 @@ t_lextoken		*do_zam_bax_and_hist_full(t_lextoken *h)
 		{
 			//dprintf(2, "\nsas: |%s|\n", h->line);
 			h->line = do_zam_str_bax(h->line, tmp);
-
+			str_for_del = h->line;
+			h->line = ft_do_zam_eval(h->line);
+			if (h->line != str_for_del)
+				ft_strdel(&str_for_del);
+			//h->line = ft_strdup(h->line);
+			//dprintf(2, "\nsas1: |%s|\n", h->line);
 		}
 		str_for_del = h->line;
 		if (h->inhibitor_lvl == 0)
 		{
 			h->line = ft_do_zam_alias(h->line);
+			//dprintf(2, "\nsas2: |%p|\n", h->line);
 			if (h->line != str_for_del)
 				ft_strdel(&str_for_del);
 		}
-
-
 		h = h->next;
 	}
     h = do_zam_join_par(htmp);

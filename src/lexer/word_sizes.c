@@ -64,8 +64,6 @@ int				word_size(char *str)
 	//dprintf(2, "\nno: |%c|\n", *str);
 	while (*str)
 	{
-		if (*str == '=' && ispar(*(str + 1)) == 1)
-			return (3 + i + c_size(str + 1, *(str + 1)));
 		if (isword(*str) != 1 && isword(*str) != 3)
 			return (i);
 		i++;
