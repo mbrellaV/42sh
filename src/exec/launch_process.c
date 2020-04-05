@@ -19,6 +19,7 @@ int		launch_process (t_process *p, pid_t pgid,
 	pid_t		pid;
 	int dop1;
 
+	dop1 = 0;
 	do_zam_str_with_tilda(p->file_args);
 	if (shell_is_interactive)
 	{
@@ -45,10 +46,9 @@ int		launch_process (t_process *p, pid_t pgid,
 		//signal (SIGCHLD, SIG_DFL);
 
 		//dprintf(2, "\nsasdo: |%d, %d, %d|\n", infile, outfile, errfile);
-
 		if (p->file_opt)
 		{
-			ft_fd_flag(p->file_opt, &infile, &infile, &outfile);
+			dop1 = ft_fd_flag(p->file_opt, &infile, &infile, &outfile);
 		}
 		//dprintf(2, "\nsas: |%d, %d, %d|\n", infile, outfile, errfile);
 		if (infile != STDIN_FILENO)
@@ -69,8 +69,11 @@ int		launch_process (t_process *p, pid_t pgid,
 			dup2 (errfile, STDERR_FILENO);
 			close (errfile);
 		}
+
 	}
 	/* Exec the new process.  Make sure we exit.  */
+	if (dop1 < 0)
+		exit(1);
 	dop1 = ft_whatis2(p);
 	if (dop1 == 1)
 		exit(0);

@@ -96,6 +96,8 @@ int		ft_fd_flag(char **av, int *fd_in, int *infile, int *outfile)
 		else if (p.b == 1 && p.flag != 0)
 		{
 			ft_open_flag(av[p.i], &(p.flag), &fd_in, &p.fd);
+			if (*fd_in < 0)
+				return (-1);
 			if (p.flag == 1 || p.flag == 2)
 			{
 				//*infile = p.st;

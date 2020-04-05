@@ -474,14 +474,15 @@ int		main(int argc, char **argv, char **env)
 		if (main_cycle(&p, &start_token) == -1)
 			break ;
 	save_history(memory_head);
-	hash_clear();
-	free(g_cp);
-	ft_strdel(&p.buff);
-	ft_arrdel(g_env);
-	del_readline(&p);
-	ft_arrdel(g_alias);
-	ft_arrdel(g_all_var);
-	ft_distruct_job(f_job);
-	return (ft_distruct_memory(memory_head->next) &&
-			ft_distruct_tree(start_token) ? 0 : 1);
+//	hash_clear();
+//	free(g_cp);
+//	ft_strdel(&p.buff);
+//	ft_arrdel(g_env);
+//	del_readline(&p);
+//	ft_arrdel(g_alias);
+//	ft_arrdel(g_all_var);
+//	ft_distruct_job(f_job);
+//	return (ft_distruct_memory(memory_head->next) &&
+//			ft_distruct_tree(start_token) ? 0 : 1);
+	return (0);
 }
