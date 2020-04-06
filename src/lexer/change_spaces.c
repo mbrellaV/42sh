@@ -72,15 +72,12 @@ char				*do_zamena_slash(char *line)
 		ft_error_q(2);
 	while (i < ft_strlen(line) && line[i] != '\0')
 	{
-		dprintf(2, "\nda|%d, %s|\n", i, new);
 		if (ispar(line[i]))
 		{
 			size = c_size(&line[i], line[i]);
 			tmp = ft_strsub(line, i, size + 2);
-			dprintf(2, "\n|%s|\n", tmp);
 			ft_strcat(new, tmp);
 			i += size + 1;
-			dprintf(2, "\nsize|%d|\n", size);
 			ft_strdel(&tmp);
 			//exit(0);
 		}
