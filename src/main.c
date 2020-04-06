@@ -330,15 +330,10 @@ int	ck_br(const char *str)
 			s[i] = 'F';
 		}
 	}
-	if ((i = check_bracket(s)) && i == -2)
+	if ((i = check_bracket(s)) && i != 1)
 	{
 		ft_strdel(&s);
-		return (-2);
-	}
-	else if (i == -1)
-	{
-		ft_strdel(&s);
-		return (-1);
+		return (i);
 	}
 	////////////////////////////////////////////////////////
 	///тут будет чекаться валидность расположения кавычек///
