@@ -2,8 +2,8 @@
 
 int		check_open(char **str, int i, int j)
 {
-	if (j == 0 && (str[i - 1][ft_strlen(str[i - 1]) - 1] == ';' || str[i - 1][ft_strlen(str[i - 1]) - 1] == '|'
-	|| str[i - 1][ft_strlen(str[i - 1]) - 1] == '('))
+	if ((j == 0 && i == 0) ||( j == 0 && (str[i - 1][ft_strlen(str[i - 1]) - 1] == ';' || str[i - 1][ft_strlen(str[i - 1]) - 1] == '|'
+										  || str[i - 1][ft_strlen(str[i - 1]) - 1] == '(')))
 		return (1);
 	if (str[i][j - 1] == ';' || str[i][j - 1] == '|' || str[i][j - 1] == '(')
 		return (1);
@@ -12,8 +12,8 @@ int		check_open(char **str, int i, int j)
 
 int		check_close(char **str, int i, int j)
 {
-	if (j == 0 && (str[i - 1][ft_strlen(str[i - 1]) - 1] == '<' || str[i - 1][ft_strlen(str[i - 1]) - 1] == '|'
-		|| str[i - 1][ft_strlen(str[i - 1]) - 1] == '>' || str[i - 1][ft_strlen(str[i - 1]) - 1] == '('))
+	if (j == 0 && i != 0 && (str[i - 1][ft_strlen(str[i - 1]) - 1] == '<' || str[i - 1][ft_strlen(str[i - 1]) - 1] == '|'
+							 || str[i - 1][ft_strlen(str[i - 1]) - 1] == '>' || str[i - 1][ft_strlen(str[i - 1]) - 1] == '('))
 		return (-1);
 	if (j != ft_strlen(str[i]) - 1 && str[i][j + 1] != ';' && str[i][j + 1] != '|' && str[i][j + 1] != ')')
 		return (-1);
