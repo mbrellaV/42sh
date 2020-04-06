@@ -85,6 +85,7 @@ void					dop_cr_new_exec(t_dop_str *t,
 t_exectoken				*ft_cr_new_exectoken(t_lextoken *tmp,
 		t_exectoken *prev, int op_type, t_dop_str *t)
 {
+
 	if (!(t = cr_dop_str_par1(tmp)))
 		return (NULL);
 	dop_cr_new_exec(t, prev, op_type, 0);
@@ -92,8 +93,7 @@ t_exectoken				*ft_cr_new_exectoken(t_lextoken *tmp,
 	{
 		if (t->dop_a->is_near_opt == 0)
 		{
-			if (!(t->tmp1_a->file_args[t->f_a] = ft_strsub(t->dop_a->line,
-					0, ft_strlen(t->dop_a->line))))
+			if (!(t->tmp1_a->file_args[t->f_a] = ft_strdup(t->dop_a->line)))
 				return (ft_kill_str_dop_exec(t, NULL));
 			t->f_a++;
 		}

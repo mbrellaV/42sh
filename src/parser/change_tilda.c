@@ -12,25 +12,20 @@
 
 #include "../../inc/fshell.h"
 
-void			do_zam_str_with_tilda(char **mas)
+char			*do_zam_str_with_tilda(char *str)
 {
-	int		i;
 	char	*hp;
-	char	*tmp;
+	//char	*tmp;
 
-	i = 0;
 	if (!(hp = ft_get_var("HOME", g_env)))
-		return ;
-	while (mas[i])
+		return (NULL);
+	if (ft_strstr(str, "~/") == str ||
+			ft_strcmp("~", str) == 0)
 	{
-		if (ft_strstr(mas[i], "~/") == mas[i] ||
-				ft_strcmp("~", mas[i]) == 0)
-		{
-			tmp = mas[i];
-			mas[i] = ft_strjoin(hp, &mas[i][1]);
-			ft_strdel(&tmp);
-		}
-		i++;
+		//tmp = str;
+		str = ft_strjoin(hp, &str[1]);
+		//ft_strdel(&tmp);
 	}
 	ft_strdel(&hp);
+	return (str);
 }

@@ -16,7 +16,7 @@ t_exectoken		*do_parser_dop(t_dop_str *t, t_lextoken *tmp)
 {
 	if (tmp == NULL)
 		return (NULL);
-	if (tmp->operator_type == -2)
+	if ((tmp->operator_type >= 3 && tmp->operator_type <= 10) || tmp->operator_type == -2)
 		t->prev_c = ft_cr_new_exectoken(tmp, NULL, -2, t);
 	else
 	{
@@ -95,7 +95,7 @@ t_exectoken		*all_parse(char *cmd)
 //		dprintf(2, "\n|%d, %s|\n", dop_tmp->is_near_opt, dop_tmp->line);
 //		dop_tmp = dop_tmp->next;
 //	}
-
+	//exit(0);
 	free(t);
 	extmp = do_parser(tmp);
 	do_obr_zamena_slash(extmp);

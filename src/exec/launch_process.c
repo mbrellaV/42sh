@@ -20,7 +20,7 @@ int		launch_process (t_process *p, pid_t pgid,
 	int dop1;
 
 	dop1 = 0;
-	do_zam_str_with_tilda(p->file_args);
+	//do_zam_str_with_tilda(p->file_args);
 	if (shell_is_interactive)
 	{
 		//if (ft_whatis2(p, q) == 1)
@@ -48,7 +48,7 @@ int		launch_process (t_process *p, pid_t pgid,
 		//dprintf(2, "\nsasdo: |%d, %d, %d|\n", infile, outfile, errfile);
 		if (p->file_opt)
 		{
-			dop1 = ft_fd_flag(p->file_opt, &infile, &infile, &outfile);
+			dop1 = ft_fd_flag(p->file_opt, &infile, &outfile, &errfile);
 		}
 		//dprintf(2, "\nsas: |%d, %d, %d|\n", infile, outfile, errfile);
 		if (infile != STDIN_FILENO)
@@ -59,13 +59,16 @@ int		launch_process (t_process *p, pid_t pgid,
 		}
 		if (outfile != STDOUT_FILENO)
 		{
-			//dprintf(2, "\noutfile: |%d|\n", outfile);
+			dprintf(2, "\noutfile: |%d|\n", outfile);
 			dup2(outfile, STDOUT_FILENO);
 			close (outfile);
+			//dprintf(1, "\noutfilef: |%d|\n", outfile);
+			//dup2(STDERR_FILENO, STDOUT_FILENO);
+
 		}
 		if (errfile != STDERR_FILENO)
 		{
-			//dprintf(2, "\nerrfile: |%d|\n", errfile);
+			dprintf(2, "\nerrfile: |%d|\n", errfile);
 			dup2 (errfile, STDERR_FILENO);
 			close (errfile);
 		}

@@ -25,6 +25,8 @@ int		is_builtin(char *str)
 	int i;
 
 	i = 0;
+	if (str == NULL)
+		return (0);
 	while (i < BIL_NUM - 1)
 	{
 		if (ft_strcmp(str, g_builtins[i]) == 0)

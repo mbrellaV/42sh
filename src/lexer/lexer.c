@@ -92,12 +92,12 @@ int				dop_lexer(t_dop_str *tmp, char *line)
 {
 	if (isword(line[tmp->i_c]) > 0)
 	{
-//		if (issc(line[tmp->i_c + 1]) > 0)
-//		{
-//			if (dop_lexer2(tmp, line) == -1)
-//				return (-1);
-//		}
-		if (dop_lexer1(tmp, line) == -1)
+		if (line[tmp->i_c + 1] == '>')
+		{
+			if (dop_lexer2(tmp, line) == -1)
+				return (-1);
+		}
+		else if (dop_lexer1(tmp, line) == -1)
 			return (-1);
 	}
 	else if (isoperator(line[tmp->i_c]))

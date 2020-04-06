@@ -14,43 +14,46 @@
 #include <stdio.h>
 #include <errno.h>
 
-int		ft_what_flag(char *str, int *b)
+int		ft_what_flag(t_pipe *p, char **opt)
 {
 	int flag;
 
 	flag = 0;
-	ft_strcmp(str, ">") == 0 ? flag = 1 : flag;
-	ft_strcmp(str, ">>") == 0 ? flag = 2 : flag;
-	ft_strcmp(str, "<") == 0 ? flag = 3 : flag;
-	ft_strcmp(str, "<<") == 0 ? flag = 4 : flag;
-	ft_strcmp(str, ">&") == 0 ? flag = 6 : flag;
-	ft_strcmp(str, "&>") == 0 ? flag = 6 : flag;
-	*b = 1;
+	ft_strcmp(opt[p->i], ">") == 0 ? flag = 1 : flag;
+	ft_strcmp(opt[p->i], ">>") == 0 ? flag = 2 : flag;
+	ft_strcmp(opt[p->i], "<") == 0 ? flag = 3 : flag;
+	ft_strcmp(opt[p->i], "<<") == 0 ? flag = 4 : flag;
+	ft_strcmp(opt[p->i], ">&") == 0 ? flag = 6 : flag;
+	ft_strcmp(opt[p->i], "&>") == 0 ? flag = 6 : flag;
+	p->b = 1;
 	return (flag);
 }
 
-void	ft_open_flag(char *str, int *flag, int **ff, int *fd)
+void	ft_open_flag(char **opt, t_pipe *p, int *infile, int *outfile)
 {
-	if (*flag == 1 || *flag == 6)
-		*fd = open(str, O_CREAT | O_RDWR | O_TRUNC,
+	if (p->flag == 1)
+		*p->outfile = open(opt[p->i], O_CREAT | O_RDWR | O_TRUNC,
 				S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP |
 				S_IROTH | S_IWOTH);
-	else if (*flag == 2)
-		*fd = open(str, O_CREAT | O_RDWR | O_APPEND,
+	else if (p->flag == 2)
+		*p->outfile = open(opt[p->i], O_CREAT | O_RDWR | O_APPEND,
 				S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP |
 				S_IROTH | S_IWOTH);
-	else if (*flag == 3)
-		**ff = open(str, O_RDONLY);
-	if ((*flag == 1 || *flag == 6 || *flag == 2) && *fd <= 0)
+	else if (p->flag == 3)
+		*p->infile = open(opt[p->i], O_RDONLY);
+	else if (p->flag == 6)
+		*p->outfile = ft_atoi(opt[p->i + 1]);
+	dprintf(2, "\n\nda3|%d|, |%d|", *p->infile, *p->outfile);
+	if ((p->flag == 1 || p->flag == 6 || p->flag == 2) && *p->outfile <= 0)
 	{
 		ft_putstr_fd("21sh: open fd ERROR ", 2);
-		ft_putendl_fd(str, 2);
-		*flag = 0;
+		ft_putendl_fd(opt[p->i], 2);
+		p->flag = 0;
 	}
-	else if (*flag == 3 && **ff <= 0)
+	else if (p->flag == 3 && *p->infile <= 0)
 	{
 		ft_putstr_fd("21sh: open fd ERROR ", 2);
-		ft_putendl_fd(str, 2);
+		ft_putendl_fd(opt[p->i], 2);
 	}
 }
 
@@ -81,126 +84,107 @@ int		ft_heredoc(char *tmp)
 	return (f[0]);
 }
 
-int		ft_fd_flag(char **av, int *fd_in, int *infile, int *outfile)
+void	do_dup(t_pipe *p, char **av, int type)
+{
+	if (type == 2)
+	{
+		dprintf(2, "\n\nda2|%d|, |%d|", *p->infile, *p->outfile);
+		p->flag = ft_what_flag(p, av);
+		//p->st = ft_atoi(av[p->i + 1]);
+		p->i++;
+		ft_open_flag(av, p, p->infile, p->outfile);
+	}
+	if (type == 3)
+	{
+		dprintf(2, "\n\ndtype3|%d|, |%d|", *p->infile, *p->outfile);
+		p->st = ft_atoi(av[p->i]);
+		p->i++;
+		p->fd = ft_atoi(av[p->i + 1]);
+		p->flag = ft_what_flag(p, av);
+		//ft_open_flag(av, p, p->infile, p->outfile);
+	}
+	if (p->flag == 4)
+		*p->infile = ft_heredoc(av[p->i]);
+	else if (p->flag == 6)
+	{
+		dprintf(2, "\n\ndip|%d|, |%d|", p->st, p->fd);
+		//dprintf(2, "\n\ndup|%d|", dup2(p->st, p->fd));
+		//p->j = dup(p->st);
+		//close(p->st);
+		dup2(p->st, p->fd);
+		//*p->errfile = *p->outfile;
+		//dup2(STDERR_FILENO, STDOUT_FILENO);
+		//*p->errfile = 2;
+		dprintf(2, "\n\ninflag6:|%d|, |%d|", *p->infile, *p->outfile);
+
+		//*p->errfile = 1;
+		//dup2(p->st, p->fd);
+		//close(p->st);
+	}
+}
+
+int		ft_fd_flag(char **av, int *infile, int *outfile, int *errfile)
 {
 	t_pipe	p;
 
-	//dprintf(2, "\n\nda1|%d|, |%d|", *infile, *outfile);
-	p = (t_pipe){0, -1, 1, 0, 0, 0};
-	while (av[++(p.i)])
+	dprintf(2, "\n\nda1|%d|, |%d|", *infile, *outfile);
+	p = (t_pipe){0, 0, 1, 0, 0, 0, infile, outfile, errfile};
+	while (p.i < ft_env_len(av) && av[(p.i)] != NULL)
 	{
-		if (p.b == 0 && av[p.i][0] >= '0' && av[p.i][0] <= '9')
-			p.st = ft_atoi(av[p.i]);
-		else if ((av[p.i][0] == '>' || av[p.i][0] == '<' || av[p.i][0] == '&'))
-			p.flag = ft_what_flag(av[p.i], &(p.b));
-		else if (p.b == 1 && p.flag != 0)
+		if (av[p.i][0] >= '0' && av[p.i][0] <= '9')
 		{
-			ft_open_flag(av[p.i], &(p.flag), &fd_in, &p.fd);
-			if (*fd_in < 0)
-				return (-1);
-			if (p.flag == 1 || p.flag == 2)
-			{
-				//*infile = p.st;
-				*outfile = p.fd;
-			}
-			else if (p.flag == 4)
-				*fd_in = ft_heredoc(av[p.i]);
-			p = (t_pipe){0, p.i, 1, p.fd, 0, p.j};
+
+			do_dup(&p, av, 3);
+			p.i += 2;
 		}
+		else if ((av[p.i][0] == '>' || av[p.i][0] == '<' || av[p.i][0] == '&'))
+		{
+			do_dup(&p, av, 2);
+			p.i += 1;
+		}
+		else
+			break ;
+		dprintf(2, "\n\nprom: |%d|, |%d|", *infile, *outfile);
+		p = (t_pipe){0, p.i, 1, 0, 0, 0, infile, outfile, errfile};
 	}
-	//dprintf(2, "\n\nda2|%d|, |%d|", *infile, *outfile);
+	dprintf(2, "\n\nda2|%d|, |%d|", *infile, *outfile);
 	return (p.fd);
 }
-//
-//void launch_job (job *j, int foreground)
+
+
+//int		ft_fd_flag(char **av, int *fd_in, int *infile, int *outfile)
 //{
-//	process *p;
-//	pid_t pid;
-//	int mypipe[2], infile, outfile;
+//	t_pipe	p;
 //
-//	infile = j->stdin;
-//	for (p = j->first_process; p; p = p->next)
+//	//dprintf(2, "\n\nda1|%d|, |%d|", *infile, *outfile);
+//	p = (t_pipe){0, -1, 1, 0, 0, 0};
+//	while (av[++(p.i)])
 //	{
-//		/* Set up pipes, if necessary.  */
-//		if (p->next)
+//		if (p.b == 0 && av[p.i][0] >= '0' && av[p.i][0] <= '9')
+//			p.st = ft_atoi(av[p.i]);
+//		else if ((av[p.i][0] == '>' || av[p.i][0] == '<' || av[p.i][0] == '&'))
+//			p.flag = ft_what_flag(av[p.i], &(p.b));
+//		else if (p.b == 1 && p.flag != 0)
 //		{
-//			if (pipe (mypipe) < 0)
+//			ft_open_flag(av, p, &fd_in, &p.fd);
+//			dprintf(2, "\nsas: |%d, %d, %d|\n", p.st, p.fd, p.flag);
+//			if (*fd_in < 0)
+//				return (-1);
+//			if (p.flag == 1 || p.flag == 2)
 //			{
-//				perror ("pipe");
-//				exit (1);
+//				//*infile = p.st;
+//				//*outfile = p.fd;
+//				dup2(p.fd, p.st);
 //			}
-//			outfile = mypipe[1];
-//		}
-//		else
-//			outfile = j->stdout;
-//
-//		/* Fork the child processes.  */
-//		pid = fork ();
-//		if (pid == 0)
-//			/* This is the child process.  */
-//			launch_process (p, j->pgid, infile,
-//							outfile, j->stderr, foreground);
-//		else if (pid < 0)
-//		{
-//			/* The fork failed.  */
-//			perror ("fork");
-//			exit (1);
-//		}
-//		else
-//		{
-//			/* This is the parent process.  */
-//			p->pid = pid;
-//			if (shell_is_interactive)
+//			else if (p.flag == 4)
+//				*fd_in = ft_heredoc(av[p.i]);
+//			else if (p.flag == 6)
 //			{
-//				if (!j->pgid)
-//					j->pgid = pid;
-//				setpgid (pid, j->pgid);
+//				dup2(p.fd, p.st);
 //			}
+//			p = (t_pipe){0, p.i, 1, p.fd, 0, p.j};
 //		}
 //	}
-//}
-//
-//void	ft_infinit_pipe2(t_exectoken *head, t_memory *q)
-//{
-//	pid_t		pid;
-//	char		*rt;
-//	pid_t		gr_pid;
-//	int			status;
-//
-//	ft_file_create(head);
-//	gr_pid = 0;
-//	dprintf(2, "getpgrp: %d\n", getpgrp());
-//	while (head)
-//	{
-//		rt = hash_get(head->file_args[0], 0);
-//		if ((pid = fork()) == -1)
-//		{
-//			ft_putstr_fd("ERROR pipe or fork", 2);
-//			exit(1);
-//		}
-//		else if (pid == 0)
-//		{
-//			dprintf(2, "getpgrp1: %d\n", getpgrp());
-//			if (ft_whatis2(head, q) == 0)
-//				exit(0);
-//			if (rt != NULL)
-//				ft_fun_fork(rt, head->file_args, pid, 0);
-//			exit(127);
-//		}
-//		else if (pid > 0)
-//		{
-//			if (gr_pid == 0)
-//				gr_pid = pid;
-//			setpgid (pid, gr_pid);
-//			waitpid(pid, &status, 0);
-//			if (WIFEXITED(status))
-//			{
-//				g_exit_code = WEXITSTATUS(status);
-//				printf("%sExit status of the child was %d%s\n", YEL, g_exit_code, RESET);
-//			}
-//			head = (head)->left;
-//		}
-//	}
-//	while (tcgetpgrp(shell_terminal) != (shell_pgid = getpgrp ()))
-//		kill(- shell_pgid, SIGTTIN);
+//	//dprintf(2, "\n\nda2|%d|, |%d|", *infile, *outfile);
+//	return (p.fd);
 //}

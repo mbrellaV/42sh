@@ -160,10 +160,15 @@ t_lextoken		*do_zam_bax_and_hist_full(t_lextoken *h)
 		str_for_del = h->line;
 		if (h->inhibitor_lvl == 0)
 		{
+			h->line = do_zam_str_with_tilda(h->line);
+			if (h->line != str_for_del)
+				ft_strdel(&str_for_del);
+			str_for_del = h->line;
 			h->line = ft_do_zam_alias(h->line);
 			//dprintf(2, "\nsas2: |%p|\n", h->line);
 			if (h->line != str_for_del)
 				ft_strdel(&str_for_del);
+
 		}
 		h = h->next;
 	}

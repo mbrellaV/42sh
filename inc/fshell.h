@@ -123,12 +123,13 @@ void				ft_error_q(int er);
 int					ft_norm_pipe(int p1, int *fd_in, int p0, t_exectoken **head);
 int					ft_error_args(t_exectoken *tmp);
 void				ft_file_create(t_exectoken *head);
-int					ft_what_flag(char *str, int *b);
-void				ft_open_flag(char *str, int *flag, int **ff, int *fd);
+int					ft_what_flag(t_pipe *p, char **opt);
+void				ft_open_flag(char **opt, t_pipe *p, int *ff, int *fd);
 int					ft_put_info(void);
 int					ft_env_len(char **env);
+char				*do_reverse_zamena(char *str);
 void				ft_show_env(char **env);
-void				do_zam_str_with_tilda(char **mas);
+char				*do_zam_str_with_tilda(char *str);
 int					check_file(char *file, unsigned check);
 int					is_cmp(char *s1, char *s2);
 int					is_add_str_tab(t_readline *p);
@@ -162,7 +163,7 @@ int		ft_whatis3(t_process *tmp);
 
 //int					ft_fd_flag(char **av, int *fd_in);
 
-int		ft_fd_flag(char **av, int *fd_in, int *infile, int *outfile);
+int		ft_fd_flag(char **av, int *infile, int *outfile, int *errfile);
 void	put_job_in_foreground (t_job *j, int cont);
 void	put_job_in_background (t_job *j, int cont);
 int mark_process_status (pid_t pid, int status);

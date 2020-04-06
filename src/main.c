@@ -14,12 +14,10 @@
 
 int			check_file_args(t_process *tmp)
 {
-	if (tmp->file_args == NULL)
+	if (tmp->file_args == NULL && tmp->file_opt == NULL)
 		return (0);
-	if (tmp->file_args[0] == NULL)
-		return (0);
-	if (ft_strcmp(tmp->file_args[0], "exit") == 0)
-		return (-1);
+	//if (ft_strcmp(tmp->file_args[0], "exit") == 0)
+	//	return (-1);
 	return (1);
 }
 
@@ -155,9 +153,10 @@ t_process	*create_process_list(t_exectoken *tmp)
 	if (!(fir = ft_memalloc(sizeof(t_process))))
 		ft_error_q(5);
 	fir->file_args = tmp->file_args;
+
 	if (check_file_args(fir) == 0)
 		return (NULL);
-	do_zam_str_with_tilda(tmp->file_args);
+	//take
 	fir->foreground = 1;
 	//ft_show_env(tmp->file_args);
 	if (tmp->file_opt && ft_strcmp(tmp->file_opt[ft_env_len(tmp->file_opt) - 1], "&") == 0)
@@ -184,6 +183,7 @@ t_process	*create_process_list(t_exectoken *tmp)
 		proc = proc->next;
 		tmp = tmp->left;
 	}
+
 	return (fir);
 }
 
@@ -223,37 +223,36 @@ t_job	*create_job(t_exectoken *head)
 	return (new_job);
 }
 
-//t_job	*turn_exectokens_to_jobs(t_exectoken *exec)
-//{
-//	t_job *tmp;
-//	//t_exectoken *tmp_exec;
-//	t_job	*start_job;
-//	t_job	*dop;
-//
-//	if (exec == NULL)
-//		return (NULL);
-//	//tmp = NULL;
-//	//start_job = NULL;
-//	tmp = create_job(exec);
-//	start_job = tmp;
-//	exec = exec->right;
-//	while (exec)
-//	{
-//		tmp->next = create_job(exec);
-//		tmp = tmp->next;
-//		exec = exec->right;
-//	}
-//	if (f_job != NULL)
-//	{
-//		dop = f_job;
-//		while (dop->next)
-//			dop = dop->next;
-//		dop->next = start_job;
-//	}
-//	else
-//		f_job = start_job;
-//	return (start_job);
-//}
+char	*do_reverse_zamena(char *str)
+{
+	int		i;
+	char	*newstr;
+	char	*tmp;
+
+	i = 0;
+	if (!(newstr = ft_memalloc(ft_strlen(str) * 2 + 1)))
+		ft_error_q(15);
+	while (str[i] != '\0')
+	{
+		if (str[i] < 0)
+		{
+			tmp = ft_strdup("\\ ");
+			tmp[1] = -1 * str[i];
+			ft_strcat(newstr, tmp);
+			ft_strdel(&tmp);
+		}
+		else
+		{
+			tmp = ft_strdup(" ");
+			tmp[0] = str[i];
+			ft_strcat(newstr, tmp);
+			ft_strdel(&tmp);
+		}
+		i++;
+	}
+	ft_strdel(&str);
+	return (newstr);
+}
 
 int		ft_main_what(t_exectoken *tmp)
 {
@@ -262,16 +261,17 @@ int		ft_main_what(t_exectoken *tmp)
 	char	*str_to_del;
 
 	sas = 0;
+	//take
     do_zam_ravno(tmp);
     while (tmp)
 	{
-		//dprintf(2, "\nrofl: ||\n");
-		if (tmp->file_args == NULL || tmp->file_args[0] == NULL)
+		if ((tmp->file_args == NULL) && (tmp->file_opt == NULL))
 		{
 			tmp = tmp->right;
 			continue ;
 		}
-		if (is_builtin(tmp->file_args[0]) == 0 || tmp->file_opt != NULL)
+
+		if ((tmp->file_args != NULL && is_builtin(tmp->file_args[0]) == 0) || tmp->file_opt != NULL)
 		{
 			str_to_del = ft_get_var("?", g_all_var);
 			if (tmp->should_wait_and == 1 && ft_atoi(str_to_del) > 0)

@@ -22,9 +22,12 @@ int		launch_job(t_job *j, int foreground)
 	infile = j->stdinc;
 	p = j->first_process;
 	//j->pgid = 0;
+	//dprintf(2, "\n\ndad12|%p|", p->file_args);
+
+	rt = NULL;
 	while (p)
 	{
-		if (!(rt = hash_get(p->file_args[0], 0)))
+		if (p->file_args[0] != NULL && !(rt = hash_get(p->file_args[0], 0)))
 		{
 			//ft_putstr_fd("", 2)
 			return (-2);

@@ -43,9 +43,15 @@ void			do_obr_zamena_slash(t_exectoken *tmp)
 	i = 0;
 	if (tmp == NULL)
 		return ;
-	while (tmp->file_args[i])
+	while (tmp->file_args && tmp->file_args[i])
 	{
 		tmp->file_args[i] = do_obr_zamena(tmp->file_args[i]);
+		i++;
+	}
+	i = 0;
+	while (tmp->file_opt && tmp->file_opt[i])
+	{
+		tmp->file_opt[i] = do_obr_zamena(tmp->file_opt[i]);
 		i++;
 	}
 	do_obr_zamena_slash(tmp->right);
@@ -55,27 +61,44 @@ void			do_obr_zamena_slash(t_exectoken *tmp)
 char				*do_zamena_slash(char *line)
 {
 	int		i;
-	int		d;
+	char	*tmp;
 	char	*new;
+	int		size;
 
 	i = 0;
-	d = 0;
 	if (line == NULL)
 		return (ft_strnew(130000));
 	if (!(new = ft_memalloc(130000)))
 		ft_error_q(2);
-	while (line[i])
+	while (i < ft_strlen(line) && line[i] != '\0')
 	{
-		if (line[i] == '\\' && line[i + 1] != '\0')
+		dprintf(2, "\nda|%d, %s|\n", i, new);
+		if (ispar(line[i]))
 		{
-			new[d] = -1 * (line[i + 1]);
-			i++;
+			size = c_size(&line[i], line[i]);
+			tmp = ft_strsub(line, i, size + 2);
+			dprintf(2, "\n|%s|\n", tmp);
+			ft_strcat(new, tmp);
+			i += size + 1;
+			dprintf(2, "\nsize|%d|\n", size);
+			ft_strdel(&tmp);
+			//exit(0);
+		}
+		else if (line[i] == '\\')
+		{
+			tmp = ft_strdup(" ");
+			tmp[0] = -1 * line[i + 1];
+			ft_strcat(new, tmp);
+			ft_strdel(&tmp);
 		}
 		else
-			new[d] = line[i];
+		{
+			tmp = ft_strdup(" ");
+			tmp[0] = line[i];
+			ft_strcat(new, tmp);
+			ft_strdel(&tmp);
+		}
 		i++;
-		d++;
 	}
-	new[d] = '\0';
 	return (new);
 }
