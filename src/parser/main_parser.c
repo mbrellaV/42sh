@@ -66,6 +66,58 @@ t_exectoken		*do_parser(t_lextoken *tmp)
 	return (ft_kill_str_dop_exec(t, t->start_c));
 }
 
+char			**zam_opt_tokens(char **mas)
+{
+	char	**newopt;
+	int		i;
+	int		iopt;
+
+	i = 0;
+	iopt = 0;
+	if (!(newopt = (char **)ft_memalloc(sizeof(char *) * (ft_env_len(mas) * 2))))
+		ft_error_q(15);
+	while (mas[i])
+	{
+		if ((get_op_type(mas[i]) >= 3 && get_op_type(mas[i]) <= 10))
+		{
+			newopt[iopt] = ft_strdup((mas[i][0] == '<') ? "0" : "1");
+			newopt[iopt + 1] = ft_strdup(mas[i]);
+			newopt[iopt + 2] = ft_strdup(mas[i + 1]);
+			//dprintf(2, "\nsas: |%s, %s, %s, %d, %d|\n", mas[i], mas[i + 1], mas[i + 2], i, iopt);
+			iopt += 3;
+
+			i += 2;
+		}
+		else if (mas[i][0] >= '0' && mas[i][0] <= '9')
+		{
+			newopt[iopt] = ft_strdup(mas[i]);
+			newopt[iopt + 1] = ft_strdup(mas[i + 1]);
+			newopt[iopt + 2] = ft_strdup(mas[i + 2]);
+			iopt += 3;
+			i += 3;
+		}
+		else
+			return (NULL);
+	}
+	newopt[iopt] = NULL;
+	return (newopt);
+}
+
+void			do_zamena_opt_tokens(t_exectoken *tmp)
+{
+	char **dop;
+	if (tmp == NULL)
+		return ;
+	if (tmp->file_opt != NULL)
+	{
+		dop = tmp->file_opt;
+		tmp->file_opt = zam_opt_tokens(tmp->file_opt);
+		ft_free_str(dop);
+	}
+	do_zamena_opt_tokens(tmp->right);
+	do_zamena_opt_tokens(tmp->left);
+}
+
 t_exectoken		*all_parse(char *cmd)
 {
 	t_lextoken	*tmp;
@@ -98,6 +150,7 @@ t_exectoken		*all_parse(char *cmd)
 	//exit(0);
 	free(t);
 	extmp = do_parser(tmp);
+	do_zamena_opt_tokens(extmp);
 	do_obr_zamena_slash(extmp);
 //	t_exectoken *exdop = extmp;
 //	while (exdop)
@@ -109,6 +162,7 @@ t_exectoken		*all_parse(char *cmd)
 //		dprintf(2, "\n//");
 //		exdop = exdop->right;
 //	}
+	//exit(0);
 	ft_distr_lex(tmp);
 	return (extmp);
 }

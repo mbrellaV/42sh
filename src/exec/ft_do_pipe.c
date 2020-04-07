@@ -14,46 +14,43 @@
 #include <stdio.h>
 #include <errno.h>
 
-int		ft_what_flag(t_pipe *p, char **opt)
+int		ft_what_flag(t_pipe *p, char *opt)
 {
 	int flag;
 
 	flag = 0;
-	ft_strcmp(opt[p->i], ">") == 0 ? flag = 1 : flag;
-	ft_strcmp(opt[p->i], ">>") == 0 ? flag = 2 : flag;
-	ft_strcmp(opt[p->i], "<") == 0 ? flag = 3 : flag;
-	ft_strcmp(opt[p->i], "<<") == 0 ? flag = 4 : flag;
-	ft_strcmp(opt[p->i], ">&") == 0 ? flag = 6 : flag;
-	ft_strcmp(opt[p->i], "&>") == 0 ? flag = 6 : flag;
-	p->b = 1;
+	ft_strcmp(opt, ">") == 0 ? flag = 1 : flag;
+	ft_strcmp(opt, ">>") == 0 ? flag = 2 : flag;
+	ft_strcmp(opt, "<") == 0 ? flag = 3 : flag;
+	ft_strcmp(opt, "<<") == 0 ? flag = 4 : flag;
+	ft_strcmp(opt, ">&") == 0 ? flag = 6 : flag;
+	ft_strcmp(opt, "&>") == 0 ? flag = 6 : flag;
 	return (flag);
 }
 
-void	ft_open_flag(char **opt, t_pipe *p, int *infile, int *outfile)
+void	ft_open_flag(char *opt, t_pipe *p)
 {
 	if (p->flag == 1)
-		*p->outfile = open(opt[p->i], O_CREAT | O_RDWR | O_TRUNC,
+		*p->outfile = open(opt, O_CREAT | O_RDWR | O_TRUNC,
 				S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP |
 				S_IROTH | S_IWOTH);
 	else if (p->flag == 2)
-		*p->outfile = open(opt[p->i], O_CREAT | O_RDWR | O_APPEND,
+		*p->outfile = open(opt, O_CREAT | O_RDWR | O_APPEND,
 				S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP |
 				S_IROTH | S_IWOTH);
 	else if (p->flag == 3)
-		*p->infile = open(opt[p->i], O_RDONLY);
-	else if (p->flag == 6)
-		*p->outfile = ft_atoi(opt[p->i + 1]);
-	dprintf(2, "\n\nda3|%d|, |%d|", *p->infile, *p->outfile);
+		*p->infile = open(opt, O_RDONLY);
+	//dprintf(2, "\n\nda3|%d|, |%d|", *p->infile, *p->outfile);
 	if ((p->flag == 1 || p->flag == 6 || p->flag == 2) && *p->outfile <= 0)
 	{
 		ft_putstr_fd("21sh: open fd ERROR ", 2);
-		ft_putendl_fd(opt[p->i], 2);
+		ft_putendl_fd(opt, 2);
 		p->flag = 0;
 	}
 	else if (p->flag == 3 && *p->infile <= 0)
 	{
 		ft_putstr_fd("21sh: open fd ERROR ", 2);
-		ft_putendl_fd(opt[p->i], 2);
+		ft_putendl_fd(opt, 2);
 	}
 }
 
@@ -84,76 +81,54 @@ int		ft_heredoc(char *tmp)
 	return (f[0]);
 }
 
-void	do_dup(t_pipe *p, char **av, int type)
-{
-	if (type == 2)
-	{
-		dprintf(2, "\n\nda2|%d|, |%d|", *p->infile, *p->outfile);
-		p->flag = ft_what_flag(p, av);
-		//p->st = ft_atoi(av[p->i + 1]);
-		p->i++;
-		ft_open_flag(av, p, p->infile, p->outfile);
-	}
-	if (type == 3)
-	{
-		dprintf(2, "\n\ndtype3|%d|, |%d|", *p->infile, *p->outfile);
-		p->st = ft_atoi(av[p->i]);
-		p->i++;
-		p->fd = ft_atoi(av[p->i + 1]);
-		p->flag = ft_what_flag(p, av);
-		//ft_open_flag(av, p, p->infile, p->outfile);
-	}
-	if (p->flag == 4)
-		*p->infile = ft_heredoc(av[p->i]);
-	else if (p->flag == 6)
-	{
-		dup2(p->fd, p->st);
-	}
-}
-
 int		ft_fd_flag(char **av, int *infile, int *outfile, int *errfile)
 {
 	t_pipe	p;
 
-	dprintf(2, "\n\nda1|%d|, |%d|", *infile, *outfile);
+	//dprintf(2, "\n\nda1|%d|, |%d|", *infile, *outfile);
 	p = (t_pipe){0, 0, 1, 0, 0, 0, infile, outfile, errfile};
 	while (p.i < ft_env_len(av) && av[(p.i)] != NULL)
 	{
 		if (av[p.i][0] >= '0' && av[p.i][0] <= '9')
 		{
-			p.flag = ft_what_flag(&p, av);
-			if (p.flag)
-			do_dup(&p, av, 3);
-			p.i += 2;
-		}
-		else if ((av[p.i][0] == '>' || av[p.i][0] == '<' || av[p.i][0] == '&'))
-		{
-			do_dup(&p, av, 2);
-			p.i += 1;
+			p.flag = ft_what_flag(&p, av[p.i + 1]);
+			if (p.flag != 6 && p.flag != 4)
+			{
+				p.st = ft_atoi(av[p.i]);
+				ft_open_flag(av[p.i + 2], &p);
+				if (*p.infile != STDIN_FILENO)
+				{
+					//dprintf(2, "\ninfile: |%d|\n", *p.infile);
+					dup2 (*p.infile, p.st);
+					close (*p.infile);
+				}
+				if (*p.outfile != STDOUT_FILENO)
+				{
+					//dprintf(2, "\noutfile: |%d|\n", *p.outfile);
+					dup2(*p.outfile, p.st);
+					close (*p.outfile);
+					//dprintf(1, "\noutfilef: |%d|\n", outfile);
+
+				}
+				if (*p.errfile != STDERR_FILENO)
+				{
+					//dprintf(2, "\nerrfile: |%d|\n", *p.errfile);
+					dup2 (*p.errfile, STDERR_FILENO);
+					close (*p.errfile);
+				}
+			}
+			else if (p.flag == 4)
+				ft_heredoc(av[p.i + 2]);
+			else
+			{
+				p.st = ft_atoi(av[p.i]);
+				p.fd = ft_atoi(av[p.i + 2]);
+				dup2(p.fd, p.st);
+			}
+			p.i += 3;
 		}
 		else
 			break ;
-		if (*p.infile != STDIN_FILENO)
-		{
-			//dprintf(2, "\ninfile: |%d|\n", *p.infile);
-			dup2 (*p.infile, STDIN_FILENO);
-			close (*p.infile);
-		}
-		if (*p.outfile != STDOUT_FILENO)
-		{
-			//dprintf(2, "\noutfile: |%d|\n", *p.outfile);
-			dup2(*p.outfile, STDOUT_FILENO);
-			close (*p.outfile);
-			//dprintf(1, "\noutfilef: |%d|\n", outfile);
-
-		}
-		if (*p.errfile != STDERR_FILENO)
-		{
-			//dprintf(2, "\nerrfile: |%d|\n", *p.errfile);
-			dup2 (*p.errfile, STDERR_FILENO);
-			close (*p.errfile);
-		}
-		//dprintf(2, "\n\nprom: |%d|, |%d|", *infile, *outfile);
 		p = (t_pipe){0, p.i, 1, 0, 0, 0, infile, outfile, errfile};
 	}
 	//dprintf(2, "\n\nda2|%d|, |%d|", *infile, *outfile);
