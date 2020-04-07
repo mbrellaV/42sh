@@ -50,28 +50,6 @@ int		launch_process (t_process *p, pid_t pgid,
 		{
 			dop1 = ft_fd_flag(p->file_opt, &infile, &outfile, &errfile);
 		}
-		//dprintf(2, "\nsas: |%d, %d, %d|\n", infile, outfile, errfile);
-		if (infile != STDIN_FILENO)
-		{
-			//dprintf(2, "\ninfile: |%d|\n", infile);
-			dup2 (infile, STDIN_FILENO);
-			close (infile);
-		}
-		if (outfile != STDOUT_FILENO)
-		{
-			dprintf(2, "\noutfile: |%d|\n", outfile);
-			dup2(outfile, STDOUT_FILENO);
-			close (outfile);
-			//dprintf(1, "\noutfilef: |%d|\n", outfile);
-			//dup2(STDERR_FILENO, STDOUT_FILENO);
-
-		}
-		if (errfile != STDERR_FILENO)
-		{
-			dprintf(2, "\nerrfile: |%d|\n", errfile);
-			dup2 (errfile, STDERR_FILENO);
-			close (errfile);
-		}
 
 	}
 	/* Exec the new process.  Make sure we exit.  */

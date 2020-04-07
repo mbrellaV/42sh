@@ -107,19 +107,7 @@ void	do_dup(t_pipe *p, char **av, int type)
 		*p->infile = ft_heredoc(av[p->i]);
 	else if (p->flag == 6)
 	{
-		dprintf(2, "\n\ndip|%d|, |%d|", p->st, p->fd);
-		//dprintf(2, "\n\ndup|%d|", dup2(p->st, p->fd));
-		//p->j = dup(p->st);
-		//close(p->st);
-		dup2(p->st, p->fd);
-		//*p->errfile = *p->outfile;
-		//dup2(STDERR_FILENO, STDOUT_FILENO);
-		//*p->errfile = 2;
-		dprintf(2, "\n\ninflag6:|%d|, |%d|", *p->infile, *p->outfile);
-
-		//*p->errfile = 1;
-		//dup2(p->st, p->fd);
-		//close(p->st);
+		dup2(p->fd, p->st);
 	}
 }
 
@@ -133,7 +121,8 @@ int		ft_fd_flag(char **av, int *infile, int *outfile, int *errfile)
 	{
 		if (av[p.i][0] >= '0' && av[p.i][0] <= '9')
 		{
-
+			p.flag = ft_what_flag(&p, av);
+			if (p.flag)
 			do_dup(&p, av, 3);
 			p.i += 2;
 		}
@@ -144,10 +133,30 @@ int		ft_fd_flag(char **av, int *infile, int *outfile, int *errfile)
 		}
 		else
 			break ;
-		dprintf(2, "\n\nprom: |%d|, |%d|", *infile, *outfile);
+		if (*p.infile != STDIN_FILENO)
+		{
+			//dprintf(2, "\ninfile: |%d|\n", *p.infile);
+			dup2 (*p.infile, STDIN_FILENO);
+			close (*p.infile);
+		}
+		if (*p.outfile != STDOUT_FILENO)
+		{
+			//dprintf(2, "\noutfile: |%d|\n", *p.outfile);
+			dup2(*p.outfile, STDOUT_FILENO);
+			close (*p.outfile);
+			//dprintf(1, "\noutfilef: |%d|\n", outfile);
+
+		}
+		if (*p.errfile != STDERR_FILENO)
+		{
+			//dprintf(2, "\nerrfile: |%d|\n", *p.errfile);
+			dup2 (*p.errfile, STDERR_FILENO);
+			close (*p.errfile);
+		}
+		//dprintf(2, "\n\nprom: |%d|, |%d|", *infile, *outfile);
 		p = (t_pipe){0, p.i, 1, 0, 0, 0, infile, outfile, errfile};
 	}
-	dprintf(2, "\n\nda2|%d|, |%d|", *infile, *outfile);
+	//dprintf(2, "\n\nda2|%d|, |%d|", *infile, *outfile);
 	return (p.fd);
 }
 
