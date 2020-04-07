@@ -24,7 +24,7 @@ int		ft_what_flag(t_pipe *p, char *opt)
 	ft_strcmp(opt, "<") == 0 ? flag = 3 : flag;
 	ft_strcmp(opt, "<<") == 0 ? flag = 4 : flag;
 	ft_strcmp(opt, ">&") == 0 ? flag = 6 : flag;
-	ft_strcmp(opt, "&>") == 0 ? flag = 6 : flag;
+	ft_strcmp(opt, "<&") == 0 ? flag = 6 : flag;
 	return (flag);
 }
 
@@ -81,6 +81,32 @@ int		ft_heredoc(char *tmp)
 	return (f[0]);
 }
 
+void	do_redir_into_file(t_pipe *p, char *file, int newfd)
+{
+	//p->st = ft_atoi(av[p->i]);
+	ft_open_flag(file, p);
+	if (*p->infile != STDIN_FILENO)
+	{
+		//dprintf(2, "\ninfile: |%d|\n", *p.infile);
+		dup2 (*p->infile, newfd);
+		close (*p->infile);
+	}
+	if (*p->outfile != STDOUT_FILENO)
+	{
+		//dprintf(2, "\noutfile: |%d|\n", *p.outfile);
+		dup2(*p->outfile, newfd);
+		close (*p->outfile);
+		//dprintf(1, "\noutfilef: |%d|\n", outfile);
+
+	}
+	if (*p->errfile != STDERR_FILENO)
+	{
+		//dprintf(2, "\nerrfile: |%d|\n", *p.errfile);
+		dup2 (*p->errfile, STDERR_FILENO);
+		close (*p->errfile);
+	}
+}
+
 int		ft_fd_flag(char **av, int *infile, int *outfile, int *errfile)
 {
 	t_pipe	p;
@@ -94,28 +120,7 @@ int		ft_fd_flag(char **av, int *infile, int *outfile, int *errfile)
 			p.flag = ft_what_flag(&p, av[p.i + 1]);
 			if (p.flag != 6 && p.flag != 4)
 			{
-				p.st = ft_atoi(av[p.i]);
-				ft_open_flag(av[p.i + 2], &p);
-				if (*p.infile != STDIN_FILENO)
-				{
-					//dprintf(2, "\ninfile: |%d|\n", *p.infile);
-					dup2 (*p.infile, p.st);
-					close (*p.infile);
-				}
-				if (*p.outfile != STDOUT_FILENO)
-				{
-					//dprintf(2, "\noutfile: |%d|\n", *p.outfile);
-					dup2(*p.outfile, p.st);
-					close (*p.outfile);
-					//dprintf(1, "\noutfilef: |%d|\n", outfile);
-
-				}
-				if (*p.errfile != STDERR_FILENO)
-				{
-					//dprintf(2, "\nerrfile: |%d|\n", *p.errfile);
-					dup2 (*p.errfile, STDERR_FILENO);
-					close (*p.errfile);
-				}
+				do_redir_into_file(&p, av[p.i + 2], ft_atoi(av[p.i]));
 			}
 			else if (p.flag == 4)
 				ft_heredoc(av[p.i + 2]);
@@ -123,7 +128,20 @@ int		ft_fd_flag(char **av, int *infile, int *outfile, int *errfile)
 			{
 				p.st = ft_atoi(av[p.i]);
 				p.fd = ft_atoi(av[p.i + 2]);
-				dup2(p.fd, p.st);
+//				if (ft_strcmp(av[p.i + 1], ">&") == 0 && isword(av[p.i + 2][0]) == 1)
+//				{
+//					do_redir_into_file(&p, av[p.i + 2], p.st);
+//					dup2(, p.st);
+//				}
+//				if (ft_strcmp(av[p.i + 1], "<&") == 0 && isword(av[p.i + 2][0]) == 1)
+//				{
+//					do_redir_into_file(&p, av[p.i + 2], p.st);
+//					dup2(2, p.st);
+//				}
+				if (ft_strcmp(av[p.i + 1], "<&") == 0)
+					dup2(p.st, p.fd);
+				else
+					dup2(p.fd, p.st);
 			}
 			p.i += 3;
 		}

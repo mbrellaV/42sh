@@ -20,7 +20,7 @@ char	*ft_strdup(const char *s1)
 	k = 0;
 	if (s1 == NULL)
 		return (NULL);
-	count = ft_strnew(ft_strlen(s1));
+	count = ft_strnew(ft_strlen(s1) + 1);
 	if (count == NULL)
 		return (NULL);
 	while (s1[k] != '\0')

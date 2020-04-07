@@ -27,7 +27,7 @@ int		ft_whatis4(t_exectoken *tmp)
 		return (-2);
 	if (tmp->file_args[0] == NULL)
 		return (-2);
-	if (ft_strcmp(tmp->file_args[0], "exit") == 0)
+	if (ft_strcmp(tmp->file_args[0], "exit") == 0 && tmp->file_args[1] == NULL)
 		return (-1);
 	if (ft_strcmp(tmp->file_args[0], "alias") == 0 || ft_strcmp(tmp->file_args[0], "unalias") == 0)
 		ft_do_change_alias(tmp->file_args);
@@ -76,7 +76,7 @@ int		ft_whatis2(t_process *tmp)
 		return (-2);
 	if (tmp->file_args[0] == NULL)
 		return (-2);
-	if (ft_strcmp(tmp->file_args[0], "exit") == 0)
+	if (ft_strcmp(tmp->file_args[0], "exit") == 0 && tmp->file_args[1] == NULL)
 		return (-1);
 	if (ft_strcmp(tmp->file_args[0], "alias") == 0 || ft_strcmp(tmp->file_args[0], "unalias") == 0)
 		ft_do_change_alias(tmp->file_args);
@@ -262,7 +262,7 @@ int		ft_main_what(t_exectoken *tmp)
 
 	sas = 0;
 	//take
-    do_zam_ravno(tmp);
+    //do_zam_ravno(tmp);
     while (tmp)
 	{
 		if ((tmp->file_args == NULL) && (tmp->file_opt == NULL))
@@ -430,7 +430,6 @@ int		main_cycle(t_readline *p, t_exectoken **start_token)
 			free(p->buff);
 			ft_distruct_tree(*start_token);
 		}
-		exit (0);
 	}
 	p->buff[0] != '\0' ? memory_head = ft_memory(memory_head, &(p->buff)) : memory_head;
 	if ((*start_token = all_parse(p->buff)) == NULL)
