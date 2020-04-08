@@ -262,7 +262,6 @@ int		ft_main_what(t_exectoken *tmp)
 
 	sas = 0;
 	//take
-    //do_zam_ravno(tmp);
     while (tmp)
 	{
 		if ((tmp->file_args == NULL) && (tmp->file_opt == NULL))

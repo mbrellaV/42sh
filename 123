@@ -17,6 +17,7 @@ Makefile
 objs
 que.txt
 README.md
+redir
 script.sh
 src
 start_que.txt

@@ -21,13 +21,14 @@ char				*do_zam_str_by_str(int start, int end, char *str,
 
 	i = 0;
 	dopi = 0;
-	if (str == NULL || zam_str == NULL)
+	if (str == NULL)
 	{
 		ft_strdel(&str);
 		ft_strdel(&zam_str);
 		return ((char *)ft_memalloc(130000));
 	}
-
+	if (zam_str == NULL)
+		zam_str = ft_strdup("\0");
 	if (!(newstr = ft_memalloc((ft_strlen(str) +
 	ft_strlen(zam_str) + 2) * sizeof(char))))
 		ft_error_q(2);

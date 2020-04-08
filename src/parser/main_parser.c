@@ -118,6 +118,19 @@ void			do_zamena_opt_tokens(t_exectoken *tmp)
 	do_zamena_opt_tokens(tmp->left);
 }
 
+void			ft_change_all_sc(char *str)
+{
+	int i;
+
+	i = 0;
+	while (str[i] != '\0')
+	{
+		if (str[i] == '(' || str[i] == ')')
+			str[i] = ' ';
+		i++;
+	}
+}
+
 t_exectoken		*all_parse(char *cmd)
 {
 	t_lextoken	*tmp;
@@ -128,6 +141,7 @@ t_exectoken		*all_parse(char *cmd)
 	t = NULL;
 	if (*cmd == '\0')
 		return (NULL);
+	ft_change_all_sc(cmd);
 	//dprintf(2, "\ncmd|%s|\n", cmd);
 	if (!(tmp = do_lexer(cmd)))
 		return (NULL);
@@ -140,7 +154,8 @@ t_exectoken		*all_parse(char *cmd)
 //		dop_tmp = dop_tmp->next;
 //	}
 	tmp = do_zam_bax_and_hist_full(tmp);
-
+	if (tmp == NULL)
+		return (NULL);
 //	dop_tmp = tmp;
 //	while (dop_tmp)
 //	{

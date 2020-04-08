@@ -58,6 +58,7 @@ typedef struct				s_pipe
 	int						*infile;
 	int						*outfile;
 	int						*errfile;
+	//int						*opened_fds;
 }							t_pipe;
 
 typedef struct				s_lextoken

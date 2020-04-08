@@ -29,7 +29,7 @@ char	*hash_error(int err, char *key, int no_error)
 	}
 	else if (err == 3)
 	{
-		ft_printf("21sh: permission denied: %s\n", key);
+		ft_printf("21sh: permission denied: |%s|\n", key);
 		return (NULL);
 	}
 	return (NULL);

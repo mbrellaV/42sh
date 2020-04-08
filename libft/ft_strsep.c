@@ -21,7 +21,7 @@ char	*ft_strsep(char *s, const char delim)
 	dopdelim = (char)delim;
 	if (!s || !delim)
 		return (NULL);
-	if (!(dops = (char *)malloc(ft_word_size(s, dopdelim) + 1)))
+	if (!(dops = (char *)ft_memalloc(ft_word_size(s, dopdelim) + 1)))
 		return (NULL);
 	i = 0;
 	while (!ft_isdelim(*s, dopdelim) && *s)

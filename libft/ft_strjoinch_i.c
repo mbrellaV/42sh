@@ -19,7 +19,7 @@ char	*ft_strjoinch_i(char const *s1, char c, size_t k, size_t max)
 
 	if (!s1 || !c)
 		return (NULL);
-	new_str = (char *)malloc(sizeof(char) * max + 1);
+	new_str = (char *)ft_memalloc(sizeof(char) * max + 1);
 	if (!new_str)
 		return (NULL);
 	i = 0;
@@ -47,7 +47,7 @@ char	*ft_strjoin_i(char const *s1, char *c, size_t k, size_t max)
 
 	if (!s1 || !c)
 		return (NULL);
-	new_str = (char *)malloc(sizeof(char) * (max + ft_strlen(c) + 1));
+	new_str = (char *)ft_memalloc(sizeof(char) * (max + ft_strlen(c) + 1));
 	if (!new_str)
 		return (NULL);
 	i = 0;
@@ -76,7 +76,7 @@ char	*ft_strjointsr_i(char const *s1, size_t k, char *kkk)
 
 	if (!s1 || !kkk)
 		return (NULL);
-	new_str = (char *)malloc(sizeof(char) * ft_strlen(s1) + ft_strlen(kkk) + 1);
+	new_str = (char *)ft_memalloc(sizeof(char) * ft_strlen(s1) + ft_strlen(kkk) + 1);
 	if (!new_str)
 		return (NULL);
 	i = 0;

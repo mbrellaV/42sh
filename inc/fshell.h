@@ -104,7 +104,7 @@ char				*create_full_path(char *path, t_builtins *cd);
 char				*ft_strjoin_cd(char const *s1, char const *s2, int to_free);
 char				*ft_get_var(char *dop, char **env);
 int					issc(char c);
-void       			do_zam_ravno(t_exectoken *h);
+t_lextoken			*do_zam_ravno(t_lextoken *h, t_lextoken **htmp);
 void				ft_global_env(char **env, int argc);
 int					unset_var(char *str, char ***envl);
 void				ft_fun_fork(char *path, char **arg, pid_t pgid, int foreground);

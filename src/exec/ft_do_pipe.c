@@ -14,6 +14,14 @@
 #include <stdio.h>
 #include <errno.h>
 
+void	ft_redirect_error(int marker, int fd)
+{
+	if (marker == 10)
+	{
+		ft_printf(SHELL_NAME": %d: Bad file descriptor", fd);
+	}
+}
+
 int		ft_what_flag(t_pipe *p, char *opt)
 {
 	int flag;
@@ -128,20 +136,31 @@ int		ft_fd_flag(char **av, int *infile, int *outfile, int *errfile)
 			{
 				p.st = ft_atoi(av[p.i]);
 				p.fd = ft_atoi(av[p.i + 2]);
-//				if (ft_strcmp(av[p.i + 1], ">&") == 0 && isword(av[p.i + 2][0]) == 1)
-//				{
-//					do_redir_into_file(&p, av[p.i + 2], p.st);
-//					dup2(, p.st);
-//				}
-//				if (ft_strcmp(av[p.i + 1], "<&") == 0 && isword(av[p.i + 2][0]) == 1)
-//				{
-//					do_redir_into_file(&p, av[p.i + 2], p.st);
-//					dup2(2, p.st);
-//				}
-				if (ft_strcmp(av[p.i + 1], "<&") == 0)
+				if (ft_strcmp(av[p.i + 1], ">&") == 0 && ft_strcmp(av[p.i + 2], "-") == 0)
+				{
+					//dprintf(2, "closed:|%d|", p.st);
+					close(p.st);
+				}
+				else if (ft_strcmp(av[p.i + 1], "<&") == 0 && ft_strcmp(av[p.i + 2], "-") == 0)
+					close(p.st);
+				else if (ft_strcmp(av[p.i + 1], "<&") == 0)
+				{
+					if (p.fd != *p.infile)
+					{
+						ft_redirect_error(10, p.fd);
+						return (-1);
+					}
 					dup2(p.st, p.fd);
+				}
 				else
+				{
+					if (p.fd != *p.outfile)
+					{
+						ft_redirect_error(10, p.fd);
+						return (-1);
+					}
 					dup2(p.fd, p.st);
+				}
 			}
 			p.i += 3;
 		}

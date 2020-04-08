@@ -42,6 +42,8 @@ void	ft_find_path(t_readline *p, char *name)
 	if (!(tmp = ft_get_var("PATH", g_env)))
 		return ;
 	path = ft_strsplit1(tmp, ':');
+	if (path == NULL)
+		return ;
 	i = -1;
 	while (path[++i])
 		ft_find_dir(path[i], name, p);
