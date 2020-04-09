@@ -12,7 +12,7 @@
 
 #include "../../inc/fshell.h"
 
-int		launch_process (t_process *p, pid_t pgid,
+int		launch_process(t_process *p, pid_t pgid,
 						   int infile, int outfile, int errfile,
 						   int foreground, char *rt)
 {
@@ -48,6 +48,26 @@ int		launch_process (t_process *p, pid_t pgid,
 		//dprintf(2, "\nsasdo: |%d, %d, %d|\n", infile, outfile, errfile);
 		if (p->file_opt)
 		{
+			if (infile != STDIN_FILENO)
+			{
+				//dprintf(2, "\ninfile: |%d|\n", *p.infile);
+				dup2(infile, STDIN_FILENO);
+				close(infile);
+			}
+			if (outfile != STDOUT_FILENO)
+			{
+				//dprintf(2, "\noutfile: |%d|\n", *p.outfile);
+				dup2(outfile, STDOUT_FILENO);
+				close(outfile);
+				//dprintf(1, "\noutfilef: |%d|\n", outfile);
+
+			}
+			if (errfile != STDERR_FILENO)
+			{
+				//dprintf(2, "\nerrfile: |%d|\n", *p.errfile);
+				dup2(errfile, STDERR_FILENO);
+				close(errfile);
+			}
 			dop1 = ft_fd_flag(p->file_opt, &infile, &outfile, &errfile);
 		}
 		else
@@ -55,22 +75,22 @@ int		launch_process (t_process *p, pid_t pgid,
 			if (infile != STDIN_FILENO)
 			{
 				//dprintf(2, "\ninfile: |%d|\n", *p.infile);
-				dup2 (infile, STDIN_FILENO);
-				close (infile);
+				dup2(infile, STDIN_FILENO);
+				close(infile);
 			}
 			if (outfile != STDOUT_FILENO)
 			{
 				//dprintf(2, "\noutfile: |%d|\n", *p.outfile);
 				dup2(outfile, STDOUT_FILENO);
-				close (outfile);
+				close(outfile);
 				//dprintf(1, "\noutfilef: |%d|\n", outfile);
 
 			}
 			if (errfile != STDERR_FILENO)
 			{
 				//dprintf(2, "\nerrfile: |%d|\n", *p.errfile);
-				dup2 (errfile, STDERR_FILENO);
-				close (errfile);
+				dup2(errfile, STDERR_FILENO);
+				close(errfile);
 			}
 		}
 

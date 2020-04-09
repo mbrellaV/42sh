@@ -87,6 +87,7 @@ char				*do_zamena_slash(char *line)
 			tmp[0] = -1 * line[i + 1];
 			ft_strcat(new, tmp);
 			ft_strdel(&tmp);
+			i++;
 		}
 		else
 		{

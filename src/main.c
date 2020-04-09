@@ -410,10 +410,6 @@ int		main_cycle(t_readline *p, t_exectoken **start_token)
 		str_for_del = p->buff;
 		p->buff = do_zamena_slash(p->buff);
 		ft_strdel(&str_for_del);
-//		while (ft_cheak_quote(p->buff) != 1)
-//			ft_add_intput_que(p, memory_head, 1);
-//		while (p->index > 0 && p->buff[p->index - 1] == '\\')
-//			ft_add_intput_que(p, memory_head, 11);
 		if (!ft_ck_addline(p))
 			p->buff = ft_strnew(130000);
 		reset_input_mode();
