@@ -93,7 +93,7 @@ add_executable(21end
         src/evaln/atoimy.c
         src/evaln/inftopost.c
         src/evaln/ft_do_zam_eval.c
-
+        src/parser/check_bracket.c
         src/main.c src/builtins/allenv/main_env.c src/check_file.c src/lexer/history_search.c src/nucleus/dop_tab_funs.c src/builtins/allenv/global_env.c src/shell_lvl.c src/lexer/all_bax_and_hist_change.c src/builtins/alias/alias.c src/builtins/ft_cd_3.c src/g_builtins.c src/builtins/ft_type.c src/builtins/fg_builtin.c src/builtins/bg_builtin.c)
 
 

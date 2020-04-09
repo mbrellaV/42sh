@@ -6,5 +6,5 @@ C_FLAGS = -g   -std=gnu99
 
 C_DEFINES = 
 
-C_INCLUDES = -I/home/lox/42t/inc 
+C_INCLUDES = -I/home/petruha2001/42sh/inc 
 
