@@ -145,6 +145,7 @@ int				    sc_size(char *str, char b);
 char			    find_pair_sc(char c);
 int					check_bracket(char *str);
 void				do_obr_zamena_slash(t_exectoken *tmp);
+void				ft_redirect(t_pipe *p, int new_infile_fd, int new_outfile_fd);
 
 
 //////////////////

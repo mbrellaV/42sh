@@ -98,30 +98,38 @@ int		ft_heredoc(char *tmp)
 	return (f[0]);
 }
 
-void	do_redir_into_file(t_pipe *p, char *file, int newfd)
+void	ft_redirect_one(int old_file_fd, int new_infile_fd)
 {
-	//p->st = ft_atoi(av[p->i]);
-	ft_open_flag(file, p);
-	if (*p->infile != STDIN_FILENO)
+	if (old_file_fd != new_infile_fd)
 	{
 		//dprintf(2, "\ninfile: |%d|\n", *p.infile);
-		dup2 (*p->infile, newfd);
-		close (*p->infile);
+		dup2(old_file_fd, new_infile_fd);
+		close(old_file_fd);
 	}
-	if (*p->outfile != STDOUT_FILENO)
-	{
-		//dprintf(2, "\noutfile: |%d|\n", *p.outfile);
-		dup2(*p->outfile, newfd);
-		close (*p->outfile);
-		//dprintf(1, "\noutfilef: |%d|\n", outfile);
+}
 
+void	ft_redirect(t_pipe *p, int new_infile_fd, int new_outfile_fd)
+{
+	if (*p->infile != new_infile_fd)
+	{
+		ft_redirect_one(*p->infile, new_infile_fd);
+	}
+	if (*p->outfile != new_outfile_fd)
+	{
+		ft_redirect_one(*p->outfile, new_outfile_fd);
 	}
 	if (*p->errfile != STDERR_FILENO)
 	{
-		//dprintf(2, "\nerrfile: |%d|\n", *p.errfile);
 		dup2 (*p->errfile, STDERR_FILENO);
 		close (*p->errfile);
 	}
+}
+
+void	do_redir_into_file(t_pipe *p, char *file, int new_infile_fd, int new_outfile_fd)
+{
+	//p->st = ft_atoi(av[p->i]);
+	ft_open_flag(file, p);
+	ft_redirect(p, new_infile_fd, new_outfile_fd);
 }
 
 int		ft_find_in_fds(int *opened_fds, int fd_to_find)
@@ -192,14 +200,25 @@ int		ft_fd_flag(char **av, int *infile, int *outfile, int *errfile)
 			p.flag = ft_what_flag(&p, av[p.i + 1]);
 			if (p.flag != 6 && p.flag != 4)
 			{
-				do_redir_into_file(&p, av[p.i + 2], p.st);
-				if (ft_find_in_fds(opened_fds, p.st) == 0)
+				//dprintf(2, "\nsas: |%d, %d|\n", p.flag, p.st);
+				if (p.flag == 1 || p.flag == 2)
 				{
-					ft_add_to_fds(opened_fds, p.st);
+					ft_open_flag(av[p.i + 2], &p);
+					ft_redirect_one(*p.outfile, p.st);
+					if (ft_find_in_fds(opened_fds, p.st) == 0)
+						ft_add_to_fds(opened_fds, p.st);
+				}
+				if (p.flag == 3)
+				{
+					ft_open_flag(av[p.i + 2], &p);
+					ft_redirect_one(*p.infile, p.st);
 				}
 			}
 			else if (p.flag == 4)
-				ft_heredoc(av[p.i + 2]);
+			{
+				*p.infile = ft_heredoc(av[p.i + 2]);
+				ft_redirect(&p, STDIN_FILENO, STDOUT_FILENO);
+			}
 			else
 			{
 				if (ft_strcmp(av[p.i + 1], ">&") == 0 && ft_strcmp(av[p.i + 2], "-") == 0)
@@ -219,16 +238,7 @@ int		ft_fd_flag(char **av, int *infile, int *outfile, int *errfile)
 						ft_redirect_error(10, ft_itoa(p.fd));
 						return (return_with_close(opened_fds, -1));
 					}
-					dup2(p.st, p.fd);
-				}
-				else if (ft_strcmp(av[p.i + 1], "<&") == 0)
-				{
-					if (ft_find_in_fds(opened_fds, p.fd) == 0)
-					{
-						ft_redirect_error(10, ft_itoa(p.fd));
-						return (return_with_close(opened_fds, -1));
-					}
-					if (isword(av[p.i + 2][0]))
+					if (isword(av[p.i + 2][0]) && !ft_isdigit(av[p.i + 2][0]))
 					{
 						ft_redirect_error(9, av[p.i + 2]);
 						return (return_with_close(opened_fds, -1));
@@ -239,7 +249,7 @@ int		ft_fd_flag(char **av, int *infile, int *outfile, int *errfile)
 				{
 					if (isword(av[p.i + 2][0]) && !ft_isdigit(av[p.i + 2][0]))
 					{
-						do_redir_into_file(&p, av[p.i + 2], p.st);
+						do_redir_into_file(&p, av[p.i + 2], STDIN_FILENO, p.st);
 						if (ft_find_in_fds(opened_fds, p.st) == 0)
 						{
 							ft_add_to_fds(opened_fds, p.st);

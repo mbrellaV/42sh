@@ -301,7 +301,7 @@ int		ft_main_what(t_exectoken *tmp)
 		}
 		//sas = launch_job(jobs, jobs->first_process->foreground, q);
 		if (sas == -1)
-			exit(1);
+			return (-1);
 		tmp = tmp->right;
 //		ft_distruct_job(job);
 	}
@@ -459,15 +459,5 @@ int		main(int argc, char **argv, char **env)
 		if (main_cycle(&p, &start_token) == -1)
 			break ;
 	save_history(memory_head);
-//	hash_clear();
-//	free(g_cp);
-//	ft_strdel(&p.buff);
-//	ft_arrdel(g_env);
-//	del_readline(&p);
-//	ft_arrdel(g_alias);
-//	ft_arrdel(g_all_var);
-//	ft_distruct_job(f_job);
-//	return (ft_distruct_memory(memory_head->next) &&
-//			ft_distruct_tree(start_token) ? 0 : 1);
-	return (0);
+	exit(0);
 }

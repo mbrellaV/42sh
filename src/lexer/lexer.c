@@ -92,7 +92,7 @@ int				dop_lexer(t_dop_str *tmp, char *line)
 {
 	if (isword(line[tmp->i_c]) > 0)
 	{
-		if (line[tmp->i_c + 1] == '>')
+		if (line[tmp->i_c + 1] == '>' || line[tmp->i_c + 1] == '<')
 		{
 			if (dop_lexer2(tmp, line) == -1)
 				return (-1);
