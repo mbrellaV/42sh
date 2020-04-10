@@ -25,7 +25,7 @@ t_dop_str					*cr_dop_str_par(void);
 int							isoperator(char c);
 int							isword(char c);
 int							get_op_type(char *operator);
-char						*do_zamena_slash(char *line);
+int							do_zamena_slash(char *line, t_readline *p);
 int							ispar(char c);
 t_exectoken					*ft_cr_new_exectoken(t_lextoken *tmp,
 							t_exectoken *prev, int op_type, t_dop_str *t);

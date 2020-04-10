@@ -185,23 +185,25 @@ t_lextoken		*do_zam_bax_and_hist_full(t_lextoken *h)
 		if (h->inhibitor_lvl != 2)
 		{
 			//dprintf(2, "\nsas: |%s|\n", h->line);
-			h->line = do_zam_str_bax(h->line, tmp);
-			if (h->line[0] == '\0')
-			{
-				if (h->prev)
-					h->prev->next = h->next;
-				if (h->next)
-				{
-					h->next->prev = h->prev;
-					htmp = h->next;
-				}
-				if (h->next == NULL && h->prev == NULL)
-					return (NULL);
-				ft_strdel(&h->line);
-				free(h);
-			}
+			if (h->line[0] != '\0')
+				h->line = do_zam_str_bax(h->line, tmp);
+//			if (h->line[0] == '\0')
+//			{
+//				if (h->prev)
+//					h->prev->next = h->next;
+//				if (h->next)
+//				{
+//					h->next->prev = h->prev;
+//					htmp = h->next;
+//				}
+//				if (h->next == NULL && h->prev == NULL)
+//					return (NULL);
+//				ft_strdel(&h->line);
+//				free(h);
+//			}
 			str_for_del = h->line;
-			h->line = ft_do_zam_eval(h->line);
+			if (h->line[0] != '\0')
+				h->line = ft_do_zam_eval(h->line);
 			if (h->line != str_for_del)
 				ft_strdel(&str_for_del);
 			//h->line = ft_strdup(h->line);
@@ -210,11 +212,13 @@ t_lextoken		*do_zam_bax_and_hist_full(t_lextoken *h)
 		str_for_del = h->line;
 		if (h->inhibitor_lvl == 0)
 		{
-			h->line = do_zam_str_with_tilda(h->line);
+			if (h->line[0] != '\0')
+				h->line = do_zam_str_with_tilda(h->line);
 			if (h->line != str_for_del)
 				ft_strdel(&str_for_del);
 			str_for_del = h->line;
-			h->line = ft_do_zam_alias(h->line);
+			if (h->line[0] != '\0')
+				h->line = ft_do_zam_alias(h->line);
 			//dprintf(2, "\nsas2: |%p|\n", h->line);
 			if (h->line != str_for_del)
 				ft_strdel(&str_for_del);

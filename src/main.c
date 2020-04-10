@@ -377,13 +377,16 @@ int		ft_ck_addline(t_readline *p)
 	f = 4242;
 	while (f != 1)
 	{
+		p->index = do_zamena_slash(p->buff, p);
 		while (ft_cheak_quote(p->buff) != 1)
 			ft_add_intput_que(p, memory_head, 1);
+		p->index = do_zamena_slash(p->buff, p);
 		while (p->index > 0 && p->buff[p->index - 1] == '\\')
 		{
 			p->buff[p->index - 1] = 0;
 			ft_add_intput_que(p, memory_head, 11);
 		}
+		p->index = do_zamena_slash(p->buff, p);
 		f = ck_br(p->buff);
 		if (f == 0)
 			ft_add_intput_que(p, memory_head, 20);
@@ -406,9 +409,9 @@ int		main_cycle(t_readline *p, t_exectoken **start_token)
 		ft_start_read(p);
 		ft_read_8(p, memory_head, 0);
 		write(2, "\n", 1);
-		str_for_del = p->buff;
-		p->buff = do_zamena_slash(p->buff);
-		ft_strdel(&str_for_del);
+		//str_for_del = p->buff;
+		//p->buff = do_zamena_slash(p->buff);
+		//ft_strdel(&str_for_del);
 		if (!ft_ck_addline(p))
 			p->buff = ft_strnew(130000);
 		reset_input_mode();

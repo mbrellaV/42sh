@@ -58,7 +58,7 @@ void			do_obr_zamena_slash(t_exectoken *tmp)
 	do_obr_zamena_slash(tmp->left);
 }
 
-char				*do_zamena_slash(char *line)
+int				do_zamena_slash(char *line, t_readline *p)
 {
 	int		i;
 	char	*tmp;
@@ -75,13 +75,15 @@ char				*do_zamena_slash(char *line)
 		if (ispar(line[i]))
 		{
 			size = c_size(&line[i], line[i]);
+			if (size == -2)
+				size = 2;
 			tmp = ft_strsub(line, i, size + 2);
 			ft_strcat(new, tmp);
 			i += size + 1;
 			ft_strdel(&tmp);
 			//exit(0);
 		}
-		else if (line[i] == '\\')
+		else if (line[i] == '\\' && line[i + 1] != '\0')
 		{
 			tmp = ft_strdup(" ");
 			tmp[0] = -1 * line[i + 1];
@@ -98,5 +100,12 @@ char				*do_zamena_slash(char *line)
 		}
 		i++;
 	}
-	return (new);
+	//tmp = p->buff;
+	//p->buff = ft_strdup(new);
+	//ft_strdel(&tmp);
+	free(p->buff);
+	p->buff = new;
+	p->len = ft_strlen(p->buff);
+	//dprintf(2, "\nsas: |%s|\n", new);
+	return (p->len);
 }

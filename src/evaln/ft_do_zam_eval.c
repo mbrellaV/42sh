@@ -47,9 +47,11 @@ char        *ft_main_calc_rec(char *mas)
 
 	d = 0;
 	i = 0;
+	if (mas == NULL)
+		return (ft_strnew(130000));
 	if (!(newstr = ft_memalloc(ft_strlen(mas) + 1)))
 		return (NULL);
-	while (mas[d])
+	while (mas[d] != '\0')
 	{
 		if (mas[d] == '$')
 		{

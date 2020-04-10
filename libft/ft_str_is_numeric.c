@@ -16,7 +16,7 @@ int		ft_str_is_numeric(char *s)
 {
 	if (!s)
 		return (0);
-	while (*s)
+	while (*s != '\0')
 	{
 		if (!ft_isdigit(*s))
 			return (0);

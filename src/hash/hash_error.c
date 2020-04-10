@@ -19,12 +19,12 @@ char	*hash_error(int err, char *key, int no_error)
 	set_new_var("?", "2", &g_all_var);
 	if (err == 1)
 	{
-		ft_printf("21sh: no such file or directory: %s\n", key);
+		ft_printf("21sh: no such file or directory: '%s'\n", key);
 		return (NULL);
 	}
 	else if (err == 2)
 	{
-		ft_printf(SHELL_NAME" command not found: %s\n", key);
+		ft_printf(SHELL_NAME" command not found: '%s'\n", key);
 		return (NULL);
 	}
 	else if (err == 3)

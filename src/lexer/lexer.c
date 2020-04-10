@@ -39,6 +39,9 @@ t_dop_str		*cr_dop_str(char **line1)
 
 int				dop_lexer2(t_dop_str *tmp, char *line)
 {
+	if (tmp->tail_c->prev && ft_str_is_numeric(tmp->tail_c->prev->line) &&
+	(line[tmp->i_c + 1] == '>' || line[tmp->i_c + 1] == '<') && tmp->tail_c->prev->inhibitor_lvl == 0)
+		tmp->tail_c->prev->is_near_opt = 1;
 	tmp->tmp_c = ft_strsub(line, tmp->i_c, word_size(line + tmp->i_c));
 	if (tmp->tail_c && needs_something_before(tmp->tail_c->operator_type) && get_op_type(tmp->tmp_c) == 2)
 		return (ft_error(5, tmp->tmp_c));
@@ -62,6 +65,13 @@ int				dop_lexer1(t_dop_str *tmp, char *line)
 		plus_to_word = 1;
 	if (word_size(line + tmp->i_c) == -2)
 	{
+		tmp->tmp_c = ft_strdup("");
+		if (!(tmp->tail_c = add_token(tmp->tail_c, tmp->tmp_c, 1)))
+			return (-1);
+		if (ispar(line[tmp->i_c]) && tmp->i_c > 0 && isword(line[tmp->i_c - 1]))
+			tmp->tail_c->is_near_word = 1;
+		if (isword(line[tmp->i_c]) && tmp->i_c > 0 && ispar(line[tmp->i_c - 1]))
+			tmp->tail_c->is_near_word = 1;
 		tmp->i_c += 2;
 		return (0);
 	}
@@ -92,12 +102,7 @@ int				dop_lexer(t_dop_str *tmp, char *line)
 {
 	if (isword(line[tmp->i_c]) > 0)
 	{
-		if (line[tmp->i_c + 1] == '>' || line[tmp->i_c + 1] == '<')
-		{
-			if (dop_lexer2(tmp, line) == -1)
-				return (-1);
-		}
-		else if (dop_lexer1(tmp, line) == -1)
+		if (dop_lexer1(tmp, line) == -1)
 			return (-1);
 	}
 	else if (isoperator(line[tmp->i_c]))

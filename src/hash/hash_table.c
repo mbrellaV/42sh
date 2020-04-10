@@ -97,6 +97,8 @@ char				*hash_get(char *key, int no_error)
 {
 	char			*var;
 
+	if (key[0] == '\0')
+		return (hash_error(2, key, no_error));
 	if (ft_strchr(key, '/'))
 	{
 		if (check_file(key, IS_X) == -1)
@@ -110,6 +112,7 @@ char				*hash_get(char *key, int no_error)
 		return (hash_error(2, key, no_error));
 	else
 	{
+
 		if (check_file(var, IS_X) == 1 && !check_file(var, IS_D))
 			return (var);
 		else
