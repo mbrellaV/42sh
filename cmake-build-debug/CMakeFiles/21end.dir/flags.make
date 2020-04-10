@@ -6,5 +6,5 @@ C_FLAGS = -g   -std=gnu99
 
 C_DEFINES = 
 
-C_INCLUDES = -I/home/petruha2001/42sh/inc 
+C_INCLUDES = -I/home/pro/CLionProjects/42sh/inc 
 
