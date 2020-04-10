@@ -380,7 +380,10 @@ int		ft_ck_addline(t_readline *p)
 		while (ft_cheak_quote(p->buff) != 1)
 			ft_add_intput_que(p, memory_head, 1);
 		while (p->index > 0 && p->buff[p->index - 1] == '\\')
+		{
+			p->buff[p->index - 1] = 0;
 			ft_add_intput_que(p, memory_head, 11);
+		}
 		f = ck_br(p->buff);
 		if (f == 0)
 			ft_add_intput_que(p, memory_head, 20);
