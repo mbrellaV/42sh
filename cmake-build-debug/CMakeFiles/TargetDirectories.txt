@@ -1,3 +1,9 @@
+<<<<<<< HEAD
 /home/petruha2001/42sh/cmake-build-debug/CMakeFiles/rebuild_cache.dir
 /home/petruha2001/42sh/cmake-build-debug/CMakeFiles/21end.dir
 /home/petruha2001/42sh/cmake-build-debug/CMakeFiles/edit_cache.dir
+=======
+/Users/admin/Desktop/42sh/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/admin/Desktop/42sh/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/admin/Desktop/42sh/cmake-build-debug/CMakeFiles/21end.dir
+>>>>>>> c1f9bbd1135411663f0a6376424c31ba1c600d87

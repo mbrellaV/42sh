@@ -129,7 +129,13 @@ t_lextoken		*do_lexer(char *line)
 	while (line[tmp->i_c] != '\0')
 	{
 		if (dop_lexer(tmp, line) == -1)
+		{
+			if (tmp->doptail_c == NULL)
+				ft_distr_lex(tmp->tail_c);
+			ft_distr_lex(tmp->doptail_c);
+			ft_kill_str_dop_lex(tmp, NULL);
 			return (NULL);
+		}
 	}
 	if (tmp->tail_c != NULL && tmp->tail_c->operator_type == 2)
 	{

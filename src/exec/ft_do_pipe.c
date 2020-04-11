@@ -27,7 +27,7 @@ void	ft_redirect_error(int marker, char *dopline)
 	}
 }
 
-int		ft_what_flag(t_pipe *p, char *opt)
+int		ft_what_flag(char *opt)
 {
 	int flag;
 
@@ -57,16 +57,15 @@ void	ft_open_flag(char *opt, t_pipe *p)
 						   S_IROTH | S_IWOTH);
 	else if (p->flag == 3)
 		*p->infile = open(opt, O_RDONLY);
-	//dprintf(2, "\n\nda3|%d|, |%d|", *p->infile, *p->outfile);
 	if ((p->flag == 1 || p->flag == 6 || p->flag == 2) && *p->outfile <= 0)
 	{
-		ft_putstr_fd("21sh: open fd ERROR ", 2);
+		ft_putstr_fd("42sh: open fd ERROR ", 2);
 		ft_putendl_fd(opt, 2);
 		p->flag = 0;
 	}
 	else if (p->flag == 3 && *p->infile <= 0)
 	{
-		ft_putstr_fd("21sh: open fd ERROR ", 2);
+		ft_putstr_fd("42sh: open fd ERROR ", 2);
 		ft_putendl_fd(opt, 2);
 	}
 }
@@ -197,7 +196,7 @@ int		ft_fd_flag(char **av, int *infile, int *outfile, int *errfile)
 		{
 			p.st = ft_atoi(av[p.i]);
 			p.fd = ft_atoi(av[p.i + 2]);
-			p.flag = ft_what_flag(&p, av[p.i + 1]);
+			p.flag = ft_what_flag(av[p.i + 1]);
 			if (p.flag != 6 && p.flag != 4)
 			{
 				//dprintf(2, "\nsas: |%d, %d|\n", p.flag, p.st);

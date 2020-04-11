@@ -58,7 +58,7 @@ void			do_obr_zamena_slash(t_exectoken *tmp)
 	do_obr_zamena_slash(tmp->left);
 }
 
-char				*do_zamena_slash(char *line)
+int				do_zamena_slash(char *line, t_readline *p)
 {
 	int		i;
 	char	*tmp;
@@ -67,7 +67,7 @@ char				*do_zamena_slash(char *line)
 
 	i = 0;
 	if (line == NULL)
-		return (ft_strnew(130000));
+		return (13000);
 	if (!(new = ft_memalloc(130000)))
 		ft_error_q(2);
 	while (i < ft_strlen(line) && line[i] != '\0')
@@ -81,7 +81,6 @@ char				*do_zamena_slash(char *line)
 			ft_strcat(new, tmp);
 			i += size + 1;
 			ft_strdel(&tmp);
-			//exit(0);
 		}
 		else if (line[i] == '\\' && line[i + 1] != '\0')
 		{
@@ -100,6 +99,8 @@ char				*do_zamena_slash(char *line)
 		}
 		i++;
 	}
-	//dprintf(2, "\nsas: |%s|\n", new);
-	return (new);
+	free(p->buff);
+	p->buff = new;
+	p->len = ft_strlen(p->buff);
+	return (p->len);
 }
