@@ -12,7 +12,7 @@
 
 #include "../../inc/fshell.h"
 
-char				*do_obr_zamena(char *line)
+char			*do_obr_zamena(char *line)
 {
 	int		i;
 	int		d;
@@ -38,7 +38,7 @@ char				*do_obr_zamena(char *line)
 
 void			do_obr_zamena_slash(t_exectoken *tmp)
 {
-	int i;
+	int		i;
 
 	i = 0;
 	if (tmp == NULL)
@@ -78,25 +78,21 @@ int				do_zamena_slash(char *line, t_readline *p)
 			if (size == -2)
 				size = 2;
 			tmp = ft_strsub(line, i, size + 2);
-			ft_strcat(new, tmp);
 			i += size + 1;
-			ft_strdel(&tmp);
 		}
 		else if (line[i] == '\\' && line[i + 1] != '\0')
 		{
 			tmp = ft_strdup(" ");
 			tmp[0] = -1 * line[i + 1];
-			ft_strcat(new, tmp);
-			ft_strdel(&tmp);
 			i++;
 		}
 		else
 		{
 			tmp = ft_strdup(" ");
 			tmp[0] = line[i];
-			ft_strcat(new, tmp);
-			ft_strdel(&tmp);
 		}
+		ft_strcat(new, tmp);
+		ft_strdel(&tmp);
 		i++;
 	}
 	free(p->buff);

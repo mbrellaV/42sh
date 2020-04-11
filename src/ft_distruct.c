@@ -12,7 +12,7 @@
 
 #include "../inc/fshell.h"
 
-int		ft_distruct_tree(t_exectoken *q)
+int			ft_distruct_tree(t_exectoken *q)
 {
 	if (q != NULL)
 	{
@@ -25,7 +25,7 @@ int		ft_distruct_tree(t_exectoken *q)
 	return (1);
 }
 
-int		ft_distruct_memory(t_memory *head)
+int			ft_distruct_memory(t_memory *head)
 {
 	if (head != NULL)
 	{
@@ -36,28 +36,23 @@ int		ft_distruct_memory(t_memory *head)
 	return (1);
 }
 
-int		ft_distruct_job(t_job *head)
+int			ft_distruct_job(t_job *head)
 {
-	t_job *j, *jlast, *jnext;
-	int d;
+	t_job	*j;
+	t_job	*jlast;
+	t_job	*jnext;
+	int		d;
 
 	d = 0;
-//	update_status();
 	jlast = NULL;
 	j = head;
 	while (j)
 	{
 		d++;
-		jnext = j->next;
-		if (job_is_completed (j))
+		if ((jnext = j->next) && job_is_completed(j))
 		{
-			//format_job_info(j, "completed", d);
 			if (j->foreground == 0)
-			{
-				//ft_putchar_fd(, 2);
 				format_job_info(j, "completed", d);
-			}
-			//kill(j->pgid, SIGCONT);
 			if (jlast)
 				jlast->next = jnext;
 			else
@@ -65,13 +60,12 @@ int		ft_distruct_job(t_job *head)
 		}
 		else
 			jlast = j;
-
 		j = j->next;
 	}
 	return (1);
 }
 
-int		ft_distr_lex(t_lextoken *tmp)
+int			ft_distr_lex(t_lextoken *tmp)
 {
 	if (tmp != NULL)
 	{
@@ -82,7 +76,7 @@ int		ft_distr_lex(t_lextoken *tmp)
 	return (1);
 }
 
-int		ft_dist_str(char *input)
+int			ft_dist_str(char *input)
 {
 	ft_free_str(g_env);
 	free(input);

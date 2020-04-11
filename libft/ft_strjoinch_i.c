@@ -76,8 +76,8 @@ char	*ft_strjointsr_i(char const *s1, size_t k, char *kkk)
 
 	if (!s1 || !kkk)
 		return (NULL);
-	new_str = (char *)ft_memalloc(sizeof(char) * ft_strlen(s1) + ft_strlen(kkk) + 1);
-	if (!new_str)
+	if (!(new_str = (char *)ft_memalloc(sizeof(char) * ft_strlen(s1)
+			+ ft_strlen(kkk) + 1)))
 		return (NULL);
 	i = 0;
 	while (i < k)

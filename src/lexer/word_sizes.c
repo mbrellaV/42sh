@@ -14,7 +14,7 @@
 
 int				operator_size(char *str)
 {
-	int i;
+	int			i;
 
 	i = 0;
 	while (*str != 0 && isoperator(*str) > 0)
@@ -27,7 +27,7 @@ int				operator_size(char *str)
 
 int				size_with_bax(char *str)
 {
-	int i;
+	int			i;
 
 	i = 0;
 	while (*str)
@@ -40,13 +40,11 @@ int				size_with_bax(char *str)
 	return (i);
 }
 
-
 int				word_size(char *str)
 {
-	int i;
+	int			i;
 
 	i = 0;
-	//dprintf(2, "\nyes: |%c|\n", *str);
 	if (isoperator(*str) > 0)
 		return (operator_size(str));
 	if (isword(*str) == 2)
@@ -59,9 +57,6 @@ int				word_size(char *str)
 		return (-1);
 	if (issc(*str))
 		return (sc_size(str, *str));
-//	if (isword(*str) == '(')
-//		return (1);
-	//dprintf(2, "\nno: |%c|\n", *str);
 	while (*str)
 	{
 		if (isword(*str) != 1 && isword(*str) != 3)

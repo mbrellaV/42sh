@@ -175,6 +175,8 @@ int					ft_distruct_job(t_job *head);
 
 void				ft_infinit_pipe2(t_exectoken *head, t_memory *q);
 int					ft_whatis2(t_process *tmp);
+int					ft_whatis4(t_exectoken *tmp);
 void				init_shell(void);
+t_job				*create_job(t_exectoken *head);
 
 #endif

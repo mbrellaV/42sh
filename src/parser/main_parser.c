@@ -12,11 +12,39 @@
 
 #include "../../inc/fshell.h"
 
+t_dop_str		*cr_dop_str_par1(t_lextoken *tmp1)
+{
+	t_dop_str	*t;
+
+	if (tmp1 == NULL)
+		return (NULL);
+	if (!(t = ft_memalloc(sizeof(t_dop_str))))
+		return (NULL);
+	t->dopi_a = 0;
+	t->dop_a = tmp1;
+	t->f_a = 0;
+	while (tmp1 != NULL && !is_cmd_delim(tmp1->operator_type))
+	{
+		if (tmp1->is_near_opt == 1)
+			t->dopi_a++;
+		if (tmp1->is_near_opt == 0)
+			t->f_a++;
+		tmp1 = tmp1->next;
+	}
+	if (!(t->tmp1_a = ft_memalloc(sizeof(t_exectoken))))
+		return (NULL);
+	if (t->dopi_a != 0 && !(t->tmp1_a->file_opt =
+			(char**)ft_memalloc((t->dopi_a + 1) * sizeof(char *))))
+		return (NULL);
+	return (t);
+}
+
 t_exectoken		*do_parser_dop(t_dop_str *t, t_lextoken *tmp)
 {
 	if (tmp == NULL)
 		return (NULL);
-	if ((tmp->operator_type >= 3 && tmp->operator_type <= 10) || tmp->operator_type == -2)
+	if ((tmp->operator_type >= 3 && tmp->operator_type <= 10) ||
+		tmp->operator_type == -2)
 		t->prev_c = ft_cr_new_exectoken(tmp, NULL, -2, t);
 	else
 	{
@@ -51,13 +79,12 @@ t_exectoken		*do_parser(t_lextoken *tmp)
 			t->i_c = tmp->operator_type;
 		else if (t->i_c != -1)
 		{
-			//dprintf(2, "\nsas: |%d|\n", t->i_c);
 			if (t->i_c == 2)
 				if (!(t->prev_c = ft_cr_new_exectoken(tmp,
 						t->prev_c, t->i_c, t)))
 					return (NULL);
-			if ((t->i_c == 1 || t->i_c >= 9) && (t->prevdot_c = ft_cr_new_exectoken(tmp,
-					t->prevdot_c, t->i_c, t)))
+			if ((t->i_c == 1 || t->i_c >= 9) && (t->prevdot_c =
+					ft_cr_new_exectoken(tmp, t->prevdot_c, t->i_c, t)))
 				t->prev_c = t->prevdot_c;
 			t->i_c = -1;
 		}
@@ -65,4 +92,3 @@ t_exectoken		*do_parser(t_lextoken *tmp)
 	}
 	return (ft_kill_str_dop_exec(t, t->start_c));
 }
-
