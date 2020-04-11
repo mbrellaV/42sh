@@ -20,7 +20,7 @@ void	ft_fun_fork(char *path, char **arg, pid_t pgid, int foreground)
 	if (pgid == 0) pgid = pid;
 	setpgid (pid, pgid);
 	if (foreground)
-		tcsetpgrp (shell_terminal, pgid);
+		tcsetpgrp (g_shell_terminal, pgid);
 	signal (SIGINT, SIG_DFL);
 	signal (SIGQUIT, SIG_DFL);
 	signal (SIGTSTP, SIG_DFL);

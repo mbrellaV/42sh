@@ -21,7 +21,7 @@ int		launch_process(t_process *p, pid_t pgid,
 
 	dop1 = 0;
 	//do_zam_str_with_tilda(p->file_args);
-	if (shell_is_interactive)
+	if (g_shell_is_interactive)
 	{
 		//if (ft_whatis2(p, q) == 1)
 		//	exit(0);
@@ -35,7 +35,7 @@ int		launch_process(t_process *p, pid_t pgid,
 			pgid = pid;
 		setpgid (pid, pgid);
 		if (foreground)
-			tcsetpgrp (shell_terminal, pgid);
+			tcsetpgrp (g_shell_terminal, pgid);
 
 		/* Set the handling for job control signals back to the default.  */
 		signal (SIGINT, SIG_DFL);

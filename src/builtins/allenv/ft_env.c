@@ -55,18 +55,18 @@ void			ft_do_export(char **mas)
 		ft_error(15, "parse error");
 }
 
-void	do_all_var(char **env)
+void			do_all_var(char **env)
 {
-    int		i;
+	int		i;
 
-    i = -1;
-    if (!(g_all_var = (char **)ft_memalloc(sizeof(char *) *
-                                           (ft_env_len(env) + 2))))
-        ft_error_q(1);
-    while (env[++i])
-    {
-        if (!(g_all_var[i] = ft_strdup(env[i])))
-            ft_error_q(1);
-    }
-    env[i] = NULL;
+	i = -1;
+	if (!(g_all_var = (char **)ft_memalloc(sizeof(char *) *
+			(ft_env_len(env) + 2))))
+		ft_error_q(1);
+	while (env[++i])
+	{
+		if (!(g_all_var[i] = ft_strdup(env[i])))
+			ft_error_q(1);
+	}
+	env[i] = NULL;
 }

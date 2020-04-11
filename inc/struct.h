@@ -15,10 +15,10 @@
 
 typedef	struct				s_builtins
 {
-	int 					cd_p;
-	int 					link;
-	int 					echo_n;
-	int 					echo_c;
+	int						cd_p;
+	int						link;
+	int						echo_n;
+	int						echo_c;
 }							t_builtins;
 
 typedef struct				s_memory
@@ -58,7 +58,6 @@ typedef struct				s_pipe
 	int						*infile;
 	int						*outfile;
 	int						*errfile;
-	//int						*opened_fds;
 }							t_pipe;
 
 typedef struct				s_lextoken
@@ -108,28 +107,31 @@ typedef struct				s_dop_str
 
 typedef struct				s_process
 {
-	struct s_process *next;       /* next process in pipeline */
-	char **file_args;                /* for exec */
-	pid_t pid;                  /* process ID */
-	char completed;             /* true if process has completed */
-	char stopped;               /* true if process has stopped */
-	int status;                 /* reported status value */
-	char    **file_opt;
-	int	foreground;
+	struct s_process		*next;
+	char					**file_args;
+	pid_t					pid;
+	char					completed;
+	char					stopped;
+	int						status;
+	char					**file_opt;
+	int						foreground;
 }							t_process;
 
-/* A job is a pipeline of processes.  */
+/*
+ ** A job is a pipeline of processes.
+*/
 typedef struct				s_job
 {
-	struct s_job *next;           /* next active job */
-	char *command;              /* command line, used for messages */
-	t_process *first_process;     /* list of processes in this job */
-	pid_t pgid;                 /* process group ID */
-	char notified;              /* true if user told about stopped job */
-	struct termios tmodes;      /* saved terminal modes */
-	int stdinc, stdoutc, stderrc;  /* standard i/o channels */
-	int	foreground;
+	struct s_job			*next;
+	char					*command;
+	t_process				*first_process;
+	pid_t					pgid;
+	char					notified;
+	struct termios			tmodes;
+	int						stdinc;
+	int						stdoutc;
+	int						stderrc;
+	int						foreground;
 }							t_job;
-
 
 #endif

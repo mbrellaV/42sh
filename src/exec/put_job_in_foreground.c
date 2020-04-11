@@ -19,7 +19,7 @@
 void	put_job_in_foreground (t_job *j, int cont)
 {
 	/* Put the job into the foreground.  */
-	tcsetpgrp (shell_terminal, j->pgid);
+	tcsetpgrp (g_shell_terminal, j->pgid);
 
 	/* Send the job a continue signal, if necessary.  */
 	if (cont)
@@ -38,7 +38,7 @@ void	put_job_in_foreground (t_job *j, int cont)
 
 
 	/* Put the shell back in the foreground.  */
-	tcsetpgrp (shell_terminal, shell_pgid);
+	tcsetpgrp (g_shell_terminal, g_shell_pgid);
 
 	/* Restore the shell’s terminal modes.  */
 	//tcgetattr (shell_terminal, &j->tmodes);
