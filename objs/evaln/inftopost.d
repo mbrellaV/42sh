@@ -1,6 +1,4 @@
 objs/evaln/inftopost.o: src/evaln/inftopost.c src/evaln/eval_expr.h \
- src/evaln/../../inc/fshell.h src/evaln/../../inc/../libft/libft.h \
- src/evaln/../../inc/../libft/get_next_line.h \
- src/evaln/../../inc/../libft/libft.h src/evaln/../../inc/parser.h \
- src/evaln/../../inc/struct.h src/evaln/../../inc/nucleus.h \
- src/evaln/../../inc/hash.h
+  src/evaln/../../inc/fshell.h inc/../libft/libft.h \
+  libft/get_next_line.h inc/parser.h inc/struct.h inc/nucleus.h \
+  inc/hash.h

@@ -39,7 +39,7 @@ void	ft_file_create(t_exectoken *head)
 			{
 				if ((q->file_opt[p.i][0] == '>' ||
 					q->file_opt[p.i][0] == '<' || q->file_opt[p.i][0] == '&'))
-					p.flag = ft_what_flag(q->file_opt[p.i], &(p.b));
+					p.flag = ft_what_flag(q->file_opt[p.i]);
 				else if (p.b == 1 && p.flag != 0)
 				{
 					ft_open_f(q->file_opt[p.i], &(p.flag), &p.fd);

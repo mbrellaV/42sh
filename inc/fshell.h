@@ -123,7 +123,7 @@ void				ft_error_q(int er);
 int					ft_norm_pipe(int p1, int *fd_in, int p0, t_exectoken **head);
 int					ft_error_args(t_exectoken *tmp);
 void				ft_file_create(t_exectoken *head);
-int					ft_what_flag(t_pipe *p, char *opt);
+int					ft_what_flag(char *opt);
 int					ft_put_info(void);
 int					ft_env_len(char **env);
 char				*do_reverse_zamena(char *str);

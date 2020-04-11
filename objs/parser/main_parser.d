@@ -1,6 +1,4 @@
 objs/parser/main_parser.o: src/parser/main_parser.c \
- src/parser/../../inc/fshell.h src/parser/../../inc/../libft/libft.h \
- src/parser/../../inc/../libft/get_next_line.h \
- src/parser/../../inc/../libft/libft.h src/parser/../../inc/parser.h \
- src/parser/../../inc/struct.h src/parser/../../inc/nucleus.h \
- src/parser/../../inc/hash.h
+  src/parser/../../inc/fshell.h inc/../libft/libft.h \
+  libft/get_next_line.h inc/parser.h inc/struct.h inc/nucleus.h \
+  inc/hash.h

@@ -67,7 +67,7 @@ int				do_zamena_slash(char *line, t_readline *p)
 
 	i = 0;
 	if (line == NULL)
-		return (ft_strnew(130000));
+		return (13000);
 	if (!(new = ft_memalloc(130000)))
 		ft_error_q(2);
 	while (i < ft_strlen(line) && line[i] != '\0')
@@ -81,7 +81,6 @@ int				do_zamena_slash(char *line, t_readline *p)
 			ft_strcat(new, tmp);
 			i += size + 1;
 			ft_strdel(&tmp);
-			//exit(0);
 		}
 		else if (line[i] == '\\' && line[i + 1] != '\0')
 		{
@@ -100,12 +99,8 @@ int				do_zamena_slash(char *line, t_readline *p)
 		}
 		i++;
 	}
-	//tmp = p->buff;
-	//p->buff = ft_strdup(new);
-	//ft_strdel(&tmp);
 	free(p->buff);
 	p->buff = new;
 	p->len = ft_strlen(p->buff);
-	//dprintf(2, "\nsas: |%s|\n", new);
 	return (p->len);
 }
