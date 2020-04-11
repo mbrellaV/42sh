@@ -47,6 +47,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/21end.dir/src/lexer/change_str_by_str.c.o"
   "CMakeFiles/21end.dir/src/lexer/check_errors.c.o"
   "CMakeFiles/21end.dir/src/lexer/cr_and_add_tokens.c.o"
+  "CMakeFiles/21end.dir/src/lexer/create_new_lexer_struct.c.o"
   "CMakeFiles/21end.dir/src/lexer/dop_funs.c.o"
   "CMakeFiles/21end.dir/src/lexer/get_opt_type.c.o"
   "CMakeFiles/21end.dir/src/lexer/history_search.c.o"

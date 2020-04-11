@@ -69,6 +69,7 @@ SRC_BASE = builtins/ft_cd.c\
 	lexer/history_search.c\
 	lexer/change_sc.c\
 	lexer/check_errors.c\
+	lexer/create_new_lexer_struct.c\
 	lexer/zam_opt_in_tokens.c\
 	nucleus/ft_read_8.c\
 	nucleus/ft_c.c\

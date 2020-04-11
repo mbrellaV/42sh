@@ -39,33 +39,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-<<<<<<< HEAD
 CMAKE_COMMAND = /home/petruha2001/Templates/clion-2019.3.5/bin/cmake/linux/bin/cmake
 
 # The command to remove a file.
 RM = /home/petruha2001/Templates/clion-2019.3.5/bin/cmake/linux/bin/cmake -E remove -f
-=======
-CMAKE_COMMAND = /Users/admin/Desktop/CLion.app/Contents/bin/cmake/mac/bin/cmake
-
-# The command to remove a file.
-RM = /Users/admin/Desktop/CLion.app/Contents/bin/cmake/mac/bin/cmake -E remove -f
->>>>>>> c1f9bbd1135411663f0a6376424c31ba1c600d87
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-<<<<<<< HEAD
 CMAKE_SOURCE_DIR = /home/petruha2001/42sh
 
 # The top-level build directory on which CMake was run.
 CMAKE_BINARY_DIR = /home/petruha2001/42sh/cmake-build-debug
-=======
-CMAKE_SOURCE_DIR = /Users/admin/Desktop/42sh
-
-# The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/admin/Desktop/42sh/cmake-build-debug
->>>>>>> c1f9bbd1135411663f0a6376424c31ba1c600d87
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -73,11 +59,7 @@ CMAKE_BINARY_DIR = /Users/admin/Desktop/42sh/cmake-build-debug
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-<<<<<<< HEAD
 	/home/petruha2001/Templates/clion-2019.3.5/bin/cmake/linux/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-=======
-	/Users/admin/Desktop/CLion.app/Contents/bin/cmake/mac/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
->>>>>>> c1f9bbd1135411663f0a6376424c31ba1c600d87
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -88,11 +70,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-<<<<<<< HEAD
 	/home/petruha2001/Templates/clion-2019.3.5/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-=======
-	/Users/admin/Desktop/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
->>>>>>> c1f9bbd1135411663f0a6376424c31ba1c600d87
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -102,15 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-<<<<<<< HEAD
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/petruha2001/42sh/cmake-build-debug/CMakeFiles /home/petruha2001/42sh/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/petruha2001/42sh/cmake-build-debug/CMakeFiles 0
-=======
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/admin/Desktop/42sh/cmake-build-debug/CMakeFiles /Users/admin/Desktop/42sh/cmake-build-debug/CMakeFiles/progress.marks
-	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/admin/Desktop/42sh/cmake-build-debug/CMakeFiles 0
->>>>>>> c1f9bbd1135411663f0a6376424c31ba1c600d87
 .PHONY : all
 
 # The main clean target
@@ -1392,6 +1364,33 @@ src/lexer/cr_and_add_tokens.s: src/lexer/cr_and_add_tokens.c.s
 src/lexer/cr_and_add_tokens.c.s:
 	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/lexer/cr_and_add_tokens.c.s
 .PHONY : src/lexer/cr_and_add_tokens.c.s
+
+src/lexer/create_new_lexer_struct.o: src/lexer/create_new_lexer_struct.c.o
+
+.PHONY : src/lexer/create_new_lexer_struct.o
+
+# target to build an object file
+src/lexer/create_new_lexer_struct.c.o:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/lexer/create_new_lexer_struct.c.o
+.PHONY : src/lexer/create_new_lexer_struct.c.o
+
+src/lexer/create_new_lexer_struct.i: src/lexer/create_new_lexer_struct.c.i
+
+.PHONY : src/lexer/create_new_lexer_struct.i
+
+# target to preprocess a source file
+src/lexer/create_new_lexer_struct.c.i:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/lexer/create_new_lexer_struct.c.i
+.PHONY : src/lexer/create_new_lexer_struct.c.i
+
+src/lexer/create_new_lexer_struct.s: src/lexer/create_new_lexer_struct.c.s
+
+.PHONY : src/lexer/create_new_lexer_struct.s
+
+# target to generate assembly for a file
+src/lexer/create_new_lexer_struct.c.s:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/lexer/create_new_lexer_struct.c.s
+.PHONY : src/lexer/create_new_lexer_struct.c.s
 
 src/lexer/dop_funs.o: src/lexer/dop_funs.c.o
 
@@ -2804,8 +2803,8 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
-	@echo "... edit_cache"
 	@echo "... 21end"
+	@echo "... edit_cache"
 	@echo "... src/builtins/alias/alias.o"
 	@echo "... src/builtins/alias/alias.i"
 	@echo "... src/builtins/alias/alias.s"
@@ -2944,6 +2943,9 @@ help:
 	@echo "... src/lexer/cr_and_add_tokens.o"
 	@echo "... src/lexer/cr_and_add_tokens.i"
 	@echo "... src/lexer/cr_and_add_tokens.s"
+	@echo "... src/lexer/create_new_lexer_struct.o"
+	@echo "... src/lexer/create_new_lexer_struct.i"
+	@echo "... src/lexer/create_new_lexer_struct.s"
 	@echo "... src/lexer/dop_funs.o"
 	@echo "... src/lexer/dop_funs.i"
 	@echo "... src/lexer/dop_funs.s"
