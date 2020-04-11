@@ -67,6 +67,9 @@ SRC_BASE = builtins/ft_cd.c\
 	lexer/change_str_by_str.c\
 	lexer/get_opt_type.c\
 	lexer/history_search.c\
+	lexer/change_sc.c\
+	lexer/check_errors.c\
+	lexer/zam_opt_in_tokens.c\
 	nucleus/ft_read_8.c\
 	nucleus/ft_c.c\
 	nucleus/input_mode.c\
@@ -109,6 +112,7 @@ SRC_BASE = builtins/ft_cd.c\
 	parser/change_tilda.c\
 	parser/main_parser.c\
 	parser/check_bracket.c\
+	parser/all_parse.c\
 	hash/hash_table.c\
 	hash/hash_table_2.c\
 	hash/hash_error.c\
@@ -123,6 +127,7 @@ SRC_BASE = builtins/ft_cd.c\
 	builtins/allenv/main_env.c\
 	builtins/ft_type.c\
 	g_builtins.c\
+
 
 SRCS		=	$(addprefix $(SRC_DIR), $(SRC_BASE))
 OBJS		=	$(addprefix $(OBJ_DIR), $(SRC_BASE:.c=.o))

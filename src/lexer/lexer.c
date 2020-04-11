@@ -30,16 +30,12 @@ t_dop_str		*cr_dop_str(char **line1)
 	tmp->i_c = 0;
 	tmp->doptail_c = NULL;
 	tmp->tail_c = NULL;
-	//dprintf(2, "\n%s", line);
-	//line = ft_do_zam_eval(line);
-	//*line1 = line;
-    //dprintf(2, "\n%s", line);
 	return (tmp);
 }
 
 int				dop_lexer2(t_dop_str *tmp, char *line)
 {
-	if (tmp->tail_c->prev && ft_str_is_numeric(tmp->tail_c->prev->line) &&
+	if (tmp->tail_c && tmp->tail_c->prev && ft_str_is_numeric(tmp->tail_c->prev->line) &&
 	(line[tmp->i_c + 1] == '>' || line[tmp->i_c + 1] == '<') && tmp->tail_c->prev->inhibitor_lvl == 0)
 		tmp->tail_c->prev->is_near_opt = 1;
 	tmp->tmp_c = ft_strsub(line, tmp->i_c, word_size(line + tmp->i_c));
@@ -50,6 +46,8 @@ int				dop_lexer2(t_dop_str *tmp, char *line)
 			tmp->tail_c->is_near_opt = 1;
 	tmp->tail_c = add_token(tmp->tail_c, tmp->tmp_c, 0);
 	tmp->tail_c->is_near_opt = 1;
+	if (tmp->tail_c && get_op_type(tmp->tmp_c) == -1)
+		return (ft_error(5, tmp->tail_c->line));
 	if (needs_something_before(tmp->tail_c->operator_type) && tmp->tail_c->prev == NULL)
 		return (ft_error(5, tmp->tail_c->line));
 	tmp->i_c += word_size(line + tmp->i_c);
@@ -134,14 +132,10 @@ t_lextoken		*do_lexer(char *line)
 			return (NULL);
 	}
 	if (tmp->tail_c != NULL && tmp->tail_c->operator_type == 2)
+	{
+		ft_kill_str_dop_lex(tmp, tmp->doptail_c);
 		return (ft_error(5, "\\n") == -1 ? NULL : 0);
+	}
 	tmp->tail_c = tmp->doptail_c;
-//	while (tmp->tail_c)
-//	{
-//		if (tmp->tail_c->operator_type == -1)
-//			return (ft_error(5, tmp->tail_c->line) == -1 ? NULL : 0);
-//		tmp->tail_c->line = do_obr_zamena_sp(tmp->tail_c->line);
-//		tmp->tail_c = tmp->tail_c->next;
-//	}
 	return (ft_kill_str_dop_lex(tmp, tmp->doptail_c));
 }

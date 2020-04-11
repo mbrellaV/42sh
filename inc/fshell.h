@@ -159,7 +159,9 @@ int		launch_job(t_job *j, int foreground);
 int		needs_something_before(int n);
 int		do_job_del();
 
-int		ft_whatis3(t_process *tmp);
+void			ft_change_all_sc(char *str);
+void			do_zamena_opt_tokens(t_exectoken *tmp);
+int				check_all_errors(t_lextoken *tmp);
 
 //int					ft_fd_flag(char **av, int *fd_in);
 

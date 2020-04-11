@@ -39,19 +39,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /home/pro/Загрузки/clion-2019.3.5/bin/cmake/linux/bin/cmake
+CMAKE_COMMAND = /home/petruha2001/Templates/clion-2019.3.5/bin/cmake/linux/bin/cmake
 
 # The command to remove a file.
-RM = /home/pro/Загрузки/clion-2019.3.5/bin/cmake/linux/bin/cmake -E remove -f
+RM = /home/petruha2001/Templates/clion-2019.3.5/bin/cmake/linux/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/pro/CLionProjects/42sh
+CMAKE_SOURCE_DIR = /home/petruha2001/42sh
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/pro/CLionProjects/42sh/cmake-build-debug
+CMAKE_BINARY_DIR = /home/petruha2001/42sh/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -59,7 +59,7 @@ CMAKE_BINARY_DIR = /home/pro/CLionProjects/42sh/cmake-build-debug
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/home/pro/Загрузки/clion-2019.3.5/bin/cmake/linux/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/home/petruha2001/Templates/clion-2019.3.5/bin/cmake/linux/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -70,7 +70,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/home/pro/Загрузки/clion-2019.3.5/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	/home/petruha2001/Templates/clion-2019.3.5/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pro/CLionProjects/42sh/cmake-build-debug/CMakeFiles /home/pro/CLionProjects/42sh/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/petruha2001/42sh/cmake-build-debug/CMakeFiles /home/petruha2001/42sh/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pro/CLionProjects/42sh/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/petruha2001/42sh/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -1230,6 +1230,33 @@ src/lexer/change_hist_exp.c.s:
 	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/lexer/change_hist_exp.c.s
 .PHONY : src/lexer/change_hist_exp.c.s
 
+src/lexer/change_sc.o: src/lexer/change_sc.c.o
+
+.PHONY : src/lexer/change_sc.o
+
+# target to build an object file
+src/lexer/change_sc.c.o:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/lexer/change_sc.c.o
+.PHONY : src/lexer/change_sc.c.o
+
+src/lexer/change_sc.i: src/lexer/change_sc.c.i
+
+.PHONY : src/lexer/change_sc.i
+
+# target to preprocess a source file
+src/lexer/change_sc.c.i:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/lexer/change_sc.c.i
+.PHONY : src/lexer/change_sc.c.i
+
+src/lexer/change_sc.s: src/lexer/change_sc.c.s
+
+.PHONY : src/lexer/change_sc.s
+
+# target to generate assembly for a file
+src/lexer/change_sc.c.s:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/lexer/change_sc.c.s
+.PHONY : src/lexer/change_sc.c.s
+
 src/lexer/change_spaces.o: src/lexer/change_spaces.c.o
 
 .PHONY : src/lexer/change_spaces.o
@@ -1283,6 +1310,33 @@ src/lexer/change_str_by_str.s: src/lexer/change_str_by_str.c.s
 src/lexer/change_str_by_str.c.s:
 	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/lexer/change_str_by_str.c.s
 .PHONY : src/lexer/change_str_by_str.c.s
+
+src/lexer/check_errors.o: src/lexer/check_errors.c.o
+
+.PHONY : src/lexer/check_errors.o
+
+# target to build an object file
+src/lexer/check_errors.c.o:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/lexer/check_errors.c.o
+.PHONY : src/lexer/check_errors.c.o
+
+src/lexer/check_errors.i: src/lexer/check_errors.c.i
+
+.PHONY : src/lexer/check_errors.i
+
+# target to preprocess a source file
+src/lexer/check_errors.c.i:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/lexer/check_errors.c.i
+.PHONY : src/lexer/check_errors.c.i
+
+src/lexer/check_errors.s: src/lexer/check_errors.c.s
+
+.PHONY : src/lexer/check_errors.s
+
+# target to generate assembly for a file
+src/lexer/check_errors.c.s:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/lexer/check_errors.c.s
+.PHONY : src/lexer/check_errors.c.s
 
 src/lexer/cr_and_add_tokens.o: src/lexer/cr_and_add_tokens.c.o
 
@@ -1472,6 +1526,33 @@ src/lexer/word_sizes.s: src/lexer/word_sizes.c.s
 src/lexer/word_sizes.c.s:
 	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/lexer/word_sizes.c.s
 .PHONY : src/lexer/word_sizes.c.s
+
+src/lexer/zam_opt_in_tokens.o: src/lexer/zam_opt_in_tokens.c.o
+
+.PHONY : src/lexer/zam_opt_in_tokens.o
+
+# target to build an object file
+src/lexer/zam_opt_in_tokens.c.o:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/lexer/zam_opt_in_tokens.c.o
+.PHONY : src/lexer/zam_opt_in_tokens.c.o
+
+src/lexer/zam_opt_in_tokens.i: src/lexer/zam_opt_in_tokens.c.i
+
+.PHONY : src/lexer/zam_opt_in_tokens.i
+
+# target to preprocess a source file
+src/lexer/zam_opt_in_tokens.c.i:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/lexer/zam_opt_in_tokens.c.i
+.PHONY : src/lexer/zam_opt_in_tokens.c.i
+
+src/lexer/zam_opt_in_tokens.s: src/lexer/zam_opt_in_tokens.c.s
+
+.PHONY : src/lexer/zam_opt_in_tokens.s
+
+# target to generate assembly for a file
+src/lexer/zam_opt_in_tokens.c.s:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/lexer/zam_opt_in_tokens.c.s
+.PHONY : src/lexer/zam_opt_in_tokens.c.s
 
 src/main.o: src/main.c.o
 
@@ -2526,6 +2607,33 @@ src/nucleus/tab.c.s:
 	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/nucleus/tab.c.s
 .PHONY : src/nucleus/tab.c.s
 
+src/parser/all_parse.o: src/parser/all_parse.c.o
+
+.PHONY : src/parser/all_parse.o
+
+# target to build an object file
+src/parser/all_parse.c.o:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/parser/all_parse.c.o
+.PHONY : src/parser/all_parse.c.o
+
+src/parser/all_parse.i: src/parser/all_parse.c.i
+
+.PHONY : src/parser/all_parse.i
+
+# target to preprocess a source file
+src/parser/all_parse.c.i:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/parser/all_parse.c.i
+.PHONY : src/parser/all_parse.c.i
+
+src/parser/all_parse.s: src/parser/all_parse.c.s
+
+.PHONY : src/parser/all_parse.s
+
+# target to generate assembly for a file
+src/parser/all_parse.c.s:
+	$(MAKE) -f CMakeFiles/21end.dir/build.make CMakeFiles/21end.dir/src/parser/all_parse.c.s
+.PHONY : src/parser/all_parse.c.s
+
 src/parser/change_tilda.o: src/parser/change_tilda.c.o
 
 .PHONY : src/parser/change_tilda.o
@@ -2793,12 +2901,18 @@ help:
 	@echo "... src/lexer/change_hist_exp.o"
 	@echo "... src/lexer/change_hist_exp.i"
 	@echo "... src/lexer/change_hist_exp.s"
+	@echo "... src/lexer/change_sc.o"
+	@echo "... src/lexer/change_sc.i"
+	@echo "... src/lexer/change_sc.s"
 	@echo "... src/lexer/change_spaces.o"
 	@echo "... src/lexer/change_spaces.i"
 	@echo "... src/lexer/change_spaces.s"
 	@echo "... src/lexer/change_str_by_str.o"
 	@echo "... src/lexer/change_str_by_str.i"
 	@echo "... src/lexer/change_str_by_str.s"
+	@echo "... src/lexer/check_errors.o"
+	@echo "... src/lexer/check_errors.i"
+	@echo "... src/lexer/check_errors.s"
 	@echo "... src/lexer/cr_and_add_tokens.o"
 	@echo "... src/lexer/cr_and_add_tokens.i"
 	@echo "... src/lexer/cr_and_add_tokens.s"
@@ -2820,6 +2934,9 @@ help:
 	@echo "... src/lexer/word_sizes.o"
 	@echo "... src/lexer/word_sizes.i"
 	@echo "... src/lexer/word_sizes.s"
+	@echo "... src/lexer/zam_opt_in_tokens.o"
+	@echo "... src/lexer/zam_opt_in_tokens.i"
+	@echo "... src/lexer/zam_opt_in_tokens.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
@@ -2937,6 +3054,9 @@ help:
 	@echo "... src/nucleus/tab.o"
 	@echo "... src/nucleus/tab.i"
 	@echo "... src/nucleus/tab.s"
+	@echo "... src/parser/all_parse.o"
+	@echo "... src/parser/all_parse.i"
+	@echo "... src/parser/all_parse.s"
 	@echo "... src/parser/change_tilda.o"
 	@echo "... src/parser/change_tilda.i"
 	@echo "... src/parser/change_tilda.s"
