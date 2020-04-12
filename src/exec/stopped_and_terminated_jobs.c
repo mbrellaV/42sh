@@ -151,7 +151,7 @@ void	wait_for_job (t_job *j)
 
 /* Format information about job status for the user to look at.  */
 
-void format_job_info (t_job *j, const char *status, int num)
+void			format_job_info(t_job *j, const char *status, int num)
 {
 	dprintf (2, "[%d] + %ld (%s): %s\n", num, (long)j->pgid, status, j->command);
 }
@@ -159,7 +159,7 @@ void format_job_info (t_job *j, const char *status, int num)
 /* Notify the user about stopped or terminated jobs.
    Delete terminated jobs from the active job list.  */
 
-void    do_job_notification (void)
+void    do_job_notification(void)
 {
 	t_job *j, *jlast, *jnext;
 	int job_count;
@@ -200,105 +200,4 @@ void    do_job_notification (void)
 		//dprintf(2, "sas1\n");
 	}
 	//f_job = j;
-}
-
-
-void	free_process(t_process *tmp)
-{
-	t_process	*process_for_del;
-
-	while (tmp)
-	{
-		//ft_free_str(tmp->file_args);
-		//ft_free_str(tmp->file_opt);
-		process_for_del = tmp;
-		tmp = tmp->next;
-		free(process_for_del);
-	}
-
-}
-
-void	free_job(t_job *tmp)
-{
-	if (tmp)
-	{
-		free_process(tmp->first_process);
-		ft_strdel(&tmp->command);
-		free(tmp);
-	}
-}
-
-int		do_job_del()
-{
-	t_job *j, *jlast, *jnext, *jdop;
-	int d;
-
-	d = 0;
-	update_status();
-	jlast = NULL;
-	j = f_job;
-	while (j)
-	{
-		d++;
-		//dprintf(2, "\ncmd: |%s|\n", j->command);
-		jnext = j->next;
-		jdop = NULL;
-		if (job_is_completed(j))
-		{
-			if (j->first_process->foreground == 0)
-			{
-				//ft_putchar_fd(, 2);
-				format_job_info(j, "completed", d);
-			}
-			//dprintf(2, "\nsas: |%s|\n", j->command);
-			//kill(j->pgid, SIGCONT);
-			if (jlast)
-				jlast->next = jnext;
-			else
-				f_job = jnext;
-			jdop = j;
-
-		}
-		else
-			jlast = j;
-		j = j->next;
-		if (jdop != NULL)
-			free_job(jdop);
-	}
-	return (1);
-	//dprintf(2, "\n");
-}
-
-
-
-/* Find the active job with the indicated pgid.  */
-
-
-t_job		*get_job_by_number(int n)
-{
-	t_job *j;
-	int i;
-
-	j = f_job;
-	if (n < 0)
-		return (NULL);
-	i = 1;
-	while (j && i < n)
-	{
-		i++;
-		j = j->next;
-	}
-	return (j);
-}
-
-t_job		*get_last_job()
-{
-	t_job *j;
-
-	j = f_job;
-	while (j && j->next)
-	{
-		j = j->next;
-	}
-	return (j);
 }

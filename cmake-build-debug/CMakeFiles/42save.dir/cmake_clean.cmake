@@ -22,6 +22,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/42save.dir/src/evaln/inftopost.c.o"
   "CMakeFiles/42save.dir/src/exec/continuing_stopped_jobs.c.o"
   "CMakeFiles/42save.dir/src/exec/create_jobs_and_proc.c.o"
+  "CMakeFiles/42save.dir/src/exec/find_jobs.c.o"
+  "CMakeFiles/42save.dir/src/exec/free_job_list.c.o"
   "CMakeFiles/42save.dir/src/exec/ft_create_file.c.o"
   "CMakeFiles/42save.dir/src/exec/ft_do_pipe.c.o"
   "CMakeFiles/42save.dir/src/exec/ft_fun_fork.c.o"

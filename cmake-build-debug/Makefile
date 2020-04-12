@@ -690,6 +690,60 @@ src/exec/create_jobs_and_proc.c.s:
 	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/exec/create_jobs_and_proc.c.s
 .PHONY : src/exec/create_jobs_and_proc.c.s
 
+src/exec/find_jobs.o: src/exec/find_jobs.c.o
+
+.PHONY : src/exec/find_jobs.o
+
+# target to build an object file
+src/exec/find_jobs.c.o:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/exec/find_jobs.c.o
+.PHONY : src/exec/find_jobs.c.o
+
+src/exec/find_jobs.i: src/exec/find_jobs.c.i
+
+.PHONY : src/exec/find_jobs.i
+
+# target to preprocess a source file
+src/exec/find_jobs.c.i:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/exec/find_jobs.c.i
+.PHONY : src/exec/find_jobs.c.i
+
+src/exec/find_jobs.s: src/exec/find_jobs.c.s
+
+.PHONY : src/exec/find_jobs.s
+
+# target to generate assembly for a file
+src/exec/find_jobs.c.s:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/exec/find_jobs.c.s
+.PHONY : src/exec/find_jobs.c.s
+
+src/exec/free_job_list.o: src/exec/free_job_list.c.o
+
+.PHONY : src/exec/free_job_list.o
+
+# target to build an object file
+src/exec/free_job_list.c.o:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/exec/free_job_list.c.o
+.PHONY : src/exec/free_job_list.c.o
+
+src/exec/free_job_list.i: src/exec/free_job_list.c.i
+
+.PHONY : src/exec/free_job_list.i
+
+# target to preprocess a source file
+src/exec/free_job_list.c.i:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/exec/free_job_list.c.i
+.PHONY : src/exec/free_job_list.c.i
+
+src/exec/free_job_list.s: src/exec/free_job_list.c.s
+
+.PHONY : src/exec/free_job_list.s
+
+# target to generate assembly for a file
+src/exec/free_job_list.c.s:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/exec/free_job_list.c.s
+.PHONY : src/exec/free_job_list.c.s
+
 src/exec/ft_create_file.o: src/exec/ft_create_file.c.o
 
 .PHONY : src/exec/ft_create_file.o
@@ -2895,6 +2949,12 @@ help:
 	@echo "... src/exec/create_jobs_and_proc.o"
 	@echo "... src/exec/create_jobs_and_proc.i"
 	@echo "... src/exec/create_jobs_and_proc.s"
+	@echo "... src/exec/find_jobs.o"
+	@echo "... src/exec/find_jobs.i"
+	@echo "... src/exec/find_jobs.s"
+	@echo "... src/exec/free_job_list.o"
+	@echo "... src/exec/free_job_list.i"
+	@echo "... src/exec/free_job_list.s"
 	@echo "... src/exec/ft_create_file.o"
 	@echo "... src/exec/ft_create_file.i"
 	@echo "... src/exec/ft_create_file.s"

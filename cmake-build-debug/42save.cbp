@@ -163,6 +163,12 @@
 		<Unit filename="/home/petruha2001/42sh/src/exec/create_jobs_and_proc.c">
 			<Option target="42save"/>
 		</Unit>
+		<Unit filename="/home/petruha2001/42sh/src/exec/find_jobs.c">
+			<Option target="42save"/>
+		</Unit>
+		<Unit filename="/home/petruha2001/42sh/src/exec/free_job_list.c">
+			<Option target="42save"/>
+		</Unit>
 		<Unit filename="/home/petruha2001/42sh/src/exec/ft_create_file.c">
 			<Option target="42save"/>
 		</Unit>

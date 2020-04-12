@@ -43,6 +43,8 @@ SRC_BASE = builtins/ft_cd.c\
  	exec/stopped_and_terminated_jobs.c\
  	exec/continuing_stopped_jobs.c\
  	exec/operating_job.c\
+ 	exec/find_jobs.c\
+ 	exec/free_job_list.c\
 	builtins/fg_builtin.c\
 	builtins/bg_builtin.c\
  	exec/ft_fun_fork.c\
