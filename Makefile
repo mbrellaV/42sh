@@ -132,6 +132,7 @@ SRC_BASE = builtins/ft_cd.c\
 	ft_whatis.c\
 	ft_create.c\
 	ft_reverse_zamena.c\
+	brackets.c\
 
 
 SRCS		=	$(addprefix $(SRC_DIR), $(SRC_BASE))
