@@ -27,22 +27,17 @@ void	mark_job_as_running (t_job *j)
 
 void	continue_job (t_job *j, int foreground)
 {
-	//dprintf(2, "no such job %s", j->first_process->file_args[0]);
 	if (j == NULL)
 	{
-		dprintf(2, "no such job\n");
 		return ;
 	}
 	mark_job_as_running(j);
 	if (foreground)
 	{
-		//dprintf(2, "\n\n\n\\n\n\n\n\\n\n\n\\n\n\n\n\n\n\\n\nsas11111111111111\n");
 		put_job_in_foreground(j, 1);
 	}
 	else
 	{
-		//dprintf(2, "\n\n\n\\n\n\n\n\\n\n\n\\n\n\n\n\n\n\\n\nsas123222222222: ");
-
 		put_job_in_background(j, 1);
 	}
 

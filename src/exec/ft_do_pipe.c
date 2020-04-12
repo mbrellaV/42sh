@@ -12,7 +12,6 @@
 
 #include "../../inc/fshell.h"
 #include <stdio.h>
-#include <errno.h>
 
 void	ft_redirect_error(int marker, char *dopline)
 {
@@ -101,7 +100,6 @@ void	ft_redirect_one(int old_file_fd, int new_infile_fd)
 {
 	if (old_file_fd != new_infile_fd)
 	{
-		//dprintf(2, "\ninfile: |%d|\n", *p.infile);
 		dup2(old_file_fd, new_infile_fd);
 		close(old_file_fd);
 	}
@@ -126,53 +124,8 @@ void	ft_redirect(t_pipe *p, int new_infile_fd, int new_outfile_fd)
 
 void	do_redir_into_file(t_pipe *p, char *file, int new_infile_fd, int new_outfile_fd)
 {
-	//p->st = ft_atoi(av[p->i]);
 	ft_open_flag(file, p);
 	ft_redirect(p, new_infile_fd, new_outfile_fd);
-}
-
-int		ft_find_in_fds(int *opened_fds, int fd_to_find)
-{
-	if (opened_fds == NULL)
-		return (-1);
-	if (opened_fds[fd_to_find] == 1)
-		return (1);
-	return (0);
-}
-
-int		ft_add_to_fds(int *opened_fds, int fd_to_add)
-{
-	if (opened_fds == NULL)
-		return (-1);
-	opened_fds[fd_to_add] = 1;
-	return (1);
-}
-
-int		ft_remove_from_fds(int *opened_fds, int fd_to_remove)
-{
-	if (opened_fds == NULL)
-		return (-1);
-	opened_fds[fd_to_remove] = -1;
-	return (1);
-}
-
-int		*ft_create_opened_fds()
-{
-	int *opened_fds;
-
-	if (!(opened_fds = (int *)ft_memalloc(sizeof(int) * 10)))
-		return (NULL);
-	opened_fds[0] = 1;
-	opened_fds[1] = 1;
-	opened_fds[2] = 1;
-	opened_fds[3] = -1;
-	opened_fds[4] = -1;
-	opened_fds[5] = -1;
-	opened_fds[6] = -1;
-	opened_fds[7] = -1;
-	opened_fds[8] = -1;
-	opened_fds[9] = -1;
-	return (opened_fds);
 }
 
 int		return_with_close(int *opened_fds, int int_to_return)
@@ -186,7 +139,6 @@ int		ft_fd_flag(char **av, int *infile, int *outfile, int *errfile)
 	t_pipe	p;
 	int		*opened_fds;
 
-	//dprintf(2, "\n\nda1|%d|, |%d|", *infile, *outfile);
 	if (!(opened_fds = ft_create_opened_fds()))
 		return (-1);
 	p = (t_pipe){0, 0, 1, 0, 0, 0, infile, outfile, errfile};
@@ -270,6 +222,5 @@ int		ft_fd_flag(char **av, int *infile, int *outfile, int *errfile)
 			break ;
 		p = (t_pipe){0, p.i, 1, 0, 0, 0, infile, outfile, errfile};
 	}
-	//dprintf(2, "\n\nda2|%d|, |%d|", *infile, *outfile);
 	return (return_with_close(opened_fds, p.fd));
 }

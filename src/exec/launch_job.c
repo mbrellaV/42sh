@@ -21,42 +21,26 @@ int		launch_job(t_job *j, int foreground)
 
 	infile = j->stdinc;
 	p = j->first_process;
-	//j->pgid = 0;
-	//dprintf(2, "\n\ndad12|%p|", p->file_args);
-
 	rt = NULL;
 	while (p)
 	{
 		if (p->file_args[0] != NULL && !(rt = hash_get(p->file_args[0], 0)))
-		{
-			//ft_putstr_fd("", 2)
 			return (-2);
-		}
 		if (p->next)
 		{
 			if (pipe(mypipe) < 0)
-			{
 				exit (1);
-			}
 			outfile = mypipe[1];
 		}
 		else
 			outfile = j->stdoutc;
-		//dprintf(2, "\n\ndad12|%d|, |%d|", infile, outfile);
-
-		//dprintf(2, "\n\ndad22|%d|, |%d|", infile, outfile);
-
-		/* Fork the child processes.  */
 		pid = fork();
 		if (pid == 0)
 			launch_process(p, j->pgid, infile, outfile, j->stderrc, foreground, rt);
 		else if (pid < 0)
-		{
 			exit(0);
-		}
 		else
 		{
-			/* This is the parent process.  */
 			p->pid = pid;
 			if (shell_is_interactive)
 			{
@@ -65,19 +49,13 @@ int		launch_job(t_job *j, int foreground)
 				setpgid (pid, j->pgid);
 			}
 		}
-		//dprintf(2, "\nin: |%d|\nout: |%d|\n\ninpipe: |%d|\noutpipe: |%d|\n", infile, outfile, mypipe[0], mypipe[1]);
 		if (infile != j->stdinc)
 			close (infile);
 		if (outfile != j->stdoutc)
 			close (outfile);
-		//close(fd);
 		infile = mypipe[0];
-		//outfile = mypipe[1];
-		//dprintf(2, "\n\ndad13|%d|, |%d|", infile, outfile);
-
 		p = p->next;
 	}
-	//format_job_info (j, "launched", 0);
 	if (!shell_is_interactive)
 		wait_for_job (j);
 	if (foreground)

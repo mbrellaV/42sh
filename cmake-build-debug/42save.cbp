@@ -178,6 +178,9 @@
 		<Unit filename="/home/petruha2001/42sh/src/exec/ft_fun_fork.c">
 			<Option target="42save"/>
 		</Unit>
+		<Unit filename="/home/petruha2001/42sh/src/exec/job_info.c">
+			<Option target="42save"/>
+		</Unit>
 		<Unit filename="/home/petruha2001/42sh/src/exec/launch_job.c">
 			<Option target="42save"/>
 		</Unit>
@@ -194,6 +197,9 @@
 			<Option target="42save"/>
 		</Unit>
 		<Unit filename="/home/petruha2001/42sh/src/exec/stopped_and_terminated_jobs.c">
+			<Option target="42save"/>
+		</Unit>
+		<Unit filename="/home/petruha2001/42sh/src/exec/working_with_fds.c">
 			<Option target="42save"/>
 		</Unit>
 		<Unit filename="/home/petruha2001/42sh/src/ft_distruct.c">

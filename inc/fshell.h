@@ -184,7 +184,15 @@ int	job_is_stopped (t_job *j);
 int	job_is_completed (t_job *j);
 int		ft_distruct_job(t_job *head);
 
-/////////////////////////
+///////////////////////// working with fds
+int		ft_find_in_fds(int *opened_fds, int fd_to_find);
+int		ft_add_to_fds(int *opened_fds, int fd_to_add);
+int		ft_remove_from_fds(int *opened_fds, int fd_to_remove);
+int		*ft_create_opened_fds();
+/////////////////////////signals
+void	disable_shell_signals();
+void	recover_normal_shell_signals();
+/////////////////
 void	ft_infinit_pipe2(t_exectoken *head, t_memory *q);
 int		ft_whatis2(t_process *tmp);
 void	init_shell(void);

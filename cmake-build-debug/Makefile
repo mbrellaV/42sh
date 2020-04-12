@@ -825,6 +825,33 @@ src/exec/ft_fun_fork.c.s:
 	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/exec/ft_fun_fork.c.s
 .PHONY : src/exec/ft_fun_fork.c.s
 
+src/exec/job_info.o: src/exec/job_info.c.o
+
+.PHONY : src/exec/job_info.o
+
+# target to build an object file
+src/exec/job_info.c.o:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/exec/job_info.c.o
+.PHONY : src/exec/job_info.c.o
+
+src/exec/job_info.i: src/exec/job_info.c.i
+
+.PHONY : src/exec/job_info.i
+
+# target to preprocess a source file
+src/exec/job_info.c.i:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/exec/job_info.c.i
+.PHONY : src/exec/job_info.c.i
+
+src/exec/job_info.s: src/exec/job_info.c.s
+
+.PHONY : src/exec/job_info.s
+
+# target to generate assembly for a file
+src/exec/job_info.c.s:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/exec/job_info.c.s
+.PHONY : src/exec/job_info.c.s
+
 src/exec/launch_job.o: src/exec/launch_job.c.o
 
 .PHONY : src/exec/launch_job.o
@@ -986,6 +1013,33 @@ src/exec/stopped_and_terminated_jobs.s: src/exec/stopped_and_terminated_jobs.c.s
 src/exec/stopped_and_terminated_jobs.c.s:
 	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/exec/stopped_and_terminated_jobs.c.s
 .PHONY : src/exec/stopped_and_terminated_jobs.c.s
+
+src/exec/working_with_fds.o: src/exec/working_with_fds.c.o
+
+.PHONY : src/exec/working_with_fds.o
+
+# target to build an object file
+src/exec/working_with_fds.c.o:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/exec/working_with_fds.c.o
+.PHONY : src/exec/working_with_fds.c.o
+
+src/exec/working_with_fds.i: src/exec/working_with_fds.c.i
+
+.PHONY : src/exec/working_with_fds.i
+
+# target to preprocess a source file
+src/exec/working_with_fds.c.i:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/exec/working_with_fds.c.i
+.PHONY : src/exec/working_with_fds.c.i
+
+src/exec/working_with_fds.s: src/exec/working_with_fds.c.s
+
+.PHONY : src/exec/working_with_fds.s
+
+# target to generate assembly for a file
+src/exec/working_with_fds.c.s:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/exec/working_with_fds.c.s
+.PHONY : src/exec/working_with_fds.c.s
 
 src/ft_distruct.o: src/ft_distruct.c.o
 
@@ -2964,6 +3018,9 @@ help:
 	@echo "... src/exec/ft_fun_fork.o"
 	@echo "... src/exec/ft_fun_fork.i"
 	@echo "... src/exec/ft_fun_fork.s"
+	@echo "... src/exec/job_info.o"
+	@echo "... src/exec/job_info.i"
+	@echo "... src/exec/job_info.s"
 	@echo "... src/exec/launch_job.o"
 	@echo "... src/exec/launch_job.i"
 	@echo "... src/exec/launch_job.s"
@@ -2982,6 +3039,9 @@ help:
 	@echo "... src/exec/stopped_and_terminated_jobs.o"
 	@echo "... src/exec/stopped_and_terminated_jobs.i"
 	@echo "... src/exec/stopped_and_terminated_jobs.s"
+	@echo "... src/exec/working_with_fds.o"
+	@echo "... src/exec/working_with_fds.i"
+	@echo "... src/exec/working_with_fds.s"
 	@echo "... src/ft_distruct.o"
 	@echo "... src/ft_distruct.i"
 	@echo "... src/ft_distruct.s"

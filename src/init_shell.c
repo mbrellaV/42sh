@@ -25,11 +25,7 @@ void	init_shell(void)
 			kill(- shell_pgid, SIGTTIN);
 
 		/* Ignore interactive and job-control signals.  */
-		signal(SIGINT, SIG_IGN);
-		signal(SIGQUIT, SIG_IGN);
-		signal(SIGTSTP, SIG_IGN);
-		signal(SIGTTIN, SIG_IGN);
-		signal(SIGTTOU, SIG_IGN);
+		disable_shell_signals();
 		//signal(SIGCHLD, SIG_IGN);
 
 		/* Put ourselves in our own process group.  */
