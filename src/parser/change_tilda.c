@@ -15,12 +15,17 @@
 char			*do_zam_str_with_tilda(char *str)
 {
 	char	*hp;
+	//char	*tmp;
 
 	if (!(hp = ft_get_var("HOME", g_env)))
 		return (NULL);
 	if (ft_strstr(str, "~/") == str ||
 			ft_strcmp("~", str) == 0)
+	{
+		//tmp = str;
 		str = ft_strjoin(hp, &str[1]);
+		//ft_strdel(&tmp);
+	}
 	ft_strdel(&hp);
 	return (str);
 }

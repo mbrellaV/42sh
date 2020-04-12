@@ -25,8 +25,10 @@ t_memory	*ft_memory(t_memory *back, char **str)
 		return (NULL);
 	p = back->next;
 	back->next = tmp;
+	//tmp->inp = dopstr;
 	tmp->inp = do_zam_str_hist_var(*str, back);
 	tmp->inp = do_reverse_zamena(tmp->inp);
+	//ft_strdel(str);
 	*str = dopstr;
 	tmp->next = p;
 	tmp->back = back;

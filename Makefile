@@ -71,7 +71,6 @@ SRC_BASE = builtins/ft_cd.c\
 	lexer/check_errors.c\
 	lexer/create_new_lexer_struct.c\
 	lexer/zam_opt_in_tokens.c\
-	lexer/all_bax_other.c\
 	nucleus/ft_read_8.c\
 	nucleus/ft_c.c\
 	nucleus/input_mode.c\
@@ -129,10 +128,6 @@ SRC_BASE = builtins/ft_cd.c\
 	builtins/allenv/main_env.c\
 	builtins/ft_type.c\
 	g_builtins.c\
-	ft_whatis.c\
-	ft_create.c\
-	ft_reverse_zamena.c\
-	brackets.c\
 
 
 SRCS		=	$(addprefix $(SRC_DIR), $(SRC_BASE))

@@ -18,8 +18,8 @@ t_int	*cr_new_el(void)
 
 	if (!(tmp = malloc(sizeof(t_int))))
 		return (NULL);
-	tmp->osl = 0;
-	tmp->znl = 0;
+	tmp->stackoslast = 0;
+	tmp->stackznlast = 0;
 	tmp->i = 1;
 	return (tmp);
 }
@@ -43,53 +43,59 @@ int		prior(int c)
 int		is_znak(int c)
 {
 	if (c == '-' || c == '+' || c == '<' || c == '>' || c == '=' ||
-	c == '&' || c == '|' || c == '*' || c == '/' ||
-	c == '%' || (c >= 300 && c < 800))
+	c == '&' || c == '|' || c == '*' || c == '/' || c == '%' || (c >= 300 && c < 800))
 		return (1);
 	else
 		return (0);
 }
 
-void	dostack(int *stackos, int *stackzn, int c, t_int *li)
+void	dostack(int *stackos, int *stackzn, int c, t_int *lastint)
 {
+	//dprintf(2, "\nc: |%d, %d, %d|\n", c, stackzn[lastint->stackznlast - 1], prior(stackzn[lastint->stackznlast - 1]));
 	if ((c - 300) == '(')
-		addzn(stackzn, c, li);
+		addzn(stackzn, c, lastint);
 	else if ((c - 300) == ')')
 	{
-		while (stackzn[li->znl - 1] != ('(' + 300))
+		while (stackzn[lastint->stackznlast - 1] != ('(' + 300))
 		{
-			calc(stackos, li, stackzn[li->znl - 1]);
-			subzn(stackzn, li);
+			calc(stackos, lastint, stackzn[lastint->stackznlast - 1]);
+			subzn(stackzn, lastint);
 		}
-		subzn(stackzn, li);
+		subzn(stackzn, lastint);
 	}
-	else if (li->znl != 0 && prior(stackzn[li->znl - 1]) < prior(c))
-		addzn(stackzn, c, li);
+	else if (lastint->stackznlast != 0 && prior(stackzn[lastint->stackznlast - 1]) < prior(c))
+		addzn(stackzn, c, lastint);
 	else
 	{
-		while (li->znl > 0 && prior(stackzn[li->znl - 1]) >= prior(c))
+		while (lastint->stackznlast > 0 && prior(stackzn[lastint->stackznlast - 1]) >= prior(c))
 		{
-			calc(stackos, li, stackzn[li->znl - 1]);
-			subzn(stackzn, li);
+			calc(stackos, lastint, stackzn[lastint->stackznlast - 1]);
+			subzn(stackzn, lastint);
+			//exit(0);
 		}
-		addzn(stackzn, c, li);
+		addzn(stackzn, c, lastint);
 	}
 	if (is_znak(c))
-		li->i = 1;
+		lastint->i = 1;
+
 }
 
 int		calcend(int **stackos, int **stackzn, t_int **str)
 {
 	int		result;
+	int		*dop_stackos;
+	int		*dop_stackzn;
 
-	while ((*str)->osl > 1)
+	dop_stackos = *stackos;
+	dop_stackzn = *stackzn;
+	while ((*str)->stackoslast > 1)
 	{
-		calc(*stackos, *str, *stackzn[(*str)->znl - 1]);
-		subzn(*stackzn, *str);
+		calc(dop_stackos, *str, dop_stackzn[(*str)->stackznlast - 1]);
+		subzn(dop_stackzn, *str);
 	}
-	result = *stackos[0];
-	free(*stackos);
-	free(*stackzn);
+	result = dop_stackos[0];
+	free(dop_stackos);
+	free(dop_stackzn);
 	free(*str);
 	return (result);
 }

@@ -1,0 +1,404 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="42save"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/petruha2001/42sh/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/petruha2001/42sh/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/petruha2001/42sh/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/petruha2001/42sh/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/petruha2001/42sh/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/home/petruha2001/42sh/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/petruha2001/42sh/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/petruha2001/42sh/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/petruha2001/42sh/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/petruha2001/42sh/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="42save">
+				<Option output="/home/petruha2001/42sh/cmake-build-debug/42save" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/petruha2001/42sh/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/petruha2001/42sh/inc"/>
+					<Add directory="/home/petruha2001/42sh/src"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/petruha2001/42sh/cmake-build-debug/Makefile&quot;  VERBOSE=1 42save"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/petruha2001/42sh/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/petruha2001/42sh/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/petruha2001/42sh/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="42save/fast">
+				<Option output="/home/petruha2001/42sh/cmake-build-debug/42save" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/petruha2001/42sh/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/petruha2001/42sh/inc"/>
+					<Add directory="/home/petruha2001/42sh/src"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/petruha2001/42sh/cmake-build-debug/Makefile&quot;  VERBOSE=1 42save/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/petruha2001/42sh/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/petruha2001/42sh/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/petruha2001/42sh/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/petruha2001/42sh/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/petruha2001/42sh/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/petruha2001/42sh/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/petruha2001/42sh/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/petruha2001/42sh/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/petruha2001/42sh/inc/fshell.h">
+			<Option target="42save"/>
+		</Unit>
+		<Unit filename="/home/petruha2001/42sh/inc/hash.h">
+			<Option target="42save"/>
+		</Unit>
+		<Unit filename="/home/petruha2001/42sh/inc/nucleus.h">
+			<Option target="42save"/>
+		</Unit>
+		<Unit filename="/home/petruha2001/42sh/inc/parser.h">
+			<Option target="42save"/>
+		</Unit>
+		<Unit filename="/home/petruha2001/42sh/inc/struct.h">
+			<Option target="42save"/>
+		</Unit>
+		<Unit filename="/home/petruha2001/42sh/src/builtins/alias/alias.c">
+			<Option target="42save"/>
+		</Unit>
+		<Unit filename="/home/petruha2001/42sh/src/builtins/allenv/ft_env.c">
+			<Option target="42save"/>
+		</Unit>
+		<Unit filename="/home/petruha2001/42sh/src/builtins/allenv/global_env.c">
+			<Option target="42save"/>
+		</Unit>
+		<Unit filename="/home/petruha2001/42sh/src/builtins/allenv/main_env.c">
+			<Option target="42save"/>
+		</Unit>
+		<Unit filename="/home/petruha2001/42sh/src/builtins/bg_builtin.c">
+			<Option target="42save"/>
+		</Unit>
+		<Unit filename="/home/petruha2001/42sh/src/builtins/fg_builtin.c">
+			<Option target="42save"/>
+		</Unit>
+		<Unit filename="/home/petruha2001/42sh/src/builtins/ft_cd.c">
+			<Option target="42save"/>
+		</Unit>
+		<Unit filename="/home/petruha2001/42sh/src/builtins/ft_cd_2.c">
+			<Option target="42save"/>
+		</Unit>
+		<Unit filename="/home/petruha2001/42sh/src/builtins/ft_cd_3.c">
+			<Option target="42save"/>
+		</Unit>
+		<Unit filename="/home/petruha2001/42sh/src/builtins/ft_echo.c">
+			<Option target="42save"/>
+		</Unit>
+		<Unit filename="/home/petruha2001/42sh/src/builtins/ft_echo2.c">
+			<Option target="42save"/>
+		</Unit>
+		<Unit filename="/home/petruha2001/42sh/src/builtins/ft_type.c">
+			<Option target="42save"/>
+		</Unit>
+		<Unit filename="/home/petruha2001/42sh/src/check_file.c">
+			<Option target="42save"/>
+		</Unit>
+		<Unit filename="/home/petruha2001/42sh/src/errors/errror_handler.c">
+			<Option target="42save"/>
+		</Unit>
+		<Unit filename="/home/petruha2001/42sh/src/evaln/atoimy.c">
+			<Option target="42save"/>
+		</Unit>
+		<Unit filename="/home/petruha2001/42sh/src/evaln/calc.c">
+			<Option target="42save"/>
+		</Unit>
+		<Unit filename="/home/petruha2001/42sh/src/evaln/dop.c">
+			<Option target="42save"/>
+		</Unit>
+		<Unit filename="/home/petruha2001/42sh/src/evaln/eval_expr.h">
+			<Option target="42save"/>
+		</Unit>
+		<Unit filename="/home/petruha2001/42sh/src/evaln/ft_do_zam_eval.c">
+			<Option target="42save"/>
+		</Unit>
+		<Unit filename="/home/petruha2001/42sh/src/evaln/inftopost.c">
+			<Option target="42save"/>
+		</Unit>
+		<Unit filename="/home/petruha2001/42sh/src/exec/continuing_stopped_jobs.c">
+			<Option target="42save"/>
+		</Unit>
+		<Unit filename="/home/petruha2001/42sh/src/exec/ft_create_file.c">
+			<Option target="42save"/>
+		</Unit>
+		<Unit filename="/home/petruha2001/42sh/src/exec/ft_do_pipe.c">
+			<Option target="42save"/>
+		</Unit>
+		<Unit filename="/home/petruha2001/42sh/src/exec/ft_fun_fork.c">
+			<Option target="42save"/>
+		</Unit>
+		<Unit filename="/home/petruha2001/42sh/src/exec/launch_job.c">
+			<Option target="42save"/>
+		</Unit>
+		<Unit filename="/home/petruha2001/42sh/src/exec/launch_process.c">
+			<Option target="42save"/>
+		</Unit>
+		<Unit filename="/home/petruha2001/42sh/src/exec/operating_job.c">
+			<Option target="42save"/>
+		</Unit>
+		<Unit filename="/home/petruha2001/42sh/src/exec/put_job_in_background.c">
+			<Option target="42save"/>
+		</Unit>
+		<Unit filename="/home/petruha2001/42sh/src/exec/put_job_in_foreground.c">
+			<Option target="42save"/>
+		</Unit>
+		<Unit filename="/home/petruha2001/42sh/src/exec/stopped_and_terminated_jobs.c">
+			<Option target="42save"/>
+		</Unit>
+		<Unit filename="/home/petruha2001/42sh/src/ft_distruct.c">
+			<Option target="42save"/>
+		</Unit>
+		<Unit filename="/home/petruha2001/42sh/src/ft_error_q.c">
+			<Option target="42save"/>
+		</Unit>
+		<Unit filename="/home/petruha2001/42sh/src/ft_signal.c">
+			<Option target="42save"/>
+		</Unit>
+		<Unit filename="/home/petruha2001/42sh/src/ft_take_arg.c">
+			<Option target="42save"/>
+		</Unit>
+		<Unit filename="/home/petruha2001/42sh/src/g_builtins.c">
+			<Option target="42save"/>
+		</Unit>
+		<Unit filename="/home/petruha2001/42sh/src/hash/hash_error.c">
+			<Option target="42save"/>
+		</Unit>
+		<Unit filename="/home/petruha2001/42sh/src/hash/hash_table.c">
+			<Option target="42save"/>
+		</Unit>
+		<Unit filename="/home/petruha2001/42sh/src/hash/hash_table_2.c">
+			<Option target="42save"/>
+		</Unit>
+		<Unit filename="/home/petruha2001/42sh/src/init_shell.c">
+			<Option target="42save"/>
+		</Unit>
+		<Unit filename="/home/petruha2001/42sh/src/lexer/all_bax_and_hist_change.c">
+			<Option target="42save"/>
+		</Unit>
+		<Unit filename="/home/petruha2001/42sh/src/lexer/change_dol.c">
+			<Option target="42save"/>
+		</Unit>
+		<Unit filename="/home/petruha2001/42sh/src/lexer/change_hist_exp.c">
+			<Option target="42save"/>
+		</Unit>
+		<Unit filename="/home/petruha2001/42sh/src/lexer/change_sc.c">
+			<Option target="42save"/>
+		</Unit>
+		<Unit filename="/home/petruha2001/42sh/src/lexer/change_spaces.c">
+			<Option target="42save"/>
+		</Unit>
+		<Unit filename="/home/petruha2001/42sh/src/lexer/change_str_by_str.c">
+			<Option target="42save"/>
+		</Unit>
+		<Unit filename="/home/petruha2001/42sh/src/lexer/check_errors.c">
+			<Option target="42save"/>
+		</Unit>
+		<Unit filename="/home/petruha2001/42sh/src/lexer/cr_and_add_tokens.c">
+			<Option target="42save"/>
+		</Unit>
+		<Unit filename="/home/petruha2001/42sh/src/lexer/create_new_lexer_struct.c">
+			<Option target="42save"/>
+		</Unit>
+		<Unit filename="/home/petruha2001/42sh/src/lexer/dop_funs.c">
+			<Option target="42save"/>
+		</Unit>
+		<Unit filename="/home/petruha2001/42sh/src/lexer/get_opt_type.c">
+			<Option target="42save"/>
+		</Unit>
+		<Unit filename="/home/petruha2001/42sh/src/lexer/history_search.c">
+			<Option target="42save"/>
+		</Unit>
+		<Unit filename="/home/petruha2001/42sh/src/lexer/kill_dop_structure.c">
+			<Option target="42save"/>
+		</Unit>
+		<Unit filename="/home/petruha2001/42sh/src/lexer/lexer.c">
+			<Option target="42save"/>
+		</Unit>
+		<Unit filename="/home/petruha2001/42sh/src/lexer/word_sizes.c">
+			<Option target="42save"/>
+		</Unit>
+		<Unit filename="/home/petruha2001/42sh/src/lexer/zam_opt_in_tokens.c">
+			<Option target="42save"/>
+		</Unit>
+		<Unit filename="/home/petruha2001/42sh/src/main.c">
+			<Option target="42save"/>
+		</Unit>
+		<Unit filename="/home/petruha2001/42sh/src/nucleus/del_readline.c">
+			<Option target="42save"/>
+		</Unit>
+		<Unit filename="/home/petruha2001/42sh/src/nucleus/do_add.c">
+			<Option target="42save"/>
+		</Unit>
+		<Unit filename="/home/petruha2001/42sh/src/nucleus/dop_tab_funs.c">
+			<Option target="42save"/>
+		</Unit>
+		<Unit filename="/home/petruha2001/42sh/src/nucleus/find_history.c">
+			<Option target="42save"/>
+		</Unit>
+		<Unit filename="/home/petruha2001/42sh/src/nucleus/ft_add_intput_que.c">
+			<Option target="42save"/>
+		</Unit>
+		<Unit filename="/home/petruha2001/42sh/src/nucleus/ft_add_sumchar.c">
+			<Option target="42save"/>
+		</Unit>
+		<Unit filename="/home/petruha2001/42sh/src/nucleus/ft_arrdel.c">
+			<Option target="42save"/>
+		</Unit>
+		<Unit filename="/home/petruha2001/42sh/src/nucleus/ft_arrnew.c">
+			<Option target="42save"/>
+		</Unit>
+		<Unit filename="/home/petruha2001/42sh/src/nucleus/ft_arrows.c">
+			<Option target="42save"/>
+		</Unit>
+		<Unit filename="/home/petruha2001/42sh/src/nucleus/ft_back_slovo.c">
+			<Option target="42save"/>
+		</Unit>
+		<Unit filename="/home/petruha2001/42sh/src/nucleus/ft_c.c">
+			<Option target="42save"/>
+		</Unit>
+		<Unit filename="/home/petruha2001/42sh/src/nucleus/ft_cheak_quote.c">
+			<Option target="42save"/>
+		</Unit>
+		<Unit filename="/home/petruha2001/42sh/src/nucleus/ft_cleanstr.c">
+			<Option target="42save"/>
+		</Unit>
+		<Unit filename="/home/petruha2001/42sh/src/nucleus/ft_cut.c">
+			<Option target="42save"/>
+		</Unit>
+		<Unit filename="/home/petruha2001/42sh/src/nucleus/ft_cut_copy.c">
+			<Option target="42save"/>
+		</Unit>
+		<Unit filename="/home/petruha2001/42sh/src/nucleus/ft_do_copy.c">
+			<Option target="42save"/>
+		</Unit>
+		<Unit filename="/home/petruha2001/42sh/src/nucleus/ft_do_delch.c">
+			<Option target="42save"/>
+		</Unit>
+		<Unit filename="/home/petruha2001/42sh/src/nucleus/ft_do_leftright.c">
+			<Option target="42save"/>
+		</Unit>
+		<Unit filename="/home/petruha2001/42sh/src/nucleus/ft_dop_history.c">
+			<Option target="42save"/>
+		</Unit>
+		<Unit filename="/home/petruha2001/42sh/src/nucleus/ft_downcursor.c">
+			<Option target="42save"/>
+		</Unit>
+		<Unit filename="/home/petruha2001/42sh/src/nucleus/ft_head_memory.c">
+			<Option target="42save"/>
+		</Unit>
+		<Unit filename="/home/petruha2001/42sh/src/nucleus/ft_memory.c">
+			<Option target="42save"/>
+		</Unit>
+		<Unit filename="/home/petruha2001/42sh/src/nucleus/ft_next_slovo.c">
+			<Option target="42save"/>
+		</Unit>
+		<Unit filename="/home/petruha2001/42sh/src/nucleus/ft_print_tab.c">
+			<Option target="42save"/>
+		</Unit>
+		<Unit filename="/home/petruha2001/42sh/src/nucleus/ft_printf_helper.c">
+			<Option target="42save"/>
+		</Unit>
+		<Unit filename="/home/petruha2001/42sh/src/nucleus/ft_put_n.c">
+			<Option target="42save"/>
+		</Unit>
+		<Unit filename="/home/petruha2001/42sh/src/nucleus/ft_putcut.c">
+			<Option target="42save"/>
+		</Unit>
+		<Unit filename="/home/petruha2001/42sh/src/nucleus/ft_putmemory.c">
+			<Option target="42save"/>
+		</Unit>
+		<Unit filename="/home/petruha2001/42sh/src/nucleus/ft_read_8.c">
+			<Option target="42save"/>
+		</Unit>
+		<Unit filename="/home/petruha2001/42sh/src/nucleus/ft_realloc_buff.c">
+			<Option target="42save"/>
+		</Unit>
+		<Unit filename="/home/petruha2001/42sh/src/nucleus/ft_realloc_tab.c">
+			<Option target="42save"/>
+		</Unit>
+		<Unit filename="/home/petruha2001/42sh/src/nucleus/ft_setcursor.c">
+			<Option target="42save"/>
+		</Unit>
+		<Unit filename="/home/petruha2001/42sh/src/nucleus/ft_start_read.c">
+			<Option target="42save"/>
+		</Unit>
+		<Unit filename="/home/petruha2001/42sh/src/nucleus/ft_strsplit1.c">
+			<Option target="42save"/>
+		</Unit>
+		<Unit filename="/home/petruha2001/42sh/src/nucleus/ft_upcursor.c">
+			<Option target="42save"/>
+		</Unit>
+		<Unit filename="/home/petruha2001/42sh/src/nucleus/input_mode.c">
+			<Option target="42save"/>
+		</Unit>
+		<Unit filename="/home/petruha2001/42sh/src/nucleus/show_history.c">
+			<Option target="42save"/>
+		</Unit>
+		<Unit filename="/home/petruha2001/42sh/src/nucleus/tab.c">
+			<Option target="42save"/>
+		</Unit>
+		<Unit filename="/home/petruha2001/42sh/src/parser/all_parse.c">
+			<Option target="42save"/>
+		</Unit>
+		<Unit filename="/home/petruha2001/42sh/src/parser/change_tilda.c">
+			<Option target="42save"/>
+		</Unit>
+		<Unit filename="/home/petruha2001/42sh/src/parser/check_bracket.c">
+			<Option target="42save"/>
+		</Unit>
+		<Unit filename="/home/petruha2001/42sh/src/parser/dop_parser.c">
+			<Option target="42save"/>
+		</Unit>
+		<Unit filename="/home/petruha2001/42sh/src/parser/main_parser.c">
+			<Option target="42save"/>
+		</Unit>
+		<Unit filename="/home/petruha2001/42sh/src/shell_lvl.c">
+			<Option target="42save"/>
+		</Unit>
+		<Unit filename="/home/petruha2001/42sh/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

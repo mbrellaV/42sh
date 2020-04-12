@@ -14,24 +14,36 @@
 
 void	init_shell(void)
 {
-	g_shell_terminal = STDIN_FILENO;
-	g_shell_is_interactive = isatty(g_shell_terminal);
-	if (g_shell_is_interactive)
+	/* See if we are running interactively.  */
+	shell_terminal = STDIN_FILENO;
+	shell_is_interactive = isatty (shell_terminal);
+
+	if (shell_is_interactive)
 	{
-		while (tcgetpgrp(g_shell_terminal) != (g_shell_pgid = getpgrp()))
-			kill(-g_shell_pgid, SIGTTIN);
+		/* Loop until we are in the foreground.  */
+		while (tcgetpgrp(shell_terminal) != (shell_pgid = getpgrp ()))
+			kill(- shell_pgid, SIGTTIN);
+
+		/* Ignore interactive and job-control signals.  */
 		signal(SIGINT, SIG_IGN);
 		signal(SIGQUIT, SIG_IGN);
 		signal(SIGTSTP, SIG_IGN);
 		signal(SIGTTIN, SIG_IGN);
 		signal(SIGTTOU, SIG_IGN);
-		g_shell_pgid = getpid();
-		if (setpgid(g_shell_pgid, g_shell_pgid) < 0)
+		//signal(SIGCHLD, SIG_IGN);
+
+		/* Put ourselves in our own process group.  */
+		shell_pgid = getpid();
+		if (setpgid(shell_pgid, shell_pgid) < 0)
 		{
 			perror("Couldn't put the shell in its own process group");
 			exit(1);
 		}
-		tcsetpgrp(0, g_shell_pgid);
+		/* Grab control of the terminal.  */
+		tcsetpgrp(0, shell_pgid);
+
+		/* Save default terminal attributes for shell.  */
+//		tcgetattr(shell_terminal, &saved_attributes);
 	}
 }
 

@@ -58,7 +58,7 @@ int		launch_job(t_job *j, int foreground)
 		{
 			/* This is the parent process.  */
 			p->pid = pid;
-			if (g_shell_is_interactive)
+			if (shell_is_interactive)
 			{
 				if (j->pgid <= 0)
 					j->pgid = pid;
@@ -78,7 +78,7 @@ int		launch_job(t_job *j, int foreground)
 		p = p->next;
 	}
 	//format_job_info (j, "launched", 0);
-	if (!g_shell_is_interactive)
+	if (!shell_is_interactive)
 		wait_for_job (j);
 	if (foreground)
 		put_job_in_foreground (j, 0);

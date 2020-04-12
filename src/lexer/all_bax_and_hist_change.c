@@ -14,14 +14,14 @@
 
 t_lextoken		*do_zam_join_par(t_lextoken *h)
 {
-	char		*tmp;
-	t_lextoken	*lextmp;
-	t_lextoken	*lextmp1;
+    char        *tmp;
+    t_lextoken  *lextmp;
+	t_lextoken  *lextmp1;
 
 	lextmp1 = h;
-	while (h)
+    while (h)
 	{
-		if (h->next && h->next->is_near_word == 1)
+    	if (h->next && h->next->is_near_word == 1)
 		{
 			tmp = h->next->line;
 			h->next->inhibitor_lvl = h->inhibitor_lvl;
@@ -38,6 +38,7 @@ t_lextoken		*do_zam_join_par(t_lextoken *h)
 				h->next->prev = NULL;
 				lextmp1 = h->next;
 			}
+
 			ft_strdel(&tmp);
 			lextmp = h;
 			h = h->next;
@@ -45,16 +46,16 @@ t_lextoken		*do_zam_join_par(t_lextoken *h)
 			h->is_near_word = 0;
 			h->inhibitor_lvl = 0;
 		}
-		else
-			h = h->next;
+    	else
+    		h = h->next;
 	}
 	return (lextmp1);
 }
 
-int				check_if_in_par(char *line, int i)
+int			check_if_in_par(char *line, int i)
 {
-	int			d;
-	int			marker;
+	int d;
+	int marker;
 
 	d = i;
 	marker = 0;
@@ -76,9 +77,9 @@ int				check_if_in_par(char *line, int i)
 	return (0);
 }
 
-void			change_enters_in_sc(char *line)
+void		change_enters_in_sc(char *line)
 {
-	int			i;
+	int i;
 
 	i = 0;
 	while (line[i] != '\0')
@@ -89,45 +90,47 @@ void			change_enters_in_sc(char *line)
 	}
 }
 
-t_lextoken		*zam_ravno_h(t_lextoken *h, t_lextoken **htmp)
+void        del_one_node(char **str, int node_to_del)
 {
-	char		*tmp1;
-	char		*tmp2;
-	t_lextoken	*dop;
+    int i;
+    int tmp;
+    int to_del;
 
-	tmp1 = ft_strsub(h->line, 0, ft_strstr(h->line, "=") - h->line);
-	tmp2 = ft_strsub(h->line, ft_strstr(h->line, "=") -
-	h->line + 1, ft_strlen(h->line));
-	set_new_var(tmp1, tmp2, &g_all_var);
-	ft_strdel(&tmp1);
-	ft_strdel(&tmp2);
-	dop = h->next;
-	if (h->prev)
-		h->prev->next = h->next;
-	if (h->next)
-	{
-		h->next->prev = h->prev;
-		*htmp = h->next;
-	}
-	if (h->next == NULL && h->prev == NULL)
-		*htmp = NULL;
-	ft_strdel(&h->line);
-	free(h);
-	return (dop);
+    i = 0;
+    tmp = 0;
+    to_del = 0;
+    while (str[i])
+    {
+        if (node_to_del == i)
+		{
+			tmp = 1;
+			to_del = 1;
+		}
+        if (to_del == 1)
+		{
+			ft_strdel(&str[i]);
+			to_del = 0;
+		}
+        if (tmp)
+            str[i] = str[i + 1];
+        i++;
+    }
 }
 
 t_lextoken		*do_zam_ravno(t_lextoken *h, t_lextoken **htmp)
 {
-	char		*tmp1;
-	char		*tmp2;
-	t_lextoken	*dop;
+    char		*tmp1;
+    char		*tmp2;
+    t_lextoken	*dop;
 
-	if (h != NULL && h->line && ft_strstr(h->line, "=") && ((!h->next
-	|| is_cmd_delim(get_op_type(h->next->line))) && h->prev == NULL))
-		return (zam_ravno_h(h, htmp));
-	else if (h != NULL && h->line != NULL && ft_strstr(h->line, "=")
-	&& h->prev == NULL)
-	{
+    if (h != NULL && h->line != NULL && ft_strstr(h->line, "=") &&
+    ((h->next == NULL || is_cmd_delim(get_op_type(h->next->line))) && h->prev == NULL))
+    {
+        tmp1 = ft_strsub(h->line, 0, ft_strstr(h->line, "=") - h->line);
+        tmp2 = ft_strsub(h->line, ft_strstr(h->line, "=") - h->line + 1, ft_strlen(h->line));
+        set_new_var(tmp1, tmp2, &g_all_var);
+        ft_strdel(&tmp1);
+		ft_strdel(&tmp2);
 		dop = h->next;
 		if (h->prev)
 			h->prev->next = h->next;
@@ -141,6 +144,96 @@ t_lextoken		*do_zam_ravno(t_lextoken *h, t_lextoken **htmp)
 		ft_strdel(&h->line);
 		free(h);
 		return (dop);
+    }
+    else if (h != NULL && h->line != NULL && ft_strstr(h->line, "=") && h->prev == NULL)
+	{
+			dop = h->next;
+			if (h->prev)
+				h->prev->next = h->next;
+			if (h->next)
+			{
+				h->next->prev = h->prev;
+				*htmp = h->next;
+			}
+			if (h->next == NULL && h->prev == NULL)
+				*htmp = NULL;
+			ft_strdel(&h->line);
+			free(h);
+			return (dop);
 	}
 	return (h);
+}
+
+t_lextoken		*do_zam_bax_and_hist_full(t_lextoken *h)
+{
+	t_dop_str	*tmp;
+	t_lextoken  *htmp;
+	char		*str_for_del;
+	t_lextoken	*save_token;
+
+	if (!h)
+		return (NULL);
+	if (!(tmp = ft_memalloc(sizeof(t_dop_str))))
+		ft_error_q(2);
+	h = do_zam_join_par(h);
+	htmp = h;
+	while (h != NULL)
+	{
+		tmp->c_b = 0;
+		tmp->i_b = -1;
+		tmp->str_b = h->line;
+		if (h->inhibitor_lvl != 2)
+		{
+			//dprintf(2, "\nsas: |%s|\n", h->line);
+			if (h->line[0] != '\0')
+				h->line = do_zam_str_bax(h->line, tmp);
+//			if (h->line[0] == '\0')
+//			{
+//				if (h->prev)
+//					h->prev->next = h->next;
+//				if (h->next)
+//				{
+//					h->next->prev = h->prev;
+//					htmp = h->next;
+//				}
+//				if (h->next == NULL && h->prev == NULL)
+//					return (NULL);
+//				ft_strdel(&h->line);
+//				free(h);
+//			}
+			str_for_del = h->line;
+			if (h->line[0] != '\0')
+				h->line = ft_do_zam_eval(h->line);
+			if (h->line != str_for_del)
+				ft_strdel(&str_for_del);
+			//h->line = ft_strdup(h->line);
+			//dprintf(2, "\nsas1: |%s|\n", h->line);
+		}
+		str_for_del = h->line;
+		if (h->inhibitor_lvl == 0)
+		{
+			if (h->line[0] != '\0')
+				h->line = do_zam_str_with_tilda(h->line);
+			if (h->line != str_for_del)
+				ft_strdel(&str_for_del);
+			str_for_del = h->line;
+			if (h->line[0] != '\0')
+				h->line = ft_do_zam_alias(h->line);
+			//dprintf(2, "\nsas2: |%p|\n", h->line);
+			if (h->line != str_for_del)
+				ft_strdel(&str_for_del);
+			save_token = h;
+			h = do_zam_ravno(h, &htmp);
+			if (htmp == NULL)
+				return (NULL);
+			if (h != save_token)
+				h = h->prev;
+		}
+		if (h == NULL)
+			h = htmp;
+		else
+			h = h->next;
+	}
+	ft_kill_str_dop_lex(tmp, NULL);
+	return (htmp);
 }

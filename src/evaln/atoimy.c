@@ -23,8 +23,11 @@ int		ft_atoi_with(char *str, int *marker)
 	{
 		if (*str == '+')
 			en++;
-		else if (*str == '-')
-			en = -1;
+		else
+		{
+			if (*str == '-')
+				en = -1;
+		}
 		(str)++;
 		(*marker)++;
 	}

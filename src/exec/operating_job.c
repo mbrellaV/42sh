@@ -17,7 +17,7 @@ t_job * find_job (pid_t pgid)
 {
 	t_job *j;
 
-	for (j = g_f_job; j; j = j->next)
+	for (j = f_job; j; j = j->next)
 		if (j->pgid == pgid)
 			return j;
 	return NULL;

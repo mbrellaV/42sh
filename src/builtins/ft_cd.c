@@ -37,8 +37,8 @@ int			flags_cd(char *str, t_builtins *cd, int j)
 
 int			change_path(char *path, t_builtins *cd)
 {
-	char		*tmp;
-	char		*pwd_env;
+	char	*tmp;
+	char	*pwd_env;
 
 	if (path)
 	{
@@ -66,8 +66,8 @@ int			change_path(char *path, t_builtins *cd)
 
 int			change_env(char *env, t_builtins *cd)
 {
-	char		*pwd;
-	int			k;
+	char	*pwd;
+	int		k;
 
 	if ((k = ft_findenv(env, g_env)) != -404)
 	{
@@ -88,8 +88,8 @@ int			change_env(char *env, t_builtins *cd)
 int			ft_cd(char **str)
 {
 	t_builtins	cd;
-	int			i;
-	int			j;
+	int		i;
+	int		j;
 
 	i = 0;
 	cd.link = 0;

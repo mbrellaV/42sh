@@ -14,6 +14,8 @@
 
 void	ft_fork_signal(int signo)
 {
+//	int 	pid;
+
 	if (signo == SIGINT)
 	{
 		ft_putstr_fd("\n", 2);

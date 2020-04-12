@@ -12,7 +12,7 @@
 
 #include "../../../inc/fshell.h"
 
-void			ft_realloc_all(int k, char ***envl)
+void	ft_realloc_all(int k, char ***envl)
 {
 	char	**tmp;
 	int		i;
@@ -36,27 +36,7 @@ void			ft_realloc_all(int k, char ***envl)
 	*envl = tmp;
 }
 
-static int		unset_helper(char *str, char **env, int i)
-{
-	if (ft_strequ(str, "PATH="))
-		hash_clear();
-	free(env[i]);
-	env[i] = NULL;
-	while (env[i + 1])
-	{
-		if (!(env[i] = ft_strdup(env[i + 1])))
-		{
-			ft_strdel(&str);
-			return (-1);
-		}
-		free(env[i + 1]);
-		env[i + 1] = NULL;
-		i++;
-	}
-	return (0);
-}
-
-int				unset_var(char *str, char ***envl)
+int		unset_var(char *str, char ***envl)
 {
 	int		i;
 	char	**env;
@@ -64,6 +44,7 @@ int				unset_var(char *str, char ***envl)
 	env = *envl;
 	str = ft_strjoinch(str, '=');
 	i = ft_findenv(str, env);
+//	dprintf(2, "sas123: |%d|\n", i);
 	if (i == -404)
 	{
 		ft_strdel(&str);
@@ -71,15 +52,29 @@ int				unset_var(char *str, char ***envl)
 	}
 	else
 	{
-		if (unset_helper(str, env, i) == -1)
-			return (-1);
+		if (ft_strequ(str, "PATH="))
+			hash_clear();
+		free(env[i]);
+		env[i] = NULL;
+		while (env[i + 1])
+		{
+			if (!(env[i] = ft_strdup(env[i + 1])))
+			{
+				ft_strdel(&str);
+				return (-1);
+			}
+			free(env[i + 1]);
+			env[i + 1] = NULL;
+			i++;
+		}
 	}
 	*envl = env;
 	ft_strdel(&str);
+	//ft_show_env(env);
 	return (0);
 }
 
-int				set_new_var(char *str1, char *str2, char ***envl)
+int		set_new_var(char *str1, char *str2, char ***envl)
 {
 	char	**env;
 	int		i;

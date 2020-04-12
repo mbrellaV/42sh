@@ -28,7 +28,7 @@ int mark_process_status (pid_t pid, int status)
 	if (pid > 0)
 	{
 		/* Update the record for the process.  */
-		for (j = g_f_job; j; j = j->next)
+		for (j = f_job; j; j = j->next)
 		{
 			job_count++;
 			for (p = j->first_process; p; p = p->next)
@@ -88,7 +88,7 @@ int		process_count()
 	t_process	*p;
 	int			res;
 
-	job = g_f_job;
+	job = f_job;
 	res = 0;
 	while (job)
 	{
@@ -169,7 +169,7 @@ void    do_job_notification (void)
 	update_status ();
 
 	jlast = NULL;
-	for (j = g_f_job; j; j = jnext)
+	for (j = f_job; j; j = jnext)
 	{
 		job_count++;
 		jnext = j->next;
@@ -182,7 +182,7 @@ void    do_job_notification (void)
 			if (jlast)
 				jlast->next = jnext;
 			else
-				g_f_job = jnext;
+				f_job = jnext;
 			//free_job(j);
 		}
 
@@ -236,7 +236,7 @@ int		do_job_del()
 	d = 0;
 	update_status();
 	jlast = NULL;
-	j = g_f_job;
+	j = f_job;
 	while (j)
 	{
 		d++;
@@ -255,7 +255,7 @@ int		do_job_del()
 			if (jlast)
 				jlast->next = jnext;
 			else
-				g_f_job = jnext;
+				f_job = jnext;
 			jdop = j;
 
 		}
@@ -279,7 +279,7 @@ t_job		*get_job_by_number(int n)
 	t_job *j;
 	int i;
 
-	j = g_f_job;
+	j = f_job;
 	if (n < 0)
 		return (NULL);
 	i = 1;
@@ -295,7 +295,7 @@ t_job		*get_last_job()
 {
 	t_job *j;
 
-	j = g_f_job;
+	j = f_job;
 	while (j && j->next)
 	{
 		j = j->next;

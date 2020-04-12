@@ -15,10 +15,10 @@
 ########################
 
 //Value Computed by CMake
-21end_BINARY_DIR:STATIC=/home/petruha2001/42sh/cmake-build-debug
+42save_BINARY_DIR:STATIC=/home/petruha2001/42sh/cmake-build-debug
 
 //Value Computed by CMake
-21end_SOURCE_DIR:STATIC=/home/petruha2001/42sh
+42save_SOURCE_DIR:STATIC=/home/petruha2001/42sh
 
 //Path to a program.
 CMAKE_AR:FILEPATH=/usr/bin/ar
@@ -130,7 +130,7 @@ CMAKE_PROJECT_DESCRIPTION:STATIC=
 CMAKE_PROJECT_HOMEPAGE_URL:STATIC=
 
 //Value Computed by CMake
-CMAKE_PROJECT_NAME:STATIC=21end
+CMAKE_PROJECT_NAME:STATIC=42save
 
 //Path to a program.
 CMAKE_RANLIB:FILEPATH=/usr/bin/ranlib

@@ -17,7 +17,6 @@ int				get_op_type(char *operator)
 	int			i;
 	static char	operators[12][5] = {";;", ";", "|",\
 		"<<", "<", ">>", ">", ">&", "<&", "&", "&&", "||"};
-
 	i = 0;
 	if (ft_strstr(operator, operators[i]) != NULL)
 		return (-1);
@@ -41,7 +40,7 @@ int				get_op_type(char *operator)
 	return (-2);
 }
 
-int				needs_something_before(int n)
+int		needs_something_before(int n)
 {
 	return (n == 2 || n == 9 || n == 10 || n == 11);
 }

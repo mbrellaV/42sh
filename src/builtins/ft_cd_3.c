@@ -12,6 +12,7 @@
 
 #include "../../inc/fshell.h"
 
+
 char		*ft_strjoin_cd(char const *s1, char const *s2, int to_free)
 {
 	char		*str;
