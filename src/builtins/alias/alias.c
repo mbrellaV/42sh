@@ -34,14 +34,19 @@ char			*ft_get_alias(char *dop)
 
 char			*ft_do_zam_alias(char *str)
 {
+	char	*tmp;
+
+	if (*str == '\0')
+		return (str);
 	if (str == NULL)
-		return (ft_memalloc(130000));
+		return (NULL);
 	if (ft_findenv(str, g_alias) != -404 && ft_strcmp(str, "unalias") != 0 && ft_strcmp(str, "export") != 0 &&
 	ft_strcmp(str, "unset") != 0 && ft_strcmp(str, "unexport") != 0 && ft_strcmp(str, "alias") != 0)
 	{
+		tmp = str;
 		if (!(str = ft_get_alias(str)))
 			return (ft_memalloc(130000));
-		//ft_strdel(&tmp);
+		ft_strdel(&tmp);
 	}
 	return (str);
 }

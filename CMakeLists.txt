@@ -111,7 +111,7 @@ add_executable(42save
         src/g_builtins.c
         src/init_shell.c
         src/main.c
-        src/shell_lvl.c)
+        src/shell_lvl.c src/exec/create_jobs_and_proc.c)
 
 
 target_link_libraries(42save ${CMAKE_SOURCE_DIR}/libft/libft.a)

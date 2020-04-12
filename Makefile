@@ -50,6 +50,7 @@ SRC_BASE = builtins/ft_cd.c\
  	exec/put_job_in_foreground.c\
  	exec/put_job_in_background.c\
  	exec/launch_process.c\
+ 	exec/create_jobs_and_proc.c\
 	lexer/lexer.c\
 	evaln/dop.c\
     evaln/calc.c\

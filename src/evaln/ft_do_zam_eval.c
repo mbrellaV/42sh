@@ -85,7 +85,10 @@ char        *ft_do_zam_eval(char *mas)
 {
 	char *newstr;
 
+	if (*mas == '\0')
+		return (mas);
     if ((newstr = ft_main_calc_rec(mas)) == NULL)
 		return (mas);
+    ft_strdel(&mas);
     return (newstr);
 }

@@ -104,7 +104,7 @@ char				*create_full_path(char *path, t_builtins *cd);
 char				*ft_strjoin_cd(char const *s1, char const *s2, int to_free);
 char				*ft_get_var(char *dop, char **env);
 int					issc(char c);
-t_lextoken			*do_zam_ravno(t_lextoken *h, t_lextoken **htmp);
+t_lextoken			*do_zam_ravno(t_lextoken *h);
 void				ft_global_env(char **env, int argc);
 int					unset_var(char *str, char ***envl);
 void				ft_fun_fork(char *path, char **arg, pid_t pgid, int foreground);
@@ -148,11 +148,13 @@ void				do_obr_zamena_slash(t_exectoken *tmp);
 void				ft_redirect(t_pipe *p, int new_infile_fd, int new_outfile_fd);
 
 
+
 //////////////////
-t_job		*get_job_by_number(int n);
-int		do_fg(char **mas);
-int		do_bg(char **mas);
-int		launch_process(t_process *p, pid_t pgid,
+t_job				*get_job_by_number(int n);
+int					do_fg(char **mas);
+int					check_if_in_par(char *line, int i);
+int					do_bg(char **mas);
+int					launch_process(t_process *p, pid_t pgid,
 						  int infile, int outfile, int errfile,
 						  int foreground, char *rt);
 int		launch_job(t_job *j, int foreground);
@@ -171,7 +173,8 @@ void	put_job_in_background (t_job *j, int cont);
 int mark_process_status (pid_t pid, int status);
 //int		ft_fd_flag(char **av, int *fd_in);
 void	update_status (void);
-void wait_for_job (t_job *j);
+void				wait_for_job (t_job *j);
+t_job				*create_job(t_exectoken *head);
 void format_job_info (t_job *j, const char *status, int num);
 void do_job_notification (void);
 void	continue_job (t_job *j, int foreground);

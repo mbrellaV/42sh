@@ -24,6 +24,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "/home/petruha2001/42sh/src/evaln/ft_do_zam_eval.c" "/home/petruha2001/42sh/cmake-build-debug/CMakeFiles/42save.dir/src/evaln/ft_do_zam_eval.c.o"
   "/home/petruha2001/42sh/src/evaln/inftopost.c" "/home/petruha2001/42sh/cmake-build-debug/CMakeFiles/42save.dir/src/evaln/inftopost.c.o"
   "/home/petruha2001/42sh/src/exec/continuing_stopped_jobs.c" "/home/petruha2001/42sh/cmake-build-debug/CMakeFiles/42save.dir/src/exec/continuing_stopped_jobs.c.o"
+  "/home/petruha2001/42sh/src/exec/create_jobs_and_proc.c" "/home/petruha2001/42sh/cmake-build-debug/CMakeFiles/42save.dir/src/exec/create_jobs_and_proc.c.o"
   "/home/petruha2001/42sh/src/exec/ft_create_file.c" "/home/petruha2001/42sh/cmake-build-debug/CMakeFiles/42save.dir/src/exec/ft_create_file.c.o"
   "/home/petruha2001/42sh/src/exec/ft_do_pipe.c" "/home/petruha2001/42sh/cmake-build-debug/CMakeFiles/42save.dir/src/exec/ft_do_pipe.c.o"
   "/home/petruha2001/42sh/src/exec/ft_fun_fork.c" "/home/petruha2001/42sh/cmake-build-debug/CMakeFiles/42save.dir/src/exec/ft_fun_fork.c.o"

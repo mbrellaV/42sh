@@ -663,6 +663,33 @@ src/exec/continuing_stopped_jobs.c.s:
 	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/exec/continuing_stopped_jobs.c.s
 .PHONY : src/exec/continuing_stopped_jobs.c.s
 
+src/exec/create_jobs_and_proc.o: src/exec/create_jobs_and_proc.c.o
+
+.PHONY : src/exec/create_jobs_and_proc.o
+
+# target to build an object file
+src/exec/create_jobs_and_proc.c.o:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/exec/create_jobs_and_proc.c.o
+.PHONY : src/exec/create_jobs_and_proc.c.o
+
+src/exec/create_jobs_and_proc.i: src/exec/create_jobs_and_proc.c.i
+
+.PHONY : src/exec/create_jobs_and_proc.i
+
+# target to preprocess a source file
+src/exec/create_jobs_and_proc.c.i:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/exec/create_jobs_and_proc.c.i
+.PHONY : src/exec/create_jobs_and_proc.c.i
+
+src/exec/create_jobs_and_proc.s: src/exec/create_jobs_and_proc.c.s
+
+.PHONY : src/exec/create_jobs_and_proc.s
+
+# target to generate assembly for a file
+src/exec/create_jobs_and_proc.c.s:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/exec/create_jobs_and_proc.c.s
+.PHONY : src/exec/create_jobs_and_proc.c.s
+
 src/exec/ft_create_file.o: src/exec/ft_create_file.c.o
 
 .PHONY : src/exec/ft_create_file.o
@@ -2865,6 +2892,9 @@ help:
 	@echo "... src/exec/continuing_stopped_jobs.o"
 	@echo "... src/exec/continuing_stopped_jobs.i"
 	@echo "... src/exec/continuing_stopped_jobs.s"
+	@echo "... src/exec/create_jobs_and_proc.o"
+	@echo "... src/exec/create_jobs_and_proc.i"
+	@echo "... src/exec/create_jobs_and_proc.s"
 	@echo "... src/exec/ft_create_file.o"
 	@echo "... src/exec/ft_create_file.i"
 	@echo "... src/exec/ft_create_file.s"
