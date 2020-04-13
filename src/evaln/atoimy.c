@@ -6,7 +6,7 @@
 /*   By: mbrella <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/17 13:45:26 by mbrella           #+#    #+#             */
-/*   Updated: 2019/08/18 17:09:29 by mbrella          ###   ########.fr       */
+/*   Updated: 2020/04/13 20:04:23 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,7 @@ int		ft_atoi_with(char *str, int *marker)
 	int en;
 
 	en = 0;
-	while ((*str < 33 || *str == '-' || *str == '+' || *str > 126) &&
-			en == 0)
+	while ((*str < 33 || *str == '-' || *str == '+' || *str > 126) && en == 0)
 	{
 		if (*str == '+')
 			en++;

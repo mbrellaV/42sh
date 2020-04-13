@@ -6,7 +6,7 @@
 /*   By: mbrella <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/27 13:47:39 by mbrella           #+#    #+#             */
-/*   Updated: 2020/01/27 13:47:40 by mbrella          ###   ########.fr       */
+/*   Updated: 2020/04/13 20:04:23 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ int				word_size(char *str)
 	int i;
 
 	i = 0;
+	//dprintf(2, "\nyes: |%c|\n", *str);
 	if (isoperator(*str) > 0)
 		return (operator_size(str));
 	if (isword(*str) == 2)
@@ -58,6 +59,9 @@ int				word_size(char *str)
 		return (-1);
 	if (issc(*str))
 		return (sc_size(str, *str));
+//	if (isword(*str) == '(')
+//		return (1);
+	//dprintf(2, "\nno: |%c|\n", *str);
 	while (*str)
 	{
 		if (isword(*str) != 1 && isword(*str) != 3)
