@@ -111,7 +111,7 @@ add_executable(42save
         src/g_builtins.c
         src/init_shell.c
         src/main.c
-        src/shell_lvl.c src/exec/create_jobs_and_proc.c src/exec/free_job_list.c src/exec/find_jobs.c src/exec/working_with_fds.c src/exec/job_info.c src/lexer/join_par.c src/lexer/del_one_token.c src/lexer/zam_hidden_set.c)
+        src/shell_lvl.c src/exec/create_jobs_and_proc.c src/exec/free_job_list.c src/exec/find_jobs.c src/exec/working_with_fds.c src/exec/job_info.c src/lexer/join_par.c src/lexer/del_one_token.c src/lexer/zam_hidden_set.c src/parser/create_dop_struct.c)
 
 
 target_link_libraries(42save ${CMAKE_SOURCE_DIR}/libft/libft.a)

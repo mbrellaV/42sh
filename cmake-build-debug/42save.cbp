@@ -412,6 +412,9 @@
 		<Unit filename="/home/petruha2001/42sh/src/parser/check_bracket.c">
 			<Option target="42save"/>
 		</Unit>
+		<Unit filename="/home/petruha2001/42sh/src/parser/create_dop_struct.c">
+			<Option target="42save"/>
+		</Unit>
 		<Unit filename="/home/petruha2001/42sh/src/parser/dop_parser.c">
 			<Option target="42save"/>
 		</Unit>

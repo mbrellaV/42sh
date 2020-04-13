@@ -105,6 +105,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/42save.dir/src/parser/all_parse.c.o"
   "CMakeFiles/42save.dir/src/parser/change_tilda.c.o"
   "CMakeFiles/42save.dir/src/parser/check_bracket.c.o"
+  "CMakeFiles/42save.dir/src/parser/create_dop_struct.c.o"
   "CMakeFiles/42save.dir/src/parser/dop_parser.c.o"
   "CMakeFiles/42save.dir/src/parser/main_parser.c.o"
   "CMakeFiles/42save.dir/src/shell_lvl.c.o"

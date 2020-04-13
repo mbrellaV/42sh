@@ -17,33 +17,6 @@ int						is_cmd_delim(int i)
 	return (i == 1 || i == 2 || i >= 9);
 }
 
-t_dop_str				*cr_dop_str_par1(t_lextoken *tmp1)
-{
-	t_dop_str	*t;
-
-	if (tmp1 == NULL)
-		return (NULL);
-	if (!(t = ft_memalloc(sizeof(t_dop_str))))
-		return (NULL);
-	t->dopi_a = 0;
-	t->dop_a = tmp1;
-	t->f_a = 0;
-	while (tmp1 != NULL && !is_cmd_delim(tmp1->operator_type))
-	{
-		if (tmp1->is_near_opt == 1)
-			t->dopi_a++;
-		if (tmp1->is_near_opt == 0)
-			t->f_a++;
-		tmp1 = tmp1->next;
-	}
-	if (!(t->tmp1_a = ft_memalloc(sizeof(t_exectoken))))
-		return (NULL);
-	if (t->dopi_a != 0 && !(t->tmp1_a->file_opt =
-			(char**)ft_memalloc((t->dopi_a + 1) * sizeof(char *))))
-		return (NULL);
-	return (t);
-}
-
 void					dop_cr_new_exec(t_dop_str *t,
 		t_exectoken *prev, int op_type, int type)
 {
@@ -79,13 +52,11 @@ void					dop_cr_new_exec(t_dop_str *t,
 		t->tmp1_a->file_opt[t->dopi_a] = NULL;
 	if (t->dopi_a == 0)
 		t->tmp1_a->file_opt = NULL;
-	//dprintf(2, "\n|%d|, |%d|\n", t->tmp1_a->foreground, op_type);
 }
 
 t_exectoken				*ft_cr_new_exectoken(t_lextoken *tmp,
 		t_exectoken *prev, int op_type, t_dop_str *t)
 {
-
 	if (!(t = cr_dop_str_par1(tmp)))
 		return (NULL);
 	dop_cr_new_exec(t, prev, op_type, 0);
@@ -107,22 +78,4 @@ t_exectoken				*ft_cr_new_exectoken(t_lextoken *tmp,
 	}
 	dop_cr_new_exec(t, prev, op_type, 1);
 	return (ft_kill_str_dop_exec(t, t->tmp1_a));
-}
-
-t_dop_str				*cr_dop_str_par(void)
-{
-	t_dop_str	*t;
-
-	if (!(t = ft_memalloc(sizeof(t_dop_str))))
-		return (NULL);
-	t->tmp_c = NULL;
-	t->dop_c = 0;
-	t->d_c = 0;
-	t->i_c = 0;
-	t->doptail_c = NULL;
-	t->tail_c = NULL;
-	t->prev_c = NULL;
-	t->prevdot_c = NULL;
-	t->start_c = NULL;
-	return (t);
 }

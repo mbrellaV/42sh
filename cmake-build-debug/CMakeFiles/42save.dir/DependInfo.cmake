@@ -108,6 +108,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "/home/petruha2001/42sh/src/parser/all_parse.c" "/home/petruha2001/42sh/cmake-build-debug/CMakeFiles/42save.dir/src/parser/all_parse.c.o"
   "/home/petruha2001/42sh/src/parser/change_tilda.c" "/home/petruha2001/42sh/cmake-build-debug/CMakeFiles/42save.dir/src/parser/change_tilda.c.o"
   "/home/petruha2001/42sh/src/parser/check_bracket.c" "/home/petruha2001/42sh/cmake-build-debug/CMakeFiles/42save.dir/src/parser/check_bracket.c.o"
+  "/home/petruha2001/42sh/src/parser/create_dop_struct.c" "/home/petruha2001/42sh/cmake-build-debug/CMakeFiles/42save.dir/src/parser/create_dop_struct.c.o"
   "/home/petruha2001/42sh/src/parser/dop_parser.c" "/home/petruha2001/42sh/cmake-build-debug/CMakeFiles/42save.dir/src/parser/dop_parser.c.o"
   "/home/petruha2001/42sh/src/parser/main_parser.c" "/home/petruha2001/42sh/cmake-build-debug/CMakeFiles/42save.dir/src/parser/main_parser.c.o"
   "/home/petruha2001/42sh/src/shell_lvl.c" "/home/petruha2001/42sh/cmake-build-debug/CMakeFiles/42save.dir/src/shell_lvl.c.o"

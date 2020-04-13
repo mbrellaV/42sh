@@ -2931,6 +2931,33 @@ src/parser/check_bracket.c.s:
 	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/parser/check_bracket.c.s
 .PHONY : src/parser/check_bracket.c.s
 
+src/parser/create_dop_struct.o: src/parser/create_dop_struct.c.o
+
+.PHONY : src/parser/create_dop_struct.o
+
+# target to build an object file
+src/parser/create_dop_struct.c.o:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/parser/create_dop_struct.c.o
+.PHONY : src/parser/create_dop_struct.c.o
+
+src/parser/create_dop_struct.i: src/parser/create_dop_struct.c.i
+
+.PHONY : src/parser/create_dop_struct.i
+
+# target to preprocess a source file
+src/parser/create_dop_struct.c.i:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/parser/create_dop_struct.c.i
+.PHONY : src/parser/create_dop_struct.c.i
+
+src/parser/create_dop_struct.s: src/parser/create_dop_struct.c.s
+
+.PHONY : src/parser/create_dop_struct.s
+
+# target to generate assembly for a file
+src/parser/create_dop_struct.c.s:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/parser/create_dop_struct.c.s
+.PHONY : src/parser/create_dop_struct.c.s
+
 src/parser/dop_parser.o: src/parser/dop_parser.c.o
 
 .PHONY : src/parser/dop_parser.o
@@ -3333,6 +3360,9 @@ help:
 	@echo "... src/parser/check_bracket.o"
 	@echo "... src/parser/check_bracket.i"
 	@echo "... src/parser/check_bracket.s"
+	@echo "... src/parser/create_dop_struct.o"
+	@echo "... src/parser/create_dop_struct.i"
+	@echo "... src/parser/create_dop_struct.s"
 	@echo "... src/parser/dop_parser.o"
 	@echo "... src/parser/dop_parser.i"
 	@echo "... src/parser/dop_parser.s"
