@@ -512,18 +512,18 @@ CMakeFiles/42save.dir/src/lexer/change_sc.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/42save.dir/src/lexer/change_sc.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/petruha2001/42sh/src/lexer/change_sc.c -o CMakeFiles/42save.dir/src/lexer/change_sc.c.s
 
-CMakeFiles/42save.dir/src/lexer/change_spaces.c.o: CMakeFiles/42save.dir/flags.make
-CMakeFiles/42save.dir/src/lexer/change_spaces.c.o: ../src/lexer/change_spaces.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/petruha2001/42sh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Building C object CMakeFiles/42save.dir/src/lexer/change_spaces.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/42save.dir/src/lexer/change_spaces.c.o   -c /home/petruha2001/42sh/src/lexer/change_spaces.c
+CMakeFiles/42save.dir/src/lexer/change_slashes.c.o: CMakeFiles/42save.dir/flags.make
+CMakeFiles/42save.dir/src/lexer/change_slashes.c.o: ../src/lexer/change_slashes.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/petruha2001/42sh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Building C object CMakeFiles/42save.dir/src/lexer/change_slashes.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/42save.dir/src/lexer/change_slashes.c.o   -c /home/petruha2001/42sh/src/lexer/change_slashes.c
 
-CMakeFiles/42save.dir/src/lexer/change_spaces.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/42save.dir/src/lexer/change_spaces.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/petruha2001/42sh/src/lexer/change_spaces.c > CMakeFiles/42save.dir/src/lexer/change_spaces.c.i
+CMakeFiles/42save.dir/src/lexer/change_slashes.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/42save.dir/src/lexer/change_slashes.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/petruha2001/42sh/src/lexer/change_slashes.c > CMakeFiles/42save.dir/src/lexer/change_slashes.c.i
 
-CMakeFiles/42save.dir/src/lexer/change_spaces.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/42save.dir/src/lexer/change_spaces.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/petruha2001/42sh/src/lexer/change_spaces.c -o CMakeFiles/42save.dir/src/lexer/change_spaces.c.s
+CMakeFiles/42save.dir/src/lexer/change_slashes.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/42save.dir/src/lexer/change_slashes.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/petruha2001/42sh/src/lexer/change_slashes.c -o CMakeFiles/42save.dir/src/lexer/change_slashes.c.s
 
 CMakeFiles/42save.dir/src/lexer/change_str_by_str.c.o: CMakeFiles/42save.dir/flags.make
 CMakeFiles/42save.dir/src/lexer/change_str_by_str.c.o: ../src/lexer/change_str_by_str.c
@@ -1409,6 +1409,45 @@ CMakeFiles/42save.dir/src/exec/job_info.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/42save.dir/src/exec/job_info.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/petruha2001/42sh/src/exec/job_info.c -o CMakeFiles/42save.dir/src/exec/job_info.c.s
 
+CMakeFiles/42save.dir/src/lexer/join_par.c.o: CMakeFiles/42save.dir/flags.make
+CMakeFiles/42save.dir/src/lexer/join_par.c.o: ../src/lexer/join_par.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/petruha2001/42sh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_105) "Building C object CMakeFiles/42save.dir/src/lexer/join_par.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/42save.dir/src/lexer/join_par.c.o   -c /home/petruha2001/42sh/src/lexer/join_par.c
+
+CMakeFiles/42save.dir/src/lexer/join_par.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/42save.dir/src/lexer/join_par.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/petruha2001/42sh/src/lexer/join_par.c > CMakeFiles/42save.dir/src/lexer/join_par.c.i
+
+CMakeFiles/42save.dir/src/lexer/join_par.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/42save.dir/src/lexer/join_par.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/petruha2001/42sh/src/lexer/join_par.c -o CMakeFiles/42save.dir/src/lexer/join_par.c.s
+
+CMakeFiles/42save.dir/src/lexer/del_one_token.c.o: CMakeFiles/42save.dir/flags.make
+CMakeFiles/42save.dir/src/lexer/del_one_token.c.o: ../src/lexer/del_one_token.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/petruha2001/42sh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_106) "Building C object CMakeFiles/42save.dir/src/lexer/del_one_token.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/42save.dir/src/lexer/del_one_token.c.o   -c /home/petruha2001/42sh/src/lexer/del_one_token.c
+
+CMakeFiles/42save.dir/src/lexer/del_one_token.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/42save.dir/src/lexer/del_one_token.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/petruha2001/42sh/src/lexer/del_one_token.c > CMakeFiles/42save.dir/src/lexer/del_one_token.c.i
+
+CMakeFiles/42save.dir/src/lexer/del_one_token.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/42save.dir/src/lexer/del_one_token.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/petruha2001/42sh/src/lexer/del_one_token.c -o CMakeFiles/42save.dir/src/lexer/del_one_token.c.s
+
+CMakeFiles/42save.dir/src/lexer/zam_hidden_set.c.o: CMakeFiles/42save.dir/flags.make
+CMakeFiles/42save.dir/src/lexer/zam_hidden_set.c.o: ../src/lexer/zam_hidden_set.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/petruha2001/42sh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_107) "Building C object CMakeFiles/42save.dir/src/lexer/zam_hidden_set.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/42save.dir/src/lexer/zam_hidden_set.c.o   -c /home/petruha2001/42sh/src/lexer/zam_hidden_set.c
+
+CMakeFiles/42save.dir/src/lexer/zam_hidden_set.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/42save.dir/src/lexer/zam_hidden_set.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/petruha2001/42sh/src/lexer/zam_hidden_set.c > CMakeFiles/42save.dir/src/lexer/zam_hidden_set.c.i
+
+CMakeFiles/42save.dir/src/lexer/zam_hidden_set.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/42save.dir/src/lexer/zam_hidden_set.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/petruha2001/42sh/src/lexer/zam_hidden_set.c -o CMakeFiles/42save.dir/src/lexer/zam_hidden_set.c.s
+
 # Object files for target 42save
 42save_OBJECTS = \
 "CMakeFiles/42save.dir/src/builtins/alias/alias.c.o" \
@@ -1446,7 +1485,7 @@ CMakeFiles/42save.dir/src/exec/job_info.c.s: cmake_force
 "CMakeFiles/42save.dir/src/lexer/change_dol.c.o" \
 "CMakeFiles/42save.dir/src/lexer/change_hist_exp.c.o" \
 "CMakeFiles/42save.dir/src/lexer/change_sc.c.o" \
-"CMakeFiles/42save.dir/src/lexer/change_spaces.c.o" \
+"CMakeFiles/42save.dir/src/lexer/change_slashes.c.o" \
 "CMakeFiles/42save.dir/src/lexer/change_str_by_str.c.o" \
 "CMakeFiles/42save.dir/src/lexer/check_errors.c.o" \
 "CMakeFiles/42save.dir/src/lexer/cr_and_add_tokens.c.o" \
@@ -1514,7 +1553,10 @@ CMakeFiles/42save.dir/src/exec/job_info.c.s: cmake_force
 "CMakeFiles/42save.dir/src/exec/free_job_list.c.o" \
 "CMakeFiles/42save.dir/src/exec/find_jobs.c.o" \
 "CMakeFiles/42save.dir/src/exec/working_with_fds.c.o" \
-"CMakeFiles/42save.dir/src/exec/job_info.c.o"
+"CMakeFiles/42save.dir/src/exec/job_info.c.o" \
+"CMakeFiles/42save.dir/src/lexer/join_par.c.o" \
+"CMakeFiles/42save.dir/src/lexer/del_one_token.c.o" \
+"CMakeFiles/42save.dir/src/lexer/zam_hidden_set.c.o"
 
 # External object files for target 42save
 42save_EXTERNAL_OBJECTS =
@@ -1554,7 +1596,7 @@ CMakeFiles/42save.dir/src/exec/job_info.c.s: cmake_force
 42save: CMakeFiles/42save.dir/src/lexer/change_dol.c.o
 42save: CMakeFiles/42save.dir/src/lexer/change_hist_exp.c.o
 42save: CMakeFiles/42save.dir/src/lexer/change_sc.c.o
-42save: CMakeFiles/42save.dir/src/lexer/change_spaces.c.o
+42save: CMakeFiles/42save.dir/src/lexer/change_slashes.c.o
 42save: CMakeFiles/42save.dir/src/lexer/change_str_by_str.c.o
 42save: CMakeFiles/42save.dir/src/lexer/check_errors.c.o
 42save: CMakeFiles/42save.dir/src/lexer/cr_and_add_tokens.c.o
@@ -1623,10 +1665,13 @@ CMakeFiles/42save.dir/src/exec/job_info.c.s: cmake_force
 42save: CMakeFiles/42save.dir/src/exec/find_jobs.c.o
 42save: CMakeFiles/42save.dir/src/exec/working_with_fds.c.o
 42save: CMakeFiles/42save.dir/src/exec/job_info.c.o
+42save: CMakeFiles/42save.dir/src/lexer/join_par.c.o
+42save: CMakeFiles/42save.dir/src/lexer/del_one_token.c.o
+42save: CMakeFiles/42save.dir/src/lexer/zam_hidden_set.c.o
 42save: CMakeFiles/42save.dir/build.make
 42save: ../libft/libft.a
 42save: CMakeFiles/42save.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/petruha2001/42sh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_105) "Linking C executable 42save"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/petruha2001/42sh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_108) "Linking C executable 42save"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/42save.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

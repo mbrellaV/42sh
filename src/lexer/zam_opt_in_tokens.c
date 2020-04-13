@@ -9,7 +9,7 @@ char			**zam_opt_tokens(char **mas)
 	i = 0;
 	iopt = 0;
 	if (!(newopt = (char **)ft_memalloc(sizeof(char *) * (ft_env_len(mas) * 2))))
-		ft_error_q(15);
+		ft_error_q(2);
 	while (mas[i])
 	{
 		if ((get_op_type(mas[i]) >= 3 && get_op_type(mas[i]) <= 10))
@@ -17,9 +17,7 @@ char			**zam_opt_tokens(char **mas)
 			newopt[iopt] = ft_strdup((mas[i][0] == '<') ? "0" : "1");
 			newopt[iopt + 1] = ft_strdup(mas[i]);
 			newopt[iopt + 2] = ft_strdup(mas[i + 1]);
-			//dprintf(2, "\nsas: |%s, %s, %s, %d, %d|\n", mas[i], mas[i + 1], mas[i + 2], i, iopt);
 			iopt += 3;
-
 			i += 2;
 		}
 		else if (mas[i][0] >= '0' && mas[i][0] <= '9')

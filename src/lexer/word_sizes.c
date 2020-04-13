@@ -46,7 +46,6 @@ int				word_size(char *str)
 	int i;
 
 	i = 0;
-	//dprintf(2, "\nyes: |%c|\n", *str);
 	if (isoperator(*str) > 0)
 		return (operator_size(str));
 	if (isword(*str) == 2)
@@ -59,9 +58,6 @@ int				word_size(char *str)
 		return (-1);
 	if (issc(*str))
 		return (sc_size(str, *str));
-//	if (isword(*str) == '(')
-//		return (1);
-	//dprintf(2, "\nno: |%c|\n", *str);
 	while (*str)
 	{
 		if (isword(*str) != 1 && isword(*str) != 3)

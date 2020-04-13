@@ -193,6 +193,10 @@ int		*ft_create_opened_fds();
 void	disable_shell_signals();
 void	recover_normal_shell_signals();
 /////////////////
+void			del_one_node_in_lextokens(t_lextoken *token_to_del);
+t_lextoken		*do_zam_join_par(t_lextoken *h);
+
+////
 void	ft_infinit_pipe2(t_exectoken *head, t_memory *q);
 int		ft_whatis2(t_process *tmp);
 void	init_shell(void);

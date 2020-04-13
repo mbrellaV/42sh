@@ -1392,32 +1392,32 @@ src/lexer/change_sc.c.s:
 	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/lexer/change_sc.c.s
 .PHONY : src/lexer/change_sc.c.s
 
-src/lexer/change_spaces.o: src/lexer/change_spaces.c.o
+src/lexer/change_slashes.o: src/lexer/change_slashes.c.o
 
-.PHONY : src/lexer/change_spaces.o
+.PHONY : src/lexer/change_slashes.o
 
 # target to build an object file
-src/lexer/change_spaces.c.o:
-	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/lexer/change_spaces.c.o
-.PHONY : src/lexer/change_spaces.c.o
+src/lexer/change_slashes.c.o:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/lexer/change_slashes.c.o
+.PHONY : src/lexer/change_slashes.c.o
 
-src/lexer/change_spaces.i: src/lexer/change_spaces.c.i
+src/lexer/change_slashes.i: src/lexer/change_slashes.c.i
 
-.PHONY : src/lexer/change_spaces.i
+.PHONY : src/lexer/change_slashes.i
 
 # target to preprocess a source file
-src/lexer/change_spaces.c.i:
-	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/lexer/change_spaces.c.i
-.PHONY : src/lexer/change_spaces.c.i
+src/lexer/change_slashes.c.i:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/lexer/change_slashes.c.i
+.PHONY : src/lexer/change_slashes.c.i
 
-src/lexer/change_spaces.s: src/lexer/change_spaces.c.s
+src/lexer/change_slashes.s: src/lexer/change_slashes.c.s
 
-.PHONY : src/lexer/change_spaces.s
+.PHONY : src/lexer/change_slashes.s
 
 # target to generate assembly for a file
-src/lexer/change_spaces.c.s:
-	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/lexer/change_spaces.c.s
-.PHONY : src/lexer/change_spaces.c.s
+src/lexer/change_slashes.c.s:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/lexer/change_slashes.c.s
+.PHONY : src/lexer/change_slashes.c.s
 
 src/lexer/change_str_by_str.o: src/lexer/change_str_by_str.c.o
 
@@ -1527,6 +1527,33 @@ src/lexer/create_new_lexer_struct.c.s:
 	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/lexer/create_new_lexer_struct.c.s
 .PHONY : src/lexer/create_new_lexer_struct.c.s
 
+src/lexer/del_one_token.o: src/lexer/del_one_token.c.o
+
+.PHONY : src/lexer/del_one_token.o
+
+# target to build an object file
+src/lexer/del_one_token.c.o:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/lexer/del_one_token.c.o
+.PHONY : src/lexer/del_one_token.c.o
+
+src/lexer/del_one_token.i: src/lexer/del_one_token.c.i
+
+.PHONY : src/lexer/del_one_token.i
+
+# target to preprocess a source file
+src/lexer/del_one_token.c.i:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/lexer/del_one_token.c.i
+.PHONY : src/lexer/del_one_token.c.i
+
+src/lexer/del_one_token.s: src/lexer/del_one_token.c.s
+
+.PHONY : src/lexer/del_one_token.s
+
+# target to generate assembly for a file
+src/lexer/del_one_token.c.s:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/lexer/del_one_token.c.s
+.PHONY : src/lexer/del_one_token.c.s
+
 src/lexer/dop_funs.o: src/lexer/dop_funs.c.o
 
 .PHONY : src/lexer/dop_funs.o
@@ -1608,6 +1635,33 @@ src/lexer/history_search.c.s:
 	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/lexer/history_search.c.s
 .PHONY : src/lexer/history_search.c.s
 
+src/lexer/join_par.o: src/lexer/join_par.c.o
+
+.PHONY : src/lexer/join_par.o
+
+# target to build an object file
+src/lexer/join_par.c.o:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/lexer/join_par.c.o
+.PHONY : src/lexer/join_par.c.o
+
+src/lexer/join_par.i: src/lexer/join_par.c.i
+
+.PHONY : src/lexer/join_par.i
+
+# target to preprocess a source file
+src/lexer/join_par.c.i:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/lexer/join_par.c.i
+.PHONY : src/lexer/join_par.c.i
+
+src/lexer/join_par.s: src/lexer/join_par.c.s
+
+.PHONY : src/lexer/join_par.s
+
+# target to generate assembly for a file
+src/lexer/join_par.c.s:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/lexer/join_par.c.s
+.PHONY : src/lexer/join_par.c.s
+
 src/lexer/kill_dop_structure.o: src/lexer/kill_dop_structure.c.o
 
 .PHONY : src/lexer/kill_dop_structure.o
@@ -1688,6 +1742,33 @@ src/lexer/word_sizes.s: src/lexer/word_sizes.c.s
 src/lexer/word_sizes.c.s:
 	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/lexer/word_sizes.c.s
 .PHONY : src/lexer/word_sizes.c.s
+
+src/lexer/zam_hidden_set.o: src/lexer/zam_hidden_set.c.o
+
+.PHONY : src/lexer/zam_hidden_set.o
+
+# target to build an object file
+src/lexer/zam_hidden_set.c.o:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/lexer/zam_hidden_set.c.o
+.PHONY : src/lexer/zam_hidden_set.c.o
+
+src/lexer/zam_hidden_set.i: src/lexer/zam_hidden_set.c.i
+
+.PHONY : src/lexer/zam_hidden_set.i
+
+# target to preprocess a source file
+src/lexer/zam_hidden_set.c.i:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/lexer/zam_hidden_set.c.i
+.PHONY : src/lexer/zam_hidden_set.c.i
+
+src/lexer/zam_hidden_set.s: src/lexer/zam_hidden_set.c.s
+
+.PHONY : src/lexer/zam_hidden_set.s
+
+# target to generate assembly for a file
+src/lexer/zam_hidden_set.c.s:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/lexer/zam_hidden_set.c.s
+.PHONY : src/lexer/zam_hidden_set.c.s
 
 src/lexer/zam_opt_in_tokens.o: src/lexer/zam_opt_in_tokens.c.o
 
@@ -3081,9 +3162,9 @@ help:
 	@echo "... src/lexer/change_sc.o"
 	@echo "... src/lexer/change_sc.i"
 	@echo "... src/lexer/change_sc.s"
-	@echo "... src/lexer/change_spaces.o"
-	@echo "... src/lexer/change_spaces.i"
-	@echo "... src/lexer/change_spaces.s"
+	@echo "... src/lexer/change_slashes.o"
+	@echo "... src/lexer/change_slashes.i"
+	@echo "... src/lexer/change_slashes.s"
 	@echo "... src/lexer/change_str_by_str.o"
 	@echo "... src/lexer/change_str_by_str.i"
 	@echo "... src/lexer/change_str_by_str.s"
@@ -3096,6 +3177,9 @@ help:
 	@echo "... src/lexer/create_new_lexer_struct.o"
 	@echo "... src/lexer/create_new_lexer_struct.i"
 	@echo "... src/lexer/create_new_lexer_struct.s"
+	@echo "... src/lexer/del_one_token.o"
+	@echo "... src/lexer/del_one_token.i"
+	@echo "... src/lexer/del_one_token.s"
 	@echo "... src/lexer/dop_funs.o"
 	@echo "... src/lexer/dop_funs.i"
 	@echo "... src/lexer/dop_funs.s"
@@ -3105,6 +3189,9 @@ help:
 	@echo "... src/lexer/history_search.o"
 	@echo "... src/lexer/history_search.i"
 	@echo "... src/lexer/history_search.s"
+	@echo "... src/lexer/join_par.o"
+	@echo "... src/lexer/join_par.i"
+	@echo "... src/lexer/join_par.s"
 	@echo "... src/lexer/kill_dop_structure.o"
 	@echo "... src/lexer/kill_dop_structure.i"
 	@echo "... src/lexer/kill_dop_structure.s"
@@ -3114,6 +3201,9 @@ help:
 	@echo "... src/lexer/word_sizes.o"
 	@echo "... src/lexer/word_sizes.i"
 	@echo "... src/lexer/word_sizes.s"
+	@echo "... src/lexer/zam_hidden_set.o"
+	@echo "... src/lexer/zam_hidden_set.i"
+	@echo "... src/lexer/zam_hidden_set.s"
 	@echo "... src/lexer/zam_opt_in_tokens.o"
 	@echo "... src/lexer/zam_opt_in_tokens.i"
 	@echo "... src/lexer/zam_opt_in_tokens.s"

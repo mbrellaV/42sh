@@ -62,7 +62,7 @@ SRC_BASE = builtins/ft_cd.c\
     evaln/inftopost.c\
     evaln/ft_do_zam_eval.c\
 	lexer/change_dol.c\
-	lexer/change_spaces.c\
+	lexer/change_slashes.c\
 	lexer/cr_and_add_tokens.c\
 	lexer/dop_funs.c\
 	lexer/all_bax_and_hist_change.c\
@@ -76,6 +76,9 @@ SRC_BASE = builtins/ft_cd.c\
 	lexer/check_errors.c\
 	lexer/create_new_lexer_struct.c\
 	lexer/zam_opt_in_tokens.c\
+	lexer/zam_hidden_set.c\
+	lexer/join_par.c\
+	lexer/del_one_token.c\
 	nucleus/ft_read_8.c\
 	nucleus/ft_c.c\
 	nucleus/input_mode.c\
