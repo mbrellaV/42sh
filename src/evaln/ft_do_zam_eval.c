@@ -1,90 +1,80 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_do_zam_eval.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: wstygg <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/04/13 19:53:08 by wstygg            #+#    #+#             */
+/*   Updated: 2020/04/13 20:04:23 by wstygg           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "eval_expr.h"
 
-char	*ft_do_cut(char *tmp, int *d)
+char		*ft_do_cut(char *tmp)
 {
 	int		dopi;
-	char	*str;
-	char    *dop;
-	char    *str_for_rec;
+	char 	*str;
+	char	*dop;
+	char	*str_for_rec;
+	char	*str_for_del;
 
 	dopi = 0;
     if (tmp[dopi] == '(' && tmp[dopi + 1] == '(')
-	{
         if (sc_size(&tmp[dopi], '(') != -1 && sc_size(&tmp[dopi + 1], '(') != -1)
         {
             dopi = sc_size(&tmp[dopi], '(') - 3;
             dop = ft_strsub(tmp, 2, dopi - 2);
-           // dprintf(2, "\n|%s|\n", dop);
+            str_for_del = dop;
             str_for_rec = ft_main_calc_rec(dop);
-			//dprintf(2, "\n1|%s|\n", str_for_rec);
-			if (str_for_rec == NULL)
-			{
-                //dprintf(2, "\n2|%s|\n", str_for_rec);
-                *d += ft_strlen(tmp);
-                str = ft_itoa(eval_expr(dop));
-				ft_strdel(&dop);
-				return (str);
-            }
-			else
-			{
-				//dprintf(2, "\n3|%s|\n", str_for_rec);
-				*d += ft_strlen(tmp);
-				str = ft_itoa(eval_expr(str_for_rec));
-				ft_strdel(&str_for_rec);
-				return (str);
-			}
+			if (str_for_rec != NULL)
+				dop = str_for_rec;
+			str = ft_itoa(eval_expr(dop));
+			if (str_for_del != dop)
+				ft_strdel(&str_for_del);
+			ft_strdel(&dop);
+			return (str);
         }
-	}
     return (NULL);
 }
 
-char        *ft_main_calc_rec(char *mas)
+char		*ft_main_calc_rec(char *mas)
 {
-	int		d;
-	int i;
 	char	*newstr;
-	char    *cut_str;
+	char	*cut_str;
+	int		i;
 
-	d = 0;
 	i = 0;
-	if (mas == NULL)
-		return (ft_strnew(130000));
 	if (!(newstr = ft_memalloc(ft_strlen(mas) + 1)))
 		return (NULL);
-	while (mas[d] != '\0')
+	while (*mas != '\0' && *mas != '$')
 	{
-		if (mas[d] == '$')
-		{
-			i++;
-			cut_str = ft_do_cut(&mas[d + 1], &d);
-			//dprintf(2, "\n|%s|\n", cut_str);
-			if (cut_str == NULL)
-			{
-				ft_strdel(&newstr);
-				ft_strdel(&cut_str);
-				return (NULL);
-			}
-			ft_strcat(newstr, cut_str);
-			ft_strdel(&cut_str);
-		}
-		else
-		{
-			newstr[d] = mas[d];
-			d++;
-		}
+		newstr[i++] = *mas;
+		mas++;
 	}
-	if (i == 0)
+	if (*mas == '$')
 	{
-		ft_strdel(&newstr);
-		return (NULL);
+		cut_str = ft_do_cut(mas + 1);
+		if (cut_str == NULL)
+		{
+			ft_strdel(&newstr);
+			return (NULL);
+		}
+		ft_strcat(newstr, cut_str);
+		ft_strdel(&cut_str);
+		return (newstr);
 	}
-	return (newstr);
+	ft_strdel(&newstr);
+	return (NULL);
 }
 
-char        *ft_do_zam_eval(char *mas)
+char		*ft_do_zam_eval(char *mas)
 {
-	char *newstr;
+	char	*newstr;
 
+	if (mas == NULL)
+		return (NULL);
 	if (*mas == '\0')
 		return (mas);
     if ((newstr = ft_main_calc_rec(mas)) == NULL)

@@ -6,7 +6,7 @@
 /*   By: mbrella <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/31 19:59:12 by mbrella           #+#    #+#             */
-/*   Updated: 2020/01/31 19:59:13 by mbrella          ###   ########.fr       */
+/*   Updated: 2020/04/13 20:04:23 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,8 @@ void	ft_global_env(char **env, int argc)
 
 	i = -1;
 	k = argc;
-	if (!(g_env = (char **)ft_memalloc(sizeof(char *) * (ft_env_len(env) + 1))))
+	if (!(g_env = (char **)ft_memalloc(sizeof(char *) *
+			(ft_env_len(env) + 1))))
 		ft_error_q(1);
 	while (env[++i])
 	{

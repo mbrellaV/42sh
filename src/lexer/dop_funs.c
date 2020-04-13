@@ -6,7 +6,7 @@
 /*   By: mbrella <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/27 13:45:06 by mbrella           #+#    #+#             */
-/*   Updated: 2020/01/27 13:45:07 by mbrella          ###   ########.fr       */
+/*   Updated: 2020/04/13 20:04:23 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,8 @@ int				isword(char c)
 		return (2);
 	if (issc(c) == 1)
 		return (3);
+	if (c == '$')
+		return (4);
 	if (!isoperator(c) && c != ' ' && c != '\t' && c != '\0')
 		return (1);
 	return (0);

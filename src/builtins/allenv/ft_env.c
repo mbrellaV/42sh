@@ -6,7 +6,7 @@
 /*   By: qmartina <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/29 17:28:48 by qmartina          #+#    #+#             */
-/*   Updated: 2019/10/29 17:28:50 by qmartina         ###   ########.fr       */
+/*   Updated: 2020/04/13 20:04:23 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ void	do_all_var(char **env)
 
     i = -1;
     if (!(g_all_var = (char **)ft_memalloc(sizeof(char *) *
-                                           (ft_env_len(env) + 2))))
+    (ft_env_len(env) + 2))))
         ft_error_q(1);
     while (env[++i])
     {

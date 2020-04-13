@@ -157,6 +157,9 @@
 		<Unit filename="/home/petruha2001/42sh/src/evaln/inftopost.c">
 			<Option target="42save"/>
 		</Unit>
+		<Unit filename="/home/petruha2001/42sh/src/evaln/sub_and_add.c">
+			<Option target="42save"/>
+		</Unit>
 		<Unit filename="/home/petruha2001/42sh/src/exec/continuing_stopped_jobs.c">
 			<Option target="42save"/>
 		</Unit>
@@ -241,7 +244,7 @@
 		<Unit filename="/home/petruha2001/42sh/src/lexer/change_sc.c">
 			<Option target="42save"/>
 		</Unit>
-		<Unit filename="/home/petruha2001/42sh/src/lexer/change_slashes.c">
+		<Unit filename="/home/petruha2001/42sh/src/lexer/change_spaces.c">
 			<Option target="42save"/>
 		</Unit>
 		<Unit filename="/home/petruha2001/42sh/src/lexer/change_str_by_str.c">
@@ -256,9 +259,6 @@
 		<Unit filename="/home/petruha2001/42sh/src/lexer/create_new_lexer_struct.c">
 			<Option target="42save"/>
 		</Unit>
-		<Unit filename="/home/petruha2001/42sh/src/lexer/del_one_token.c">
-			<Option target="42save"/>
-		</Unit>
 		<Unit filename="/home/petruha2001/42sh/src/lexer/dop_funs.c">
 			<Option target="42save"/>
 		</Unit>
@@ -268,9 +268,6 @@
 		<Unit filename="/home/petruha2001/42sh/src/lexer/history_search.c">
 			<Option target="42save"/>
 		</Unit>
-		<Unit filename="/home/petruha2001/42sh/src/lexer/join_par.c">
-			<Option target="42save"/>
-		</Unit>
 		<Unit filename="/home/petruha2001/42sh/src/lexer/kill_dop_structure.c">
 			<Option target="42save"/>
 		</Unit>
@@ -278,9 +275,6 @@
 			<Option target="42save"/>
 		</Unit>
 		<Unit filename="/home/petruha2001/42sh/src/lexer/word_sizes.c">
-			<Option target="42save"/>
-		</Unit>
-		<Unit filename="/home/petruha2001/42sh/src/lexer/zam_hidden_set.c">
 			<Option target="42save"/>
 		</Unit>
 		<Unit filename="/home/petruha2001/42sh/src/lexer/zam_opt_in_tokens.c">
@@ -410,9 +404,6 @@
 			<Option target="42save"/>
 		</Unit>
 		<Unit filename="/home/petruha2001/42sh/src/parser/check_bracket.c">
-			<Option target="42save"/>
-		</Unit>
-		<Unit filename="/home/petruha2001/42sh/src/parser/create_dop_struct.c">
 			<Option target="42save"/>
 		</Unit>
 		<Unit filename="/home/petruha2001/42sh/src/parser/dop_parser.c">

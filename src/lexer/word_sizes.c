@@ -6,7 +6,7 @@
 /*   By: mbrella <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/27 13:47:39 by mbrella           #+#    #+#             */
-/*   Updated: 2020/01/27 13:47:40 by mbrella          ###   ########.fr       */
+/*   Updated: 2020/04/13 20:04:23 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,14 +30,15 @@ int				size_with_bax(char *str)
 	int i;
 
 	i = 0;
+	str++;
 	while (*str)
 	{
 		if (isword(*str) != 1)
-			return (i);
+			return (i + 1);
 		i++;
 		str++;
 	}
-	return (i);
+	return (i + 1);
 }
 
 

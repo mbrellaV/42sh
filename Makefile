@@ -5,8 +5,7 @@
 #                                                     +:+ +:+         +:+      #
 #    By: qmartina <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2019/10/17 16:01:11 by qmartina          #+#    #+#              #
-#    Updated: 2019/10/17 16:01:15 by qmartina         ###   ########.fr        #
+#    Created: 2019/10/17 16:01:11 by qmartina          #+#    #+##   Updated: 2020/04/13 20:04:22 by wstygg           ###   ########.fr       #######.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -61,8 +60,9 @@ SRC_BASE = builtins/ft_cd.c\
     evaln/atoimy.c\
     evaln/inftopost.c\
     evaln/ft_do_zam_eval.c\
+    evaln/sub_and_add.c\
 	lexer/change_dol.c\
-	lexer/change_slashes.c\
+	lexer/change_spaces.c\
 	lexer/cr_and_add_tokens.c\
 	lexer/dop_funs.c\
 	lexer/all_bax_and_hist_change.c\
@@ -76,9 +76,6 @@ SRC_BASE = builtins/ft_cd.c\
 	lexer/check_errors.c\
 	lexer/create_new_lexer_struct.c\
 	lexer/zam_opt_in_tokens.c\
-	lexer/zam_hidden_set.c\
-	lexer/join_par.c\
-	lexer/del_one_token.c\
 	nucleus/ft_read_8.c\
 	nucleus/ft_c.c\
 	nucleus/input_mode.c\

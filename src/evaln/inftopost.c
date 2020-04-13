@@ -6,7 +6,7 @@
 /*   By: mbrella <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/17 13:26:44 by mbrella           #+#    #+#             */
-/*   Updated: 2019/08/18 19:44:30 by mbrella          ###   ########.fr       */
+/*   Updated: 2020/04/13 20:04:23 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,8 @@ int		opr_znak(char *dstr, int *marker)
 	i = *marker;
 	str = dstr;
 	sum = 300;
-	//dprintf(2, "\nobc: |%s, %s, %d|\n", str, &str[i], i);
 	while (str[i] && (is_znak(str[i]) || issc(str[i])))
 	{
-		//dprintf(2, "\nbuk: |%d|\n", str[i]);
 		sum += str[i];
 		(*marker)++;
 		i++;
@@ -54,12 +52,9 @@ int		eval_expr(char *str)
 			l->i = 0;
 		}
 		if ((is_znak(str[i]) && l->i == 0) || (str[i] == '(' || str[i] == ')'))
-		{
 			dostack(stackos, stackzn, opr_znak(str, &i), l);
-		}
 		else
 			i++;
 	}
 	return (calcend(&stackos, &stackzn, &l));
 }
-

@@ -6,7 +6,7 @@
 /*   By: mbrella <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/11 18:53:40 by mbrella           #+#    #+#             */
-/*   Updated: 2019/12/11 18:53:42 by mbrella          ###   ########.fr       */
+/*   Updated: 2020/04/13 20:04:23 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,8 @@ int				dop_lexer1(t_dop_str *tmp, char *line)
 	if (ispar(line[tmp->i_c]) && tmp->i_c > 0 && isword(line[tmp->i_c - 1]))
 		tmp->tail_c->is_near_word = 1;
 	if (isword(line[tmp->i_c]) && tmp->i_c > 0 && ispar(line[tmp->i_c - 1]))
+		tmp->tail_c->is_near_word = 1;
+	if (isword(line[tmp->i_c]) == 4 && tmp->i_c > 0 && isword(line[tmp->i_c - 1]))
 		tmp->tail_c->is_near_word = 1;
 	if (ispar(line[tmp->i_c]))
 		tmp->tail_c->inhibitor_lvl = line[tmp->i_c] == '"' ? 1 : 2;

@@ -636,6 +636,33 @@ src/evaln/inftopost.c.s:
 	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/evaln/inftopost.c.s
 .PHONY : src/evaln/inftopost.c.s
 
+src/evaln/sub_and_add.o: src/evaln/sub_and_add.c.o
+
+.PHONY : src/evaln/sub_and_add.o
+
+# target to build an object file
+src/evaln/sub_and_add.c.o:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/evaln/sub_and_add.c.o
+.PHONY : src/evaln/sub_and_add.c.o
+
+src/evaln/sub_and_add.i: src/evaln/sub_and_add.c.i
+
+.PHONY : src/evaln/sub_and_add.i
+
+# target to preprocess a source file
+src/evaln/sub_and_add.c.i:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/evaln/sub_and_add.c.i
+.PHONY : src/evaln/sub_and_add.c.i
+
+src/evaln/sub_and_add.s: src/evaln/sub_and_add.c.s
+
+.PHONY : src/evaln/sub_and_add.s
+
+# target to generate assembly for a file
+src/evaln/sub_and_add.c.s:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/evaln/sub_and_add.c.s
+.PHONY : src/evaln/sub_and_add.c.s
+
 src/exec/continuing_stopped_jobs.o: src/exec/continuing_stopped_jobs.c.o
 
 .PHONY : src/exec/continuing_stopped_jobs.o
@@ -1392,32 +1419,32 @@ src/lexer/change_sc.c.s:
 	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/lexer/change_sc.c.s
 .PHONY : src/lexer/change_sc.c.s
 
-src/lexer/change_slashes.o: src/lexer/change_slashes.c.o
+src/lexer/change_spaces.o: src/lexer/change_spaces.c.o
 
-.PHONY : src/lexer/change_slashes.o
+.PHONY : src/lexer/change_spaces.o
 
 # target to build an object file
-src/lexer/change_slashes.c.o:
-	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/lexer/change_slashes.c.o
-.PHONY : src/lexer/change_slashes.c.o
+src/lexer/change_spaces.c.o:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/lexer/change_spaces.c.o
+.PHONY : src/lexer/change_spaces.c.o
 
-src/lexer/change_slashes.i: src/lexer/change_slashes.c.i
+src/lexer/change_spaces.i: src/lexer/change_spaces.c.i
 
-.PHONY : src/lexer/change_slashes.i
+.PHONY : src/lexer/change_spaces.i
 
 # target to preprocess a source file
-src/lexer/change_slashes.c.i:
-	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/lexer/change_slashes.c.i
-.PHONY : src/lexer/change_slashes.c.i
+src/lexer/change_spaces.c.i:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/lexer/change_spaces.c.i
+.PHONY : src/lexer/change_spaces.c.i
 
-src/lexer/change_slashes.s: src/lexer/change_slashes.c.s
+src/lexer/change_spaces.s: src/lexer/change_spaces.c.s
 
-.PHONY : src/lexer/change_slashes.s
+.PHONY : src/lexer/change_spaces.s
 
 # target to generate assembly for a file
-src/lexer/change_slashes.c.s:
-	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/lexer/change_slashes.c.s
-.PHONY : src/lexer/change_slashes.c.s
+src/lexer/change_spaces.c.s:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/lexer/change_spaces.c.s
+.PHONY : src/lexer/change_spaces.c.s
 
 src/lexer/change_str_by_str.o: src/lexer/change_str_by_str.c.o
 
@@ -1527,33 +1554,6 @@ src/lexer/create_new_lexer_struct.c.s:
 	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/lexer/create_new_lexer_struct.c.s
 .PHONY : src/lexer/create_new_lexer_struct.c.s
 
-src/lexer/del_one_token.o: src/lexer/del_one_token.c.o
-
-.PHONY : src/lexer/del_one_token.o
-
-# target to build an object file
-src/lexer/del_one_token.c.o:
-	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/lexer/del_one_token.c.o
-.PHONY : src/lexer/del_one_token.c.o
-
-src/lexer/del_one_token.i: src/lexer/del_one_token.c.i
-
-.PHONY : src/lexer/del_one_token.i
-
-# target to preprocess a source file
-src/lexer/del_one_token.c.i:
-	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/lexer/del_one_token.c.i
-.PHONY : src/lexer/del_one_token.c.i
-
-src/lexer/del_one_token.s: src/lexer/del_one_token.c.s
-
-.PHONY : src/lexer/del_one_token.s
-
-# target to generate assembly for a file
-src/lexer/del_one_token.c.s:
-	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/lexer/del_one_token.c.s
-.PHONY : src/lexer/del_one_token.c.s
-
 src/lexer/dop_funs.o: src/lexer/dop_funs.c.o
 
 .PHONY : src/lexer/dop_funs.o
@@ -1635,33 +1635,6 @@ src/lexer/history_search.c.s:
 	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/lexer/history_search.c.s
 .PHONY : src/lexer/history_search.c.s
 
-src/lexer/join_par.o: src/lexer/join_par.c.o
-
-.PHONY : src/lexer/join_par.o
-
-# target to build an object file
-src/lexer/join_par.c.o:
-	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/lexer/join_par.c.o
-.PHONY : src/lexer/join_par.c.o
-
-src/lexer/join_par.i: src/lexer/join_par.c.i
-
-.PHONY : src/lexer/join_par.i
-
-# target to preprocess a source file
-src/lexer/join_par.c.i:
-	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/lexer/join_par.c.i
-.PHONY : src/lexer/join_par.c.i
-
-src/lexer/join_par.s: src/lexer/join_par.c.s
-
-.PHONY : src/lexer/join_par.s
-
-# target to generate assembly for a file
-src/lexer/join_par.c.s:
-	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/lexer/join_par.c.s
-.PHONY : src/lexer/join_par.c.s
-
 src/lexer/kill_dop_structure.o: src/lexer/kill_dop_structure.c.o
 
 .PHONY : src/lexer/kill_dop_structure.o
@@ -1742,33 +1715,6 @@ src/lexer/word_sizes.s: src/lexer/word_sizes.c.s
 src/lexer/word_sizes.c.s:
 	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/lexer/word_sizes.c.s
 .PHONY : src/lexer/word_sizes.c.s
-
-src/lexer/zam_hidden_set.o: src/lexer/zam_hidden_set.c.o
-
-.PHONY : src/lexer/zam_hidden_set.o
-
-# target to build an object file
-src/lexer/zam_hidden_set.c.o:
-	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/lexer/zam_hidden_set.c.o
-.PHONY : src/lexer/zam_hidden_set.c.o
-
-src/lexer/zam_hidden_set.i: src/lexer/zam_hidden_set.c.i
-
-.PHONY : src/lexer/zam_hidden_set.i
-
-# target to preprocess a source file
-src/lexer/zam_hidden_set.c.i:
-	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/lexer/zam_hidden_set.c.i
-.PHONY : src/lexer/zam_hidden_set.c.i
-
-src/lexer/zam_hidden_set.s: src/lexer/zam_hidden_set.c.s
-
-.PHONY : src/lexer/zam_hidden_set.s
-
-# target to generate assembly for a file
-src/lexer/zam_hidden_set.c.s:
-	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/lexer/zam_hidden_set.c.s
-.PHONY : src/lexer/zam_hidden_set.c.s
 
 src/lexer/zam_opt_in_tokens.o: src/lexer/zam_opt_in_tokens.c.o
 
@@ -2931,33 +2877,6 @@ src/parser/check_bracket.c.s:
 	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/parser/check_bracket.c.s
 .PHONY : src/parser/check_bracket.c.s
 
-src/parser/create_dop_struct.o: src/parser/create_dop_struct.c.o
-
-.PHONY : src/parser/create_dop_struct.o
-
-# target to build an object file
-src/parser/create_dop_struct.c.o:
-	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/parser/create_dop_struct.c.o
-.PHONY : src/parser/create_dop_struct.c.o
-
-src/parser/create_dop_struct.i: src/parser/create_dop_struct.c.i
-
-.PHONY : src/parser/create_dop_struct.i
-
-# target to preprocess a source file
-src/parser/create_dop_struct.c.i:
-	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/parser/create_dop_struct.c.i
-.PHONY : src/parser/create_dop_struct.c.i
-
-src/parser/create_dop_struct.s: src/parser/create_dop_struct.c.s
-
-.PHONY : src/parser/create_dop_struct.s
-
-# target to generate assembly for a file
-src/parser/create_dop_struct.c.s:
-	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/parser/create_dop_struct.c.s
-.PHONY : src/parser/create_dop_struct.c.s
-
 src/parser/dop_parser.o: src/parser/dop_parser.c.o
 
 .PHONY : src/parser/dop_parser.o
@@ -3105,6 +3024,9 @@ help:
 	@echo "... src/evaln/inftopost.o"
 	@echo "... src/evaln/inftopost.i"
 	@echo "... src/evaln/inftopost.s"
+	@echo "... src/evaln/sub_and_add.o"
+	@echo "... src/evaln/sub_and_add.i"
+	@echo "... src/evaln/sub_and_add.s"
 	@echo "... src/exec/continuing_stopped_jobs.o"
 	@echo "... src/exec/continuing_stopped_jobs.i"
 	@echo "... src/exec/continuing_stopped_jobs.s"
@@ -3189,9 +3111,9 @@ help:
 	@echo "... src/lexer/change_sc.o"
 	@echo "... src/lexer/change_sc.i"
 	@echo "... src/lexer/change_sc.s"
-	@echo "... src/lexer/change_slashes.o"
-	@echo "... src/lexer/change_slashes.i"
-	@echo "... src/lexer/change_slashes.s"
+	@echo "... src/lexer/change_spaces.o"
+	@echo "... src/lexer/change_spaces.i"
+	@echo "... src/lexer/change_spaces.s"
 	@echo "... src/lexer/change_str_by_str.o"
 	@echo "... src/lexer/change_str_by_str.i"
 	@echo "... src/lexer/change_str_by_str.s"
@@ -3204,9 +3126,6 @@ help:
 	@echo "... src/lexer/create_new_lexer_struct.o"
 	@echo "... src/lexer/create_new_lexer_struct.i"
 	@echo "... src/lexer/create_new_lexer_struct.s"
-	@echo "... src/lexer/del_one_token.o"
-	@echo "... src/lexer/del_one_token.i"
-	@echo "... src/lexer/del_one_token.s"
 	@echo "... src/lexer/dop_funs.o"
 	@echo "... src/lexer/dop_funs.i"
 	@echo "... src/lexer/dop_funs.s"
@@ -3216,9 +3135,6 @@ help:
 	@echo "... src/lexer/history_search.o"
 	@echo "... src/lexer/history_search.i"
 	@echo "... src/lexer/history_search.s"
-	@echo "... src/lexer/join_par.o"
-	@echo "... src/lexer/join_par.i"
-	@echo "... src/lexer/join_par.s"
 	@echo "... src/lexer/kill_dop_structure.o"
 	@echo "... src/lexer/kill_dop_structure.i"
 	@echo "... src/lexer/kill_dop_structure.s"
@@ -3228,9 +3144,6 @@ help:
 	@echo "... src/lexer/word_sizes.o"
 	@echo "... src/lexer/word_sizes.i"
 	@echo "... src/lexer/word_sizes.s"
-	@echo "... src/lexer/zam_hidden_set.o"
-	@echo "... src/lexer/zam_hidden_set.i"
-	@echo "... src/lexer/zam_hidden_set.s"
 	@echo "... src/lexer/zam_opt_in_tokens.o"
 	@echo "... src/lexer/zam_opt_in_tokens.i"
 	@echo "... src/lexer/zam_opt_in_tokens.s"
@@ -3360,9 +3273,6 @@ help:
 	@echo "... src/parser/check_bracket.o"
 	@echo "... src/parser/check_bracket.i"
 	@echo "... src/parser/check_bracket.s"
-	@echo "... src/parser/create_dop_struct.o"
-	@echo "... src/parser/create_dop_struct.i"
-	@echo "... src/parser/create_dop_struct.s"
 	@echo "... src/parser/dop_parser.o"
 	@echo "... src/parser/dop_parser.i"
 	@echo "... src/parser/dop_parser.s"

@@ -6,7 +6,7 @@
 /*   By: mbrella <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/11 10:58:44 by mbrella           #+#    #+#             */
-/*   Updated: 2020/01/28 14:58:57 by mbrella          ###   ########.fr       */
+/*   Updated: 2020/04/13 20:04:22 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -193,10 +193,6 @@ int		*ft_create_opened_fds();
 void	disable_shell_signals();
 void	recover_normal_shell_signals();
 /////////////////
-void			del_one_node_in_lextokens(t_lextoken *token_to_del);
-t_lextoken		*do_zam_join_par(t_lextoken *h);
-
-////
 void	ft_infinit_pipe2(t_exectoken *head, t_memory *q);
 int		ft_whatis2(t_process *tmp);
 void	init_shell(void);
