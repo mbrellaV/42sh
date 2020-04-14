@@ -12,6 +12,32 @@
 
 #include "eval_expr.h"
 
+int			check_symbols(char *str, char *str_for_del)
+{
+	int i;
+
+	i = 0;
+	if (str == NULL)
+		return (0);
+	while (str[i] != '\0')
+	{
+		if (!ft_isdigit(str[i]) && str[i] != '*' && str[i] != '/'
+		&& str[i] != '+' && str[i] != '-' &&
+			str[i] != '%' && str[i] != '(' && str[i] != ')'
+			&& str[i] != ' ' && str[i] != '\t')
+		{
+			if (str_for_del != str)
+				ft_strdel(&str_for_del);
+			ft_strdel(&str);
+			ft_printf("parse error in eval\n");
+			//dobav: 			ft_printf("parse error in eval near: |%c|\n", str[i]);
+			return (-1);
+		}
+		i++;
+	}
+	return (1);
+}
+
 char		*ft_do_cut(char *tmp)
 {
 	int		dopi;
@@ -31,6 +57,8 @@ char		*ft_do_cut(char *tmp)
 			str_for_rec = ft_main_calc_rec(dop);
 			if (str_for_rec != NULL)
 				dop = str_for_rec;
+			if (check_symbols(dop, str_for_del) == -1)
+				return (NULL);
 			str = ft_itoa(eval_expr(dop));
 			if (str_for_del != dop)
 				ft_strdel(&str_for_del);

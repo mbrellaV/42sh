@@ -162,11 +162,11 @@ int		needs_something_before(int n);
 int		do_job_del();
 
 void			ft_change_all_sc(char *str);
-void			do_zamena_opt_tokens(t_exectoken *tmp);
+void		do_zamena_opt_tokens(t_exectoken *tmp);
 int				check_all_errors(t_lextoken *tmp);
 void	ft_redirect(t_pipe *p, int new_infile_fd, int new_outfile_fd);
 void	do_redir_into_file(t_pipe *p, char *file, int new_infile_fd, int new_outfile_fd);
-int		return_with_close(int *opened_fds, int int_to_return);
+int		return_with_close(int *opened_fds, int int_to_return, char *dopline, int marker);
 
 void	ft_redirect_one(int old_file_fd, int new_infile_fd);
 int		ft_heredoc(char *tmp);
@@ -199,5 +199,6 @@ void	recover_normal_shell_signals();
 void	ft_infinit_pipe2(t_exectoken *head, t_memory *q);
 int		ft_whatis2(t_process *tmp);
 void	init_shell(void);
+
 
 #endif

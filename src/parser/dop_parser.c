@@ -17,6 +17,11 @@ int						is_cmd_delim(int i)
 	return (i == 1 || i == 2 || i >= 9);
 }
 
+int						is_cmd_redirect(int i)
+{
+	return (i >=3 && i <= 8);
+}
+
 void					dop_cr_new_exec(t_dop_str *t,
 		t_exectoken *prev, int op_type, int type)
 {

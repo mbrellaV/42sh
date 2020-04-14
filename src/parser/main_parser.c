@@ -55,7 +55,7 @@ t_exectoken		*do_parser(t_lextoken *tmp)
 			if (t->i_c == 2)
 				if (!(t->prev_c = ft_cr_new_exectoken(tmp,
 						t->prev_c, t->i_c, t)))
-					return (NULL);
+					return (ft_kill_str_dop_exec(t, NULL));
 			if ((t->i_c == 1 || t->i_c >= 9) && (t->prevdot_c = ft_cr_new_exectoken(tmp,
 					t->prevdot_c, t->i_c, t)))
 				t->prev_c = t->prevdot_c;

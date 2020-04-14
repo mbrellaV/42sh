@@ -12,7 +12,7 @@
 
 #include "../../inc/fshell.h"
 
-int	ft_error(int error, char *dopline)
+int			ft_error(int error, char *dopline)
 {
 	if (error == 5)
 	{
