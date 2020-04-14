@@ -13,6 +13,15 @@
 #include "../../inc/fshell.h"
 #include <stdio.h>
 
+void		do_heredoc(t_pipe *p, char **av)
+{
+	if (p->flag == 4)
+	{
+		*p->infile = ft_heredoc(av[p->i + 2]);
+		ft_redirect(p, STDIN_FILENO, STDOUT_FILENO);
+	}
+}
+
 void		do_simple_redirects(t_pipe *p, int *opened_fds, char **av)
 {
 	if (p->flag == 1 || p->flag == 2)
@@ -62,6 +71,9 @@ int			do_hard_redirects(t_pipe *p, int *opened_fds, char **av)
 	return (1);
 }
 
+
+
+
 int			ft_fd_flag(char **av, int *infile, int *outfile, int *errfile)
 {
 	t_pipe	p;
@@ -77,21 +89,11 @@ int			ft_fd_flag(char **av, int *infile, int *outfile, int *errfile)
 		p.st = ft_atoi(av[p.i]);
 		p.fd = ft_atoi(av[p.i + 2]);
 		p.flag = ft_what_flag(av[p.i + 1]);
-		if (p.flag != 6 && p.flag != 4)
-			do_simple_redirects(&p, opened_fds, av);
-		else if (p.flag == 4)
-		{
-			*p.infile = ft_heredoc(av[p.i + 2]);
-			ft_redirect(&p, STDIN_FILENO, STDOUT_FILENO);
-		}
-		else
-		{
-			p.b = do_hard_redirects(&p, opened_fds, av);
-			if (p.b == -9)
-				return_with_close(opened_fds, -1, av[p.i + 2], p.b * -1);
-			if (p.b == -10)
-				return_with_close(opened_fds, -1, ft_itoa(p.fd), p.b * -1);
-		}
+		do_simple_redirects(&p, opened_fds, av);
+		do_heredoc(&p, av);
+		p.b = do_hard_redirects(&p, opened_fds, av);
+		if (p.b < 0)
+			return (return_with_close(opened_fds, -1, av[p.i + (p.b == -9 ? 2 : 0)], p.b * -1));
 		p.i += 3;
 		p = (t_pipe){0, p.i, 1, 0, 0, 0, infile, outfile, errfile};
 	}

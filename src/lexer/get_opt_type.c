@@ -24,11 +24,15 @@ int				get_op_type(char *operator)
 		return (-1);
 	else if (ft_strstr(operator, "<<-") != NULL)
 		return (-1);
+	else if (ft_strstr(operator, "<<<") != NULL)
+		return (-1);
 	else if (ft_strstr(operator, "|||") != NULL)
 		return (-1);
 	else if (ft_strstr(operator, ">|") != NULL)
 		return (-1);
 	else if (ft_strstr(operator, ">>>") != NULL)
+		return (-1);
+	else if (ft_strstr(operator, "&&&") != NULL)
 		return (-1);
 	i++;
 	while (i < 12)
