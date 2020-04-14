@@ -1,8 +1,27 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   job_info.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: wstygg <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/04/14 18:46:42 by wstygg            #+#    #+#             */
+/*   Updated: 2020/04/14 18:46:42 by wstygg           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "fshell.h"
 
 void			format_job_info(t_job *j, const char *status, int num)
 {
-	dprintf (2, "[%d] + %ld (%s): %s\n", num, (long)j->pgid, status, j->command);
+	//dprintf (2, "[%d] + %ld (%s): %s\n", num, (long)j->pgid, status, j->command);
+	ft_putnbr_fd(num, 2);
+	ft_putstr_fd(" + ", 2);
+	ft_putnbr_fd((int)j->pgid, 2);
+	ft_putstr_fd(" ", 2);
+	ft_putstr_fd(status, 2);
+	ft_putstr(": ");
+	ft_putendl_fd(j->command, 2);
 }
 
 void    do_job_notification(void)
