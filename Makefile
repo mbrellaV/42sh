@@ -33,7 +33,7 @@ SRC_BASE = builtins/ft_cd.c\
  	qft_printf/ft_dtoa.c\
  	qft_printf/ft_itoa_base_c.c\
  	qft_printf/ft_math.c\
- 	qft_printf/ft_okr_double\
+ 	qft_printf/ft_okr_double.c\
  	qft_printf/ft_oxu.c\
  	qft_printf/ft_pars.c\
  	qft_printf/ft_pars2.c\

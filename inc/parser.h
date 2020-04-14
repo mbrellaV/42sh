@@ -16,7 +16,6 @@
 # include "struct.h"
 
 t_lextoken					*do_lexer(char *line);
-void						ft_printf(const char *fmt, ...);
 t_exectoken					*all_parse(char *cmd);
 t_exectoken					*do_parser(t_lextoken *tmp);
 char						*do_zam_str_hist_var(char *str1, t_memory *q);

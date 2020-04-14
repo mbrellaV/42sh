@@ -204,7 +204,6 @@ int		ft_main_what(t_exectoken *tmp)
 				f_job = job;
 			sas = launch_job(job, job->foreground);
 			ft_strdel(&str_to_del);
-			//dprintf(2, "\n|%s|\n", tmp->file_args[0]);
 		}
 		else if (tmp->left == NULL && is_builtin(tmp->file_args[0]) == 1)
 		{
@@ -215,7 +214,6 @@ int		ft_main_what(t_exectoken *tmp)
 		if (sas == -1)
 			return (-1);
 		tmp = tmp->right;
-//		ft_distruct_job(job);
 	}
 	do_job_del();
 	return (1);

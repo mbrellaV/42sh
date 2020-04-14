@@ -63,7 +63,7 @@ int						ft_printf(const char *format, ...);
 int						ft_dprintf(int fd, const char *format, ...);
 int						ft_sprintf(char *buffer, const char *format, ...);
 int						ft_strprintf(char **str, const char *format, ...);
-void					ft_realloc_buff(t_printf *p);
+void					ft_realloc_q(t_printf *p);
 int						ft_addchar(t_printf *p);
 int						ft_addstr(t_printf *p);
 int						ft_add_p(t_printf *p);

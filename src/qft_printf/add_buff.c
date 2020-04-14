@@ -15,7 +15,7 @@
 int			ft_add_buff(t_printf *p)
 {
 	if (p->buff_index == p->buff_size)
-		ft_realloc_buff(p);
+		ft_realloc_q(p);
 	p->buff[p->buff_index++] = *p->str;
 	return (1);
 }
@@ -23,7 +23,7 @@ int			ft_add_buff(t_printf *p)
 int			ft_add_buff_char(t_printf *p, char c)
 {
 	if (p->buff_index == p->buff_size)
-		ft_realloc_buff(p);
+		ft_realloc_q(p);
 	p->buff[p->buff_index++] = c;
 	return (1);
 }
@@ -38,7 +38,7 @@ int			ft_add_buff_str(t_printf *p, char *s)
 	return (i);
 }
 
-void		ft_realloc_buff(t_printf *p)
+void		ft_realloc_q(t_printf *p)
 {
 	char	*tmp;
 	int		i;

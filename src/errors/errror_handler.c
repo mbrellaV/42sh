@@ -20,4 +20,3 @@ int			ft_error(int error, char *dopline)
 	}
 	return (-1);
 }
-gi
