@@ -5,6 +5,7 @@ set(CMAKE_C_STANDARD 99)
 
 include_directories(inc)
 include_directories(src)
+include_directories(src/qft_printf)
 
 add_executable(42save
         inc/fshell.h

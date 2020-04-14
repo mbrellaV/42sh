@@ -40,6 +40,8 @@
 # include "nucleus.h"
 # include "struct.h"
 # include "hash.h"
+# include "../src/qft_printf/ft_printf.h"
+
 # define RED	"\x1B[31m"
 # define GRN	"\x1B[32m"
 # define YEL	"\x1B[33m"
@@ -60,9 +62,7 @@
 # define BIL_NUM 16
 
 
-///////////////////////////
 int 			g_exit_code;
-///////////
 pid_t shell_pgid;
 struct termios shell_tmodes;
 int shell_terminal;

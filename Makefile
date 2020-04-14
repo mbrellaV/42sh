@@ -24,6 +24,21 @@ SRC_BASE = builtins/ft_cd.c\
 	builtins/allenv/ft_env.c\
 	builtins/alias/alias.c\
  	builtins/allenv/global_env.c\
+ 	qft_printf/add_buff.c\
+ 	qft_printf/add_char.c\
+ 	qft_printf/add_d.c\
+ 	qft_printf/add_str.c\
+ 	qft_printf/ft_add_c_s_d.c\
+ 	qft_printf/ft_add_double.c\
+ 	qft_printf/ft_dtoa.c\
+ 	qft_printf/ft_itoa_base_c.c\
+ 	qft_printf/ft_math.c\
+ 	qft_printf/ft_okr_double\
+ 	qft_printf/ft_oxu.c\
+ 	qft_printf/ft_pars.c\
+ 	qft_printf/ft_pars2.c\
+ 	qft_printf/ft_pointer.c\
+ 	qft_printf/ft_pr_help.c\
  	errors/errror_handler.c\
  	exec/ft_create_file.c\
  	exec/ft_do_pipe.c\
