@@ -6,14 +6,13 @@
 /*   By: plettie <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/04 14:16:06 by plettie           #+#    #+#             */
-/*   Updated: 2020/04/13 20:04:23 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/04/14 11:17:13 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/fshell.h"
 
-
-char		*ft_strjoin_cd(char const *s1, char const *s2, int to_free)
+char			*ft_strjoin_cd(char const *s1, char const *s2, int to_free)
 {
 	char		*str;
 	size_t		i;
@@ -41,7 +40,7 @@ char		*ft_strjoin_cd(char const *s1, char const *s2, int to_free)
 	return (str);
 }
 
-char		*get_pwd(t_builtins *cd)
+char			*get_pwd(t_builtins *cd)
 {
 	int			k;
 	int			res_l;
@@ -55,7 +54,7 @@ char		*get_pwd(t_builtins *cd)
 		return (getcwd(NULL, 0));
 }
 
-char		*get_oldpwd(t_builtins *cd)
+char			*get_oldpwd(t_builtins *cd)
 {
 	int			k;
 	int			res_l;
@@ -69,7 +68,7 @@ char		*get_oldpwd(t_builtins *cd)
 		return (getcwd(NULL, 0));
 }
 
-int			do_cd(t_builtins *cd, char *str)
+int				do_cd(t_builtins *cd, char *str)
 {
 	char		*full_path;
 	int			res_d;

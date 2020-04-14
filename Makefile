@@ -1,19 +1,7 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: qmartina <marvin@42.fr>                    +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2019/10/17 16:01:11 by qmartina          #+#    #+##   Updated: 2020/04/13 20:04:22 by wstygg           ###   ########.fr       #######.fr        #
-#                                                                              #
-# **************************************************************************** #
-
 NAME		=	42sh
 
 CC			=	gcc
 FLAGS		=	-Wall
-# FLAGS		=	-Wall -Wextra -Werror
 D_FLAGS		=	-g
 
 DELTA		=	$$(echo "$$(tput cols)-47"|bc)
@@ -39,6 +27,8 @@ SRC_BASE = builtins/ft_cd.c\
  	errors/errror_handler.c\
  	exec/ft_create_file.c\
  	exec/ft_do_pipe.c\
+ 	exec/ft_do_pipe_next.c\
+ 	exec/redirect.c\
  	exec/stopped_and_terminated_jobs.c\
  	exec/continuing_stopped_jobs.c\
  	exec/operating_job.c\
@@ -134,6 +124,7 @@ SRC_BASE = builtins/ft_cd.c\
 	builtins/allenv/main_env.c\
 	builtins/ft_type.c\
 	g_builtins.c\
+
 
 
 SRCS		=	$(addprefix $(SRC_DIR), $(SRC_BASE))

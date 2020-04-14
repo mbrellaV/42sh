@@ -1,31 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   continuing_stopped_jobs.c                          :+:      :+:    :+:   */
+/*   continuing_jobs.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: qmartina <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/18 17:19:34 by qmartina          #+#    #+#             */
-/*   Updated: 2020/04/13 20:04:23 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/04/14 11:44:09 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/fshell.h"
 
-/* Mark a stopped job J as being running again.  */
-
-void	mark_job_as_running (t_job *j)
+void			mark_job_as_running(t_job *j)
 {
-	t_process *p;
+	t_process	*p;
 
-	for (p = j->first_process; p; p = p->next)
+	p = j->first_process;
+	while (p)
+	{
 		p->stopped = 0;
+		p = p->next;
+	}
 	j->notified = 0;
 }
 
-/* Continue the job J.  */
-
-void	continue_job (t_job *j, int foreground)
+void			continue_job(t_job *j, int foreground)
 {
 	if (j == NULL)
 	{
@@ -40,5 +40,4 @@ void	continue_job (t_job *j, int foreground)
 	{
 		put_job_in_background(j, 1);
 	}
-
 }

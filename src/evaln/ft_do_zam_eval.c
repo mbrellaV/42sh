@@ -6,7 +6,7 @@
 /*   By: wstygg <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/13 19:53:08 by wstygg            #+#    #+#             */
-/*   Updated: 2020/04/13 20:04:23 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/04/14 11:33:57 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,19 +15,20 @@
 char		*ft_do_cut(char *tmp)
 {
 	int		dopi;
-	char 	*str;
+	char	*str;
 	char	*dop;
 	char	*str_for_rec;
 	char	*str_for_del;
 
 	dopi = 0;
-    if (tmp[dopi] == '(' && tmp[dopi + 1] == '(')
-        if (sc_size(&tmp[dopi], '(') != -1 && sc_size(&tmp[dopi + 1], '(') != -1)
-        {
-            dopi = sc_size(&tmp[dopi], '(') - 3;
-            dop = ft_strsub(tmp, 2, dopi - 2);
-            str_for_del = dop;
-            str_for_rec = ft_main_calc_rec(dop);
+	if (tmp[dopi] == '(' && tmp[dopi + 1] == '(')
+		if (sc_size(&tmp[dopi], '(') != -1 &&
+			sc_size(&tmp[dopi + 1], '(') != -1)
+		{
+			dopi = sc_size(&tmp[dopi], '(') - 3;
+			dop = ft_strsub(tmp, 2, dopi - 2);
+			str_for_del = dop;
+			str_for_rec = ft_main_calc_rec(dop);
 			if (str_for_rec != NULL)
 				dop = str_for_rec;
 			str = ft_itoa(eval_expr(dop));
@@ -35,8 +36,8 @@ char		*ft_do_cut(char *tmp)
 				ft_strdel(&str_for_del);
 			ft_strdel(&dop);
 			return (str);
-        }
-    return (NULL);
+		}
+	return (NULL);
 }
 
 char		*ft_main_calc_rec(char *mas)
@@ -55,8 +56,7 @@ char		*ft_main_calc_rec(char *mas)
 	}
 	if (*mas == '$')
 	{
-		cut_str = ft_do_cut(mas + 1);
-		if (cut_str == NULL)
+		if (!(cut_str = ft_do_cut(mas + 1)))
 		{
 			ft_strdel(&newstr);
 			return (NULL);
@@ -77,8 +77,8 @@ char		*ft_do_zam_eval(char *mas)
 		return (NULL);
 	if (*mas == '\0')
 		return (mas);
-    if ((newstr = ft_main_calc_rec(mas)) == NULL)
+	if ((newstr = ft_main_calc_rec(mas)) == NULL)
 		return (mas);
-    ft_strdel(&mas);
-    return (newstr);
+	ft_strdel(&mas);
+	return (newstr);
 }

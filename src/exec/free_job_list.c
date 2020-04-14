@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   free_job_list.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: wstygg <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/04/14 12:44:23 by wstygg            #+#    #+#             */
+/*   Updated: 2020/04/14 13:12:12 by wstygg           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "fshell.h"
 
-void	free_process(t_process *tmp)
+void			free_process(t_process *tmp)
 {
 	t_process	*process_for_del;
 
@@ -10,10 +22,9 @@ void	free_process(t_process *tmp)
 		tmp = tmp->next;
 		free(process_for_del);
 	}
-
 }
 
-void	free_job(t_job *tmp)
+void			free_job(t_job *tmp)
 {
 	if (tmp)
 	{
@@ -23,13 +34,13 @@ void	free_job(t_job *tmp)
 	}
 }
 
-int		do_job_del()
+int				do_job_del(void)
 {
-	t_job	*j;
-	t_job	*jlast;
-	t_job	*jnext;
-	t_job	*jdop;
-	int d;
+	t_job		*j;
+	t_job		*jlast;
+	t_job		*jnext;
+	t_job		*jdop;
+	int			d;
 
 	d = 0;
 	update_status();
@@ -53,8 +64,7 @@ int		do_job_del()
 		else
 			jlast = j;
 		j = j->next;
-		if (jdop != NULL)
-			free_job(jdop);
+		(jdop != NULL) ? free_job(jdop) : 0;
 	}
 	return (1);
 }

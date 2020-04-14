@@ -6,7 +6,7 @@
 /*   By: qmartina <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/16 17:40:05 by qmartina          #+#    #+#             */
-/*   Updated: 2020/04/13 20:04:23 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/04/14 11:08:28 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	ft_open_f(char *str, int *flag, int *fd)
 
 void	ft_file_create(t_exectoken *head)
 {
-	t_exectoken *q;
+	t_exectoken	*q;
 	t_pipe		p;
 
 	q = head;

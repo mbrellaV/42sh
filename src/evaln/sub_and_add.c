@@ -14,24 +14,24 @@
 
 void	addos(int *stackos, int c, t_int *lastint)
 {
-	stackos[lastint->stackoslast] = c;
-	(lastint->stackoslast)++;
+	stackos[lastint->ol] = c;
+	(lastint->ol)++;
 }
 
 void	subos(int *stackos, t_int *lastint)
 {
-	stackos[lastint->stackoslast - 1] = 0;
-	(lastint->stackoslast)--;
+	stackos[lastint->ol - 1] = 0;
+	(lastint->ol)--;
 }
 
 void	addzn(int *stackzn, int c, t_int *lastint)
 {
-	stackzn[lastint->stackznlast] = c;
-	(lastint->stackznlast)++;
+	stackzn[lastint->zl] = c;
+	(lastint->zl)++;
 }
 
 void	subzn(int *stackzn, t_int *lastint)
 {
-	stackzn[lastint->stackznlast - 1] = 0;
-	(lastint->stackznlast)--;
+	stackzn[lastint->zl - 1] = 0;
+	(lastint->zl)--;
 }

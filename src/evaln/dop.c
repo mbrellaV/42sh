@@ -6,25 +6,25 @@
 /*   By: mbrella <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/18 14:33:38 by mbrella           #+#    #+#             */
-/*   Updated: 2020/04/13 20:04:23 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/04/14 11:21:45 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "eval_expr.h"
 
-t_int	*cr_new_el(void)
+t_int		*cr_new_el(void)
 {
 	t_int	*tmp;
 
 	if (!(tmp = malloc(sizeof(t_int))))
 		return (NULL);
-	tmp->stackoslast = 0;
-	tmp->stackznlast = 0;
+	tmp->ol = 0;
+	tmp->zl = 0;
 	tmp->i = 1;
 	return (tmp);
 }
 
-int		prior(int c)
+int			prior(int c)
 {
 	if ((c - 300) == '*')
 		return (2);
@@ -40,47 +40,45 @@ int		prior(int c)
 		return (0);
 }
 
-int		is_znak(int c)
+int			is_znak(int c)
 {
 	if (c == '-' || c == '+' || c == '<' || c == '>' || c == '=' ||
-	c == '&' || c == '|' || c == '*' || c == '/' || c == '%' || (c >= 300 && c < 800))
+	c == '&' || c == '|' || c == '*' || c == '/' || c == '%' ||
+	(c >= 300 && c < 800))
 		return (1);
 	else
 		return (0);
 }
 
-void	dostack(int *stackos, int *stackzn, int c, t_int *lastint)
+void		dostack(int *stackos, int *stackzn, int c, t_int *lastint)
 {
-	//dprintf(2, "\nc: |%d, %d, %d|\n", c, stackzn[lastint->stackznlast - 1], prior(stackzn[lastint->stackznlast - 1]));
 	if ((c - 300) == '(')
 		addzn(stackzn, c, lastint);
 	else if ((c - 300) == ')')
 	{
-		while (stackzn[lastint->stackznlast - 1] != ('(' + 300))
+		while (stackzn[lastint->zl - 1] != ('(' + 300))
 		{
-			calc(stackos, lastint, stackzn[lastint->stackznlast - 1]);
+			calc(stackos, lastint, stackzn[lastint->zl - 1]);
 			subzn(stackzn, lastint);
 		}
 		subzn(stackzn, lastint);
 	}
-	else if (lastint->stackznlast != 0 && prior(stackzn[lastint->stackznlast - 1]) < prior(c))
+	else if (lastint->zl != 0 && prior(stackzn[lastint->zl - 1]) < prior(c))
 		addzn(stackzn, c, lastint);
 	else
 	{
-		while (lastint->stackznlast > 0 && prior(stackzn[lastint->stackznlast - 1]) >= prior(c))
+		while (lastint->zl > 0 && prior(stackzn[lastint->zl - 1]) >= prior(c))
 		{
-			calc(stackos, lastint, stackzn[lastint->stackznlast - 1]);
+			calc(stackos, lastint, stackzn[lastint->zl - 1]);
 			subzn(stackzn, lastint);
-			//exit(0);
 		}
 		addzn(stackzn, c, lastint);
 	}
 	if (is_znak(c))
 		lastint->i = 1;
-
 }
 
-int		calcend(int **stackos, int **stackzn, t_int **str)
+int			calcend(int **stackos, int **stackzn, t_int **str)
 {
 	int		result;
 	int		*dop_stackos;
@@ -88,9 +86,9 @@ int		calcend(int **stackos, int **stackzn, t_int **str)
 
 	dop_stackos = *stackos;
 	dop_stackzn = *stackzn;
-	while ((*str)->stackoslast > 1)
+	while ((*str)->ol > 1)
 	{
-		calc(dop_stackos, *str, dop_stackzn[(*str)->stackznlast - 1]);
+		calc(dop_stackos, *str, dop_stackzn[(*str)->zl - 1]);
 		subzn(dop_stackzn, *str);
 	}
 	result = dop_stackos[0];

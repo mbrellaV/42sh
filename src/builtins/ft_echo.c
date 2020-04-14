@@ -58,7 +58,8 @@ char	*ft_slash_2(char *str, t_builtins *echo, int res)
 		str = ft_print_oct(str, nb);
 	if (nb == 0)
 		return (str + 2);
-	if (res == 0) {
+	if (res == 0)
+	{
 		ft_putchar('\\');
 		return (str + 2);
 	}

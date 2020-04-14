@@ -12,7 +12,7 @@
 
 #include "../../inc/fshell.h"
 
-int			ft_cd_error(char *tmp, int err, int to_free)
+int				ft_cd_error(char *tmp, int err, int to_free)
 {
 	set_new_var("?", "2", &g_all_var);
 	err == 1 ? ft_printf("42sh : cd: no such file or directory: %s\n", tmp) : 0;
@@ -26,7 +26,7 @@ int			ft_cd_error(char *tmp, int err, int to_free)
 	return (0);
 }
 
-int			flags_cd(char *str, t_builtins *cd, int j)
+int				flags_cd(char *str, t_builtins *cd, int j)
 {
 	if (str[j] == 'P')
 		cd->cd_p = 1;
@@ -35,10 +35,10 @@ int			flags_cd(char *str, t_builtins *cd, int j)
 	return (1);
 }
 
-int			change_path(char *path, t_builtins *cd)
+int				change_path(char *path, t_builtins *cd)
 {
-	char	*tmp;
-	char	*pwd_env;
+	char		*tmp;
+	char		*pwd_env;
 
 	if (path)
 	{
@@ -64,10 +64,10 @@ int			change_path(char *path, t_builtins *cd)
 	return (0);
 }
 
-int			change_env(char *env, t_builtins *cd)
+int				change_env(char *env, t_builtins *cd)
 {
-	char	*pwd;
-	int		k;
+	char		*pwd;
+	int			k;
 
 	if ((k = ft_findenv(env, g_env)) != -404)
 	{
@@ -85,11 +85,11 @@ int			change_env(char *env, t_builtins *cd)
 	return (ft_cd_error(env, 2, 0));
 }
 
-int			ft_cd(char **str)
+int				ft_cd(char **str)
 {
 	t_builtins	cd;
-	int		i;
-	int		j;
+	int			i;
+	int			j;
 
 	i = 0;
 	cd.link = 0;

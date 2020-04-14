@@ -6,7 +6,7 @@
 /*   By: mbrella <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/11 10:58:44 by mbrella           #+#    #+#             */
-/*   Updated: 2020/04/13 20:04:22 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/04/14 13:31:49 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -164,14 +164,20 @@ int		do_job_del();
 void			ft_change_all_sc(char *str);
 void			do_zamena_opt_tokens(t_exectoken *tmp);
 int				check_all_errors(t_lextoken *tmp);
+void	ft_redirect(t_pipe *p, int new_infile_fd, int new_outfile_fd);
+void	do_redir_into_file(t_pipe *p, char *file, int new_infile_fd, int new_outfile_fd);
+int		return_with_close(int *opened_fds, int int_to_return);
 
-//int					ft_fd_flag(char **av, int *fd_in);
+void	ft_redirect_one(int old_file_fd, int new_infile_fd);
+int		ft_heredoc(char *tmp);
+void	ft_open_flag(char *opt, t_pipe *p);
+int		ft_what_flag(char *opt);
+void	ft_redirect_error(int marker, char *dopline);
 
 int		ft_fd_flag(char **av, int *infile, int *outfile, int *errfile);
 void	put_job_in_foreground (t_job *j, int cont);
 void	put_job_in_background (t_job *j, int cont);
 int mark_process_status (pid_t pid, int status);
-//int		ft_fd_flag(char **av, int *fd_in);
 void	update_status (void);
 void				wait_for_job (t_job *j);
 t_job				*create_job(t_exectoken *head);
@@ -184,15 +190,12 @@ int	job_is_stopped (t_job *j);
 int	job_is_completed (t_job *j);
 int		ft_distruct_job(t_job *head);
 
-///////////////////////// working with fds
 int		ft_find_in_fds(int *opened_fds, int fd_to_find);
 int		ft_add_to_fds(int *opened_fds, int fd_to_add);
 int		ft_remove_from_fds(int *opened_fds, int fd_to_remove);
 int		*ft_create_opened_fds();
-/////////////////////////signals
 void	disable_shell_signals();
 void	recover_normal_shell_signals();
-/////////////////
 void	ft_infinit_pipe2(t_exectoken *head, t_memory *q);
 int		ft_whatis2(t_process *tmp);
 void	init_shell(void);

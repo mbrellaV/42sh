@@ -1,15 +1,25 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   create_jobs_and_proc.c                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: wstygg <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/04/14 11:48:56 by wstygg            #+#    #+#             */
+/*   Updated: 2020/04/14 11:48:56 by wstygg           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "fshell.h"
 
-int			check_file_args(t_process *tmp)
+int				check_file_args(t_process *tmp)
 {
 	if (tmp->file_args == NULL && tmp->file_opt == NULL)
 		return (0);
-	//if (ft_strcmp(tmp->file_args[0], "exit") == 0)
-	//	return (-1);
 	return (1);
 }
 
-t_process	*create_process(t_exectoken *tmp)
+t_process		*create_process(t_exectoken *tmp)
 {
 	t_process	*fir;
 
@@ -27,14 +37,15 @@ t_process	*create_process(t_exectoken *tmp)
 	return (fir);
 }
 
-t_process	*create_process_list(t_exectoken *tmp)
+t_process		*create_process_list(t_exectoken *tmp)
 {
 	t_process	*proc;
 	t_process	*fir;
 
 	if (!(fir = create_process(tmp)))
 		ft_error_q(5);
-	if (tmp->file_opt && ft_strcmp(tmp->file_opt[ft_env_len(tmp->file_opt) - 1], "&") == 0)
+	if (tmp->file_opt && ft_strcmp(tmp->file_opt[ft_env_len(tmp->file_opt) - 1],
+			"&") == 0)
 		fir->foreground = 0;
 	proc = fir;
 	tmp = tmp->left;
@@ -48,10 +59,10 @@ t_process	*create_process_list(t_exectoken *tmp)
 	return (fir);
 }
 
-char	*create_command(t_exectoken *head)
+char			*create_command(t_exectoken *head)
 {
-	char *new_str;
-	char *tmp;
+	char		*new_str;
+	char		*tmp;
 
 	if (!(new_str = ft_strnew(1)))
 		ft_error_q(5);
@@ -65,9 +76,9 @@ char	*create_command(t_exectoken *head)
 	return (new_str);
 }
 
-t_job	*create_job(t_exectoken *head)
+t_job			*create_job(t_exectoken *head)
 {
-	t_job	*new_job;
+	t_job		*new_job;
 
 	if (head == NULL)
 		return (NULL);
