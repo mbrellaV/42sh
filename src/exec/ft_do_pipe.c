@@ -22,7 +22,7 @@ void		do_heredoc(t_pipe *p, char **av)
 	}
 }
 
-void		do_simple_redirects(t_pipe *p, int *opened_fds, char **av)
+void		do_simple_redirects(t_pipe *p, int *opened_fds, char **av, int type)
 {
 	if (p->flag == 1 || p->flag == 2)
 	{
@@ -35,6 +35,13 @@ void		do_simple_redirects(t_pipe *p, int *opened_fds, char **av)
 	{
 		ft_open_flag(av[p->i + 2], p);
 		ft_redirect_one(*p->infile, p->st);
+	}
+	if (type == 0)
+	{
+		do_redir_into_file(p, av[p->i + 2], STDIN_FILENO, p->st);
+		if (ft_find_in_fds(opened_fds, p->st) == 0)
+			ft_add_to_fds(opened_fds, p->st);
+		dup2(STDOUT_FILENO, STDERR_FILENO);
 	}
 }
 
@@ -57,12 +64,7 @@ int			do_hard_redirects(t_pipe *p, int *opened_fds, char **av)
 	else
 	{
 		if (isword(av[p->i + 2][0]) && !ft_isdigit(av[p->i + 2][0]))
-		{
-			do_redir_into_file(p, av[p->i + 2], STDIN_FILENO, p->st);
-			if (ft_find_in_fds(opened_fds, p->st) == 0)
-				ft_add_to_fds(opened_fds, p->st);
-			dup2(STDOUT_FILENO, STDERR_FILENO);
-		}
+			do_simple_redirects(p, opened_fds, av, 0);
 		else if (ft_find_in_fds(opened_fds, p->st) == 0)
 			return (-10);
 		else
@@ -70,9 +72,6 @@ int			do_hard_redirects(t_pipe *p, int *opened_fds, char **av)
 	}
 	return (1);
 }
-
-
-
 
 int			ft_fd_flag(char **av, int *infile, int *outfile, int *errfile)
 {
@@ -89,7 +88,7 @@ int			ft_fd_flag(char **av, int *infile, int *outfile, int *errfile)
 		p.st = ft_atoi(av[p.i]);
 		p.fd = ft_atoi(av[p.i + 2]);
 		p.flag = ft_what_flag(av[p.i + 1]);
-		do_simple_redirects(&p, opened_fds, av);
+		do_simple_redirects(&p, opened_fds, av, 1);
 		do_heredoc(&p, av);
 		p.b = do_hard_redirects(&p, opened_fds, av);
 		if (p.b < 0)
