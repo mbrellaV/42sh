@@ -6,7 +6,7 @@
 /*   By: mbrella <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/01 17:52:35 by mbrella           #+#    #+#             */
-/*   Updated: 2020/04/14 11:08:28 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/04/14 21:06:34 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,13 +99,17 @@ int				do_all_zams_with_inhibitor(t_lextoken *h, t_lextoken **doph, t_dop_str	*t
 {
 	if (h->inhibitor_lvl != 2)
 	{
-		h->line = do_zam_str_bax(h->line, tmp);
-		h->line = ft_do_zam_eval(h->line);
+		if (!(h->line = do_zam_str_bax(h->line, tmp)))
+			return (-1);
+		if (!(h->line = ft_do_zam_eval(h->line)))
+			return (-1);
 	}
 	if (h->inhibitor_lvl == 0)
 	{
-		h->line = do_zam_str_with_tilda(h->line);
-		h->line = ft_do_zam_alias(h->line);
+		if (!(h->line = do_zam_str_with_tilda(h->line)))
+			return (-1);
+		if (!(h->line = ft_do_zam_alias(h->line)))
+			return (-1);
 		*doph = do_zam_ravno(h);
 	}
 	else
@@ -128,15 +132,18 @@ t_lextoken		*do_zam_bax_and_hist_full(t_lextoken *h)
 	htmp = h;
 	while (h != NULL)
 	{
-		tmp->c_b = 0;
-		tmp->i_b = -1;
+		if (h->operator_type == -1 && h->is_near_opt > 0)
+		{
+			ft_error(5, h->line);
+			return (ft_kill_str_dop_lex(tmp, NULL));
+		}
 		if (*h->line == '\0')
 		{
 			h = h->next;
 			continue ;
 		}
-		do_all_zams_with_inhibitor(h, &h, tmp);
+		if (do_all_zams_with_inhibitor(h, &h, tmp) == -1)
+			return (NULL);
 	}
-	ft_kill_str_dop_lex(tmp, NULL);
-	return (htmp);
+	return (ft_kill_str_dop_lex(tmp, htmp));
 }

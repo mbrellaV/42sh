@@ -21,7 +21,8 @@ int				dop_lexer2(t_dop_str *tmp, char *line)
 	if (tmp->tail_c && needs_something_before(tmp->tail_c->operator_type) && get_op_type(tmp->tmp_c) == 2)
 		return (ft_error(5, tmp->tmp_c));
 	if (tmp->i_c != 0 &&
-		isword(line[tmp->i_c - 1]) == 1 && (get_op_type(tmp->tmp_c) > 6 && get_op_type(tmp->tmp_c) < 8))
+		isword(line[tmp->i_c - 1]) == 1 && ft_str_is_numeric(tmp->tail_c->line) &&
+			(get_op_type(tmp->tmp_c) >= 3 && get_op_type(tmp->tmp_c) <= 8))
 			tmp->tail_c->is_near_opt = 1;
 	tmp->tail_c = add_token(tmp->tail_c, tmp->tmp_c, 0);
 	tmp->tail_c->is_near_opt = 1;
@@ -64,7 +65,7 @@ int				dop_lexer1(t_dop_str *tmp, char *line)
 		tmp->tail_c->is_near_word = 1;
 	if (isword(line[tmp->i_c]) && tmp->i_c > 0 && ispar(line[tmp->i_c - 1]))
 		tmp->tail_c->is_near_word = 1;
-	if (isword(line[tmp->i_c]) == 4 && tmp->i_c > 0 && isword(line[tmp->i_c - 1]))
+	if (isword(line[tmp->i_c]) && tmp->i_c > 0 && isword(line[tmp->i_c - 1]))
 		tmp->tail_c->is_near_word = 1;
 	if (ispar(line[tmp->i_c]))
 		tmp->tail_c->inhibitor_lvl = line[tmp->i_c] == '"' ? 1 : 2;

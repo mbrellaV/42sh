@@ -6,7 +6,7 @@
 /*   By: mbrella <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/27 13:45:34 by mbrella           #+#    #+#             */
-/*   Updated: 2020/04/13 20:04:23 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/04/14 21:06:34 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,15 @@ int				get_op_type(char *operator)
 		return (-1);
 	else if (ft_strstr(operator, "<<-") != NULL)
 		return (-1);
+	else if (ft_strstr(operator, "<<<") != NULL)
+		return (-1);
 	else if (ft_strstr(operator, "|||") != NULL)
 		return (-1);
 	else if (ft_strstr(operator, ">|") != NULL)
 		return (-1);
 	else if (ft_strstr(operator, ">>>") != NULL)
+		return (-1);
+	else if (ft_strstr(operator, "&&&") != NULL)
 		return (-1);
 	i++;
 	while (i < 12)

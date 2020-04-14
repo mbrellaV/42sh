@@ -6,7 +6,7 @@
 /*   By: mbrella <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/16 16:19:24 by mbrella           #+#    #+#             */
-/*   Updated: 2020/04/14 11:08:28 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/04/14 21:06:34 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,11 @@
 int						is_cmd_delim(int i)
 {
 	return (i == 1 || i == 2 || i >= 9);
+}
+
+int						is_cmd_redirect(int i)
+{
+	return (i >=3 && i <= 8);
 }
 
 void					dop_cr_new_exec(t_dop_str *t,

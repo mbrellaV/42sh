@@ -45,7 +45,7 @@ SRC_BASE = builtins/ft_cd.c\
  	exec/ft_do_pipe_next.c\
  	exec/redirect.c\
  	exec/stopped_and_terminated_jobs.c\
- 	exec/continuing_stopped_jobs.c\
+ 	exec/continuing_jobs.c\
  	exec/operating_job.c\
  	exec/find_jobs.c\
  	exec/free_job_list.c\

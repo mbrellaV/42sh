@@ -24,7 +24,6 @@ int							get_op_type(char *operator);
 t_dop_str					*cr_dop_str_par(void);
 int							isoperator(char c);
 int							isword(char c);
-int							get_op_type(char *operator);
 int							do_zamena_slash(char *line, t_readline *p);
 int							ispar(char c);
 t_exectoken					*ft_cr_new_exectoken(t_lextoken *tmp,
@@ -55,7 +54,6 @@ int							ispar(char c);
 int							isword(char c);
 int							isoperator(char c);
 int							issc(char c);
-int							get_op_type(char *operator);
 t_lextoken					*ft_kill_str_dop_lex(t_dop_str *t, t_lextoken *tmp);
 t_exectoken					*ft_kill_str_dop_exec(t_dop_str *t,
 							t_exectoken *tmpexec);
@@ -69,5 +67,7 @@ char						*get_num_from_hist_begin(t_memory *t, int num);
 char						*get_num_from_hist_end(t_memory *t, int num);
 char						*get_num_from_hist_starting(t_memory *t,
 							char *name);
+int							is_cmd_redirect(int i);
+
 
 #endif
