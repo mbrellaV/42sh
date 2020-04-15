@@ -6,7 +6,7 @@
 /*   By: qmartina <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/22 09:38:59 by qmartina          #+#    #+#             */
-/*   Updated: 2020/04/13 20:04:22 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/04/15 18:26:45 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -135,151 +135,6 @@ void	print_hash(void)
 	}
 }
 
-char	*do_reverse_zamena(char *str)
-{
-	int		i;
-	char	*newstr;
-	char	*tmp;
-
-	i = 0;
-	if (!(newstr = ft_memalloc(ft_strlen(str) * 2 + 1)))
-		ft_error_q(15);
-	while (str[i] != '\0')
-	{
-		if (str[i] < 0)
-		{
-			tmp = ft_strdup("\\ ");
-			tmp[1] = -1 * str[i];
-			ft_strcat(newstr, tmp);
-			ft_strdel(&tmp);
-		}
-		else
-		{
-			tmp = ft_strdup(" ");
-			tmp[0] = str[i];
-			ft_strcat(newstr, tmp);
-			ft_strdel(&tmp);
-		}
-		i++;
-	}
-	ft_strdel(&str);
-	return (newstr);
-}
-
-int		ft_main_what(t_exectoken *tmp)
-{
-	t_job	*job;
-	int		sas;
-	char	*str_to_del;
-
-	sas = 0;
-	//take
-    while (tmp)
-	{
-		if ((tmp->file_args == NULL) && (tmp->file_opt == NULL))
-		{
-			tmp = tmp->right;
-			continue ;
-		}
-
-		if ((tmp->file_args != NULL && is_builtin(tmp->file_args[0]) == 0) || tmp->file_opt != NULL)
-		{
-			str_to_del = ft_get_var("?", g_all_var);
-			if (tmp->should_wait_and == 1 && ft_atoi(str_to_del) > 0)
-			{
-				ft_strdel(&str_to_del);
-				tmp = tmp->right;
-				continue ;
-			}
-			else if (tmp->should_wait_or == 1 && ft_atoi(str_to_del) == 0)
-			{
-				ft_strdel(&str_to_del);
-				tmp = tmp->right;
-				continue ;
-			}
-			job = create_job(tmp);
-			if (f_job != NULL)
-				get_last_job()->next = job;
-			else
-				f_job = job;
-			sas = launch_job(job, job->foreground);
-			ft_strdel(&str_to_del);
-		}
-		else if (tmp->left == NULL && is_builtin(tmp->file_args[0]) == 1)
-		{
-			sas = ft_whatis4(tmp);
-			//dprintf(2, "sas: |%d|", sas);
-		}
-		//sas = launch_job(jobs, jobs->first_process->foreground, q);
-		if (sas == -1)
-			return (-1);
-		tmp = tmp->right;
-	}
-	do_job_del();
-	return (1);
-}
-
-int	ck_br(const char *str)
-{
-	char	*s;
-	int		i;
-	int		k = 0;
-	char	c;
-
-	s = ft_strdup(str);
-	i = -1;
-	while (s[++i])
-	{
-		if (s[i] == '\"' || s[i] == '\'')
-		{
-			c = s[i];
-			s[i] = 'F';
-			while (s[++i] != c)
-				s[i] = 'a';
-			s[i] = 'F';
-		}
-	}
-	if ((i = check_bracket(s)) && i != 1)
-	{
-		ft_strdel(&s);
-		return (i);
-	}
-	while (1)
-	{
-		i = -1;
-		while (s[++i])
-			if (s[i] == '(')
-				k = i;
-		if (s[k] && s[k] == '(')
-		{
-			i = k;
-			while (s[++i] && s[i] != ')')
-				;
-		}
-		else
-			break ;
-		if (s[i] && s[i] == ')')
-		{
-			s[k] = 'A';
-			s[i] = 'A';
-		}
-		else
-		{
-			ft_strdel(&s);
-			return (0);
-		}
-	}
-	i = -1;
-	while (s[++i])
-		if (s[i] == ')')
-		{
-			ft_strdel(&s);
-			return (-2);
-		}
-	ft_strdel(&s);
-	return(1);
-}
-
 int		ft_ck_addline(t_readline *p)
 {
 	int 	f;
@@ -310,36 +165,35 @@ int		ft_ck_addline(t_readline *p)
 	return (1);
 }
 
-int		main_cycle(t_readline *p, t_exectoken **start_token)
+int				main_read(t_readline *p, t_exectoken **start_token)
 {
-	//char	*str_for_del;
+	while (get_next_line(STDIN_FILENO, &p->buff))
+	{
+		*start_token = all_parse(p->buff);
+		if (ft_main_what(*start_token) == -1)
+			return (-1);
+		free(p->buff);
+		ft_distruct_tree(*start_token);
+	}
+	return (0);
+}
+
+int				main_cycle(t_readline *p, t_exectoken **start_token)
+{
 	init_shell();
 	if (!set_input_mode())
 	{
 		ft_start_read(p);
 		ft_read_8(p, memory_head, 0);
 		write(2, "\n", 1);
-		//str_for_del = p->buff;
-		//p->buff = do_zamena_slash(p->buff);
-		//ft_strdel(&str_for_del);
 		if (!ft_ck_addline(p))
 			p->buff = ft_strnew(130000);
 		reset_input_mode();
 	}
 	else
-	{
-		while (get_next_line(STDIN_FILENO, &p->buff))
-		{
-			*start_token = all_parse(p->buff);
-			if (ft_main_what(*start_token) == -1)
-				return (-1);
-//			write(1, "\n", 1);
-			free(p->buff);
-			ft_distruct_tree(*start_token);
-		}
-	}
+		if (main_read(p, start_token) == -1)
+			return (-1);
 	p->buff[0] != '\0' ? memory_head = ft_memory(memory_head, &(p->buff)) : memory_head;
-	//printf("|pars|%s\n", p->buff);
 	if ((*start_token = all_parse(p->buff)) == NULL)
 	{
 		del_readline(p);
@@ -348,13 +202,12 @@ int		main_cycle(t_readline *p, t_exectoken **start_token)
 	}
 	if (ft_main_what(*start_token) == -1)
 		return (-1);
-	//ft_strdel(&p->buff);
 	del_readline(p);
 	ft_distruct_tree(*start_token);
 	return (0);
 }
 
-int		main(int argc, char **argv, char **env)
+int				main(int argc, char **argv, char **env)
 {
 	t_readline	p;
 	t_exectoken	*start_token;

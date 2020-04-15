@@ -127,6 +127,7 @@ int					ft_what_flag(char *opt);
 int					ft_put_info(void);
 int					ft_env_len(char **env);
 char				*do_reverse_zamena(char *str);
+int					strdelr(char **str);
 void				ft_show_env(char **env);
 char				*do_zam_str_with_tilda(char *str);
 int					check_file(char *file, unsigned check);
