@@ -44,14 +44,14 @@ int		launch_process(t_process *p, pid_t pgid,
 	int			dop1;
 
 	dop1 = 0;
-	if (shell_is_interactive)
+	if (g_shell_is_interactive)
 	{
 		pid = getpid();
 		if (pgid == 0)
 			pgid = pid;
 		setpgid (pid, pgid);
 		if (foreground)
-			tcsetpgrp (shell_terminal, pgid);
+			tcsetpgrp (g_shell_terminal, pgid);
 		recover_normal_shell_signals();
 		standart_redirect(infile, outfile, errfile);
 		if (p->file_opt)

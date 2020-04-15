@@ -25,7 +25,7 @@ int mark_process_status (pid_t pid, int status)
 	if (pid > 0)
 	{
 		/* Update the record for the process.  */
-		for (j = f_job; j; j = j->next)
+		for (j = g_f_job; j; j = j->next)
 		{
 			job_count++;
 			for (p = j->first_process; p; p = p->next)
@@ -82,7 +82,7 @@ int		process_count()
 	t_process	*p;
 	int			res;
 
-	job = f_job;
+	job = g_f_job;
 	res = 0;
 	while (job)
 	{

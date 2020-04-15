@@ -45,7 +45,7 @@ int				do_job_del(void)
 	d = 0;
 	update_status();
 	jlast = NULL;
-	j = f_job;
+	j = g_f_job;
 	while (j)
 	{
 		d++;
@@ -58,7 +58,7 @@ int				do_job_del(void)
 			if (jlast)
 				jlast->next = jnext;
 			else
-				f_job = jnext;
+				g_f_job = jnext;
 			jdop = j;
 		}
 		else

@@ -140,6 +140,7 @@ SRC_BASE = builtins/ft_cd.c\
 	builtins/allenv/main_env.c\
 	builtins/ft_type.c\
 	g_builtins.c\
+	ft_whatis.c\
 
 
 

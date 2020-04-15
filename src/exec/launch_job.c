@@ -42,7 +42,7 @@ int		launch_job(t_job *j, int foreground)
 		else
 		{
 			p->pid = pid;
-			if (shell_is_interactive)
+			if (g_shell_is_interactive)
 			{
 				if (j->pgid <= 0)
 					j->pgid = pid;
@@ -56,7 +56,7 @@ int		launch_job(t_job *j, int foreground)
 		infile = mypipe[0];
 		p = p->next;
 	}
-	if (!shell_is_interactive)
+	if (!g_shell_is_interactive)
 		wait_for_job (j);
 	if (foreground)
 		put_job_in_foreground (j, 0);

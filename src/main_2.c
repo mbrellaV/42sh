@@ -27,16 +27,14 @@ char	*do_reverse_zamena(char *str)
 		{
 			tmp = ft_strdup("\\ ");
 			tmp[1] = -1 * str[i];
-			ft_strcat(newstr, tmp);
-			ft_strdel(&tmp);
 		}
 		else
 		{
 			tmp = ft_strdup(" ");
 			tmp[0] = str[i];
-			ft_strcat(newstr, tmp);
-			ft_strdel(&tmp);
 		}
+		ft_strcat(newstr, tmp);
+		ft_strdel(&tmp);
 	}
 	ft_strdel(&str);
 	return (newstr);
@@ -73,10 +71,10 @@ int		ft_main_what(t_exectoken *tmp)
 				continue ;
 			}
 			job = create_job(tmp);
-			if (f_job != NULL)
+			if (g_f_job != NULL)
 				get_last_job()->next = job;
 			else
-				f_job = job;
+				g_f_job = job;
 			sas = launch_job(job, job->foreground);
 			ft_strdel(&str_to_del);
 		}
@@ -90,15 +88,11 @@ int		ft_main_what(t_exectoken *tmp)
 	return (1);
 }
 
-int			ck_br(const char *str)
+char	*ck_br_faf(char *s)
 {
-	char	*s;
 	int		i;
-	int		k;
 	char	c;
 
-	k = 0;
-	s = ft_strdup(str);
 	i = -1;
 	while (s[++i])
 	{
@@ -111,8 +105,11 @@ int			ck_br(const char *str)
 			s[i] = 'F';
 		}
 	}
-	if ((i = check_bracket(s)) && i != 1 && strdelr(&s))
-		return (i);
+	return (s);
+}
+
+char	*ck_br_cycle(char *s, int k, int i)
+{
 	while (1)
 	{
 		i = -1;
@@ -133,8 +130,24 @@ int			ck_br(const char *str)
 			s[i] = 'A';
 		}
 		else if (strdelr(&s))
-			return (0);
+			return (NULL);
 	}
+	return (s);
+}
+
+int		ck_br(const char *str)
+{
+	char	*s;
+	int		i;
+	int		k;
+
+	k = 0;
+	s = ft_strdup(str);
+	s = ck_br_faf(s);
+	if ((i = check_bracket(s)) && i != 1 && strdelr(&s))
+		return (i);
+	if ((s = ck_br_cycle(s, k, i)) == NULL)
+		return (0);
 	i = -1;
 	while (s[++i])
 		if (s[i] == ')')
@@ -143,5 +156,5 @@ int			ck_br(const char *str)
 			return (-2);
 		}
 	ft_strdel(&s);
-	return(1);
+	return (1);
 }

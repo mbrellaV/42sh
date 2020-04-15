@@ -32,7 +32,7 @@ void    do_job_notification(void)
 	job_count = 0;
 	update_status ();
 	jlast = NULL;
-	for (j = f_job; j; j = jnext)
+	for (j = g_f_job; j; j = jnext)
 	{
 		job_count++;
 		jnext = j->next;
@@ -42,7 +42,7 @@ void    do_job_notification(void)
 			if (jlast)
 				jlast->next = jnext;
 			else
-				f_job = jnext;
+				g_f_job = jnext;
 		}
 		else if (job_is_stopped (j) && !j->notified) {
 			format_job_info (j, "suspended", job_count);

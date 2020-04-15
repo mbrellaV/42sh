@@ -68,5 +68,4 @@ char						*get_num_from_hist_starting(t_memory *t,
 							char *name);
 int							is_cmd_redirect(int i);
 
-
 #endif
