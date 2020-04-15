@@ -24,6 +24,7 @@ SRC_BASE = builtins/ft_cd.c\
 	builtins/allenv/ft_env.c\
 	builtins/alias/alias.c\
  	builtins/allenv/global_env.c\
+ 	main_2.c\
  	qft_printf/add_buff.c\
  	qft_printf/add_char.c\
  	qft_printf/add_d.c\
