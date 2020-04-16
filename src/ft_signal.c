@@ -12,7 +12,7 @@
 
 #include "../inc/fshell.h"
 
-void	recover_normal_shell_signals()
+void	recover_normal_shell_signals(void)
 {
 	signal(SIGINT, SIG_DFL);
 	signal(SIGQUIT, SIG_DFL);
@@ -21,7 +21,7 @@ void	recover_normal_shell_signals()
 	signal(SIGTTOU, SIG_DFL);
 }
 
-void	disable_shell_signals()
+void	disable_shell_signals(void)
 {
 	signal(SIGINT, SIG_IGN);
 	signal(SIGQUIT, SIG_IGN);

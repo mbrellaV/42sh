@@ -6,7 +6,7 @@
 /*   By: mbrella <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/16 16:19:24 by mbrella           #+#    #+#             */
-/*   Updated: 2020/04/14 21:06:34 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/04/16 17:10:38 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,22 @@ int						is_cmd_delim(int i)
 
 int						is_cmd_redirect(int i)
 {
-	return (i >=3 && i <= 8);
+	return (i >= 3 && i <= 8);
+}
+
+static void				init_t(t_dop_str *t, int op_type)
+{
+	t->tmp1_a->foreground = 1;
+	t->tmp1_a->left = NULL;
+	t->tmp1_a->right = NULL;
+	t->tmp1_a->should_wait_and = 0;
+	t->tmp1_a->should_wait_or = 0;
+	if (op_type == 10)
+		t->tmp1_a->should_wait_and = 1;
+	if (op_type == 11)
+		t->tmp1_a->should_wait_or = 1;
+	t->dopi_a = 0;
+	t->f_a = 0;
 }
 
 void					dop_cr_new_exec(t_dop_str *t,
@@ -30,17 +45,7 @@ void					dop_cr_new_exec(t_dop_str *t,
 		if (!(t->tmp1_a->file_args =
 				(char**)ft_memalloc((t->f_a + 1) * sizeof(char *))))
 			return ;
-		t->tmp1_a->foreground = 1;
-		t->tmp1_a->left = NULL;
-		t->tmp1_a->right = NULL;
-		t->tmp1_a->should_wait_and = 0;
-		t->tmp1_a->should_wait_or = 0;
-		if (op_type == 10)
-			t->tmp1_a->should_wait_and = 1;
-		if (op_type == 11)
-			t->tmp1_a->should_wait_or = 1;
-		t->dopi_a = 0;
-		t->f_a = 0;
+		init_t(t, op_type);
 		if (prev != NULL)
 		{
 			if (op_type == get_op_type("|"))
