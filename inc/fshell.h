@@ -6,7 +6,7 @@
 /*   By: mbrella <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/11 10:58:44 by mbrella           #+#    #+#             */
-/*   Updated: 2020/04/16 14:36:14 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/04/16 14:52:39 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,22 +61,22 @@
 # define SHELL_NAME "42sh"
 # define BIL_NUM 16
 
-typedef struct	s_del
+typedef struct		s_del
 {
-	t_job		*j;
-	t_job		*jlast;
-	t_job		*jnext;
-	t_job		*jdop;
-	int			d;
-}				t_del;
+	t_job			*j;
+	t_job			*jlast;
+	t_job			*jnext;
+	t_job			*jdop;
+	int				d;
+}					t_del;
 
-typedef struct	s_zams
+typedef struct		s_zams
 {
-	int			i;
-	int			dop;
-	char		*dopstr;
-	char		*str_for_del;
-}				t_zams;
+	int				i;
+	int				dop;
+	char			*dopstr;
+	char			*str_for_del;
+}					t_zams;
 
 typedef struct		s_jobl
 {
