@@ -63,8 +63,8 @@ static void	cycle(t_zams *zams, char *line)
 	if (ispar(line[zams->i]))
 	{
 		zams->dop = c_size(&line[zams->i], line[zams->i]);
-		if (zams.dop == -2)
-			zams.dop = 2;
+		if (zams->dop == -2)
+			zams->dop = 2;
 		zams->str_for_del = ft_strsub(line, zams->i, zams->dop + 2);
 		ft_strcat(zams->dopstr, zams->str_for_del);
 		zams->i += zams->dop + 1;

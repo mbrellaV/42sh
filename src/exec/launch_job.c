@@ -16,7 +16,7 @@ static void		cycle(t_jobl *jobl, t_job *j, int foreground)
 {
 	jobl->pid = fork();
 	if (jobl->pid == 0)
-		launch_process(j, jobl, foreground);
+		launch_process(jobl->p, *j, *jobl, foreground);
 	else if (jobl->pid < 0)
 		exit(0);
 	else

@@ -58,6 +58,7 @@ static int		cycle(int i, int j, char **spl)
 		}
 		flag--;
 	}
+	return (0);
 }
 
 int				check_bracket(char *str)

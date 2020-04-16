@@ -34,7 +34,7 @@ void		do_job_notification(void)
 	del.d = 0;
 	update_status();
 	del.jlast = NULL;
-	j = g_f_job;
+	del.j = g_f_job;
 	while (del.j)
 	{
 		del.d++;
@@ -45,7 +45,7 @@ void		do_job_notification(void)
 		{
 			format_job_info(del.j, "suspended", del.d);
 			del.j->notified = 1;
-			del.jlast = j;
+			del.jlast = del.j;
 		}
 		else
 			del.jlast = del.j;

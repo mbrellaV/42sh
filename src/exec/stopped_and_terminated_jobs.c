@@ -27,15 +27,15 @@ static int		norme_help(t_pstat *pstat, int status, pid_t pid)
 	{
 		pstat->p->completed = 1;
 		pstat->p->status = WEXITSTATUS(status);
-		pstat->str_for_del = ft_itoa(p->status);
+		pstat->str_for_del = ft_itoa(pstat->p->status);
 		set_new_var("?", pstat->str_for_del, &g_all_var);
 		ft_strdel(&pstat->str_for_del);
-		pstat->ptmp = j->first_process;
+		pstat->ptmp = pstat->j->first_process;
 		while (pstat->ptmp != pstat->p && (pstat->ptmp->completed = 1))
 			pstat->ptmp = pstat->ptmp->next;
 		if (WIFSIGNALED(status))
 			ft_dprintf(2, "%d: Terminated by signal %d.\n",
-				(int)pid, WTERMSIG(p->status));
+				(int)pid, WTERMSIG(pstat->p->status));
 	}
 	return (0);
 }
