@@ -40,54 +40,6 @@ char	*do_reverse_zamena(char *str)
 	return (newstr);
 }
 
-int		ft_main_what(t_exectoken *tmp)
-{
-	t_job	*job;
-	int		sas;
-	char	*str_to_del;
-
-	sas = 0;
-	while (tmp)
-	{
-		if ((tmp->file_args == NULL) && (tmp->file_opt == NULL))
-		{
-			tmp = tmp->right;
-			continue ;
-		}
-		if ((tmp->file_args != NULL && is_builtin(tmp->file_args[0]) == 0)
-			|| tmp->file_opt != NULL)
-		{
-			str_to_del = ft_get_var("?", g_all_var);
-			if (tmp->should_wait_and == 1 && ft_atoi(str_to_del) > 0)
-			{
-				ft_strdel(&str_to_del);
-				tmp = tmp->right;
-				continue ;
-			}
-			else if (tmp->should_wait_or == 1 && ft_atoi(str_to_del) == 0)
-			{
-				ft_strdel(&str_to_del);
-				tmp = tmp->right;
-				continue ;
-			}
-			job = create_job(tmp);
-			if (g_f_job != NULL)
-				get_last_job()->next = job;
-			else
-				g_f_job = job;
-			sas = launch_job(job, job->foreground);
-			ft_strdel(&str_to_del);
-		}
-		else if (tmp->left == NULL && is_builtin(tmp->file_args[0]) == 1)
-			sas = ft_whatis4(tmp);
-		if (sas == -1)
-			return (-1);
-		tmp = tmp->right;
-	}
-	do_job_del();
-	return (1);
-}
-
 char	*ck_br_faf(char *s)
 {
 	int		i;

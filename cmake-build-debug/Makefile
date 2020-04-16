@@ -1175,6 +1175,33 @@ src/ft_error_q.c.s:
 	$(MAKE) -f CMakeFiles\42save.dir\build.make CMakeFiles/42save.dir/src/ft_error_q.c.s
 .PHONY : src/ft_error_q.c.s
 
+src/ft_main_what.obj: src/ft_main_what.c.obj
+
+.PHONY : src/ft_main_what.obj
+
+# target to build an object file
+src/ft_main_what.c.obj:
+	$(MAKE) -f CMakeFiles\42save.dir\build.make CMakeFiles/42save.dir/src/ft_main_what.c.obj
+.PHONY : src/ft_main_what.c.obj
+
+src/ft_main_what.i: src/ft_main_what.c.i
+
+.PHONY : src/ft_main_what.i
+
+# target to preprocess a source file
+src/ft_main_what.c.i:
+	$(MAKE) -f CMakeFiles\42save.dir\build.make CMakeFiles/42save.dir/src/ft_main_what.c.i
+.PHONY : src/ft_main_what.c.i
+
+src/ft_main_what.s: src/ft_main_what.c.s
+
+.PHONY : src/ft_main_what.s
+
+# target to generate assembly for a file
+src/ft_main_what.c.s:
+	$(MAKE) -f CMakeFiles\42save.dir\build.make CMakeFiles/42save.dir/src/ft_main_what.c.s
+.PHONY : src/ft_main_what.c.s
+
 src/ft_signal.obj: src/ft_signal.c.obj
 
 .PHONY : src/ft_signal.obj
@@ -3191,6 +3218,9 @@ help:
 	@echo ... src/ft_error_q.obj
 	@echo ... src/ft_error_q.i
 	@echo ... src/ft_error_q.s
+	@echo ... src/ft_main_what.obj
+	@echo ... src/ft_main_what.i
+	@echo ... src/ft_main_what.s
 	@echo ... src/ft_signal.obj
 	@echo ... src/ft_signal.i
 	@echo ... src/ft_signal.s

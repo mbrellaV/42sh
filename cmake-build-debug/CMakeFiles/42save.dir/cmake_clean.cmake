@@ -41,6 +41,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/42save.dir/src/exec/working_with_fds.c.obj"
   "CMakeFiles/42save.dir/src/ft_distruct.c.obj"
   "CMakeFiles/42save.dir/src/ft_error_q.c.obj"
+  "CMakeFiles/42save.dir/src/ft_main_what.c.obj"
   "CMakeFiles/42save.dir/src/ft_signal.c.obj"
   "CMakeFiles/42save.dir/src/ft_take_arg.c.obj"
   "CMakeFiles/42save.dir/src/g_builtins.c.obj"

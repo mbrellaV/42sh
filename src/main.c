@@ -93,7 +93,8 @@ int		main_cycle(t_readline *p, t_exectoken **start_token)
 	}
 	else if (main_read(p, start_token) == -1)
 		return (-1);
-	p->buff[0] != '\0' ? g_memory_head = ft_memory(g_memory_head, &(p->buff)) : g_memory_head;
+	p->buff[0] != '\0' ? g_memory_head = ft_memory(g_memory_head,
+			&(p->buff)) : g_memory_head;
 	if ((*start_token = all_parse(p->buff)) == NULL)
 	{
 		del_readline(p);

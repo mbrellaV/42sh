@@ -43,6 +43,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "C:/Users/Admin/Desktop/42sh/src/exec/working_with_fds.c" "C:/Users/Admin/Desktop/42sh/cmake-build-debug/CMakeFiles/42save.dir/src/exec/working_with_fds.c.obj"
   "C:/Users/Admin/Desktop/42sh/src/ft_distruct.c" "C:/Users/Admin/Desktop/42sh/cmake-build-debug/CMakeFiles/42save.dir/src/ft_distruct.c.obj"
   "C:/Users/Admin/Desktop/42sh/src/ft_error_q.c" "C:/Users/Admin/Desktop/42sh/cmake-build-debug/CMakeFiles/42save.dir/src/ft_error_q.c.obj"
+  "C:/Users/Admin/Desktop/42sh/src/ft_main_what.c" "C:/Users/Admin/Desktop/42sh/cmake-build-debug/CMakeFiles/42save.dir/src/ft_main_what.c.obj"
   "C:/Users/Admin/Desktop/42sh/src/ft_signal.c" "C:/Users/Admin/Desktop/42sh/cmake-build-debug/CMakeFiles/42save.dir/src/ft_signal.c.obj"
   "C:/Users/Admin/Desktop/42sh/src/ft_take_arg.c" "C:/Users/Admin/Desktop/42sh/cmake-build-debug/CMakeFiles/42save.dir/src/ft_take_arg.c.obj"
   "C:/Users/Admin/Desktop/42sh/src/g_builtins.c" "C:/Users/Admin/Desktop/42sh/cmake-build-debug/CMakeFiles/42save.dir/src/g_builtins.c.obj"
