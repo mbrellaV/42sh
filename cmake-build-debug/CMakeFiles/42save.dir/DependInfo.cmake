@@ -43,6 +43,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "/home/petruha2001/42sh/src/exec/working_with_fds.c" "/home/petruha2001/42sh/cmake-build-debug/CMakeFiles/42save.dir/src/exec/working_with_fds.c.o"
   "/home/petruha2001/42sh/src/ft_distruct.c" "/home/petruha2001/42sh/cmake-build-debug/CMakeFiles/42save.dir/src/ft_distruct.c.o"
   "/home/petruha2001/42sh/src/ft_error_q.c" "/home/petruha2001/42sh/cmake-build-debug/CMakeFiles/42save.dir/src/ft_error_q.c.o"
+  "/home/petruha2001/42sh/src/ft_main_what.c" "/home/petruha2001/42sh/cmake-build-debug/CMakeFiles/42save.dir/src/ft_main_what.c.o"
   "/home/petruha2001/42sh/src/ft_signal.c" "/home/petruha2001/42sh/cmake-build-debug/CMakeFiles/42save.dir/src/ft_signal.c.o"
   "/home/petruha2001/42sh/src/ft_take_arg.c" "/home/petruha2001/42sh/cmake-build-debug/CMakeFiles/42save.dir/src/ft_take_arg.c.o"
   "/home/petruha2001/42sh/src/g_builtins.c" "/home/petruha2001/42sh/cmake-build-debug/CMakeFiles/42save.dir/src/g_builtins.c.o"
@@ -59,6 +60,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "/home/petruha2001/42sh/src/lexer/check_errors.c" "/home/petruha2001/42sh/cmake-build-debug/CMakeFiles/42save.dir/src/lexer/check_errors.c.o"
   "/home/petruha2001/42sh/src/lexer/cr_and_add_tokens.c" "/home/petruha2001/42sh/cmake-build-debug/CMakeFiles/42save.dir/src/lexer/cr_and_add_tokens.c.o"
   "/home/petruha2001/42sh/src/lexer/create_new_lexer_struct.c" "/home/petruha2001/42sh/cmake-build-debug/CMakeFiles/42save.dir/src/lexer/create_new_lexer_struct.c.o"
+  "/home/petruha2001/42sh/src/lexer/del_one_node_in_lextokens.c" "/home/petruha2001/42sh/cmake-build-debug/CMakeFiles/42save.dir/src/lexer/del_one_node_in_lextokens.c.o"
   "/home/petruha2001/42sh/src/lexer/dop_funs.c" "/home/petruha2001/42sh/cmake-build-debug/CMakeFiles/42save.dir/src/lexer/dop_funs.c.o"
   "/home/petruha2001/42sh/src/lexer/get_opt_type.c" "/home/petruha2001/42sh/cmake-build-debug/CMakeFiles/42save.dir/src/lexer/get_opt_type.c.o"
   "/home/petruha2001/42sh/src/lexer/history_search.c" "/home/petruha2001/42sh/cmake-build-debug/CMakeFiles/42save.dir/src/lexer/history_search.c.o"
@@ -67,6 +69,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "/home/petruha2001/42sh/src/lexer/word_sizes.c" "/home/petruha2001/42sh/cmake-build-debug/CMakeFiles/42save.dir/src/lexer/word_sizes.c.o"
   "/home/petruha2001/42sh/src/lexer/zam_opt_in_tokens.c" "/home/petruha2001/42sh/cmake-build-debug/CMakeFiles/42save.dir/src/lexer/zam_opt_in_tokens.c.o"
   "/home/petruha2001/42sh/src/main.c" "/home/petruha2001/42sh/cmake-build-debug/CMakeFiles/42save.dir/src/main.c.o"
+  "/home/petruha2001/42sh/src/main_2.c" "/home/petruha2001/42sh/cmake-build-debug/CMakeFiles/42save.dir/src/main_2.c.o"
   "/home/petruha2001/42sh/src/nucleus/del_readline.c" "/home/petruha2001/42sh/cmake-build-debug/CMakeFiles/42save.dir/src/nucleus/del_readline.c.o"
   "/home/petruha2001/42sh/src/nucleus/do_add.c" "/home/petruha2001/42sh/cmake-build-debug/CMakeFiles/42save.dir/src/nucleus/do_add.c.o"
   "/home/petruha2001/42sh/src/nucleus/dop_tab_funs.c" "/home/petruha2001/42sh/cmake-build-debug/CMakeFiles/42save.dir/src/nucleus/dop_tab_funs.c.o"
@@ -118,6 +121,7 @@ set(CMAKE_C_COMPILER_ID "GNU")
 set(CMAKE_C_TARGET_INCLUDE_PATH
   "../inc"
   "../src"
+  "../src/qft_printf"
   )
 
 # Targets to which this target links.

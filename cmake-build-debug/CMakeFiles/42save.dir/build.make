@@ -1448,6 +1448,45 @@ CMakeFiles/42save.dir/src/exec/redirect.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/42save.dir/src/exec/redirect.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/petruha2001/42sh/src/exec/redirect.c -o CMakeFiles/42save.dir/src/exec/redirect.c.s
 
+CMakeFiles/42save.dir/src/main_2.c.o: CMakeFiles/42save.dir/flags.make
+CMakeFiles/42save.dir/src/main_2.c.o: ../src/main_2.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/petruha2001/42sh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_108) "Building C object CMakeFiles/42save.dir/src/main_2.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/42save.dir/src/main_2.c.o   -c /home/petruha2001/42sh/src/main_2.c
+
+CMakeFiles/42save.dir/src/main_2.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/42save.dir/src/main_2.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/petruha2001/42sh/src/main_2.c > CMakeFiles/42save.dir/src/main_2.c.i
+
+CMakeFiles/42save.dir/src/main_2.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/42save.dir/src/main_2.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/petruha2001/42sh/src/main_2.c -o CMakeFiles/42save.dir/src/main_2.c.s
+
+CMakeFiles/42save.dir/src/lexer/del_one_node_in_lextokens.c.o: CMakeFiles/42save.dir/flags.make
+CMakeFiles/42save.dir/src/lexer/del_one_node_in_lextokens.c.o: ../src/lexer/del_one_node_in_lextokens.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/petruha2001/42sh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_109) "Building C object CMakeFiles/42save.dir/src/lexer/del_one_node_in_lextokens.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/42save.dir/src/lexer/del_one_node_in_lextokens.c.o   -c /home/petruha2001/42sh/src/lexer/del_one_node_in_lextokens.c
+
+CMakeFiles/42save.dir/src/lexer/del_one_node_in_lextokens.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/42save.dir/src/lexer/del_one_node_in_lextokens.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/petruha2001/42sh/src/lexer/del_one_node_in_lextokens.c > CMakeFiles/42save.dir/src/lexer/del_one_node_in_lextokens.c.i
+
+CMakeFiles/42save.dir/src/lexer/del_one_node_in_lextokens.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/42save.dir/src/lexer/del_one_node_in_lextokens.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/petruha2001/42sh/src/lexer/del_one_node_in_lextokens.c -o CMakeFiles/42save.dir/src/lexer/del_one_node_in_lextokens.c.s
+
+CMakeFiles/42save.dir/src/ft_main_what.c.o: CMakeFiles/42save.dir/flags.make
+CMakeFiles/42save.dir/src/ft_main_what.c.o: ../src/ft_main_what.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/petruha2001/42sh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_110) "Building C object CMakeFiles/42save.dir/src/ft_main_what.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/42save.dir/src/ft_main_what.c.o   -c /home/petruha2001/42sh/src/ft_main_what.c
+
+CMakeFiles/42save.dir/src/ft_main_what.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/42save.dir/src/ft_main_what.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/petruha2001/42sh/src/ft_main_what.c > CMakeFiles/42save.dir/src/ft_main_what.c.i
+
+CMakeFiles/42save.dir/src/ft_main_what.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/42save.dir/src/ft_main_what.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/petruha2001/42sh/src/ft_main_what.c -o CMakeFiles/42save.dir/src/ft_main_what.c.s
+
 # Object files for target 42save
 42save_OBJECTS = \
 "CMakeFiles/42save.dir/src/builtins/alias/alias.c.o" \
@@ -1556,7 +1595,10 @@ CMakeFiles/42save.dir/src/exec/redirect.c.s: cmake_force
 "CMakeFiles/42save.dir/src/exec/job_info.c.o" \
 "CMakeFiles/42save.dir/src/evaln/sub_and_add.c.o" \
 "CMakeFiles/42save.dir/src/exec/ft_do_pipe_next.c.o" \
-"CMakeFiles/42save.dir/src/exec/redirect.c.o"
+"CMakeFiles/42save.dir/src/exec/redirect.c.o" \
+"CMakeFiles/42save.dir/src/main_2.c.o" \
+"CMakeFiles/42save.dir/src/lexer/del_one_node_in_lextokens.c.o" \
+"CMakeFiles/42save.dir/src/ft_main_what.c.o"
 
 # External object files for target 42save
 42save_EXTERNAL_OBJECTS =
@@ -1668,10 +1710,13 @@ CMakeFiles/42save.dir/src/exec/redirect.c.s: cmake_force
 42save: CMakeFiles/42save.dir/src/evaln/sub_and_add.c.o
 42save: CMakeFiles/42save.dir/src/exec/ft_do_pipe_next.c.o
 42save: CMakeFiles/42save.dir/src/exec/redirect.c.o
+42save: CMakeFiles/42save.dir/src/main_2.c.o
+42save: CMakeFiles/42save.dir/src/lexer/del_one_node_in_lextokens.c.o
+42save: CMakeFiles/42save.dir/src/ft_main_what.c.o
 42save: CMakeFiles/42save.dir/build.make
 42save: ../libft/libft.a
 42save: CMakeFiles/42save.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/petruha2001/42sh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_108) "Linking C executable 42save"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/petruha2001/42sh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_111) "Linking C executable 42save"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/42save.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

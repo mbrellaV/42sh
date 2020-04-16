@@ -1176,6 +1176,33 @@ src/ft_error_q.c.s:
 	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/ft_error_q.c.s
 .PHONY : src/ft_error_q.c.s
 
+src/ft_main_what.o: src/ft_main_what.c.o
+
+.PHONY : src/ft_main_what.o
+
+# target to build an object file
+src/ft_main_what.c.o:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/ft_main_what.c.o
+.PHONY : src/ft_main_what.c.o
+
+src/ft_main_what.i: src/ft_main_what.c.i
+
+.PHONY : src/ft_main_what.i
+
+# target to preprocess a source file
+src/ft_main_what.c.i:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/ft_main_what.c.i
+.PHONY : src/ft_main_what.c.i
+
+src/ft_main_what.s: src/ft_main_what.c.s
+
+.PHONY : src/ft_main_what.s
+
+# target to generate assembly for a file
+src/ft_main_what.c.s:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/ft_main_what.c.s
+.PHONY : src/ft_main_what.c.s
+
 src/ft_signal.o: src/ft_signal.c.o
 
 .PHONY : src/ft_signal.o
@@ -1608,6 +1635,33 @@ src/lexer/create_new_lexer_struct.c.s:
 	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/lexer/create_new_lexer_struct.c.s
 .PHONY : src/lexer/create_new_lexer_struct.c.s
 
+src/lexer/del_one_node_in_lextokens.o: src/lexer/del_one_node_in_lextokens.c.o
+
+.PHONY : src/lexer/del_one_node_in_lextokens.o
+
+# target to build an object file
+src/lexer/del_one_node_in_lextokens.c.o:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/lexer/del_one_node_in_lextokens.c.o
+.PHONY : src/lexer/del_one_node_in_lextokens.c.o
+
+src/lexer/del_one_node_in_lextokens.i: src/lexer/del_one_node_in_lextokens.c.i
+
+.PHONY : src/lexer/del_one_node_in_lextokens.i
+
+# target to preprocess a source file
+src/lexer/del_one_node_in_lextokens.c.i:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/lexer/del_one_node_in_lextokens.c.i
+.PHONY : src/lexer/del_one_node_in_lextokens.c.i
+
+src/lexer/del_one_node_in_lextokens.s: src/lexer/del_one_node_in_lextokens.c.s
+
+.PHONY : src/lexer/del_one_node_in_lextokens.s
+
+# target to generate assembly for a file
+src/lexer/del_one_node_in_lextokens.c.s:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/lexer/del_one_node_in_lextokens.c.s
+.PHONY : src/lexer/del_one_node_in_lextokens.c.s
+
 src/lexer/dop_funs.o: src/lexer/dop_funs.c.o
 
 .PHONY : src/lexer/dop_funs.o
@@ -1823,6 +1877,33 @@ src/main.s: src/main.c.s
 src/main.c.s:
 	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/main.c.s
 .PHONY : src/main.c.s
+
+src/main_2.o: src/main_2.c.o
+
+.PHONY : src/main_2.o
+
+# target to build an object file
+src/main_2.c.o:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/main_2.c.o
+.PHONY : src/main_2.c.o
+
+src/main_2.i: src/main_2.c.i
+
+.PHONY : src/main_2.i
+
+# target to preprocess a source file
+src/main_2.c.i:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/main_2.c.i
+.PHONY : src/main_2.c.i
+
+src/main_2.s: src/main_2.c.s
+
+.PHONY : src/main_2.s
+
+# target to generate assembly for a file
+src/main_2.c.s:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/main_2.c.s
+.PHONY : src/main_2.c.s
 
 src/nucleus/del_readline.o: src/nucleus/del_readline.c.o
 
@@ -3138,6 +3219,9 @@ help:
 	@echo "... src/ft_error_q.o"
 	@echo "... src/ft_error_q.i"
 	@echo "... src/ft_error_q.s"
+	@echo "... src/ft_main_what.o"
+	@echo "... src/ft_main_what.i"
+	@echo "... src/ft_main_what.s"
 	@echo "... src/ft_signal.o"
 	@echo "... src/ft_signal.i"
 	@echo "... src/ft_signal.s"
@@ -3186,6 +3270,9 @@ help:
 	@echo "... src/lexer/create_new_lexer_struct.o"
 	@echo "... src/lexer/create_new_lexer_struct.i"
 	@echo "... src/lexer/create_new_lexer_struct.s"
+	@echo "... src/lexer/del_one_node_in_lextokens.o"
+	@echo "... src/lexer/del_one_node_in_lextokens.i"
+	@echo "... src/lexer/del_one_node_in_lextokens.s"
 	@echo "... src/lexer/dop_funs.o"
 	@echo "... src/lexer/dop_funs.i"
 	@echo "... src/lexer/dop_funs.s"
@@ -3210,6 +3297,9 @@ help:
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/main_2.o"
+	@echo "... src/main_2.i"
+	@echo "... src/main_2.s"
 	@echo "... src/nucleus/del_readline.o"
 	@echo "... src/nucleus/del_readline.i"
 	@echo "... src/nucleus/del_readline.s"

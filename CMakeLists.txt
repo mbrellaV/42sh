@@ -5,6 +5,7 @@ set(CMAKE_C_STANDARD 99)
 
 include_directories(inc)
 include_directories(src)
+include_directories(src/qft_printf)
 
 add_executable(42save
         inc/fshell.h
@@ -111,7 +112,7 @@ add_executable(42save
         src/g_builtins.c
         src/init_shell.c
         src/main.c
-        src/shell_lvl.c src/exec/create_jobs_and_proc.c src/exec/free_job_list.c src/exec/find_jobs.c src/exec/working_with_fds.c src/exec/job_info.c src/evaln/sub_and_add.c src/exec/ft_do_pipe_next.c src/exec/redirect.c)
+        src/shell_lvl.c src/exec/create_jobs_and_proc.c src/exec/free_job_list.c src/exec/find_jobs.c src/exec/working_with_fds.c src/exec/job_info.c src/evaln/sub_and_add.c src/exec/ft_do_pipe_next.c src/exec/redirect.c src/main_2.c src/lexer/del_one_node_in_lextokens.c src/ft_main_what.c)
 
 
 target_link_libraries(42save ${CMAKE_SOURCE_DIR}/libft/libft.a)
