@@ -42,7 +42,7 @@ static void		norme_help(t_del *del)
 		del->jlast->next = del->jnext;
 	else
 		g_f_job = del->jnext;
-	del->jdop = j;
+	del->jdop = del->j;
 }
 
 int				do_job_del(void)
@@ -52,16 +52,16 @@ int				do_job_del(void)
 	del.d = 0;
 	update_status();
 	del.jlast = NULL;
-	j = g_f_job;
+	del.j = g_f_job;
 	while (del.j)
 	{
 		del.d++;
-		del.jnext = j->next;
+		del.jnext = del.j->next;
 		del.jdop = NULL;
 		if (job_is_completed(del.j))
 			norme_help(&del);
 		else
-			del.jlast = j;
+			del.jlast = del.j;
 		del.j = del.j->next;
 		(del.jdop != NULL) ? free_job(del.jdop) : 0;
 	}

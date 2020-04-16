@@ -32,35 +32,20 @@ void	disable_shell_signals()
 
 void	ft_fork_signal(int signo)
 {
-//	int 	pid;
-
 	if (signo == SIGINT)
 	{
 		ft_putstr_fd("\n", 2);
 		signal(SIGINT, ft_fork_signal);
 	}
 	else if (signo == SIGTSTP)
-	{
-//		g_pid = getpid();
-//		signal(SIGTSTP, SIG_DFL);
-//		dprintf(2, "PID_STATIC = %d\n", g_pid);
-//		dprintf(2, "G_PID = %d\n", getpgrp());
-//		dprintf(2, "G_PID = %d\n", getpgid(g_pid));
-//		kill(g_pid, SIGTSTP);
-		//g_pid = -1;
-//		signal(SIGINT, ft_fork_signal);
-//		signal(SIGTSTP, ft_fork_signal);
-	}
+		;
 	else if (signo == SIGSTOP)
 	{
 		printf("TRUE\n");
 		signal(SIGSTOP, SIG_IGN);
 	}
 	else if (signo == SIGCONT)
-	{
-//		dprintf(2, "PID = %d", g_pid);
-//		kill(g_pid, SIGCONT);
-	}
+		;
 }
 
 int		ft_signal(int signo, t_readline *p)
