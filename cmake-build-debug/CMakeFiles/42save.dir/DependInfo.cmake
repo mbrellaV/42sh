@@ -59,6 +59,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "C:/Users/Admin/Desktop/42sh/src/lexer/check_errors.c" "C:/Users/Admin/Desktop/42sh/cmake-build-debug/CMakeFiles/42save.dir/src/lexer/check_errors.c.obj"
   "C:/Users/Admin/Desktop/42sh/src/lexer/cr_and_add_tokens.c" "C:/Users/Admin/Desktop/42sh/cmake-build-debug/CMakeFiles/42save.dir/src/lexer/cr_and_add_tokens.c.obj"
   "C:/Users/Admin/Desktop/42sh/src/lexer/create_new_lexer_struct.c" "C:/Users/Admin/Desktop/42sh/cmake-build-debug/CMakeFiles/42save.dir/src/lexer/create_new_lexer_struct.c.obj"
+  "C:/Users/Admin/Desktop/42sh/src/lexer/del_one_node_in_lextokens.c" "C:/Users/Admin/Desktop/42sh/cmake-build-debug/CMakeFiles/42save.dir/src/lexer/del_one_node_in_lextokens.c.obj"
   "C:/Users/Admin/Desktop/42sh/src/lexer/dop_funs.c" "C:/Users/Admin/Desktop/42sh/cmake-build-debug/CMakeFiles/42save.dir/src/lexer/dop_funs.c.obj"
   "C:/Users/Admin/Desktop/42sh/src/lexer/get_opt_type.c" "C:/Users/Admin/Desktop/42sh/cmake-build-debug/CMakeFiles/42save.dir/src/lexer/get_opt_type.c.obj"
   "C:/Users/Admin/Desktop/42sh/src/lexer/history_search.c" "C:/Users/Admin/Desktop/42sh/cmake-build-debug/CMakeFiles/42save.dir/src/lexer/history_search.c.obj"

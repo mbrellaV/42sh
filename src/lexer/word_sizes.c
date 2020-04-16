@@ -41,7 +41,6 @@ int				size_with_bax(char *str)
 	return (i + 1);
 }
 
-
 int				word_size(char *str)
 {
 	int i;

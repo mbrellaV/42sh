@@ -1607,6 +1607,33 @@ src/lexer/create_new_lexer_struct.c.s:
 	$(MAKE) -f CMakeFiles\42save.dir\build.make CMakeFiles/42save.dir/src/lexer/create_new_lexer_struct.c.s
 .PHONY : src/lexer/create_new_lexer_struct.c.s
 
+src/lexer/del_one_node_in_lextokens.obj: src/lexer/del_one_node_in_lextokens.c.obj
+
+.PHONY : src/lexer/del_one_node_in_lextokens.obj
+
+# target to build an object file
+src/lexer/del_one_node_in_lextokens.c.obj:
+	$(MAKE) -f CMakeFiles\42save.dir\build.make CMakeFiles/42save.dir/src/lexer/del_one_node_in_lextokens.c.obj
+.PHONY : src/lexer/del_one_node_in_lextokens.c.obj
+
+src/lexer/del_one_node_in_lextokens.i: src/lexer/del_one_node_in_lextokens.c.i
+
+.PHONY : src/lexer/del_one_node_in_lextokens.i
+
+# target to preprocess a source file
+src/lexer/del_one_node_in_lextokens.c.i:
+	$(MAKE) -f CMakeFiles\42save.dir\build.make CMakeFiles/42save.dir/src/lexer/del_one_node_in_lextokens.c.i
+.PHONY : src/lexer/del_one_node_in_lextokens.c.i
+
+src/lexer/del_one_node_in_lextokens.s: src/lexer/del_one_node_in_lextokens.c.s
+
+.PHONY : src/lexer/del_one_node_in_lextokens.s
+
+# target to generate assembly for a file
+src/lexer/del_one_node_in_lextokens.c.s:
+	$(MAKE) -f CMakeFiles\42save.dir\build.make CMakeFiles/42save.dir/src/lexer/del_one_node_in_lextokens.c.s
+.PHONY : src/lexer/del_one_node_in_lextokens.c.s
+
 src/lexer/dop_funs.obj: src/lexer/dop_funs.c.obj
 
 .PHONY : src/lexer/dop_funs.obj
@@ -3212,6 +3239,9 @@ help:
 	@echo ... src/lexer/create_new_lexer_struct.obj
 	@echo ... src/lexer/create_new_lexer_struct.i
 	@echo ... src/lexer/create_new_lexer_struct.s
+	@echo ... src/lexer/del_one_node_in_lextokens.obj
+	@echo ... src/lexer/del_one_node_in_lextokens.i
+	@echo ... src/lexer/del_one_node_in_lextokens.s
 	@echo ... src/lexer/dop_funs.obj
 	@echo ... src/lexer/dop_funs.i
 	@echo ... src/lexer/dop_funs.s

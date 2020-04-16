@@ -6,37 +6,29 @@
 /*   By: mbrella <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/27 13:42:50 by mbrella           #+#    #+#             */
-/*   Updated: 2020/04/13 20:04:23 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/04/16 15:00:56 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/fshell.h"
 
-char				*do_zam_str_by_str(int start, int end, char *str,
-		char *zam_str)
+char		*do_zam_str_by_str(int start, int end, char *str, char *zam_str)
 {
 	char	*newstr;
 	int		i;
 	int		dopi;
 
-	i = 0;
+	i = -1;
 	dopi = 0;
-	if (str == NULL)
-	{
-		ft_strdel(&str);
-		ft_strdel(&zam_str);
+	if (str == NULL && strdelr(&str) && strdelr(&zam_str))
 		return ((char *)ft_memalloc(130000));
-	}
 	if (zam_str == NULL)
 		zam_str = ft_strdup("\0");
 	if (!(newstr = ft_memalloc((ft_strlen(str) +
-	ft_strlen(zam_str) + 2) * sizeof(char))))
+			ft_strlen(zam_str) + 2) * sizeof(char))))
 		ft_error_q(2);
-	while (str[i] != '\0' && i < start - 1)
-	{
+	while (str[++i] != '\0' && i < start - 1)
 		newstr[i] = str[i];
-		i++;
-	}
 	while (zam_str[dopi] != '\0')
 		newstr[i++] = zam_str[dopi++];
 	while (str[end] != '\0')

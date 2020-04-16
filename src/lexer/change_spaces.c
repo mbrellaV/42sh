@@ -6,13 +6,13 @@
 /*   By: mbrella <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/25 16:19:10 by mbrella           #+#    #+#             */
-/*   Updated: 2020/04/13 18:27:59 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/04/16 14:59:10 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/fshell.h"
 
-char				*do_obr_zamena(char *line)
+char		*do_obr_zamena(char *line)
 {
 	int		i;
 	int		d;
@@ -36,9 +36,9 @@ char				*do_obr_zamena(char *line)
 	return (new);
 }
 
-void			do_obr_zamena_slash(t_exectoken *tmp)
+void		do_obr_zamena_slash(t_exectoken *tmp)
 {
-	int i;
+	int		i;
 
 	i = 0;
 	if (tmp == NULL)
@@ -58,49 +58,51 @@ void			do_obr_zamena_slash(t_exectoken *tmp)
 	do_obr_zamena_slash(tmp->left);
 }
 
-int				do_zamena_slash(char *line, t_readline *p)
+static void	cycle(t_zams *zams, char *line)
 {
-	int		i;
-	char	*tmp;
-	char	*new;
-	int		size;
+	if (ispar(line[zams->i]))
+	{
+		zams->dop = c_size(&line[zams->i], line[zams->i]);
+		if (zams.dop == -2)
+			zams.dop = 2;
+		zams->str_for_del = ft_strsub(line, zams->i, zams->dop + 2);
+		ft_strcat(zams->dopstr, zams->str_for_del);
+		zams->i += zams->dop + 1;
+		ft_strdel(&zams->str_for_del);
+	}
+	else if (line[zams->i] == '\\' && line[zams->i + 1] != '\0')
+	{
+		zams->str_for_del = ft_strdup(" ");
+		zams->str_for_del[0] = -1 * line[zams->i + 1];
+		ft_strcat(zams->dopstr, zams->str_for_del);
+		ft_strdel(&zams->str_for_del);
+		zams->i++;
+	}
+	else
+	{
+		zams->str_for_del = ft_strdup(" ");
+		zams->str_for_del[0] = line[zams->i];
+		ft_strcat(zams->dopstr, zams->str_for_del);
+		ft_strdel(&zams->str_for_del);
+	}
+}
 
-	i = 0;
+int			do_zamena_slash(char *line, t_readline *p)
+{
+	t_zams	zams;
+
+	zams.i = 0;
 	if (line == NULL)
 		return (13000);
-	if (!(new = ft_memalloc(130000)))
+	if (!(zams.dopstr = ft_memalloc(130000)))
 		ft_error_q(2);
-	while (i < ft_strlen(line) && line[i] != '\0')
+	while (zams.i < ft_strlen(line) && line[zams.i] != '\0')
 	{
-		if (ispar(line[i]))
-		{
-			size = c_size(&line[i], line[i]);
-			if (size == -2)
-				size = 2;
-			tmp = ft_strsub(line, i, size + 2);
-			ft_strcat(new, tmp);
-			i += size + 1;
-			ft_strdel(&tmp);
-		}
-		else if (line[i] == '\\' && line[i + 1] != '\0')
-		{
-			tmp = ft_strdup(" ");
-			tmp[0] = -1 * line[i + 1];
-			ft_strcat(new, tmp);
-			ft_strdel(&tmp);
-			i++;
-		}
-		else
-		{
-			tmp = ft_strdup(" ");
-			tmp[0] = line[i];
-			ft_strcat(new, tmp);
-			ft_strdel(&tmp);
-		}
-		i++;
+		cycle(&zams, line);
+		zams.i++;
 	}
 	free(p->buff);
-	p->buff = new;
+	p->buff = zams.dopstr;
 	p->len = ft_strlen(p->buff);
 	return (p->len);
 }

@@ -6,7 +6,7 @@
 /*   By: mbrella <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/11 10:58:44 by mbrella           #+#    #+#             */
-/*   Updated: 2020/04/16 13:16:35 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/04/16 14:36:14 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,14 @@ typedef struct	s_del
 	int			d;
 }				t_del;
 
+typedef struct	s_zams
+{
+	int			i;
+	int			dop;
+	char		*dopstr;
+	char		*str_for_del;
+}				t_zams;
+
 typedef struct		s_jobl
 {
 	t_process		*p;
@@ -112,6 +120,7 @@ char				*do_obr_zamena(char *line);
 void				ft_realloc_all(int k, char ***envl);
 void				ft_echo(char **str);
 char				*ft_slash(char *str, t_builtins *echo);
+void				del_one_node_in_lextokens(t_lextoken *token_to_del);
 char				*distribute_echo(char **str, int k, int flag,
 						t_builtins *echo);
 char				*ft_hex(char *str);

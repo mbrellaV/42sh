@@ -57,6 +57,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/42save.dir/src/lexer/check_errors.c.obj"
   "CMakeFiles/42save.dir/src/lexer/cr_and_add_tokens.c.obj"
   "CMakeFiles/42save.dir/src/lexer/create_new_lexer_struct.c.obj"
+  "CMakeFiles/42save.dir/src/lexer/del_one_node_in_lextokens.c.obj"
   "CMakeFiles/42save.dir/src/lexer/dop_funs.c.obj"
   "CMakeFiles/42save.dir/src/lexer/get_opt_type.c.obj"
   "CMakeFiles/42save.dir/src/lexer/history_search.c.obj"
