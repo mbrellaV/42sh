@@ -6,7 +6,7 @@
 /*   By: wstygg <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/13 19:53:08 by wstygg            #+#    #+#             */
-/*   Updated: 2020/04/14 21:06:34 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/04/16 10:24:53 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,7 @@ int			check_symbols(char *str, char *str_for_del)
 			if (str_for_del != str)
 				ft_strdel(&str_for_del);
 			ft_strdel(&str);
-			ft_printf("parse error in eval\n");
-			//dobav: 			ft_printf("parse error in eval near: |%c|\n", str[i]);
+			ft_printf("parse error in eval near: |%c|\n", str[i]);
 			return (-1);
 		}
 		i++;
@@ -60,8 +59,7 @@ char		*ft_do_cut(char *tmp)
 			if (check_symbols(dop, str_for_del) == -1)
 				return (NULL);
 			str = ft_itoa(eval_expr(dop));
-			if (str_for_del != dop)
-				ft_strdel(&str_for_del);
+			(str_for_del != dop) ? ft_strdel(&str_for_del) : 0;
 			ft_strdel(&dop);
 			return (str);
 		}

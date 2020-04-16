@@ -6,7 +6,7 @@
 /*   By: wstygg <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/14 18:52:42 by wstygg            #+#    #+#             */
-/*   Updated: 2020/04/14 18:52:42 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/04/16 13:36:48 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,9 +37,9 @@ int		ft_remove_from_fds(int *opened_fds, int fd_to_remove)
 	return (1);
 }
 
-int		*ft_create_opened_fds()
+int		*ft_create_opened_fds(void)
 {
-	int *opened_fds;
+	int	*opened_fds;
 
 	if (!(opened_fds = (int *)ft_memalloc(sizeof(int) * 10)))
 		return (NULL);

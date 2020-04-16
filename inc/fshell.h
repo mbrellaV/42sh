@@ -6,7 +6,7 @@
 /*   By: mbrella <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/11 10:58:44 by mbrella           #+#    #+#             */
-/*   Updated: 2020/04/14 21:06:34 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/04/16 13:16:35 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,34 @@
 
 # define SHELL_NAME "42sh"
 # define BIL_NUM 16
+
+typedef struct	s_del
+{
+	t_job		*j;
+	t_job		*jlast;
+	t_job		*jnext;
+	t_job		*jdop;
+	int			d;
+}				t_del;
+
+typedef struct		s_jobl
+{
+	t_process		*p;
+	pid_t			pid;
+	char			*rt;
+	int				mypipe[2];
+	int				infile;
+	int				outfile;
+}					t_jobl;
+
+typedef struct		s_pstat
+{
+	t_job			*j;
+	t_process		*p;
+	t_process		*ptmp;
+	int				job_count;
+	char			*str_for_del;
+}					t_pstat;
 
 int					g_exit_code;
 pid_t				g_shell_pgid;
@@ -150,9 +178,7 @@ t_job				*get_job_by_number(int n);
 int					do_fg(char **mas);
 int					check_if_in_par(char *line, int i);
 int					do_bg(char **mas);
-int					launch_process(t_process *p, pid_t pgid,
-						int infile, int outfile, int errfile,
-						int foreground, char *rt);
+int					launch_process(t_process *p, t_job j, t_jobl jobl, int fg);
 int					launch_job(t_job *j, int foreground);
 int					needs_something_before(int n);
 int					do_job_del();

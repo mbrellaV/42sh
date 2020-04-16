@@ -6,7 +6,7 @@
 /*   By: wstygg <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/14 12:44:23 by wstygg            #+#    #+#             */
-/*   Updated: 2020/04/14 13:12:12 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/04/16 10:22:07 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,37 +34,36 @@ void			free_job(t_job *tmp)
 	}
 }
 
+static void		norme_help(t_del *del)
+{
+	if (del->j->first_process->foreground == 0)
+		format_job_info(del->j, "completed", del->d);
+	if (del->jlast)
+		del->jlast->next = del->jnext;
+	else
+		g_f_job = del->jnext;
+	del->jdop = j;
+}
+
 int				do_job_del(void)
 {
-	t_job		*j;
-	t_job		*jlast;
-	t_job		*jnext;
-	t_job		*jdop;
-	int			d;
+	t_del		del;
 
-	d = 0;
+	del.d = 0;
 	update_status();
-	jlast = NULL;
+	del.jlast = NULL;
 	j = g_f_job;
-	while (j)
+	while (del.j)
 	{
-		d++;
-		jnext = j->next;
-		jdop = NULL;
-		if (job_is_completed(j))
-		{
-			if (j->first_process->foreground == 0)
-				format_job_info(j, "completed", d);
-			if (jlast)
-				jlast->next = jnext;
-			else
-				g_f_job = jnext;
-			jdop = j;
-		}
+		del.d++;
+		del.jnext = j->next;
+		del.jdop = NULL;
+		if (job_is_completed(del.j))
+			norme_help(&del);
 		else
-			jlast = j;
-		j = j->next;
-		(jdop != NULL) ? free_job(jdop) : 0;
+			del.jlast = j;
+		del.j = del.j->next;
+		(del.jdop != NULL) ? free_job(del.jdop) : 0;
 	}
 	return (1);
 }

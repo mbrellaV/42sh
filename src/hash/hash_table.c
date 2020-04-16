@@ -112,7 +112,6 @@ char				*hash_get(char *key, int no_error)
 		return (hash_error(2, key, no_error));
 	else
 	{
-
 		if (check_file(var, IS_X) == 1 && !check_file(var, IS_D))
 			return (var);
 		else

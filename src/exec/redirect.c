@@ -36,7 +36,8 @@ void	do_redir_into_file(t_pipe *p, char *file, int new_infile_fd,
 	ft_redirect(p, new_infile_fd, new_outfile_fd);
 }
 
-int		return_with_close(int *opened_fds, int int_to_return, char *dopline, int marker)
+int		return_with_close(int *opened_fds, int int_to_return,
+			char *dopline, int marker)
 {
 	if (marker != 0)
 		ft_redirect_error(marker, dopline);
