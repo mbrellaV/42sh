@@ -14,8 +14,8 @@
 
 int			check_if_in_par(char *line, int i)
 {
-	int d;
-	int marker;
+	int		d;
+	int		marker;
 
 	d = i;
 	marker = 0;
@@ -37,9 +37,9 @@ int			check_if_in_par(char *line, int i)
 	return (0);
 }
 
-void			ft_change_all_sc(char *str)
+void		ft_change_all_sc(char *str)
 {
-	int i;
+	int		i;
 
 	i = 0;
 	while (str[i] != '\0')

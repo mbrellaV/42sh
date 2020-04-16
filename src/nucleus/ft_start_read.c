@@ -14,7 +14,6 @@
 
 void	ft_start_read(t_readline *p)
 {
-//	p->mod = 127;
 	p->len_hint = ft_printf_helper(p->mod);
 	p->buff_size = 13000;
 	p->buff = ft_strnew(p->buff_size);

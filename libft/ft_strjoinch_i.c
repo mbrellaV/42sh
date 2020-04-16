@@ -6,7 +6,7 @@
 /*   By: qmartina <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/12 15:35:44 by qmartina          #+#    #+#             */
-/*   Updated: 2020/04/13 20:04:23 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/04/16 17:53:08 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,15 +76,13 @@ char	*ft_strjointsr_i(char const *s1, size_t k, char *kkk)
 
 	if (!s1 || !kkk)
 		return (NULL);
-	new_str = (char *)ft_memalloc(sizeof(char) * ft_strlen(s1) + ft_strlen(kkk) + 1);
+	new_str = (char *)ft_memalloc(sizeof(char) *
+			ft_strlen(s1) + ft_strlen(kkk) + 1);
 	if (!new_str)
 		return (NULL);
-	i = 0;
-	while (i < k)
-	{
+	i = -1;
+	while (++i < k)
 		*(new_str + i) = *(s1 + i);
-		i++;
-	}
 	j = -1;
 	while (kkk[++j])
 		*(new_str + i + j) = kkk[j];

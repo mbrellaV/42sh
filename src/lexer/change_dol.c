@@ -6,45 +6,46 @@
 /*   By: mbrella <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/27 13:25:17 by mbrella           #+#    #+#             */
-/*   Updated: 2020/04/14 11:08:28 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/04/16 14:47:28 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/fshell.h"
 
-char				*do_zam_str_bax(char *str1, t_dop_str *t)
+static void	cycle(char *str1, t_zams *zams, t_dop_str *t)
 {
-	int			i;
-	int			dop;
-	char		*dopstr;
-	char		*str_for_del;
+	if (str1[zams->i] == '$' && (str1[zams->i + 1] != '('))
+	{
+		zams->dop = (str1[zams->i + 1] == '{' ? 2 : 1);
+		zams->dopstr = ft_strsub(str1, zams->i + zams->dop,
+			word_size(&str1[zams->i + 1]) - (zams->dop == 2 ? 4 : 1) + 1);
+		zams->str_for_del = zams->dopstr;
+		zams->dopstr = ft_get_var(zams->dopstr, g_all_var);
+		ft_strdel(&zams->str_for_del);
+		if (zams->dopstr != NULL)
+			ft_strcat(t->str_b, zams->dopstr);
+		zams->i += word_size(&str1[zams->i]);
+		ft_strdel(&zams->dopstr);
+	}
+	else
+	{
+		zams->dopstr = ft_strdup(" ");
+		zams->dopstr[0] = str1[zams->i];
+		ft_strcat(t->str_b, zams->dopstr);
+		ft_strdel(&zams->dopstr);
+		zams->i++;
+	}
+}
 
-	i = 0;
+char		*do_zam_str_bax(char *str1, t_dop_str *t)
+{
+	t_zams	zams;
+
+	zams.i = 0;
 	if (!(t->str_b = ft_strnew(130000)))
 		ft_error_q(2);
-	while (i < ft_strlen(str1) && str1[i] != '\0')
-	{
-		if (str1[i] == '$' && (str1[i + 1] != '('))
-		{
-			dop = (str1[i + 1] == '{' ? 2 : 1);
-			dopstr = ft_strsub(str1, i + dop, word_size(&str1[i + 1]) - (dop == 2 ? 4 : 1) + 1);
-			str_for_del = dopstr;
-			dopstr = ft_get_var(dopstr, g_all_var);
-			ft_strdel(&str_for_del);
-			if (dopstr != NULL)
-				ft_strcat(t->str_b, dopstr);
-			i += word_size(&str1[i]);
-			ft_strdel(&dopstr);
-		}
-		else
-		{
-			dopstr = ft_strdup(" ");
-			dopstr[0] = str1[i];
-			ft_strcat(t->str_b, dopstr);
-			ft_strdel(&dopstr);
-			i++;
-		}
-	}
+	while (zams.i < ft_strlen(str1) && str1[zams.i] != '\0')
+		cycle(str1, &zams, t);
 	ft_strdel(&str1);
 	return (t->str_b);
 }

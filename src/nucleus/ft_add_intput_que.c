@@ -6,7 +6,7 @@
 /*   By: qmartina <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/28 17:02:36 by qmartina          #+#    #+#             */
-/*   Updated: 2020/04/13 20:04:23 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/04/16 15:43:45 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,18 +23,11 @@ void	ft_add_intput_que(t_readline *p, t_memory *head, int mod)
 		ft_realloc_buff(p);
 	mod == 1 ? p->buff[p->index++] = '\n' : 0;
 	mod == 1 ? p->len++ : 0;
-	mod == 11? p->index-- : 0;
+	mod == 11 ? p->index-- : 0;
 	mod == 20 ? p->buff[p->index++] = ' ' : 0;
 	mod == 20 ? p->buff[p->index++] = ';' : 0;
 	mod == 20 ? p->len += 2 : 0;
 	ft_read_8(&q, head, mod);
-//	dprintf(2, "\nGG111\n");
-//	dprintf(open("start_que.txt", O_CREAT | O_RDWR | O_TRUNC,
-//			S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP |
-//					S_IROTH | S_IWOTH), "startADD:\n%s", p->buff);
-//	dprintf(open("buf_que.txt", O_CREAT | O_RDWR | O_TRUNC,
-//			S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP |
-//					S_IROTH | S_IWOTH), "startADD:\n%s", q.buff);
 	i = -1;
 	while (q.buff[++i])
 	{
@@ -43,10 +36,5 @@ void	ft_add_intput_que(t_readline *p, t_memory *head, int mod)
 		p->buff[p->index++] = q.buff[i];
 		p->len++;
 	}
-//	dprintf(2,"\ni=%d\n", i);
-	del_readline(&q);
-//	dprintf(open("que.txt", O_CREAT | O_RDWR | O_TRUNC,
-//			S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP |
-//					S_IROTH | S_IWOTH), "ENDADD:\n%s", p->buff);
 	write(2, "\n", 1);
 }

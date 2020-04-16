@@ -52,7 +52,7 @@ t_dop_str				*cr_dop_str_par1(t_lextoken *tmp1)
 	if (!(t->tmp1_a = ft_memalloc(sizeof(t_exectoken))))
 		return (NULL);
 	if (t->dopi_a != 0 && !(t->tmp1_a->file_opt =
-									(char**)ft_memalloc((t->dopi_a + 1) * sizeof(char *))))
+			(char**)ft_memalloc((t->dopi_a + 1) * sizeof(char *))))
 		return (NULL);
 	return (t);
 }

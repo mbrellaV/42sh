@@ -6,7 +6,7 @@
 /*   By: qmartina <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/19 19:01:04 by qmartina          #+#    #+#             */
-/*   Updated: 2020/04/13 20:04:22 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/04/16 10:22:06 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 # include "struct.h"
 
 t_lextoken					*do_lexer(char *line);
-void						ft_printf(const char *fmt, ...);
 t_exectoken					*all_parse(char *cmd);
 t_exectoken					*do_parser(t_lextoken *tmp);
 char						*do_zam_str_hist_var(char *str1, t_memory *q);
@@ -68,6 +67,5 @@ char						*get_num_from_hist_end(t_memory *t, int num);
 char						*get_num_from_hist_starting(t_memory *t,
 							char *name);
 int							is_cmd_redirect(int i);
-
 
 #endif

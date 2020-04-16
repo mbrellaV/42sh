@@ -24,6 +24,24 @@ SRC_BASE = builtins/ft_cd.c\
 	builtins/allenv/ft_env.c\
 	builtins/alias/alias.c\
  	builtins/allenv/global_env.c\
+ 	main_2.c\
+ 	ft_main_what.c\
+ 	qft_printf/add_buff.c\
+ 	qft_printf/add_char.c\
+ 	qft_printf/add_d.c\
+ 	qft_printf/add_str.c\
+ 	qft_printf/ft_add_c_s_d.c\
+ 	qft_printf/ft_add_double.c\
+ 	qft_printf/ft_dtoa.c\
+ 	qft_printf/ft_itoa_base_c.c\
+ 	qft_printf/ft_math.c\
+ 	qft_printf/ft_okr_double.c\
+ 	qft_printf/ft_oxu.c\
+ 	qft_printf/ft_pars.c\
+ 	qft_printf/ft_pars2.c\
+ 	qft_printf/ft_pointer.c\
+ 	qft_printf/ft_pr_help.c\
+ 	qft_printf/ft_printf.c\
  	errors/errror_handler.c\
  	exec/ft_create_file.c\
  	exec/ft_do_pipe.c\
@@ -57,6 +75,7 @@ SRC_BASE = builtins/ft_cd.c\
 	lexer/dop_funs.c\
 	lexer/all_bax_and_hist_change.c\
 	lexer/kill_dop_structure.c\
+	lexer/del_one_node_in_lextokens.c\
 	lexer/word_sizes.c\
 	lexer/change_hist_exp.c\
 	lexer/change_str_by_str.c\
@@ -124,6 +143,7 @@ SRC_BASE = builtins/ft_cd.c\
 	builtins/allenv/main_env.c\
 	builtins/ft_type.c\
 	g_builtins.c\
+	ft_whatis.c\
 
 
 

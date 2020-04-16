@@ -17,7 +17,8 @@ int				check_all_errors(t_lextoken *tmp)
 	while (tmp)
 	{
 		if (tmp->is_near_opt && tmp->line && get_op_type(tmp->line) >= 3 &&
-			get_op_type(tmp->line) <= 8 && (tmp->next == NULL || tmp->next->is_near_opt != 1))
+			get_op_type(tmp->line) <= 8 && (tmp->next == NULL ||
+			tmp->next->is_near_opt != 1))
 		{
 			return (-1);
 		}

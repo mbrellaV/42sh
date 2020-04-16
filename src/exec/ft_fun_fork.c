@@ -6,31 +6,32 @@
 /*   By: qmartina <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/30 19:04:16 by qmartina          #+#    #+#             */
-/*   Updated: 2020/04/14 11:08:28 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/04/16 10:37:24 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/fshell.h"
 
-void	ft_fun_fork(char *path, char **arg, pid_t pgid, int foreground)
+void		ft_fun_fork(char *path, char **arg, pid_t pgid, int foreground)
 {
-	pid_t pid;
+	pid_t	pid;
 
 	pid = getpid();
-	if (pgid == 0) pgid = pid;
-	setpgid (pid, pgid);
+	if (pgid == 0)
+		pgid = pid;
+	setpgid(pid, pgid);
 	if (foreground)
-		tcsetpgrp (shell_terminal, pgid);
-	signal (SIGINT, SIG_DFL);
-	signal (SIGQUIT, SIG_DFL);
-	signal (SIGTSTP, SIG_DFL);
-	signal (SIGTTIN, SIG_DFL);
-	signal (SIGTTOU, SIG_DFL);
-	signal (SIGCHLD, SIG_DFL);
+		tcsetpgrp(g_shell_terminal, pgid);
+	signal(SIGINT, SIG_DFL);
+	signal(SIGQUIT, SIG_DFL);
+	signal(SIGTSTP, SIG_DFL);
+	signal(SIGTTIN, SIG_DFL);
+	signal(SIGTTOU, SIG_DFL);
+	signal(SIGCHLD, SIG_DFL);
 	execve(path, arg, g_env);
 }
 
-int		ft_norm_pipe(int p1, int *fd_in, int p0, t_exectoken **head)
+int			ft_norm_pipe(int p1, int *fd_in, int p0, t_exectoken **head)
 {
 	if (p0 == -404 && head == NULL)
 	{

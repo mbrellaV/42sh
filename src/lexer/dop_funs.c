@@ -12,12 +12,12 @@
 
 #include "fshell.h"
 
-int				ispar(char c)
+int			ispar(char c)
 {
 	return (c == 34 || c == 39);
 }
 
-int				issc(char c)
+int			issc(char c)
 {
 	if (c == '(' || c == '{' || c == ')' || c == '}')
 		return (1);
@@ -25,12 +25,12 @@ int				issc(char c)
 		return (0);
 }
 
-int				isoperator(char c)
+int			isoperator(char c)
 {
 	return (c == '<' || c == '&' || c == '|' || c == '>' || c == ';');
 }
 
-char			find_pair_sc(char c)
+char		find_pair_sc(char c)
 {
 	if (c == '(')
 		return (')');
@@ -39,7 +39,7 @@ char			find_pair_sc(char c)
 	return (0);
 }
 
-int				isword(char c)
+int			isword(char c)
 {
 	if (ispar(c) == 1)
 		return (2);

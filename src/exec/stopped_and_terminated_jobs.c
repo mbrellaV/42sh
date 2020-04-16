@@ -6,83 +6,76 @@
 /*   By: qmartina <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/18 17:15:58 by qmartina          #+#    #+#             */
-/*   Updated: 2020/04/13 20:04:23 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/04/16 14:03:34 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include ".././inc/fshell.h"
 #include <errno.h>
 
-int mark_process_status (pid_t pid, int status)
+static int		norme_help(t_pstat *pstat, int status, pid_t pid)
 {
-	t_job *j;
-	t_process *p;
-	t_process *ptmp;
-	int job_count;
-	char		*str_for_del;
-
-	job_count = 0;
-	if (pid > 0)
+	pstat->p->status = status;
+	if (WIFSTOPPED(status))
 	{
-		/* Update the record for the process.  */
-		for (j = f_job; j; j = j->next)
-		{
-			job_count++;
-			for (p = j->first_process; p; p = p->next)
-				if (p->pid == pid)
-				{
-					p->status = status;
-					if (WIFSTOPPED (status))
-					{
-						p->stopped = 1;
-						str_for_del = ft_itoa(WEXITSTATUS(status));
-						set_new_var("?", str_for_del, &g_all_var);
-						ft_strdel(&str_for_del);
-						//dprintf(2, "\ndapoluch1: |%D|\n", WSTOPSIG(status));
-					}
-					else
-					{
-						p->completed = 1;
-						p->status = WEXITSTATUS(status);
-						str_for_del = ft_itoa(p->status);
-						set_new_var("?", str_for_del, &g_all_var);
-						ft_strdel(&str_for_del);
-						//dprintf(2, "\nstatus: |%d|\n", WEXITSTATUS(status));
-						ptmp = j->first_process;
-						while (ptmp != p)
-						{
-							ptmp->completed = 1;
-							//kill(ptmp->pid, SIGCONT);
-							ptmp = ptmp->next;
-						}
-						if (WIFSIGNALED (status))
-							fprintf (stderr, "%d: Terminated by signal %d.\n",
-									 (int) pid, WTERMSIG (p->status));
-					}
-					return 0;
-				}
-		}
-
-		fprintf (stderr, "No child process %d.\n", pid);
-		return (-1);
+		pstat->p->stopped = 1;
+		pstat->str_for_del = ft_itoa(WEXITSTATUS(status));
+		set_new_var("?", pstat->str_for_del, &g_all_var);
+		ft_strdel(&pstat->str_for_del);
 	}
-	else if (pid == 0 || errno == ECHILD)
-		/* No processes ready to report.  */
-		return -1;
-	else {
-		/* Other weird errors.  */
-		perror ("waitpid");
-		return -1;
+	else
+	{
+		pstat->p->completed = 1;
+		pstat->p->status = WEXITSTATUS(status);
+		pstat->str_for_del = ft_itoa(pstat->p->status);
+		set_new_var("?", pstat->str_for_del, &g_all_var);
+		ft_strdel(&pstat->str_for_del);
+		pstat->ptmp = pstat->j->first_process;
+		while (pstat->ptmp != pstat->p && (pstat->ptmp->completed = 1))
+			pstat->ptmp = pstat->ptmp->next;
+		if (WIFSIGNALED(status))
+			ft_dprintf(2, "%d: Terminated by signal %d.\n",
+				(int)pid, WTERMSIG(pstat->p->status));
 	}
+	return (0);
 }
 
-int		process_count()
+int				mark_process_status(pid_t pid, int status)
+{
+	t_pstat		pstat;
+
+	pstat.job_count = 0;
+	if (pid > 0)
+	{
+		pstat.j = g_f_job;
+		while (pstat.j)
+		{
+			pstat.job_count++;
+			pstat.p = pstat.j->first_process;
+			while (pstat.p)
+			{
+				if (pstat.p->pid == pid)
+					return (norme_help(&pstat, status, pid));
+				pstat.p = pstat.p->next;
+			}
+			pstat.j = pstat.j->next;
+		}
+		return (!ft_dprintf(2, "No child process %d.\n", pid) - 1);
+	}
+	else if (pid == 0 || errno == ECHILD)
+		return (-1);
+	else
+		perror("waitpid");
+	return (-1);
+}
+
+int				process_count(void)
 {
 	t_job		*job;
 	t_process	*p;
 	int			res;
 
-	job = f_job;
+	job = g_f_job;
 	res = 0;
 	while (job)
 	{
@@ -97,12 +90,12 @@ int		process_count()
 	return (res);
 }
 
-void	update_status (void)
+void			update_status(void)
 {
-	int status;
-	pid_t pid;
-	int		counter;
-	int pr_count;
+	int			status;
+	pid_t		pid;
+	int			counter;
+	int			pr_count;
 
 	pr_count = process_count();
 	status = 0;
@@ -115,17 +108,17 @@ void	update_status (void)
 	}
 }
 
-void	wait_for_job (t_job *j)
+void			wait_for_job(t_job *j)
 {
-	int status = 0;
-	pid_t pid;
+	int			status;
+	pid_t		pid;
 
+	status = 0;
 	while (1)
 	{
 		if (job_is_stopped(j))
 			break ;
-		pid = waitpid (-j->pgid, &status, WUNTRACED);
-		mark_process_status (pid, status);
+		pid = waitpid(-j->pgid, &status, WUNTRACED);
+		mark_process_status(pid, status);
 	}
 }
-

@@ -52,7 +52,6 @@ void				ft_striteri(char *s, void (*f)(unsigned int, char *));
 void				ft_striter(char *s, void (*f)(char*));
 int					ft_strequ(char const *s1, char const *s2);
 char				*ft_strdup(const char *s1);
-void				ft_printf(const char *fmt, ...);
 int					ft_nbrlen(int n);
 void				ft_strdel(char **as);
 char				*ft_strcpy(char *dst, const char *src);
