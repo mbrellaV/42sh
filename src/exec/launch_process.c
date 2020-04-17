@@ -31,7 +31,7 @@ void		standart_redirect(int infile, int outfile, int errfile)
 	}
 }
 
-int			launch_process(t_process *p, t_job j, t_jobl jobl, int fg)
+int			launch_process(t_process *p, t_job *j, t_jobl jobl, int fg)
 {
 	pid_t		pid;
 	int			dop1;
@@ -40,18 +40,18 @@ int			launch_process(t_process *p, t_job j, t_jobl jobl, int fg)
 	if (g_shell_is_interactive)
 	{
 		pid = getpid();
-		if (j.pgid == 0)
-			j.pgid = pid;
-		setpgid(pid, j.pgid);
+		if (j->pgid == 0)
+			j->pgid = pid;
+		setpgid(pid, j->pgid);
 		if (fg)
-			tcsetpgrp(g_shell_terminal, j.pgid);
+			tcsetpgrp(g_shell_terminal, j->pgid);
 		recover_normal_shell_signals();
-		standart_redirect(jobl.infile, jobl.outfile, j.stderrc);
+		standart_redirect(jobl.infile, jobl.outfile, j->stderrc);
 		if (p->file_opt)
-			dop1 = ft_fd_flag(p->file_opt, &jobl.infile,
-					&jobl.outfile, &j.stderrc);
+			dop1 = ft_fd_flag(p->file_opt, jobl.infile,
+					jobl.outfile, j->stderrc);
 		else
-			standart_redirect(jobl.infile, jobl.outfile, j.stderrc);
+			standart_redirect(jobl.infile, jobl.outfile, j->stderrc);
 	}
 	(dop1 < 0) ? exit(1) : 0;
 	dop1 = ft_whatis2(p);

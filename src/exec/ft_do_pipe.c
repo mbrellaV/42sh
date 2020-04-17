@@ -18,7 +18,8 @@ void		do_heredoc(t_pipe *p, char **av)
 	if (p->flag == 4)
 	{
 		*p->infile = ft_heredoc(av[p->i + 2]);
-		ft_redirect(p, STDIN_FILENO, STDOUT_FILENO);
+		//ft_redirect(p, STDIN_FILENO, STDOUT_FILENO);
+		ft_redirect_one(*p->infile, STDIN_FILENO);
 	}
 }
 
@@ -76,14 +77,14 @@ int			do_hard_redirects(t_pipe *p, int *opened_fds, char **av)
 	return (1);
 }
 
-int			ft_fd_flag(char **av, int *infile, int *outfile, int *errfile)
+int			ft_fd_flag(char **av, int infile, int outfile, int errfile)
 {
 	t_pipe	p;
 	int		*opened_fds;
 
 	if (!(opened_fds = ft_create_opened_fds()))
 		return (-1);
-	p = (t_pipe){0, 0, 1, 0, 0, 0, infile, outfile, errfile};
+	p = (t_pipe){0, 0, 1, 0, 0, 0, &infile, &outfile, &errfile};
 	while (p.i < ft_env_len(av) && av[(p.i)] != NULL)
 	{
 		if (!(av[p.i][0] >= '0' && av[p.i][0] <= '9'))
@@ -99,7 +100,7 @@ int			ft_fd_flag(char **av, int *infile, int *outfile, int *errfile)
 			return (return_with_close(opened_fds, -1,
 			av[p.i + (p.b == -9 ? 2 : 0)], p.b * -1));
 		p.i += 3;
-		p = (t_pipe){0, p.i, 1, 0, 0, 0, infile, outfile, errfile};
+		p = (t_pipe){0, p.i, 1, 0, 0, 0, &infile, &outfile, &errfile};
 	}
 	return (return_with_close(opened_fds, p.fd, NULL, 0));
 }

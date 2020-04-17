@@ -187,7 +187,7 @@ t_job				*get_job_by_number(int n);
 int					do_fg(char **mas);
 int					check_if_in_par(char *line, int i);
 int					do_bg(char **mas);
-int					launch_process(t_process *p, t_job j, t_jobl jobl, int fg);
+int					launch_process(t_process *p, t_job *j, t_jobl jobl, int fg);
 int					launch_job(t_job *j, int foreground);
 int					needs_something_before(int n);
 int					do_job_del();
@@ -205,8 +205,8 @@ int					ft_heredoc(char *tmp);
 int					ft_open_flag(char *opt, t_pipe *p);
 int					ft_what_flag(char *opt);
 void				ft_redirect_error(int marker, char *dopline);
-int					ft_fd_flag(char **av, int *infile, int *outfile,
-						int *errfile);
+int					ft_fd_flag(char **av, int infile, int outfile,
+						int errfile);
 void				put_job_in_foreground (t_job *j, int cont);
 void				put_job_in_background (t_job *j, int cont);
 int					mark_process_status (pid_t pid, int status);

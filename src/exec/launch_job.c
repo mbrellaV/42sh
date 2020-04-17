@@ -12,11 +12,11 @@
 
 #include "../../inc/fshell.h"
 
-static void		cycle(t_jobl *jobl, t_job *j, int foreground)
+static void		do_fork(t_jobl *jobl, t_job *j, int foreground)
 {
 	jobl->pid = fork();
 	if (jobl->pid == 0)
-		launch_process(jobl->p, *j, *jobl, foreground);
+		launch_process(jobl->p, j, *jobl, foreground);
 	else if (jobl->pid < 0)
 		exit(0);
 	else
@@ -29,10 +29,10 @@ static void		cycle(t_jobl *jobl, t_job *j, int foreground)
 			setpgid(jobl->pid, j->pgid);
 		}
 	}
-	if (jobl->infile != j->stdinc)
-		close(jobl->infile);
-	if (jobl->outfile != j->stdoutc)
-		close(jobl->outfile);
+//	if (jobl->infile != j->stdinc)
+//		close(jobl->infile);
+//	if (jobl->outfile != j->stdoutc)
+//		close(jobl->outfile);
 	jobl->infile = jobl->mypipe[0];
 	jobl->p = jobl->p->next;
 }
@@ -57,7 +57,7 @@ int				launch_job(t_job *j, int foreground)
 		}
 		else
 			jobl.outfile = j->stdoutc;
-		cycle(&jobl, j, foreground);
+		do_fork(&jobl, j, foreground);
 	}
 	if (!g_shell_is_interactive)
 		wait_for_job(j);
