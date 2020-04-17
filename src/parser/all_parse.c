@@ -16,19 +16,19 @@ int				check_opt_tokens(t_lextoken *tmp)
 {
 	while (tmp != NULL)
 	{
-		if (tmp->next && is_cmd_redirect(get_op_type(tmp->line)) &&
+		if (tmp->next && tmp->line && tmp->next->line && is_cmd_redirect(get_op_type(tmp->line)) &&
 			is_cmd_redirect(get_op_type(tmp->next->line)))
 		{
 			ft_error(5, tmp->line);
 			return (-1);
 		}
-		if (is_cmd_redirect(get_op_type(tmp->line)) &&
+		if (tmp->line && is_cmd_redirect(get_op_type(tmp->line)) &&
 				tmp->next->line == NULL)
 		{
 			ft_error(5, tmp->line);
 			return (-1);
 		}
-		if (tmp->next && is_cmd_redirect(get_op_type(tmp->line)) &&
+		if (tmp->next && tmp->line && tmp->next->line && is_cmd_redirect(get_op_type(tmp->line)) &&
 			get_op_type(tmp->next->line) >= 0)
 		{
 			ft_error(5, tmp->line);
@@ -50,8 +50,7 @@ t_exectoken		*all_parse(char *cmd)
 	ft_change_all_sc(cmd);
 	if (!(tmp = do_lexer(cmd)))
 		return (NULL);
-	dop_tmp = tmp;
-	if (!(tmp = do_zam_bax_and_hist_full(tmp)) && ft_distr_lex(dop_tmp))
+	if (!(tmp = do_zam_bax_and_hist_full(tmp, &dop_tmp)) && ft_distr_lex(dop_tmp))
 		return (NULL);
 	if (check_all_errors(tmp) != 1)
 	{

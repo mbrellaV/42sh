@@ -56,7 +56,7 @@ t_lextoken		*do_zam_join_par(t_lextoken *h)
 	return (lextmp1);
 }
 
-t_lextoken		*do_zam_ravno(t_lextoken *h)
+t_lextoken		*do_zam_ravno(t_lextoken *h, t_lextoken **first_token)
 {
 	char		*tmp1;
 	char		*tmp2;
@@ -66,26 +66,29 @@ t_lextoken		*do_zam_ravno(t_lextoken *h)
 		NULL || is_cmd_delim(get_op_type(h->next->line))) && h->prev == NULL))
 	{
 		tmp1 = ft_strsub(h->line, 0, ft_strstr(h->line, "=") - h->line);
-		tmp2 = ft_strsub(h->line, ft_strstr(h->line, "=") -
+		if (*(ft_strstr(h->line, "=") + 1) == '\0')
+			tmp2 = ft_strdup("");
+		else
+			tmp2 = ft_strsub(h->line, ft_strstr(h->line, "=") -
 			h->line + 1, ft_strlen(h->line));
 		set_new_var(tmp1, tmp2, &g_all_var);
 		ft_strdel(&tmp1);
 		ft_strdel(&tmp2);
 		dop = h->next;
-		del_one_node_in_lextokens(h);
+		del_one_node_in_lextokens(h, first_token);
 		return (dop);
 	}
 	else if (h && h->line != NULL && ft_strstr(h->line, "=") && !h->prev)
 	{
 		dop = h->next;
-		del_one_node_in_lextokens(h);
+		del_one_node_in_lextokens(h, first_token);
 		return (dop);
 	}
 	return (h ? h->next : NULL);
 }
 
 int				do_all_zams_with_inhibitor(t_lextoken *h, t_lextoken
-					**doph, t_dop_str *tmp)
+					**doph, t_dop_str *tmp, t_lextoken **first_token)
 {
 	if (h->inhibitor_lvl != 2)
 	{
@@ -100,24 +103,24 @@ int				do_all_zams_with_inhibitor(t_lextoken *h, t_lextoken
 			return (-1);
 		if (!(h->line = ft_do_zam_alias(h->line)))
 			return (-1);
-		*doph = do_zam_ravno(h);
+		*doph = do_zam_ravno(h, first_token);
 	}
 	else
 		*doph = h->next;
 	return (1);
 }
 
-t_lextoken		*do_zam_bax_and_hist_full(t_lextoken *h)
+t_lextoken		*do_zam_bax_and_hist_full(t_lextoken *h, t_lextoken **save_tmp)
 {
 	t_dop_str	*tmp;
-	t_lextoken	*htmp;
+	t_lextoken	*first_token;
 
 	if (!h)
 		return (NULL);
 	if (!(tmp = ft_memalloc(sizeof(t_dop_str))))
 		ft_error_q(2);
 	h = do_zam_join_par(h);
-	htmp = h;
+	first_token = h;
 	while (h != NULL)
 	{
 		if (h->operator_type == -1 && h->is_near_opt > 0)
@@ -130,8 +133,9 @@ t_lextoken		*do_zam_bax_and_hist_full(t_lextoken *h)
 			h = h->next;
 			continue ;
 		}
-		if (do_all_zams_with_inhibitor(h, &h, tmp) == -1)
+		if (do_all_zams_with_inhibitor(h, &h, tmp, &first_token) == -1)
 			return (NULL);
 	}
-	return (ft_kill_str_dop_lex(tmp, htmp));
+	*save_tmp = first_token;
+	return (ft_kill_str_dop_lex(tmp, first_token));
 }

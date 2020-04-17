@@ -60,7 +60,7 @@ t_lextoken					*do_lexer(char *line);
 int							dop_lexer2(t_dop_str *tmp, char *line);
 int							dop_lexer(t_dop_str *tmp, char *line);
 t_dop_str					*cr_dop_str(char **line1);
-t_lextoken					*do_zam_bax_and_hist_full(t_lextoken *h);
+t_lextoken					*do_zam_bax_and_hist_full(t_lextoken *h, t_lextoken **save_tmp);
 char						*get_num_from_hist_cons(t_memory *t, char *name);
 char						*get_num_from_hist_begin(t_memory *t, int num);
 char						*get_num_from_hist_end(t_memory *t, int num);

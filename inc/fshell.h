@@ -120,7 +120,7 @@ char				*do_obr_zamena(char *line);
 void				ft_realloc_all(int k, char ***envl);
 void				ft_echo(char **str);
 char				*ft_slash(char *str, t_builtins *echo);
-void				del_one_node_in_lextokens(t_lextoken *token_to_del);
+void				del_one_node_in_lextokens(t_lextoken *token_to_del, t_lextoken **first_token);
 char				*distribute_echo(char **str, int k, int flag,
 						t_builtins *echo);
 char				*ft_hex(char *str);
@@ -137,7 +137,7 @@ char				*create_full_path(char *path, t_builtins *cd);
 char				*ft_strjoin_cd(char const *s1, char const *s2, int to_free);
 char				*ft_get_var(char *dop, char **env);
 int					issc(char c);
-t_lextoken			*do_zam_ravno(t_lextoken *h);
+t_lextoken			*do_zam_ravno(t_lextoken *h, t_lextoken **first_token);
 void				ft_global_env(char **env, int argc);
 int					unset_var(char *str, char ***envl);
 void				ft_fun_fork(char *path, char **arg, pid_t pgid,

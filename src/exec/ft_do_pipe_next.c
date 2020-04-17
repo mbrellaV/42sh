@@ -55,8 +55,8 @@ int		ft_open_flag(char *opt, t_pipe *p)
 				S_IROTH | S_IWOTH);
 	else if (p->flag == 3)
 		*p->infile = open(opt, O_RDONLY);
-	if ((p->flag == 1 || p->flag == 6 || p->flag == 2 ||
-		p->flag == 3) && (*p->outfile <= 0 || *p->infile <= 0))
+	if (((p->flag == 1 || p->flag == 6 || p->flag == 2) && *p->outfile <= 0) &&
+		(p->flag == 3 && *p->infile <= 0))
 	{
 		ft_putstr_fd("42sh: open fd ERROR ", 2);
 		ft_putendl_fd(opt, 2);
