@@ -45,6 +45,7 @@ int		do_simple_redirects(t_pipe *p, int *opened_fds, char **av, int type)
 			ft_add_to_fds(opened_fds, p->st);
 		dup2(STDOUT_FILENO, STDERR_FILENO);
 	}
+	return (0);
 }
 
 int			do_hard_redirects(t_pipe *p, int *opened_fds, char **av)
