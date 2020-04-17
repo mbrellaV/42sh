@@ -1,8 +1,4 @@
 objs/lexer/all_bax_and_hist_change.o: src/lexer/all_bax_and_hist_change.c \
- src/lexer/../../inc/fshell.h src/lexer/../../inc/../libft/libft.h \
- src/lexer/../../inc/../libft/get_next_line.h \
- src/lexer/../../inc/../libft/libft.h src/lexer/../../inc/parser.h \
- src/lexer/../../inc/struct.h src/lexer/../../inc/nucleus.h \
- src/lexer/../../inc/hash.h \
- src/lexer/../../inc/../src/qft_printf/ft_printf.h \
- src/lexer/../../inc/../src/qft_printf/libft/libft.h
+  src/lexer/../../inc/fshell.h inc/../libft/libft.h \
+  libft/get_next_line.h inc/parser.h inc/struct.h inc/nucleus.h \
+  inc/hash.h inc/../src/qft_printf/ft_printf.h
