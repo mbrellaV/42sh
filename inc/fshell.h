@@ -99,7 +99,6 @@ typedef struct		s_pstat
 
 int					g_exit_code;
 pid_t				g_shell_pgid;
-struct termios		shelltmodes;
 int					g_shell_terminal;
 int					g_shell_is_interactive;
 char				**g_env;
@@ -153,7 +152,7 @@ void				ft_infinit_pipe(t_exectoken *head);
 int					ft_distruct_tree(t_exectoken *q);
 int					ft_distr_lex(t_lextoken	*tmp);
 int					ft_distruct_memory(t_memory	*head);
-void				ft_error_q(int er);
+void				ft_error_q(int er);int		ft_ck_addline(t_readline *p);
 int					ft_norm_pipe(int p1, int *fd_in, int p0,
 						t_exectoken **head);
 int					ft_error_args(t_exectoken *tmp);
@@ -232,5 +231,7 @@ int					ft_whatis2(t_process *tmp);
 void				init_shell(void);
 int					ft_whatis4(t_exectoken *tmp);
 int					ck_br(const char *str);
+void				put_error_to_shell(int error);
+
 
 #endif

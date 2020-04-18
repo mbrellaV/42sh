@@ -34,7 +34,7 @@ add_executable(42save
         src/evaln/inftopost.c
         src/exec/continuing_jobs.c
         src/exec/ft_create_file.c
-        src/exec/ft_do_pipe.c
+        src/exec/ft_do_redirects.c
         src/exec/ft_fun_fork.c
         src/exec/launch_job.c
         src/exec/launch_process.c
@@ -112,7 +112,7 @@ add_executable(42save
         src/g_builtins.c
         src/init_shell.c
         src/main.c
-        src/shell_lvl.c src/exec/create_jobs_and_proc.c src/exec/free_job_list.c src/exec/find_jobs.c src/exec/working_with_fds.c src/exec/job_info.c src/evaln/sub_and_add.c src/exec/ft_do_pipe_next.c src/exec/redirect.c src/main_2.c src/lexer/del_one_node_in_lextokens.c src/ft_main_what.c)
+        src/shell_lvl.c src/exec/create_jobs_and_proc.c src/exec/free_job_list.c src/exec/find_jobs.c src/exec/working_with_fds.c src/exec/job_info.c src/evaln/sub_and_add.c src/exec/ft_do_open_flags.c src/exec/redirect.c src/ck_check.c src/lexer/del_one_node_in_lextokens.c src/ft_main_what.c src/put_error_to_env.c src/hash/print_hash.c src/utility_files/global_variables.c)
 
 
 target_link_libraries(42save ${CMAKE_SOURCE_DIR}/libft/libft.a)

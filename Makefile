@@ -24,7 +24,6 @@ SRC_BASE = builtins/ft_cd.c\
 	builtins/allenv/ft_env.c\
 	builtins/alias/alias.c\
  	builtins/allenv/global_env.c\
- 	main_2.c\
  	ft_main_what.c\
  	qft_printf/add_buff.c\
  	qft_printf/add_char.c\
@@ -44,8 +43,8 @@ SRC_BASE = builtins/ft_cd.c\
  	qft_printf/ft_printf.c\
  	errors/errror_handler.c\
  	exec/ft_create_file.c\
- 	exec/ft_do_pipe.c\
- 	exec/ft_do_pipe_next.c\
+ 	exec/ft_do_redirects.c\
+ 	exec/ft_do_open_flags.c\
  	exec/redirect.c\
  	exec/stopped_and_terminated_jobs.c\
  	exec/continuing_jobs.c\
@@ -132,12 +131,15 @@ SRC_BASE = builtins/ft_cd.c\
 	hash/hash_table.c\
 	hash/hash_table_2.c\
 	hash/hash_error.c\
+	hash/print_hash.c\
+	put_error_to_env.c\
 	ft_distruct.c\
 	ft_error_q.c\
 	ft_signal.c\
 	ft_take_arg.c\
 	check_file.c\
 	main.c\
+	ck_check.c\
 	shell_lvl.c\
 	init_shell.c\
 	builtins/allenv/main_env.c\

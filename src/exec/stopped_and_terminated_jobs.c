@@ -19,17 +19,17 @@ static int		norme_help(t_pstat *pstat, int status, pid_t pid)
 	if (WIFSTOPPED(status))
 	{
 		pstat->p->stopped = 1;
-		pstat->str_for_del = ft_itoa(WEXITSTATUS(status));
-		set_new_var("?", pstat->str_for_del, &g_all_var);
-		ft_strdel(&pstat->str_for_del);
+		//pstat->str_for_del = ft_itoa(WEXITSTATUS(status));
+		put_error_to_shell(WEXITSTATUS(status));
+		//ft_strdel(&pstat->str_for_del);
 	}
 	else
 	{
 		pstat->p->completed = 1;
 		pstat->p->status = WEXITSTATUS(status);
-		pstat->str_for_del = ft_itoa(pstat->p->status);
-		set_new_var("?", pstat->str_for_del, &g_all_var);
-		ft_strdel(&pstat->str_for_del);
+		//pstat->str_for_del = ft_itoa(pstat->p->status);
+		put_error_to_shell(pstat->p->status);
+		//ft_strdel(&pstat->str_for_del);
 		pstat->ptmp = pstat->j->first_process;
 		while (pstat->ptmp != pstat->p && (pstat->ptmp->completed = 1))
 			pstat->ptmp = pstat->ptmp->next;

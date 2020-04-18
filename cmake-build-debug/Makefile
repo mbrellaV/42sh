@@ -474,6 +474,33 @@ src/check_file.c.s:
 	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/check_file.c.s
 .PHONY : src/check_file.c.s
 
+src/ck_check.o: src/ck_check.c.o
+
+.PHONY : src/ck_check.o
+
+# target to build an object file
+src/ck_check.c.o:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/ck_check.c.o
+.PHONY : src/ck_check.c.o
+
+src/ck_check.i: src/ck_check.c.i
+
+.PHONY : src/ck_check.i
+
+# target to preprocess a source file
+src/ck_check.c.i:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/ck_check.c.i
+.PHONY : src/ck_check.c.i
+
+src/ck_check.s: src/ck_check.c.s
+
+.PHONY : src/ck_check.s
+
+# target to generate assembly for a file
+src/ck_check.c.s:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/ck_check.c.s
+.PHONY : src/ck_check.c.s
+
 src/errors/errror_handler.o: src/errors/errror_handler.c.o
 
 .PHONY : src/errors/errror_handler.o
@@ -798,59 +825,59 @@ src/exec/ft_create_file.c.s:
 	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/exec/ft_create_file.c.s
 .PHONY : src/exec/ft_create_file.c.s
 
-src/exec/ft_do_pipe.o: src/exec/ft_do_pipe.c.o
+src/exec/ft_do_open_flags.o: src/exec/ft_do_open_flags.c.o
 
-.PHONY : src/exec/ft_do_pipe.o
-
-# target to build an object file
-src/exec/ft_do_pipe.c.o:
-	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/exec/ft_do_pipe.c.o
-.PHONY : src/exec/ft_do_pipe.c.o
-
-src/exec/ft_do_pipe.i: src/exec/ft_do_pipe.c.i
-
-.PHONY : src/exec/ft_do_pipe.i
-
-# target to preprocess a source file
-src/exec/ft_do_pipe.c.i:
-	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/exec/ft_do_pipe.c.i
-.PHONY : src/exec/ft_do_pipe.c.i
-
-src/exec/ft_do_pipe.s: src/exec/ft_do_pipe.c.s
-
-.PHONY : src/exec/ft_do_pipe.s
-
-# target to generate assembly for a file
-src/exec/ft_do_pipe.c.s:
-	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/exec/ft_do_pipe.c.s
-.PHONY : src/exec/ft_do_pipe.c.s
-
-src/exec/ft_do_pipe_next.o: src/exec/ft_do_pipe_next.c.o
-
-.PHONY : src/exec/ft_do_pipe_next.o
+.PHONY : src/exec/ft_do_open_flags.o
 
 # target to build an object file
-src/exec/ft_do_pipe_next.c.o:
-	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/exec/ft_do_pipe_next.c.o
-.PHONY : src/exec/ft_do_pipe_next.c.o
+src/exec/ft_do_open_flags.c.o:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/exec/ft_do_open_flags.c.o
+.PHONY : src/exec/ft_do_open_flags.c.o
 
-src/exec/ft_do_pipe_next.i: src/exec/ft_do_pipe_next.c.i
+src/exec/ft_do_open_flags.i: src/exec/ft_do_open_flags.c.i
 
-.PHONY : src/exec/ft_do_pipe_next.i
+.PHONY : src/exec/ft_do_open_flags.i
 
 # target to preprocess a source file
-src/exec/ft_do_pipe_next.c.i:
-	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/exec/ft_do_pipe_next.c.i
-.PHONY : src/exec/ft_do_pipe_next.c.i
+src/exec/ft_do_open_flags.c.i:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/exec/ft_do_open_flags.c.i
+.PHONY : src/exec/ft_do_open_flags.c.i
 
-src/exec/ft_do_pipe_next.s: src/exec/ft_do_pipe_next.c.s
+src/exec/ft_do_open_flags.s: src/exec/ft_do_open_flags.c.s
 
-.PHONY : src/exec/ft_do_pipe_next.s
+.PHONY : src/exec/ft_do_open_flags.s
 
 # target to generate assembly for a file
-src/exec/ft_do_pipe_next.c.s:
-	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/exec/ft_do_pipe_next.c.s
-.PHONY : src/exec/ft_do_pipe_next.c.s
+src/exec/ft_do_open_flags.c.s:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/exec/ft_do_open_flags.c.s
+.PHONY : src/exec/ft_do_open_flags.c.s
+
+src/exec/ft_do_redirects.o: src/exec/ft_do_redirects.c.o
+
+.PHONY : src/exec/ft_do_redirects.o
+
+# target to build an object file
+src/exec/ft_do_redirects.c.o:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/exec/ft_do_redirects.c.o
+.PHONY : src/exec/ft_do_redirects.c.o
+
+src/exec/ft_do_redirects.i: src/exec/ft_do_redirects.c.i
+
+.PHONY : src/exec/ft_do_redirects.i
+
+# target to preprocess a source file
+src/exec/ft_do_redirects.c.i:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/exec/ft_do_redirects.c.i
+.PHONY : src/exec/ft_do_redirects.c.i
+
+src/exec/ft_do_redirects.s: src/exec/ft_do_redirects.c.s
+
+.PHONY : src/exec/ft_do_redirects.s
+
+# target to generate assembly for a file
+src/exec/ft_do_redirects.c.s:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/exec/ft_do_redirects.c.s
+.PHONY : src/exec/ft_do_redirects.c.s
 
 src/exec/ft_fun_fork.o: src/exec/ft_fun_fork.c.o
 
@@ -1365,6 +1392,33 @@ src/hash/hash_table_2.c.s:
 	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/hash/hash_table_2.c.s
 .PHONY : src/hash/hash_table_2.c.s
 
+src/hash/print_hash.o: src/hash/print_hash.c.o
+
+.PHONY : src/hash/print_hash.o
+
+# target to build an object file
+src/hash/print_hash.c.o:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/hash/print_hash.c.o
+.PHONY : src/hash/print_hash.c.o
+
+src/hash/print_hash.i: src/hash/print_hash.c.i
+
+.PHONY : src/hash/print_hash.i
+
+# target to preprocess a source file
+src/hash/print_hash.c.i:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/hash/print_hash.c.i
+.PHONY : src/hash/print_hash.c.i
+
+src/hash/print_hash.s: src/hash/print_hash.c.s
+
+.PHONY : src/hash/print_hash.s
+
+# target to generate assembly for a file
+src/hash/print_hash.c.s:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/hash/print_hash.c.s
+.PHONY : src/hash/print_hash.c.s
+
 src/init_shell.o: src/init_shell.c.o
 
 .PHONY : src/init_shell.o
@@ -1877,33 +1931,6 @@ src/main.s: src/main.c.s
 src/main.c.s:
 	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/main.c.s
 .PHONY : src/main.c.s
-
-src/main_2.o: src/main_2.c.o
-
-.PHONY : src/main_2.o
-
-# target to build an object file
-src/main_2.c.o:
-	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/main_2.c.o
-.PHONY : src/main_2.c.o
-
-src/main_2.i: src/main_2.c.i
-
-.PHONY : src/main_2.i
-
-# target to preprocess a source file
-src/main_2.c.i:
-	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/main_2.c.i
-.PHONY : src/main_2.c.i
-
-src/main_2.s: src/main_2.c.s
-
-.PHONY : src/main_2.s
-
-# target to generate assembly for a file
-src/main_2.c.s:
-	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/main_2.c.s
-.PHONY : src/main_2.c.s
 
 src/nucleus/del_readline.o: src/nucleus/del_readline.c.o
 
@@ -3066,6 +3093,33 @@ src/parser/main_parser.c.s:
 	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/parser/main_parser.c.s
 .PHONY : src/parser/main_parser.c.s
 
+src/put_error_to_env.o: src/put_error_to_env.c.o
+
+.PHONY : src/put_error_to_env.o
+
+# target to build an object file
+src/put_error_to_env.c.o:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/put_error_to_env.c.o
+.PHONY : src/put_error_to_env.c.o
+
+src/put_error_to_env.i: src/put_error_to_env.c.i
+
+.PHONY : src/put_error_to_env.i
+
+# target to preprocess a source file
+src/put_error_to_env.c.i:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/put_error_to_env.c.i
+.PHONY : src/put_error_to_env.c.i
+
+src/put_error_to_env.s: src/put_error_to_env.c.s
+
+.PHONY : src/put_error_to_env.s
+
+# target to generate assembly for a file
+src/put_error_to_env.c.s:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/put_error_to_env.c.s
+.PHONY : src/put_error_to_env.c.s
+
 src/shell_lvl.o: src/shell_lvl.c.o
 
 .PHONY : src/shell_lvl.o
@@ -3092,6 +3146,33 @@ src/shell_lvl.s: src/shell_lvl.c.s
 src/shell_lvl.c.s:
 	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/shell_lvl.c.s
 .PHONY : src/shell_lvl.c.s
+
+src/utility_files/global_variables.o: src/utility_files/global_variables.c.o
+
+.PHONY : src/utility_files/global_variables.o
+
+# target to build an object file
+src/utility_files/global_variables.c.o:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/utility_files/global_variables.c.o
+.PHONY : src/utility_files/global_variables.c.o
+
+src/utility_files/global_variables.i: src/utility_files/global_variables.c.i
+
+.PHONY : src/utility_files/global_variables.i
+
+# target to preprocess a source file
+src/utility_files/global_variables.c.i:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/utility_files/global_variables.c.i
+.PHONY : src/utility_files/global_variables.c.i
+
+src/utility_files/global_variables.s: src/utility_files/global_variables.c.s
+
+.PHONY : src/utility_files/global_variables.s
+
+# target to generate assembly for a file
+src/utility_files/global_variables.c.s:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/utility_files/global_variables.c.s
+.PHONY : src/utility_files/global_variables.c.s
 
 # Help Target
 help:
@@ -3141,6 +3222,9 @@ help:
 	@echo "... src/check_file.o"
 	@echo "... src/check_file.i"
 	@echo "... src/check_file.s"
+	@echo "... src/ck_check.o"
+	@echo "... src/ck_check.i"
+	@echo "... src/ck_check.s"
 	@echo "... src/errors/errror_handler.o"
 	@echo "... src/errors/errror_handler.i"
 	@echo "... src/errors/errror_handler.s"
@@ -3177,12 +3261,12 @@ help:
 	@echo "... src/exec/ft_create_file.o"
 	@echo "... src/exec/ft_create_file.i"
 	@echo "... src/exec/ft_create_file.s"
-	@echo "... src/exec/ft_do_pipe.o"
-	@echo "... src/exec/ft_do_pipe.i"
-	@echo "... src/exec/ft_do_pipe.s"
-	@echo "... src/exec/ft_do_pipe_next.o"
-	@echo "... src/exec/ft_do_pipe_next.i"
-	@echo "... src/exec/ft_do_pipe_next.s"
+	@echo "... src/exec/ft_do_open_flags.o"
+	@echo "... src/exec/ft_do_open_flags.i"
+	@echo "... src/exec/ft_do_open_flags.s"
+	@echo "... src/exec/ft_do_redirects.o"
+	@echo "... src/exec/ft_do_redirects.i"
+	@echo "... src/exec/ft_do_redirects.s"
 	@echo "... src/exec/ft_fun_fork.o"
 	@echo "... src/exec/ft_fun_fork.i"
 	@echo "... src/exec/ft_fun_fork.s"
@@ -3240,6 +3324,9 @@ help:
 	@echo "... src/hash/hash_table_2.o"
 	@echo "... src/hash/hash_table_2.i"
 	@echo "... src/hash/hash_table_2.s"
+	@echo "... src/hash/print_hash.o"
+	@echo "... src/hash/print_hash.i"
+	@echo "... src/hash/print_hash.s"
 	@echo "... src/init_shell.o"
 	@echo "... src/init_shell.i"
 	@echo "... src/init_shell.s"
@@ -3297,9 +3384,6 @@ help:
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
-	@echo "... src/main_2.o"
-	@echo "... src/main_2.i"
-	@echo "... src/main_2.s"
 	@echo "... src/nucleus/del_readline.o"
 	@echo "... src/nucleus/del_readline.i"
 	@echo "... src/nucleus/del_readline.s"
@@ -3429,9 +3513,15 @@ help:
 	@echo "... src/parser/main_parser.o"
 	@echo "... src/parser/main_parser.i"
 	@echo "... src/parser/main_parser.s"
+	@echo "... src/put_error_to_env.o"
+	@echo "... src/put_error_to_env.i"
+	@echo "... src/put_error_to_env.s"
 	@echo "... src/shell_lvl.o"
 	@echo "... src/shell_lvl.i"
 	@echo "... src/shell_lvl.s"
+	@echo "... src/utility_files/global_variables.o"
+	@echo "... src/utility_files/global_variables.i"
+	@echo "... src/utility_files/global_variables.s"
 .PHONY : help
 
 

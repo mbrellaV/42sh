@@ -58,35 +58,6 @@ void		do_obr_zamena_slash(t_exectoken *tmp)
 	do_obr_zamena_slash(tmp->left);
 }
 
-static void	cycle(t_zams *zams, char *line)
-{
-	if (ispar(line[zams->i]))
-	{
-		zams->dop = c_size(&line[zams->i], line[zams->i]);
-		if (zams->dop == -2)
-			zams->dop = 2;
-		zams->str_for_del = ft_strsub(line, zams->i, zams->dop + 2);
-		ft_strcat(zams->dopstr, zams->str_for_del);
-		zams->i += zams->dop + 1;
-		ft_strdel(&zams->str_for_del);
-	}
-	else if (line[zams->i] == '\\' && line[zams->i + 1] != '\0')
-	{
-		zams->str_for_del = ft_strdup(" ");
-		zams->str_for_del[0] = -1 * line[zams->i + 1];
-		ft_strcat(zams->dopstr, zams->str_for_del);
-		ft_strdel(&zams->str_for_del);
-		zams->i++;
-	}
-	else
-	{
-		zams->str_for_del = ft_strdup(" ");
-		zams->str_for_del[0] = line[zams->i];
-		ft_strcat(zams->dopstr, zams->str_for_del);
-		ft_strdel(&zams->str_for_del);
-	}
-}
-
 char	*do_reverse_zamena(char *str)
 {
 	int		i;
@@ -115,21 +86,50 @@ char	*do_reverse_zamena(char *str)
 	return (newstr);
 }
 
+static void	decide_what_to_do(t_zams *zams, char *line)
+{
+	if (ispar(line[zams->i]))
+	{
+		zams->dop = c_size(&line[zams->i], line[zams->i]);
+		if (zams->dop == -2)
+			zams->dop = 2;
+		zams->str_for_del = ft_strsub(line, zams->i, zams->dop + 2);
+		ft_strcat(zams->dopstr, zams->str_for_del);
+		zams->i += zams->dop + 1;
+		ft_strdel(&zams->str_for_del);
+	}
+	else if (line[zams->i] == '\\' && line[zams->i + 1] != '\0')
+	{
+		zams->str_for_del = ft_strdup(" ");
+		zams->str_for_del[0] = -1 * line[zams->i + 1];
+		ft_strcat(zams->dopstr, zams->str_for_del);
+		ft_strdel(&zams->str_for_del);
+		zams->i++;
+	}
+	else
+	{
+		zams->str_for_del = ft_strdup(" ");
+		zams->str_for_del[0] = line[zams->i];
+		ft_strcat(zams->dopstr, zams->str_for_del);
+		ft_strdel(&zams->str_for_del);
+	}
+}
+
 int			do_zamena_slash(char *line, t_readline *p)
 {
 	t_zams	zams;
 
 	zams.i = 0;
 	if (line == NULL)
-		return (13000);
+		return (-1);
 	if (!(zams.dopstr = ft_memalloc(130000)))
 		ft_error_q(2);
 	while (zams.i < ft_strlen(line) && line[zams.i] != '\0')
 	{
-		cycle(&zams, line);
+		decide_what_to_do(&zams, line);
 		zams.i++;
 	}
-	free(p->buff);
+	ft_strdel(&p->buff);
 	p->buff = zams.dopstr;
 	p->len = ft_strlen(p->buff);
 	return (p->len);

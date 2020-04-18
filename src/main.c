@@ -12,69 +12,24 @@
 
 #include "../inc/fshell.h"
 
-void	print_hash(void)
+int		read_form_file(t_readline *p)
 {
-	t_hash			*hash;
-	int				i;
+	t_exectoken *start_token;
 
-	i = -1;
-	while (++i < MAX_HASH)
-	{
-		if (g_hash[i] != NULL)
-		{
-			hash = g_hash[i];
-			while (hash)
-			{
-				ft_putstr_fd(hash->key, 2);
-				ft_putstr_fd("=", 2);
-				ft_putstr_fd(hash->value, 2);
-				if (hash->next)
-					ft_putstr_fd("    ", 2);
-				hash = hash->next;
-			}
-			ft_putstr_fd("\n", 2);
-		}
-	}
-}
-
-int		ft_ck_addline(t_readline *p)
-{
-	int				f;
-
-	f = 4242;
-	while (f != 1)
-	{
-		p->index = do_zamena_slash(p->buff, p);
-		while (ft_cheak_quote(p->buff) != 1)
-			ft_add_intput_que(p, g_memory_head, 1);
-		p->index = do_zamena_slash(p->buff, p);
-		while (p->index > 0 && p->buff[p->index - 1] == '\\')
-		{
-			p->buff[p->index - 1] = 0;
-			ft_add_intput_que(p, g_memory_head, 11);
-		}
-		p->index = do_zamena_slash(p->buff, p);
-		if ((f = ck_br(p->buff)) == 0)
-			ft_add_intput_que(p, g_memory_head, 20);
-		else if (f == -1 || f == -2)
-		{
-			ft_putstr_fd("Error \"()\"\n", 2);
-			free(p->buff);
-			return (0);
-		}
-	}
-	return (1);
-}
-
-int		main_read(t_readline *p, t_exectoken **start_token)
-{
 	while (get_next_line(STDIN_FILENO, &p->buff))
 	{
-		*start_token = all_parse(p->buff);
-		if (ft_main_what(*start_token) == -1)
+		if ((start_token = all_parse(p->buff)) == NULL)
+		{
+			del_readline(p);
+			ft_distruct_tree(start_token);
+			return (0);
+		}
+		p->buff[0] != '\0' ? g_memory_head = ft_memory(g_memory_head,
+				&(p->buff)) : g_memory_head;
+		if (ft_main_what(start_token) == -1)
 			return (-1);
-		free(p->buff);
-		ft_distruct_tree(*start_token);
+		del_readline(p);
+		ft_distruct_tree(start_token);
 	}
 	return (0);
 }
@@ -91,8 +46,8 @@ int		main_cycle(t_readline *p, t_exectoken **start_token)
 			p->buff = ft_strnew(130000);
 		reset_input_mode();
 	}
-	else if (main_read(p, start_token) == -1)
-		return (-1);
+	else
+		return (read_form_file(p));
 	p->buff[0] != '\0' ? g_memory_head = ft_memory(g_memory_head,
 			&(p->buff)) : g_memory_head;
 	if ((*start_token = all_parse(p->buff)) == NULL)

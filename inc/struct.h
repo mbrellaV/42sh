@@ -131,4 +131,21 @@ typedef struct				s_job
 	int						foreground;
 }							t_job;
 
+typedef struct				s_all_global_variables
+{
+	int					g_exit_code;
+	pid_t				g_shell_pgid;
+	int					g_shell_terminal;
+	int					g_shell_is_interactive;
+	char				**g_env;
+	char				*g_cp;
+	int					g_his_d;
+	char				**g_alias;
+	char				**g_all_var;
+	t_memory			*g_memory_head;
+	const char	*g_builtins[BIL_NUM];
+	t_job				*g_f_job;
+
+}							t_all_global_variables;
+
 #endif
