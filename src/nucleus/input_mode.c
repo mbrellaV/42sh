@@ -21,7 +21,7 @@ void	error_term(int error)
 {
 	if (error == 1)
 	{
-		ft_putendl_fd("21sh: Not a terminal.\n", 2);
+		ft_putendl_fd("42sh: Not a terminal.\n", 2);
 		exit(1);
 	}
 }

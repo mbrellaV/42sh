@@ -83,10 +83,8 @@ int				do_cd(t_builtins *cd, char *str)
 			change_path(full_path, cd);
 		else if (res_d == -1 || res_l == -1)
 			return (ft_cd_error(full_path, 3, 1));
-		else if (res_d == 0)
-			return (ft_cd_error(str, 3, 0));
 		else
-			return (ft_cd_error(str, 6, 0));
+			return (!res_d ? ft_cd_error(str, 3, 0) : ft_cd_error(str, 6, 0));
 	}
 	if (!ft_strcmp(str, "-") && (k = ft_findenv("PWD=", g_env)) != -404)
 		ft_printf("%s\n", g_env[k] + 4);

@@ -232,6 +232,7 @@ void				init_shell(void);
 int					ft_whatis4(t_exectoken *tmp);
 int					ck_br(const char *str);
 void				put_error_to_shell(int error);
+int 				try_builtin(char *name);
 
 
 #endif
