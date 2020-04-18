@@ -29,10 +29,10 @@ static void		do_fork(t_jobl *jobl, t_job *j, int foreground)
 			setpgid(jobl->pid, j->pgid);
 		}
 	}
-//	if (jobl->infile != j->stdinc)
-//		close(jobl->infile);
-//	if (jobl->outfile != j->stdoutc)
-//		close(jobl->outfile);
+	if (jobl->infile != j->stdinc)
+		close(jobl->infile);
+	if (jobl->outfile != j->stdoutc)
+		close(jobl->outfile);
 	jobl->infile = jobl->mypipe[0];
 	jobl->p = jobl->p->next;
 }
