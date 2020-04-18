@@ -44,26 +44,84 @@ char		*ft_get_alias(char *dop)
 	return (NULL);
 }
 
-char		*ft_do_zam_alias(char *str)
-{
-	char	*tmp;
 
-	if (str == NULL)
-		return (NULL);
-	if (*str == '\0')
-		return (str);
-	if (ft_findenv(str, g_alias) != -404 && ft_strcmp(str, "unalias") != 0
-		&& ft_strcmp(str, "export") != 0 &&
-	ft_strcmp(str, "unset") != 0 && ft_strcmp(str, "unexport") != 0
-		&& ft_strcmp(str, "alias") != 0)
+static void	cycle(char *str, int *i, char *newstr)
+{
+	char	*dopstr;
+	char	*dop;
+
+	dopstr = NULL;
+	dop = NULL;
+	if (ispar(str[*i]))
 	{
-		tmp = str;
-		if (!(str = ft_get_alias(str)))
-			return (ft_memalloc(130000));
-		ft_strdel(&tmp);
+		dopstr = ft_strsub(str, *i, c_size(&str[*i], str[*i]) + 2);
+		ft_strcat(newstr, dopstr);
+		*i += c_size(&str[*i], str[*i]) + 2;
 	}
-	return (str);
+	else if (isword(str[*i]) == 1)
+	{
+		dop = ft_strsub(str, *i, word_size(&str[*i]));
+		if (!(dopstr = ft_get_alias(dop)))
+		{
+			ft_strcat(newstr, dop);
+			*i += word_size(&str[*i]);
+		}
+		else
+		{
+			ft_strcat(newstr, dopstr);
+			*i += word_size(&str[*i]);
+		}
+	}
+	else
+	{
+		dop = ft_strdup(" ");
+		dop[0] = str[*i];
+		ft_strcat(newstr, dop);
+		(*i)++;
+	}
+	ft_strdel(&dopstr);
+	ft_strdel(&dop);
 }
+
+int			ft_do_zam_alias(char *str, t_readline *p)
+{
+	int		i;
+
+	i = 0;
+	if (!(p->buff = ft_strnew(130000)))
+		ft_error_q(2);
+	while (i < ft_strlen(str) && str[i] != '\0')
+		cycle(str, &i, p->buff);
+	ft_strdel(&str);
+	return (ft_strlen(p->buff));
+}
+//char		*ft_do_zam_alias(char *str)
+//{
+//	char	*tmp;
+//	int		i;
+//
+//	i = 0;
+//	if (str == NULL)
+//		return (NULL);
+//	if (*str == '\0')
+//		return (str);
+//	while (str[i])
+//	{
+//
+//		i++;
+//	}
+//	if (ft_findenv(str, g_alias) != -404 && ft_strcmp(str, "unalias") != 0
+//		&& ft_strcmp(str, "export") != 0 &&
+//	ft_strcmp(str, "unset") != 0 && ft_strcmp(str, "unexport") != 0
+//		&& ft_strcmp(str, "alias") != 0)
+//	{
+//		tmp = str;
+//		if (!(str = ft_get_alias(str)))
+//			return (ft_memalloc(130000));
+//		ft_strdel(&tmp);
+//	}
+//	return (str);
+//}
 
 int			ft_do_change_alias(char **mas)
 {

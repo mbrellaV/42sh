@@ -36,5 +36,6 @@ void	ft_add_intput_que(t_readline *p, t_memory *head, int mod)
 		p->buff[p->index++] = q.buff[i];
 		p->len++;
 	}
+	del_readline(&q);
 	write(2, "\n", 1);
 }

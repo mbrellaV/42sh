@@ -101,8 +101,8 @@ int				do_all_zams_with_inhibitor(t_lextoken *h, t_lextoken
 	{
 		if (!(h->line = do_zam_str_with_tilda(h->line)))
 			return (-1);
-		if (!(h->line = ft_do_zam_alias(h->line)))
-			return (-1);
+//		if (!(h->line = ft_do_zam_alias(h->line)))
+//			return (-1);
 		*doph = do_zam_ravno(h, first_token);
 	}
 	else

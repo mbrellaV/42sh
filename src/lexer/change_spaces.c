@@ -129,7 +129,7 @@ int			do_zamena_slash(char *line, t_readline *p)
 		decide_what_to_do(&zams, line);
 		zams.i++;
 	}
-	ft_strdel(&p->buff);
+	ft_strdel(&line);
 	p->buff = zams.dopstr;
 	p->len = ft_strlen(p->buff);
 	return (p->len);

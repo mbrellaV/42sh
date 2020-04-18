@@ -12,6 +12,26 @@
 
 #include "../inc/fshell.h"
 
+void	update_history(t_readline *p)
+{
+	int		i;
+	char	*second_str;
+	char	*str_for_del;
+
+	i = 0;
+	if (p->buff[0] == '\0')
+		return ;
+	if (!(second_str = ft_strnew(130000)))
+		ft_error_q(2);
+	while (p->buff[i] && p->buff[i] != '\n')
+		i++;
+	ft_strcat(second_str, &p->buff[i]);
+	str_for_del = g_memory_head->inp;
+	g_memory_head->inp = ft_strjoin(g_memory_head->inp, second_str);
+	ft_strdel(&str_for_del);
+	ft_strdel(&second_str);
+}
+
 int		read_form_file(t_readline *p)
 {
 	t_exectoken *start_token;
@@ -48,8 +68,7 @@ int		main_cycle(t_readline *p, t_exectoken **start_token)
 	}
 	else
 		return (read_form_file(p));
-	p->buff[0] != '\0' ? g_memory_head = ft_memory(g_memory_head,
-			&(p->buff)) : g_memory_head;
+	update_history(p);
 	if ((*start_token = all_parse(p->buff)) == NULL)
 	{
 		del_readline(p);

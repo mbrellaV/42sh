@@ -65,5 +65,6 @@ void			ft_read_8(t_readline *p, t_memory *head, int mod)
 			return ;
 		else
 			norme_help(p, buf);
+		p->index = do_zamena_slash(p->buff, p);
 	}
 }

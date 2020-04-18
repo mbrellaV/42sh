@@ -18,7 +18,7 @@ static int	trick(t_exectoken **tmp)
 	return (1);
 }
 
-static void	norme_help(char **del, int *sas, t_job **job, t_exectoken *tmp)
+static void	do_job_things(char **del, int *sas, t_job **job, t_exectoken *tmp)
 {
 	*job = create_job(tmp);
 	if (g_f_job != NULL)
@@ -47,7 +47,7 @@ int			ft_main_what(t_exectoken *tmp)
 				(tmp->should_wait_or == 1 && !ft_atoi(del)))
 				if (strdelr(&del) && trick(&tmp))
 					continue ;
-			norme_help(&del, &sas, &job, tmp);
+			do_job_things(&del, &sas, &job, tmp);
 		}
 		else if (tmp->left == NULL && is_builtin(tmp->file_args[0]) == 1)
 			sas = ft_whatis4(tmp);
