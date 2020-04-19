@@ -34,7 +34,7 @@ static int		norme_help(t_pstat *pstat, int status, pid_t pid)
 		while (pstat->ptmp != pstat->p && (pstat->ptmp->completed = 1))
 			pstat->ptmp = pstat->ptmp->next;
 		if (WIFSIGNALED(status))
-			ft_dprintf(2, "%d: Terminated by signal %d.\n",
+			ft_dprintf(all_opened_fds[2], "%d: Terminated by signal %d.\n",
 				(int)pid, WTERMSIG(pstat->p->status));
 	}
 	return (0);
@@ -60,7 +60,7 @@ int				mark_process_status(pid_t pid, int status)
 			}
 			pstat.j = pstat.j->next;
 		}
-		return (!ft_dprintf(2, "No child process %d.\n", pid) - 1);
+		return (!ft_dprintf(all_opened_fds[2], "No child process %d.\n", pid) - 1);
 	}
 	else if (pid == 0 || errno == ECHILD)
 		return (-1);

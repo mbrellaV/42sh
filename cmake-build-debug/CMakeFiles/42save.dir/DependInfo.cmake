@@ -47,6 +47,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "/home/petruha2001/42sh/src/ft_main_what.c" "/home/petruha2001/42sh/cmake-build-debug/CMakeFiles/42save.dir/src/ft_main_what.c.o"
   "/home/petruha2001/42sh/src/ft_signal.c" "/home/petruha2001/42sh/cmake-build-debug/CMakeFiles/42save.dir/src/ft_signal.c.o"
   "/home/petruha2001/42sh/src/ft_take_arg.c" "/home/petruha2001/42sh/cmake-build-debug/CMakeFiles/42save.dir/src/ft_take_arg.c.o"
+  "/home/petruha2001/42sh/src/ft_whatis.c" "/home/petruha2001/42sh/cmake-build-debug/CMakeFiles/42save.dir/src/ft_whatis.c.o"
   "/home/petruha2001/42sh/src/g_builtins.c" "/home/petruha2001/42sh/cmake-build-debug/CMakeFiles/42save.dir/src/g_builtins.c.o"
   "/home/petruha2001/42sh/src/hash/hash_error.c" "/home/petruha2001/42sh/cmake-build-debug/CMakeFiles/42save.dir/src/hash/hash_error.c.o"
   "/home/petruha2001/42sh/src/hash/hash_table.c" "/home/petruha2001/42sh/cmake-build-debug/CMakeFiles/42save.dir/src/hash/hash_table.c.o"

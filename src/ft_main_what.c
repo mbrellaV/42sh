@@ -40,7 +40,7 @@ int			ft_main_what(t_exectoken *tmp)
 	{
 		if ((tmp->file_args == NULL) && (tmp->file_opt == NULL) && trick(&tmp))
 			continue ;
-		if ((tmp->file_args && !is_builtin(tmp->file_args[0])) || tmp->file_opt)
+		if ((tmp->file_args && !is_builtin(tmp->file_args[0])) || tmp->left != NULL)
 		{
 			del = ft_get_var("?", g_all_var);
 			if ((tmp->should_wait_and == 1 && ft_atoi(del) > 0) ||
@@ -50,7 +50,7 @@ int			ft_main_what(t_exectoken *tmp)
 			do_job_things(&del, &sas, &job, tmp);
 		}
 		else if (tmp->left == NULL && is_builtin(tmp->file_args[0]) == 1)
-			sas = ft_whatis4(tmp);
+			sas = do_builtin(tmp);
 		if (trick(&tmp) && sas == -1)
 			return (-1);
 	}

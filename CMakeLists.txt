@@ -107,6 +107,7 @@ add_executable(42save
         src/check_file.c
         src/ft_distruct.c
         src/ft_error_q.c
+        src/ft_whatis.c
         src/ft_signal.c
         src/ft_take_arg.c
         src/g_builtins.c

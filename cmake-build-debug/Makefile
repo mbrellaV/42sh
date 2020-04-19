@@ -1284,6 +1284,33 @@ src/ft_take_arg.c.s:
 	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/ft_take_arg.c.s
 .PHONY : src/ft_take_arg.c.s
 
+src/ft_whatis.o: src/ft_whatis.c.o
+
+.PHONY : src/ft_whatis.o
+
+# target to build an object file
+src/ft_whatis.c.o:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/ft_whatis.c.o
+.PHONY : src/ft_whatis.c.o
+
+src/ft_whatis.i: src/ft_whatis.c.i
+
+.PHONY : src/ft_whatis.i
+
+# target to preprocess a source file
+src/ft_whatis.c.i:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/ft_whatis.c.i
+.PHONY : src/ft_whatis.c.i
+
+src/ft_whatis.s: src/ft_whatis.c.s
+
+.PHONY : src/ft_whatis.s
+
+# target to generate assembly for a file
+src/ft_whatis.c.s:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/ft_whatis.c.s
+.PHONY : src/ft_whatis.c.s
+
 src/g_builtins.o: src/g_builtins.c.o
 
 .PHONY : src/g_builtins.o
@@ -3312,6 +3339,9 @@ help:
 	@echo "... src/ft_take_arg.o"
 	@echo "... src/ft_take_arg.i"
 	@echo "... src/ft_take_arg.s"
+	@echo "... src/ft_whatis.o"
+	@echo "... src/ft_whatis.i"
+	@echo "... src/ft_whatis.s"
 	@echo "... src/g_builtins.o"
 	@echo "... src/g_builtins.i"
 	@echo "... src/g_builtins.s"

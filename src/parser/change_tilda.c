@@ -20,7 +20,7 @@ char			*do_zam_str_with_tilda(char *str)
 	if (*str == '\0')
 		return (str);
 	if (!(hp = ft_get_var("HOME", g_env)))
-		return (NULL);
+		return (str);
 	if (ft_strstr(str, "~/") == str ||
 			ft_strcmp("~", str) == 0)
 	{

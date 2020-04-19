@@ -102,8 +102,8 @@ void	ft_echo(char **str)
 		!echo.echo_n ? flag = 1 : 0;
 		str[k] = tmp;
 		if (str[k + 1] && (*str[k] != '-' || (*str[k] == '-' && !echo.echo_n)))
-			ft_putchar(' ');
+			ft_putchar_fd(' ', all_opened_fds[1]);
 	}
 	if (!echo.echo_n && !echo.echo_c)
-		ft_putchar('\n');
+		ft_putchar_fd('\n', all_opened_fds[1]);
 }

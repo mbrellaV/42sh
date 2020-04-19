@@ -44,6 +44,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/42save.dir/src/ft_main_what.c.o"
   "CMakeFiles/42save.dir/src/ft_signal.c.o"
   "CMakeFiles/42save.dir/src/ft_take_arg.c.o"
+  "CMakeFiles/42save.dir/src/ft_whatis.c.o"
   "CMakeFiles/42save.dir/src/g_builtins.c.o"
   "CMakeFiles/42save.dir/src/hash/hash_error.c.o"
   "CMakeFiles/42save.dir/src/hash/hash_table.c.o"

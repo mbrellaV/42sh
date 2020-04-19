@@ -1266,9 +1266,22 @@ CMakeFiles/42save.dir/src/ft_error_q.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/42save.dir/src/ft_error_q.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/petruha2001/42sh/src/ft_error_q.c -o CMakeFiles/42save.dir/src/ft_error_q.c.s
 
+CMakeFiles/42save.dir/src/ft_whatis.c.o: CMakeFiles/42save.dir/flags.make
+CMakeFiles/42save.dir/src/ft_whatis.c.o: ../src/ft_whatis.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/petruha2001/42sh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_94) "Building C object CMakeFiles/42save.dir/src/ft_whatis.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/42save.dir/src/ft_whatis.c.o   -c /home/petruha2001/42sh/src/ft_whatis.c
+
+CMakeFiles/42save.dir/src/ft_whatis.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/42save.dir/src/ft_whatis.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/petruha2001/42sh/src/ft_whatis.c > CMakeFiles/42save.dir/src/ft_whatis.c.i
+
+CMakeFiles/42save.dir/src/ft_whatis.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/42save.dir/src/ft_whatis.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/petruha2001/42sh/src/ft_whatis.c -o CMakeFiles/42save.dir/src/ft_whatis.c.s
+
 CMakeFiles/42save.dir/src/ft_signal.c.o: CMakeFiles/42save.dir/flags.make
 CMakeFiles/42save.dir/src/ft_signal.c.o: ../src/ft_signal.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/petruha2001/42sh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_94) "Building C object CMakeFiles/42save.dir/src/ft_signal.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/petruha2001/42sh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_95) "Building C object CMakeFiles/42save.dir/src/ft_signal.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/42save.dir/src/ft_signal.c.o   -c /home/petruha2001/42sh/src/ft_signal.c
 
 CMakeFiles/42save.dir/src/ft_signal.c.i: cmake_force
@@ -1281,7 +1294,7 @@ CMakeFiles/42save.dir/src/ft_signal.c.s: cmake_force
 
 CMakeFiles/42save.dir/src/ft_take_arg.c.o: CMakeFiles/42save.dir/flags.make
 CMakeFiles/42save.dir/src/ft_take_arg.c.o: ../src/ft_take_arg.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/petruha2001/42sh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_95) "Building C object CMakeFiles/42save.dir/src/ft_take_arg.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/petruha2001/42sh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_96) "Building C object CMakeFiles/42save.dir/src/ft_take_arg.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/42save.dir/src/ft_take_arg.c.o   -c /home/petruha2001/42sh/src/ft_take_arg.c
 
 CMakeFiles/42save.dir/src/ft_take_arg.c.i: cmake_force
@@ -1294,7 +1307,7 @@ CMakeFiles/42save.dir/src/ft_take_arg.c.s: cmake_force
 
 CMakeFiles/42save.dir/src/g_builtins.c.o: CMakeFiles/42save.dir/flags.make
 CMakeFiles/42save.dir/src/g_builtins.c.o: ../src/g_builtins.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/petruha2001/42sh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_96) "Building C object CMakeFiles/42save.dir/src/g_builtins.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/petruha2001/42sh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_97) "Building C object CMakeFiles/42save.dir/src/g_builtins.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/42save.dir/src/g_builtins.c.o   -c /home/petruha2001/42sh/src/g_builtins.c
 
 CMakeFiles/42save.dir/src/g_builtins.c.i: cmake_force
@@ -1307,7 +1320,7 @@ CMakeFiles/42save.dir/src/g_builtins.c.s: cmake_force
 
 CMakeFiles/42save.dir/src/init_shell.c.o: CMakeFiles/42save.dir/flags.make
 CMakeFiles/42save.dir/src/init_shell.c.o: ../src/init_shell.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/petruha2001/42sh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_97) "Building C object CMakeFiles/42save.dir/src/init_shell.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/petruha2001/42sh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_98) "Building C object CMakeFiles/42save.dir/src/init_shell.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/42save.dir/src/init_shell.c.o   -c /home/petruha2001/42sh/src/init_shell.c
 
 CMakeFiles/42save.dir/src/init_shell.c.i: cmake_force
@@ -1320,7 +1333,7 @@ CMakeFiles/42save.dir/src/init_shell.c.s: cmake_force
 
 CMakeFiles/42save.dir/src/main.c.o: CMakeFiles/42save.dir/flags.make
 CMakeFiles/42save.dir/src/main.c.o: ../src/main.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/petruha2001/42sh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_98) "Building C object CMakeFiles/42save.dir/src/main.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/petruha2001/42sh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_99) "Building C object CMakeFiles/42save.dir/src/main.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/42save.dir/src/main.c.o   -c /home/petruha2001/42sh/src/main.c
 
 CMakeFiles/42save.dir/src/main.c.i: cmake_force
@@ -1333,7 +1346,7 @@ CMakeFiles/42save.dir/src/main.c.s: cmake_force
 
 CMakeFiles/42save.dir/src/shell_lvl.c.o: CMakeFiles/42save.dir/flags.make
 CMakeFiles/42save.dir/src/shell_lvl.c.o: ../src/shell_lvl.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/petruha2001/42sh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_99) "Building C object CMakeFiles/42save.dir/src/shell_lvl.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/petruha2001/42sh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_100) "Building C object CMakeFiles/42save.dir/src/shell_lvl.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/42save.dir/src/shell_lvl.c.o   -c /home/petruha2001/42sh/src/shell_lvl.c
 
 CMakeFiles/42save.dir/src/shell_lvl.c.i: cmake_force
@@ -1346,7 +1359,7 @@ CMakeFiles/42save.dir/src/shell_lvl.c.s: cmake_force
 
 CMakeFiles/42save.dir/src/exec/create_jobs_and_proc.c.o: CMakeFiles/42save.dir/flags.make
 CMakeFiles/42save.dir/src/exec/create_jobs_and_proc.c.o: ../src/exec/create_jobs_and_proc.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/petruha2001/42sh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_100) "Building C object CMakeFiles/42save.dir/src/exec/create_jobs_and_proc.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/petruha2001/42sh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_101) "Building C object CMakeFiles/42save.dir/src/exec/create_jobs_and_proc.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/42save.dir/src/exec/create_jobs_and_proc.c.o   -c /home/petruha2001/42sh/src/exec/create_jobs_and_proc.c
 
 CMakeFiles/42save.dir/src/exec/create_jobs_and_proc.c.i: cmake_force
@@ -1359,7 +1372,7 @@ CMakeFiles/42save.dir/src/exec/create_jobs_and_proc.c.s: cmake_force
 
 CMakeFiles/42save.dir/src/exec/free_job_list.c.o: CMakeFiles/42save.dir/flags.make
 CMakeFiles/42save.dir/src/exec/free_job_list.c.o: ../src/exec/free_job_list.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/petruha2001/42sh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_101) "Building C object CMakeFiles/42save.dir/src/exec/free_job_list.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/petruha2001/42sh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_102) "Building C object CMakeFiles/42save.dir/src/exec/free_job_list.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/42save.dir/src/exec/free_job_list.c.o   -c /home/petruha2001/42sh/src/exec/free_job_list.c
 
 CMakeFiles/42save.dir/src/exec/free_job_list.c.i: cmake_force
@@ -1372,7 +1385,7 @@ CMakeFiles/42save.dir/src/exec/free_job_list.c.s: cmake_force
 
 CMakeFiles/42save.dir/src/exec/find_jobs.c.o: CMakeFiles/42save.dir/flags.make
 CMakeFiles/42save.dir/src/exec/find_jobs.c.o: ../src/exec/find_jobs.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/petruha2001/42sh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_102) "Building C object CMakeFiles/42save.dir/src/exec/find_jobs.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/petruha2001/42sh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_103) "Building C object CMakeFiles/42save.dir/src/exec/find_jobs.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/42save.dir/src/exec/find_jobs.c.o   -c /home/petruha2001/42sh/src/exec/find_jobs.c
 
 CMakeFiles/42save.dir/src/exec/find_jobs.c.i: cmake_force
@@ -1385,7 +1398,7 @@ CMakeFiles/42save.dir/src/exec/find_jobs.c.s: cmake_force
 
 CMakeFiles/42save.dir/src/exec/working_with_fds.c.o: CMakeFiles/42save.dir/flags.make
 CMakeFiles/42save.dir/src/exec/working_with_fds.c.o: ../src/exec/working_with_fds.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/petruha2001/42sh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_103) "Building C object CMakeFiles/42save.dir/src/exec/working_with_fds.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/petruha2001/42sh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_104) "Building C object CMakeFiles/42save.dir/src/exec/working_with_fds.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/42save.dir/src/exec/working_with_fds.c.o   -c /home/petruha2001/42sh/src/exec/working_with_fds.c
 
 CMakeFiles/42save.dir/src/exec/working_with_fds.c.i: cmake_force
@@ -1398,7 +1411,7 @@ CMakeFiles/42save.dir/src/exec/working_with_fds.c.s: cmake_force
 
 CMakeFiles/42save.dir/src/exec/job_info.c.o: CMakeFiles/42save.dir/flags.make
 CMakeFiles/42save.dir/src/exec/job_info.c.o: ../src/exec/job_info.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/petruha2001/42sh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_104) "Building C object CMakeFiles/42save.dir/src/exec/job_info.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/petruha2001/42sh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_105) "Building C object CMakeFiles/42save.dir/src/exec/job_info.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/42save.dir/src/exec/job_info.c.o   -c /home/petruha2001/42sh/src/exec/job_info.c
 
 CMakeFiles/42save.dir/src/exec/job_info.c.i: cmake_force
@@ -1411,7 +1424,7 @@ CMakeFiles/42save.dir/src/exec/job_info.c.s: cmake_force
 
 CMakeFiles/42save.dir/src/evaln/sub_and_add.c.o: CMakeFiles/42save.dir/flags.make
 CMakeFiles/42save.dir/src/evaln/sub_and_add.c.o: ../src/evaln/sub_and_add.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/petruha2001/42sh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_105) "Building C object CMakeFiles/42save.dir/src/evaln/sub_and_add.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/petruha2001/42sh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_106) "Building C object CMakeFiles/42save.dir/src/evaln/sub_and_add.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/42save.dir/src/evaln/sub_and_add.c.o   -c /home/petruha2001/42sh/src/evaln/sub_and_add.c
 
 CMakeFiles/42save.dir/src/evaln/sub_and_add.c.i: cmake_force
@@ -1424,7 +1437,7 @@ CMakeFiles/42save.dir/src/evaln/sub_and_add.c.s: cmake_force
 
 CMakeFiles/42save.dir/src/exec/ft_do_open_flags.c.o: CMakeFiles/42save.dir/flags.make
 CMakeFiles/42save.dir/src/exec/ft_do_open_flags.c.o: ../src/exec/ft_do_open_flags.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/petruha2001/42sh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_106) "Building C object CMakeFiles/42save.dir/src/exec/ft_do_open_flags.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/petruha2001/42sh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_107) "Building C object CMakeFiles/42save.dir/src/exec/ft_do_open_flags.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/42save.dir/src/exec/ft_do_open_flags.c.o   -c /home/petruha2001/42sh/src/exec/ft_do_open_flags.c
 
 CMakeFiles/42save.dir/src/exec/ft_do_open_flags.c.i: cmake_force
@@ -1437,7 +1450,7 @@ CMakeFiles/42save.dir/src/exec/ft_do_open_flags.c.s: cmake_force
 
 CMakeFiles/42save.dir/src/exec/redirect.c.o: CMakeFiles/42save.dir/flags.make
 CMakeFiles/42save.dir/src/exec/redirect.c.o: ../src/exec/redirect.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/petruha2001/42sh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_107) "Building C object CMakeFiles/42save.dir/src/exec/redirect.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/petruha2001/42sh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_108) "Building C object CMakeFiles/42save.dir/src/exec/redirect.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/42save.dir/src/exec/redirect.c.o   -c /home/petruha2001/42sh/src/exec/redirect.c
 
 CMakeFiles/42save.dir/src/exec/redirect.c.i: cmake_force
@@ -1450,7 +1463,7 @@ CMakeFiles/42save.dir/src/exec/redirect.c.s: cmake_force
 
 CMakeFiles/42save.dir/src/ck_check.c.o: CMakeFiles/42save.dir/flags.make
 CMakeFiles/42save.dir/src/ck_check.c.o: ../src/ck_check.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/petruha2001/42sh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_108) "Building C object CMakeFiles/42save.dir/src/ck_check.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/petruha2001/42sh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_109) "Building C object CMakeFiles/42save.dir/src/ck_check.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/42save.dir/src/ck_check.c.o   -c /home/petruha2001/42sh/src/ck_check.c
 
 CMakeFiles/42save.dir/src/ck_check.c.i: cmake_force
@@ -1463,7 +1476,7 @@ CMakeFiles/42save.dir/src/ck_check.c.s: cmake_force
 
 CMakeFiles/42save.dir/src/lexer/del_one_node_in_lextokens.c.o: CMakeFiles/42save.dir/flags.make
 CMakeFiles/42save.dir/src/lexer/del_one_node_in_lextokens.c.o: ../src/lexer/del_one_node_in_lextokens.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/petruha2001/42sh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_109) "Building C object CMakeFiles/42save.dir/src/lexer/del_one_node_in_lextokens.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/petruha2001/42sh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_110) "Building C object CMakeFiles/42save.dir/src/lexer/del_one_node_in_lextokens.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/42save.dir/src/lexer/del_one_node_in_lextokens.c.o   -c /home/petruha2001/42sh/src/lexer/del_one_node_in_lextokens.c
 
 CMakeFiles/42save.dir/src/lexer/del_one_node_in_lextokens.c.i: cmake_force
@@ -1476,7 +1489,7 @@ CMakeFiles/42save.dir/src/lexer/del_one_node_in_lextokens.c.s: cmake_force
 
 CMakeFiles/42save.dir/src/ft_main_what.c.o: CMakeFiles/42save.dir/flags.make
 CMakeFiles/42save.dir/src/ft_main_what.c.o: ../src/ft_main_what.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/petruha2001/42sh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_110) "Building C object CMakeFiles/42save.dir/src/ft_main_what.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/petruha2001/42sh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_111) "Building C object CMakeFiles/42save.dir/src/ft_main_what.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/42save.dir/src/ft_main_what.c.o   -c /home/petruha2001/42sh/src/ft_main_what.c
 
 CMakeFiles/42save.dir/src/ft_main_what.c.i: cmake_force
@@ -1489,7 +1502,7 @@ CMakeFiles/42save.dir/src/ft_main_what.c.s: cmake_force
 
 CMakeFiles/42save.dir/src/put_error_to_env.c.o: CMakeFiles/42save.dir/flags.make
 CMakeFiles/42save.dir/src/put_error_to_env.c.o: ../src/put_error_to_env.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/petruha2001/42sh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_111) "Building C object CMakeFiles/42save.dir/src/put_error_to_env.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/petruha2001/42sh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_112) "Building C object CMakeFiles/42save.dir/src/put_error_to_env.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/42save.dir/src/put_error_to_env.c.o   -c /home/petruha2001/42sh/src/put_error_to_env.c
 
 CMakeFiles/42save.dir/src/put_error_to_env.c.i: cmake_force
@@ -1502,7 +1515,7 @@ CMakeFiles/42save.dir/src/put_error_to_env.c.s: cmake_force
 
 CMakeFiles/42save.dir/src/hash/print_hash.c.o: CMakeFiles/42save.dir/flags.make
 CMakeFiles/42save.dir/src/hash/print_hash.c.o: ../src/hash/print_hash.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/petruha2001/42sh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_112) "Building C object CMakeFiles/42save.dir/src/hash/print_hash.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/petruha2001/42sh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_113) "Building C object CMakeFiles/42save.dir/src/hash/print_hash.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/42save.dir/src/hash/print_hash.c.o   -c /home/petruha2001/42sh/src/hash/print_hash.c
 
 CMakeFiles/42save.dir/src/hash/print_hash.c.i: cmake_force
@@ -1515,7 +1528,7 @@ CMakeFiles/42save.dir/src/hash/print_hash.c.s: cmake_force
 
 CMakeFiles/42save.dir/src/utility_files/global_variables.c.o: CMakeFiles/42save.dir/flags.make
 CMakeFiles/42save.dir/src/utility_files/global_variables.c.o: ../src/utility_files/global_variables.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/petruha2001/42sh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_113) "Building C object CMakeFiles/42save.dir/src/utility_files/global_variables.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/petruha2001/42sh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_114) "Building C object CMakeFiles/42save.dir/src/utility_files/global_variables.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/42save.dir/src/utility_files/global_variables.c.o   -c /home/petruha2001/42sh/src/utility_files/global_variables.c
 
 CMakeFiles/42save.dir/src/utility_files/global_variables.c.i: cmake_force
@@ -1621,6 +1634,7 @@ CMakeFiles/42save.dir/src/utility_files/global_variables.c.s: cmake_force
 "CMakeFiles/42save.dir/src/check_file.c.o" \
 "CMakeFiles/42save.dir/src/ft_distruct.c.o" \
 "CMakeFiles/42save.dir/src/ft_error_q.c.o" \
+"CMakeFiles/42save.dir/src/ft_whatis.c.o" \
 "CMakeFiles/42save.dir/src/ft_signal.c.o" \
 "CMakeFiles/42save.dir/src/ft_take_arg.c.o" \
 "CMakeFiles/42save.dir/src/g_builtins.c.o" \
@@ -1738,6 +1752,7 @@ CMakeFiles/42save.dir/src/utility_files/global_variables.c.s: cmake_force
 42save: CMakeFiles/42save.dir/src/check_file.c.o
 42save: CMakeFiles/42save.dir/src/ft_distruct.c.o
 42save: CMakeFiles/42save.dir/src/ft_error_q.c.o
+42save: CMakeFiles/42save.dir/src/ft_whatis.c.o
 42save: CMakeFiles/42save.dir/src/ft_signal.c.o
 42save: CMakeFiles/42save.dir/src/ft_take_arg.c.o
 42save: CMakeFiles/42save.dir/src/g_builtins.c.o
@@ -1761,7 +1776,7 @@ CMakeFiles/42save.dir/src/utility_files/global_variables.c.s: cmake_force
 42save: CMakeFiles/42save.dir/build.make
 42save: ../libft/libft.a
 42save: CMakeFiles/42save.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/petruha2001/42sh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_114) "Linking C executable 42save"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/petruha2001/42sh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_115) "Linking C executable 42save"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/42save.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

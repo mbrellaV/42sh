@@ -99,6 +99,8 @@ char				*hash_get(char *key, int no_error)
 
 	if (key[0] == '\0')
 		return (hash_error(2, key, no_error));
+	if (is_builtin(key))
+		return (key);
 	if (ft_strchr(key, '/'))
 	{
 		if (check_file(key, IS_X) == -1)

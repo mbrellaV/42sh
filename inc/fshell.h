@@ -109,6 +109,7 @@ char				**g_all_var;
 t_memory			*g_memory_head;
 extern const char	*g_builtins[BIL_NUM];
 t_job				*g_f_job;
+int					*all_opened_fds;
 
 int					is_builtin(char *str);
 void				ft_alias();
@@ -229,7 +230,7 @@ void				recover_normal_shell_signals();
 void				ft_infinit_pipe2(t_exectoken *head, t_memory *q);
 int					ft_whatis2(t_process *tmp);
 void				init_shell(void);
-int					ft_whatis4(t_exectoken *tmp);
+int					do_builtin(t_exectoken *tmp);
 int					ck_br(const char *str);
 void				put_error_to_shell(int error);
 
