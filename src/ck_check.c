@@ -15,15 +15,12 @@
 int		ft_ck_addline(t_readline *p)
 {
 	int				f;
-	char			*str_for_del;
 
 	f = 4242;
 	while (f != 1)
 	{
-		//str_for_del = p->buff;
 		p->buff[0] != '\0' ? g_memory_head = ft_memory(g_memory_head,
 			&(p->buff)) : g_memory_head;
-		//ft_strdel(&str_for_del);
 		p->index = ft_do_zam_alias(p->buff, p);
 		while (ft_cheak_quote(p->buff) != 1)
 			ft_add_intput_que(p, g_memory_head, 1);

@@ -6,7 +6,7 @@
 /*   By: qmartina <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/27 16:59:15 by qmartina          #+#    #+#             */
-/*   Updated: 2020/04/13 20:04:23 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/04/19 17:11:28 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	error_term(int error)
 {
 	if (error == 1)
 	{
-		ft_putendl_fd("21sh: Not a terminal.\n", 2);
+		ft_putendl_fd("42sh: Not a terminal.\n", 2);
 		exit(1);
 	}
 }

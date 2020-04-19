@@ -84,4 +84,5 @@ dsdvdsv"œls "sdvdsdsv
 sdvdsvdsvsdv"œexitœls "fsdbvdsvd
 sdvdsv"œls "fsdbdsv
 sdvdsv"
-sdvdsv"œexitœlsœpwdœlsœpwdœls -laœpwdœexitœls > 123œcat 123œrm 123œlsœpwdœsas=lsœ$sasœunset sas > 123œ$sasœexitœlœecho sdvsdv > 1234œexitœlsœpwdœecho svdsvd >123œexitœlœpwdœecho svdsvd >123œecho svdsvd œlsœpwdœexitœ 
+sdvdsv"œexitœlsœpwdœlsœpwdœls -laœpwdœexitœls > 123œcat 123œrm 123œlsœpwdœsas=lsœ$sasœunset sas > 123œ$sasœexitœlœecho sdvsdv > 1234œexitœlsœpwdœecho svdsvd >123œexitœlœpwdœecho svdsvd >123œecho svdsvd œlsœpwdœexitœlsœpwdœlsœalias sas=\'œsas
+pwd'œexitœ 

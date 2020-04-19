@@ -14,14 +14,14 @@
 
 int				ft_cd_error(char *tmp, int err, int to_free)
 {
-	put_error_to_shell(2);
-	err == 1 ? ft_printf("42sh : cd: no such file or directory: %s\n", tmp) : 0;
-	err == 2 ? ft_printf("42sh: cd: %s not set\n", tmp) : 0;
-	err == 3 ? ft_printf("42sh: cd: not a directory: %s\n", tmp) : 0;
-	err == 4 ? ft_printf("42sh: cd: no such file or directory: %s\n", tmp) : 0;
-	err == 6 ? ft_printf("42sh: cd: permission denied: %s\n", tmp) : 0;
-	err == 7 ? ft_printf("cd: string not in pwd: %s\n", tmp) : 0;
-	err == 9 ? ft_printf("42sh: cd: too many arguments\n") : 0;
+	set_new_var("?", "2", &g_all_var);
+	err == 1 ? ft_dprintf(2, "cd: no such file or directory: %s\n", tmp) : 0;
+	err == 2 ? ft_dprintf(2, "cd: %s not set\n", tmp) : 0;
+	err == 3 ? ft_dprintf(2, "cd: not a directory: %s\n", tmp) : 0;
+	err == 4 ? ft_dprintf(2, "cd: no such file or directory: %s\n", tmp) : 0;
+	err == 6 ? ft_dprintf(2, "cd: permission denied: %s\n", tmp) : 0;
+	err == 7 ? ft_dprintf(2, "cd: string not in pwd: %s\n", tmp) : 0;
+	err == 9 ? ft_dprintf(2, "cd: too many arguments\n") : 0;
 	to_free ? free(tmp) : 0;
 	return (0);
 }
