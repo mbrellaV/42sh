@@ -1,24 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memalloc.c                                      :+:      :+:    :+:   */
+/*   global.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: qmartina <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: wstygg <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/12 15:21:42 by qmartina          #+#    #+#             */
-/*   Updated: 2020/04/20 14:49:46 by wstygg           ###   ########.fr       */
+/*   Created: 2020/04/20 14:50:28 by wstygg            #+#    #+#             */
+/*   Updated: 2020/04/20 14:50:28 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "fshell.h"
 
-void	*ft_memalloc(size_t size)
+t_global			*globals(void)
 {
-	void	*count;
+	static t_global	globals;
 
-	count = (void*)malloc(sizeof(void) * size);
-	if (count == NULL)
-		return (NULL);
-	ft_bzero(count, size);
-	return (count);
+	return(&globals);
 }

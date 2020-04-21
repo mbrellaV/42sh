@@ -6,7 +6,7 @@
 /*   By: qmartina <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/24 20:03:14 by qmartina          #+#    #+#             */
-/*   Updated: 2020/04/13 20:04:23 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/04/20 14:49:46 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 int				ft_cd_error(char *tmp, int err, int to_free)
 {
-	set_new_var("?", "2", &g_all_var);
-	err == 1 ? ft_dprintf(2, "cd: no such file or directory: %s\n", tmp) : 0;
-	err == 2 ? ft_dprintf(2, "cd: %s not set\n", tmp) : 0;
-	err == 3 ? ft_dprintf(2, "cd: not a directory: %s\n", tmp) : 0;
-	err == 4 ? ft_dprintf(2, "cd: no such file or directory: %s\n", tmp) : 0;
-	err == 6 ? ft_dprintf(2, "cd: permission denied: %s\n", tmp) : 0;
-	err == 7 ? ft_dprintf(2, "cd: string not in pwd: %s\n", tmp) : 0;
-	err == 9 ? ft_dprintf(2, "cd: too many arguments\n") : 0;
+	set_new_var("?", "2", &globals()->g_all_var);
+	err == 1 ? ft_dprintf(globals()->all_opened_fds[2], "cd: no such file or directory: %s\n", tmp) : 0;
+	err == 2 ? ft_dprintf(globals()->all_opened_fds[2], "cd: %s not set\n", tmp) : 0;
+	err == 3 ? ft_dprintf(globals()->all_opened_fds[2], "cd: not a directory: %s\n", tmp) : 0;
+	err == 4 ? ft_dprintf(globals()->all_opened_fds[2], "cd: no such file or directory: %s\n", tmp) : 0;
+	err == 6 ? ft_dprintf(globals()->all_opened_fds[2], "cd: permission denied: %s\n", tmp) : 0;
+	err == 7 ? ft_dprintf(globals()->all_opened_fds[2], "cd: string not in pwd: %s\n", tmp) : 0;
+	err == 9 ? ft_dprintf(globals()->all_opened_fds[2], "cd: too many arguments\n") : 0;
 	to_free ? free(tmp) : 0;
 	return (0);
 }
@@ -54,9 +54,9 @@ int				change_path(char *path, t_builtins *cd)
 				free(tmp);
 				return (ft_cd_error(pwd_env, 6, 1));
 			}
-		set_new_var("OLDPWD", tmp, &g_env);
-		pwd_env ? set_new_var("PWD", pwd_env, &g_env) :
-		set_new_var("PWD", path, &g_env);
+		set_new_var("OLDPWD", tmp, &globals()->g_env);
+		pwd_env ? set_new_var("PWD", pwd_env, &globals()->g_env) :
+		set_new_var("PWD", path, &globals()->g_env);
 		free(pwd_env);
 		free(tmp);
 		return (0);
@@ -69,16 +69,16 @@ int				change_env(char *env, t_builtins *cd)
 	char		*pwd;
 	int			k;
 
-	if ((k = ft_findenv(env, g_env)) != -404)
+	if ((k = ft_findenv(env, globals()->g_env)) != -404)
 	{
 		pwd = get_oldpwd(cd);
-		if (chdir(g_env[k] + ft_strlen(env)) == -1)
+		if (chdir(globals()->g_env[k] + ft_strlen(env)) == -1)
 		{
 			free(pwd);
-			return (ft_cd_error(g_env[k] + ft_strlen(env), 6, 0));
+			return (ft_cd_error(globals()->g_env[k] + ft_strlen(env), 6, 0));
 		}
-		set_new_var("OLDPWD", pwd, &g_env);
-		set_new_var("PWD", g_env[k] + ft_strlen(env), &g_env);
+		set_new_var("OLDPWD", pwd, &globals()->g_env);
+		set_new_var("PWD", globals()->g_env[k] + ft_strlen(env), &globals()->g_env);
 		free(pwd);
 		return (0);
 	}

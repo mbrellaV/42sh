@@ -6,7 +6,7 @@
 /*   By: plettie <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/04 14:16:06 by plettie           #+#    #+#             */
-/*   Updated: 2020/04/14 11:17:13 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/04/20 14:49:46 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,11 +45,11 @@ char			*get_pwd(t_builtins *cd)
 	int			k;
 	int			res_l;
 
-	if (((k = ft_findenv("PWD=", g_env)) != -404))
-		if ((res_l = check_file(g_env[k] + 4, IS_L)) && res_l != -1)
+	if (((k = ft_findenv("PWD=", globals()->g_env)) != -404))
+		if ((res_l = check_file(globals()->g_env[k] + 4, IS_L)) && res_l != -1)
 			cd->link = 1;
 	if (cd->link == 1 && !cd->cd_p)
-		return (ft_strdup(g_env[k] + 4));
+		return (ft_strdup(globals()->g_env[k] + 4));
 	else
 		return (getcwd(NULL, 0));
 }
@@ -59,11 +59,11 @@ char			*get_oldpwd(t_builtins *cd)
 	int			k;
 	int			res_l;
 
-	if (((k = ft_findenv("PWD=", g_env)) != -404))
-		if ((res_l = check_file(g_env[k] + 4, IS_L)) && res_l != -1)
+	if (((k = ft_findenv("PWD=", globals()->g_env)) != -404))
+		if ((res_l = check_file(globals()->g_env[k] + 4, IS_L)) && res_l != -1)
 			cd->link = 1;
 	if (cd->link == 1)
-		return (ft_strdup(g_env[k] + 4));
+		return (ft_strdup(globals()->g_env[k] + 4));
 	else
 		return (getcwd(NULL, 0));
 }
@@ -86,8 +86,8 @@ int				do_cd(t_builtins *cd, char *str)
 		else
 			return (!res_d ? ft_cd_error(str, 3, 0) : ft_cd_error(str, 6, 0));
 	}
-	if (!ft_strcmp(str, "-") && (k = ft_findenv("PWD=", g_env)) != -404)
-		ft_printf("%s\n", g_env[k] + 4);
+	if (!ft_strcmp(str, "-") && (k = ft_findenv("PWD=", globals()->g_env)) != -404)
+		ft_dprintf(globals()->all_opened_fds[1], "%s\n", globals()->g_env[k] + 4);
 	free(full_path);
 	return (0);
 }

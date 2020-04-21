@@ -6,7 +6,7 @@
 /*   By: qmartina <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/27 17:36:10 by qmartina          #+#    #+#             */
-/*   Updated: 2020/04/13 20:04:23 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/04/20 14:49:46 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_arrows(t_readline *p)
 	if (p->sum_read == 297)
 	{
 		while (p->index-- > 0)
-			write(2, "\b", 1);
+			do_left(p);
 		p->index = 0;
 	}
 	else if (p->sum_read == 298)
@@ -25,7 +25,7 @@ void	ft_arrows(t_readline *p)
 		while (++p->index <= p->len)
 		{
 			if (ft_put_n(p->len_hint, p->index, p->len) == -1)
-				tputs(tgetstr("nd", NULL), 1, ft_c);
+				do_right(p);
 		}
 		p->index--;
 	}

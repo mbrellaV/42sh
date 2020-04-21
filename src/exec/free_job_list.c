@@ -6,7 +6,7 @@
 /*   By: wstygg <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/14 12:44:23 by wstygg            #+#    #+#             */
-/*   Updated: 2020/04/16 10:22:07 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/04/20 14:49:46 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ static void		norme_help(t_del *del)
 	if (del->jlast)
 		del->jlast->next = del->jnext;
 	else
-		g_f_job = del->jnext;
+		globals()->g_f_job = del->jnext;
 	del->jdop = del->j;
 }
 
@@ -52,7 +52,7 @@ int				do_job_del(void)
 	del.d = 0;
 	update_status();
 	del.jlast = NULL;
-	del.j = g_f_job;
+	del.j = globals()->g_f_job;
 	while (del.j)
 	{
 		del.d++;

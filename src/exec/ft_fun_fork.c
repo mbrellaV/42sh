@@ -6,7 +6,7 @@
 /*   By: qmartina <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/30 19:04:16 by qmartina          #+#    #+#             */
-/*   Updated: 2020/04/16 10:37:24 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/04/20 14:49:46 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,14 @@ void		ft_fun_fork(char *path, char **arg, pid_t pgid, int foreground)
 		pgid = pid;
 	setpgid(pid, pgid);
 	if (foreground)
-		tcsetpgrp(g_shell_terminal, pgid);
+		tcsetpgrp(globals()->g_shell_terminal, pgid);
 	signal(SIGINT, SIG_DFL);
 	signal(SIGQUIT, SIG_DFL);
 	signal(SIGTSTP, SIG_DFL);
 	signal(SIGTTIN, SIG_DFL);
 	signal(SIGTTOU, SIG_DFL);
 	signal(SIGCHLD, SIG_DFL);
-	execve(path, arg, g_env);
+	execve(path, arg, globals()->g_env);
 }
 
 int			ft_norm_pipe(int p1, int *fd_in, int p0, t_exectoken **head)

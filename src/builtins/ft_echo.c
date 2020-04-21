@@ -6,7 +6,7 @@
 /*   By: plettie <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/06 11:45:44 by plettie           #+#    #+#             */
-/*   Updated: 2020/04/13 20:04:23 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/04/20 14:49:46 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_print_oct(char *str, int nb)
 	while (nb > 777)
 		nb /= 10;
 	nb = ft_itoa_base(nb, 8);
-	ft_putchar(nb);
+	ft_putnbr_fd(nb, globals()->all_opened_fds[1]);
 	if (*(str + 4) >= '0' && *(str + 4) <= '7')
 		str = str + 5;
 	else if (*(str + 3) >= '0' && *(str + 3) <= '7')
@@ -60,7 +60,7 @@ char	*ft_slash_2(char *str, t_builtins *echo, int res)
 		return (str + 2);
 	if (res == 0)
 	{
-		ft_putchar('\\');
+		ft_putchar_fd('\\', globals()->all_opened_fds[1]);
 		return (str + 2);
 	}
 	return (str);
@@ -71,16 +71,16 @@ char	*ft_slash(char *str, t_builtins *echo)
 	int			res;
 
 	res = 13;
-	*(str + 1) == '\\' ? ft_putchar('\\') : --res;
-	*(str + 1) == 'a' ? ft_putchar('\a') : --res;
-	*(str + 1) == 'b' ? ft_putchar('\b') : --res;
-	*(str + 1) == 't' ? ft_putchar('\t') : --res;
-	*(str + 1) == 'n' ? ft_putchar('\n') : --res;
-	*(str + 1) == 'v' ? ft_putchar('\v') : --res;
-	*(str + 1) == 'r' ? ft_putchar('\r') : --res;
-	*(str + 1) == 'f' ? ft_putchar('\f') : --res;
-	*(str + 1) == '\"' ? ft_putchar('\"') : --res;
-	*(str + 1) == '\'' ? ft_putchar('\'') : --res;
+	*(str + 1) == '\\' ? ft_putchar_fd('\\', globals()->all_opened_fds[1]) : --res;
+	*(str + 1) == 'a' ? ft_putchar_fd('\a', globals()->all_opened_fds[1]) : --res;
+	*(str + 1) == 'b' ? ft_putchar_fd('\b', globals()->all_opened_fds[1]) : --res;
+	*(str + 1) == 't' ? ft_putchar_fd('\t', globals()->all_opened_fds[1]) : --res;
+	*(str + 1) == 'n' ? ft_putchar_fd('\n', globals()->all_opened_fds[1]) : --res;
+	*(str + 1) == 'v' ? ft_putchar_fd('\v', globals()->all_opened_fds[1]) : --res;
+	*(str + 1) == 'r' ? ft_putchar_fd('\r', globals()->all_opened_fds[1]) : --res;
+	*(str + 1) == 'f' ? ft_putchar_fd('\f', globals()->all_opened_fds[1]) : --res;
+	*(str + 1) == '\"' ? ft_putchar_fd('\"', globals()->all_opened_fds[1]) : --res;
+	*(str + 1) == '\'' ? ft_putchar_fd('\'', globals()->all_opened_fds[1]) : --res;
 	return (ft_slash_2(str, echo, res));
 }
 
@@ -102,8 +102,8 @@ void	ft_echo(char **str)
 		!echo.echo_n ? flag = 1 : 0;
 		str[k] = tmp;
 		if (str[k + 1] && (*str[k] != '-' || (*str[k] == '-' && !echo.echo_n)))
-			ft_putchar_fd(' ', all_opened_fds[1]);
+			ft_dprintf(globals()->all_opened_fds[1], " ");
 	}
 	if (!echo.echo_n && !echo.echo_c)
-		ft_putchar_fd('\n', all_opened_fds[1]);
+		ft_dprintf(globals()->all_opened_fds[1], "\n");
 }

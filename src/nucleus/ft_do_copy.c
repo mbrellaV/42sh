@@ -6,7 +6,7 @@
 /*   By: qmartina <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/27 17:50:52 by qmartina          #+#    #+#             */
-/*   Updated: 2020/04/13 20:04:23 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/04/20 14:49:46 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ void	ft_do_copy(t_readline *p)
 		p->esc = 1;
 	else if (p->sum_read == 119)
 	{
-		free(g_cp);
-		g_cp = ft_strdup(p->buff);
+		free(globals()->g_cp);
+		globals()->g_cp = ft_strdup(p->buff);
 		p->esc = 0;
 	}
 }

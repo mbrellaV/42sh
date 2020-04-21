@@ -6,7 +6,7 @@
 /*   By: wstygg <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/13 19:53:08 by wstygg            #+#    #+#             */
-/*   Updated: 2020/04/16 10:24:53 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/04/20 14:49:46 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int			check_symbols(char *str, char *str_for_del)
 			if (str_for_del != str)
 				ft_strdel(&str_for_del);
 			ft_strdel(&str);
-			ft_printf("parse error in eval near: |%c|\n", str[i]);
+			ft_dprintf(globals()->all_opened_fds[2], "parse error in eval near: |%c|\n", str[i]);
 			return (-1);
 		}
 		i++;

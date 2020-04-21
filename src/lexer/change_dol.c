@@ -6,7 +6,7 @@
 /*   By: mbrella <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/27 13:25:17 by mbrella           #+#    #+#             */
-/*   Updated: 2020/04/16 14:47:28 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/04/20 14:49:46 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ static void	cycle(char *str1, t_zams *zams, t_dop_str *t)
 		zams->dopstr = ft_strsub(str1, zams->i + zams->dop,
 			word_size(&str1[zams->i + 1]) - (zams->dop == 2 ? 4 : 1) + 1);
 		zams->str_for_del = zams->dopstr;
-		zams->dopstr = ft_get_var(zams->dopstr, g_all_var);
+		zams->dopstr = ft_get_var(zams->dopstr, globals()->g_all_var);
 		ft_strdel(&zams->str_for_del);
 		if (zams->dopstr != NULL)
 			ft_strcat(t->str_b, zams->dopstr);

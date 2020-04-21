@@ -6,7 +6,7 @@
 /*   By: qmartina <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/27 17:27:19 by qmartina          #+#    #+#             */
-/*   Updated: 2020/04/13 20:04:23 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/04/20 14:49:46 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ void	ft_downcursor(t_readline *p)
 		while (++i < wins.ws_col)
 		{
 			if (ft_put_n(p->len_hint, p->index + 1, p->len) == -1)
-				tputs(tgetstr("nd", NULL), 1, ft_c);
-			p->index++;
+				do_right(p);
+//			p->index++;
 		}
 	}
 	else
@@ -34,8 +34,8 @@ void	ft_downcursor(t_readline *p)
 		while (p->index < p->len)
 		{
 			if (ft_put_n(p->len_hint, p->index + 1, p->len) == -1)
-				tputs(tgetstr("nd", NULL), 1, ft_c);
-			p->index++;
+				do_right(p);
+//			p->index++;
 		}
 	}
 }

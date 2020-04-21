@@ -6,7 +6,7 @@
 /*   By: plettie <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/02 21:21:32 by plettie           #+#    #+#             */
-/*   Updated: 2020/04/13 20:04:23 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/04/20 14:49:46 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,10 +78,10 @@ char		*full_path_3(char *path, char **all)
 	int			k;
 
 	if (!ft_strcmp(path, "-"))
-		if ((k = ft_findenv("OLDPWD=", g_env)) != -404)
+		if ((k = ft_findenv("OLDPWD=", globals()->g_env)) != -404)
 		{
 			ft_free_str(all);
-			return (ft_strdup(g_env[k] + 7));
+			return (ft_strdup(globals()->g_env[k] + 7));
 		}
 	if (!all[0])
 	{

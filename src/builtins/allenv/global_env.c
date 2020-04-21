@@ -6,7 +6,7 @@
 /*   By: mbrella <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/31 19:59:12 by mbrella           #+#    #+#             */
-/*   Updated: 2020/04/13 20:04:23 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/04/20 14:49:46 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,19 +19,19 @@ void	ft_global_env(char **env, int argc)
 
 	i = -1;
 	k = argc;
-	if (!(g_env = (char **)ft_memalloc(sizeof(char *) *
+	if (!(globals()->g_env = (char **)ft_memalloc(sizeof(char *) *
 			(ft_env_len(env) + 1))))
 		ft_error_q(1);
 	while (env[++i])
 	{
-		if (!(g_env[i] = ft_strdup(env[i])))
+		if (!(globals()->g_env[i] = ft_strdup(env[i])))
 			ft_error_q(1);
 		k++;
 	}
-	if (((k = ft_findenv("HOME=", g_env)) != -404))
-		set_new_var("OLDPWD", &g_env[k][5], &g_env);
+	if (((k = ft_findenv("HOME=", globals()->g_env)) != -404))
+		set_new_var("OLDPWD", &globals()->g_env[k][5], &globals()->g_env);
 	do_all_var(env);
-	g_cp = ft_strnew(1);
+	globals()->g_cp = ft_strnew(1);
 }
 
 int		ft_env_len(char **env)
@@ -55,7 +55,7 @@ void	ft_show_env(char **env)
 		return ;
 	while (env[i])
 	{
-		ft_putendl(env[i]);
+		ft_dprintf(globals()->all_opened_fds[1], "%s\n", env[i]);
 		i++;
 	}
 }

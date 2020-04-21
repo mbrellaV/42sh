@@ -6,7 +6,7 @@
 /*   By: qmartina <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/28 16:49:45 by qmartina          #+#    #+#             */
-/*   Updated: 2020/04/13 20:04:23 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/04/20 14:49:46 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ t_memory	*ft_memory(t_memory *back, char **str)
 	t_memory	*p;
 	char		*dopstr;
 
-	g_his_d = 0;
+	globals()->g_his_d = 0;
 	dopstr = ft_strdup(*str);
 	tmp = ft_memalloc(sizeof(t_memory));
 	if (!tmp)

@@ -6,7 +6,7 @@
 /*   By: mbrella <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/11 10:58:44 by mbrella           #+#    #+#             */
-/*   Updated: 2020/04/16 14:52:39 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/04/20 14:52:37 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,22 @@
 # define SHELL_NAME "42sh"
 # define BIL_NUM 16
 
+typedef struct		s_global
+{
+	t_hash			*g_hash[MAX_HASH];
+	pid_t			g_shell_pgid;
+	int				g_shell_terminal;
+	int				g_shell_is_interactive;
+	char			**g_env;
+	char			*g_cp;
+	int				g_his_d;
+	char			**g_alias;
+	char			**g_all_var;
+	t_memory		*g_memory_head;
+	t_job			*g_f_job;
+	int				*all_opened_fds;
+}					t_global;
+
 typedef struct		s_del
 {
 	t_job			*j;
@@ -97,20 +113,10 @@ typedef struct		s_pstat
 	char			*str_for_del;
 }					t_pstat;
 
-int					g_exit_code;
-pid_t				g_shell_pgid;
-int					g_shell_terminal;
-int					g_shell_is_interactive;
-char				**g_env;
-char				*g_cp;
-int					g_his_d;
-char				**g_alias;
-char				**g_all_var;
-t_memory			*g_memory_head;
+//int					g_exit_code;
 extern const char	*g_builtins[BIL_NUM];
-t_job				*g_f_job;
-int					*all_opened_fds;
 
+t_global			*globals(void);
 int					is_builtin(char *str);
 void				ft_alias();
 t_lextoken			*do_zam_join_par(t_lextoken *h);

@@ -6,7 +6,7 @@
 /*   By: qmartina <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/18 17:09:59 by qmartina          #+#    #+#             */
-/*   Updated: 2020/04/16 13:16:35 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/04/20 14:49:46 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ static void		do_fork(t_jobl *jobl, t_job *j, int foreground)
 	else
 	{
 		jobl->p->pid = jobl->pid;
-		if (g_shell_is_interactive)
+		if (globals()->g_shell_is_interactive)
 		{
 			if (j->pgid <= 0)
 				j->pgid = jobl->pid;
@@ -59,7 +59,7 @@ int				launch_job(t_job *j, int foreground)
 			jobl.outfile = j->stdoutc;
 		do_fork(&jobl, j, foreground);
 	}
-	if (!g_shell_is_interactive)
+	if (!globals()->g_shell_is_interactive)
 		wait_for_job(j);
 	(foreground) ? put_job_in_foreground(j, 0) :
 		put_job_in_background(j, 0);

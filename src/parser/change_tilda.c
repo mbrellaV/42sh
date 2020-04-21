@@ -6,7 +6,7 @@
 /*   By: mbrella <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/16 16:19:33 by mbrella           #+#    #+#             */
-/*   Updated: 2020/04/13 20:04:23 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/04/20 14:49:46 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char			*do_zam_str_with_tilda(char *str)
 
 	if (*str == '\0')
 		return (str);
-	if (!(hp = ft_get_var("HOME", g_env)))
+	if (!(hp = ft_get_var("HOME", globals()->g_env)))
 		return (str);
 	if (ft_strstr(str, "~/") == str ||
 			ft_strcmp("~", str) == 0)

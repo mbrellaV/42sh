@@ -6,7 +6,7 @@
 /*   By: qmartina <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/09 07:05:42 by qmartina          #+#    #+#             */
-/*   Updated: 2020/04/13 20:04:22 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/04/20 14:49:45 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,8 +49,8 @@ int		ft_distr_lex(t_lextoken *tmp)
 
 int		ft_dist_str(char *input)
 {
-	ft_free_str(g_env);
+	ft_free_str(globals()->g_env);
 	free(input);
-	free(g_cp);
+	free(globals()->g_cp);
 	return (1);
 }

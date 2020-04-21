@@ -6,7 +6,7 @@
 /*   By: wstygg <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/29 15:54:50 by wstygg            #+#    #+#             */
-/*   Updated: 2020/04/13 20:04:23 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/04/20 14:49:46 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void				hash_init(void)
 
 	i = -1;
 	while (++i < MAX_HASH)
-		g_hash[i] = NULL;
+		globals()->g_hash[i] = NULL;
 }
 
 t_hash				*parse_path(char *key, int i)
@@ -26,9 +26,9 @@ t_hash				*parse_path(char *key, int i)
 	char			**path;
 	char			*cat;
 
-	if (ft_findenv("PATH=", g_env) == -404)
+	if (ft_findenv("PATH=", globals()->g_env) == -404)
 		return (NULL);
-	path = ft_strsplit(g_env[ft_findenv("PATH=", g_env)] + 5, ":");
+	path = ft_strsplit(globals()->g_env[ft_findenv("PATH=", globals()->g_env)] + 5, ":");
 	if (check_file(key, IS_X) == 1 && !check_file(key, IS_D))
 	{
 		ft_arrdel(path);
@@ -55,11 +55,11 @@ char				*hash_parse(char *key)
 	int				id;
 
 	id = str_to_hash(key);
-	if (!g_hash[id])
-		return ((g_hash[id] = parse_path(key, -1)) ? g_hash[id]->value : NULL);
+	if (!globals()->g_hash[id])
+		return ((globals()->g_hash[id] = parse_path(key, -1)) ? globals()->g_hash[id]->value : NULL);
 	else
 	{
-		hash = g_hash[id];
+		hash = globals()->g_hash[id];
 		while (hash->next)
 		{
 			if (!ft_strcmp(hash->value, key))
@@ -80,16 +80,16 @@ void				hash_clear(void)
 
 	id = -1;
 	while (++id < MAX_HASH)
-		if (g_hash[id])
+		if (globals()->g_hash[id])
 		{
-			hash = g_hash[id];
+			hash = globals()->g_hash[id];
 			while (hash)
 			{
 				to_free = hash;
 				hash = hash->next;
 				free_hash(&to_free);
 			}
-			g_hash[id] = NULL;
+			globals()->g_hash[id] = NULL;
 		}
 }
 

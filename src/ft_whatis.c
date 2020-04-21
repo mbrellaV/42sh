@@ -6,7 +6,7 @@
 /*   By: wstygg <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/15 18:29:17 by wstygg            #+#    #+#             */
-/*   Updated: 2020/04/15 18:36:54 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/04/20 14:49:45 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,8 @@ int		ft_open_flag_in_builtins(char *opt, int flag, int *infile, int *outfile)
 	if (((flag == 1 || flag == 6 || flag == 2) && *outfile <= 0) ||
 		(flag == 3 && *infile <= 0))
 	{
-		ft_putstr_fd("42sh: open fd ERROR ", 2);
-		ft_putendl_fd(opt, 2);
+		ft_putstr_fd("42sh: open fd ERROR ", globals()->all_opened_fds[2]);
+		ft_putendl_fd(opt, globals()->all_opened_fds[2]);
 		return (-1);
 	}
 	return (1);
@@ -118,7 +118,8 @@ int		set_redirects_for_builtins(char **av)
 					ft_strdup(av[i + (b == -9 ? 2 : 0)]), b * -1));
 		i += 3;
 	}
-	all_opened_fds = opened_fds;
+	free(globals()->all_opened_fds);
+	globals()->all_opened_fds = opened_fds;
 	return (1);
 }
 
@@ -133,11 +134,11 @@ int		ft_whatis4_1(t_exectoken *tmp)
 	else if (ft_strcmp(tmp->file_args[0], "echo") == 0)
 		ft_echo(tmp->file_args);
 	else if (ft_strcmp(tmp->file_args[0], "history") == 0)
-		show_history(g_memory_head);
+		show_history(globals()->g_memory_head);
 	else if (ft_strcmp(tmp->file_args[0], "env") == 0)
-		ft_show_env(g_env);
+		ft_show_env(globals()->g_env);
 	else if (ft_strcmp(tmp->file_args[0], "clear") == 0)
-		ft_putstr_fd("\033[2J\033[H", 2);
+		ft_putstr_fd("\033[2J\033[H", globals()->all_opened_fds[2]);
 	else if (ft_strcmp(tmp->file_args[0], "hash") == 0)
 		print_hash();
 	else if (!ft_strcmp(tmp->file_args[0], "type"))
@@ -167,11 +168,11 @@ int		do_builtin(t_exectoken *tmp)
 	else if (ft_strcmp(tmp->file_args[0], "unset") == 0 &&
 		tmp->file_args[1] != NULL)
 	{
-		unset_var(tmp->file_args[1], &g_env);
-		unset_var(tmp->file_args[1], &g_all_var);
+		unset_var(tmp->file_args[1], &globals()->g_env);
+		unset_var(tmp->file_args[1], &globals()->g_all_var);
 	}
 	else if (ft_strcmp(tmp->file_args[0], "set") == 0)
-		ft_show_env(g_all_var);
+		ft_show_env(globals()->g_all_var);
 	else
 		return (ft_whatis4_1(tmp));
 	return (1);
@@ -188,11 +189,11 @@ int		ft_whatis2_1(t_process *tmp)
 	else if (ft_strcmp(tmp->file_args[0], "echo") == 0)
 		ft_echo(tmp->file_args);
 	else if (ft_strcmp(tmp->file_args[0], "history") == 0)
-		show_history(g_memory_head);
+		show_history(globals()->g_memory_head);
 	else if (ft_strcmp(tmp->file_args[0], "env") == 0)
-		ft_show_env(g_env);
+		ft_show_env(globals()->g_env);
 	else if (ft_strcmp(tmp->file_args[0], "clear") == 0)
-		ft_putstr_fd("\033[2J\033[H", 2);
+		ft_putstr_fd("\033[2J\033[H", globals()->all_opened_fds[2]);
 	else if (ft_strcmp(tmp->file_args[0], "hash") == 0)
 		print_hash();
 	else if (!ft_strcmp(tmp->file_args[0], "type"))
@@ -220,11 +221,11 @@ int		ft_whatis2(t_process *tmp)
 	else if (ft_strcmp(tmp->file_args[0], "unset") == 0 &&
 		tmp->file_args[1] != NULL)
 	{
-		unset_var(tmp->file_args[1], &g_env);
-		unset_var(tmp->file_args[1], &g_all_var);
+		unset_var(tmp->file_args[1], &globals()->g_env);
+		unset_var(tmp->file_args[1], &globals()->g_all_var);
 	}
 	else if (ft_strcmp(tmp->file_args[0], "set") == 0)
-		ft_show_env(g_all_var);
+		ft_show_env(globals()->g_all_var);
 	else
 		return (ft_whatis2_1(tmp));
 	return (1);

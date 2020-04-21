@@ -6,7 +6,7 @@
 /*   By: wstygg <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/15 18:29:17 by wstygg            #+#    #+#             */
-/*   Updated: 2020/04/15 18:36:54 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/04/20 14:49:45 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,16 +19,16 @@ int		ft_ck_addline(t_readline *p)
 	f = 4242;
 	while (f != 1)
 	{
-		p->buff[0] != '\0' ? g_memory_head = ft_memory(g_memory_head,
-			&(p->buff)) : g_memory_head;
+		p->buff[0] != '\0' ? globals()->g_memory_head = ft_memory(globals()->g_memory_head,
+			&(p->buff)) : globals()->g_memory_head;
 		p->index = ft_do_zam_alias(p->buff, p);
 		while (ft_cheak_quote(p->buff) != 1)
-			ft_add_intput_que(p, g_memory_head, 1);
+			ft_add_intput_que(p, globals()->g_memory_head, 1);
 		if ((f = ck_br(p->buff)) == 0)
-			ft_add_intput_que(p, g_memory_head, 20);
+			ft_add_intput_que(p, globals()->g_memory_head, 20);
 		else if (f == -1 || f == -2)
 		{
-			ft_putstr_fd("Error \"()\"\n", 2);
+			ft_putstr_fd("Error \"()\"\n", globals()->all_opened_fds[2]);
 			free(p->buff);
 			return (0);
 		}

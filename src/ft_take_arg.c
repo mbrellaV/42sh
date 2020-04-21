@@ -6,7 +6,7 @@
 /*   By: qmartina <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/30 14:04:19 by qmartina          #+#    #+#             */
-/*   Updated: 2020/04/13 20:04:22 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/04/20 14:49:45 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	exit_shell(void)
 {
-	ft_free_str(g_env);
-	write(1, "\n", 1);
+	ft_free_str(globals()->g_env);
+	write(globals()->all_opened_fds[1], "\n", 1);
 	exit(0);
 }
 
@@ -24,13 +24,13 @@ int		ft_put_info(void)
 	char	hostname[128];
 	int		k;
 
-	k = ft_findenv("USER=", g_env);
+	k = ft_findenv("USER=", globals()->g_env);
 	gethostname(hostname, sizeof(hostname));
 	ft_putstr_fd(GRN, 2);
 	ft_putstr_fd("[", 2);
 	ft_putstr_fd(RESET, 2);
 	ft_putstr_fd(CYN, 2);
-	k != -404 ? ft_putstr_fd(&g_env[k][5], 2) : ft_putstr_fd("anon", 2);
+	k != -404 ? ft_putstr_fd(&(globals()->g_env[k][5]), 2) : ft_putstr_fd("anon", 2);
 	ft_putstr_fd(RESET, 2);
 	ft_putstr_fd(GRN, 2);
 	ft_putstr_fd("@", 2);
@@ -41,5 +41,5 @@ int		ft_put_info(void)
 	ft_putstr_fd("\044\076\033 ", 2);
 	ft_putstr_fd(RESET, 2);
 	return (ft_strlen(hostname) + 6 + (k != -404 ?
-		ft_strlen(&g_env[k][5]) : 4));
+									   ft_strlen(&(globals()->g_env[k][5])) : 4));
 }

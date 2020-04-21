@@ -6,7 +6,7 @@
 /*   By: wstygg <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/16 17:22:09 by wstygg            #+#    #+#             */
-/*   Updated: 2020/04/16 17:45:24 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/04/20 14:49:45 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,10 @@ static int	trick(t_exectoken **tmp)
 static void	do_job_things(char **del, int *sas, t_job **job, t_exectoken *tmp)
 {
 	*job = create_job(tmp);
-	if (g_f_job != NULL)
+	if (globals()->g_f_job != NULL)
 		get_last_job()->next = *job;
 	else
-		g_f_job = *job;
+		globals()->g_f_job = *job;
 	*sas = launch_job(*job, (*job)->foreground);
 	ft_strdel(del);
 }
@@ -42,7 +42,7 @@ int			ft_main_what(t_exectoken *tmp)
 			continue ;
 		if ((tmp->file_args && !is_builtin(tmp->file_args[0])) || tmp->left != NULL)
 		{
-			del = ft_get_var("?", g_all_var);
+			del = ft_get_var("?", globals()->g_all_var);
 			if ((tmp->should_wait_and == 1 && ft_atoi(del) > 0) ||
 				(tmp->should_wait_or == 1 && !ft_atoi(del)))
 				if (strdelr(&del) && trick(&tmp))

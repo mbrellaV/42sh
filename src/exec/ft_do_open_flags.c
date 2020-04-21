@@ -6,7 +6,7 @@
 /*   By: wstygg <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/14 13:29:33 by wstygg            #+#    #+#             */
-/*   Updated: 2020/04/14 13:32:23 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/04/20 14:49:46 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,12 @@ void	ft_redirect_error(int marker, char *dopline)
 {
 	if (marker == 10)
 	{
-		ft_printf(SHELL_NAME": %s: Bad file descriptor", dopline);
+		ft_dprintf(globals()->all_opened_fds[2], SHELL_NAME": %s: Bad file descriptor", dopline);
 		ft_strdel(&dopline);
 	}
 	if (marker == 9)
 	{
-		ft_printf(SHELL_NAME": %s: ambiguous redirect", dopline);
+		ft_dprintf(globals()->all_opened_fds[2], SHELL_NAME": %s: ambiguous redirect", dopline);
 	}
 }
 
@@ -51,8 +51,8 @@ int		ft_open_flag(char *opt, t_pipe *p)
 	if (((p->flag == 1 || p->flag == 6 || p->flag == 2) && *p->outfile <= 0) ||
 		(p->flag == 3 && *p->infile <= 0))
 	{
-		ft_putstr_fd("42sh: open fd ERROR ", 2);
-		ft_putendl_fd(opt, 2);
+		ft_putstr_fd("42sh: open fd ERROR ", globals()->all_opened_fds[2]);
+		ft_putendl_fd(opt, globals()->all_opened_fds[2]);
 		return (-1);
 	}
 	return (1);
@@ -76,7 +76,7 @@ int		ft_heredoc(char *tmp)
 		del_readline(&h);
 		ft_start_read(&h);
 		ft_read_8(&h, NULL, 2);
-		write(2, "\n", 1);
+		write(globals()->all_opened_fds[2], "\n", 1);
 		j++;
 	}
 	close(f[1]);

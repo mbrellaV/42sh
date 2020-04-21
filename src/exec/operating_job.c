@@ -6,7 +6,7 @@
 /*   By: qmartina <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/18 17:30:33 by qmartina          #+#    #+#             */
-/*   Updated: 2020/04/16 13:36:48 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/04/20 14:49:46 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ t_job			*find_job(pid_t pgid)
 {
 	t_job		*j;
 
-	j = g_f_job;
+	j = globals()->g_f_job;
 	while (j)
 	{
 		if (j->pgid == pgid)

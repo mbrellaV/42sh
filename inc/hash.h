@@ -6,7 +6,7 @@
 /*   By: wstygg <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/28 17:16:14 by wstygg            #+#    #+#             */
-/*   Updated: 2020/04/13 20:04:22 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/04/20 14:54:19 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,6 @@ typedef struct		s_hash
 	char			*value;
 	struct s_hash	*next;
 }					t_hash;
-
-t_hash				*g_hash[MAX_HASH];
 
 char				*hash_get(char *key, int no_error);
 void				hash_init(void);

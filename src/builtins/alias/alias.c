@@ -6,7 +6,7 @@
 /*   By: wstygg <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/13 18:29:27 by wstygg            #+#    #+#             */
-/*   Updated: 2020/04/14 11:11:54 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/04/20 14:49:46 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 void		ft_alias(void)
 {
-	if (!(g_alias = (char **)ft_memalloc(4 * sizeof(char *))))
+	if (!(globals()->g_alias = (char **)ft_memalloc(4 * sizeof(char *))))
 		ft_error(15, "malloc error alias");
-	g_alias[0] = ft_strdup("ll=ls");
-	g_alias[1] = ft_strdup("l=ls");
-	g_alias[2] = NULL;
+	globals()->g_alias[0] = ft_strdup("ll=ls");
+	globals()->g_alias[1] = ft_strdup("l=ls");
+	globals()->g_alias[2] = NULL;
 }
 
 char		*ft_get_alias(char *dop)
@@ -28,12 +28,12 @@ char		*ft_get_alias(char *dop)
 
 	i = 0;
 	dopd = ft_strjoin(dop, "=");
-	while (g_alias[i])
+	while (globals()->g_alias[i])
 	{
-		if (ft_strstr(g_alias[i], dopd) == g_alias[i])
+		if (ft_strstr(globals()->g_alias[i], dopd) == globals()->g_alias[i])
 		{
-			if (!(dop = ft_strsub(g_alias[i], ft_strlen(dopd),
-			ft_strlen(g_alias[i]) - ft_strlen(dopd))))
+			if (!(dop = ft_strsub(globals()->g_alias[i], ft_strlen(dopd),
+			ft_strlen(globals()->g_alias[i]) - ft_strlen(dopd))))
 				return (NULL);
 			ft_strdel(&dopd);
 			return (dop);
@@ -129,10 +129,10 @@ int			ft_do_change_alias(char **mas)
 	char	*tmp2;
 
 	if (mas[1] == NULL && ft_strcmp(mas[0], "alias") == 0)
-		ft_show_env(g_alias);
+		ft_show_env(globals()->g_alias);
 	else if (ft_strcmp(mas[0], "unalias") == 0 && mas[1] != NULL &&
 		mas[2] == NULL && ft_strstr(mas[1], "=") == NULL)
-		unset_var(mas[1], &g_alias);
+		unset_var(mas[1], &globals()->g_alias);
 	else if (ft_strcmp(mas[0], "alias") == 0 && mas[1] && mas[2] == NULL)
 	{
 		if (ft_strstr(mas[1], "=") != NULL)
@@ -140,12 +140,12 @@ int			ft_do_change_alias(char **mas)
 			tmp1 = ft_strsub(mas[1], 0, ft_strstr(mas[1], "=") - mas[1]);
 			tmp2 = ft_strsub(mas[1], ft_strstr(mas[1], "=") -
 				mas[1] + 1, ft_strlen(mas[1]));
-			set_new_var(tmp1, tmp2, &g_alias);
+			set_new_var(tmp1, tmp2, &globals()->g_alias);
 			ft_strdel(&tmp1);
 			ft_strdel(&tmp2);
 		}
 		else
-			ft_putstr_fd("alias [alias-name[=string]...]\n", 2);
+			ft_dprintf(globals()->all_opened_fds[2], "alias [alias-name[=string]...]\n");
 	}
 	else
 		ft_error(15, "parse error");

@@ -6,7 +6,7 @@
 /*   By: qmartina <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/29 21:45:21 by qmartina          #+#    #+#             */
-/*   Updated: 2020/04/13 20:04:23 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/04/20 14:49:46 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,8 +60,9 @@ void	ft_add_his_ch(t_readline *r, char c)
 	{
 		if (r->index > 0)
 		{
-			r->buff[--r->index] = 0;
-			write(2, "\b", 1);
+			do_left(r);
+//			r->buff[--r->index] = 0;
+//			write(2, "\b", 1);
 		}
 	}
 	else
@@ -90,7 +91,7 @@ void	find_history(t_readline *p, t_memory *q)
 			tmp = get_num_from_hist_cons(q, r.buff);
 			put_help(&r);
 			ft_putstr_fd(tmp, 2);
-			ft_setcursor(0, (int)ft_strlen(tmp) + 3);
+			ft_setcursor(0, (int)ft_strlen(tmp) + 3, p);
 		}
 		else
 		{

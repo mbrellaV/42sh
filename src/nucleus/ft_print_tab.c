@@ -6,7 +6,7 @@
 /*   By: qmartina <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/27 19:34:57 by qmartina          #+#    #+#             */
-/*   Updated: 2020/04/13 20:04:23 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/04/20 14:49:46 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void				ft_norm_tab(t_readline *p)
 	write(2, "\n", 1);
 	p->len_hint = ft_printf_helper(p->mod);
 	write(2, p->buff, p->len);
-	ft_setcursor(p->index, p->len);
+	ft_setcursor(p->index, p->len, p);
 }
 
 void				ft_times(int times, int one_w)

@@ -6,7 +6,7 @@
 /*   By: mbrella <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/01 17:52:35 by mbrella           #+#    #+#             */
-/*   Updated: 2020/04/16 14:41:19 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/04/20 14:49:46 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ t_lextoken		*do_zam_ravno(t_lextoken *h, t_lextoken **first_token)
 		else
 			tmp2 = ft_strsub(h->line, ft_strstr(h->line, "=") -
 			h->line + 1, ft_strlen(h->line));
-		set_new_var(tmp1, tmp2, &g_all_var);
+		set_new_var(tmp1, tmp2, &globals()->g_all_var);
 		ft_strdel(&tmp1);
 		ft_strdel(&tmp2);
 		dop = h->next;

@@ -6,7 +6,7 @@
 /*   By: wstygg <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/29 15:54:56 by wstygg            #+#    #+#             */
-/*   Updated: 2020/04/13 20:04:23 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/04/20 14:49:46 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,9 +42,9 @@ void				hash_free_by_key(char *key)
 	t_hash			*to_free;
 	const int		id = str_to_hash(key);
 
-	if ((hash = g_hash[id]) && !ft_strcmp(hash->key, key))
+	if ((hash = globals()->g_hash[id]) && !ft_strcmp(hash->key, key))
 	{
-		g_hash[id] = hash->next;
+		globals()->g_hash[id] = hash->next;
 		return (free_hash(&hash));
 	}
 	while (hash->next)

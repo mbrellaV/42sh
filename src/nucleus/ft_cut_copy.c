@@ -6,7 +6,7 @@
 /*   By: qmartina <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/27 17:49:33 by qmartina          #+#    #+#             */
-/*   Updated: 2020/04/13 20:04:23 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/04/20 14:49:46 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ void	ft_cut_copy(t_readline *p)
 		ft_putcut(p);
 	else if (p->sum_read == 23)
 	{
-		free(g_cp);
-		g_cp = ft_strndup(p->buff, p->index);
+		free(globals()->g_cp);
+		globals()->g_cp = ft_strndup(p->buff, p->index);
 		tmp = p->buff;
 		p->buff = ft_strndup(&tmp[p->index], (p->len - p->index));
 		free(tmp);
@@ -31,7 +31,7 @@ void	ft_cut_copy(t_readline *p)
 		p->buff_size = p->len;
 		p->len_hint = ft_printf_helper(p->mod);
 		write(2, p->buff, p->len);
-		ft_setcursor(0, p->len);
+		ft_setcursor(0, p->len, p);
 	}
 	else if (p->sum_read == 21)
 		ft_cut(p);

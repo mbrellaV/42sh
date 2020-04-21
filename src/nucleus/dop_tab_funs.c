@@ -6,7 +6,7 @@
 /*   By: mbrella <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/31 19:36:44 by mbrella           #+#    #+#             */
-/*   Updated: 2020/04/13 20:04:23 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/04/20 14:49:46 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void	ft_find_path(t_readline *p, char *name)
 	{
 		return ;
 	}
-	if (!(tmp = ft_get_var("PATH", g_env)))
+	if (!(tmp = ft_get_var("PATH", globals()->g_env)))
 		return ;
 	path = ft_strsplit1(tmp, ':');
 	if (path == NULL)
@@ -64,7 +64,7 @@ char	*ft_directory(char *str, int *flag_dir)
 		{
 			if (str[0] == '~')
 			{
-				if (!(hp = ft_get_var("HOME", g_env)))
+				if (!(hp = ft_get_var("HOME", globals()->g_env)))
 					ft_error_q(5);
 				tmp = ft_strndup(&str[1], k - 1);
 				tmp1 = ft_strjoin(hp, tmp);

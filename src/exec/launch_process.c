@@ -6,7 +6,7 @@
 /*   By: qmartina <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/18 17:06:33 by qmartina          #+#    #+#             */
-/*   Updated: 2020/04/16 13:26:48 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/04/20 14:49:46 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,14 +37,14 @@ int			launch_process(t_process *p, t_job *j, t_jobl jobl, int fg)
 	int			dop1;
 
 	dop1 = 0;
-	if (g_shell_is_interactive)
+	if (globals()->g_shell_is_interactive)
 	{
 		pid = getpid();
 		if (j->pgid == 0)
 			j->pgid = pid;
 		setpgid(pid, j->pgid);
 		if (fg)
-			tcsetpgrp(g_shell_terminal, j->pgid);
+			tcsetpgrp(globals()->g_shell_terminal, j->pgid);
 		recover_normal_shell_signals();
 		standart_redirect(jobl.infile, jobl.outfile, j->stderrc);
 		if (p->file_opt)
@@ -56,6 +56,6 @@ int			launch_process(t_process *p, t_job *j, t_jobl jobl, int fg)
 	(dop1 < 0) ? exit(1) : 0;
 	dop1 = ft_whatis2(p);
 	(dop1 == 1) ? exit(0) : 0;
-	(dop1 == 0) ? execve(jobl.rt, p->file_args, g_env) : 0;
+	(dop1 == 0) ? execve(jobl.rt, p->file_args, globals()->g_env) : 0;
 	exit(127);
 }

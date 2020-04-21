@@ -6,7 +6,7 @@
 /*   By: qmartina <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/04 17:13:27 by qmartina          #+#    #+#             */
-/*   Updated: 2020/04/13 20:04:22 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/04/20 14:49:45 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	ft_fork_signal(int signo)
 {
 	if (signo == SIGINT)
 	{
-		ft_putstr_fd("\n", 2);
+		ft_putstr_fd("\n", globals()->all_opened_fds[2]);
 		signal(SIGINT, ft_fork_signal);
 	}
 	else if (signo == SIGTSTP)

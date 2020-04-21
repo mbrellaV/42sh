@@ -6,7 +6,7 @@
 /*   By: qmartina <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/18 17:15:58 by qmartina          #+#    #+#             */
-/*   Updated: 2020/04/16 14:03:34 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/04/20 14:49:46 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ static int		norme_help(t_pstat *pstat, int status, pid_t pid)
 		while (pstat->ptmp != pstat->p && (pstat->ptmp->completed = 1))
 			pstat->ptmp = pstat->ptmp->next;
 		if (WIFSIGNALED(status))
-			ft_dprintf(all_opened_fds[2], "%d: Terminated by signal %d.\n",
+			ft_dprintf(globals()->all_opened_fds[2], "%d: Terminated by signal %d.\n",
 				(int)pid, WTERMSIG(pstat->p->status));
 	}
 	return (0);
@@ -47,7 +47,7 @@ int				mark_process_status(pid_t pid, int status)
 	pstat.job_count = 0;
 	if (pid > 0)
 	{
-		pstat.j = g_f_job;
+		pstat.j = globals()->g_f_job;
 		while (pstat.j)
 		{
 			pstat.job_count++;
@@ -60,7 +60,7 @@ int				mark_process_status(pid_t pid, int status)
 			}
 			pstat.j = pstat.j->next;
 		}
-		return (!ft_dprintf(all_opened_fds[2], "No child process %d.\n", pid) - 1);
+		return (!ft_dprintf(globals()->all_opened_fds[2], "No child process %d.\n", pid) - 1);
 	}
 	else if (pid == 0 || errno == ECHILD)
 		return (-1);
@@ -75,7 +75,7 @@ int				process_count(void)
 	t_process	*p;
 	int			res;
 
-	job = g_f_job;
+	job = globals()->g_f_job;
 	res = 0;
 	while (job)
 	{

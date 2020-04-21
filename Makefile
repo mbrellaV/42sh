@@ -141,6 +141,7 @@ SRC_BASE = builtins/ft_cd.c\
 	main.c\
 	ck_check.c\
 	shell_lvl.c\
+	global.c\
 	init_shell.c\
 	builtins/allenv/main_env.c\
 	builtins/ft_type.c\

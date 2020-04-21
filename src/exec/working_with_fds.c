@@ -6,7 +6,7 @@
 /*   By: wstygg <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/14 18:52:42 by wstygg            #+#    #+#             */
-/*   Updated: 2020/04/16 13:36:48 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/04/20 14:49:46 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int		ft_find_in_fds(int *opened_fds, int fd_to_find)
 {
 	if (opened_fds == NULL)
 		return (-1);
-	if (opened_fds[fd_to_find] == 1)
+	if (opened_fds[fd_to_find] >= 0)
 		return (1);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: qmartina <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/25 17:27:41 by qmartina          #+#    #+#             */
-/*   Updated: 2020/04/13 20:04:22 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/04/20 14:49:45 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void				reset_input_mode(void);
 int					set_input_mode(void);
 void				ft_realloc_buff(t_readline *p);
 void				ft_cleanstr(int i, t_readline *p);
-void				ft_setcursor(int i, int max);
+void				ft_setcursor(int i, int max, t_readline *p);
 int					ft_add_sumchar(char *str, int rt);
 int					ft_put_n(int len, int i, int max);
 void				ft_do_leftright(t_readline *p);
@@ -61,5 +61,7 @@ char				**ft_arrnew(size_t size);
 void				ft_arrdel(char **arr);
 int					del_readline(t_readline *p);
 void				find_history(t_readline *p, t_memory *q);
+void				do_left(t_readline *p);
+void				do_right(t_readline *p);
 
 #endif
