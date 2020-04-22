@@ -14,6 +14,7 @@
 
 int			ft_error(int error, char *dopline)
 {
+	put_error_to_shell(2);
 	if (error == 5)
 	{
 		ft_dprintf(globals()->all_opened_fds[2],

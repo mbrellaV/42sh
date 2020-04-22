@@ -121,6 +121,7 @@ t_lextoken		*do_lexer(char *line)
 	{
 		if (dop_lexer(tmp, line) == -1)
 		{
+			put_error_to_shell(2);
 			if (tmp->doptail_c == NULL)
 				ft_distr_lex(tmp->tail_c);
 			ft_distr_lex(tmp->doptail_c);

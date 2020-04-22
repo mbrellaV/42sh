@@ -28,6 +28,7 @@ void	put_help(t_readline *r)
 
 void	ft_print_start(t_readline *p, t_readline *r)
 {
+	r->mod = -1;
 	ft_start_read(r);
 	ft_cleanstr(p->index + p->len_hint, p);
 	ft_putstr_fd(GRN, 2);
@@ -95,7 +96,9 @@ void	find_history(t_readline *p, t_memory *q)
 		}
 		else
 		{
+			//check
 			ft_return(p, &r, tmp);
+			del_readline(&r);
 			return ;
 		}
 	}
