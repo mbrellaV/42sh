@@ -215,7 +215,7 @@ int					ft_fd_flag(char **av, int infile, int outfile,
 						int errfile);
 void				put_job_in_foreground (t_job *j, int cont);
 void				put_job_in_background (t_job *j, int cont);
-int					mark_process_status (pid_t pid, int status);
+int					mark_process_status(pid_t pid, int status, t_job *job);
 void				update_status (void);
 void				wait_for_job (t_job *j);
 t_job				*create_job(t_exectoken *head);
@@ -239,6 +239,8 @@ void				init_shell(void);
 int					do_builtin(t_exectoken *tmp);
 int					ck_br(const char *str);
 void				put_error_to_shell(int error);
+int					is_system_symbol(char *str);
+int					num_of_the_job(t_job *j);
 
 #endif
 

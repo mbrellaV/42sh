@@ -128,6 +128,7 @@ SRC_BASE = builtins/ft_cd.c\
 	parser/check_bracket.c\
 	parser/all_parse.c\
 	parser/create_dop_struct.c\
+	parser/is_system_symbol.c\
 	hash/hash_table.c\
 	hash/hash_table_2.c\
 	hash/hash_error.c\

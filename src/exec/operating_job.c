@@ -53,3 +53,20 @@ int				job_is_completed(t_job *j)
 	}
 	return (1);
 }
+
+int				num_of_the_job(t_job *j)
+{
+	t_job		*job;
+	int			num;
+
+	job = globals()->g_f_job;
+	num = 0;
+	while (job)
+	{
+		if (job == j)
+			return (num + 1);
+		job = job->next;
+		num++;
+	}
+	return (-1);
+}

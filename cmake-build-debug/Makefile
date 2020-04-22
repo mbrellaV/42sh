@@ -3066,6 +3066,33 @@ src/parser/dop_parser.c.s:
 	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/parser/dop_parser.c.s
 .PHONY : src/parser/dop_parser.c.s
 
+src/parser/is_system_symbol.o: src/parser/is_system_symbol.c.o
+
+.PHONY : src/parser/is_system_symbol.o
+
+# target to build an object file
+src/parser/is_system_symbol.c.o:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/parser/is_system_symbol.c.o
+.PHONY : src/parser/is_system_symbol.c.o
+
+src/parser/is_system_symbol.i: src/parser/is_system_symbol.c.i
+
+.PHONY : src/parser/is_system_symbol.i
+
+# target to preprocess a source file
+src/parser/is_system_symbol.c.i:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/parser/is_system_symbol.c.i
+.PHONY : src/parser/is_system_symbol.c.i
+
+src/parser/is_system_symbol.s: src/parser/is_system_symbol.c.s
+
+.PHONY : src/parser/is_system_symbol.s
+
+# target to generate assembly for a file
+src/parser/is_system_symbol.c.s:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/parser/is_system_symbol.c.s
+.PHONY : src/parser/is_system_symbol.c.s
+
 src/parser/main_parser.o: src/parser/main_parser.c.o
 
 .PHONY : src/parser/main_parser.o
@@ -3173,33 +3200,6 @@ src/utility_files/g_builtins.s: src/utility_files/g_builtins.c.s
 src/utility_files/g_builtins.c.s:
 	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/utility_files/g_builtins.c.s
 .PHONY : src/utility_files/g_builtins.c.s
-
-src/utility_files/global_variables.o: src/utility_files/global_variables.c.o
-
-.PHONY : src/utility_files/global_variables.o
-
-# target to build an object file
-src/utility_files/global_variables.c.o:
-	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/utility_files/global_variables.c.o
-.PHONY : src/utility_files/global_variables.c.o
-
-src/utility_files/global_variables.i: src/utility_files/global_variables.c.i
-
-.PHONY : src/utility_files/global_variables.i
-
-# target to preprocess a source file
-src/utility_files/global_variables.c.i:
-	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/utility_files/global_variables.c.i
-.PHONY : src/utility_files/global_variables.c.i
-
-src/utility_files/global_variables.s: src/utility_files/global_variables.c.s
-
-.PHONY : src/utility_files/global_variables.s
-
-# target to generate assembly for a file
-src/utility_files/global_variables.c.s:
-	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/utility_files/global_variables.c.s
-.PHONY : src/utility_files/global_variables.c.s
 
 # Help Target
 help:
@@ -3537,6 +3537,9 @@ help:
 	@echo "... src/parser/dop_parser.o"
 	@echo "... src/parser/dop_parser.i"
 	@echo "... src/parser/dop_parser.s"
+	@echo "... src/parser/is_system_symbol.o"
+	@echo "... src/parser/is_system_symbol.i"
+	@echo "... src/parser/is_system_symbol.s"
 	@echo "... src/parser/main_parser.o"
 	@echo "... src/parser/main_parser.i"
 	@echo "... src/parser/main_parser.s"
@@ -3549,9 +3552,6 @@ help:
 	@echo "... src/utility_files/g_builtins.o"
 	@echo "... src/utility_files/g_builtins.i"
 	@echo "... src/utility_files/g_builtins.s"
-	@echo "... src/utility_files/global_variables.o"
-	@echo "... src/utility_files/global_variables.i"
-	@echo "... src/utility_files/global_variables.s"
 .PHONY : help
 
 

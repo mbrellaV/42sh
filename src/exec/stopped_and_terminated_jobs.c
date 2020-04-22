@@ -13,14 +13,17 @@
 #include ".././inc/fshell.h"
 #include <errno.h>
 
-static int		norme_help(t_pstat *pstat, int status, pid_t pid)
+static int		check_status(t_pstat *pstat, int status, pid_t pid, t_job *job)
 {
 	pstat->p->status = status;
 	if (WIFSTOPPED(status))
 	{
 		pstat->p->stopped = 1;
+		ft_dprintf(2, "\n");
+		if (job != NULL)
+			format_job_info(job, "stopped", num_of_the_job(job));
 		//pstat->str_for_del = ft_itoa(WEXITSTATUS(status));
-		put_error_to_shell(WEXITSTATUS(status));
+		//put_error_to_shell(WEXITSTATUS(status));
 		//ft_strdel(&pstat->str_for_del);
 	}
 	else
@@ -40,7 +43,7 @@ static int		norme_help(t_pstat *pstat, int status, pid_t pid)
 	return (0);
 }
 
-int				mark_process_status(pid_t pid, int status)
+int				mark_process_status(pid_t pid, int status, t_job *job)
 {
 	t_pstat		pstat;
 
@@ -55,7 +58,7 @@ int				mark_process_status(pid_t pid, int status)
 			while (pstat.p)
 			{
 				if (pstat.p->pid == pid)
-					return (norme_help(&pstat, status, pid));
+					return (check_status(&pstat, status, pid, job));
 				pstat.p = pstat.p->next;
 			}
 			pstat.j = pstat.j->next;
@@ -103,7 +106,7 @@ void			update_status(void)
 	while (counter < pr_count)
 	{
 		pid = waitpid(WAIT_ANY, &status, WUNTRACED | WNOHANG);
-		mark_process_status(pid, status);
+		mark_process_status(pid, status, NULL);
 		counter++;
 	}
 }
@@ -119,6 +122,6 @@ void			wait_for_job(t_job *j)
 		if (job_is_stopped(j))
 			break ;
 		pid = waitpid(-j->pgid, &status, WUNTRACED);
-		mark_process_status(pid, status);
+		mark_process_status(pid, status, j);
 	}
 }

@@ -113,11 +113,11 @@ set(CMAKE_DEPENDS_CHECK_C
   "/home/petruha2001/42sh/src/parser/change_tilda.c" "/home/petruha2001/42sh/cmake-build-debug/CMakeFiles/42save.dir/src/parser/change_tilda.c.o"
   "/home/petruha2001/42sh/src/parser/check_bracket.c" "/home/petruha2001/42sh/cmake-build-debug/CMakeFiles/42save.dir/src/parser/check_bracket.c.o"
   "/home/petruha2001/42sh/src/parser/dop_parser.c" "/home/petruha2001/42sh/cmake-build-debug/CMakeFiles/42save.dir/src/parser/dop_parser.c.o"
+  "/home/petruha2001/42sh/src/parser/is_system_symbol.c" "/home/petruha2001/42sh/cmake-build-debug/CMakeFiles/42save.dir/src/parser/is_system_symbol.c.o"
   "/home/petruha2001/42sh/src/parser/main_parser.c" "/home/petruha2001/42sh/cmake-build-debug/CMakeFiles/42save.dir/src/parser/main_parser.c.o"
   "/home/petruha2001/42sh/src/put_error_to_env.c" "/home/petruha2001/42sh/cmake-build-debug/CMakeFiles/42save.dir/src/put_error_to_env.c.o"
   "/home/petruha2001/42sh/src/shell_lvl.c" "/home/petruha2001/42sh/cmake-build-debug/CMakeFiles/42save.dir/src/shell_lvl.c.o"
   "/home/petruha2001/42sh/src/utility_files/g_builtins.c" "/home/petruha2001/42sh/cmake-build-debug/CMakeFiles/42save.dir/src/utility_files/g_builtins.c.o"
-  "/home/petruha2001/42sh/src/utility_files/global_variables.c" "/home/petruha2001/42sh/cmake-build-debug/CMakeFiles/42save.dir/src/utility_files/global_variables.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 

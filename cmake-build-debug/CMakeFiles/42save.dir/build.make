@@ -1526,18 +1526,18 @@ CMakeFiles/42save.dir/src/hash/print_hash.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/42save.dir/src/hash/print_hash.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/petruha2001/42sh/src/hash/print_hash.c -o CMakeFiles/42save.dir/src/hash/print_hash.c.s
 
-CMakeFiles/42save.dir/src/utility_files/global_variables.c.o: CMakeFiles/42save.dir/flags.make
-CMakeFiles/42save.dir/src/utility_files/global_variables.c.o: ../src/utility_files/global_variables.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/petruha2001/42sh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_114) "Building C object CMakeFiles/42save.dir/src/utility_files/global_variables.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/42save.dir/src/utility_files/global_variables.c.o   -c /home/petruha2001/42sh/src/utility_files/global_variables.c
+CMakeFiles/42save.dir/src/parser/is_system_symbol.c.o: CMakeFiles/42save.dir/flags.make
+CMakeFiles/42save.dir/src/parser/is_system_symbol.c.o: ../src/parser/is_system_symbol.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/petruha2001/42sh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_114) "Building C object CMakeFiles/42save.dir/src/parser/is_system_symbol.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/42save.dir/src/parser/is_system_symbol.c.o   -c /home/petruha2001/42sh/src/parser/is_system_symbol.c
 
-CMakeFiles/42save.dir/src/utility_files/global_variables.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/42save.dir/src/utility_files/global_variables.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/petruha2001/42sh/src/utility_files/global_variables.c > CMakeFiles/42save.dir/src/utility_files/global_variables.c.i
+CMakeFiles/42save.dir/src/parser/is_system_symbol.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/42save.dir/src/parser/is_system_symbol.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/petruha2001/42sh/src/parser/is_system_symbol.c > CMakeFiles/42save.dir/src/parser/is_system_symbol.c.i
 
-CMakeFiles/42save.dir/src/utility_files/global_variables.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/42save.dir/src/utility_files/global_variables.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/petruha2001/42sh/src/utility_files/global_variables.c -o CMakeFiles/42save.dir/src/utility_files/global_variables.c.s
+CMakeFiles/42save.dir/src/parser/is_system_symbol.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/42save.dir/src/parser/is_system_symbol.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/petruha2001/42sh/src/parser/is_system_symbol.c -o CMakeFiles/42save.dir/src/parser/is_system_symbol.c.s
 
 # Object files for target 42save
 42save_OBJECTS = \
@@ -1654,7 +1654,7 @@ CMakeFiles/42save.dir/src/utility_files/global_variables.c.s: cmake_force
 "CMakeFiles/42save.dir/src/ft_main_what.c.o" \
 "CMakeFiles/42save.dir/src/put_error_to_env.c.o" \
 "CMakeFiles/42save.dir/src/hash/print_hash.c.o" \
-"CMakeFiles/42save.dir/src/utility_files/global_variables.c.o"
+"CMakeFiles/42save.dir/src/parser/is_system_symbol.c.o"
 
 # External object files for target 42save
 42save_EXTERNAL_OBJECTS =
@@ -1772,7 +1772,7 @@ CMakeFiles/42save.dir/src/utility_files/global_variables.c.s: cmake_force
 42save: CMakeFiles/42save.dir/src/ft_main_what.c.o
 42save: CMakeFiles/42save.dir/src/put_error_to_env.c.o
 42save: CMakeFiles/42save.dir/src/hash/print_hash.c.o
-42save: CMakeFiles/42save.dir/src/utility_files/global_variables.c.o
+42save: CMakeFiles/42save.dir/src/parser/is_system_symbol.c.o
 42save: CMakeFiles/42save.dir/build.make
 42save: ../libft/libft.a
 42save: CMakeFiles/42save.dir/link.txt

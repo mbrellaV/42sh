@@ -110,11 +110,11 @@ file(REMOVE_RECURSE
   "CMakeFiles/42save.dir/src/parser/change_tilda.c.o"
   "CMakeFiles/42save.dir/src/parser/check_bracket.c.o"
   "CMakeFiles/42save.dir/src/parser/dop_parser.c.o"
+  "CMakeFiles/42save.dir/src/parser/is_system_symbol.c.o"
   "CMakeFiles/42save.dir/src/parser/main_parser.c.o"
   "CMakeFiles/42save.dir/src/put_error_to_env.c.o"
   "CMakeFiles/42save.dir/src/shell_lvl.c.o"
   "CMakeFiles/42save.dir/src/utility_files/g_builtins.c.o"
-  "CMakeFiles/42save.dir/src/utility_files/global_variables.c.o"
 )
 
 # Per-language clean rules from dependency scanning.
