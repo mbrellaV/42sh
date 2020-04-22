@@ -14,6 +14,7 @@
 
 void	ft_redirect_error(int marker, char *dopline)
 {
+	put_error_to_shell(2);
 	if (marker == 10)
 	{
 		ft_dprintf(globals()->all_opened_fds[2], SHELL_NAME": %s: Bad file descriptor", dopline);

@@ -15,20 +15,34 @@
 int		ft_ck_addline(t_readline *p)
 {
 	int				f;
+	t_memory		*dop_memory;
 
 	f = 4242;
 	while (f != 1)
 	{
-		p->buff[0] != '\0' ? globals()->g_memory_head = ft_memory(globals()->g_memory_head,
-			&(p->buff)) : globals()->g_memory_head;
+		if (p->buff[0] != '\0')
+		{
+			dop_memory = ft_memory(globals()->g_memory_head, &(p->buff));
+			if (dop_memory == NULL)
+			{
+				ft_strdel(&p->buff);
+				return (-1);
+			}
+			globals()->g_memory_head = dop_memory;
+		}
 		p->index = ft_do_zam_alias(p->buff, p);
+		while (p->index > 0 && p->buff[p->index - 1] == '\\')
+		{
+			p->buff[p->index - 1] = 0;
+			ft_add_intput_que(p, globals()->g_memory_head, 11);
+		}
 		while (ft_cheak_quote(p->buff) != 1)
 			ft_add_intput_que(p, globals()->g_memory_head, 1);
 		if ((f = ck_br(p->buff)) == 0)
 			ft_add_intput_que(p, globals()->g_memory_head, 20);
 		else if (f == -1 || f == -2)
 		{
-			ft_putstr_fd("Error \"()\"\n", globals()->all_opened_fds[2]);
+			ft_dprintf(globals()->all_opened_fds[2], f == -1 ? "42sh: Syntax error: newline unexpected (expecting \")\")\n" : "42sh: Syntax error: \")\" unexpected\n");
 			free(p->buff);
 			return (0);
 		}

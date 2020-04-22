@@ -63,5 +63,7 @@ int					del_readline(t_readline *p);
 void				find_history(t_readline *p, t_memory *q);
 void				do_left(t_readline *p);
 void				do_right(t_readline *p);
+int					ft_error_d(t_readline *p);
+char				ft_cheak_quote_c(char *input);
 
 #endif

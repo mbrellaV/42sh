@@ -132,6 +132,8 @@ SRC_BASE = builtins/ft_cd.c\
 	hash/hash_table_2.c\
 	hash/hash_error.c\
 	hash/print_hash.c\
+	utility_files/g_builtins.c\
+	utility_files/global.c\
 	put_error_to_env.c\
 	ft_distruct.c\
 	ft_error_q.c\
@@ -141,11 +143,9 @@ SRC_BASE = builtins/ft_cd.c\
 	main.c\
 	ck_check.c\
 	shell_lvl.c\
-	global.c\
 	init_shell.c\
 	builtins/allenv/main_env.c\
 	builtins/ft_type.c\
-	g_builtins.c\
 	ft_whatis.c\
 
 

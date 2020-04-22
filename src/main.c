@@ -66,7 +66,7 @@ int		main_cycle(t_readline *p, t_exectoken **start_token)
 		ft_start_read(p);
 		ft_read_8(p, globals()->g_memory_head, 0);
 		write(2, "\n", 1);
-		if (!ft_ck_addline(p))
+		if (ft_ck_addline(p) < 1)
 			p->buff = ft_strnew(130000);
 		reset_input_mode();
 	}

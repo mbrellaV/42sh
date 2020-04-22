@@ -14,25 +14,25 @@
 
 void	ft_back_slovo(t_readline *p)
 {
-	if (p->buff[p->index] == ' ')
+	if (p->buff[p->index] == ' ' || p->buff[p->index] == '\n')
 	{
 		do_left(p);
 //		p->index--;
 //		write(2, "\b", 1);
 	}
-	while (p->index > 0 && p->buff[p->index] == ' ')
+	while (p->index > 0 && (p->buff[p->index] == ' ' || p->buff[p->index] == '\n'))
 	{
 		do_left(p);
 //		p->index--;
 //		write(2, "\b", 1);
 	}
-	while (p->index > 0 && p->buff[p->index] != ' ')
+	while (p->index > 0 && p->buff[p->index] != ' ' && p->buff[p->index] != '\n')
 	{
 		do_left(p);
 //		p->index--;
 //		write(2, "\b", 1);
 	}
-	while (p->index > 0 && p->buff[p->index] == ' ')
+	while (p->index > 0 && (p->buff[p->index] == ' ' || p->buff[p->index] == '\n'))
 	{
 		do_left(p);
 //		p->index--;

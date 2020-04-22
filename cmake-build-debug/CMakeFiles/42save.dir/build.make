@@ -1305,18 +1305,18 @@ CMakeFiles/42save.dir/src/ft_take_arg.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/42save.dir/src/ft_take_arg.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/petruha2001/42sh/src/ft_take_arg.c -o CMakeFiles/42save.dir/src/ft_take_arg.c.s
 
-CMakeFiles/42save.dir/src/g_builtins.c.o: CMakeFiles/42save.dir/flags.make
-CMakeFiles/42save.dir/src/g_builtins.c.o: ../src/g_builtins.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/petruha2001/42sh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_97) "Building C object CMakeFiles/42save.dir/src/g_builtins.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/42save.dir/src/g_builtins.c.o   -c /home/petruha2001/42sh/src/g_builtins.c
+CMakeFiles/42save.dir/src/utility_files/g_builtins.c.o: CMakeFiles/42save.dir/flags.make
+CMakeFiles/42save.dir/src/utility_files/g_builtins.c.o: ../src/utility_files/g_builtins.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/petruha2001/42sh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_97) "Building C object CMakeFiles/42save.dir/src/utility_files/g_builtins.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/42save.dir/src/utility_files/g_builtins.c.o   -c /home/petruha2001/42sh/src/utility_files/g_builtins.c
 
-CMakeFiles/42save.dir/src/g_builtins.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/42save.dir/src/g_builtins.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/petruha2001/42sh/src/g_builtins.c > CMakeFiles/42save.dir/src/g_builtins.c.i
+CMakeFiles/42save.dir/src/utility_files/g_builtins.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/42save.dir/src/utility_files/g_builtins.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/petruha2001/42sh/src/utility_files/g_builtins.c > CMakeFiles/42save.dir/src/utility_files/g_builtins.c.i
 
-CMakeFiles/42save.dir/src/g_builtins.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/42save.dir/src/g_builtins.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/petruha2001/42sh/src/g_builtins.c -o CMakeFiles/42save.dir/src/g_builtins.c.s
+CMakeFiles/42save.dir/src/utility_files/g_builtins.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/42save.dir/src/utility_files/g_builtins.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/petruha2001/42sh/src/utility_files/g_builtins.c -o CMakeFiles/42save.dir/src/utility_files/g_builtins.c.s
 
 CMakeFiles/42save.dir/src/init_shell.c.o: CMakeFiles/42save.dir/flags.make
 CMakeFiles/42save.dir/src/init_shell.c.o: ../src/init_shell.c
@@ -1637,7 +1637,7 @@ CMakeFiles/42save.dir/src/utility_files/global_variables.c.s: cmake_force
 "CMakeFiles/42save.dir/src/ft_whatis.c.o" \
 "CMakeFiles/42save.dir/src/ft_signal.c.o" \
 "CMakeFiles/42save.dir/src/ft_take_arg.c.o" \
-"CMakeFiles/42save.dir/src/g_builtins.c.o" \
+"CMakeFiles/42save.dir/src/utility_files/g_builtins.c.o" \
 "CMakeFiles/42save.dir/src/init_shell.c.o" \
 "CMakeFiles/42save.dir/src/main.c.o" \
 "CMakeFiles/42save.dir/src/shell_lvl.c.o" \
@@ -1755,7 +1755,7 @@ CMakeFiles/42save.dir/src/utility_files/global_variables.c.s: cmake_force
 42save: CMakeFiles/42save.dir/src/ft_whatis.c.o
 42save: CMakeFiles/42save.dir/src/ft_signal.c.o
 42save: CMakeFiles/42save.dir/src/ft_take_arg.c.o
-42save: CMakeFiles/42save.dir/src/g_builtins.c.o
+42save: CMakeFiles/42save.dir/src/utility_files/g_builtins.c.o
 42save: CMakeFiles/42save.dir/src/init_shell.c.o
 42save: CMakeFiles/42save.dir/src/main.c.o
 42save: CMakeFiles/42save.dir/src/shell_lvl.c.o

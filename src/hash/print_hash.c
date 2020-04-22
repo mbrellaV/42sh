@@ -17,9 +17,15 @@ void	do_hash(char **args)
 	if (!args[1])
 		print_hash();
 	else if (args[2])
+	{
+		put_error_to_shell(2);
 		ft_dprintf(globals()->all_opened_fds[2], "42sh: hash: too many arguments!\nUsage: hash [-r]\n");
+	}
 	else if (args[1][0] != '-' || args[1][1] != 'r')
+	{
+		put_error_to_shell(2);
 		ft_dprintf(globals()->all_opened_fds[2], "42sh: hash: bad argument!\nUsage: hash [-r]\n");
+	}
 	else
 		hash_clear();
 }

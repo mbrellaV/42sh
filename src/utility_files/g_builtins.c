@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/fshell.h"
+#include "fshell.h"
 
 const char		*g_builtins[BIL_NUM] =
 {

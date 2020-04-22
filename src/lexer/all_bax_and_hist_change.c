@@ -21,7 +21,7 @@ static void		do_join(t_lextoken **doph, t_lextoken **lextmp1)
 	h = *doph;
 	tmp = (h)->next->line;
 	(h)->next->is_near_word = 0;
-	(h)->next->inhibitor_lvl = (h)->inhibitor_lvl;
+	//(h)->next->inhibitor_lvl = (h)->inhibitor_lvl;
 	(h)->next->line = ft_strjoin((h)->line, (h)->next->line);
 	ft_strdel(&tmp);
 	tmp = (h)->line;

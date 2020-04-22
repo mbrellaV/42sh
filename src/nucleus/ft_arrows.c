@@ -16,15 +16,15 @@ void	ft_arrows(t_readline *p)
 {
 	if (p->sum_read == 297)
 	{
-		while (p->index-- > 0)
+		while (p->index > 0)
 			do_left(p);
 		p->index = 0;
 	}
 	else if (p->sum_read == 298)
 	{
-		while (++p->index <= p->len)
+		while (p->index <= p->len)
 		{
-			if (ft_put_n(p->len_hint, p->index, p->len) == -1)
+//			if (ft_put_n(p->len_hint, p->index, p->len) == -1)
 				do_right(p);
 		}
 		p->index--;

@@ -19,6 +19,7 @@ void	do_count_shell_lvl(void)
 
 	if (!(dop = ft_get_var("SHLVL", globals()->g_env)))
 		return ;
+	set_new_var("?", "0", &globals()->g_all_var);
 	dop1 = ft_itoa(ft_atoi(dop) + 1);
 	set_new_var("SHLVL", dop1, &globals()->g_env);
 	ft_strdel(&dop);

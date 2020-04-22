@@ -24,7 +24,7 @@ void	ft_downcursor(t_readline *p)
 		i = -1;
 		while (++i < wins.ws_col)
 		{
-			if (ft_put_n(p->len_hint, p->index + 1, p->len) == -1)
+//			if (ft_put_n(p->len_hint, p->index + 1, p->len) == -1)
 				do_right(p);
 //			p->index++;
 		}
@@ -33,7 +33,7 @@ void	ft_downcursor(t_readline *p)
 	{
 		while (p->index < p->len)
 		{
-			if (ft_put_n(p->len_hint, p->index + 1, p->len) == -1)
+//			if (ft_put_n(p->len_hint, p->index + 1, p->len) == -1)
 				do_right(p);
 //			p->index++;
 		}

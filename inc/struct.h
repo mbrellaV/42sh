@@ -45,6 +45,7 @@ typedef struct				s_readline
 	int						flag_dir;
 	int						flag_left_word;
 	int						i_dop;
+	char 					c;
 }							t_readline;
 
 typedef struct				s_pipe

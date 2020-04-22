@@ -1311,33 +1311,6 @@ src/ft_whatis.c.s:
 	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/ft_whatis.c.s
 .PHONY : src/ft_whatis.c.s
 
-src/g_builtins.o: src/g_builtins.c.o
-
-.PHONY : src/g_builtins.o
-
-# target to build an object file
-src/g_builtins.c.o:
-	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/g_builtins.c.o
-.PHONY : src/g_builtins.c.o
-
-src/g_builtins.i: src/g_builtins.c.i
-
-.PHONY : src/g_builtins.i
-
-# target to preprocess a source file
-src/g_builtins.c.i:
-	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/g_builtins.c.i
-.PHONY : src/g_builtins.c.i
-
-src/g_builtins.s: src/g_builtins.c.s
-
-.PHONY : src/g_builtins.s
-
-# target to generate assembly for a file
-src/g_builtins.c.s:
-	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/g_builtins.c.s
-.PHONY : src/g_builtins.c.s
-
 src/hash/hash_error.o: src/hash/hash_error.c.o
 
 .PHONY : src/hash/hash_error.o
@@ -3174,6 +3147,33 @@ src/shell_lvl.c.s:
 	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/shell_lvl.c.s
 .PHONY : src/shell_lvl.c.s
 
+src/utility_files/g_builtins.o: src/utility_files/g_builtins.c.o
+
+.PHONY : src/utility_files/g_builtins.o
+
+# target to build an object file
+src/utility_files/g_builtins.c.o:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/utility_files/g_builtins.c.o
+.PHONY : src/utility_files/g_builtins.c.o
+
+src/utility_files/g_builtins.i: src/utility_files/g_builtins.c.i
+
+.PHONY : src/utility_files/g_builtins.i
+
+# target to preprocess a source file
+src/utility_files/g_builtins.c.i:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/utility_files/g_builtins.c.i
+.PHONY : src/utility_files/g_builtins.c.i
+
+src/utility_files/g_builtins.s: src/utility_files/g_builtins.c.s
+
+.PHONY : src/utility_files/g_builtins.s
+
+# target to generate assembly for a file
+src/utility_files/g_builtins.c.s:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/utility_files/g_builtins.c.s
+.PHONY : src/utility_files/g_builtins.c.s
+
 src/utility_files/global_variables.o: src/utility_files/global_variables.c.o
 
 .PHONY : src/utility_files/global_variables.o
@@ -3342,9 +3342,6 @@ help:
 	@echo "... src/ft_whatis.o"
 	@echo "... src/ft_whatis.i"
 	@echo "... src/ft_whatis.s"
-	@echo "... src/g_builtins.o"
-	@echo "... src/g_builtins.i"
-	@echo "... src/g_builtins.s"
 	@echo "... src/hash/hash_error.o"
 	@echo "... src/hash/hash_error.i"
 	@echo "... src/hash/hash_error.s"
@@ -3549,6 +3546,9 @@ help:
 	@echo "... src/shell_lvl.o"
 	@echo "... src/shell_lvl.i"
 	@echo "... src/shell_lvl.s"
+	@echo "... src/utility_files/g_builtins.o"
+	@echo "... src/utility_files/g_builtins.i"
+	@echo "... src/utility_files/g_builtins.s"
 	@echo "... src/utility_files/global_variables.o"
 	@echo "... src/utility_files/global_variables.i"
 	@echo "... src/utility_files/global_variables.s"

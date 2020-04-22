@@ -123,6 +123,25 @@ int			ft_do_zam_alias(char *str, t_readline *p)
 //	return (str);
 //}
 
+int			alias_error(int error, char *tmp1, char *tmp2)
+{
+	put_error_to_shell(error);
+	if (error == 15)
+	{
+		ft_error(15, "parse error");
+		return (-1);
+	}
+	if (error == 14)
+	{
+		ft_dprintf(globals()->all_opened_fds[2], "alias [alias-name[=string]...]\n");
+		return (-1);
+	}
+	ft_dprintf(globals()->all_opened_fds[2], "alias error: wrong argument: |%s|\n", tmp2);
+	ft_strdel(&tmp1);
+	ft_strdel(&tmp2);
+	return (-1);
+}
+
 int			ft_do_change_alias(char **mas)
 {
 	char	*tmp1;
@@ -140,14 +159,16 @@ int			ft_do_change_alias(char **mas)
 			tmp1 = ft_strsub(mas[1], 0, ft_strstr(mas[1], "=") - mas[1]);
 			tmp2 = ft_strsub(mas[1], ft_strstr(mas[1], "=") -
 				mas[1] + 1, ft_strlen(mas[1]));
+			if (get_op_type(tmp2) > 0 || ft_strcmp(tmp2, "$") == 0)
+				return (alias_error(2, tmp1, tmp2));
 			set_new_var(tmp1, tmp2, &globals()->g_alias);
 			ft_strdel(&tmp1);
 			ft_strdel(&tmp2);
 		}
 		else
-			ft_dprintf(globals()->all_opened_fds[2], "alias [alias-name[=string]...]\n");
+			return (alias_error(14, NULL, NULL));
 	}
 	else
-		ft_error(15, "parse error");
+		return (alias_error(15, NULL, NULL));
 	return (0);
 }

@@ -59,11 +59,7 @@ int		ft_signal(int signo, t_readline *p)
 	else if (signo == 4)
 	{
 		if (p->buff[0] == '\0' || !p->buff[0] || p->index == 0)
-		{
-			free(p->buff);
-			p->buff = ft_strdup("exit");
-			return (1);
-		}
+			return (ft_error_d(p));
 		else
 			return (4);
 	}

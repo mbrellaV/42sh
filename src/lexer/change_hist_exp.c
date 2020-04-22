@@ -12,6 +12,14 @@
 
 #include "../../inc/fshell.h"
 
+char				*history_error(char *dopline)
+{
+	put_error_to_shell(2);
+	ft_dprintf(globals()->all_opened_fds[2], "42sh: %s: event not found\n", dopline);
+	ft_strdel(&dopline);
+	return (NULL);
+}
+
 void				zm_history_numbers(int i, char **str1,
 		char type, t_memory *q)
 {
@@ -23,11 +31,16 @@ void				zm_history_numbers(int i, char **str1,
 	c = i + type;
 	while (isword(str[c]) != 0 && str[c])
 		c++;
-	tmp = ft_strdup("\0");
+	//tmp = ft_strdup("\0");
 	if (type == 0)
-		tmp = ft_strdup(get_num_from_hist_begin(q, ft_atoi(str + i + 1)));
+		tmp = get_num_from_hist_begin(q, ft_atoi(str + i + 1));
 	if (type == 2)
-		tmp = ft_strdup(get_num_from_hist_end(q, ft_atoi(str + i + 1)));
+		tmp = get_num_from_hist_end(q, ft_atoi(str + i + 1));
+	if (tmp == NULL)
+	{
+		*str1 = history_error(ft_strsub(*str1, 0, word_size(*str1)));
+		return ;
+	}
 	str = do_zam_str_by_str(i, c, str, tmp);
 	*str1 = str;
 }
@@ -37,18 +50,30 @@ void				zm_history_name(int i, char **str1, char type, t_memory *q)
 	int		c;
 	char	*tmp;
 	char	*str;
+	char	*str_for_del;
 
 	str = *str1;
 	c = i + type;
 	while (isword(str[c]) != 0 && str[c])
 		c++;
-	tmp = ft_strdup("\0");
 	if (type == 1)
-		tmp = ft_strdup(get_num_from_hist_starting(q,
-			ft_strsub(str + i + type, 0, c - i - 1)));
+	{
+		str_for_del = ft_strsub(str + i + type, 0, word_size(str + i + 1));
+		tmp = get_num_from_hist_starting(q,
+				str_for_del);
+	}
 	if (type == 2)
-		tmp = ft_strdup(get_num_from_hist_cons(q,
-			ft_strsub(str + i + 2, 0, c - i)));
+	{
+		str_for_del = ft_strsub(str + i + 2, 0, word_size(str + i + 2));
+		tmp = get_num_from_hist_cons(q,
+				str_for_del);
+	}
+	ft_strdel(&str_for_del);
+	if (tmp == NULL)
+	{
+		*str1 = history_error(ft_strsub(*str1, 0, word_size(*str1)));
+		return ;
+	}
 	str = do_zam_str_by_str(i, c, str, tmp);
 	*str1 = str;
 }
@@ -75,6 +100,8 @@ char				*do_zam_str_hist_var(char *str1, t_memory *q)
 			else if (str1[i + 1] == '?')
 				zm_history_name(i, &str1, 2, q);
 		}
+		if (str1 == NULL)
+			return (NULL);
 		i++;
 	}
 	return (str1);

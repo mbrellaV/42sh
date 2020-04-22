@@ -110,7 +110,7 @@ add_executable(42save
         src/ft_whatis.c
         src/ft_signal.c
         src/ft_take_arg.c
-        src/g_builtins.c
+        src/utility_files/g_builtins.c
         src/init_shell.c
         src/main.c
         src/shell_lvl.c src/exec/create_jobs_and_proc.c src/exec/free_job_list.c src/exec/find_jobs.c src/exec/working_with_fds.c src/exec/job_info.c src/evaln/sub_and_add.c src/exec/ft_do_open_flags.c src/exec/redirect.c src/ck_check.c src/lexer/del_one_node_in_lextokens.c src/ft_main_what.c src/put_error_to_env.c src/hash/print_hash.c src/utility_files/global_variables.c)

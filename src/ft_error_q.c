@@ -29,6 +29,27 @@ void	ft_error_q(int er)
 	}
 }
 
+int		ft_error_d(t_readline *p)
+{
+	free(p->buff);
+	if (p->mod == 0)
+		p->buff = ft_strdup("exit");
+	if (p->mod == 1)
+	{
+//		ft_dprintf(2, "42sh Syntax error: Unterminated quoted string\n");
+		p->buff = ft_strnew(2);
+		p->buff[0] = p->c;
+	}
+	else if (p->mod == 20)
+	{
+		ft_dprintf(2, "42sh Syntax error: end of file unexpected (expecting \")\")\n");
+//		p->buff = ft_strdup(")");
+		ft_dprintf(2, "exit\n");
+		exit(1);
+	}
+	return (1);
+}
+
 void	ft_error_pipe(int er, char *str)
 {
 	if (er == 1)

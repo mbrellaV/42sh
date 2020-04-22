@@ -29,6 +29,7 @@ int			check_symbols(char *str, char *str_for_del)
 			if (str_for_del != str)
 				ft_strdel(&str_for_del);
 			ft_strdel(&str);
+			put_error_to_shell(2);
 			ft_dprintf(globals()->all_opened_fds[2], "parse error in eval near: |%c|\n", str[i]);
 			return (-1);
 		}

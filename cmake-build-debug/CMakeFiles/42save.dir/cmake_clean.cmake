@@ -45,7 +45,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/42save.dir/src/ft_signal.c.o"
   "CMakeFiles/42save.dir/src/ft_take_arg.c.o"
   "CMakeFiles/42save.dir/src/ft_whatis.c.o"
-  "CMakeFiles/42save.dir/src/g_builtins.c.o"
   "CMakeFiles/42save.dir/src/hash/hash_error.c.o"
   "CMakeFiles/42save.dir/src/hash/hash_table.c.o"
   "CMakeFiles/42save.dir/src/hash/hash_table_2.c.o"
@@ -114,6 +113,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/42save.dir/src/parser/main_parser.c.o"
   "CMakeFiles/42save.dir/src/put_error_to_env.c.o"
   "CMakeFiles/42save.dir/src/shell_lvl.c.o"
+  "CMakeFiles/42save.dir/src/utility_files/g_builtins.c.o"
   "CMakeFiles/42save.dir/src/utility_files/global_variables.c.o"
 )
 
