@@ -12,7 +12,7 @@
 
 #include "../../inc/fshell.h"
 
-static void	cycle(char *str1, t_zams *zams, t_dop_str *t)
+static void	zam_symbol(char *str1, t_zams *zams, t_dop_str *t)
 {
 	if (str1[zams->i] == '$' && (str1[zams->i + 1] != '('))
 	{
@@ -45,7 +45,7 @@ char		*do_zam_str_bax(char *str1, t_dop_str *t)
 	if (!(t->str_b = ft_strnew(130000)))
 		ft_error_q(2);
 	while (zams.i < ft_strlen(str1) && str1[zams.i] != '\0')
-		cycle(str1, &zams, t);
+		zam_symbol(str1, &zams, t);
 	ft_strdel(&str1);
 	return (t->str_b);
 }

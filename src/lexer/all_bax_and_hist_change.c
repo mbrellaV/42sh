@@ -117,6 +117,7 @@ t_lextoken		*do_zam_bax_and_hist_full(t_lextoken *h, t_lextoken **save_tmp)
 
 	if (!h)
 		return (NULL);
+	*save_tmp = h;
 	if (!(tmp = ft_memalloc(sizeof(t_dop_str))))
 		ft_error_q(2);
 	h = do_zam_join_par(h);
@@ -134,7 +135,7 @@ t_lextoken		*do_zam_bax_and_hist_full(t_lextoken *h, t_lextoken **save_tmp)
 			continue ;
 		}
 		if (do_all_zams_with_inhibitor(h, &h, tmp, &first_token) == -1)
-			return (NULL);
+			return (ft_kill_str_dop_lex(tmp, NULL));
 	}
 	*save_tmp = first_token;
 	return (ft_kill_str_dop_lex(tmp, first_token));

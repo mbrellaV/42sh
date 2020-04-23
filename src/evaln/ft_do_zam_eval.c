@@ -12,7 +12,7 @@
 
 #include "eval_expr.h"
 
-int			check_symbols(char *str, char *str_for_del)
+int			check_symbols(char *str)
 {
 	int i;
 
@@ -22,12 +22,10 @@ int			check_symbols(char *str, char *str_for_del)
 	while (str[i] != '\0')
 	{
 		if (!ft_isdigit(str[i]) && str[i] != '*' && str[i] != '/'
-		&& str[i] != '+' && str[i] != '-' &&
+		&& str[i] != '+' && str[i] != '-' && isword(str[i]) <= 0 &&
 			str[i] != '%' && str[i] != '(' && str[i] != ')'
-			&& str[i] != ' ' && str[i] != '\t')
+			&& str[i] != ' ' && str[i] != '\t' && is_system_symbol(str[i]) != 1)
 		{
-			if (str_for_del != str)
-				ft_strdel(&str_for_del);
 			ft_strdel(&str);
 			put_error_to_shell(2);
 			ft_dprintf(globals()->all_opened_fds[2], "parse error in eval near: |%c|\n", str[i]);
@@ -37,14 +35,72 @@ int			check_symbols(char *str, char *str_for_del)
 	}
 	return (1);
 }
+//
+//char		*ft_do_cut(char *tmp)
+//{
+//	int		dopi;
+//	char	*str;
+//	char	*dop;
+//	char	*str_for_rec;
+//	char	*str_for_del;
+//
+//	dopi = 0;
+//	if (tmp[dopi] == '(' && tmp[dopi + 1] == '(')
+//		if (sc_size(&tmp[dopi], '(') != -1 &&
+//			sc_size(&tmp[dopi + 1], '(') != -1)
+//		{
+//			dopi = sc_size(&tmp[dopi], '(') - 3;
+//			dop = ft_strsub(tmp, 2, dopi - 2);
+//			str_for_del = dop;
+//			str_for_rec = ft_main_calc_rec(dop);
+//			if (str_for_rec != NULL)
+//				dop = str_for_rec;
+//			if (check_symbols(dop, str_for_del) == -1)
+//				return (NULL);
+//			str = ft_itoa(eval_expr(dop));
+//			(str_for_del != dop) ? ft_strdel(&str_for_del) : 0;
+//			ft_strdel(&dop);
+//			return (str);
+//		}
+//	return (NULL);
+//}
 
-char		*ft_do_cut(char *tmp)
+//char		*ft_main_calc_rec(char *mas)
+//{
+//	char	*newstr;
+//	char	*cut_str;
+//	int		i;
+//
+//	i = 0;
+//	if (!(newstr = ft_memalloc(ft_strlen(mas) + 1)))
+//		return (NULL);
+//	while (*mas != '\0' && *mas != '$')
+//	{
+//		newstr[i++] = *mas;
+//		mas++;
+//	}
+//	if (*mas == '$')
+//	{
+//		if (!(cut_str = ft_do_cut(mas + 1)))
+//		{
+//			ft_strdel(&newstr);
+//			return (NULL);
+//		}
+//		ft_strcat(newstr, cut_str);
+//		ft_strdel(&cut_str);
+//		return (newstr);
+//	}
+//	ft_strdel(&newstr);
+//	return (NULL);
+//}
+
+char		*ft_do_cut(char *tmp, int *error)
 {
-	int		dopi;
-	char	*str;
-	char	*dop;
-	char	*str_for_rec;
-	char	*str_for_del;
+	int					dopi;
+	char				*str;
+	char				*dop;
+	char				*str_for_rec;
+	char				*str_for_del;
 
 	dopi = 0;
 	if (tmp[dopi] == '(' && tmp[dopi + 1] == '(')
@@ -54,58 +110,89 @@ char		*ft_do_cut(char *tmp)
 			dopi = sc_size(&tmp[dopi], '(') - 3;
 			dop = ft_strsub(tmp, 2, dopi - 2);
 			str_for_del = dop;
-			str_for_rec = ft_main_calc_rec(dop);
+			str_for_rec = ft_main_calc_rec(dop, error);
+			if (*error == 1)
+				return (NULL);
 			if (str_for_rec != NULL)
 				dop = str_for_rec;
-			if (check_symbols(dop, str_for_del) == -1)
-				return (NULL);
-			str = ft_itoa(eval_expr(dop));
+			str = ft_itoa(eval_expr(dop, error));
 			(str_for_del != dop) ? ft_strdel(&str_for_del) : 0;
-			ft_strdel(&dop);
+			//ft_strdel(&dop);
+			if (*error == 1)
+			{
+				ft_strdel(&str);
+				return (NULL);
+			}
 			return (str);
 		}
 	return (NULL);
 }
 
-char		*ft_main_calc_rec(char *mas)
+char		*ft_main_calc_rec(char *mas, int *error)
 {
 	char	*newstr;
 	char	*cut_str;
 	int		i;
+	int		d;
 
 	i = 0;
+	d = 0;
 	if (!(newstr = ft_memalloc(ft_strlen(mas) + 1)))
 		return (NULL);
-	while (*mas != '\0' && *mas != '$')
+	while (i < ft_strlen(mas) && mas[i] != '\0')
 	{
-		newstr[i++] = *mas;
-		mas++;
-	}
-	if (*mas == '$')
-	{
-		if (!(cut_str = ft_do_cut(mas + 1)))
+		if (mas[i] == '$')
 		{
-			ft_strdel(&newstr);
-			return (NULL);
+			d++;
+			if (!(cut_str = ft_do_cut(mas + 1, error)))
+			{
+				ft_strdel(&newstr);
+				return (NULL);
+			}
+			i += 1 + sc_size(&mas[i + 1], mas[i + 1]);
+		}
+		else
+		{
+			cut_str = ft_strdup(" ");
+			cut_str[0] = mas[i];
+			i++;
 		}
 		ft_strcat(newstr, cut_str);
 		ft_strdel(&cut_str);
-		return (newstr);
 	}
+	if (d > 0)
+		return (newstr);
 	ft_strdel(&newstr);
 	return (NULL);
 }
 
+//#	evaln/dop.c\
+//#    evaln/calc.c\
+//#    evaln/atoimy.c\
+//#    evaln/inftopost.c\
+//#    evaln/ft_do_zam_eval.c\
+//#    evaln/sub_and_add.c\
+
 char		*ft_do_zam_eval(char *mas)
 {
-	char	*newstr;
+	char				*newstr;
+	int					error;
 
+	error = 0;
 	if (mas == NULL)
 		return (NULL);
 	if (*mas == '\0')
 		return (mas);
-	if ((newstr = ft_main_calc_rec(mas)) == NULL)
+	if ((newstr = ft_main_calc_rec(mas, &error)) == NULL)
+	{
+		if (error == 1)
+		{
+			ft_dprintf(globals()->all_opened_fds[2], "parse error in eval near: |%s|\n", mas);
+			ft_strdel(&mas);
+			return (NULL);
+		}
 		return (mas);
+	}
 	ft_strdel(&mas);
 	return (newstr);
 }

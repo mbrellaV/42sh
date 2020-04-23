@@ -23,10 +23,10 @@ typedef struct		s_int
 }					t_int;
 
 int					is_znak(int c);
-int					eval_expr(char *s);
+int					eval_expr(char *s, int *error);
 void				dostack(int *stackos, int *stackzn, int c, t_int *lastint);
 int					calcend(int **stackos, int **stackzn, t_int **str);
-char				*ft_main_calc_rec(char *mas);
+char				*ft_main_calc_rec(char *mas, int *error);
 int					prior(int c);
 int					ft_atoi_with(char *str, int *marker);
 t_int				*cr_new_el();

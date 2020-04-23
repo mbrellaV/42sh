@@ -33,7 +33,6 @@ void		do_job_notification(void)
 			format_job_info(j, "completed", d);
 		else if (j->foreground == 0)
 			format_job_info(j, "Running", d);
-
 		else if (job_is_stopped(j))
 			format_job_info(j, "suspended", d);
 		j = j->next;

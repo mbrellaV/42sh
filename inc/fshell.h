@@ -239,8 +239,10 @@ void				init_shell(void);
 int					do_builtin(t_exectoken *tmp);
 int					ck_br(const char *str);
 void				put_error_to_shell(int error);
-int					is_system_symbol(char *str);
+int					is_system_symbol(char c);
 int					num_of_the_job(t_job *j);
+char				*ft_do_zam_eval(char *mas);
+
 
 #endif
 

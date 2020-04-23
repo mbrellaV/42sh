@@ -89,11 +89,6 @@ typedef struct				s_dop_str
 	int						dopi_a;
 	t_lextoken				*dop_a;
 	t_exectoken				*tmp1_a;
-	int						i_b;
-	char					*new_b;
-	char					*tmp_b;
-	char					*tmp1_b;
-	int						c_b;
 	char					*str_b;
 	int						i_c;
 	t_exectoken				*prevdot_c;

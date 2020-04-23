@@ -62,12 +62,6 @@ SRC_BASE = builtins/ft_cd.c\
  	exec/working_with_fds.c\
  	exec/create_jobs_and_proc.c\
 	lexer/lexer.c\
-	evaln/dop.c\
-    evaln/calc.c\
-    evaln/atoimy.c\
-    evaln/inftopost.c\
-    evaln/ft_do_zam_eval.c\
-    evaln/sub_and_add.c\
 	lexer/change_dol.c\
 	lexer/change_spaces.c\
 	lexer/cr_and_add_tokens.c\
@@ -133,6 +127,12 @@ SRC_BASE = builtins/ft_cd.c\
 	hash/hash_table_2.c\
 	hash/hash_error.c\
 	hash/print_hash.c\
+	evaln/dop.c\
+	evaln/calc.c\
+	evaln/atoimy.c\
+	evaln/inftopost.c\
+	evaln/ft_do_zam_eval.c\
+	evaln/sub_and_add.c\
 	utility_files/g_builtins.c\
 	utility_files/global.c\
 	put_error_to_env.c\
