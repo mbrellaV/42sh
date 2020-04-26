@@ -1,31 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strsub.c                                        :+:      :+:    :+:   */
+/*   ft_do_copy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: qmartina <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/17 16:32:19 by qmartina          #+#    #+#             */
-/*   Updated: 2020/04/20 14:49:45 by wstygg           ###   ########.fr       */
+/*   Created: 2020/01/27 17:50:52 by qmartina          #+#    #+#             */
+/*   Updated: 2020/04/20 14:49:46 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../../inc/fshell.h"
 
-char	*ft_strsub(char const *s, unsigned int start,
-		size_t len)
+void	ft_do_copy(t_readline *p)
 {
-	char	*tmp;
-	char	*delstr;
-
-	if (!s || !(tmp = ft_memalloc(len + 1)) || (len + 1) == 0)
-		return (NULL);
-	delstr = tmp;
-	tmp = ft_strncpy(tmp, (char*)s + start, len);
-	if (tmp == NULL)
+	if (p->sum_read == 27)
+		p->esc = 1;
+	else if (p->sum_read == 119)
 	{
-		ft_strdel(&delstr);
-		return (NULL);
+		free(globals()->g_cp);
+		globals()->g_cp = ft_strdup(p->buff);
+		p->esc = 0;
 	}
-	return (tmp);
 }

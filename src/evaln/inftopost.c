@@ -21,6 +21,12 @@ int		opr_znak(char *dstr, int *marker)
 	i = *marker;
 	str = dstr;
 	sum = 300;
+	if (issc(str[i]))
+	{
+		sum += str[i];
+		(*marker)++;
+		return (sum);
+	}
 	while (str[i] && (is_znak(str[i]) || issc(str[i])))
 	{
 		sum += str[i];
@@ -34,8 +40,12 @@ int		check_calc_str(char *str)
 {
 	char	*dopstr;
 
+	if (str == NULL)
+		return (-1);
+	if (word_size(str) < 0)
+		return (-1);
 	dopstr = ft_strsub(str, 0, word_size(str));
-	if (dopstr == NULL || (ft_strstr(dopstr, "+++") != NULL ||
+	if ((ft_strstr(dopstr, "+++") != NULL ||
 			ft_strstr(dopstr, "---") != NULL ||
 			ft_strstr(dopstr, ">>>") != NULL ||
 			ft_strstr(dopstr, "<<<") != NULL ||
@@ -71,10 +81,8 @@ char			*do_save_var(char *str)
 
 	i = 0;
 	dopi = 0;
-	dprintf(2, "\n|%s|\n", str);
 	if (check_calc_str(str) == -1)
 		return (NULL);
-	//dprintf(2, "\n|%s|\n", str);
 	i += word_size(str);
 	if (str[i - 1] == '+')
 		dopstr = ft_strdup("0+");

@@ -149,7 +149,7 @@ char		*ft_main_calc_rec(char *mas, int *error)
 				ft_strdel(&newstr);
 				return (NULL);
 			}
-			i += 1 + sc_size(&mas[i + 1], mas[i + 1]);
+			i += sc_size(&mas[i + 1], mas[i + 1]);
 		}
 		else
 		{
@@ -165,13 +165,6 @@ char		*ft_main_calc_rec(char *mas, int *error)
 	ft_strdel(&newstr);
 	return (NULL);
 }
-
-//#	evaln/dop.c\
-//#    evaln/calc.c\
-//#    evaln/atoimy.c\
-//#    evaln/inftopost.c\
-//#    evaln/ft_do_zam_eval.c\
-//#    evaln/sub_and_add.c\
 
 char		*ft_do_zam_eval(char *mas)
 {

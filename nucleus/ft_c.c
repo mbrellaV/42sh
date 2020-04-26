@@ -1,31 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strsub.c                                        :+:      :+:    :+:   */
+/*   ft_c.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: qmartina <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/17 16:32:19 by qmartina          #+#    #+#             */
-/*   Updated: 2020/04/20 14:49:45 by wstygg           ###   ########.fr       */
+/*   Created: 2020/01/27 16:56:26 by qmartina          #+#    #+#             */
+/*   Updated: 2020/04/20 14:49:46 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../../inc/fshell.h"
 
-char	*ft_strsub(char const *s, unsigned int start,
-		size_t len)
+int		ft_c(int c)
 {
-	char	*tmp;
-	char	*delstr;
-
-	if (!s || !(tmp = ft_memalloc(len + 1)) || (len + 1) == 0)
-		return (NULL);
-	delstr = tmp;
-	tmp = ft_strncpy(tmp, (char*)s + start, len);
-	if (tmp == NULL)
-	{
-		ft_strdel(&delstr);
-		return (NULL);
-	}
-	return (tmp);
+	write(2, &c, 1);
+	return (1);
 }

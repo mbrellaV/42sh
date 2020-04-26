@@ -1,31 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strsub.c                                        :+:      :+:    :+:   */
+/*   ft_add_sumchar.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: qmartina <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/17 16:32:19 by qmartina          #+#    #+#             */
-/*   Updated: 2020/04/20 14:49:45 by wstygg           ###   ########.fr       */
+/*   Created: 2020/01/27 17:15:27 by qmartina          #+#    #+#             */
+/*   Updated: 2020/04/20 14:49:46 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../../inc/fshell.h"
 
-char	*ft_strsub(char const *s, unsigned int start,
-		size_t len)
+int		ft_add_sumchar(char *str, int rt)
 {
-	char	*tmp;
-	char	*delstr;
+	int i;
+	int sum;
 
-	if (!s || !(tmp = ft_memalloc(len + 1)) || (len + 1) == 0)
-		return (NULL);
-	delstr = tmp;
-	tmp = ft_strncpy(tmp, (char*)s + start, len);
-	if (tmp == NULL)
+	i = -1;
+	sum = 0;
+	while (++i < rt)
 	{
-		ft_strdel(&delstr);
-		return (NULL);
+		sum += str[i];
 	}
-	return (tmp);
+	return (sum);
 }

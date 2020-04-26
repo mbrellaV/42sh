@@ -1,26 +1,52 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_start_read.c                                    :+:      :+:    :+:   */
+/*   ft_cheak_quote.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: qmartina <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/28 16:56:09 by qmartina          #+#    #+#             */
+/*   Created: 2020/01/28 17:01:55 by qmartina          #+#    #+#             */
 /*   Updated: 2020/04/20 14:49:46 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/fshell.h"
 
-void	ft_start_read(t_readline *p)
+char		ft_cheak_quote_c(char *input)
 {
-	p->len_hint = ft_printf_helper(p->mod);
-	p->buff_size = 13000;
-	if (!(p->buff = ft_strnew(p->buff_size)))
-		ft_error_q(2);
-	p->index = 0;
-	p->len = 0;
-	p->esc = 0;
-	p->tab_size = 8;
-	p->tab = ft_arrnew(p->tab_size);
+	int k;
+	char c;
+
+	k = -1;
+	while (input[++k])
+	{
+		if (input[k] == '\'' || input[k] == '\"')
+		{
+			c = input[k];
+			while (input[++k] && input[k] != c);
+			if (input[k] == '\0')
+				return (c);
+		}
+	}
+	return ('\0');
+}
+
+int		ft_cheak_quote(char *input)
+{
+	int		k;
+	char	c;
+
+	k = -1;
+	while (input[++k])
+	{
+		if (input[k] == '\'' || input[k] == '\"')
+		{
+			c = input[k];
+			while (input[++k] && input[k] != c)
+				;
+			if (input[k] == '\0')
+				return (0);
+		}
+	}
+	return (1);
 }

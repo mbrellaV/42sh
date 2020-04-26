@@ -1,31 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strsub.c                                        :+:      :+:    :+:   */
+/*   ft_put_n.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: qmartina <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/17 16:32:19 by qmartina          #+#    #+#             */
-/*   Updated: 2020/04/20 14:49:45 by wstygg           ###   ########.fr       */
+/*   Created: 2020/01/27 17:21:04 by qmartina          #+#    #+#             */
+/*   Updated: 2020/04/20 14:49:46 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../../inc/fshell.h"
 
-char	*ft_strsub(char const *s, unsigned int start,
-		size_t len)
+int		ft_put_n(int len, int i, int max)
 {
-	char	*tmp;
-	char	*delstr;
+	struct winsize wins;
 
-	if (!s || !(tmp = ft_memalloc(len + 1)) || (len + 1) == 0)
-		return (NULL);
-	delstr = tmp;
-	tmp = ft_strncpy(tmp, (char*)s + start, len);
-	if (tmp == NULL)
+	if (ioctl(2, TIOCGWINSZ, &wins) == -1)
+		return (-1);
+	if ((len + i) == wins.ws_col && i != max)
 	{
-		ft_strdel(&delstr);
-		return (NULL);
+		write(2, "\n", 1);
+		return (1);
 	}
-	return (tmp);
+	else
+	{
+		if (((len + i - wins.ws_col) % wins.ws_col) == 0 && i != max)
+		{
+			write(2, "\n", 1);
+			return (1);
+		}
+	}
+	return (-1);
 }

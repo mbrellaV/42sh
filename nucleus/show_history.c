@@ -1,31 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strsub.c                                        :+:      :+:    :+:   */
+/*   show_history.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: qmartina <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/17 16:32:19 by qmartina          #+#    #+#             */
-/*   Updated: 2020/04/20 14:49:45 by wstygg           ###   ########.fr       */
+/*   Created: 2020/01/28 16:44:37 by qmartina          #+#    #+#             */
+/*   Updated: 2020/04/20 14:49:46 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../inc/fshell.h"
 
-char	*ft_strsub(char const *s, unsigned int start,
-		size_t len)
+int		show_history(t_memory *q)
 {
-	char	*tmp;
-	char	*delstr;
+	t_memory	*tmp;
+	int			i;
+	int			sum;
+	t_memory	*dop;
 
-	if (!s || !(tmp = ft_memalloc(len + 1)) || (len + 1) == 0)
-		return (NULL);
-	delstr = tmp;
-	tmp = ft_strncpy(tmp, (char*)s + start, len);
-	if (tmp == NULL)
+	i = 0;
+	sum = 0;
+	tmp = q;
+	while (tmp->back)
+		tmp = tmp->back;
+	dop = tmp;
+	while (tmp != NULL)
 	{
-		ft_strdel(&delstr);
-		return (NULL);
+		sum++;
+		tmp = tmp->next;
 	}
-	return (tmp);
+	tmp = dop;
+	while (tmp->next)
+	{
+		if (sum - i < 16)
+			ft_printf("%d\t%s\n", i, tmp->inp);
+		tmp = tmp->next;
+		i++;
+	}
+	return (1);
 }

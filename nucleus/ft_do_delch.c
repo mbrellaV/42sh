@@ -1,31 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strsub.c                                        :+:      :+:    :+:   */
+/*   ft_do_delch.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: qmartina <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/17 16:32:19 by qmartina          #+#    #+#             */
-/*   Updated: 2020/04/20 14:49:45 by wstygg           ###   ########.fr       */
+/*   Created: 2020/01/27 17:47:39 by qmartina          #+#    #+#             */
+/*   Updated: 2020/04/20 14:49:46 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../../inc/fshell.h"
 
-char	*ft_strsub(char const *s, unsigned int start,
-		size_t len)
+void	ft_do_delch(t_readline *p)
 {
-	char	*tmp;
-	char	*delstr;
+	int		i;
 
-	if (!s || !(tmp = ft_memalloc(len + 1)) || (len + 1) == 0)
-		return (NULL);
-	delstr = tmp;
-	tmp = ft_strncpy(tmp, (char*)s + start, len);
-	if (tmp == NULL)
+	ft_cleanstr(p->index + p->len_hint, p);
+	p->index--;
+	i = p->index;
+	while (i < p->len)
 	{
-		ft_strdel(&delstr);
-		return (NULL);
+		p->buff[i] = p->buff[i + 1];
+		i++;
 	}
-	return (tmp);
+	p->buff[p->len] = 0;
+	p->len--;
+	p->len_hint = ft_printf_helper(p->mod);
+	write(2, p->buff, p->len);
+	ft_setcursor(p->index, p->len, p);
 }

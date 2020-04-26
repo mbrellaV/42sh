@@ -65,5 +65,6 @@ void				do_left(t_readline *p);
 void				do_right(t_readline *p);
 int					ft_error_d(t_readline *p);
 char				ft_cheak_quote_c(char *input);
+void 				init_nline(t_readline *p, t_nline *l);
 
 #endif

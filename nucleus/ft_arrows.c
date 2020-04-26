@@ -1,31 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strsub.c                                        :+:      :+:    :+:   */
+/*   ft_arrows.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: qmartina <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/17 16:32:19 by qmartina          #+#    #+#             */
-/*   Updated: 2020/04/20 14:49:45 by wstygg           ###   ########.fr       */
+/*   Created: 2020/01/27 17:36:10 by qmartina          #+#    #+#             */
+/*   Updated: 2020/04/20 14:49:46 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../../inc/fshell.h"
 
-char	*ft_strsub(char const *s, unsigned int start,
-		size_t len)
+void	ft_arrows(t_readline *p)
 {
-	char	*tmp;
-	char	*delstr;
-
-	if (!s || !(tmp = ft_memalloc(len + 1)) || (len + 1) == 0)
-		return (NULL);
-	delstr = tmp;
-	tmp = ft_strncpy(tmp, (char*)s + start, len);
-	if (tmp == NULL)
+	if (p->sum_read == 297)
 	{
-		ft_strdel(&delstr);
-		return (NULL);
+		while (p->index > 0)
+			do_left(p);
+		p->index = 0;
 	}
-	return (tmp);
+	else if (p->sum_read == 298)
+	{
+		while (p->index <= p->len)
+		{
+//			if (ft_put_n(p->len_hint, p->index, p->len) == -1)
+				do_right(p);
+		}
+		p->index--;
+	}
+	else if (p->sum_read == 190)
+		ft_back_slovo(p);
+	else if (p->sum_read == 188)
+		ft_next_slovo(p);
 }

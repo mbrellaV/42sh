@@ -66,11 +66,5 @@ void			ft_read_8(t_readline *p, t_memory *head, int mod)
 		else
 			norme_help(p, buf);
 	}
-	if (globals()->g_memory_head->inp && mod != 0)
-	{
-		if (globals()->g_memory_head->inp[0] != '\0')
-			ft_strcat(globals()->g_memory_head->inp, "\n");
-		ft_strcat(globals()->g_memory_head->inp, p->buff);
-	}
 	p->index = do_zamena_slash(p->buff, p);
 }

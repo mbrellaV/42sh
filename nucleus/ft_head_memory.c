@@ -43,11 +43,7 @@ t_memory	*ft_head_memory(void)
 	{
 		if (!(head->next = (t_memory *)malloc(sizeof(t_memory))))
 			ft_error_q(2);
-		if (!(head->next->inp = ft_memalloc(130000)))
-			ft_error_q(2);
-		if (line != NULL)
-			ft_strcat(head->next->inp, line);
-		//head->next->inp = ft_strdup(line);
+		head->next->inp = ft_strdup(line);
 		ft_strdel(&line);
 		head->next->next = NULL;
 		head->next->back = head;

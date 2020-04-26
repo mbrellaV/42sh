@@ -125,7 +125,11 @@ int		set_redirects_for_builtins(char **av)
 
 int		ft_whatis4_1(t_exectoken *tmp)
 {
-	if (ft_strcmp(tmp->file_args[0], "fg") == 0)
+	if (ft_strcmp(tmp->file_args[0], "true") == 0)
+		put_error_to_shell(0);
+	else if (ft_strcmp(tmp->file_args[0], "false") == 0)
+		put_error_to_shell(2);
+	else if (ft_strcmp(tmp->file_args[0], "fg") == 0)
 		do_fg(tmp->file_args);
 	else if (ft_strcmp(tmp->file_args[0], "bg") == 0)
 		do_bg(tmp->file_args);
@@ -158,6 +162,7 @@ int		do_builtin(t_exectoken *tmp)
 		return (-1);
 	if (tmp->file_opt != NULL && !(set_redirects_for_builtins(tmp->file_opt)))
 		return (-2);
+	put_error_to_shell(0);
 	if (ft_strcmp(tmp->file_args[0], "alias") == 0 ||
 	ft_strcmp(tmp->file_args[0], "unalias") == 0)
 		ft_do_change_alias(tmp->file_args);

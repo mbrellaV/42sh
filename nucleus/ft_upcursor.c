@@ -1,26 +1,50 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_start_read.c                                    :+:      :+:    :+:   */
+/*   ft_upcursor.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: qmartina <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/28 16:56:09 by qmartina          #+#    #+#             */
+/*   Created: 2020/01/27 17:25:29 by qmartina          #+#    #+#             */
 /*   Updated: 2020/04/20 14:49:46 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/fshell.h"
+#include "../../inc/fshell.h"
 
-void	ft_start_read(t_readline *p)
+void	ft_upcursor(t_readline *p)
 {
-	p->len_hint = ft_printf_helper(p->mod);
-	p->buff_size = 13000;
-	if (!(p->buff = ft_strnew(p->buff_size)))
-		ft_error_q(2);
-	p->index = 0;
-	p->len = 0;
-	p->esc = 0;
-	p->tab_size = 8;
-	p->tab = ft_arrnew(p->tab_size);
+	int i;
+	int len;
+	int len2;
+	struct winsize	wins;
+
+	if (ioctl(2, TIOCGWINSZ, &wins) == -1)
+		return ;
+	i = p->index;
+	len = 0;
+	while (--i >= 0 && p->buff[i] != '\n')
+		len++;
+	if (i == -1)
+	{
+		while (++i < wins.ws_col)
+			do_left(p);
+	}
+	else
+	{
+		len2 = 0;
+		while (--i >= 0 && p->buff[i] != '\n')
+			len2++;
+		if (i == -1)
+			len2 += p->len_hint - 1;
+		if (len2 > len)
+			len2++;
+		else
+			len2 = len + 1;
+		i = -1;
+		while (++i < len2)
+			do_left(p);
+	}
 }
+
+

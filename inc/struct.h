@@ -127,4 +127,13 @@ typedef struct				s_job
 	int						foreground;
 }							t_job;
 
+typedef	struct				s_nline
+{
+	int*					i_arr;
+	char**					arr;
+	int 					i;
+	int 					j;
+	int						k;
+}							t_nline;
+
 #endif
