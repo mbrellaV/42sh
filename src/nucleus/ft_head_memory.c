@@ -41,9 +41,9 @@ t_memory	*ft_head_memory(void)
 	head->back = NULL;
 	while (get_next_line_with_sym(fd, &line, -100))
 	{
-		if (!(head->next = (t_memory *)malloc(sizeof(t_memory))))
+		if (!(head->next = (t_memory *)ft_memalloc(sizeof(t_memory))))
 			ft_error_q(2);
-		if (!(head->next->inp = ft_memalloc(130000)))
+		if (!(head->next->inp = ft_memalloc(ft_strlen(line) + 1000)))
 			ft_error_q(2);
 		if (line != NULL)
 			ft_strcat(head->next->inp, line);

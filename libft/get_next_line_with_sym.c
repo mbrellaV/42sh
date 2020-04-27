@@ -24,9 +24,9 @@ int		get_next_line_with_sym(const int fd, char **line, char c)
 	char		buf[BUFF_SIZE + 1];
 	t_dop		*d;
 
-	d = ft_cr_new_node();
 	if (fd < 0 || !line || (!mas[fd] && !(mas[fd] = ft_strnew(1))))
 		return (-1);
+	d = ft_cr_new_node();
 	while (!ft_strchr(mas[fd], c) && (d->s = read(fd, buf, BUFF_SIZE)) > 0)
 	{
 		buf[d->s] = '\0';
