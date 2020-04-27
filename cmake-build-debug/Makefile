@@ -1068,6 +1068,87 @@ src/evaln/calc.c.s:
 	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/evaln/calc.c.s
 .PHONY : src/evaln/calc.c.s
 
+src/evaln/calc_error.o: src/evaln/calc_error.c.o
+
+.PHONY : src/evaln/calc_error.o
+
+# target to build an object file
+src/evaln/calc_error.c.o:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/evaln/calc_error.c.o
+.PHONY : src/evaln/calc_error.c.o
+
+src/evaln/calc_error.i: src/evaln/calc_error.c.i
+
+.PHONY : src/evaln/calc_error.i
+
+# target to preprocess a source file
+src/evaln/calc_error.c.i:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/evaln/calc_error.c.i
+.PHONY : src/evaln/calc_error.c.i
+
+src/evaln/calc_error.s: src/evaln/calc_error.c.s
+
+.PHONY : src/evaln/calc_error.s
+
+# target to generate assembly for a file
+src/evaln/calc_error.c.s:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/evaln/calc_error.c.s
+.PHONY : src/evaln/calc_error.c.s
+
+src/evaln/change_vars.o: src/evaln/change_vars.c.o
+
+.PHONY : src/evaln/change_vars.o
+
+# target to build an object file
+src/evaln/change_vars.c.o:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/evaln/change_vars.c.o
+.PHONY : src/evaln/change_vars.c.o
+
+src/evaln/change_vars.i: src/evaln/change_vars.c.i
+
+.PHONY : src/evaln/change_vars.i
+
+# target to preprocess a source file
+src/evaln/change_vars.c.i:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/evaln/change_vars.c.i
+.PHONY : src/evaln/change_vars.c.i
+
+src/evaln/change_vars.s: src/evaln/change_vars.c.s
+
+.PHONY : src/evaln/change_vars.s
+
+# target to generate assembly for a file
+src/evaln/change_vars.c.s:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/evaln/change_vars.c.s
+.PHONY : src/evaln/change_vars.c.s
+
+src/evaln/check_calc.o: src/evaln/check_calc.c.o
+
+.PHONY : src/evaln/check_calc.o
+
+# target to build an object file
+src/evaln/check_calc.c.o:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/evaln/check_calc.c.o
+.PHONY : src/evaln/check_calc.c.o
+
+src/evaln/check_calc.i: src/evaln/check_calc.c.i
+
+.PHONY : src/evaln/check_calc.i
+
+# target to preprocess a source file
+src/evaln/check_calc.c.i:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/evaln/check_calc.c.i
+.PHONY : src/evaln/check_calc.c.i
+
+src/evaln/check_calc.s: src/evaln/check_calc.c.s
+
+.PHONY : src/evaln/check_calc.s
+
+# target to generate assembly for a file
+src/evaln/check_calc.c.s:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/evaln/check_calc.c.s
+.PHONY : src/evaln/check_calc.c.s
+
 src/evaln/dop.o: src/evaln/dop.c.o
 
 .PHONY : src/evaln/dop.o
@@ -3801,6 +3882,15 @@ help:
 	@echo "... src/evaln/calc.o"
 	@echo "... src/evaln/calc.i"
 	@echo "... src/evaln/calc.s"
+	@echo "... src/evaln/calc_error.o"
+	@echo "... src/evaln/calc_error.i"
+	@echo "... src/evaln/calc_error.s"
+	@echo "... src/evaln/change_vars.o"
+	@echo "... src/evaln/change_vars.i"
+	@echo "... src/evaln/change_vars.s"
+	@echo "... src/evaln/check_calc.o"
+	@echo "... src/evaln/check_calc.i"
+	@echo "... src/evaln/check_calc.s"
 	@echo "... src/evaln/dop.o"
 	@echo "... src/evaln/dop.i"
 	@echo "... src/evaln/dop.s"

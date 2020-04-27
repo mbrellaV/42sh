@@ -120,3 +120,26 @@ int		ck_br(const char *str)
 	ft_strdel(&s);
 	return (1);
 }
+
+//int		ck_br(const char *str)
+//{
+//	char	*dopstr;
+//	int		i;
+//	int		size;
+//
+//	i = 0;
+//	dopstr = (char *)str;
+//	while (dopstr[i])
+//	{
+//		if (issc(dopstr[i]))
+//		{
+//			size = sc_size(&dopstr[i], dopstr[i]);
+//			if (size <  0)
+//				return (0);
+//			i += size;
+//		}
+//		else
+//			i++;
+//	}
+//	return (1);
+//}

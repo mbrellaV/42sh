@@ -12,7 +12,7 @@
 
 #include "eval_expr.h"
 
-t_int		*cr_new_el(void)
+t_int		*cr_new_el(char *s, int *error)
 {
 	t_int	*tmp;
 
@@ -20,7 +20,19 @@ t_int		*cr_new_el(void)
 		return (NULL);
 	tmp->ol = 0;
 	tmp->zl = 0;
-	tmp->i = 1;
+	tmp->i = 0;
+	tmp->d = 0;
+	tmp->last_token = 0;
+	tmp->s = s;
+	if (!(tmp->s = change_vars(s)))
+	{
+		*error = 1;
+		return (NULL);
+	}
+	if (!(tmp->stackos = (int*)ft_memalloc(4 * ft_strlen(tmp->s))))
+		return (NULL);
+	if (!(tmp->stackzn = (int*)ft_memalloc(4 * ft_strlen(tmp->s))))
+		return (NULL);
 	return (tmp);
 }
 
@@ -75,7 +87,7 @@ void		dostack(int *stackos, int *stackzn, int c, t_int *lastint)
 		addzn(stackzn, c, lastint);
 	}
 	if (is_znak(c))
-		lastint->i = 1;
+		lastint->d = 1;
 }
 
 int			calcend(int **stackos, int **stackzn, t_int **str)

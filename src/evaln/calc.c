@@ -16,15 +16,15 @@ static void	calc_next(int *stackos, t_int *str, int c)
 {
 	if ((c - 300) == ('!' + '='))
 		stackos[str->ol - 2] = stackos[str->ol - 2] != stackos[str->ol - 1];
-	if ((c - 300) == ('=' + '='))
+	else if ((c - 300) == ('=' + '='))
 		stackos[str->ol - 2] = stackos[str->ol - 2] == stackos[str->ol - 1];
-	if ((c - 300) == ('>' + '='))
+	else if ((c - 300) == ('>' + '='))
 		stackos[str->ol - 2] = stackos[str->ol - 2] >= stackos[str->ol - 1];
-	if ((c - 300) == ('<' + '='))
+	else if ((c - 300) == ('<' + '='))
 		stackos[str->ol - 2] = stackos[str->ol - 2] <= stackos[str->ol - 1];
-	if ((c - 300) == ('&' + '&'))
+	else if ((c - 300) == ('&' + '&'))
 		stackos[str->ol - 2] = stackos[str->ol - 2] && stackos[str->ol - 1];
-	if ((c - 300) == ('|' + '|'))
+	else if ((c - 300) == ('|' + '|'))
 		stackos[str->ol - 2] = stackos[str->ol - 2] || stackos[str->ol - 1];
 	subos(stackos, str);
 }
@@ -33,17 +33,17 @@ void		calc(int *stackos, t_int *str, int c)
 {
 	if ((c - 300) == '-')
 		stackos[str->ol - 2] = stackos[str->ol - 2] - stackos[str->ol - 1];
-	if ((c - 300) == '+')
+	else if ((c - 300) == '+')
 		stackos[str->ol - 2] = stackos[str->ol - 2] + stackos[str->ol - 1];
-	if ((c - 300) == '*')
+	else if ((c - 300) == '*')
 		stackos[str->ol - 2] = stackos[str->ol - 2] * stackos[str->ol - 1];
-	if ((c - 300) == '/')
+	else if ((c - 300) == '/')
 		stackos[str->ol - 2] = stackos[str->ol - 2] / stackos[str->ol - 1];
-	if ((c - 300) == '%')
+	else if ((c - 300) == '%')
 		stackos[str->ol - 2] = stackos[str->ol - 2] % stackos[str->ol - 1];
-	if ((c - 300) == '>')
+	else if ((c - 300) == '>')
 		stackos[str->ol - 2] = stackos[str->ol - 2] > stackos[str->ol - 1];
-	if ((c - 300) == '<')
+	else if ((c - 300) == '<')
 		stackos[str->ol - 2] = stackos[str->ol - 2] < stackos[str->ol - 1];
 	calc_next(stackos, str, c);
 }

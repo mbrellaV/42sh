@@ -58,19 +58,20 @@ static void	cycle(char *str, int *i, char *newstr)
 		ft_strcat(newstr, dopstr);
 		*i += c_size(&str[*i], str[*i]) + 2;
 	}
+	else if (str[*i] == '$')
+	{
+		dop = ft_strsub(str, *i, word_size(&str[*i]));
+		ft_strcat(newstr, dop);
+		(*i) += word_size(&str[*i]);
+	}
 	else if (isword(str[*i]) == 1)
 	{
 		dop = ft_strsub(str, *i, word_size(&str[*i]));
 		if (!(dopstr = ft_get_alias(dop)))
-		{
 			ft_strcat(newstr, dop);
-			*i += word_size(&str[*i]);
-		}
 		else
-		{
 			ft_strcat(newstr, dopstr);
-			*i += word_size(&str[*i]);
-		}
+		*i += word_size(&str[*i]);
 	}
 	else
 	{

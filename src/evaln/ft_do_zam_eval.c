@@ -94,6 +94,12 @@ int			check_symbols(char *str)
 //	return (NULL);
 //}
 
+char		*return_with_del(char *str)
+{
+	ft_strdel(&str);
+	return (NULL);
+}
+
 char		*ft_do_cut(char *tmp, int *error)
 {
 	int					dopi;
@@ -117,12 +123,8 @@ char		*ft_do_cut(char *tmp, int *error)
 				dop = str_for_rec;
 			str = ft_itoa(eval_expr(dop, error));
 			(str_for_del != dop) ? ft_strdel(&str_for_del) : 0;
-			//ft_strdel(&dop);
 			if (*error == 1)
-			{
-				ft_strdel(&str);
-				return (NULL);
-			}
+				return (return_with_del(str));
 			return (str);
 		}
 	return (NULL);
@@ -145,10 +147,7 @@ char		*ft_main_calc_rec(char *mas, int *error)
 		{
 			d++;
 			if (!(cut_str = ft_do_cut(mas + 1, error)))
-			{
-				ft_strdel(&newstr);
-				return (NULL);
-			}
+				return (return_with_del(newstr));
 			i += sc_size(&mas[i + 1], mas[i + 1]);
 		}
 		else
@@ -162,8 +161,7 @@ char		*ft_main_calc_rec(char *mas, int *error)
 	}
 	if (d > 0)
 		return (newstr);
-	ft_strdel(&newstr);
-	return (NULL);
+	return (return_with_del(newstr));
 }
 
 char		*ft_do_zam_eval(char *mas)
@@ -180,6 +178,7 @@ char		*ft_do_zam_eval(char *mas)
 	{
 		if (error == 1)
 		{
+			put_error_to_shell(2);
 			ft_dprintf(globals()->all_opened_fds[2], "parse error in eval near: |%s|\n", mas);
 			ft_strdel(&mas);
 			return (NULL);

@@ -1773,6 +1773,45 @@ CMakeFiles/42save.dir/src/parser/is_system_symbol.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/42save.dir/src/parser/is_system_symbol.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/petruha2001/42sh/src/parser/is_system_symbol.c -o CMakeFiles/42save.dir/src/parser/is_system_symbol.c.s
 
+CMakeFiles/42save.dir/src/evaln/change_vars.c.o: CMakeFiles/42save.dir/flags.make
+CMakeFiles/42save.dir/src/evaln/change_vars.c.o: ../src/evaln/change_vars.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/petruha2001/42sh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_133) "Building C object CMakeFiles/42save.dir/src/evaln/change_vars.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/42save.dir/src/evaln/change_vars.c.o   -c /home/petruha2001/42sh/src/evaln/change_vars.c
+
+CMakeFiles/42save.dir/src/evaln/change_vars.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/42save.dir/src/evaln/change_vars.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/petruha2001/42sh/src/evaln/change_vars.c > CMakeFiles/42save.dir/src/evaln/change_vars.c.i
+
+CMakeFiles/42save.dir/src/evaln/change_vars.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/42save.dir/src/evaln/change_vars.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/petruha2001/42sh/src/evaln/change_vars.c -o CMakeFiles/42save.dir/src/evaln/change_vars.c.s
+
+CMakeFiles/42save.dir/src/evaln/calc_error.c.o: CMakeFiles/42save.dir/flags.make
+CMakeFiles/42save.dir/src/evaln/calc_error.c.o: ../src/evaln/calc_error.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/petruha2001/42sh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_134) "Building C object CMakeFiles/42save.dir/src/evaln/calc_error.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/42save.dir/src/evaln/calc_error.c.o   -c /home/petruha2001/42sh/src/evaln/calc_error.c
+
+CMakeFiles/42save.dir/src/evaln/calc_error.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/42save.dir/src/evaln/calc_error.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/petruha2001/42sh/src/evaln/calc_error.c > CMakeFiles/42save.dir/src/evaln/calc_error.c.i
+
+CMakeFiles/42save.dir/src/evaln/calc_error.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/42save.dir/src/evaln/calc_error.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/petruha2001/42sh/src/evaln/calc_error.c -o CMakeFiles/42save.dir/src/evaln/calc_error.c.s
+
+CMakeFiles/42save.dir/src/evaln/check_calc.c.o: CMakeFiles/42save.dir/flags.make
+CMakeFiles/42save.dir/src/evaln/check_calc.c.o: ../src/evaln/check_calc.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/petruha2001/42sh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_135) "Building C object CMakeFiles/42save.dir/src/evaln/check_calc.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/42save.dir/src/evaln/check_calc.c.o   -c /home/petruha2001/42sh/src/evaln/check_calc.c
+
+CMakeFiles/42save.dir/src/evaln/check_calc.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/42save.dir/src/evaln/check_calc.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/petruha2001/42sh/src/evaln/check_calc.c > CMakeFiles/42save.dir/src/evaln/check_calc.c.i
+
+CMakeFiles/42save.dir/src/evaln/check_calc.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/42save.dir/src/evaln/check_calc.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/petruha2001/42sh/src/evaln/check_calc.c -o CMakeFiles/42save.dir/src/evaln/check_calc.c.s
+
 # Object files for target 42save
 42save_OBJECTS = \
 "CMakeFiles/42save.dir/src/builtins/alias/alias.c.o" \
@@ -1906,7 +1945,10 @@ CMakeFiles/42save.dir/src/parser/is_system_symbol.c.s: cmake_force
 "CMakeFiles/42save.dir/src/ft_main_what.c.o" \
 "CMakeFiles/42save.dir/src/put_error_to_env.c.o" \
 "CMakeFiles/42save.dir/src/hash/print_hash.c.o" \
-"CMakeFiles/42save.dir/src/parser/is_system_symbol.c.o"
+"CMakeFiles/42save.dir/src/parser/is_system_symbol.c.o" \
+"CMakeFiles/42save.dir/src/evaln/change_vars.c.o" \
+"CMakeFiles/42save.dir/src/evaln/calc_error.c.o" \
+"CMakeFiles/42save.dir/src/evaln/check_calc.c.o"
 
 # External object files for target 42save
 42save_EXTERNAL_OBJECTS =
@@ -2043,10 +2085,13 @@ CMakeFiles/42save.dir/src/parser/is_system_symbol.c.s: cmake_force
 42save: CMakeFiles/42save.dir/src/put_error_to_env.c.o
 42save: CMakeFiles/42save.dir/src/hash/print_hash.c.o
 42save: CMakeFiles/42save.dir/src/parser/is_system_symbol.c.o
+42save: CMakeFiles/42save.dir/src/evaln/change_vars.c.o
+42save: CMakeFiles/42save.dir/src/evaln/calc_error.c.o
+42save: CMakeFiles/42save.dir/src/evaln/check_calc.c.o
 42save: CMakeFiles/42save.dir/build.make
 42save: ../libft/libft.a
 42save: CMakeFiles/42save.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/petruha2001/42sh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_133) "Linking C executable 42save"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/petruha2001/42sh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_136) "Linking C executable 42save"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/42save.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
