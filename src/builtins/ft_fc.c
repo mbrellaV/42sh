@@ -6,7 +6,7 @@
 /*   By: wstygg <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/28 22:11:46 by wstygg            #+#    #+#             */
-/*   Updated: 2020/04/29 00:50:43 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/04/29 00:51:33 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,6 @@ static int			check_flag(char **av, t_fc *f)
 	}
 	return (0);
 }
-
 
 static char			*read_fc(int fd)
 {

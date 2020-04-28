@@ -6,7 +6,7 @@
 /*   By: mbrella <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/11 10:58:44 by mbrella           #+#    #+#             */
-/*   Updated: 2020/04/29 00:30:21 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/04/29 00:41:23 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -142,7 +142,7 @@ void				del_one_node_in_lextokens(t_lextoken *token_to_del, t_lextoken **first_t
 char				*distribute_echo(char **str, int k, int flag,
 						t_builtins *echo);
 char				*ft_hex(char *str);
-void				delete_fc_command();
+void				delete_fc_command(void);
 int					launch(char *str, int put_name);
 int					set_new_var(char *str1, char *str2, char ***envl);
 int					ft_cd(char **str);

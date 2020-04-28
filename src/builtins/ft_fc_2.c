@@ -6,13 +6,13 @@
 /*   By: wstygg <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/29 00:35:48 by wstygg            #+#    #+#             */
-/*   Updated: 2020/04/29 00:36:14 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/04/29 00:41:23 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fshell.h"
 
-void			delete_fc_command()
+void				delete_fc_command(void)
 {
 	t_memory		*to_del;
 
@@ -23,7 +23,7 @@ void			delete_fc_command()
 	free(to_del);
 }
 
-int			launch(char *str, int put_name)
+int					launch(char *str, int put_name)
 {
 	register int	i;
 	char			**split;
