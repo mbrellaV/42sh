@@ -420,6 +420,60 @@ src/builtins/ft_echo2.c.s:
 	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/builtins/ft_echo2.c.s
 .PHONY : src/builtins/ft_echo2.c.s
 
+src/builtins/ft_fc.o: src/builtins/ft_fc.c.o
+
+.PHONY : src/builtins/ft_fc.o
+
+# target to build an object file
+src/builtins/ft_fc.c.o:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/builtins/ft_fc.c.o
+.PHONY : src/builtins/ft_fc.c.o
+
+src/builtins/ft_fc.i: src/builtins/ft_fc.c.i
+
+.PHONY : src/builtins/ft_fc.i
+
+# target to preprocess a source file
+src/builtins/ft_fc.c.i:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/builtins/ft_fc.c.i
+.PHONY : src/builtins/ft_fc.c.i
+
+src/builtins/ft_fc.s: src/builtins/ft_fc.c.s
+
+.PHONY : src/builtins/ft_fc.s
+
+# target to generate assembly for a file
+src/builtins/ft_fc.c.s:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/builtins/ft_fc.c.s
+.PHONY : src/builtins/ft_fc.c.s
+
+src/builtins/ft_fc_2.o: src/builtins/ft_fc_2.c.o
+
+.PHONY : src/builtins/ft_fc_2.o
+
+# target to build an object file
+src/builtins/ft_fc_2.c.o:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/builtins/ft_fc_2.c.o
+.PHONY : src/builtins/ft_fc_2.c.o
+
+src/builtins/ft_fc_2.i: src/builtins/ft_fc_2.c.i
+
+.PHONY : src/builtins/ft_fc_2.i
+
+# target to preprocess a source file
+src/builtins/ft_fc_2.c.i:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/builtins/ft_fc_2.c.i
+.PHONY : src/builtins/ft_fc_2.c.i
+
+src/builtins/ft_fc_2.s: src/builtins/ft_fc_2.c.s
+
+.PHONY : src/builtins/ft_fc_2.s
+
+# target to generate assembly for a file
+src/builtins/ft_fc_2.c.s:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/builtins/ft_fc_2.c.s
+.PHONY : src/builtins/ft_fc_2.c.s
+
 src/builtins/ft_type.o: src/builtins/ft_type.c.o
 
 .PHONY : src/builtins/ft_type.o
@@ -3810,6 +3864,12 @@ help:
 	@echo "... src/builtins/ft_echo2.o"
 	@echo "... src/builtins/ft_echo2.i"
 	@echo "... src/builtins/ft_echo2.s"
+	@echo "... src/builtins/ft_fc.o"
+	@echo "... src/builtins/ft_fc.i"
+	@echo "... src/builtins/ft_fc.s"
+	@echo "... src/builtins/ft_fc_2.o"
+	@echo "... src/builtins/ft_fc_2.i"
+	@echo "... src/builtins/ft_fc_2.s"
 	@echo "... src/builtins/ft_type.o"
 	@echo "... src/builtins/ft_type.i"
 	@echo "... src/builtins/ft_type.s"

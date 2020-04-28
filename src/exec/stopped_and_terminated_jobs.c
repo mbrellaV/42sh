@@ -117,8 +117,8 @@ void			update_status(void)
 		{
 			pid = waitpid(pr->pid, &status, WNOHANG);
 			//errno = 0;
-			dprintf(2, "\n|%d, %d, %d, %d, %d, %d, %d|\n", errno, pr->pid,
-					pid, status, WEXITSTATUS(status), WIFSIGNALED(status), WTERMSIG(status));
+//			dprintf(2, "\n|%d, %d, %d, %d, %d, %d, %d|\n", errno, pr->pid,
+//					pid, status, WEXITSTATUS(status), WIFSIGNALED(status), WTERMSIG(status));
 			mark_process_status(pid, status, job);
 			pr = pr->next;
 		}

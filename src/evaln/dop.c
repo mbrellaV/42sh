@@ -16,7 +16,7 @@ t_int		*cr_new_el(char *s, int *error)
 {
 	t_int	*tmp;
 
-	if (!(tmp = malloc(sizeof(t_int))))
+	if (!(tmp = ft_memalloc(sizeof(t_int))))
 		return (NULL);
 	tmp->ol = 0;
 	tmp->zl = 0;
@@ -27,6 +27,15 @@ t_int		*cr_new_el(char *s, int *error)
 	if (!(tmp->s = change_vars(s)))
 	{
 		*error = 1;
+		ft_strdel(&tmp->s);
+		free(tmp);
+		return (NULL);
+	}
+	if (!check_calc_sc(tmp->s))
+	{
+		*error = 1;
+		ft_strdel(&tmp->s);
+		free(tmp);
 		return (NULL);
 	}
 	if (!(tmp->stackos = (int*)ft_memalloc(4 * ft_strlen(tmp->s))))

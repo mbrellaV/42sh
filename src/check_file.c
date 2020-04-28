@@ -12,6 +12,19 @@
 
 #include "../inc/fshell.h"
 
+void				ft_free_split(char **split)
+{
+	register int	i;
+
+	i = -1;
+	while (split[++i])
+	{
+		free(split[i]);
+		split[i] = NULL;
+	}
+	free(split);
+	split = NULL;
+}
 int					check_file(char *file, unsigned check)
 {
 	struct stat		st;

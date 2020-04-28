@@ -15,6 +15,8 @@ set(CMAKE_DEPENDS_CHECK_C
   "/home/petruha2001/42sh/src/builtins/ft_cd_3.c" "/home/petruha2001/42sh/cmake-build-debug/CMakeFiles/42save.dir/src/builtins/ft_cd_3.c.o"
   "/home/petruha2001/42sh/src/builtins/ft_echo.c" "/home/petruha2001/42sh/cmake-build-debug/CMakeFiles/42save.dir/src/builtins/ft_echo.c.o"
   "/home/petruha2001/42sh/src/builtins/ft_echo2.c" "/home/petruha2001/42sh/cmake-build-debug/CMakeFiles/42save.dir/src/builtins/ft_echo2.c.o"
+  "/home/petruha2001/42sh/src/builtins/ft_fc.c" "/home/petruha2001/42sh/cmake-build-debug/CMakeFiles/42save.dir/src/builtins/ft_fc.c.o"
+  "/home/petruha2001/42sh/src/builtins/ft_fc_2.c" "/home/petruha2001/42sh/cmake-build-debug/CMakeFiles/42save.dir/src/builtins/ft_fc_2.c.o"
   "/home/petruha2001/42sh/src/builtins/ft_type.c" "/home/petruha2001/42sh/cmake-build-debug/CMakeFiles/42save.dir/src/builtins/ft_type.c.o"
   "/home/petruha2001/42sh/src/calc/srcs/calc.c" "/home/petruha2001/42sh/cmake-build-debug/CMakeFiles/42save.dir/src/calc/srcs/calc.c.o"
   "/home/petruha2001/42sh/src/calc/srcs/calc_add_fun.c" "/home/petruha2001/42sh/cmake-build-debug/CMakeFiles/42save.dir/src/calc/srcs/calc_add_fun.c.o"
