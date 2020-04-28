@@ -29,6 +29,7 @@ const char		*g_builtins[BIL_NUM] =
 	"fg",
 	"bg",
 	"jobs",
+	"fc",
 	NULL
 };
 

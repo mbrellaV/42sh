@@ -6,7 +6,7 @@
 /*   By: mbrella <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/11 10:58:44 by mbrella           #+#    #+#             */
-/*   Updated: 2020/04/20 14:52:37 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/04/29 00:30:21 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,24 +42,36 @@
 # include "hash.h"
 # include "../src/qft_printf/ft_printf.h"
 
-# define RED	"\x1B[31m"
-# define GRN	"\x1B[32m"
-# define YEL	"\x1B[33m"
-# define BLU	"\x1B[34m"
-# define MAG	"\x1B[35m"
-# define CYN	"\x1B[36m"
-# define WHT	"\x1B[37m"
-# define RESET	"\x1B[0m"
+# define RED		"\x1B[31m"
+# define GRN		"\x1B[32m"
+# define YEL		"\x1B[33m"
+# define BLU		"\x1B[34m"
+# define MAG		"\x1B[35m"
+# define CYN		"\x1B[36m"
+# define WHT		"\x1B[37m"
+# define RESET		"\x1B[0m"
 
-# define IS_E	0
-# define IS_R	1
-# define IS_W	2
-# define IS_X	4
-# define IS_D	8
-# define IS_L	16
+# define IS_E		0
+# define IS_R		1
+# define IS_W		2
+# define IS_X		4
+# define IS_D		8
+# define IS_L		16
 
-# define SHELL_NAME "42sh"
-# define BIL_NUM 16
+# define FC_VIM		2
+# define FC_EMACS	4
+# define FC_NANO	8
+
+# define SHELL_NAME	"42sh"
+# define BIL_NUM 17
+
+# define FC_US		"42sh: fc: error!\nusing: fc -[es] [editor]\n"
+
+typedef struct		s_fc
+{
+	int				silent;
+	int				editor;
+}					t_fc;
 
 typedef struct		s_global
 {
@@ -130,10 +142,13 @@ void				del_one_node_in_lextokens(t_lextoken *token_to_del, t_lextoken **first_t
 char				*distribute_echo(char **str, int k, int flag,
 						t_builtins *echo);
 char				*ft_hex(char *str);
+void				delete_fc_command();
+int					launch(char *str, int put_name);
 int					set_new_var(char *str1, char *str2, char ***envl);
 int					ft_cd(char **str);
 void				do_all_var(char **env);
 int					do_cd(t_builtins *cd, char *str);
+int					do_fc(char **av);
 t_job				*get_last_job();
 char				*get_pwd(t_builtins *cd);
 char				*get_oldpwd(t_builtins *cd);
@@ -150,6 +165,7 @@ void				ft_fun_fork(char *path, char **arg, pid_t pgid,
 						int foreground);
 int					ft_findenv(char *s, char **env);
 void				ft_do_export(char **mas);
+void				ft_free_split(char **split);
 int					ft_signal(int signo, t_readline *p);
 void				ft_fork_signal(int signo);
 int					ft_main_what(t_exectoken *tmp);

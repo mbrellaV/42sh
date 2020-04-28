@@ -6,7 +6,7 @@
 /*   By: wstygg <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/15 18:29:17 by wstygg            #+#    #+#             */
-/*   Updated: 2020/04/20 14:49:45 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/04/28 22:14:10 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -147,6 +147,8 @@ int		ft_whatis4_1(t_exectoken *tmp)
 		print_hash();
 	else if (!ft_strcmp(tmp->file_args[0], "type"))
 		ft_type(tmp->file_args);
+	else if (!ft_strcmp(tmp->file_args[0], "fc"))
+		do_fc(tmp->file_args);
 	else
 		return (0);
 	return (1);

@@ -6,7 +6,7 @@
 /*   By: wstygg <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/13 18:29:27 by wstygg            #+#    #+#             */
-/*   Updated: 2020/04/20 14:49:46 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/04/28 22:14:50 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,33 +96,6 @@ int			ft_do_zam_alias(char *str, t_readline *p)
 	ft_strdel(&str);
 	return (ft_strlen(p->buff));
 }
-//char		*ft_do_zam_alias(char *str)
-//{
-//	char	*tmp;
-//	int		i;
-//
-//	i = 0;
-//	if (str == NULL)
-//		return (NULL);
-//	if (*str == '\0')
-//		return (str);
-//	while (str[i])
-//	{
-//
-//		i++;
-//	}
-//	if (ft_findenv(str, g_alias) != -404 && ft_strcmp(str, "unalias") != 0
-//		&& ft_strcmp(str, "export") != 0 &&
-//	ft_strcmp(str, "unset") != 0 && ft_strcmp(str, "unexport") != 0
-//		&& ft_strcmp(str, "alias") != 0)
-//	{
-//		tmp = str;
-//		if (!(str = ft_get_alias(str)))
-//			return (ft_memalloc(130000));
-//		ft_strdel(&tmp);
-//	}
-//	return (str);
-//}
 
 int			alias_error(int error, char *tmp1, char *tmp2)
 {
@@ -160,7 +133,7 @@ int			ft_do_change_alias(char **mas)
 			tmp1 = ft_strsub(mas[1], 0, ft_strstr(mas[1], "=") - mas[1]);
 			tmp2 = ft_strsub(mas[1], ft_strstr(mas[1], "=") -
 				mas[1] + 1, ft_strlen(mas[1]));
-			if (is_system_symbol(tmp2) == 1)
+			if (is_system_symbol(*tmp2) == 1)
 				return (alias_error(2, tmp1, tmp2));
 			set_new_var(tmp1, tmp2, &globals()->g_alias);
 			ft_strdel(&tmp1);
