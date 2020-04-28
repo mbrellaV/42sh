@@ -185,10 +185,14 @@ int		do_builtin(t_exectoken *tmp)
 
 int		ft_whatis2_1(t_process *tmp)
 {
-	if (ft_strcmp(tmp->file_args[0], "fg") == 0)
-		;
+	if (ft_strcmp(tmp->file_args[0], "true") == 0)
+		put_error_to_shell(0);
+	else if (ft_strcmp(tmp->file_args[0], "false") == 0)
+		put_error_to_shell(2);
+	else if (ft_strcmp(tmp->file_args[0], "fg") == 0)
+		do_fg(tmp->file_args);
 	else if (ft_strcmp(tmp->file_args[0], "bg") == 0)
-		;
+		do_bg(tmp->file_args);
 	else if (ft_strcmp(tmp->file_args[0], "jobs") == 0)
 		do_job_notification();
 	else if (ft_strcmp(tmp->file_args[0], "echo") == 0)
@@ -216,6 +220,7 @@ int		ft_whatis2(t_process *tmp)
 		return (-2);
 	if (ft_strcmp(tmp->file_args[0], "exit") == 0 && tmp->file_args[1] == NULL)
 		return (-1);
+	put_error_to_shell(0);
 	if (ft_strcmp(tmp->file_args[0], "alias") == 0 ||
 		ft_strcmp(tmp->file_args[0], "unalias") == 0)
 		ft_do_change_alias(tmp->file_args);
@@ -224,7 +229,7 @@ int		ft_whatis2(t_process *tmp)
 	else if (ft_strcmp(tmp->file_args[0], "export") == 0)
 		ft_do_export(tmp->file_args);
 	else if (ft_strcmp(tmp->file_args[0], "unset") == 0 &&
-		tmp->file_args[1] != NULL)
+			 tmp->file_args[1] != NULL)
 	{
 		unset_var(tmp->file_args[1], &globals()->g_env);
 		unset_var(tmp->file_args[1], &globals()->g_all_var);

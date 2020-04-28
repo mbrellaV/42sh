@@ -67,8 +67,6 @@ int				mark_process_status(pid_t pid, int status, t_job *job)
 	}
 	else if (pid == 0 || errno == ECHILD)
 		return (-1);
-	else
-		perror("waitpid");
 	return (-1);
 }
 
@@ -99,6 +97,8 @@ void			update_status(void)
 	pid_t		pid;
 	int			counter;
 	int			pr_count;
+	t_job		*job;
+	t_process	*pr;
 
 	pr_count = process_count();
 	status = 0;
@@ -108,6 +108,21 @@ void			update_status(void)
 		pid = waitpid(WAIT_ANY, &status, WUNTRACED | WNOHANG);
 		mark_process_status(pid, status, NULL);
 		counter++;
+	}
+	job = globals()->g_f_job;
+	while (job)
+	{
+		pr = job->first_process;
+		while (pr)
+		{
+			pid = waitpid(pr->pid, &status, WNOHANG);
+			//errno = 0;
+			dprintf(2, "\n|%d, %d, %d, %d, %d, %d, %d|\n", errno, pr->pid,
+					pid, status, WEXITSTATUS(status), WIFSIGNALED(status), WTERMSIG(status));
+			mark_process_status(pid, status, job);
+			pr = pr->next;
+		}
+		job = job->next;
 	}
 }
 

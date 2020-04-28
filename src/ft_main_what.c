@@ -63,5 +63,6 @@ int			ft_main_what(t_exectoken *tmp)
 			return (-1);
 	}
 	do_job_del();
+	do_job_notification();
 	return (1);
 }
