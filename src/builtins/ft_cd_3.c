@@ -87,7 +87,7 @@ int				do_cd(t_builtins *cd, char *str)
 			return (!res_d ? ft_cd_error(str, 3, 0) : ft_cd_error(str, 6, 0));
 	}
 	if (!ft_strcmp(str, "-") && (k = ft_findenv("PWD=", globals()->g_env)) != -404)
-		ft_dprintf(globals()->all_opened_fds[1], "%s\n", globals()->g_env[k] + 4);
+		ft_dprintf(globals()->fd[1], "%s\n", globals()->g_env[k] + 4);
 	free(full_path);
 	return (0);
 }

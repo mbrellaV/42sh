@@ -6,7 +6,7 @@
 /*   By: qmartina <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/18 17:15:58 by qmartina          #+#    #+#             */
-/*   Updated: 2020/04/20 14:49:46 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/04/29 20:01:50 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,8 @@ static int		check_status(t_pstat *pstat, int status, pid_t pid, t_job *job)
 		while (pstat->ptmp != pstat->p && (pstat->ptmp->completed = 1))
 			pstat->ptmp = pstat->ptmp->next;
 		if (WIFSIGNALED(status))
-			ft_dprintf(globals()->all_opened_fds[2], "%d: Terminated by signal %d.\n",
-				(int)pid, WTERMSIG(pstat->p->status));
+			ft_dprintf(globals()->fd[2], "%d: Terminated by signal %d.\n",
+					   (int)pid, WTERMSIG(pstat->p->status));
 	}
 	return (0);
 }
@@ -63,7 +63,7 @@ int				mark_process_status(pid_t pid, int status, t_job *job)
 			}
 			pstat.j = pstat.j->next;
 		}
-		return (!ft_dprintf(globals()->all_opened_fds[2], "No child process %d.\n", pid) - 1);
+		return (!ft_dprintf(globals()->fd[2], "No child process %d.\n", pid) - 1);
 	}
 	else if (pid == 0 || errno == ECHILD)
 		return (-1);

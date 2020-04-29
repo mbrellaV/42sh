@@ -37,9 +37,9 @@ int		read_form_file(t_readline *p)
 int		main_cycle(t_readline *p, t_exectoken **start_token)
 {
 	init_shell();
-	if (globals()->all_opened_fds != NULL)
-		free(globals()->all_opened_fds);
-	if (!(globals()->all_opened_fds = ft_create_opened_fds()))
+	if (globals()->fd != NULL)
+		free(globals()->fd);
+	if (!(globals()->fd = ft_create_opened_fds()))
 		return (-1);
 	if (!set_input_mode())
 	{

@@ -28,7 +28,7 @@ int			check_symbols(char *str)
 		{
 			ft_strdel(&str);
 			put_error_to_shell(2);
-			ft_dprintf(globals()->all_opened_fds[2], "parse error in eval near: |%c|\n", str[i]);
+			ft_dprintf(globals()->fd[2], "parse error in eval near: |%c|\n", str[i]);
 			return (-1);
 		}
 		i++;
@@ -179,7 +179,7 @@ char		*ft_do_zam_eval(char *mas)
 		if (error == 1)
 		{
 			put_error_to_shell(2);
-			ft_dprintf(globals()->all_opened_fds[2], "parse error in eval near: |%s|\n", mas);
+			ft_dprintf(globals()->fd[2], "parse error in eval near: |%s|\n", mas);
 			ft_strdel(&mas);
 			return (NULL);
 		}

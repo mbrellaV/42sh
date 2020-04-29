@@ -14,8 +14,8 @@
 
 void		format_job_info(t_job *j, const char *status, int num)
 {
-	ft_dprintf(globals()->all_opened_fds[2], "[%d] + %ld (%s): %s\n", num,
-			(long)j->pgid, status, j->command);
+	ft_dprintf(globals()->fd[2], "[%d] + %ld (%s): %s\n", num,
+			   (long)j->pgid, status, j->command);
 }
 
 void		do_job_notification(void)

@@ -6,23 +6,18 @@
 /*   By: mbrella <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/04 14:02:04 by mbrella           #+#    #+#             */
-/*   Updated: 2020/04/20 14:49:45 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/04/29 23:10:20 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_nbrlen(int n)
+int	ft_nbrlen(int n)
 {
-	int i;
-
-	i = 0;
 	if (n == 0)
 		return (1);
-	while (n > 0)
-	{
-		i++;
-		n = n / 10;
-	}
-	return (i);
+	else if (n / base > 0)
+		return (1 + ft_nbrlen(n / base, base));
+	else
+		return (1);
 }

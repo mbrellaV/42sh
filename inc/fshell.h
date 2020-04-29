@@ -6,7 +6,7 @@
 /*   By: mbrella <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/11 10:58:44 by mbrella           #+#    #+#             */
-/*   Updated: 2020/04/29 00:41:23 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/04/29 22:45:21 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,12 +65,16 @@
 # define SHELL_NAME	"42sh"
 # define BIL_NUM 17
 
-# define FC_US		"42sh: fc: error!\nusing: fc -[es] [editor]\n"
+# define FC_US "42sh: fc: error!\nusing: fc -[eslr] [editor] [range | number]\n"
 
 typedef struct		s_fc
 {
+	int				l;
+	int				r;
+	int				h_size;
 	int				silent;
 	int				editor;
+	int				range[3];
 }					t_fc;
 
 typedef struct		s_global
@@ -86,7 +90,7 @@ typedef struct		s_global
 	char			**g_all_var;
 	t_memory		*g_memory_head;
 	t_job			*g_f_job;
-	int				*all_opened_fds;
+	int				*fd;
 }					t_global;
 
 typedef struct		s_del
@@ -137,6 +141,7 @@ int					ft_do_change_alias(char **mas);
 char				*do_obr_zamena(char *line);
 void				ft_realloc_all(int k, char ***envl);
 void				ft_echo(char **str);
+char				*get_hist_by_id(int id, int len);
 char				*ft_slash(char *str, t_builtins *echo);
 void				del_one_node_in_lextokens(t_lextoken *token_to_del, t_lextoken **first_token);
 char				*distribute_echo(char **str, int k, int flag,
@@ -181,6 +186,7 @@ int					ft_norm_pipe(int p1, int *fd_in, int p0,
 int					ft_error_args(t_exectoken *tmp);
 void				ft_file_create(t_exectoken *head);
 int					ft_what_flag(char *opt);
+int					calc_h_size();
 int					ft_put_info(void);
 int					ft_env_len(char **env);
 char				*do_reverse_zamena(char *str);

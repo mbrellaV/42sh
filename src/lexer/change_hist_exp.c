@@ -15,7 +15,7 @@
 char				*history_error(char *dopline)
 {
 	put_error_to_shell(2);
-	ft_dprintf(globals()->all_opened_fds[2], "42sh: %s: event not found\n", dopline);
+	ft_dprintf(globals()->fd[2], "42sh: %s: event not found\n", dopline);
 	ft_strdel(&dopline);
 	return (NULL);
 }

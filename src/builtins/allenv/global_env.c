@@ -55,7 +55,7 @@ void	ft_show_env(char **env)
 		return ;
 	while (env[i])
 	{
-		ft_dprintf(globals()->all_opened_fds[1], "%s\n", env[i]);
+		ft_dprintf(globals()->fd[1], "%s\n", env[i]);
 		i++;
 	}
 }

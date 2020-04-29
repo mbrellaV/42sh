@@ -6,7 +6,7 @@
 /*   By: wstygg <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/29 00:35:48 by wstygg            #+#    #+#             */
-/*   Updated: 2020/04/29 00:41:23 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/04/29 20:05:08 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int					launch(char *str, int put_name)
 	register int	i;
 	char			**split;
 	t_exectoken		*start_token;
-	t_memory		*dop_memory;
+	t_memory		*dop;
 
 	i = -1;
 	split = ft_strsplit1(str, '\n');
@@ -36,16 +36,13 @@ int					launch(char *str, int put_name)
 	{
 		if (put_name)
 		{
-			ft_dprintf(globals()->all_opened_fds[1], "%s\n", split[i]);
-			if (split[i] != '\0')
+			ft_dprintf(globals()->fd[1], "%s\n", split[i]);
+			if (split[i][0] != '\0')
 			{
-				dop_memory = ft_memory(globals()->g_memory_head, &(split[i]));
-				if (dop_memory == NULL)
-				{
-					ft_strdel(&split[i]);
+				if (!(dop = ft_memory(globals()->g_memory_head, split + i))
+						&& strdelr(split + i))
 					return (-1);
-				}
-				globals()->g_memory_head = dop_memory;
+				globals()->g_memory_head = dop;
 			}
 			ft_do_zam_alias(&split[i]);
 		}
