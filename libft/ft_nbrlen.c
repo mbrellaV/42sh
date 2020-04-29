@@ -16,8 +16,8 @@ int	ft_nbrlen(int n)
 {
 	if (n == 0)
 		return (1);
-	else if (n / base > 0)
-		return (1 + ft_nbrlen(n / base, base));
+	else if (n / 10 > 0)
+		return (1 + ft_nbrlen(n / 10));
 	else
 		return (1);
 }
