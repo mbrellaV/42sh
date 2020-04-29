@@ -12,6 +12,30 @@
 
 #include "libft.h"
 
+int		ft_str_is_numeric_2(char *s, int flag)
+{
+	int c;
+
+	if (!s)
+		return (0);
+	c = 0;
+	while (*s != '\0')
+	{
+		if (!ft_isdigit(*s))
+		{
+			if (flag)
+			{
+				c++;
+				if ((*s == '+' || *s == '-') && c == 1)
+					continue ;
+			}
+			return (0);
+		}
+		s++;
+	}
+	return (1);
+}
+
 int		ft_str_is_numeric(char *s)
 {
 	if (!s)

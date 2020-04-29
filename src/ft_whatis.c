@@ -34,8 +34,8 @@ int		ft_open_flag_in_builtins(char *opt, int flag, int *infile, int *outfile)
 	if (((flag == 1 || flag == 6 || flag == 2) && *outfile <= 0) ||
 		(flag == 3 && *infile <= 0))
 	{
-		ft_putstr_fd("42sh: open fd ERROR ", globals()->all_opened_fds[2]);
-		ft_putendl_fd(opt, globals()->all_opened_fds[2]);
+		ft_putstr_fd("42sh: open fd ERROR ", globals()->fd[2]);
+		ft_putendl_fd(opt, globals()->fd[2]);
 		return (-1);
 	}
 	return (1);
@@ -118,8 +118,8 @@ int		set_redirects_for_builtins(char **av)
 					ft_strdup(av[i + (b == -9 ? 2 : 0)]), b * -1));
 		i += 3;
 	}
-	free(globals()->all_opened_fds);
-	globals()->all_opened_fds = opened_fds;
+	free(globals()->fd);
+	globals()->fd = opened_fds;
 	return (1);
 }
 
@@ -142,13 +142,13 @@ int		ft_whatis4_1(t_exectoken *tmp)
 	else if (ft_strcmp(tmp->file_args[0], "env") == 0)
 		ft_show_env(globals()->g_env);
 	else if (ft_strcmp(tmp->file_args[0], "clear") == 0)
-		ft_putstr_fd("\033[2J\033[H", globals()->all_opened_fds[2]);
+		ft_putstr_fd("\033[2J\033[H", globals()->fd[2]);
 	else if (ft_strcmp(tmp->file_args[0], "hash") == 0)
 		print_hash();
 	else if (!ft_strcmp(tmp->file_args[0], "type"))
 		ft_type(tmp->file_args);
 	else if (!ft_strcmp(tmp->file_args[0], "fc"))
-		do_fc(tmp->file_args);
+		return (do_fc(tmp->file_args));
 	else
 		return (0);
 	return (1);
@@ -204,11 +204,13 @@ int		ft_whatis2_1(t_process *tmp)
 	else if (ft_strcmp(tmp->file_args[0], "env") == 0)
 		ft_show_env(globals()->g_env);
 	else if (ft_strcmp(tmp->file_args[0], "clear") == 0)
-		ft_putstr_fd("\033[2J\033[H", globals()->all_opened_fds[2]);
+		ft_putstr_fd("\033[2J\033[H", globals()->fd[2]);
 	else if (ft_strcmp(tmp->file_args[0], "hash") == 0)
 		print_hash();
 	else if (!ft_strcmp(tmp->file_args[0], "type"))
 		ft_type(tmp->file_args);
+	else if (!ft_strcmp(tmp->file_args[0], "fc"))
+		return (do_fc(tmp->file_args));
 	else
 		return (0);
 	return (1);

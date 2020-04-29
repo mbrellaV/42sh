@@ -6,7 +6,7 @@
 /*   By: wstygg <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/13 18:29:27 by wstygg            #+#    #+#             */
-/*   Updated: 2020/04/28 22:14:50 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/04/29 20:01:50 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ static int	cycle(char *str, int *i, char *newstr)
 	char	*dop;
 	int		size;
 
+	dopstr = NULL;
 	size = word_size(&str[*i]);
 	if (size < 0)
 		return (-1);
@@ -116,10 +117,10 @@ int			alias_error(int error, char *tmp1, char *tmp2)
 	}
 	if (error == 14)
 	{
-		ft_dprintf(globals()->all_opened_fds[2], "alias [alias-name[=string]...]\n");
+		ft_dprintf(globals()->fd[2], "alias [alias-name[=string]...]\n");
 		return (-1);
 	}
-	ft_dprintf(globals()->all_opened_fds[2], "alias error: wrong argument: |%s|\n", tmp2);
+	ft_dprintf(globals()->fd[2], "alias error: wrong argument: |%s|\n", tmp2);
 	ft_strdel(&tmp1);
 	ft_strdel(&tmp2);
 	return (-1);

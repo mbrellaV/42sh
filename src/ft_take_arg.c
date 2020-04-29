@@ -15,7 +15,7 @@
 void	exit_shell(void)
 {
 	ft_free_str(globals()->g_env);
-	write(globals()->all_opened_fds[1], "\n", 1);
+	write(globals()->fd[1], "\n", 1);
 	exit(0);
 }
 

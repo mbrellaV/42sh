@@ -18,7 +18,7 @@ int					check_hash(char *arg)
 
 	if (!(hash = hash_get(arg, 1)))
 		return (0);
-	ft_dprintf(globals()->all_opened_fds[1], "%s is %s\n", arg, hash);
+	ft_dprintf(globals()->fd[1], "%s is %s\n", arg, hash);
 	return (1);
 }
 
@@ -31,7 +31,7 @@ int					check_builtins(char *arg)
 	{
 		if (!ft_strcmp(arg, g_builtins[i]))
 		{
-			ft_dprintf(globals()->all_opened_fds[1], "%s is a 42sh builtin\n", arg);
+			ft_dprintf(globals()->fd[1], "%s is a 42sh builtin\n", arg);
 			return (1);
 		}
 	}
@@ -47,6 +47,6 @@ void				ft_type(char **argv)
 	{
 		if (!check_builtins(argv[i]))
 			if (!check_hash(argv[i]))
-				ft_dprintf(globals()->all_opened_fds[2], "%s not found\n", argv[i]);
+				ft_dprintf(globals()->fd[2], "%s not found\n", argv[i]);
 	}
 }

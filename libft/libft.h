@@ -36,6 +36,7 @@ char				*ft_strrchr(const char *s, int c);
 char				*ft_strnstr(const char *haystack, const char *needle,
 					size_t len);
 int					ft_str_is_numeric(char *s);
+int					ft_str_is_numeric_2(char *s, int flag);
 char				*ft_strnew(size_t size);
 int					ft_strnequ(char const *s1, char const *s2, size_t n);
 char				*ft_strncpy(char *dst, const char *src, size_t len);

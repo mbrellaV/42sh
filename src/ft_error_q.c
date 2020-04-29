@@ -17,14 +17,14 @@ void	ft_error_q(int er)
 	if (er == 1)
 	{
 		ft_free_str(globals()->g_env);
-		ft_dprintf(globals()->all_opened_fds[2], "42sh: no env\n");
+		ft_dprintf(globals()->fd[2], "42sh: no env\n");
 		exit(1);
 	}
 	else if (er == 2)
 	{
 		ft_free_str(globals()->g_env);
 		free(globals()->g_cp);
-		ft_dprintf(globals()->all_opened_fds[2], "42sh: malloc error\n");
+		ft_dprintf(globals()->fd[2], "42sh: malloc error\n");
 		exit(1);
 	}
 }
@@ -54,13 +54,13 @@ void	ft_error_pipe(int er, char *str)
 {
 	if (er == 1)
 	{
-		ft_putstr_fd("42sh: command not found: ", globals()->all_opened_fds[2]);
-		ft_putendl_fd(str, globals()->all_opened_fds[2]);
+		ft_putstr_fd("42sh: command not found: ", globals()->fd[2]);
+		ft_putendl_fd(str, globals()->fd[2]);
 	}
 	if (er == 2)
 	{
-		ft_putstr_fd("42sh: permission denied: ", globals()->all_opened_fds[2]);
-		ft_putendl_fd(str, globals()->all_opened_fds[2]);
+		ft_putstr_fd("42sh: permission denied: ", globals()->fd[2]);
+		ft_putendl_fd(str, globals()->fd[2]);
 	}
 }
 
@@ -70,7 +70,7 @@ int		ft_error_args(t_exectoken *tmp)
 		return (0);
 	else if (!(tmp->file_opt[1]))
 	{
-		ft_putendl_fd("42sh: parse error near `\\n'", globals()->all_opened_fds[2]);
+		ft_putendl_fd("42sh: parse error near `\\n'", globals()->fd[2]);
 		return (0);
 	}
 	return (0);

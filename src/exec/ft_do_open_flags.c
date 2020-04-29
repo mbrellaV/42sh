@@ -17,12 +17,12 @@ void	ft_redirect_error(int marker, char *dopline)
 	put_error_to_shell(2);
 	if (marker == 10)
 	{
-		ft_dprintf(globals()->all_opened_fds[2], SHELL_NAME": %s: Bad file descriptor", dopline);
+		ft_dprintf(globals()->fd[2], SHELL_NAME": %s: Bad file descriptor", dopline);
 		ft_strdel(&dopline);
 	}
 	if (marker == 9)
 	{
-		ft_dprintf(globals()->all_opened_fds[2], SHELL_NAME": %s: ambiguous redirect", dopline);
+		ft_dprintf(globals()->fd[2], SHELL_NAME": %s: ambiguous redirect", dopline);
 	}
 }
 
@@ -52,8 +52,8 @@ int		ft_open_flag(char *opt, t_pipe *p)
 	if (((p->flag == 1 || p->flag == 6 || p->flag == 2) && *p->outfile <= 0) ||
 		(p->flag == 3 && *p->infile <= 0))
 	{
-		ft_putstr_fd("42sh: open fd ERROR ", globals()->all_opened_fds[2]);
-		ft_putendl_fd(opt, globals()->all_opened_fds[2]);
+		ft_putstr_fd("42sh: open fd ERROR ", globals()->fd[2]);
+		ft_putendl_fd(opt, globals()->fd[2]);
 		return (-1);
 	}
 	return (1);
@@ -77,7 +77,7 @@ int		ft_heredoc(char *tmp)
 		del_readline(&h);
 		ft_start_read(&h);
 		ft_read_8(&h, NULL, 2);
-		write(globals()->all_opened_fds[2], "\n", 1);
+		write(globals()->fd[2], "\n", 1);
 		j++;
 	}
 	close(f[1]);

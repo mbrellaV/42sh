@@ -34,7 +34,7 @@ void	ft_fork_signal(int signo)
 {
 	if (signo == SIGINT)
 	{
-		ft_putstr_fd("\n", globals()->all_opened_fds[2]);
+		ft_putstr_fd("\n", globals()->fd[2]);
 		signal(SIGINT, ft_fork_signal);
 	}
 	else if (signo == SIGTSTP)

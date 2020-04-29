@@ -6,7 +6,7 @@
 /*   By: wstygg <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/15 18:29:17 by wstygg            #+#    #+#             */
-/*   Updated: 2020/04/20 14:49:45 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/04/29 20:01:50 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int		ft_ck_addline(t_readline *p)
 			ft_add_intput_que(p, globals()->g_memory_head, 20);
 		else if (f == -1 || f == -2)
 		{
-			ft_dprintf(globals()->all_opened_fds[2], f == -1 ? "42sh: Syntax error: newline unexpected (expecting \")\")\n" : "42sh: Syntax error: \")\" unexpected\n");
+			ft_dprintf(globals()->fd[2], f == -1 ? "42sh: Syntax error: newline unexpected (expecting \")\")\n" : "42sh: Syntax error: \")\" unexpected\n");
 			free(p->buff);
 			return (0);
 		}
@@ -107,7 +107,6 @@ int		ck_br(const char *str)
 	k = 0;
 	s = ft_strdup(str);
 	s = ck_br_faf(s);
-	dprintf(2, "\n|%d|\n", check_bracket(s));
 	if ((i = check_bracket(s)) && i != 1 && strdelr(&s))
 		return (i);
 	if ((s = ck_br_cycle(s, k, i)) == NULL)
