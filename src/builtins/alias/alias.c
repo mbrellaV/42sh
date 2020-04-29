@@ -45,33 +45,35 @@ char		*ft_get_alias(char *dop)
 }
 
 
-static void	cycle(char *str, int *i, char *newstr)
+static int	cycle(char *str, int *i, char *newstr)
 {
 	char	*dopstr;
 	char	*dop;
+	int		size;
 
-	dopstr = NULL;
-	dop = NULL;
+	size = word_size(&str[*i]);
+	if (size < 0)
+		return (-1);
 	if (ispar(str[*i]))
 	{
-		dopstr = ft_strsub(str, *i, c_size(&str[*i], str[*i]) + 2);
-		ft_strcat(newstr, dopstr);
-		*i += c_size(&str[*i], str[*i]) + 2;
+		dop = ft_strsub(str, *i, size + 2);
+		ft_strcat(newstr, dop);
+		*i += size + 2;
 	}
 	else if (str[*i] == '$')
 	{
-		dop = ft_strsub(str, *i, word_size(&str[*i]));
+		dop = ft_strsub(str, *i, size);
 		ft_strcat(newstr, dop);
-		(*i) += word_size(&str[*i]);
+		(*i) += size;
 	}
 	else if (isword(str[*i]) == 1)
 	{
-		dop = ft_strsub(str, *i, word_size(&str[*i]));
+		dop = ft_strsub(str, *i, size);
 		if (!(dopstr = ft_get_alias(dop)))
 			ft_strcat(newstr, dop);
 		else
 			ft_strcat(newstr, dopstr);
-		*i += word_size(&str[*i]);
+		*i += size;
 	}
 	else
 	{
@@ -82,6 +84,7 @@ static void	cycle(char *str, int *i, char *newstr)
 	}
 	ft_strdel(&dopstr);
 	ft_strdel(&dop);
+	return (1);
 }
 
 int			ft_do_zam_alias(char **str)
@@ -94,7 +97,11 @@ int			ft_do_zam_alias(char **str)
 	if (!(*str = ft_strnew(130000)))
 		ft_error_q(2);
 	while (i < ft_strlen(newstr) && newstr[i] != '\0')
-		cycle(newstr, &i, *str);
+		if (cycle(newstr, &i, *str) == -1)
+		{
+			ft_strdel(&newstr);
+			return (-1);
+		}
 	ft_strdel(&newstr);
 	return (ft_strlen(*str));
 }

@@ -30,16 +30,16 @@ int		ft_ck_addline(t_readline *p)
 			}
 			globals()->g_memory_head = dop_memory;
 		}
-		p->index = ft_do_zam_alias(&p->buff);
-		while (p->index > 0 && p->buff[p->index - 1] == '\\')
+		if ((p->index = ft_do_zam_alias(&p->buff) == -1))
+			f = -1;
+		while (f != -1 && p->index > 0 && p->buff[p->index - 1] == '\\')
 		{
 			p->buff[p->index - 1] = 0;
 			ft_add_intput_que(p, globals()->g_memory_head, 11);
 		}
-		f = 1;
-		while (ft_cheak_quote(p->buff) != 1)
+		while (f != -1 && ft_cheak_quote(p->buff) != 1)
 			ft_add_intput_que(p, globals()->g_memory_head, 1);
-		if (0 && (f = ck_br(p->buff)) == 0)
+		if (f != -1 && (f = ck_br(p->buff)) == 0)
 			ft_add_intput_que(p, globals()->g_memory_head, 20);
 		else if (f == -1 || f == -2)
 		{
@@ -107,6 +107,7 @@ int		ck_br(const char *str)
 	k = 0;
 	s = ft_strdup(str);
 	s = ck_br_faf(s);
+	dprintf(2, "\n|%d|\n", check_bracket(s));
 	if ((i = check_bracket(s)) && i != 1 && strdelr(&s))
 		return (i);
 	if ((s = ck_br_cycle(s, k, i)) == NULL)
