@@ -104,24 +104,7 @@ add_executable(42save
         src/parser/check_bracket.c
         src/parser/dop_parser.c
         src/parser/main_parser.c
-        src/calc/srcs/calc_add_fun.c
-        src/calc/srcs/calc.c
-        src/calc/srcs/calc_lexer.c
-        src/calc/srcs/calc_arr_tkns.c
-        src/calc/srcs/calc_mul_fun.c
-        src/calc/srcs/calc_inc_fun.c
-        src/calc/srcs/calc_com_fun.c
-        src/calc/srcs/calc_eq_fun.c
-        src/calc/srcs/calc_log_fun.c
-        src/calc/srcs/calc_tkn.c
-        src/calc/srcs/calc_num_fun.c
-        src/calc/srcs/calc_parent_fun.c
-        src/calc/srcs/calc_error_fun.c
-        src/calc/srcs/calc_var_fun.c
-        src/calc/srcs/calc_var_tkn.c
-        src/calc/srcs/calc_arr_reloc.c
-        src/calc/srcs/calc_atoi.c
-        src/calc/srcs/calc_ltoa.c
+        src/evaln/calc.c
         src/evaln/dop.c
         src/evaln/calc.c
         src/evaln/atoimy.c

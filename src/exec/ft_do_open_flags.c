@@ -77,7 +77,7 @@ int		ft_heredoc(char *tmp)
 		del_readline(&h);
 		ft_start_read(&h);
 		ft_read_8(&h, NULL, 2);
-		write(globals()->fd[2], "\n", 1);
+		write(2, "\n", 1);
 		j++;
 	}
 	close(f[1]);
