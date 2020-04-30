@@ -29,8 +29,7 @@ t_exectoken					*ft_cr_new_exectoken(t_lextoken *tmp,
 							t_exectoken *prev, int op_type, t_dop_str *t);
 int							c_size(char *str, char b);
 int							word_size(char *str);
-t_lextoken					*add_token(t_lextoken *start,
-							char *line, int word_type);
+t_lextoken					*add_token(t_lextoken *start, char *line);
 char						*do_obr_zamena_sp(char *line);
 void						dop_cr_new_exec(t_dop_str *t,
 							t_exectoken *prev, int op_type, int type);
@@ -43,10 +42,7 @@ char						*do_obr_zamena_sp(char *line);
 char						*do_zamena_sp(char *line);
 char						*do_zam_str_by_str(int start,
 							int end, char *str, char *zam_str);
-t_lextoken					*ft_cr_new_token(char *line,
-							int word_type, int op_type);
-t_lextoken					*add_token(t_lextoken *start,
-							char *line, int word_type);
+t_lextoken					*ft_cr_new_token(char *line, int op_type);
 char						*do_obr_zamena_sp(char *line);
 char						*do_obr_zamena_bax(char *line);
 int							ispar(char c);

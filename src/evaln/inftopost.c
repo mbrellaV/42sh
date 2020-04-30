@@ -36,15 +36,13 @@ int		opr_znak(char *dstr, int *marker)
 	return (sum);
 }
 
-
-
 int		eval_expr(char *s, int *error)
 {
 	t_int	*l;
 
 	if (!(l = cr_new_el(s, error)))
 		return (calc_error(NULL, NULL, NULL, error, NULL));
-	while (l->i < ft_strlen(l->s) && l->s[l->i] != '\0')
+	while (l->i < (int)ft_strlen(l->s) && l->s[l->i] != '\0')
 	{
 		if (check_calc_str(&l->s[l->i]) == -1)
 			return (calc_error(l->stackos, l->stackzn, l, error, l->s));

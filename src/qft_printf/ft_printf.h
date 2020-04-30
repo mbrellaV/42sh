@@ -21,7 +21,7 @@
 # include <unistd.h>
 # include <stdint.h>
 # include <math.h>
-# include "../libft/libft.h"
+# include "../libft/inc/libft.h"
 
 # define DEC "0x"
 

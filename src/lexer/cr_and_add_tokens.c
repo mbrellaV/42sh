@@ -12,7 +12,7 @@
 
 #include "../../inc/fshell.h"
 
-t_lextoken		*ft_cr_new_token(char *line, int word_type, int op_type)
+t_lextoken		*ft_cr_new_token(char *line, int op_type)
 {
 	t_lextoken	*tmp;
 
@@ -20,20 +20,19 @@ t_lextoken		*ft_cr_new_token(char *line, int word_type, int op_type)
 		ft_error_q(2);
 	tmp->next = NULL;
 	tmp->line = line;
-	word_type = 0;
 	tmp->operator_type = op_type;
 	tmp->is_near_opt = 0;
 	tmp->is_near_word = 0;
 	return (tmp);
 }
 
-t_lextoken		*add_token(t_lextoken *start, char *line, int word_type)
+t_lextoken		*add_token(t_lextoken *start, char *line)
 {
 	t_lextoken	*tmp;
 
 	if (start == NULL)
 	{
-		tmp = ft_cr_new_token(line, word_type, get_op_type(line));
+		tmp = ft_cr_new_token(line, get_op_type(line));
 		tmp->prev = NULL;
 		return (tmp);
 	}
@@ -41,7 +40,7 @@ t_lextoken		*add_token(t_lextoken *start, char *line, int word_type)
 	while (tmp->next != NULL)
 		tmp = tmp->next;
 	start = tmp;
-	tmp = ft_cr_new_token(line, word_type, get_op_type(line));
+	tmp = ft_cr_new_token(line, get_op_type(line));
 	start->next = tmp;
 	tmp->prev = start;
 	return (tmp);

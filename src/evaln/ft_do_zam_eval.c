@@ -12,88 +12,6 @@
 
 #include "eval_expr.h"
 
-int			check_symbols(char *str)
-{
-	int i;
-
-	i = 0;
-	if (str == NULL)
-		return (0);
-	while (str[i] != '\0')
-	{
-		if (!ft_isdigit(str[i]) && str[i] != '*' && str[i] != '/'
-		&& str[i] != '+' && str[i] != '-' && isword(str[i]) <= 0 &&
-			str[i] != '%' && str[i] != '(' && str[i] != ')'
-			&& str[i] != ' ' && str[i] != '\t' && is_system_symbol(str[i]) != 1)
-		{
-			ft_strdel(&str);
-			put_error_to_shell(2);
-			ft_dprintf(globals()->fd[2], "parse error in eval near: |%c|\n", str[i]);
-			return (-1);
-		}
-		i++;
-	}
-	return (1);
-}
-//
-//char		*ft_do_cut(char *tmp)
-//{
-//	int		dopi;
-//	char	*str;
-//	char	*dop;
-//	char	*str_for_rec;
-//	char	*str_for_del;
-//
-//	dopi = 0;
-//	if (tmp[dopi] == '(' && tmp[dopi + 1] == '(')
-//		if (sc_size(&tmp[dopi], '(') != -1 &&
-//			sc_size(&tmp[dopi + 1], '(') != -1)
-//		{
-//			dopi = sc_size(&tmp[dopi], '(') - 3;
-//			dop = ft_strsub(tmp, 2, dopi - 2);
-//			str_for_del = dop;
-//			str_for_rec = ft_main_calc_rec(dop);
-//			if (str_for_rec != NULL)
-//				dop = str_for_rec;
-//			if (check_symbols(dop, str_for_del) == -1)
-//				return (NULL);
-//			str = ft_itoa(eval_expr(dop));
-//			(str_for_del != dop) ? ft_strdel(&str_for_del) : 0;
-//			ft_strdel(&dop);
-//			return (str);
-//		}
-//	return (NULL);
-//}
-
-//char		*ft_main_calc_rec(char *mas)
-//{
-//	char	*newstr;
-//	char	*cut_str;
-//	int		i;
-//
-//	i = 0;
-//	if (!(newstr = ft_memalloc(ft_strlen(mas) + 1)))
-//		return (NULL);
-//	while (*mas != '\0' && *mas != '$')
-//	{
-//		newstr[i++] = *mas;
-//		mas++;
-//	}
-//	if (*mas == '$')
-//	{
-//		if (!(cut_str = ft_do_cut(mas + 1)))
-//		{
-//			ft_strdel(&newstr);
-//			return (NULL);
-//		}
-//		ft_strcat(newstr, cut_str);
-//		ft_strdel(&cut_str);
-//		return (newstr);
-//	}
-//	ft_strdel(&newstr);
-//	return (NULL);
-//}
-
 char		*return_with_del(char *str)
 {
 	ft_strdel(&str);
@@ -141,7 +59,7 @@ char		*ft_main_calc_rec(char *mas, int *error)
 	d = 0;
 	if (!(newstr = ft_memalloc(ft_strlen(mas) + 1)))
 		return (NULL);
-	while (i < ft_strlen(mas) && mas[i] != '\0')
+	while (i < (int)ft_strlen(mas) && mas[i] != '\0')
 	{
 		if (mas[i] == '$')
 		{

@@ -12,7 +12,7 @@
 
 #include "../inc/fshell.h"
 
-int		show_history(t_memory *q)
+int		show_history()
 {
 	int	s;
 	int	len;

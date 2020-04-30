@@ -49,7 +49,7 @@ void				ft_cheak_tab(t_readline *p);
 char				**ft_arrnew(size_t size);
 void				ft_arrdel(char **arr);
 int					del_readline(t_readline *p);
-int					show_history(t_memory *q);
+int					show_history();
 t_memory			*ft_head_memory(void);
 t_memory			*ft_memory(t_memory *back, char **str);
 void				ft_dop_history(t_memory *q, t_readline *p, int k);

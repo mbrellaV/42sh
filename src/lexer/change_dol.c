@@ -44,7 +44,7 @@ char		*do_zam_str_bax(char *str1, t_dop_str *t)
 	zams.i = 0;
 	if (!(t->str_b = ft_strnew(130000)))
 		ft_error_q(2);
-	while (zams.i < ft_strlen(str1) && str1[zams.i] != '\0')
+	while (zams.i < (int)ft_strlen(str1) && str1[zams.i] != '\0')
 		zam_symbol(str1, &zams, t);
 	ft_strdel(&str1);
 	return (t->str_b);

@@ -19,7 +19,7 @@
 # include <unistd.h>
 # include <fcntl.h>
 # include <string.h>
-# include "../libft/libft.h"
+# include "../libft/inc/libft.h"
 # include <signal.h>
 # include "pwd.h"
 # include "grp.h"

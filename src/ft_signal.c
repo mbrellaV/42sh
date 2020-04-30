@@ -38,14 +38,18 @@ void	ft_fork_signal(int signo)
 		signal(SIGINT, ft_fork_signal);
 	}
 	else if (signo == SIGTSTP)
+	{
 		;
+	}
 	else if (signo == SIGSTOP)
 	{
 		printf("TRUE\n");
 		signal(SIGSTOP, SIG_IGN);
 	}
 	else if (signo == SIGCONT)
+	{
 		;
+	}
 }
 
 int		ft_signal(int signo, t_readline *p)

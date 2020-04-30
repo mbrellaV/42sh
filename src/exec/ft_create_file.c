@@ -23,30 +23,3 @@ void	ft_open_f(char *str, int *flag, int *fd)
 				S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP |
 				S_IROTH | S_IWOTH);
 }
-
-void	ft_file_create(t_exectoken *head)
-{
-	t_exectoken	*q;
-	t_pipe		p;
-
-	q = head;
-	while (q)
-	{
-		if (q->file_opt)
-		{
-			p = (t_pipe){0, -1, 1, 0, 0, 0};
-			while (q->file_opt[++(p.i)])
-			{
-				if ((q->file_opt[p.i][0] == '>' ||
-					q->file_opt[p.i][0] == '<' || q->file_opt[p.i][0] == '&'))
-					p.flag = ft_what_flag(q->file_opt[p.i]);
-				else if (p.b == 1 && p.flag != 0)
-				{
-					ft_open_f(q->file_opt[p.i], &(p.flag), &p.fd);
-					p = (t_pipe){0, p.i, 1, p.fd, 0, p.j};
-				}
-			}
-		}
-		q = q->left;
-	}
-}

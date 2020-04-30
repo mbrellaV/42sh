@@ -95,7 +95,7 @@ int			ft_do_zam_alias(char **str)
 	newstr = *str;
 	if (!(*str = ft_strnew(130000)))
 		ft_error_q(2);
-	while (i < ft_strlen(newstr) && newstr[i] != '\0')
+	while (i < (int)ft_strlen(newstr) && newstr[i] != '\0')
 		if (cycle(newstr, &i, *str) == -1)
 		{
 			ft_strdel(&newstr);

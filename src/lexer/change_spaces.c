@@ -124,7 +124,7 @@ int			do_zamena_slash(char *line, t_readline *p)
 		return (-1);
 	if (!(zams.dopstr = ft_memalloc(130000)))
 		ft_error_q(2);
-	while (zams.i < ft_strlen(line) && line[zams.i] != '\0')
+	while (zams.i < (int)ft_strlen(line) && line[zams.i] != '\0')
 	{
 		decide_what_to_do(&zams, line);
 		zams.i++;
