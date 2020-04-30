@@ -14,12 +14,14 @@
 
 void	put_job_in_foreground(t_job *j, int cont)
 {
+	set_input_mode();
 	tcsetpgrp(globals()->g_shell_terminal, j->pgid);
 	if (cont)
 	{
 		if (kill(-j->pgid, SIGCONT) < 0)
-			perror("kill (SIGCONT)");
+			ft_dprintf(2, "SIGCONT ERROR");
 	}
 	wait_for_job(j);
 	tcsetpgrp(globals()->g_shell_terminal, globals()->g_shell_pgid);
+	reset_input_mode();
 }

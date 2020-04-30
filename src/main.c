@@ -83,6 +83,8 @@ int		main(int argc, char **argv, char **env)
 	init_shell();
 	if (isatty(0))
 		ft_put_info();
+	else
+		exit(1);
 	while (1)
 		if (main_cycle(&p, &start_token) == -1)
 			break ;

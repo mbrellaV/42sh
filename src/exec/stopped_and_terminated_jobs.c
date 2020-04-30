@@ -70,52 +70,24 @@ int				mark_process_status(pid_t pid, int status, t_job *job)
 	return (-1);
 }
 
-int				process_count(void)
-{
-	t_job		*job;
-	t_process	*p;
-	int			res;
-
-	job = globals()->g_f_job;
-	res = 0;
-	while (job)
-	{
-		p = job->first_process;
-		while (p)
-		{
-			res++;
-			p = p->next;
-		}
-		job = job->next;
-	}
-	return (res);
-}
-
 void			update_status(void)
 {
 	int			status;
 	pid_t		pid;
-	int			counter;
-	int			pr_count;
 	t_job		*job;
 	t_process	*pr;
 
-	pr_count = process_count();
 	status = 0;
-	counter = 0;
-	while (counter < pr_count)
-	{
-		pid = waitpid(WAIT_ANY, &status, WUNTRACED | WNOHANG);
-		mark_process_status(pid, status, NULL);
-		counter++;
-	}
 	job = globals()->g_f_job;
 	while (job)
 	{
 		pr = job->first_process;
 		while (pr)
 		{
-			pid = waitpid(pr->pid, &status, WNOHANG);
+			if (pr->stopped != 1 && pr->completed != 1)
+				pid = waitpid(pr->pid, &status, WCONTINUED | WNOHANG);
+			else
+				pid = waitpid(pr->pid, &status, WUNTRACED | WNOHANG);
 			//errno = 0;
 //			dprintf(2, "\n|%d, %d, %d, %d, %d, %d, %d|\n", errno, pr->pid,
 //					pid, status, WEXITSTATUS(status), WIFSIGNALED(status), WTERMSIG(status));
