@@ -27,6 +27,11 @@ void	ft_error_q(int er)
 		ft_dprintf(globals()->fd[2], "42sh: malloc error\n");
 		exit(1);
 	}
+	if (er == 3)
+	{
+		ft_dprintf(2, "is not a terminal\n");
+		exit(1);
+	}
 }
 
 int		ft_error_d(t_readline *p)

@@ -12,28 +12,6 @@
 
 #include "../inc/fshell.h"
 
-int		read_form_file(t_readline *p)
-{
-	t_exectoken *start_token;
-
-	while (get_next_line(STDIN_FILENO, &p->buff))
-	{
-		if ((start_token = all_parse(p->buff)) == NULL)
-		{
-			del_readline(p);
-			ft_distruct_tree(start_token);
-			return (0);
-		}
-		p->buff[0] != '\0' ? globals()->g_memory_head = ft_memory(globals()->g_memory_head,
-				&(p->buff)) : globals()->g_memory_head;
-		if (ft_main_what(start_token) == -1)
-			return (-1);
-		del_readline(p);
-		ft_distruct_tree(start_token);
-	}
-	return (0);
-}
-
 int		main_cycle(t_readline *p, t_exectoken **start_token)
 {
 	init_shell();
@@ -50,8 +28,6 @@ int		main_cycle(t_readline *p, t_exectoken **start_token)
 			p->buff = ft_strnew(130000);
 		reset_input_mode();
 	}
-	else
-		return (read_form_file(p));
 	if ((*start_token = all_parse(p->buff)) == NULL)
 	{
 		del_readline(p);
@@ -81,10 +57,10 @@ int		main(int argc, char **argv, char **env)
 	do_count_shell_lvl();
 	hash_init();
 	init_shell();
-	if (isatty(0))
+	if (isatty(0) && isatty(1) && isatty(2))
 		ft_put_info();
 	else
-		exit(1);
+		ft_error_q(3);
 	while (1)
 		if (main_cycle(&p, &start_token) == -1)
 			break ;

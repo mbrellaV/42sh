@@ -18,7 +18,7 @@ static void	zam_symbol(char *str1, t_zams *zams, t_dop_str *t)
 	{
 		zams->dop = (str1[zams->i + 1] == '{' ? 2 : 1);
 		zams->dopstr = ft_strsub(str1, zams->i + zams->dop,
-			word_size(&str1[zams->i + 1]) - (zams->dop == 2 ? 4 : 1) + 1);
+			word_size(&str1[zams->i]) - (zams->dop == 2 ? 4 : 1) + 1);
 		zams->str_for_del = zams->dopstr;
 		zams->dopstr = ft_get_var(zams->dopstr, globals()->g_all_var);
 		ft_strdel(&zams->str_for_del);
