@@ -32,9 +32,9 @@ void	ft_error_q(int er)
 int		ft_error_d(t_readline *p)
 {
 	free(p->buff);
-	if (p->mod == 0)
+	if (p->mod == 0 || p->mod == 2)
 		p->buff = ft_strdup("exit");
-	if (p->mod == 1)
+	else if (p->mod == 1)
 	{
 //		ft_dprintf(2, "42sh Syntax error: Unterminated quoted string\n");
 		p->buff = ft_strnew(2);
@@ -47,6 +47,8 @@ int		ft_error_d(t_readline *p)
 		ft_dprintf(2, "exit\n");
 		exit(1);
 	}
+	else
+		p->buff = ft_strnew(1);
 	return (1);
 }
 

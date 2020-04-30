@@ -37,6 +37,7 @@ int		ft_ck_addline(t_readline *p)
 			p->buff[p->index - 1] = 0;
 			ft_add_intput_que(p, globals()->g_memory_head, 11);
 		}
+//		dprintf(2, "Какой то еблан сломал кавычки ищу где косяк\nf= %d\n", f);
 		while (f != -1 && ft_cheak_quote(p->buff) != 1)
 			ft_add_intput_que(p, globals()->g_memory_head, 1);
 		if (f != -1 && (f = ck_br(p->buff)) == 0)
