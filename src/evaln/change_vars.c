@@ -22,7 +22,7 @@ char			*save_to_env(char *str, int i, char *dopstr)
 	set_new_var(str_for_rec, dopstr, &globals()->g_all_var);
 	set_new_var(str_for_rec, dopstr, &globals()->g_env);
 	ft_strdel(&str_for_rec);
-	ft_strdel(&str);
+	//ft_strdel(&str);
 	return (dopstr);
 }
 

@@ -53,21 +53,19 @@ static int	cycle(char *str, int *i, char *newstr)
 
 	dopstr = NULL;
 	size = word_size(&str[*i]);
-	if (size < 0)
-		return (-1);
-	if (ispar(str[*i]))
+	if (size > 0 && ispar(str[*i]))
 	{
 		dop = ft_strsub(str, *i, size + 2);
 		ft_strcat(newstr, dop);
 		*i += size + 2;
 	}
-	else if (str[*i] == '$')
+	else if (size > 0 && str[*i] == '$')
 	{
 		dop = ft_strsub(str, *i, size);
 		ft_strcat(newstr, dop);
 		(*i) += size;
 	}
-	else if (isword(str[*i]) == 1)
+	else if (size > 0 && isword(str[*i]) == 1)
 	{
 		dop = ft_strsub(str, *i, size);
 		if (!(dopstr = ft_get_alias(dop)))
