@@ -14,7 +14,6 @@
 
 int		main_cycle(t_readline *p, t_exectoken **start_token)
 {
-	init_shell();
 	if (globals()->fd != NULL)
 		free(globals()->fd);
 	if (!(globals()->fd = ft_create_opened_fds()))

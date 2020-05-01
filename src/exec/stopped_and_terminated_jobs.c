@@ -84,10 +84,10 @@ void			update_status(void)
 		pr = job->first_process;
 		while (pr)
 		{
-			if (pr->stopped != 1 && pr->completed != 1)
-				pid = waitpid(pr->pid, &status, WCONTINUED | WNOHANG);
-			else
-				pid = waitpid(pr->pid, &status, WUNTRACED | WNOHANG);
+//			if (pr->stopped != 1 && pr->completed != 1)
+//				pid = waitpid(pr->pid, &status, WCONTINUED | WNOHANG);
+//			else
+			pid = waitpid(pr->pid, &status, WUNTRACED | WNOHANG);
 			//errno = 0;
 //			dprintf(2, "\n|%d, %d, %d, %d, %d, %d, %d|\n", errno, pr->pid,
 //					pid, status, WEXITSTATUS(status), WIFSIGNALED(status), WTERMSIG(status));

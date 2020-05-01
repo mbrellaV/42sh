@@ -20,9 +20,20 @@ int		do_fg(char **mas)
 	}
 	else if (mas[0] != NULL && mas[1] != NULL && mas[2] == NULL)
 	{
-		continue_job(get_job_by_number(ft_atoi(mas[1])), 1);
+		if (ft_strcmp(mas[1], "%") == 0 || ft_strcmp(mas[1], "%%") == 0)
+			continue_job(get_last_job(), 1);
+		else if (ft_str_is_numeric(mas[1]))
+			continue_job(get_job_by_number(ft_atoi(mas[1])), 1);
+		else
+		{
+			ft_dprintf(globals()->fd[2], "42sh: fg: %s: no such job", mas[1]);
+			return (-1);
+		}
 	}
 	else
+	{
+		ft_dprintf(globals()->fd[2], "usage: fg [job_id]\n");
 		return (-1);
+	}
 	return (0);
 }

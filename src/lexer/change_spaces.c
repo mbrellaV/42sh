@@ -65,7 +65,7 @@ char	*do_reverse_zamena(char *str)
 	char	*tmp;
 
 	i = -1;
-	if (!(newstr = ft_memalloc(130000)))
+	if (!(newstr = ft_memalloc(ft_strlen(str) + 1000)))
 		ft_error_q(15);
 	while (str[++i] != '\0')
 	{

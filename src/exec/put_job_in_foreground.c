@@ -14,7 +14,6 @@
 
 void	put_job_in_foreground(t_job *j, int cont)
 {
-	set_input_mode();
 	tcsetpgrp(globals()->g_shell_terminal, j->pgid);
 	if (cont)
 	{

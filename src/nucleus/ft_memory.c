@@ -34,7 +34,6 @@ t_memory	*ft_memory(t_memory *back, char **str)
 	ft_strdel(&dopstr);
 	p = back->next;
 	back->next = tmp;
-	//tmp->inp = dopstr;
 	*str = ft_strdup(tmp->inp);
 	tmp->inp = do_reverse_zamena(tmp->inp);
 	ft_strdel(&str_for_del);
