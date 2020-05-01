@@ -264,6 +264,7 @@ void				put_error_to_shell(int error);
 int					is_system_symbol(char c);
 int					num_of_the_job(t_job *j);
 char				*ft_do_zam_eval(char *mas);
+uint_least32_t		Crc32(unsigned char *buf, size_t len);
 
 
 #endif

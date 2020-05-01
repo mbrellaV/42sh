@@ -140,6 +140,7 @@ SRC_BASE = builtins/ft_cd.c\
     evaln/check_calc.c\
 	utility_files/g_builtins.c\
 	utility_files/global.c\
+	utility_files/crc32.c\
 	put_error_to_env.c\
 	ft_distruct.c\
 	ft_error_q.c\

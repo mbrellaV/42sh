@@ -3309,6 +3309,33 @@ src/shell_lvl.c.s:
 	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/shell_lvl.c.s
 .PHONY : src/shell_lvl.c.s
 
+src/utility_files/crc32.o: src/utility_files/crc32.c.o
+
+.PHONY : src/utility_files/crc32.o
+
+# target to build an object file
+src/utility_files/crc32.c.o:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/utility_files/crc32.c.o
+.PHONY : src/utility_files/crc32.c.o
+
+src/utility_files/crc32.i: src/utility_files/crc32.c.i
+
+.PHONY : src/utility_files/crc32.i
+
+# target to preprocess a source file
+src/utility_files/crc32.c.i:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/utility_files/crc32.c.i
+.PHONY : src/utility_files/crc32.c.i
+
+src/utility_files/crc32.s: src/utility_files/crc32.c.s
+
+.PHONY : src/utility_files/crc32.s
+
+# target to generate assembly for a file
+src/utility_files/crc32.c.s:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/utility_files/crc32.c.s
+.PHONY : src/utility_files/crc32.c.s
+
 src/utility_files/g_builtins.o: src/utility_files/g_builtins.c.o
 
 .PHONY : src/utility_files/g_builtins.o
@@ -3699,6 +3726,9 @@ help:
 	@echo "... src/shell_lvl.o"
 	@echo "... src/shell_lvl.i"
 	@echo "... src/shell_lvl.s"
+	@echo "... src/utility_files/crc32.o"
+	@echo "... src/utility_files/crc32.i"
+	@echo "... src/utility_files/crc32.s"
 	@echo "... src/utility_files/g_builtins.o"
 	@echo "... src/utility_files/g_builtins.i"
 	@echo "... src/utility_files/g_builtins.s"

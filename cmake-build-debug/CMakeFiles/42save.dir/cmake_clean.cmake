@@ -119,6 +119,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/42save.dir/src/parser/main_parser.c.o"
   "CMakeFiles/42save.dir/src/put_error_to_env.c.o"
   "CMakeFiles/42save.dir/src/shell_lvl.c.o"
+  "CMakeFiles/42save.dir/src/utility_files/crc32.c.o"
   "CMakeFiles/42save.dir/src/utility_files/g_builtins.c.o"
 )
 

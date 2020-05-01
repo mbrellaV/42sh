@@ -130,6 +130,8 @@ char				*get_hist_by_id(int id, int len)
 		i--;
 		last = last->back;
 	}
+	if (last == NULL)
+		return (NULL);
 	ret = last->inp;
 	return (ret);
 }

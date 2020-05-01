@@ -21,7 +21,10 @@ int		show_history()
 
 	s = calc_h_size();
 	max = ft_nbrlen(s) + 1;
-	range = (int[2]){1, s};
+	if (s - 15 < 0)
+		range = (int[2]){0, s};
+	else
+		range = (int[2]){s - 15, s};
 	while (range[0] != range[1])
 	{
 		len = ft_nbrlen(range[0]);

@@ -138,7 +138,7 @@ int		ft_whatis4_1(t_exectoken *tmp)
 	else if (ft_strcmp(tmp->file_args[0], "echo") == 0)
 		ft_echo(tmp->file_args);
 	else if (ft_strcmp(tmp->file_args[0], "history") == 0)
-		show_history(globals()->g_memory_head);
+		show_history();
 	else if (ft_strcmp(tmp->file_args[0], "env") == 0)
 		ft_show_env(globals()->g_env);
 	else if (ft_strcmp(tmp->file_args[0], "clear") == 0)
@@ -200,7 +200,7 @@ int		ft_whatis2_1(t_process *tmp)
 	else if (ft_strcmp(tmp->file_args[0], "echo") == 0)
 		ft_echo(tmp->file_args);
 	else if (ft_strcmp(tmp->file_args[0], "history") == 0)
-		show_history(globals()->g_memory_head);
+		show_history();
 	else if (ft_strcmp(tmp->file_args[0], "env") == 0)
 		ft_show_env(globals()->g_env);
 	else if (ft_strcmp(tmp->file_args[0], "clear") == 0)
