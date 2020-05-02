@@ -12,6 +12,38 @@
 
 #include "fshell.h"
 
+int				check_par_and_brackets(char *str)
+{
+	int		i;
+	int		parbig;
+	int		parmin;
+
+	i = 0;
+	parbig = 0;
+	parmin = 0;
+	while (str[i] != '\0')
+	{
+		if (str[i] == '"')
+			parbig++;
+		if (str[i] == '\'')
+			parmin++;
+		i++;
+	}
+	if ((parbig % 2 != 0) || (parmin % 2 != 0))
+	{
+		ft_dprintf(globals()->fd[2],
+				"%s: 42sh: unexpected EOF while looking for matching \"'\n", str);
+		return (0);
+	}
+	if (ck_br(str) <= 0)
+	{
+		ft_dprintf(globals()->fd[2],
+				   "%s: 42sh: unexpected EOF while looking for matching ()\n", str);
+		return (0);
+	}
+	return (1);
+}
+
 int				check_opt_tokens(t_lextoken *tmp)
 {
 	while (tmp != NULL)
@@ -46,6 +78,8 @@ t_exectoken		*all_parse(char *cmd)
 	t_lextoken	*dop_tmp;
 
 	if (*cmd == '\0')
+		return (NULL);
+	if (check_par_and_brackets(cmd) == 0)
 		return (NULL);
 	ft_change_all_sc(cmd);
 	if (!(tmp = do_lexer(cmd)))

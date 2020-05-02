@@ -23,10 +23,7 @@ int		show_history()
 	s = calc_h_size();
 	dop = 0;
 	max = ft_nbrlen(s) + 1;
-	if (s - 15 < 0)
-		range = (int[2]){0, s};
-	else
-		range = (int[2]){s - 15, s};
+	range = (int[2]){0, s};
 	while (get_hist_by_id(range[0]) == NULL)
 	{
 		dop++;
