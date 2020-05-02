@@ -6,7 +6,7 @@
 /*   By: qmartina <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/28 16:46:28 by qmartina          #+#    #+#             */
-/*   Updated: 2020/04/20 14:49:46 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/05/02 13:20:11 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ t_memory	*ft_head_memory(void)
 		head->next->back = head;
 		head = head->next;
 	}
-	line = ft_itoa(Crc32((unsigned char *)buf, ft_strlen((char *)buf)));
+	line = ft_itoa(crc_32((unsigned char *) buf, ft_strlen((char *) buf)));
 	close(fd);
 	if (ft_strcmp(hashsum, line) != 0)
 	{
@@ -103,7 +103,7 @@ int			save_history(t_memory *q)
 		}
 		q = q->next;
 	}
-	hashsum = ft_itoa(Crc32((unsigned char *)buf, ft_strlen((char *)buf)));
+	hashsum = ft_itoa(crc_32((unsigned char *) buf, ft_strlen((char *) buf)));
 	write(fd, hashsum, ft_strlen(hashsum));
 	ft_putchar_fd(-100, fd);
 	write(fd, buf, ft_strlen((char *)buf));

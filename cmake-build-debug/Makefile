@@ -474,6 +474,33 @@ src/builtins/ft_fc_2.c.s:
 	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/builtins/ft_fc_2.c.s
 .PHONY : src/builtins/ft_fc_2.c.s
 
+src/builtins/ft_fc_3.o: src/builtins/ft_fc_3.c.o
+
+.PHONY : src/builtins/ft_fc_3.o
+
+# target to build an object file
+src/builtins/ft_fc_3.c.o:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/builtins/ft_fc_3.c.o
+.PHONY : src/builtins/ft_fc_3.c.o
+
+src/builtins/ft_fc_3.i: src/builtins/ft_fc_3.c.i
+
+.PHONY : src/builtins/ft_fc_3.i
+
+# target to preprocess a source file
+src/builtins/ft_fc_3.c.i:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/builtins/ft_fc_3.c.i
+.PHONY : src/builtins/ft_fc_3.c.i
+
+src/builtins/ft_fc_3.s: src/builtins/ft_fc_3.c.s
+
+.PHONY : src/builtins/ft_fc_3.s
+
+# target to generate assembly for a file
+src/builtins/ft_fc_3.c.s:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/builtins/ft_fc_3.c.s
+.PHONY : src/builtins/ft_fc_3.c.s
+
 src/builtins/ft_type.o: src/builtins/ft_type.c.o
 
 .PHONY : src/builtins/ft_type.o
@@ -3411,6 +3438,9 @@ help:
 	@echo "... src/builtins/ft_fc_2.o"
 	@echo "... src/builtins/ft_fc_2.i"
 	@echo "... src/builtins/ft_fc_2.s"
+	@echo "... src/builtins/ft_fc_3.o"
+	@echo "... src/builtins/ft_fc_3.i"
+	@echo "... src/builtins/ft_fc_3.s"
 	@echo "... src/builtins/ft_type.o"
 	@echo "... src/builtins/ft_type.i"
 	@echo "... src/builtins/ft_type.s"

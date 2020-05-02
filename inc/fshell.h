@@ -6,7 +6,7 @@
 /*   By: mbrella <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/11 10:58:44 by mbrella           #+#    #+#             */
-/*   Updated: 2020/04/29 22:45:21 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/05/02 15:47:51 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@
 # define FC_NANO	8
 
 # define SHELL_NAME	"42sh"
-# define BIL_NUM 17
+# define BIL_NUM	17
 
 # define FC_US "42sh: fc: error!\nusing: fc -[eslr] [editor] [range | number]\n"
 
@@ -71,10 +71,11 @@ typedef struct		s_fc
 {
 	int				l;
 	int				r;
-	int				h_size;
+	int				hi_s;
 	int				silent;
 	int				editor;
-	int				range[3];
+	int				rng[3];
+	int				dop;
 }					t_fc;
 
 typedef struct		s_global
@@ -129,21 +130,25 @@ typedef struct		s_pstat
 	char			*str_for_del;
 }					t_pstat;
 
-//int					g_exit_code;
 extern const char	*g_builtins[BIL_NUM];
 
 t_global			*globals(void);
 int					is_builtin(char *str);
 void				ft_alias();
+int					check_flag(char **av, t_fc *f);
+int					calc_h_size();
+char				*read_fc(int fd);
+int					check_flag_2(int *i, char **av, t_fc *f);
 t_lextoken			*do_zam_join_par(t_lextoken *h);
 int					ft_do_zam_alias(char **str);
 int					ft_do_change_alias(char **mas);
 char				*do_obr_zamena(char *line);
 void				ft_realloc_all(int k, char ***envl);
 void				ft_echo(char **str);
-char				*get_hist_by_id(int id, int len);
+char				*get_hist_by_id(int id);
 char				*ft_slash(char *str, t_builtins *echo);
-void				del_one_node_in_lextokens(t_lextoken *token_to_del, t_lextoken **first_token);
+void				del_one_node_in_lextokens(t_lextoken *token_to_del,
+						t_lextoken **first_token);
 char				*distribute_echo(char **str, int k, int flag,
 						t_builtins *echo);
 char				*ft_hex(char *str);
@@ -180,7 +185,8 @@ void				ft_infinit_pipe(t_exectoken *head);
 int					ft_distruct_tree(t_exectoken *q);
 int					ft_distr_lex(t_lextoken	*tmp);
 int					ft_distruct_memory(t_memory	*head);
-void				ft_error_q(int er);int		ft_ck_addline(t_readline *p);
+void				ft_error_q(int er);
+int					ft_ck_addline(t_readline *p);
 int					ft_norm_pipe(int p1, int *fd_in, int p0,
 						t_exectoken **head);
 int					ft_error_args(t_exectoken *tmp);
@@ -264,9 +270,6 @@ void				put_error_to_shell(int error);
 int					is_system_symbol(char c);
 int					num_of_the_job(t_job *j);
 char				*ft_do_zam_eval(char *mas);
-uint_least32_t		Crc32(unsigned char *buf, size_t len);
-
+uint_least32_t		crc_32(unsigned char *buf, size_t len);
 
 #endif
-
-

@@ -27,7 +27,7 @@ int		show_history()
 		range = (int[2]){0, s};
 	else
 		range = (int[2]){s - 15, s};
-	while (get_hist_by_id(range[0], s) == NULL)
+	while (get_hist_by_id(range[0]) == NULL)
 	{
 		dop++;
 		range[0]++;
@@ -37,12 +37,12 @@ int		show_history()
 		len = ft_nbrlen(range[0]);
 		while (len++ < max)
 			ft_dprintf(globals()->fd[1], " ");
-		ft_dprintf(globals()->fd[1], "%d  %s\n", range[0] - dop, get_hist_by_id(range[0], s));
+		ft_dprintf(globals()->fd[1], "%d  %s\n", range[0] - dop, get_hist_by_id(range[0]));
 		range[0] += (range[0] < range[1]) ? 1 : -1;
 	}
 	len = ft_nbrlen(range[0]);
 	while (len++ < max)
 		ft_dprintf(globals()->fd[1], " ");
-	ft_dprintf(globals()->fd[1], "%d  %s\n", range[0] - dop, get_hist_by_id(range[0], s));
+	ft_dprintf(globals()->fd[1], "%d  %s\n", range[0] - dop, get_hist_by_id(range[0]));
 	return (1);
 }

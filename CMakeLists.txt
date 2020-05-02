@@ -8,6 +8,7 @@ include_directories(src)
 include_directories(src/qft_printf)
 
 add_executable(42save
+        src/builtins/ft_fc_3.c
         inc/fshell.h
         inc/hash.h
         inc/nucleus.h

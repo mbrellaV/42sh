@@ -1,6 +1,6 @@
 #include "fshell.h"
 
-uint_least32_t		Crc32(unsigned char *buf, size_t len)
+uint_least32_t		crc_32(unsigned char *buf, size_t len)
 {
 	uint_least32_t crc_table[256];
 	uint_least32_t crc; int i, j;

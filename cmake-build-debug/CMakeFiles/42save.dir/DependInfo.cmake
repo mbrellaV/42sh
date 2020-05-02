@@ -17,6 +17,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "/home/petruha2001/42sh/src/builtins/ft_echo2.c" "/home/petruha2001/42sh/cmake-build-debug/CMakeFiles/42save.dir/src/builtins/ft_echo2.c.o"
   "/home/petruha2001/42sh/src/builtins/ft_fc.c" "/home/petruha2001/42sh/cmake-build-debug/CMakeFiles/42save.dir/src/builtins/ft_fc.c.o"
   "/home/petruha2001/42sh/src/builtins/ft_fc_2.c" "/home/petruha2001/42sh/cmake-build-debug/CMakeFiles/42save.dir/src/builtins/ft_fc_2.c.o"
+  "/home/petruha2001/42sh/src/builtins/ft_fc_3.c" "/home/petruha2001/42sh/cmake-build-debug/CMakeFiles/42save.dir/src/builtins/ft_fc_3.c.o"
   "/home/petruha2001/42sh/src/builtins/ft_type.c" "/home/petruha2001/42sh/cmake-build-debug/CMakeFiles/42save.dir/src/builtins/ft_type.c.o"
   "/home/petruha2001/42sh/src/check_file.c" "/home/petruha2001/42sh/cmake-build-debug/CMakeFiles/42save.dir/src/check_file.c.o"
   "/home/petruha2001/42sh/src/ck_check.c" "/home/petruha2001/42sh/cmake-build-debug/CMakeFiles/42save.dir/src/ck_check.c.o"
