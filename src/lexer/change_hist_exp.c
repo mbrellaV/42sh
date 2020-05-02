@@ -95,9 +95,10 @@ char				*do_zam_str_hist_var(char *str1, t_memory *q)
 				zm_history_numbers(i, &str1, 0, q);
 			else if (ft_atoi(str1 + i + 1) < 0)
 				zm_history_numbers(i, &str1, 2, q);
-			else if (isword(str1[i + 1]) != 0 && str1[i + 1] != '?')
+			else if (isword(str1[i + 1]) != 0 &&
+			str1[i + 1] != '?' && str1[i + 1] != '-')
 				zm_history_name(i, &str1, 1, q);
-			else if (str1[i + 1] == '?')
+			else if (str1[i + 1] == '?' || str1[i + 1] == '-')
 				zm_history_name(i, &str1, 2, q);
 		}
 		if (str1 == NULL)

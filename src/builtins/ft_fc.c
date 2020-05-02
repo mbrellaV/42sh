@@ -124,9 +124,13 @@ char				*get_hist_by_id(int id, int len)
 	t_memory		*last;
 
 	i = len;
+	if (id < 0)
+		return (NULL);
 	last = globals()->g_memory_head;
 	while (i != id)
 	{
+		if (last == NULL)
+			return (NULL);
 		i--;
 		last = last->back;
 	}
@@ -139,21 +143,30 @@ char				*get_hist_by_id(int id, int len)
 int					do_fc_l(t_fc flags)
 {
 	int				*range;
+	int				dop;
 
+	dop = 0;
 	if (!flags.range[2])
 		range = (int[2]){flags.h_size - 16, flags.h_size};
 	else if (flags.range[0])
 		range = (int[2]){flags.range[0], flags.h_size};
 	else
 		range = (int[2]){flags.range[0], flags.range[1]};
+	if (range[0] < 0)
+		range = (int[2]){0, range[1]};
+	while (get_hist_by_id(range[0], flags.h_size) == NULL)
+	{
+		dop++;
+		range[0]++;
+	}
 	if (flags.r)
 		range = (int[2]){range[1], range[0]};
 	while (range[0] != range[1])
 	{
-		ft_dprintf(globals()->fd[1], "%d\t%s\n", range[0], get_hist_by_id(range[0], flags.h_size));
+		ft_dprintf(globals()->fd[1], "%d\t%s\n", range[0] - dop, get_hist_by_id(range[0], flags.h_size));
 		range[0] += (range[0] < range[1]) ? 1 : -1;
 	}
-	ft_dprintf(globals()->fd[1], "%d\t%s\n", range[0], get_hist_by_id(range[0], flags.h_size));
+	ft_dprintf(globals()->fd[1], "%d\t%s\n", range[0] - dop, get_hist_by_id(range[0], flags.h_size));
 	return (1);
 }
 
