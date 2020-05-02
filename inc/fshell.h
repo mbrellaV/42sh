@@ -63,7 +63,6 @@
 # define FC_NANO	8
 
 # define SHELL_NAME	"42sh"
-# define BIL_NUM	17
 
 # define FC_US "42sh: fc: error!\nusing: fc -[eslr] [editor] [range | number]\n"
 
@@ -92,6 +91,7 @@ typedef struct		s_global
 	t_memory		*g_memory_head;
 	t_job			*g_f_job;
 	int				*fd;
+	char			**g_builtins;
 }					t_global;
 
 typedef struct		s_del
@@ -130,8 +130,6 @@ typedef struct		s_pstat
 	char			*str_for_del;
 }					t_pstat;
 
-extern const char	*g_builtins[BIL_NUM];
-
 t_global			*globals(void);
 int					is_builtin(char *str);
 void				ft_alias();
@@ -168,6 +166,7 @@ char				*create_full_path(char *path, t_builtins *cd);
 char				*ft_strjoin_cd(char const *s1, char const *s2, int to_free);
 char				*ft_get_var(char *dop, char **env);
 int					issc(char c);
+char				init_shell_builtins();
 t_lextoken			*do_zam_ravno(t_lextoken *h, t_lextoken **first_token);
 void				ft_global_env(char **env, int argc);
 int					unset_var(char *str, char ***envl);
@@ -204,10 +203,12 @@ int					is_cmp(char *s1, char *s2);
 int					is_add_str_tab(t_readline *p);
 void				ft_add_tab(t_readline *p, char *str);
 void				ft_find_dir(char *dir, char *name, t_readline *p);
-char				*ft_directory(char *str, int *flag_dir);
-char				*ft_name(char *str);
+char				*ft_directory(char *str, int *flag_tab);
+char				*ft_name(char *str, t_readline *p);
 void				ft_type(char **argv);
 void				ft_find_path(t_readline *p, char *name);
+void				ft_find_env(char *name, t_readline *p);
+void				ft_add_builtins_in_tab(char *name, t_readline *p);
 int					save_history(t_memory *q);
 void				do_count_shell_lvl(void);
 char				*ft_do_zam_eval(char *mas);

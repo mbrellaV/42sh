@@ -27,9 +27,9 @@ int					check_builtins(char *arg)
 	int				i;
 
 	i = -1;
-	while (g_builtins[++i])
+	while (globals()->g_builtins[++i])
 	{
-		if (!ft_strcmp(arg, g_builtins[i]))
+		if (!ft_strcmp(arg, globals()->g_builtins[i]))
 		{
 			ft_dprintf(globals()->fd[1], "%s is a 42sh builtin\n", arg);
 			return (1);

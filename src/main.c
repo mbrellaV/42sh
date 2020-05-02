@@ -54,6 +54,7 @@ int		main(int argc, char **argv, char **env)
 	ft_global_env(env, argc);
 	globals()->g_memory_head = ft_head_memory();
 	do_count_shell_lvl();
+	init_shell_builtins();
 	hash_init();
 	init_shell();
 	if (isatty(0) && isatty(1) && isatty(2))

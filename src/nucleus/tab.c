@@ -43,7 +43,7 @@ int		is_add_str_tab(t_readline *p)
 
 void	dop_to_check_tab(t_readline *p, char **str, int *i)
 {
-	p->flag_dir = 1;
+	p->flag_tab = 1;
 	p->flag_left_word = 0;
 	while (p->index < p->len && isword(p->buff[p->index]) == 1)
 	{
@@ -51,7 +51,7 @@ void	dop_to_check_tab(t_readline *p, char **str, int *i)
 		p->index++;
 	}
 	*i = p->index;
-	while (--(*i) > 0 && isword(p->buff[*i]) == 1)
+	while (--(*i) > 0 && (isword(p->buff[*i]) == 1 || p->buff[*i] == '{'))
 		;
 	p->i_dop = *i;
 	while (--(p->i_dop) > 0 && isword(p->buff[p->i_dop]) != 1)
@@ -84,12 +84,16 @@ void	ft_cheak_tab(t_readline *p)
 	char			*dir;
 
 	dop_to_check_tab(p, &str, &i);
-	name = ft_name(str);
-	dir = ft_directory(str, &p->flag_dir);
-	if (p->flag_dir == 0 && p->flag_left_word != 1)
+	name = ft_name(str, p);
+	dir = ft_directory(str, &p->flag_tab);
+	if (p->flag_tab == 0 && p->flag_left_word != 1)
 		ft_find_path(p, str);
-	else
+	else if (p->flag_tab < 2)
 		ft_find_dir(dir, name, p);
+	else if (p->flag_tab > 1)
+		ft_find_env(name, p);
+	if (p->flag_tab < 2 && p->flag_left_word != 1)
+		ft_add_builtins_in_tab(name, p);
 	i = ft_strlen(name);
 	if (i < is_add_str_tab(p))
 		while (i < is_add_str_tab(p))

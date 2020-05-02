@@ -13,6 +13,8 @@
 #ifndef STRUCT_H
 # define STRUCT_H
 
+# define BIL_NUM	17
+
 typedef	struct				s_builtins
 {
 	int						cd_p;
@@ -42,7 +44,7 @@ typedef struct				s_readline
 	int						tab_size;
 	int						tab_i;
 	int						tab_max;
-	int						flag_dir;
+	int						flag_tab;
 	int						flag_left_word;
 	int						i_dop;
 	char 					c;

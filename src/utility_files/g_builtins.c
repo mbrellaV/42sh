@@ -12,26 +12,40 @@
 
 #include "fshell.h"
 
-const char		*g_builtins[BIL_NUM] =
+char	init_shell_builtins()
 {
-	"alias",
-	"export",
-	"unset",
-	"history",
-	"env",
-	"clear",
-	"hash",
-	"cd",
-	"echo",
-	"exit",
-	"type",
-	"set",
-	"fg",
-	"bg",
-	"jobs",
-	"fc",
-	NULL
-};
+	int		i;
+	char		*g_builtins[BIL_NUM] =
+			{
+					"alias",
+					"export",
+					"unset",
+					"history",
+					"env",
+					"clear",
+					"hash",
+					"cd",
+					"echo",
+					"exit",
+					"type",
+					"set",
+					"fg",
+					"bg",
+					"jobs",
+					"fc",
+					NULL
+			};
+	i = 0;
+	if (!(globals()->g_builtins = (char **)ft_memalloc(sizeof(char *) *
+												  (BIL_NUM + 1))))
+		ft_error_q(1);
+	while (g_builtins[i])
+	{
+		if (!(globals()->g_builtins[i] = ft_strdup(g_builtins[i])))
+			ft_error_q(1);
+		i++;
+	}
+}
 
 int		is_builtin(char *str)
 {
@@ -42,7 +56,7 @@ int		is_builtin(char *str)
 		return (0);
 	while (i < BIL_NUM - 1)
 	{
-		if (ft_strcmp(str, g_builtins[i]) == 0)
+		if (ft_strcmp(str, globals()->g_builtins[i]) == 0)
 			return (1);
 		i++;
 	}
