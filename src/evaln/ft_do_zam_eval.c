@@ -20,19 +20,18 @@ char		*return_with_del(char *str)
 
 char		*ft_do_cut(char *tmp, int *error)
 {
-	int					dopi;
+	int					di;
 	char				*str;
 	char				*dop;
 	char				*str_for_rec;
 	char				*str_for_del;
 
-	dopi = 0;
-	if (tmp[dopi] == '(' && tmp[dopi + 1] == '(')
-		if (sc_size(&tmp[dopi], '(') != -1 &&
-			sc_size(&tmp[dopi + 1], '(') != -1)
+	di = 0;
+	if (tmp[di] == '(' && tmp[di + 1] == '(')
+		if (sc_size(&tmp[di], '(') != -1 && sc_size(&tmp[di + 1], '(') != -1)
 		{
-			dopi = sc_size(&tmp[dopi], '(') - 3;
-			dop = ft_strsub(tmp, 2, dopi - 2);
+			di = sc_size(&tmp[di], '(') - 3;
+			dop = ft_strsub(tmp, 2, di - 2);
 			str_for_del = dop;
 			str_for_rec = ft_main_calc_rec(dop, error);
 			if (*error == 1)
@@ -97,7 +96,8 @@ char		*ft_do_zam_eval(char *mas)
 		if (error == 1)
 		{
 			put_error_to_shell(2);
-			ft_dprintf(globals()->fd[2], "parse error in eval near: |%s|\n", mas);
+			ft_dprintf(globals()->fd[2],
+					"parse error in eval near: |%s|\n", mas);
 			ft_strdel(&mas);
 			return (NULL);
 		}

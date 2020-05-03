@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   check_calc.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: wstygg <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/04/13 19:53:08 by wstygg            #+#    #+#             */
+/*   Updated: 2020/05/02 13:20:11 by wstygg           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "eval_expr.h"
 
 int		check_calc_str(char *str)
@@ -14,14 +26,10 @@ int		check_calc_str(char *str)
 			return (-1);
 	}
 	dopstr = ft_strsub(str, 0, word_size(str));
-	if ((ft_strstr(dopstr, "+++") != NULL ||
-		 ft_strstr(dopstr, "---") != NULL ||
-		 ft_strstr(dopstr, ">>>") != NULL ||
-		 ft_strstr(dopstr, "<<<") != NULL ||
-		 ft_strstr(dopstr, "&&&") != NULL ||
-		 ft_strstr(dopstr, "|||") != NULL ||
-		 ft_strstr(dopstr, "**") != NULL ||
-		 ft_strstr(dopstr, "//") != NULL))
+	if ((ft_strstr(dopstr, "+++") != NULL || ft_strstr(dopstr, "---") != NULL ||
+	ft_strstr(dopstr, ">>>") != NULL || ft_strstr(dopstr, "<<<") != NULL ||
+	ft_strstr(dopstr, "&&&") != NULL || ft_strstr(dopstr, "|||") != NULL ||
+	ft_strstr(dopstr, "**") != NULL || ft_strstr(dopstr, "//") != NULL))
 	{
 		ft_strdel(&dopstr);
 		return (-1);

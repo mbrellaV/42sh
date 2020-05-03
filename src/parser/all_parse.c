@@ -12,6 +12,23 @@
 
 #include "fshell.h"
 
+int				return_check(char *str, int parbig, int parmin)
+{
+	if ((parbig % 2 != 0) || (parmin % 2 != 0))
+	{
+		ft_dprintf(globals()->fd[2],
+				"%s: unexpected EOF while looking for matching \"'\n", str);
+		return (0);
+	}
+	if (ck_br(str) <= 0)
+	{
+		ft_dprintf(globals()->fd[2],
+				"%s: unexpected EOF while looking for matching ()\n", str);
+		return (0);
+	}
+	return (1);
+}
+
 int				check_par_and_brackets(char *str)
 {
 	int		i;
@@ -29,26 +46,15 @@ int				check_par_and_brackets(char *str)
 			parmin++;
 		i++;
 	}
-	if ((parbig % 2 != 0) || (parmin % 2 != 0))
-	{
-		ft_dprintf(globals()->fd[2],
-				"%s: 42sh: unexpected EOF while looking for matching \"'\n", str);
-		return (0);
-	}
-	if (ck_br(str) <= 0)
-	{
-		ft_dprintf(globals()->fd[2],
-				   "%s: 42sh: unexpected EOF while looking for matching ()\n", str);
-		return (0);
-	}
-	return (1);
+	return (return_check(str, parbig, parmin));
 }
 
 int				check_opt_tokens(t_lextoken *tmp)
 {
 	while (tmp != NULL)
 	{
-		if (tmp->next && tmp->line && tmp->next->line && is_cmd_redirect(get_op_type(tmp->line)) &&
+		if (tmp->next && tmp->line && tmp->next->line &&
+			is_cmd_redirect(get_op_type(tmp->line)) &&
 			is_cmd_redirect(get_op_type(tmp->next->line)))
 		{
 			ft_error(5, tmp->line);
@@ -60,7 +66,8 @@ int				check_opt_tokens(t_lextoken *tmp)
 			ft_error(5, tmp->line);
 			return (-1);
 		}
-		if (tmp->next && tmp->line && tmp->next->line && is_cmd_redirect(get_op_type(tmp->line)) &&
+		if (tmp->next && tmp->line && tmp->next->line &&
+			is_cmd_redirect(get_op_type(tmp->line)) &&
 			get_op_type(tmp->next->line) >= 0)
 		{
 			ft_error(5, tmp->line);
@@ -77,14 +84,13 @@ t_exectoken		*all_parse(char *cmd)
 	t_exectoken	*extmp;
 	t_lextoken	*dop_tmp;
 
-	if (*cmd == '\0')
-		return (NULL);
-	if (check_par_and_brackets(cmd) == 0)
+	if (*cmd == '\0' || check_par_and_brackets(cmd) == 0)
 		return (NULL);
 	ft_change_all_sc(cmd);
 	if (!(tmp = do_lexer(cmd)))
 		return (NULL);
-	if (!(tmp = do_zam_bax_and_hist_full(tmp, &dop_tmp)) && ft_distr_lex(dop_tmp))
+	if (!(tmp = do_zam_bax_and_hist_full(tmp, &dop_tmp)) &&
+		ft_distr_lex(dop_tmp))
 		return (NULL);
 	if (check_all_errors(tmp) != 1)
 	{

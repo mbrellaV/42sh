@@ -26,6 +26,8 @@ SRC_BASE = builtins/ft_cd.c\
 	builtins/ft_fc_3.c\
 	builtins/allenv/ft_env.c\
 	builtins/alias/alias.c\
+	builtins/alias/alias_error.c\
+	builtins/alias/ft_do_change_alias.c\
  	builtins/allenv/global_env.c\
  	ft_main_what.c\
  	qft_printf/add_buff.c\

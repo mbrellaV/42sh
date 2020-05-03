@@ -41,11 +41,11 @@ static int			do_fc_print(t_fc flags)
 	while (range[0] != range[1])
 	{
 		ft_dprintf(globals()->fd[1], "%d\t%s\n", range[0] - flags.dop,
-				   get_hist_by_id(range[0]));
+				get_hist_by_id(range[0]));
 		range[0] += (range[0] < range[1]) ? 1 : -1;
 	}
 	ft_dprintf(globals()->fd[1], "%d\t%s\n", range[0] - flags.dop,
-			   get_hist_by_id(range[0]));
+			get_hist_by_id(range[0]));
 	return (1);
 }
 
@@ -60,11 +60,6 @@ static int			do_fc_regular(int fd, t_fc flags)
 		range[1] = range[0];
 	if (range[0] < 0)
 		range = (int[2]){0, range[1]};
-//	while (get_hist_by_id(range[0]) == NULL)
-//	{
-//		flags.dop++;
-//		range[0]++;
-//	}
 	while (range[0] != range[1])
 	{
 		if (!ft_dprintf(fd, "%s\n", get_hist_by_id(range[0])))
@@ -104,7 +99,8 @@ int					do_fc(char **av)
 	t_fc			f;
 	char			*command;
 
-	f = (t_fc){.rng = {0, 0, 0}, .r = 0, .l = 0, .silent = 0, .editor = FC_VIM, .dop = 0};
+	f = (t_fc){.rng = {0, 0, 0}, .r = 0, .l = 0,
+			.silent = 0, .editor = FC_VIM, .dop = 0};
 	if (check_flag(++av, &f))
 		return ((f.rng[0] > f.hi_s) ? ft_dprintf(globals()->fd[2], FC_US) : 0);
 	delete_fc_command();

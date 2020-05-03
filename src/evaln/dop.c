@@ -18,12 +18,7 @@ t_int		*cr_new_el(char *s, int *error)
 
 	if (!(tmp = ft_memalloc(sizeof(t_int))))
 		return (NULL);
-	tmp->ol = 0;
-	tmp->zl = 0;
-	tmp->i = 0;
-	tmp->d = 0;
-	tmp->last_token = 0;
-	tmp->s = s;
+	tmp = tmp_0(tmp, s);
 	if (!(tmp->s = change_vars(s)))
 	{
 		*error = 1;

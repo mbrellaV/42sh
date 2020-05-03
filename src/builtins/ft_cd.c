@@ -15,12 +15,17 @@
 int				ft_cd_error(char *tmp, int err, int to_free)
 {
 	put_error_to_shell(2);
-	err == 1 ? ft_dprintf(globals()->fd[2], "cd: no such file or directory: %s\n", tmp) : 0;
+	err == 1 ? (ft_dprintf(globals()->fd[2],
+			"cd: no such file or directory: %s\n", tmp)) : 0;
 	err == 2 ? ft_dprintf(globals()->fd[2], "cd: %s not set\n", tmp) : 0;
-	err == 3 ? ft_dprintf(globals()->fd[2], "cd: not a directory: %s\n", tmp) : 0;
-	err == 4 ? ft_dprintf(globals()->fd[2], "cd: no such file or directory: %s\n", tmp) : 0;
-	err == 6 ? ft_dprintf(globals()->fd[2], "cd: permission denied: %s\n", tmp) : 0;
-	err == 7 ? ft_dprintf(globals()->fd[2], "cd: string not in pwd: %s\n", tmp) : 0;
+	err == 3 ? (ft_dprintf(globals()->fd[2],
+			"cd: not a directory: %s\n", tmp)) : 0;
+	err == 4 ? (ft_dprintf(globals()->fd[2],
+			"cd: no such file or directory: %s\n", tmp)) : 0;
+	err == 6 ? (ft_dprintf(globals()->fd[2],
+			"cd: permission denied: %s\n", tmp)) : 0;
+	err == 7 ? (ft_dprintf(globals()->fd[2],
+			"cd: string not in pwd: %s\n", tmp)) : 0;
 	err == 9 ? ft_dprintf(globals()->fd[2], "cd: too many arguments\n") : 0;
 	to_free ? free(tmp) : 0;
 	return (0);
@@ -78,7 +83,8 @@ int				change_env(char *env, t_builtins *cd)
 			return (ft_cd_error(globals()->g_env[k] + ft_strlen(env), 6, 0));
 		}
 		set_new_var("OLDPWD", pwd, &globals()->g_env);
-		set_new_var("PWD", globals()->g_env[k] + ft_strlen(env), &globals()->g_env);
+		set_new_var("PWD", globals()->g_env[k] + ft_strlen(env),
+				&globals()->g_env);
 		free(pwd);
 		return (0);
 	}

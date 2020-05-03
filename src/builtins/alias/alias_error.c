@@ -1,29 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   alias_error.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: qmartina <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: wstygg <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/10 13:26:33 by qmartina          #+#    #+#             */
+/*   Created: 2020/04/13 18:29:27 by wstygg            #+#    #+#             */
 /*   Updated: 2020/05/02 13:20:11 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../../../inc/fshell.h"
 
-void	*ft_memset(void *b, int c, size_t len)
+int			alias_error(int error, char *tmp1, char *tmp2)
 {
-	char	*str;
-	int		i;
-
-	str = b;
-	i = 0;
-	while (len > 0)
+	put_error_to_shell(error);
+	if (error == 15)
 	{
-		str[i] = c;
-		i++;
-		len--;
+		ft_error(15, "parse error");
+		return (-1);
 	}
-	return (str);
+	if (error == 14)
+	{
+		ft_dprintf(globals()->fd[2], "alias [alias-name[=string]...]\n");
+		return (-1);
+	}
+	ft_dprintf(globals()->fd[2], "alias error: wrong argument: |%s|\n", tmp2);
+	ft_strdel(&tmp1);
+	ft_strdel(&tmp2);
+	return (-1);
 }

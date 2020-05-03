@@ -47,5 +47,6 @@ int					check_calc_str(char *str);
 char				*change_vars(char *evalstr);
 int					calc_error(int *stackos, int *stackzn, t_int *str, int *error, char *delstr);
 int					check_calc_sc(char *str);
+t_int				*tmp_0(t_int *tmp, char *s);
 
 #endif

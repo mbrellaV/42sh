@@ -36,6 +36,16 @@ int		opr_znak(char *dstr, int *marker)
 	return (sum);
 }
 
+t_int	*eval_help(t_int *l)
+{
+	if ((is_znak(l->s[l->i]) && (l->last_token++) && l->d == 0) ||
+		(l->s[l->i] == '(' || l->s[l->i] == ')'))
+		dostack(l->stackos, l->stackzn, opr_znak(l->s, &l->i), l);
+	else
+		l->i++;
+	return (l);
+}
+
 int		eval_expr(char *s, int *error)
 {
 	t_int	*l;
@@ -46,8 +56,9 @@ int		eval_expr(char *s, int *error)
 	{
 		if (check_calc_str(&l->s[l->i]) == -1)
 			return (calc_error(l->stackos, l->stackzn, l, error, l->s));
-		if ((l->s[l->i] >= '0' && l->s[l->i] <= '9') || ((l->s[l->i] == '-' || l->s[l->i] == '+') &&
-				l->s[l->i + 1] != '\0' && (l->s[l->i + 1] >= '0' && l->s[l->i + 1] <= '9') && l->d == 1))
+		if ((l->s[l->i] >= '0' && l->s[l->i] <= '9') ||
+		((l->s[l->i] == '-' || l->s[l->i] == '+') && l->s[l->i + 1] != '\0' &&
+		(l->s[l->i + 1] >= '0' && l->s[l->i + 1] <= '9') && l->d == 1))
 		{
 			if (l->last_token == 1)
 				return (calc_error(l->stackos, l->stackzn, l, error, l->s));
@@ -55,10 +66,7 @@ int		eval_expr(char *s, int *error)
 			addos(l->stackos, ft_atoi_with(l->s + l->i, &l->i), l);
 			l->d = 0;
 		}
-		if ((is_znak(l->s[l->i]) && (l->last_token++) && l->d == 0) || (l->s[l->i] == '(' || l->s[l->i] == ')'))
-			dostack(l->stackos, l->stackzn, opr_znak(l->s, &l->i), l);
-		else
-			l->i++;
+		l = eval_help(l);
 		if (l->last_token >= 3)
 			return (calc_error(l->stackos, l->stackzn, l, error, l->s));
 	}
