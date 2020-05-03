@@ -16,23 +16,16 @@ void	ft_next_slovo(t_readline *p)
 {
 	if (p->buff[p->index] == ' ' || p->buff[p->index] == '\n')
 	{
-//		p->index++;
-//		if (ft_put_n(p->len_hint, p->index, p->len) == -1)
-			do_right(p);
-//			tputs(tgetstr("nd", NULL), 1, ft_c);
-	}
-	while ((p->buff[p->index] == ' '|| p->buff[p->index] == '\n') && p->index < p->len)
-	{
-//		p->index++;
-//		if (ft_put_n(p->len_hint, p->index, p->len) == -1)
-//			tputs(tgetstr("nd", NULL), 1, ft_c);
 		do_right(p);
 	}
-	while (p->buff[p->index] != '\n' && p->buff[p->index] != ' ' && p->index < p->len)
+	while ((p->buff[p->index] == ' ' || p->buff[p->index] == '\n')
+	&& p->index < p->len)
 	{
-//		p->index++;
-//		if (ft_put_n(p->len_hint, p->index, p->len) == -1)
-//			tputs(tgetstr("nd", NULL), 1, ft_c);
+		do_right(p);
+	}
+	while (p->buff[p->index] != '\n' && p->buff[p->index] != ' '
+	&& p->index < p->len)
+	{
 		do_right(p);
 	}
 }

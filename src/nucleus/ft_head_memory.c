@@ -65,7 +65,7 @@ t_memory	*ft_head_memory(void)
 		head->next->back = head;
 		head = head->next;
 	}
-	line = ft_itoa(crc_32((unsigned char *) buf, ft_strlen((char *) buf)));
+	line = ft_itoa(crc_32((unsigned char *)buf, ft_strlen((char *)buf)));
 	close(fd);
 	if (ft_strcmp(hashsum, line) != 0)
 	{
@@ -88,8 +88,7 @@ int			save_history(t_memory *q)
 
 	ft_bzero(buf, 1000000);
 	fd = open("history/hist.txt", O_CREAT | O_RDWR | O_TRUNC,
-			S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP |
-			S_IROTH | S_IWOTH);
+			S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH | S_IWOTH);
 	if (fd < 0)
 		return (0);
 	while (q->back != NULL)
@@ -103,7 +102,7 @@ int			save_history(t_memory *q)
 		}
 		q = q->next;
 	}
-	hashsum = ft_itoa(crc_32((unsigned char *) buf, ft_strlen((char *) buf)));
+	hashsum = ft_itoa(crc_32((unsigned char *)buf, ft_strlen((char *)buf)));
 	write(fd, hashsum, ft_strlen(hashsum));
 	ft_putchar_fd(-100, fd);
 	write(fd, buf, ft_strlen((char *)buf));

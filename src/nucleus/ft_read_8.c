@@ -39,6 +39,24 @@ static void		norme_help(t_readline *p, char buf[8])
 	do_job_del();
 }
 
+int				ft_read_cycle(int rt, t_readline *p, t_memory *h, char *buf)
+{
+	if (rt > 1)
+		ft_cheak_sum(p, &h);
+	else if (p->sum_read == 9)
+		ft_cheak_tab(p);
+	else if (p->sum_read == 18)
+		ft_add_his(p, h);
+	else if (p->sum_read == 25 || p->sum_read == 23 || p->sum_read == 21 ||
+	p->sum_read == 127)
+		ft_cut_copy(p);
+	else if (ft_signal(p->sum_read, p) == 1)
+		return (0);
+	else
+		norme_help(p, buf);
+	return (1);
+}
+
 void			ft_read_8(t_readline *p, t_memory *head, int mod)
 {
 	char		buf[8];
@@ -52,19 +70,8 @@ void			ft_read_8(t_readline *p, t_memory *head, int mod)
 	{
 		do_job_del();
 		p->sum_read = ft_add_sumchar(buf, rt);
-		if (rt > 1)
-			ft_cheak_sum(p, &h);
-		else if (p->sum_read == 9)
-			ft_cheak_tab(p);
-		else if (p->sum_read == 18)
-			ft_add_his(p, h);
-		else if (p->sum_read == 25 || p->sum_read == 23 || p->sum_read == 21 ||
-				p->sum_read == 127)
-			ft_cut_copy(p);
-		else if (ft_signal(p->sum_read, p) == 1)
+		if (!ft_read_cycle(rt, p, h, buf))
 			return ;
-		else
-			norme_help(p, buf);
 	}
 	if (globals()->g_memory_head->inp && mod != 0)
 	{

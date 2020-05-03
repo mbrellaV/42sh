@@ -12,23 +12,6 @@
 
 #include "../../inc/fshell.h"
 
-void	ft_find_dir(char *dir, char *name, t_readline *p)
-{
-	DIR				*mydir;
-	struct dirent	*myfile;
-
-	mydir = opendir(dir);
-	if (mydir != NULL)
-	{
-		while ((myfile = readdir(mydir)) != 0)
-		{
-			if (is_cmp(name, myfile->d_name) && myfile->d_name[0] != '.')
-				ft_add_tab(p, myfile->d_name);
-		}
-		closedir(mydir);
-	}
-}
-
 void	ft_add_builtins_in_tab(char *name, t_readline *p)
 {
 	char	**mas;
@@ -44,37 +27,6 @@ void	ft_add_builtins_in_tab(char *name, t_readline *p)
 			ft_add_tab(p, goodstr);
 		i++;
 	}
-}
-
-void	ft_find_env(char *name, t_readline *p)
-{
-	char	**mas;
-	int		i;
-	char	*dopstr;
-	char	*goodstr;
-
-	i = 0;
-	name = ft_strsub(name, 2, ft_strlen(name) - 1);
-	mas = globals()->g_all_var;
-	while (mas[i] != NULL)
-	{
-		goodstr = ft_strsub(mas[i], 0, ft_strstr(mas[i], "=") - mas[i]);
-		if (p->flag_tab == 2 && is_cmp(name, goodstr))
-			ft_add_tab(p, goodstr);
-		if (p->flag_tab == 3 && is_cmp(name, goodstr))
-		{
-			if (!(dopstr = ft_memalloc(ft_strlen(goodstr) + 5)))
-				ft_error_q(2);
-			ft_strcat(dopstr, "${");
-			ft_strcat(dopstr, goodstr);
-			ft_strcat(dopstr, "}");
-			ft_add_tab(p, dopstr);
-			ft_strdel(&dopstr);
-		}
-		ft_strdel(&goodstr);
-		i++;
-	}
-	ft_strdel(&name);
 }
 
 void	ft_find_path(t_readline *p, char *name)
@@ -97,34 +49,6 @@ void	ft_find_path(t_readline *p, char *name)
 		ft_find_dir(path[i], name, p);
 	ft_strdel(&tmp);
 	ft_arrdel(path);
-}
-
-char	*ft_directory(char *str, int *flag_tab)
-{
-	int		k;
-	char	*tmp;
-	char	*hp;
-	char	*tmp1;
-
-	k = ft_strlen(str);
-	while (--k >= 0)
-		if (str[k] == '/')
-		{
-			if (str[0] == '~')
-			{
-				if (!(hp = ft_get_var("HOME", globals()->g_env)))
-					ft_error_q(5);
-				tmp = ft_strndup(&str[1], k - 1);
-				tmp1 = ft_strjoin(hp, tmp);
-				free(hp);
-				ft_strdel(&tmp);
-				return (tmp1);
-			}
-			else
-				return (ft_strndup(str, k + 1));
-		}
-	*flag_tab = (*flag_tab <= 1 ? 0 : *flag_tab);
-	return (ft_strdup("./"));
 }
 
 int		is_cmp(char *s1, char *s2)

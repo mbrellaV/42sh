@@ -18,7 +18,8 @@ void	init_shell(void)
 	globals()->g_shell_is_interactive = isatty(globals()->g_shell_terminal);
 	if (globals()->g_shell_is_interactive)
 	{
-		while (tcgetpgrp(globals()->g_shell_terminal) != (globals()->g_shell_pgid = getpgrp()))
+		while (tcgetpgrp(globals()->g_shell_terminal) !=
+		(globals()->g_shell_pgid = getpgrp()))
 			kill(-globals()->g_shell_pgid, SIGTTIN);
 		disable_shell_signals();
 		globals()->g_shell_pgid = getpid();

@@ -12,7 +12,7 @@
 
 #include "fshell.h"
 
-void			del_one_node_in_lextokens(t_lextoken *token_to_del, t_lextoken **first_token)
+void			del_one_node(t_lextoken *token_to_del, t_lextoken **first_token)
 {
 	if (token_to_del->prev)
 	{

@@ -12,6 +12,13 @@
 
 #include "../../inc/fshell.h"
 
+int		check_file_args(t_process *tmp)
+{
+	if (tmp->file_args == NULL && tmp->file_opt == NULL)
+		return (0);
+	return (1);
+}
+
 void	ft_open_f(char *str, int *flag, int *fd)
 {
 	if (*flag == 1 || *flag == 6)

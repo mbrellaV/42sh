@@ -23,10 +23,13 @@ int	main(void)
 
 	ft_bzero(s, 1000);
 	ft_dprintf(globals()->all_opened_fds[1], "test:\n");
-	ft_dprintf(globals()->all_opened_fds[1], "*TEST*%d***\n", ft_dprintf(globals()->all_opened_fds[1], "{RED}%#08.3o{EOC}", 8375));
+	ft_dprintf(globals()->all_opened_fds[1], "*TEST*%d***\n",
+			ft_dprintf(globals()->all_opened_fds[1],
+					"{RED}%#08.3o{EOC}", 8375));
 	ft_dprintf(globals()->all_opened_fds[1], "\n");
 	ft_dprintf(globals()->all_opened_fds[1], "orig:\n");
-	ft_dprintf(globals()->all_opened_fds[1], "*ORIG*%d***\n", printf("{RED}%#08.3o{EOC}", 8375));
+	ft_dprintf(globals()->all_opened_fds[1], "*ORIG*%d***\n",
+			printf("{RED}%#08.3o{EOC}", 8375));
 	ft_strprintf(&str, "{RED}%#08.3o{EOC}", 8375);
 	ft_dprintf(globals()->all_opened_fds[1], "TEST StrPRINT: %s\n", str);
 	sprintf(s, "{RED}%#08.3o{EOC}", 8375);

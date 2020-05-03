@@ -37,7 +37,7 @@ char	init_shell_builtins()
 			};
 	i = 0;
 	if (!(globals()->g_builtins = (char **)ft_memalloc(sizeof(char *) *
-												  (BIL_NUM + 1))))
+			(BIL_NUM + 1))))
 		ft_error_q(1);
 	while (g_builtins[i])
 	{

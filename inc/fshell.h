@@ -36,6 +36,7 @@
 # include <termios.h>
 # include <sys/ioctl.h>
 # include <dirent.h>
+# include <errno.h>
 # include "parser.h"
 # include "nucleus.h"
 # include "struct.h"
@@ -133,6 +134,7 @@ typedef struct		s_pstat
 t_global			*globals(void);
 int					is_builtin(char *str);
 void				ft_alias();
+int					alias_error(int error, char *tmp1, char *tmp2);
 int					check_flag(char **av, t_fc *f);
 int					calc_h_size();
 char				*read_fc(int fd);
@@ -145,7 +147,7 @@ void				ft_realloc_all(int k, char ***envl);
 void				ft_echo(char **str);
 char				*get_hist_by_id(int id);
 char				*ft_slash(char *str, t_builtins *echo);
-void				del_one_node_in_lextokens(t_lextoken *token_to_del,
+void				del_one_node(t_lextoken *token_to_del,
 						t_lextoken **first_token);
 char				*distribute_echo(char **str, int k, int flag,
 						t_builtins *echo);
@@ -252,6 +254,10 @@ void				update_status (void);
 void				wait_for_job (t_job *j);
 t_job				*create_job(t_exectoken *head);
 void				format_job_info (t_job *j, const char *status, int num);
+int					check_file_args(t_process *tmp);
+void				dop_to_check_tab(t_readline *p, char **str, int *i);
+void				dop_to_check_tab_delete(t_readline *p,
+						char **name, char **str, char **dir);
 void				do_job_notification (void);
 void				continue_job (t_job *j, int foreground);
 void				mark_job_as_running (t_job *j);

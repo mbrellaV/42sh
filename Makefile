@@ -74,6 +74,7 @@ SRC_BASE = builtins/ft_cd.c\
 	lexer/all_bax_and_hist_change.c\
 	lexer/kill_dop_structure.c\
 	lexer/del_one_node_in_lextokens.c\
+	lexer/do_zam_ravno.c\
 	lexer/word_sizes.c\
 	lexer/change_hist_exp.c\
 	lexer/change_str_by_str.c\
@@ -93,6 +94,7 @@ SRC_BASE = builtins/ft_cd.c\
 	nucleus/ft_add_sumchar.c\
 	nucleus/ft_put_n.c\
 	nucleus/ft_do_leftright.c\
+	nucleus/ft_find_env.c\
 	nucleus/ft_upcursor.c\
 	nucleus/ft_downcursor.c\
 	nucleus/ft_back_slovo.c\
@@ -112,9 +114,11 @@ SRC_BASE = builtins/ft_cd.c\
 	nucleus/ft_memory.c\
 	nucleus/ft_dop_history.c\
 	nucleus/ft_putmemory.c\
+	nucleus/ft_directory.c\
 	nucleus/ft_start_read.c\
 	nucleus/ft_printf_helper.c\
 	nucleus/ft_cheak_quote.c\
+	nucleus/ft_cheak_tab.c\
 	nucleus/ft_add_intput_que.c\
 	nucleus/find_history.c\
 	nucleus/ft_arrnew.c\

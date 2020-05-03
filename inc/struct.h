@@ -47,7 +47,7 @@ typedef struct				s_readline
 	int						flag_tab;
 	int						flag_left_word;
 	int						i_dop;
-	char 					c;
+	char					c;
 }							t_readline;
 
 typedef struct				s_pipe
@@ -131,10 +131,10 @@ typedef struct				s_job
 
 typedef	struct				s_nline
 {
-	int*					i_arr;
-	char**					arr;
-	int 					i;
-	int 					j;
+	int						*i_arr;
+	char					**arr;
+	int						i;
+	int						j;
 	int						k;
 }							t_nline;
 

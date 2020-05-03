@@ -18,12 +18,11 @@ void		do_heredoc(t_pipe *p, char **av)
 	if (p->flag == 4)
 	{
 		*p->infile = ft_heredoc(av[p->i + 2]);
-		//ft_redirect(p, STDIN_FILENO, STDOUT_FILENO);
 		ft_redirect_one(*p->infile, STDIN_FILENO);
 	}
 }
 
-int		do_simple_redirects(t_pipe *p, int *opened_fds, char **av, int type)
+int			do_simple_redirects(t_pipe *p, int *opened_fds, char **av, int type)
 {
 	if ((p->flag == 1 || p->flag == 2) && type != 0)
 	{

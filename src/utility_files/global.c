@@ -16,5 +16,5 @@ t_global			*globals(void)
 {
 	static t_global	globals;
 
-	return(&globals);
+	return (&globals);
 }

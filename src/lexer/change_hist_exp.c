@@ -31,7 +31,6 @@ void				zm_history_numbers(int i, char **str1,
 	c = i + type;
 	while (isword(str[c]) != 0 && str[c])
 		c++;
-	//tmp = ft_strdup("\0");
 	if (type == 0)
 		tmp = get_num_from_hist_begin(q, ft_atoi(str + i + 1));
 	if (type == 2)
@@ -56,17 +55,13 @@ void				zm_history_name(int i, char **str1, char type, t_memory *q)
 	c = i + type;
 	while (isword(str[c]) != 0 && str[c])
 		c++;
-	if (type == 1)
-	{
-		str_for_del = ft_strsub(str + i + type, 0, word_size(str + i + 1));
-		tmp = get_num_from_hist_starting(q,
-				str_for_del);
-	}
+	if (type == 1 && (str_for_del = ft_strsub(str + i + type, 0,
+			word_size(str + i + 1))))
+		tmp = get_num_from_hist_starting(q, str_for_del);
 	if (type == 2)
 	{
 		str_for_del = ft_strsub(str + i + 2, 0, word_size(str + i + 2));
-		tmp = get_num_from_hist_cons(q,
-				str_for_del);
+		tmp = get_num_from_hist_cons(q, str_for_del);
 	}
 	ft_strdel(&str_for_del);
 	if (tmp == NULL)
@@ -76,6 +71,22 @@ void				zm_history_name(int i, char **str1, char type, t_memory *q)
 	}
 	str = do_zam_str_by_str(i, c, str, tmp);
 	*str1 = str;
+}
+
+char				*do_zam_cycle(char *str1, t_memory *q, int i)
+{
+	if (str1[i + 1] == '!')
+		str1 = do_zam_str_by_str(i, i + 2, str1, ft_strdup(q->inp));
+	else if (ft_atoi(str1 + i + 1) > 0)
+		zm_history_numbers(i, &str1, 0, q);
+	else if (ft_atoi(str1 + i + 1) < 0)
+		zm_history_numbers(i, &str1, 2, q);
+	else if (isword(str1[i + 1]) != 0 &&
+	str1[i + 1] != '?' && str1[i + 1] != '-')
+		zm_history_name(i, &str1, 1, q);
+	else if (str1[i + 1] == '?' || str1[i + 1] == '-')
+		zm_history_name(i, &str1, 2, q);
+	return (str1);
 }
 
 char				*do_zam_str_hist_var(char *str1, t_memory *q)
@@ -88,19 +99,7 @@ char				*do_zam_str_hist_var(char *str1, t_memory *q)
 	while (str1[i] != '\0')
 	{
 		if (str1[i] == '!')
-		{
-			if (str1[i + 1] == '!')
-				str1 = do_zam_str_by_str(i, i + 2, str1, ft_strdup(q->inp));
-			else if (ft_atoi(str1 + i + 1) > 0)
-				zm_history_numbers(i, &str1, 0, q);
-			else if (ft_atoi(str1 + i + 1) < 0)
-				zm_history_numbers(i, &str1, 2, q);
-			else if (isword(str1[i + 1]) != 0 &&
-			str1[i + 1] != '?' && str1[i + 1] != '-')
-				zm_history_name(i, &str1, 1, q);
-			else if (str1[i + 1] == '?' || str1[i + 1] == '-')
-				zm_history_name(i, &str1, 2, q);
-		}
+			str1 = do_zam_cycle(str1, q, i);
 		if (str1 == NULL)
 			return (NULL);
 		i++;

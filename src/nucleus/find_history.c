@@ -62,8 +62,6 @@ void	ft_add_his_ch(t_readline *r, char c)
 		if (r->index > 0)
 		{
 			do_left(r);
-//			r->buff[--r->index] = 0;
-//			write(2, "\b", 1);
 		}
 	}
 	else
@@ -96,7 +94,6 @@ void	find_history(t_readline *p, t_memory *q)
 		}
 		else
 		{
-			//check
 			ft_return(p, &r, tmp);
 			del_readline(&r);
 			return ;

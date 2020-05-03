@@ -1496,7 +1496,7 @@ CMakeFiles/42save.dir/src/lexer/del_one_node_in_lextokens.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/42save.dir/src/lexer/del_one_node_in_lextokens.c.i"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/petruha2001/42sh/src/lexer/del_one_node_in_lextokens.c > CMakeFiles/42save.dir/src/lexer/del_one_node_in_lextokens.c.i
 
-CMakeFiles/42save.dir/src/lexer/del_one_node_in_lextokens.c.s: cmake_force
+CMakeFiles/42save.dir/src/lexer/del_one_node.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/42save.dir/src/lexer/del_one_node_in_lextokens.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/petruha2001/42sh/src/lexer/del_one_node_in_lextokens.c -o CMakeFiles/42save.dir/src/lexer/del_one_node_in_lextokens.c.s
 

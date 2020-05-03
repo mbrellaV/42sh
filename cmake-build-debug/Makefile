@@ -1867,7 +1867,7 @@ src/lexer/del_one_node_in_lextokens.i: src/lexer/del_one_node_in_lextokens.c.i
 # target to preprocess a source file
 src/lexer/del_one_node_in_lextokens.c.i:
 	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/lexer/del_one_node_in_lextokens.c.i
-.PHONY : src/lexer/del_one_node_in_lextokens.c.i
+.PHONY : src/lexer/del_one_node.c.i
 
 src/lexer/del_one_node_in_lextokens.s: src/lexer/del_one_node_in_lextokens.c.s
 

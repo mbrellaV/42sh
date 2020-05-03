@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_2.c                                           :+:      :+:    :+:   */
+/*   ck_check.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wstygg <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -22,8 +22,7 @@ int		ft_ck_addline(t_readline *p)
 	{
 		if (p->buff[0] != '\0')
 		{
-			dop_memory = ft_memory(globals()->g_memory_head, &(p->buff));
-			if (dop_memory == NULL)
+			if (!(dop_memory = ft_memory(globals()->g_memory_head, &(p->buff))))
 			{
 				ft_strdel(&p->buff);
 				return (-1);
@@ -120,26 +119,3 @@ int		ck_br(const char *str)
 	ft_strdel(&s);
 	return (1);
 }
-
-//int		ck_br(const char *str)
-//{
-//	char	*dopstr;
-//	int		i;
-//	int		size;
-//
-//	i = 0;
-//	dopstr = (char *)str;
-//	while (dopstr[i])
-//	{
-//		if (issc(dopstr[i]))
-//		{
-//			size = sc_size(&dopstr[i], dopstr[i]);
-//			if (size <  0)
-//				return (0);
-//			i += size;
-//		}
-//		else
-//			i++;
-//	}
-//	return (1);
-//}
