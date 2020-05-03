@@ -20,10 +20,19 @@ int		do_fg(char **mas)
 	}
 	else if (mas[0] != NULL && mas[1] != NULL && mas[2] == NULL)
 	{
-		if (ft_strcmp(mas[1], "%") == 0 || ft_strcmp(mas[1], "%%") == 0)
-			continue_job(get_last_job(), 1);
-		else if (ft_str_is_numeric(mas[1]))
-			continue_job(get_job_by_number(ft_atoi(mas[1])), 1);
+		if (mas[1][0] == '%')
+		{
+			if (mas[1][1] == '%' || mas[1][1] == '+')
+				continue_job(get_last_job(), 1);
+			else if (mas[1][1] == '-')
+				continue_job(get_prev_last_job(), 1);
+			else if (ft_isdigit(mas[1][1]))
+				continue_job(get_job_by_number(ft_atoi(mas[1])), 1);
+			else if (isword(mas[1][1]) == 1)
+				continue_job(get_job_by_start_str(&mas[1][1]), 1);
+			else if (isword(mas[1][1]) == 1)
+				continue_job(get_job_by_cont_str(&mas[1][1]), 1);
+		}
 		else
 		{
 			ft_dprintf(globals()->fd[2], "42sh: fg: %s: no such job", mas[1]);
