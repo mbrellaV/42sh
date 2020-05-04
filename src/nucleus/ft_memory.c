@@ -12,6 +12,18 @@
 
 #include "../inc/fshell.h"
 
+char		*create_dopstr(char **str, t_memory *back, char *str_del)
+{
+	char		*dopstr;
+
+	if (!(dopstr = do_zam_str_hist_var(*str, back)))
+	{
+		ft_strdel(&str_del);
+		return (NULL);
+	}
+	return (dopstr);
+}
+
 t_memory	*ft_memory(t_memory *back, char **str)
 {
 	t_memory	*tmp;
@@ -21,11 +33,8 @@ t_memory	*ft_memory(t_memory *back, char **str)
 
 	globals()->g_his_d = 0;
 	str_for_del = ft_strdup(*str);
-	if (!(dopstr = do_zam_str_hist_var(*str, back)))
-	{
-		ft_strdel(&str_for_del);
+	if (!(dopstr = create_dopstr(str, back, str_for_del)))
 		return (NULL);
-	}
 	if (!(tmp = ft_memalloc(sizeof(t_memory))))
 		return (NULL);
 	if (!(tmp->inp = ft_memalloc(130000)))

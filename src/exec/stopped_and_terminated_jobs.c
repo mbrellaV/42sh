@@ -22,23 +22,18 @@ static int		check_status(t_pstat *pstat, int status, pid_t pid, t_job *job)
 		ft_dprintf(2, "\n");
 		if (job != NULL)
 			format_job_info(job, "stopped", num_of_the_job(job));
-		//pstat->str_for_del = ft_itoa(WEXITSTATUS(status));
-		//put_error_to_shell(WEXITSTATUS(status));
-		//ft_strdel(&pstat->str_for_del);
 	}
 	else
 	{
 		pstat->p->completed = 1;
 		pstat->p->status = WEXITSTATUS(status);
-		//pstat->str_for_del = ft_itoa(pstat->p->status);
 		put_error_to_shell(pstat->p->status);
-		//ft_strdel(&pstat->str_for_del);
 		pstat->ptmp = pstat->j->first_process;
 		while (pstat->ptmp != pstat->p && (pstat->ptmp->completed = 1))
 			pstat->ptmp = pstat->ptmp->next;
 		if (WIFSIGNALED(status))
 			ft_dprintf(globals()->fd[2], "%d: Terminated by signal %d.\n",
-					   (int)pid, WTERMSIG(pstat->p->status));
+					(int)pid, WTERMSIG(pstat->p->status));
 	}
 	return (0);
 }
@@ -63,7 +58,8 @@ int				mark_process_status(pid_t pid, int status, t_job *job)
 			}
 			pstat.j = pstat.j->next;
 		}
-		return (!ft_dprintf(globals()->fd[2], "No child process %d.\n", pid) - 1);
+		return (!ft_dprintf(globals()->fd[2],
+				"No child process %d.\n", pid) - 1);
 	}
 	else if (pid == 0 || errno == ECHILD)
 		return (-1);
@@ -84,13 +80,7 @@ void			update_status(void)
 		pr = job->first_process;
 		while (pr)
 		{
-//			if (pr->stopped != 1 && pr->completed != 1)
-//				pid = waitpid(pr->pid, &status, WCONTINUED | WNOHANG);
-//			else
 			pid = waitpid(pr->pid, &status, WUNTRACED | WNOHANG);
-			//errno = 0;
-//			dprintf(2, "\n|%d, %d, %d, %d, %d, %d, %d|\n", errno, pr->pid,
-//					pid, status, WEXITSTATUS(status), WIFSIGNALED(status), WTERMSIG(status));
 			mark_process_status(pid, status, job);
 			pr = pr->next;
 		}

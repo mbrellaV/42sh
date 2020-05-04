@@ -6,38 +6,25 @@
 /*   By: wstygg <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/14 18:54:39 by wstygg            #+#    #+#             */
-/*   Updated: 2020/05/02 13:20:11 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/05/04 14:49:03 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fshell.h"
 
-char	init_shell_builtins()
+char			init_shell_builtins(void)
 {
-	int		i;
-	char		*g_builtins[BIL_NUM] =
-			{
-					"alias",
-					"export",
-					"unset",
-					"history",
-					"env",
-					"clear",
-					"hash",
-					"cd",
-					"echo",
-					"exit",
-					"type",
-					"set",
-					"fg",
-					"bg",
-					"jobs",
-					"fc",
-					NULL
-			};
+	int			i;
+	const char	*g_builtins[BIL_NUM] = {
+		"alias", "export", "unset",
+		"history", "env", "clear", "hash",
+		"cd", "echo", "exit", "type",
+		"set", "fg", "bg", "jobs",
+		"fc", "authors", NULL};
+
 	i = 0;
 	if (!(globals()->g_builtins = (char **)ft_memalloc(sizeof(char *) *
-												  (BIL_NUM + 1))))
+			(BIL_NUM + 1))))
 		ft_error_q(1);
 	while (g_builtins[i])
 	{
@@ -47,9 +34,9 @@ char	init_shell_builtins()
 	}
 }
 
-int		is_builtin(char *str)
+int				is_builtin(char *str)
 {
-	int i;
+	int			i;
 
 	i = 0;
 	if (str == NULL)

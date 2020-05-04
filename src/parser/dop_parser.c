@@ -27,12 +27,12 @@ static void				init_t(t_dop_str *t, int op_type)
 	t->tmp1_a->foreground = 1;
 	t->tmp1_a->left = NULL;
 	t->tmp1_a->right = NULL;
-	t->tmp1_a->should_wait_and = 0;
-	t->tmp1_a->should_wait_or = 0;
+	t->tmp1_a->wait_and = 0;
+	t->tmp1_a->wait_or = 0;
 	if (op_type == 10)
-		t->tmp1_a->should_wait_and = 1;
+		t->tmp1_a->wait_and = 1;
 	if (op_type == 11)
-		t->tmp1_a->should_wait_or = 1;
+		t->tmp1_a->wait_or = 1;
 	t->dopi_a = 0;
 	t->f_a = 0;
 }

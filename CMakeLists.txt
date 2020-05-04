@@ -14,6 +14,7 @@ add_executable(42save
         inc/nucleus.h
         inc/parser.h
         inc/struct.h
+        src/builtins/authors.c
         src/builtins/alias/alias.c
         src/builtins/allenv/ft_env.c
         src/builtins/allenv/global_env.c
@@ -86,9 +87,12 @@ add_executable(42save
         src/nucleus/ft_memory.c
         src/nucleus/ft_next_slovo.c
         src/nucleus/ft_print_tab.c
+        src/nucleus/ft_directory.c
+        src/nucleus/ft_read_8.c
         src/nucleus/ft_printf_helper.c
         src/nucleus/ft_put_n.c
         src/nucleus/ft_putcut.c
+        src/nucleus/dop_memory.c
         src/nucleus/ft_putmemory.c
         src/nucleus/ft_read_8.c
         src/nucleus/ft_realloc_buff.c
@@ -97,6 +101,7 @@ add_executable(42save
         src/nucleus/ft_start_read.c
         src/nucleus/ft_strsplit1.c
         src/nucleus/ft_upcursor.c
+        src/nucleus/ft_cheak_tab.c
         src/nucleus/input_mode.c
         src/nucleus/show_history.c
         src/nucleus/tab.c
@@ -121,6 +126,9 @@ add_executable(42save
         src/utility_files/g_builtins.c
         src/init_shell.c
         src/main.c
+        src/do_builtin.c
+        src/ft_open_flag_in_builtins.c
+        src/redirects.c
         src/shell_lvl.c src/exec/create_jobs_and_proc.c src/exec/free_job_list.c
         src/exec/find_jobs.c src/exec/working_with_fds.c src/exec/job_info.c
         src/evaln/sub_and_add.c src/exec/ft_do_open_flags.c src/exec/redirect.c src/ck_check.c

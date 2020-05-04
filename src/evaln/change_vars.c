@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   change_vars.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: wstygg <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/04/13 19:53:08 by wstygg            #+#    #+#             */
+/*   Updated: 2020/05/02 13:20:11 by wstygg           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "eval_expr.h"
 
 char			*save_to_env(char *str, int i, char *dopstr)
@@ -22,7 +34,6 @@ char			*save_to_env(char *str, int i, char *dopstr)
 	set_new_var(str_for_rec, dopstr, &globals()->g_all_var);
 	set_new_var(str_for_rec, dopstr, &globals()->g_env);
 	ft_strdel(&str_for_rec);
-	//ft_strdel(&str);
 	return (dopstr);
 }
 

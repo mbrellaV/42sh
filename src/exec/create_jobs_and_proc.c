@@ -12,13 +12,6 @@
 
 #include "fshell.h"
 
-int				check_file_args(t_process *tmp)
-{
-	if (tmp->file_args == NULL && tmp->file_opt == NULL)
-		return (0);
-	return (1);
-}
-
 t_process		*create_process(t_exectoken *tmp)
 {
 	t_process	*fir;

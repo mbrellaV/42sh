@@ -6,7 +6,7 @@
 /*   By: mbrella <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/11 10:58:44 by mbrella           #+#    #+#             */
-/*   Updated: 2020/05/02 15:47:51 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/05/04 14:54:36 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@
 # include <termios.h>
 # include <sys/ioctl.h>
 # include <dirent.h>
+# include <errno.h>
 # include "parser.h"
 # include "nucleus.h"
 # include "struct.h"
@@ -65,6 +66,8 @@
 # define SHELL_NAME	"42sh"
 
 # define FC_US "42sh: fc: error!\nusing: fc -[eslr] [editor] [range | number]\n"
+# define SY_E_1	"42sh: Syntax error: newline unexpected (expecting \")\")\n"
+# define SY_E_2	"42sh: Syntax error: \")\" unexpected\n"
 
 typedef struct		s_fc
 {
@@ -74,7 +77,6 @@ typedef struct		s_fc
 	int				silent;
 	int				editor;
 	int				rng[3];
-	int				dop;
 }					t_fc;
 
 typedef struct		s_global
@@ -133,6 +135,7 @@ typedef struct		s_pstat
 t_global			*globals(void);
 int					is_builtin(char *str);
 void				ft_alias();
+int					alias_error(int error, char *tmp1, char *tmp2);
 int					check_flag(char **av, t_fc *f);
 int					calc_h_size();
 char				*read_fc(int fd);
@@ -143,14 +146,16 @@ int					ft_do_change_alias(char **mas);
 char				*do_obr_zamena(char *line);
 void				ft_realloc_all(int k, char ***envl);
 void				ft_echo(char **str);
+t_memory			*dop_memmory(int fd, char *buf);
 char				*get_hist_by_id(int id);
 char				*ft_slash(char *str, t_builtins *echo);
-void				del_one_node_in_lextokens(t_lextoken *token_to_del,
+void				del_one_node(t_lextoken *token_to_del,
 						t_lextoken **first_token);
 char				*distribute_echo(char **str, int k, int flag,
 						t_builtins *echo);
 char				*ft_hex(char *str);
 void				delete_fc_command(void);
+void				*ft_malloc(size_t size);
 int					launch(char *str, int put_name);
 int					set_new_var(char *str1, char *str2, char ***envl);
 int					ft_cd(char **str);
@@ -161,6 +166,7 @@ t_job				*get_last_job();
 t_job				*get_prev_last_job(void);
 t_job				*get_job_by_start_str(char *str);
 t_job				*get_job_by_cont_str(char *str);
+int					do_authors(void);
 char				*get_pwd(t_builtins *cd);
 char				*get_oldpwd(t_builtins *cd);
 int					ft_cd_error(char *tmp, int err, int to_free);
@@ -221,6 +227,9 @@ int					check_bracket(char *str);
 void				do_obr_zamena_slash(t_exectoken *tmp);
 void				ft_redirect(t_pipe *p, int new_infile_fd,
 						int new_outfile_fd);
+int					set_redirects_for_builtins(char **av);
+int					ft_open_flag_in_builtins(char *opt, int flag, int *infile,
+						int *outfile);
 t_job				*get_job_by_number(int n);
 int					do_fg(char **mas);
 int					check_if_in_par(char *line, int i);
@@ -252,6 +261,10 @@ void				update_status (void);
 void				wait_for_job (t_job *j);
 t_job				*create_job(t_exectoken *head);
 void				format_job_info (t_job *j, const char *status, int num);
+int					check_file_args(t_process *tmp);
+void				dop_to_check_tab(t_readline *p, char **str, int *i);
+void				dop_to_check_tab_delete(t_readline *p,
+						char **name, char **str, char **dir);
 void				do_job_notification (void);
 void				continue_job (t_job *j, int foreground);
 void				mark_job_as_running (t_job *j);

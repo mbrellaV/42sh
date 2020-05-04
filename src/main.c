@@ -6,7 +6,7 @@
 /*   By: qmartina <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/22 09:38:59 by qmartina          #+#    #+#             */
-/*   Updated: 2020/05/02 13:20:10 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/05/04 14:28:45 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,12 @@ int		main_cycle(t_readline *p, t_exectoken **start_token)
 	del_readline(p);
 	ft_distruct_tree(*start_token);
 	return (0);
+}
+
+void	popa(char **buf)
+{
+	(*buf)[0] = 'a';
+	(*buf)[1] = 'b';
 }
 
 int		main(int argc, char **argv, char **env)

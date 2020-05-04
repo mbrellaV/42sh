@@ -1,18 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_2.c                                           :+:      :+:    :+:   */
+/*   ck_check.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wstygg <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/15 18:29:17 by wstygg            #+#    #+#             */
-/*   Updated: 2020/05/02 13:20:10 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/05/04 14:59:22 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fshell.h"
 
-int		ft_ck_addline(t_readline *p)
+static int			norme_help(int f, char **buff)
+{
+	ft_dprintf(globals()->fd[2], f == -1 ? SY_E_1 : SY_E_2);
+	free(*buff);
+	return (1);
+}
+
+int					ft_ck_addline(t_readline *p)
 {
 	int				f;
 	t_memory		*dop_memory;
@@ -22,38 +29,29 @@ int		ft_ck_addline(t_readline *p)
 	{
 		if (p->buff[0] != '\0')
 		{
-			dop_memory = ft_memory(globals()->g_memory_head, &(p->buff));
-			if (dop_memory == NULL)
-			{
-				ft_strdel(&p->buff);
+			if (!(dop_memory = ft_memory(globals()->g_memory_head, &(p->buff)))
+					&& strdelr(&p->buff))
 				return (-1);
-			}
 			globals()->g_memory_head = dop_memory;
 		}
 		p->index = ft_do_zam_alias(&p->buff);
-		while (p->index > 0 && p->buff[p->index - 1] == '\\')
-		{
-			p->buff[p->index - 1] = 0;
+		while (p->index > 0 && p->buff[p->index - 1] == '\\' &&
+				!(p->buff[p->index - 1] = 0))
 			ft_add_intput_que(p, globals()->g_memory_head, 11);
-		}
 		while (ft_cheak_quote(p->buff) != 1)
 			ft_add_intput_que(p, globals()->g_memory_head, 1);
 		if ((f = ck_br(p->buff)) == 0)
 			ft_add_intput_que(p, globals()->g_memory_head, 20);
-		else if (f == -1 || f == -2)
-		{
-			ft_dprintf(globals()->fd[2], f == -1 ? "42sh: Syntax error: newline unexpected (expecting \")\")\n" : "42sh: Syntax error: \")\" unexpected\n");
-			free(p->buff);
+		else if ((f == -1 || f == -2) && norme_help(f, &p->buff))
 			return (0);
-		}
 	}
 	return (1);
 }
 
-char	*ck_br_faf(char *s)
+char				*ck_br_faf(char *s)
 {
-	int		i;
-	char	c;
+	int				i;
+	char			c;
 
 	i = -1;
 	while (s[++i])
@@ -70,7 +68,7 @@ char	*ck_br_faf(char *s)
 	return (s);
 }
 
-char	*ck_br_cycle(char *s, int k, int i)
+char				*ck_br_cycle(char *s, int k, int i)
 {
 	while (1)
 	{
@@ -97,11 +95,11 @@ char	*ck_br_cycle(char *s, int k, int i)
 	return (s);
 }
 
-int		ck_br(const char *str)
+int					ck_br(const char *str)
 {
-	char	*s;
-	int		i;
-	int		k;
+	char			*s;
+	int				i;
+	int				k;
 
 	k = 0;
 	s = ft_strdup(str);
@@ -120,26 +118,3 @@ int		ck_br(const char *str)
 	ft_strdel(&s);
 	return (1);
 }
-
-//int		ck_br(const char *str)
-//{
-//	char	*dopstr;
-//	int		i;
-//	int		size;
-//
-//	i = 0;
-//	dopstr = (char *)str;
-//	while (dopstr[i])
-//	{
-//		if (issc(dopstr[i]))
-//		{
-//			size = sc_size(&dopstr[i], dopstr[i]);
-//			if (size <  0)
-//				return (0);
-//			i += size;
-//		}
-//		else
-//			i++;
-//	}
-//	return (1);
-//}

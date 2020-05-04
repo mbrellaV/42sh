@@ -17,12 +17,14 @@ void	ft_redirect_error(int marker, char *dopline)
 	put_error_to_shell(2);
 	if (marker == 10)
 	{
-		ft_dprintf(globals()->fd[2], SHELL_NAME": %s: Bad file descriptor", dopline);
+		ft_dprintf(globals()->fd[2], SHELL_NAME": %s: Bad file descriptor",
+				dopline);
 		ft_strdel(&dopline);
 	}
 	if (marker == 9)
 	{
-		ft_dprintf(globals()->fd[2], SHELL_NAME": %s: ambiguous redirect", dopline);
+		ft_dprintf(globals()->fd[2], SHELL_NAME": %s: ambiguous redirect",
+				dopline);
 	}
 }
 
@@ -48,7 +50,6 @@ int		ft_open_flag(char *opt, t_pipe *p)
 				S_IROTH | S_IWOTH);
 	else if (p->flag == 3)
 		*p->infile = open(opt, O_RDONLY);
-	//dprintf(2, "\n|%d|", *p->infile);
 	if (((p->flag == 1 || p->flag == 6 || p->flag == 2) && *p->outfile <= 0) ||
 		(p->flag == 3 && *p->infile <= 0))
 	{

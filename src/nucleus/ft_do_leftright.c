@@ -28,14 +28,11 @@ void	do_left(t_readline *p)
 		}
 		tputs(tgetstr("nd", NULL), 1, ft_c);
 		if (k == 0)
-		{
 			while (k < p->len_hint)
 			{
 				tputs(tgetstr("nd", NULL), 1, ft_c);
 				k++;
 			}
-		}
-//		p->index--;
 	}
 	if (p->index > 0)
 	{
@@ -44,9 +41,9 @@ void	do_left(t_readline *p)
 	}
 }
 
-void 	do_right(t_readline *p)
+void	do_right(t_readline *p)
 {
-	int 	k;
+	int		k;
 
 	k = 0;
 	if (p->buff[p->index] && p->buff[p->index] == '\n')
@@ -59,12 +56,9 @@ void 	do_right(t_readline *p)
 			k--;
 		}
 		write(2, "\b", 1);
-//		p->index++;
 	}
 	else
 		tputs(tgetstr("nd", NULL), 1, ft_c);
-//	if (ft_put_n(p->len_hint, p->index + 1, p->len) == -1)
-//	tputs(tgetstr("nd", NULL), 1, ft_c);
 	p->index++;
 }
 

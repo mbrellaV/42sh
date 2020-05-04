@@ -231,6 +231,33 @@ src/builtins/allenv/main_env.c.s:
 	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/builtins/allenv/main_env.c.s
 .PHONY : src/builtins/allenv/main_env.c.s
 
+src/builtins/authors.o: src/builtins/authors.c.o
+
+.PHONY : src/builtins/authors.o
+
+# target to build an object file
+src/builtins/authors.c.o:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/builtins/authors.c.o
+.PHONY : src/builtins/authors.c.o
+
+src/builtins/authors.i: src/builtins/authors.c.i
+
+.PHONY : src/builtins/authors.i
+
+# target to preprocess a source file
+src/builtins/authors.c.i:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/builtins/authors.c.i
+.PHONY : src/builtins/authors.c.i
+
+src/builtins/authors.s: src/builtins/authors.c.s
+
+.PHONY : src/builtins/authors.s
+
+# target to generate assembly for a file
+src/builtins/authors.c.s:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/builtins/authors.c.s
+.PHONY : src/builtins/authors.c.s
+
 src/builtins/bg_builtin.o: src/builtins/bg_builtin.c.o
 
 .PHONY : src/builtins/bg_builtin.o
@@ -581,6 +608,33 @@ src/ck_check.s: src/ck_check.c.s
 src/ck_check.c.s:
 	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/ck_check.c.s
 .PHONY : src/ck_check.c.s
+
+src/do_builtin.o: src/do_builtin.c.o
+
+.PHONY : src/do_builtin.o
+
+# target to build an object file
+src/do_builtin.c.o:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/do_builtin.c.o
+.PHONY : src/do_builtin.c.o
+
+src/do_builtin.i: src/do_builtin.c.i
+
+.PHONY : src/do_builtin.i
+
+# target to preprocess a source file
+src/do_builtin.c.i:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/do_builtin.c.i
+.PHONY : src/do_builtin.c.i
+
+src/do_builtin.s: src/do_builtin.c.s
+
+.PHONY : src/do_builtin.s
+
+# target to generate assembly for a file
+src/do_builtin.c.s:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/do_builtin.c.s
+.PHONY : src/do_builtin.c.s
 
 src/errors/errror_handler.o: src/errors/errror_handler.c.o
 
@@ -1392,6 +1446,33 @@ src/ft_main_what.c.s:
 	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/ft_main_what.c.s
 .PHONY : src/ft_main_what.c.s
 
+src/ft_open_flag_in_builtins.o: src/ft_open_flag_in_builtins.c.o
+
+.PHONY : src/ft_open_flag_in_builtins.o
+
+# target to build an object file
+src/ft_open_flag_in_builtins.c.o:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/ft_open_flag_in_builtins.c.o
+.PHONY : src/ft_open_flag_in_builtins.c.o
+
+src/ft_open_flag_in_builtins.i: src/ft_open_flag_in_builtins.c.i
+
+.PHONY : src/ft_open_flag_in_builtins.i
+
+# target to preprocess a source file
+src/ft_open_flag_in_builtins.c.i:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/ft_open_flag_in_builtins.c.i
+.PHONY : src/ft_open_flag_in_builtins.c.i
+
+src/ft_open_flag_in_builtins.s: src/ft_open_flag_in_builtins.c.s
+
+.PHONY : src/ft_open_flag_in_builtins.s
+
+# target to generate assembly for a file
+src/ft_open_flag_in_builtins.c.s:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/ft_open_flag_in_builtins.c.s
+.PHONY : src/ft_open_flag_in_builtins.c.s
+
 src/ft_signal.o: src/ft_signal.c.o
 
 .PHONY : src/ft_signal.o
@@ -2148,6 +2229,33 @@ src/nucleus/do_add.c.s:
 	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/nucleus/do_add.c.s
 .PHONY : src/nucleus/do_add.c.s
 
+src/nucleus/dop_memory.o: src/nucleus/dop_memory.c.o
+
+.PHONY : src/nucleus/dop_memory.o
+
+# target to build an object file
+src/nucleus/dop_memory.c.o:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/nucleus/dop_memory.c.o
+.PHONY : src/nucleus/dop_memory.c.o
+
+src/nucleus/dop_memory.i: src/nucleus/dop_memory.c.i
+
+.PHONY : src/nucleus/dop_memory.i
+
+# target to preprocess a source file
+src/nucleus/dop_memory.c.i:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/nucleus/dop_memory.c.i
+.PHONY : src/nucleus/dop_memory.c.i
+
+src/nucleus/dop_memory.s: src/nucleus/dop_memory.c.s
+
+.PHONY : src/nucleus/dop_memory.s
+
+# target to generate assembly for a file
+src/nucleus/dop_memory.c.s:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/nucleus/dop_memory.c.s
+.PHONY : src/nucleus/dop_memory.c.s
+
 src/nucleus/dop_tab_funs.o: src/nucleus/dop_tab_funs.c.o
 
 .PHONY : src/nucleus/dop_tab_funs.o
@@ -2418,6 +2526,33 @@ src/nucleus/ft_cheak_quote.c.s:
 	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/nucleus/ft_cheak_quote.c.s
 .PHONY : src/nucleus/ft_cheak_quote.c.s
 
+src/nucleus/ft_cheak_tab.o: src/nucleus/ft_cheak_tab.c.o
+
+.PHONY : src/nucleus/ft_cheak_tab.o
+
+# target to build an object file
+src/nucleus/ft_cheak_tab.c.o:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/nucleus/ft_cheak_tab.c.o
+.PHONY : src/nucleus/ft_cheak_tab.c.o
+
+src/nucleus/ft_cheak_tab.i: src/nucleus/ft_cheak_tab.c.i
+
+.PHONY : src/nucleus/ft_cheak_tab.i
+
+# target to preprocess a source file
+src/nucleus/ft_cheak_tab.c.i:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/nucleus/ft_cheak_tab.c.i
+.PHONY : src/nucleus/ft_cheak_tab.c.i
+
+src/nucleus/ft_cheak_tab.s: src/nucleus/ft_cheak_tab.c.s
+
+.PHONY : src/nucleus/ft_cheak_tab.s
+
+# target to generate assembly for a file
+src/nucleus/ft_cheak_tab.c.s:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/nucleus/ft_cheak_tab.c.s
+.PHONY : src/nucleus/ft_cheak_tab.c.s
+
 src/nucleus/ft_cleanstr.o: src/nucleus/ft_cleanstr.c.o
 
 .PHONY : src/nucleus/ft_cleanstr.o
@@ -2498,6 +2633,33 @@ src/nucleus/ft_cut_copy.s: src/nucleus/ft_cut_copy.c.s
 src/nucleus/ft_cut_copy.c.s:
 	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/nucleus/ft_cut_copy.c.s
 .PHONY : src/nucleus/ft_cut_copy.c.s
+
+src/nucleus/ft_directory.o: src/nucleus/ft_directory.c.o
+
+.PHONY : src/nucleus/ft_directory.o
+
+# target to build an object file
+src/nucleus/ft_directory.c.o:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/nucleus/ft_directory.c.o
+.PHONY : src/nucleus/ft_directory.c.o
+
+src/nucleus/ft_directory.i: src/nucleus/ft_directory.c.i
+
+.PHONY : src/nucleus/ft_directory.i
+
+# target to preprocess a source file
+src/nucleus/ft_directory.c.i:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/nucleus/ft_directory.c.i
+.PHONY : src/nucleus/ft_directory.c.i
+
+src/nucleus/ft_directory.s: src/nucleus/ft_directory.c.s
+
+.PHONY : src/nucleus/ft_directory.s
+
+# target to generate assembly for a file
+src/nucleus/ft_directory.c.s:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/nucleus/ft_directory.c.s
+.PHONY : src/nucleus/ft_directory.c.s
 
 src/nucleus/ft_do_copy.o: src/nucleus/ft_do_copy.c.o
 
@@ -3309,6 +3471,33 @@ src/put_error_to_env.c.s:
 	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/put_error_to_env.c.s
 .PHONY : src/put_error_to_env.c.s
 
+src/redirects.o: src/redirects.c.o
+
+.PHONY : src/redirects.o
+
+# target to build an object file
+src/redirects.c.o:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/redirects.c.o
+.PHONY : src/redirects.c.o
+
+src/redirects.i: src/redirects.c.i
+
+.PHONY : src/redirects.i
+
+# target to preprocess a source file
+src/redirects.c.i:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/redirects.c.i
+.PHONY : src/redirects.c.i
+
+src/redirects.s: src/redirects.c.s
+
+.PHONY : src/redirects.s
+
+# target to generate assembly for a file
+src/redirects.c.s:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/redirects.c.s
+.PHONY : src/redirects.c.s
+
 src/shell_lvl.o: src/shell_lvl.c.o
 
 .PHONY : src/shell_lvl.o
@@ -3411,6 +3600,9 @@ help:
 	@echo "... src/builtins/allenv/main_env.o"
 	@echo "... src/builtins/allenv/main_env.i"
 	@echo "... src/builtins/allenv/main_env.s"
+	@echo "... src/builtins/authors.o"
+	@echo "... src/builtins/authors.i"
+	@echo "... src/builtins/authors.s"
 	@echo "... src/builtins/bg_builtin.o"
 	@echo "... src/builtins/bg_builtin.i"
 	@echo "... src/builtins/bg_builtin.s"
@@ -3450,6 +3642,9 @@ help:
 	@echo "... src/ck_check.o"
 	@echo "... src/ck_check.i"
 	@echo "... src/ck_check.s"
+	@echo "... src/do_builtin.o"
+	@echo "... src/do_builtin.i"
+	@echo "... src/do_builtin.s"
 	@echo "... src/errors/errror_handler.o"
 	@echo "... src/errors/errror_handler.i"
 	@echo "... src/errors/errror_handler.s"
@@ -3540,6 +3735,9 @@ help:
 	@echo "... src/ft_main_what.o"
 	@echo "... src/ft_main_what.i"
 	@echo "... src/ft_main_what.s"
+	@echo "... src/ft_open_flag_in_builtins.o"
+	@echo "... src/ft_open_flag_in_builtins.i"
+	@echo "... src/ft_open_flag_in_builtins.s"
 	@echo "... src/ft_signal.o"
 	@echo "... src/ft_signal.i"
 	@echo "... src/ft_signal.s"
@@ -3624,6 +3822,9 @@ help:
 	@echo "... src/nucleus/do_add.o"
 	@echo "... src/nucleus/do_add.i"
 	@echo "... src/nucleus/do_add.s"
+	@echo "... src/nucleus/dop_memory.o"
+	@echo "... src/nucleus/dop_memory.i"
+	@echo "... src/nucleus/dop_memory.s"
 	@echo "... src/nucleus/dop_tab_funs.o"
 	@echo "... src/nucleus/dop_tab_funs.i"
 	@echo "... src/nucleus/dop_tab_funs.s"
@@ -3654,6 +3855,9 @@ help:
 	@echo "... src/nucleus/ft_cheak_quote.o"
 	@echo "... src/nucleus/ft_cheak_quote.i"
 	@echo "... src/nucleus/ft_cheak_quote.s"
+	@echo "... src/nucleus/ft_cheak_tab.o"
+	@echo "... src/nucleus/ft_cheak_tab.i"
+	@echo "... src/nucleus/ft_cheak_tab.s"
 	@echo "... src/nucleus/ft_cleanstr.o"
 	@echo "... src/nucleus/ft_cleanstr.i"
 	@echo "... src/nucleus/ft_cleanstr.s"
@@ -3663,6 +3867,9 @@ help:
 	@echo "... src/nucleus/ft_cut_copy.o"
 	@echo "... src/nucleus/ft_cut_copy.i"
 	@echo "... src/nucleus/ft_cut_copy.s"
+	@echo "... src/nucleus/ft_directory.o"
+	@echo "... src/nucleus/ft_directory.i"
+	@echo "... src/nucleus/ft_directory.s"
 	@echo "... src/nucleus/ft_do_copy.o"
 	@echo "... src/nucleus/ft_do_copy.i"
 	@echo "... src/nucleus/ft_do_copy.s"
@@ -3753,6 +3960,9 @@ help:
 	@echo "... src/put_error_to_env.o"
 	@echo "... src/put_error_to_env.i"
 	@echo "... src/put_error_to_env.s"
+	@echo "... src/redirects.o"
+	@echo "... src/redirects.i"
+	@echo "... src/redirects.s"
 	@echo "... src/shell_lvl.o"
 	@echo "... src/shell_lvl.i"
 	@echo "... src/shell_lvl.s"

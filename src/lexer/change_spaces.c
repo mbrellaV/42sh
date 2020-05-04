@@ -58,7 +58,7 @@ void		do_obr_zamena_slash(t_exectoken *tmp)
 	do_obr_zamena_slash(tmp->left);
 }
 
-char	*do_reverse_zamena(char *str)
+char		*do_reverse_zamena(char *str)
 {
 	int		i;
 	char	*newstr;

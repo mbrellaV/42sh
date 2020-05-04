@@ -13,7 +13,7 @@
 #ifndef STRUCT_H
 # define STRUCT_H
 
-# define BIL_NUM	17
+# define BIL_NUM			18
 
 typedef	struct				s_builtins
 {
@@ -47,7 +47,7 @@ typedef struct				s_readline
 	int						flag_tab;
 	int						flag_left_word;
 	int						i_dop;
-	char 					c;
+	char					c;
 }							t_readline;
 
 typedef struct				s_pipe
@@ -76,8 +76,8 @@ typedef struct				s_lextoken
 
 typedef struct				s_exectoken
 {
-	int						should_wait_and;
-	int						should_wait_or;
+	int						wait_and;
+	int						wait_or;
 	struct s_exectoken		*left;
 	struct s_exectoken		*right;
 	char					**file_args;
@@ -131,10 +131,10 @@ typedef struct				s_job
 
 typedef	struct				s_nline
 {
-	int*					i_arr;
-	char**					arr;
-	int 					i;
-	int 					j;
+	int						*i_arr;
+	char					**arr;
+	int						i;
+	int						j;
 	int						k;
 }							t_nline;
 

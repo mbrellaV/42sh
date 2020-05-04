@@ -53,7 +53,7 @@ void	ft_return(t_readline *p, t_readline *r, char *tmp)
 	ft_cleanstr(r->index + r->len_hint, r);
 }
 
-void	ft_add_his_ch(t_readline *r, char c)
+int		nor(t_readline *r, char c)
 {
 	if (r->len == r->buff_size)
 		ft_realloc_buff(r);
@@ -62,8 +62,6 @@ void	ft_add_his_ch(t_readline *r, char c)
 		if (r->index > 0)
 		{
 			do_left(r);
-//			r->buff[--r->index] = 0;
-//			write(2, "\b", 1);
 		}
 	}
 	else
@@ -71,6 +69,7 @@ void	ft_add_his_ch(t_readline *r, char c)
 		r->buff[r->index++] = c;
 		r->len++;
 	}
+	return (1);
 }
 
 void	find_history(t_readline *p, t_memory *q)
@@ -85,9 +84,8 @@ void	find_history(t_readline *p, t_memory *q)
 	while ((rt = read(0, buf, 8)))
 	{
 		r.sum_read = ft_add_sumchar(buf, rt);
-		if (rt <= 1 && r.sum_read >= 32 && r.sum_read <= 127)
+		if (rt <= 1 && r.sum_read >= 32 && r.sum_read <= 127 && nor(&r, buf[0]))
 		{
-			ft_add_his_ch(&r, buf[0]);
 			free(tmp);
 			tmp = get_num_from_hist_cons(q, r.buff);
 			put_help(&r);
@@ -96,7 +94,6 @@ void	find_history(t_readline *p, t_memory *q)
 		}
 		else
 		{
-			//check
 			ft_return(p, &r, tmp);
 			del_readline(&r);
 			return ;

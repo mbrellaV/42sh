@@ -30,7 +30,8 @@ int		ft_put_info(void)
 	ft_putstr_fd("[", 2);
 	ft_putstr_fd(RESET, 2);
 	ft_putstr_fd(CYN, 2);
-	k != -404 ? ft_putstr_fd(&(globals()->g_env[k][5]), 2) : ft_putstr_fd("anon", 2);
+	(k != -404 ? (ft_putstr_fd(&(globals()->g_env[k][5]), 2)) :
+		(ft_putstr_fd("anon", 2)));
 	ft_putstr_fd(RESET, 2);
 	ft_putstr_fd(GRN, 2);
 	ft_putstr_fd("@", 2);
@@ -41,5 +42,5 @@ int		ft_put_info(void)
 	ft_putstr_fd("\044\076\033 ", 2);
 	ft_putstr_fd(RESET, 2);
 	return (ft_strlen(hostname) + 6 + (k != -404 ?
-									   ft_strlen(&(globals()->g_env[k][5])) : 4));
+		(ft_strlen(&(globals()->g_env[k][5]))) : 4));
 }

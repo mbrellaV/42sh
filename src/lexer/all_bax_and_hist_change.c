@@ -14,14 +14,13 @@
 
 static void		do_join(t_lextoken **doph, t_lextoken **lextmp1)
 {
-	t_lextoken *lextmp;
+	t_lextoken	*lextmp;
 	char		*tmp;
-	t_lextoken *h;
+	t_lextoken	*h;
 
 	h = *doph;
 	tmp = (h)->next->line;
 	(h)->next->is_near_word = 0;
-	//(h)->next->inhibitor_lvl = (h)->inhibitor_lvl;
 	(h)->next->line = ft_strjoin((h)->line, (h)->next->line);
 	ft_strdel(&tmp);
 	tmp = (h)->line;
@@ -54,37 +53,6 @@ t_lextoken		*do_zam_join_par(t_lextoken *h)
 			h = h->next;
 	}
 	return (lextmp1);
-}
-
-t_lextoken		*do_zam_ravno(t_lextoken *h, t_lextoken **first_token)
-{
-	char		*tmp1;
-	char		*tmp2;
-	t_lextoken	*dop;
-
-	if (h != NULL && h->line != NULL && ft_strstr(h->line, "=") && ((h->next ==
-		NULL || is_cmd_delim(get_op_type(h->next->line))) && h->prev == NULL))
-	{
-		tmp1 = ft_strsub(h->line, 0, ft_strstr(h->line, "=") - h->line);
-		if (*(ft_strstr(h->line, "=") + 1) == '\0')
-			tmp2 = ft_strdup("");
-		else
-			tmp2 = ft_strsub(h->line, ft_strstr(h->line, "=") -
-			h->line + 1, ft_strlen(h->line));
-		set_new_var(tmp1, tmp2, &globals()->g_all_var);
-		ft_strdel(&tmp1);
-		ft_strdel(&tmp2);
-		dop = h->next;
-		del_one_node_in_lextokens(h, first_token);
-		return (dop);
-	}
-	else if (h && h->line != NULL && ft_strstr(h->line, "=") && !h->prev)
-	{
-		dop = h->next;
-		del_one_node_in_lextokens(h, first_token);
-		return (dop);
-	}
-	return (h ? h->next : NULL);
 }
 
 int				do_all_zams_with_inhibitor(t_lextoken *h, t_lextoken
@@ -122,11 +90,9 @@ t_lextoken		*do_zam_bax_and_hist_full(t_lextoken *h, t_lextoken **save_tmp)
 	first_token = h;
 	while (h != NULL)
 	{
-		if (h->operator_type == -1 && h->is_near_opt > 0)
-		{
-			ft_error(5, h->line);
+		if (h->operator_type == -1 && h->is_near_opt > 0 &&
+		ft_error(5, h->line))
 			return (ft_kill_str_dop_lex(tmp, NULL));
-		}
 		if (*h->line == '\0')
 		{
 			h = h->next;

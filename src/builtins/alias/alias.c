@@ -44,6 +44,23 @@ char		*ft_get_alias(char *dop)
 	return (NULL);
 }
 
+static int	size_0(char *str, int *i, char *newstr, char *dopstr)
+{
+	char	*dop;
+	int		size;
+
+	size = word_size(&str[*i]);
+	dop = ft_strsub(str, *i, size);
+	if ((isword(str[*i]) == 1 && (!(dopstr = ft_get_alias(dop)))) ||
+		str[*i] == '$')
+		ft_strcat(newstr, dop);
+	else
+		ft_strcat(newstr, dopstr);
+	(*i) += size;
+	ft_strdel(&dopstr);
+	ft_strdel(&dop);
+	return (1);
+}
 
 static int	cycle(char *str, int *i, char *newstr)
 {
@@ -59,21 +76,8 @@ static int	cycle(char *str, int *i, char *newstr)
 		ft_strcat(newstr, dop);
 		*i += size + 2;
 	}
-	else if (size > 0 && str[*i] == '$')
-	{
-		dop = ft_strsub(str, *i, size);
-		ft_strcat(newstr, dop);
-		(*i) += size;
-	}
-	else if (size > 0 && isword(str[*i]) == 1)
-	{
-		dop = ft_strsub(str, *i, size);
-		if (!(dopstr = ft_get_alias(dop)))
-			ft_strcat(newstr, dop);
-		else
-			ft_strcat(newstr, dopstr);
-		*i += size;
-	}
+	else if (size > 0 && (str[*i] == '$' || isword(str[*i]) == 1))
+		return (size_0(str, i, newstr, dopstr));
 	else
 	{
 		dop = ft_strdup(" ");
@@ -103,54 +107,4 @@ int			ft_do_zam_alias(char **str)
 		}
 	ft_strdel(&newstr);
 	return (ft_strlen(*str));
-}
-
-int			alias_error(int error, char *tmp1, char *tmp2)
-{
-	put_error_to_shell(error);
-	if (error == 15)
-	{
-		ft_error(15, "parse error");
-		return (-1);
-	}
-	if (error == 14)
-	{
-		ft_dprintf(globals()->fd[2], "alias [alias-name[=string]...]\n");
-		return (-1);
-	}
-	ft_dprintf(globals()->fd[2], "alias error: wrong argument: |%s|\n", tmp2);
-	ft_strdel(&tmp1);
-	ft_strdel(&tmp2);
-	return (-1);
-}
-
-int			ft_do_change_alias(char **mas)
-{
-	char	*tmp1;
-	char	*tmp2;
-
-	if (mas[1] == NULL && ft_strcmp(mas[0], "alias") == 0)
-		ft_show_env(globals()->g_alias);
-	else if (ft_strcmp(mas[0], "unalias") == 0 && mas[1] != NULL &&
-		mas[2] == NULL && ft_strstr(mas[1], "=") == NULL)
-		unset_var(mas[1], &globals()->g_alias);
-	else if (ft_strcmp(mas[0], "alias") == 0 && mas[1] && mas[2] == NULL)
-	{
-		if (ft_strstr(mas[1], "=") != NULL)
-		{
-			tmp1 = ft_strsub(mas[1], 0, ft_strstr(mas[1], "=") - mas[1]);
-			tmp2 = ft_strsub(mas[1], ft_strstr(mas[1], "=") -
-				mas[1] + 1, ft_strlen(mas[1]));
-			if (is_system_symbol(*tmp2) == 1)
-				return (alias_error(2, tmp1, tmp2));
-			set_new_var(tmp1, tmp2, &globals()->g_alias);
-			ft_strdel(&tmp1);
-			ft_strdel(&tmp2);
-		}
-		else
-			return (alias_error(14, NULL, NULL));
-	}
-	else
-		return (alias_error(15, NULL, NULL));
-	return (0);
 }

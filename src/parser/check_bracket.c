@@ -30,9 +30,9 @@ int				check_close(char **str, int i, int j)
 	str[i - 1][ft_strlen(str[i - 1]) - 1] == '|' || str[i - 1][ft_strlen(str[i -
 	1]) - 1] == '>' || str[i - 1][ft_strlen(str[i - 1]) - 1] == '('))
 		return (-1);
-	if (j != (int)ft_strlen(str[i]) - 1 && str[i][j + 1] != ';' && str[i][j + 1] !=
-	'|' && str[i][j + 1] != ')' && str[i][j + 1] != '$' && str[i][j + 1] < 42
-	&& str[i][j + 1] > 57)
+	if (j != (int)ft_strlen(str[i]) - 1 && str[i][j + 1] != ';' &&
+	str[i][j + 1] != '|' && str[i][j + 1] != ')' && str[i][j + 1] != '$' &&
+	str[i][j + 1] < 42 && str[i][j + 1] > 57)
 		return (-1);
 	return (1);
 }
