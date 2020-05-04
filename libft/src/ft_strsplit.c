@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-int			ispar1(char c)
+int		ispar1(char c)
 {
 	return (c == 34 || c == 39);
 }
@@ -32,8 +32,8 @@ int		isdelim1(char *a, char b)
 
 int		c_size1(char *str, char b, char *delim)
 {
-	int i;
-	int dop;
+	int		i;
+	int		dop;
 
 	i = 0;
 	str++;
@@ -54,7 +54,7 @@ int		c_size1(char *str, char b, char *delim)
 
 int		word_size1(char *str, char *delim)
 {
-	int i;
+	int		i;
 
 	i = 0;
 	if (isdelim1(delim, *str) == 2)
@@ -67,30 +67,6 @@ int		word_size1(char *str, char *delim)
 			return (i);
 		i++;
 		str++;
-	}
-	return (i);
-}
-
-int		count_words(char *str, char *delim)
-{
-	int		i;
-	int		dop;
-
-	i = 0;
-	while (*str)
-	{
-		dop = word_size1(str, delim);
-		if (dop > 0)
-		{
-			str += dop + (ispar1(*str) ? 2 : 0);
-			i++;
-		}
-		else if (dop == -2)
-			str += 2;
-		else if (dop == -1)
-			return (-1);
-		else
-			str++;
 	}
 	return (i);
 }
@@ -112,8 +88,8 @@ char	**ft_strsplit(char *str, char *delim)
 	while (i < (cn_words - 1) && str[cn])
 		if (word_size1(str + cn, delim) > 0 && str[cn])
 		{
-			if (!(mas[i] = (char *)ft_strsub(str, cn + (ispar1(str[cn]) ? 1 : 0),
-					word_size1(str + cn, delim))))
+			if (!(mas[i] = (char *)ft_strsub(str, cn +
+			(ispar1(str[cn]) ? 1 : 0), word_size1(str + cn, delim))))
 				return (NULL);
 			cn += word_size1(str + cn, delim) + (ispar1(str[cn]) ? 2 : 0);
 			i++;

@@ -32,6 +32,9 @@ char				*ft_strsub(char const *s, unsigned int start, size_t len);
 
 char				*ft_strstr(const char *haystack, const char *needle);
 char				**ft_strsplit(char *s, char *c);
+int					count_words(char *str, char *delim);
+int					ispar1(char c);
+int					word_size1(char *str, char *delim);
 char				*ft_strrchr(const char *s, int c);
 char				*ft_strnstr(const char *haystack, const char *needle,
 					size_t len);

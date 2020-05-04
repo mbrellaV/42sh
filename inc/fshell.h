@@ -227,6 +227,9 @@ int					check_bracket(char *str);
 void				do_obr_zamena_slash(t_exectoken *tmp);
 void				ft_redirect(t_pipe *p, int new_infile_fd,
 						int new_outfile_fd);
+int					set_redirects_for_builtins(char **av);
+int					ft_open_flag_in_builtins(char *opt, int flag, int *infile,
+						int *outfile);
 t_job				*get_job_by_number(int n);
 int					do_fg(char **mas);
 int					check_if_in_par(char *line, int i);

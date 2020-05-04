@@ -164,6 +164,9 @@ SRC_BASE = builtins/ft_cd.c\
 	builtins/allenv/main_env.c\
 	builtins/ft_type.c\
 	ft_whatis.c\
+	redirects.c\
+	do_builtin.c\
+	ft_open_flag_in_builtins.c\
 
 
 

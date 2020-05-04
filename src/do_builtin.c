@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_whatis.c                                        :+:      :+:    :+:   */
+/*   do_builtin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wstygg <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,7 +12,7 @@
 
 #include "fshell.h"
 
-int		ft_whatis2_2(t_process *tmp)
+int		ft_whatis4_2(t_exectoken *tmp)
 {
 	if (ft_strcmp(tmp->file_args[0], "env") == 0)
 		ft_show_env(globals()->g_env);
@@ -31,9 +31,11 @@ int		ft_whatis2_2(t_process *tmp)
 	return (1);
 }
 
-int		ft_whatis2_1(t_process *tmp)
+int		ft_whatis4_1(t_exectoken *tmp)
 {
-	if (ft_strcmp(tmp->file_args[0], "true") == 0)
+	if (ft_strcmp(tmp->file_args[0], "set") == 0)
+		ft_show_env(globals()->g_all_var);
+	else if (ft_strcmp(tmp->file_args[0], "true") == 0)
 		put_error_to_shell(0);
 	else if (ft_strcmp(tmp->file_args[0], "false") == 0)
 		put_error_to_shell(2);
@@ -48,11 +50,11 @@ int		ft_whatis2_1(t_process *tmp)
 	else if (ft_strcmp(tmp->file_args[0], "history") == 0)
 		show_history();
 	else
-		return (ft_whatis2_2(tmp));
+		return (ft_whatis4_2(tmp));
 	return (1);
 }
 
-int		ft_whatis2(t_process *tmp)
+int		do_builtin(t_exectoken *tmp)
 {
 	if (tmp->file_args == NULL)
 		return (-2);
@@ -60,6 +62,8 @@ int		ft_whatis2(t_process *tmp)
 		return (-2);
 	if (ft_strcmp(tmp->file_args[0], "exit") == 0 && tmp->file_args[1] == NULL)
 		return (-1);
+	if (tmp->file_opt != NULL && !(set_redirects_for_builtins(tmp->file_opt)))
+		return (-2);
 	put_error_to_shell(0);
 	if (ft_strcmp(tmp->file_args[0], "alias") == 0 ||
 		ft_strcmp(tmp->file_args[0], "unalias") == 0)
@@ -68,15 +72,12 @@ int		ft_whatis2(t_process *tmp)
 		ft_cd(tmp->file_args);
 	else if (ft_strcmp(tmp->file_args[0], "export") == 0)
 		ft_do_export(tmp->file_args);
-	else if (ft_strcmp(tmp->file_args[0], "unset") == 0 &&
-	tmp->file_args[1] != NULL)
+	else if (ft_strcmp(tmp->file_args[0], "unset") == 0 && tmp->file_args[1])
 	{
 		unset_var(tmp->file_args[1], &globals()->g_env);
 		unset_var(tmp->file_args[1], &globals()->g_all_var);
 	}
-	else if (ft_strcmp(tmp->file_args[0], "set") == 0)
-		ft_show_env(globals()->g_all_var);
 	else
-		return (ft_whatis2_1(tmp));
+		return (ft_whatis4_1(tmp));
 	return (1);
 }
