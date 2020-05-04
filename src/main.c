@@ -40,12 +40,6 @@ int		main_cycle(t_readline *p, t_exectoken **start_token)
 	return (0);
 }
 
-void	popa(char **buf)
-{
-	(*buf)[0] = 'a';
-	(*buf)[1] = 'b';
-}
-
 int		main(int argc, char **argv, char **env)
 {
 	t_readline		p;

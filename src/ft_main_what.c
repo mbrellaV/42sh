@@ -18,6 +18,18 @@ static int	trick(t_exectoken **tmp)
 	return (1);
 }
 
+void		make_job_completed(t_job *job)
+{
+	t_process	*pr;
+
+	pr = job->first_process;
+	while (pr)
+	{
+		pr->completed = 1;
+		pr = pr->next;
+	}
+}
+
 static void	do_job_things(char **del, int *sas, t_job **job, t_exectoken *tmp)
 {
 	*job = create_job(tmp);
@@ -26,6 +38,8 @@ static void	do_job_things(char **del, int *sas, t_job **job, t_exectoken *tmp)
 	else
 		globals()->g_f_job = *job;
 	*sas = launch_job(*job, (*job)->foreground);
+	if (*sas == -2)
+		make_job_completed(*job);
 	ft_strdel(del);
 }
 
