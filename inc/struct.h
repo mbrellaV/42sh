@@ -13,7 +13,7 @@
 #ifndef STRUCT_H
 # define STRUCT_H
 
-# define BIL_NUM	17
+# define BIL_NUM			18
 
 typedef	struct				s_builtins
 {

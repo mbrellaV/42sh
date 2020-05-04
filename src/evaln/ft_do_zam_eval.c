@@ -6,7 +6,7 @@
 /*   By: wstygg <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/13 19:53:08 by wstygg            #+#    #+#             */
-/*   Updated: 2020/05/02 13:20:11 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/05/04 13:53:14 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,13 +56,11 @@ char		*ft_main_calc_rec(char *mas, int *error)
 
 	i = 0;
 	d = 0;
-	if (!(newstr = ft_memalloc(ft_strlen(mas) + 1)))
-		return (NULL);
+	newstr = ft_malloc(ft_strlen(mas) + 1);
 	while (i < (int)ft_strlen(mas) && mas[i] != '\0')
 	{
-		if (mas[i] == '$')
+		if (mas[i] == '$' && ++d)
 		{
-			d++;
 			if (!(cut_str = ft_do_cut(mas + 1, error)))
 				return (return_with_del(newstr));
 			i += sc_size(&mas[i + 1], mas[i + 1]);
@@ -70,15 +68,12 @@ char		*ft_main_calc_rec(char *mas, int *error)
 		else
 		{
 			cut_str = ft_strdup(" ");
-			cut_str[0] = mas[i];
-			i++;
+			cut_str[0] = mas[i++];
 		}
 		ft_strcat(newstr, cut_str);
 		ft_strdel(&cut_str);
 	}
-	if (d > 0)
-		return (newstr);
-	return (return_with_del(newstr));
+	return ((d > 0) ? newstr : return_with_del(newstr));
 }
 
 char		*ft_do_zam_eval(char *mas)

@@ -24,12 +24,14 @@ SRC_BASE = builtins/ft_cd.c\
 	builtins/ft_fc.c\
 	builtins/ft_fc_2.c\
 	builtins/ft_fc_3.c\
+	builtins/authors.c\
 	builtins/allenv/ft_env.c\
 	builtins/alias/alias.c\
 	builtins/alias/alias_error.c\
 	builtins/alias/ft_do_change_alias.c\
  	builtins/allenv/global_env.c\
  	ft_main_what.c\
+ 	ft_malloc.c\
  	qft_printf/add_buff.c\
  	qft_printf/add_char.c\
  	qft_printf/add_d.c\
@@ -102,6 +104,7 @@ SRC_BASE = builtins/ft_cd.c\
 	nucleus/ft_arrows.c\
 	nucleus/ft_putcut.c\
 	nucleus/ft_cut.c\
+	nucleus/dop_memory.c\
 	nucleus/dop_tab_funs.c\
 	nucleus/ft_do_delch.c\
 	nucleus/ft_cut_copy.c\

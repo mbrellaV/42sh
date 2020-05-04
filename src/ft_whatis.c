@@ -6,7 +6,7 @@
 /*   By: wstygg <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/15 18:29:17 by wstygg            #+#    #+#             */
-/*   Updated: 2020/05/02 13:20:10 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/05/04 13:17:20 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -146,6 +146,8 @@ int		ft_whatis4_1(t_exectoken *tmp)
 		ft_type(tmp->file_args);
 	else if (!ft_strcmp(tmp->file_args[0], "fc"))
 		return (do_fc(tmp->file_args));
+	else if (!ft_strcmp(tmp->file_args[0], "authors"))
+		return (do_authors());
 	else
 		return (0);
 	return (1);
@@ -208,6 +210,8 @@ int		ft_whatis2_1(t_process *tmp)
 		ft_type(tmp->file_args);
 	else if (!ft_strcmp(tmp->file_args[0], "fc"))
 		return (do_fc(tmp->file_args));
+	else if (!ft_strcmp(tmp->file_args[0], "authors"))
+		return (do_authors());
 	else
 		return (0);
 	return (1);

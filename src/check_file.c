@@ -6,7 +6,7 @@
 /*   By: qmartina <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/31 19:38:56 by qmartina          #+#    #+#             */
-/*   Updated: 2020/05/02 13:20:10 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/05/04 14:50:30 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ void				ft_free_split(char **split)
 		split[i] = NULL;
 	}
 	free(split);
-	split = NULL;
 }
+
 int					check_file(char *file, unsigned check)
 {
 	struct stat		st;

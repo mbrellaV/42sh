@@ -6,14 +6,14 @@
 /*   By: mbrella <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/17 13:38:28 by mbrella           #+#    #+#             */
-/*   Updated: 2020/05/02 13:20:10 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/05/04 13:44:12 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef EVAL_EXPR_H
 # define EVAL_EXPR_H
 
-# include "../../inc/fshell.h"
+# include "fshell.h"
 
 typedef struct		s_int
 {
@@ -26,6 +26,15 @@ typedef struct		s_int
 	int				last_token;
 	char			*s;
 }					t_int;
+
+typedef struct		s_calce
+{
+	int				*stackos;
+	int				*stackzn;
+	t_int			*str;
+	int				*error;
+	char			*delstr;
+}					t_calce;
 
 int					is_znak(int c);
 int					eval_expr(char *s, int *error);
@@ -45,7 +54,7 @@ void				ft_putnbr(int nb);
 int					sizeint(int nb);
 int					check_calc_str(char *str);
 char				*change_vars(char *evalstr);
-int					calc_error(int *stackos, int *stackzn, t_int *str, int *error, char *delstr);
+int					c_e(t_calce calce);
 int					check_calc_sc(char *str);
 t_int				*tmp_0(t_int *tmp, char *s);
 

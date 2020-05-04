@@ -6,7 +6,7 @@
 /*   By: wstygg <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/28 22:11:46 by wstygg            #+#    #+#             */
-/*   Updated: 2020/05/02 15:36:41 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/05/04 13:04:16 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,23 +28,18 @@ static int			pick_launch(t_fc flags)
 	return (0);
 }
 
-static int			do_fc_print(t_fc flags)
+static int			do_fc_l(t_fc flags)
 {
 	int				*range;
 
 	range = flags.rng;
-	while (get_hist_by_id(range[0]) == NULL)
-	{
-		flags.dop++;
-		range[0]++;
-	}
 	while (range[0] != range[1])
 	{
-		ft_dprintf(globals()->fd[1], "%d\t%s\n", range[0] - flags.dop,
+		ft_dprintf(globals()->fd[1], "%d\t%s\n", range[0],
 				get_hist_by_id(range[0]));
 		range[0] += (range[0] < range[1]) ? 1 : -1;
 	}
-	ft_dprintf(globals()->fd[1], "%d\t%s\n", range[0] - flags.dop,
+	ft_dprintf(globals()->fd[1], "%d\t%s\n", range[0],
 			get_hist_by_id(range[0]));
 	return (1);
 }
@@ -58,8 +53,6 @@ static int			do_fc_regular(int fd, t_fc flags)
 		range[0] = range[1];
 	else if (flags.rng[2] == 1)
 		range[1] = range[0];
-	if (range[0] < 0)
-		range = (int[2]){0, range[1]};
 	while (range[0] != range[1])
 	{
 		if (!ft_dprintf(fd, "%s\n", get_hist_by_id(range[0])))
@@ -100,13 +93,13 @@ int					do_fc(char **av)
 	char			*command;
 
 	f = (t_fc){.rng = {0, 0, 0}, .r = 0, .l = 0,
-			.silent = 0, .editor = FC_VIM, .dop = 0};
+			.silent = 0, .editor = FC_VIM};
 	if (check_flag(++av, &f))
 		return ((f.rng[0] > f.hi_s) ? ft_dprintf(globals()->fd[2], FC_US) : 0);
 	delete_fc_command();
 	work_with_range(&f);
 	if (f.l)
-		return (do_fc_print(f));
+		return (do_fc_l(f));
 	else if ((fd = open(".fc", O_CREAT | O_RDWR | O_TRUNC,
 			S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP |
 			S_IROTH | S_IWOTH, 0644)) == -1)

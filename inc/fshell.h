@@ -6,7 +6,7 @@
 /*   By: mbrella <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/11 10:58:44 by mbrella           #+#    #+#             */
-/*   Updated: 2020/05/02 15:47:51 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/05/04 14:54:36 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,8 @@
 # define SHELL_NAME	"42sh"
 
 # define FC_US "42sh: fc: error!\nusing: fc -[eslr] [editor] [range | number]\n"
+# define SY_E_1	"42sh: Syntax error: newline unexpected (expecting \")\")\n"
+# define SY_E_2	"42sh: Syntax error: \")\" unexpected\n"
 
 typedef struct		s_fc
 {
@@ -75,7 +77,6 @@ typedef struct		s_fc
 	int				silent;
 	int				editor;
 	int				rng[3];
-	int				dop;
 }					t_fc;
 
 typedef struct		s_global
@@ -145,6 +146,7 @@ int					ft_do_change_alias(char **mas);
 char				*do_obr_zamena(char *line);
 void				ft_realloc_all(int k, char ***envl);
 void				ft_echo(char **str);
+t_memory			*dop_memmory(int fd);
 char				*get_hist_by_id(int id);
 char				*ft_slash(char *str, t_builtins *echo);
 void				del_one_node(t_lextoken *token_to_del,
@@ -153,6 +155,7 @@ char				*distribute_echo(char **str, int k, int flag,
 						t_builtins *echo);
 char				*ft_hex(char *str);
 void				delete_fc_command(void);
+void				*ft_malloc(size_t size);
 int					launch(char *str, int put_name);
 int					set_new_var(char *str1, char *str2, char ***envl);
 int					ft_cd(char **str);
@@ -163,6 +166,7 @@ t_job				*get_last_job();
 t_job				*get_prev_last_job(void);
 t_job				*get_job_by_start_str(char *str);
 t_job				*get_job_by_cont_str(char *str);
+int					do_authors(void);
 char				*get_pwd(t_builtins *cd);
 char				*get_oldpwd(t_builtins *cd);
 int					ft_cd_error(char *tmp, int err, int to_free);
