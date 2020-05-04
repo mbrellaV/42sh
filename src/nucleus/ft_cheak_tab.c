@@ -47,6 +47,7 @@ void	ft_cheak_tab(t_readline *p)
 		ft_find_dir(dir, name, p);
 	else if (p->flag_tab > 1)
 		ft_find_env(name, p);
+	ft_print_tab(p);
 	if (p->flag_tab < 2 && p->flag_left_word != 1)
 		ft_add_builtins_in_tab(name, p);
 	i = ft_strlen(name);

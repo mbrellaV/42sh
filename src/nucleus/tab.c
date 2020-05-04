@@ -14,6 +14,15 @@
 
 void	ft_add_tab(t_readline *p, char *str)
 {
+	int		i;
+
+	i = 0;
+	while (p->tab[i] != NULL)
+	{
+		if (ft_strcmp(str, p->tab[i]) == 0)
+			return ;
+		i++;
+	}
 	if (p->tab_max == p->tab_size)
 		ft_realloc_tab(p);
 	p->tab[p->tab_max++] = ft_strdup(str);

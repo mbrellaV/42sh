@@ -82,5 +82,5 @@ char	*ft_name(char *str, t_readline *p)
 		p->flag_tab = 2;
 	else if (k >= 0 && str[k] == '$' && str[k + 1] == '{')
 		p->flag_tab = 3;
-	return (ft_strdup(&str[k]));
+	return (ft_strdup(&str[k + (str[k] == '/' ? 1 : 0)]));
 }

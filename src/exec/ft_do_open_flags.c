@@ -44,8 +44,12 @@ int		ft_what_flag(char *opt)
 
 int		ft_open_flag(char *opt, t_pipe *p)
 {
-	if (p->flag == 1 || p->flag == 2 || p->flag == 6)
+	if (p->flag == 1 || p->flag == 6)
 		*p->outfile = open(opt, O_CREAT | O_RDWR | O_TRUNC,
+				S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP |
+				S_IROTH | S_IWOTH);
+	else if (p->flag == 2)
+		*p->outfile = open(opt, O_CREAT | O_RDWR | O_APPEND,
 				S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP |
 				S_IROTH | S_IWOTH);
 	else if (p->flag == 3)
