@@ -4,6 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
+  "/home/petruha2001/42sh/libft/src/count_words.c" "/home/petruha2001/42sh/cmake-build-debug/CMakeFiles/42save.dir/libft/src/count_words.c.o"
   "/home/petruha2001/42sh/src/builtins/alias/alias.c" "/home/petruha2001/42sh/cmake-build-debug/CMakeFiles/42save.dir/src/builtins/alias/alias.c.o"
   "/home/petruha2001/42sh/src/builtins/allenv/ft_env.c" "/home/petruha2001/42sh/cmake-build-debug/CMakeFiles/42save.dir/src/builtins/allenv/ft_env.c.o"
   "/home/petruha2001/42sh/src/builtins/allenv/global_env.c" "/home/petruha2001/42sh/cmake-build-debug/CMakeFiles/42save.dir/src/builtins/allenv/global_env.c.o"
@@ -72,6 +73,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "/home/petruha2001/42sh/src/lexer/cr_and_add_tokens.c" "/home/petruha2001/42sh/cmake-build-debug/CMakeFiles/42save.dir/src/lexer/cr_and_add_tokens.c.o"
   "/home/petruha2001/42sh/src/lexer/create_new_lexer_struct.c" "/home/petruha2001/42sh/cmake-build-debug/CMakeFiles/42save.dir/src/lexer/create_new_lexer_struct.c.o"
   "/home/petruha2001/42sh/src/lexer/del_one_node_in_lextokens.c" "/home/petruha2001/42sh/cmake-build-debug/CMakeFiles/42save.dir/src/lexer/del_one_node_in_lextokens.c.o"
+  "/home/petruha2001/42sh/src/lexer/do_zam_ravno.c" "/home/petruha2001/42sh/cmake-build-debug/CMakeFiles/42save.dir/src/lexer/do_zam_ravno.c.o"
   "/home/petruha2001/42sh/src/lexer/dop_funs.c" "/home/petruha2001/42sh/cmake-build-debug/CMakeFiles/42save.dir/src/lexer/dop_funs.c.o"
   "/home/petruha2001/42sh/src/lexer/get_opt_type.c" "/home/petruha2001/42sh/cmake-build-debug/CMakeFiles/42save.dir/src/lexer/get_opt_type.c.o"
   "/home/petruha2001/42sh/src/lexer/history_search.c" "/home/petruha2001/42sh/cmake-build-debug/CMakeFiles/42save.dir/src/lexer/history_search.c.o"
@@ -103,6 +105,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "/home/petruha2001/42sh/src/nucleus/ft_do_leftright.c" "/home/petruha2001/42sh/cmake-build-debug/CMakeFiles/42save.dir/src/nucleus/ft_do_leftright.c.o"
   "/home/petruha2001/42sh/src/nucleus/ft_dop_history.c" "/home/petruha2001/42sh/cmake-build-debug/CMakeFiles/42save.dir/src/nucleus/ft_dop_history.c.o"
   "/home/petruha2001/42sh/src/nucleus/ft_downcursor.c" "/home/petruha2001/42sh/cmake-build-debug/CMakeFiles/42save.dir/src/nucleus/ft_downcursor.c.o"
+  "/home/petruha2001/42sh/src/nucleus/ft_find_env.c" "/home/petruha2001/42sh/cmake-build-debug/CMakeFiles/42save.dir/src/nucleus/ft_find_env.c.o"
   "/home/petruha2001/42sh/src/nucleus/ft_head_memory.c" "/home/petruha2001/42sh/cmake-build-debug/CMakeFiles/42save.dir/src/nucleus/ft_head_memory.c.o"
   "/home/petruha2001/42sh/src/nucleus/ft_memory.c" "/home/petruha2001/42sh/cmake-build-debug/CMakeFiles/42save.dir/src/nucleus/ft_memory.c.o"
   "/home/petruha2001/42sh/src/nucleus/ft_next_slovo.c" "/home/petruha2001/42sh/cmake-build-debug/CMakeFiles/42save.dir/src/nucleus/ft_next_slovo.c.o"

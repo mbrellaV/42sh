@@ -1,29 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_strsplit.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: qmartina <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/10 13:26:33 by qmartina          #+#    #+#             */
+/*   Created: 2019/04/17 18:03:26 by qmartina          #+#    #+#             */
 /*   Updated: 2020/05/02 13:20:11 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../inc/libft.h"
 
-void	*ft_memset(void *b, int c, size_t len)
+int		count_words(char *str, char *delim)
 {
-	char	*str;
 	int		i;
+	int		dop;
 
-	str = b;
 	i = 0;
-	while (len > 0)
+	while (*str)
 	{
-		str[i] = c;
-		i++;
-		len--;
+		dop = word_size1(str, delim);
+		if (dop > 0)
+		{
+			str += dop + (ispar1(*str) ? 2 : 0);
+			i++;
+		}
+		else if (dop == -2)
+			str += 2;
+		else if (dop == -1)
+			return (-1);
+		else
+			str++;
 	}
-	return (str);
+	return (i);
 }

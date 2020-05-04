@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "42save"
   "42save.pdb"
+  "CMakeFiles/42save.dir/libft/src/count_words.c.o"
   "CMakeFiles/42save.dir/src/builtins/alias/alias.c.o"
   "CMakeFiles/42save.dir/src/builtins/allenv/ft_env.c.o"
   "CMakeFiles/42save.dir/src/builtins/allenv/global_env.c.o"
@@ -69,6 +70,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/42save.dir/src/lexer/cr_and_add_tokens.c.o"
   "CMakeFiles/42save.dir/src/lexer/create_new_lexer_struct.c.o"
   "CMakeFiles/42save.dir/src/lexer/del_one_node_in_lextokens.c.o"
+  "CMakeFiles/42save.dir/src/lexer/do_zam_ravno.c.o"
   "CMakeFiles/42save.dir/src/lexer/dop_funs.c.o"
   "CMakeFiles/42save.dir/src/lexer/get_opt_type.c.o"
   "CMakeFiles/42save.dir/src/lexer/history_search.c.o"
@@ -100,6 +102,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/42save.dir/src/nucleus/ft_do_leftright.c.o"
   "CMakeFiles/42save.dir/src/nucleus/ft_dop_history.c.o"
   "CMakeFiles/42save.dir/src/nucleus/ft_downcursor.c.o"
+  "CMakeFiles/42save.dir/src/nucleus/ft_find_env.c.o"
   "CMakeFiles/42save.dir/src/nucleus/ft_head_memory.c.o"
   "CMakeFiles/42save.dir/src/nucleus/ft_memory.c.o"
   "CMakeFiles/42save.dir/src/nucleus/ft_next_slovo.c.o"

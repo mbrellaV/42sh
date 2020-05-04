@@ -123,6 +123,33 @@ depend:
 	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/build
 .PHONY : 42save/fast
 
+libft/src/count_words.o: libft/src/count_words.c.o
+
+.PHONY : libft/src/count_words.o
+
+# target to build an object file
+libft/src/count_words.c.o:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/libft/src/count_words.c.o
+.PHONY : libft/src/count_words.c.o
+
+libft/src/count_words.i: libft/src/count_words.c.i
+
+.PHONY : libft/src/count_words.i
+
+# target to preprocess a source file
+libft/src/count_words.c.i:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/libft/src/count_words.c.i
+.PHONY : libft/src/count_words.c.i
+
+libft/src/count_words.s: libft/src/count_words.c.s
+
+.PHONY : libft/src/count_words.s
+
+# target to generate assembly for a file
+libft/src/count_words.c.s:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/libft/src/count_words.c.s
+.PHONY : libft/src/count_words.c.s
+
 src/builtins/alias/alias.o: src/builtins/alias/alias.c.o
 
 .PHONY : src/builtins/alias/alias.o
@@ -1959,6 +1986,33 @@ src/lexer/del_one_node_in_lextokens.c.s:
 	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/lexer/del_one_node_in_lextokens.c.s
 .PHONY : src/lexer/del_one_node_in_lextokens.c.s
 
+src/lexer/do_zam_ravno.o: src/lexer/do_zam_ravno.c.o
+
+.PHONY : src/lexer/do_zam_ravno.o
+
+# target to build an object file
+src/lexer/do_zam_ravno.c.o:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/lexer/do_zam_ravno.c.o
+.PHONY : src/lexer/do_zam_ravno.c.o
+
+src/lexer/do_zam_ravno.i: src/lexer/do_zam_ravno.c.i
+
+.PHONY : src/lexer/do_zam_ravno.i
+
+# target to preprocess a source file
+src/lexer/do_zam_ravno.c.i:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/lexer/do_zam_ravno.c.i
+.PHONY : src/lexer/do_zam_ravno.c.i
+
+src/lexer/do_zam_ravno.s: src/lexer/do_zam_ravno.c.s
+
+.PHONY : src/lexer/do_zam_ravno.s
+
+# target to generate assembly for a file
+src/lexer/do_zam_ravno.c.s:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/lexer/do_zam_ravno.c.s
+.PHONY : src/lexer/do_zam_ravno.c.s
+
 src/lexer/dop_funs.o: src/lexer/dop_funs.c.o
 
 .PHONY : src/lexer/dop_funs.o
@@ -2796,6 +2850,33 @@ src/nucleus/ft_downcursor.c.s:
 	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/nucleus/ft_downcursor.c.s
 .PHONY : src/nucleus/ft_downcursor.c.s
 
+src/nucleus/ft_find_env.o: src/nucleus/ft_find_env.c.o
+
+.PHONY : src/nucleus/ft_find_env.o
+
+# target to build an object file
+src/nucleus/ft_find_env.c.o:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/nucleus/ft_find_env.c.o
+.PHONY : src/nucleus/ft_find_env.c.o
+
+src/nucleus/ft_find_env.i: src/nucleus/ft_find_env.c.i
+
+.PHONY : src/nucleus/ft_find_env.i
+
+# target to preprocess a source file
+src/nucleus/ft_find_env.c.i:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/nucleus/ft_find_env.c.i
+.PHONY : src/nucleus/ft_find_env.c.i
+
+src/nucleus/ft_find_env.s: src/nucleus/ft_find_env.c.s
+
+.PHONY : src/nucleus/ft_find_env.s
+
+# target to generate assembly for a file
+src/nucleus/ft_find_env.c.s:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/nucleus/ft_find_env.c.s
+.PHONY : src/nucleus/ft_find_env.c.s
+
 src/nucleus/ft_head_memory.o: src/nucleus/ft_head_memory.c.o
 
 .PHONY : src/nucleus/ft_head_memory.o
@@ -3588,6 +3669,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... 42save"
 	@echo "... edit_cache"
+	@echo "... libft/src/count_words.o"
+	@echo "... libft/src/count_words.i"
+	@echo "... libft/src/count_words.s"
 	@echo "... src/builtins/alias/alias.o"
 	@echo "... src/builtins/alias/alias.i"
 	@echo "... src/builtins/alias/alias.s"
@@ -3792,6 +3876,9 @@ help:
 	@echo "... src/lexer/del_one_node_in_lextokens.o"
 	@echo "... src/lexer/del_one_node_in_lextokens.i"
 	@echo "... src/lexer/del_one_node_in_lextokens.s"
+	@echo "... src/lexer/do_zam_ravno.o"
+	@echo "... src/lexer/do_zam_ravno.i"
+	@echo "... src/lexer/do_zam_ravno.s"
 	@echo "... src/lexer/dop_funs.o"
 	@echo "... src/lexer/dop_funs.i"
 	@echo "... src/lexer/dop_funs.s"
@@ -3885,6 +3972,9 @@ help:
 	@echo "... src/nucleus/ft_downcursor.o"
 	@echo "... src/nucleus/ft_downcursor.i"
 	@echo "... src/nucleus/ft_downcursor.s"
+	@echo "... src/nucleus/ft_find_env.o"
+	@echo "... src/nucleus/ft_find_env.i"
+	@echo "... src/nucleus/ft_find_env.s"
 	@echo "... src/nucleus/ft_head_memory.o"
 	@echo "... src/nucleus/ft_head_memory.i"
 	@echo "... src/nucleus/ft_head_memory.s"

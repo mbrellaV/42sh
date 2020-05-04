@@ -1721,6 +1721,45 @@ CMakeFiles/42save.dir/src/utility_files/crc32.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/42save.dir/src/utility_files/crc32.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/petruha2001/42sh/src/utility_files/crc32.c -o CMakeFiles/42save.dir/src/utility_files/crc32.c.s
 
+CMakeFiles/42save.dir/src/lexer/do_zam_ravno.c.o: CMakeFiles/42save.dir/flags.make
+CMakeFiles/42save.dir/src/lexer/do_zam_ravno.c.o: ../src/lexer/do_zam_ravno.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/petruha2001/42sh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_129) "Building C object CMakeFiles/42save.dir/src/lexer/do_zam_ravno.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/42save.dir/src/lexer/do_zam_ravno.c.o   -c /home/petruha2001/42sh/src/lexer/do_zam_ravno.c
+
+CMakeFiles/42save.dir/src/lexer/do_zam_ravno.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/42save.dir/src/lexer/do_zam_ravno.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/petruha2001/42sh/src/lexer/do_zam_ravno.c > CMakeFiles/42save.dir/src/lexer/do_zam_ravno.c.i
+
+CMakeFiles/42save.dir/src/lexer/do_zam_ravno.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/42save.dir/src/lexer/do_zam_ravno.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/petruha2001/42sh/src/lexer/do_zam_ravno.c -o CMakeFiles/42save.dir/src/lexer/do_zam_ravno.c.s
+
+CMakeFiles/42save.dir/src/nucleus/ft_find_env.c.o: CMakeFiles/42save.dir/flags.make
+CMakeFiles/42save.dir/src/nucleus/ft_find_env.c.o: ../src/nucleus/ft_find_env.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/petruha2001/42sh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_130) "Building C object CMakeFiles/42save.dir/src/nucleus/ft_find_env.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/42save.dir/src/nucleus/ft_find_env.c.o   -c /home/petruha2001/42sh/src/nucleus/ft_find_env.c
+
+CMakeFiles/42save.dir/src/nucleus/ft_find_env.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/42save.dir/src/nucleus/ft_find_env.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/petruha2001/42sh/src/nucleus/ft_find_env.c > CMakeFiles/42save.dir/src/nucleus/ft_find_env.c.i
+
+CMakeFiles/42save.dir/src/nucleus/ft_find_env.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/42save.dir/src/nucleus/ft_find_env.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/petruha2001/42sh/src/nucleus/ft_find_env.c -o CMakeFiles/42save.dir/src/nucleus/ft_find_env.c.s
+
+CMakeFiles/42save.dir/libft/src/count_words.c.o: CMakeFiles/42save.dir/flags.make
+CMakeFiles/42save.dir/libft/src/count_words.c.o: ../libft/src/count_words.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/petruha2001/42sh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_131) "Building C object CMakeFiles/42save.dir/libft/src/count_words.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/42save.dir/libft/src/count_words.c.o   -c /home/petruha2001/42sh/libft/src/count_words.c
+
+CMakeFiles/42save.dir/libft/src/count_words.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/42save.dir/libft/src/count_words.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/petruha2001/42sh/libft/src/count_words.c > CMakeFiles/42save.dir/libft/src/count_words.c.i
+
+CMakeFiles/42save.dir/libft/src/count_words.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/42save.dir/libft/src/count_words.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/petruha2001/42sh/libft/src/count_words.c -o CMakeFiles/42save.dir/libft/src/count_words.c.s
+
 # Object files for target 42save
 42save_OBJECTS = \
 "CMakeFiles/42save.dir/src/builtins/ft_fc_3.c.o" \
@@ -1850,7 +1889,10 @@ CMakeFiles/42save.dir/src/utility_files/crc32.c.s: cmake_force
 "CMakeFiles/42save.dir/src/evaln/check_calc.c.o" \
 "CMakeFiles/42save.dir/src/builtins/ft_fc.c.o" \
 "CMakeFiles/42save.dir/src/builtins/ft_fc_2.c.o" \
-"CMakeFiles/42save.dir/src/utility_files/crc32.c.o"
+"CMakeFiles/42save.dir/src/utility_files/crc32.c.o" \
+"CMakeFiles/42save.dir/src/lexer/do_zam_ravno.c.o" \
+"CMakeFiles/42save.dir/src/nucleus/ft_find_env.c.o" \
+"CMakeFiles/42save.dir/libft/src/count_words.c.o"
 
 # External object files for target 42save
 42save_EXTERNAL_OBJECTS =
@@ -1983,10 +2025,13 @@ CMakeFiles/42save.dir/src/utility_files/crc32.c.s: cmake_force
 42save: CMakeFiles/42save.dir/src/builtins/ft_fc.c.o
 42save: CMakeFiles/42save.dir/src/builtins/ft_fc_2.c.o
 42save: CMakeFiles/42save.dir/src/utility_files/crc32.c.o
+42save: CMakeFiles/42save.dir/src/lexer/do_zam_ravno.c.o
+42save: CMakeFiles/42save.dir/src/nucleus/ft_find_env.c.o
+42save: CMakeFiles/42save.dir/libft/src/count_words.c.o
 42save: CMakeFiles/42save.dir/build.make
 42save: ../libft/libft.a
 42save: CMakeFiles/42save.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/petruha2001/42sh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_129) "Linking C executable 42save"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/petruha2001/42sh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_132) "Linking C executable 42save"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/42save.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
