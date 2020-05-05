@@ -28,6 +28,7 @@ void	ft_global_env(char **env, int argc)
 			ft_error_q(1);
 		k++;
 	}
+	globals()->g_env[i] = NULL;
 	if (((k = ft_findenv("HOME=", globals()->g_env)) != -404))
 		set_new_var("OLDPWD", &globals()->g_env[k][5], &globals()->g_env);
 	do_all_var(env);
