@@ -105,6 +105,26 @@ add_executable(42save
         src/nucleus/input_mode.c
         src/nucleus/show_history.c
         src/nucleus/tab.c
+        src/calc/calc_add_fun.c
+        src/calc/calc.c
+        src/calc/calc_lexer.c
+        src/calc/calc_arr_tkns.c
+        src/calc/calc_mul_fun.c
+        src/calc/calc_inc_fun.c
+        src/calc/calc_com_fun.c
+        src/calc/calc_eq_fun.c
+        src/calc/calc_log_fun.c
+        src/calc/calc_tkn.c
+        src/calc/calc_num_fun.c
+        src/calc/calc_parent_fun.c
+        src/calc/calc_error_fun.c
+        src/calc/calc_var_fun.c
+        src/calc/calc_var_tkn.c
+        src/calc/calc_arr_reloc.c
+        src/calc/calc_atoi.c
+        src/calc/calc_ltoa.c
+        src/calc/change_vars.c
+        src/calc/ft_do_zam_eval.c
         src/parser/all_parse.c
         src/parser/change_tilda.c
         src/parser/check_bracket.c

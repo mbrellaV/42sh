@@ -60,9 +60,9 @@ int				do_all_zams_with_inhibitor(t_lextoken *h, t_lextoken
 {
 	if (h->inhibitor_lvl != 2)
 	{
-		if (!(h->line = do_zam_str_bax(h->line, tmp)))
-			return (-1);
 		if (!(h->line = ft_do_zam_eval(h->line)))
+			return (-1);
+		if (!(h->line = do_zam_str_bax(h->line, tmp)))
 			return (-1);
 	}
 	if (h->inhibitor_lvl == 0)

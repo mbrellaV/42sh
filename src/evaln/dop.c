@@ -12,6 +12,32 @@
 
 #include "eval_expr.h"
 
+//t_calc_token	*parse_eval(char *str)
+//{
+//	int		i;
+//
+//	i = 0;
+//	while (str[i] != '\0')
+//	{
+//		if ()
+//		i++;
+//	}
+//}
+
+int			check_other_brackest(char *str)
+{
+	int		i;
+
+	i = 0;
+	while (str[i] != '\0')
+	{
+		if (str[i] == '{' || str[i] == '}' || str[i] == '[' || str[i] == ']')
+			return (0);
+		i++;
+	}
+	return (1);
+}
+
 t_int		*cr_new_el(char *s, int *error)
 {
 	t_int	*tmp;
@@ -19,14 +45,8 @@ t_int		*cr_new_el(char *s, int *error)
 	if (!(tmp = ft_memalloc(sizeof(t_int))))
 		return (NULL);
 	tmp = tmp_0(tmp, s);
-	if (!(tmp->s = change_vars(s)))
-	{
-		*error = 1;
-		ft_strdel(&tmp->s);
-		free(tmp);
-		return (NULL);
-	}
-	if (!check_calc_sc(tmp->s))
+	if (check_other_brackest(s) == 0 || check_bracket(s) == 0 ||
+	!(tmp->s = change_vars(s)) || !check_calc_sc(tmp->s))
 	{
 		*error = 1;
 		ft_strdel(&tmp->s);

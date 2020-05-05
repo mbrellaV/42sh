@@ -13,7 +13,13 @@
 #ifndef EVAL_EXPR_H
 # define EVAL_EXPR_H
 
-# include "fshell.h"
+# include <stdio.h>
+# include <stdlib.h>
+# include <unistd.h>
+# include <string.h>
+# include "../libft/inc/libft.h"
+# include <unistd.h>
+# include <stdlib.h>
 
 typedef struct		s_int
 {
@@ -44,7 +50,7 @@ char				*ft_main_calc_rec(char *mas, int *error);
 int					prior(int c);
 int					ft_atoi_with(char *str, int *marker);
 t_int				*cr_new_el(char *s, int *error);
-void				calc(int *stackos, t_int *str, int c);
+void				make_request(int *stackos, t_int *str, int c);
 void				addos(int *stackos, int c, t_int *lastint);
 void				subos(int *stackos, t_int *lastint);
 void				addzn(int *stackzn, int c, t_int *lastint);

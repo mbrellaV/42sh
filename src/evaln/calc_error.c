@@ -17,7 +17,7 @@ t_int	*tmp_0(t_int *tmp, char *s)
 	tmp->ol = 0;
 	tmp->zl = 0;
 	tmp->i = 0;
-	tmp->d = 0;
+	tmp->d = 1;
 	tmp->last_token = 0;
 	tmp->s = s;
 	return (tmp);

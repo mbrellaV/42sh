@@ -41,6 +41,7 @@
 # include "nucleus.h"
 # include "struct.h"
 # include "hash.h"
+# include "calc.h"
 # include "../src/qft_printf/ft_printf.h"
 
 # define RED		"\x1B[31m"
@@ -286,6 +287,7 @@ int					ck_br(const char *str);
 void				put_error_to_shell(int error);
 int					is_system_symbol(char c);
 int					num_of_the_job(t_job *j);
+void				ft_strcat_char(char *buf, char c);
 char				*ft_do_zam_eval(char *mas);
 uint_least32_t		crc_32(unsigned char *buf, size_t len);
 

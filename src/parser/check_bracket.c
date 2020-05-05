@@ -12,72 +12,58 @@
 
 #include "../inc/fshell.h"
 
-int				check_open(char **str, int i, int j)
+char		isEmpty(t_stack *mys)
 {
-	if ((j == 0 && i == 0) || (j == 0 && (str[i - 1][ft_strlen(str[i - 1]) - 1]
-	== ';' || str[i - 1][ft_strlen(str[i - 1]) - 1] == '|' ||
-	str[i - 1][ft_strlen(str[i - 1]) - 1] == '(')))
-		return (1);
-	if (str[i][j - 1] == ';' || str[i][j - 1] == '|' || str[i][j - 1] ==
-	'(' || str[i][j - 1] == '$' || (str[i][j - 1] > 41 && str[i][j - 1] < 58))
-		return (1);
-	return (-1);
+	if(mys->index == 0 )
+		return 1;
+	else
+		return 0;
 }
 
-int				check_close(char **str, int i, int j)
+void		push(t_stack *mys, char element)
 {
-	if (j == 0 && i != 0 && (str[i - 1][ft_strlen(str[i - 1]) - 1] == '<' ||
-	str[i - 1][ft_strlen(str[i - 1]) - 1] == '|' || str[i - 1][ft_strlen(str[i -
-	1]) - 1] == '>' || str[i - 1][ft_strlen(str[i - 1]) - 1] == '('))
-		return (-1);
-	if (j != (int)ft_strlen(str[i]) - 1 && str[i][j + 1] != ';' &&
-	str[i][j + 1] != '|' && str[i][j + 1] != ')' && str[i][j + 1] != '$' &&
-	str[i][j + 1] < 42 && str[i][j + 1] > 57)
-		return (-1);
-	return (1);
+	if(mys->index < mys->capacity)
+		mys->array[mys->index++] = element;
 }
 
-static int		cycle(int i, int j, char **spl)
+char		pop(t_stack* mys)
 {
-	static int	flag = 0;
+	if(!isEmpty(mys))
+		return mys->array[--mys->index];
+}
 
-	if (spl[i][j] == '(')
+
+int			check_bracket(char *str)
+{
+	t_stack			temp;
+	char			tmpChar;
+	unsigned int	i;
+
+	temp.capacity = 10;
+	temp.index = 0;
+	i = 0;
+	while(str[i] != '\0')
 	{
-		flag++;
-		if (check_open(spl, i, j) == -1)
+
+		if(str[i] == '{' || str[i] == '[' || str[i] == '(')
+			push(&temp, str[i]); //open bracket detected
+		if(str[i] == '}' || str[i] == ']' || str[i] == ')') //closed bracket detected
 		{
-			ft_free_str(spl);
-			return (-1);
+			if(isEmpty(&temp))
+				return 0; //no open bracket for the closed bracket, not balanced
+			else
+			{
+				tmpChar = pop(&temp);
+				if((str[i] == ']' && tmpChar != '[') ||
+				(str[i] == '}' && tmpChar != '{') ||
+				(str[i] == ')' && tmpChar != '('))
+					return 0;  //not balanced
+			}
 		}
+		i++; //increment the loop
 	}
-	else if (spl[i][j] == ')')
-	{
-		if (flag == 0 || check_close(spl, i, j) == -1)
-		{
-			ft_free_str(spl);
-			return (-2);
-		}
-		flag--;
-	}
-	return (0);
-}
-
-int				check_bracket(char *str)
-{
-	int			i;
-	int			j;
-	int			ret;
-	char		**spl;
-
-	i = -1;
-	spl = ft_strsplit(str, " \t");
-	while (spl && spl[++i])
-	{
-		j = -1;
-		while (spl[i] && spl[i][++j])
-			if ((ret = cycle(i, j, spl)))
-				return (ret);
-	}
-	ft_free_str(spl);
-	return (1);
+	if(isEmpty(&temp))
+		return 1; // if there are no remaining open brackets
+	else
+		return 0;
 }

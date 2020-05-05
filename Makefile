@@ -148,6 +148,26 @@ SRC_BASE = builtins/ft_cd.c\
 	evaln/calc_error.c\
     evaln/change_vars.c\
     evaln/check_calc.c\
+    calc/calc_add_fun.c\
+    calc/calc.c\
+    calc/calc_lexer.c\
+	calc/calc_arr_tkns.c\
+	calc/calc_mul_fun.c\
+	calc/calc_inc_fun.c\
+	calc/calc_com_fun.c\
+	calc/calc_eq_fun.c\
+	calc/calc_log_fun.c\
+	calc/calc_tkn.c\
+	calc/calc_num_fun.c\
+	calc/calc_parent_fun.c\
+	calc/calc_error_fun.c\
+	calc/calc_var_fun.c\
+	calc/calc_var_tkn.c\
+	calc/calc_arr_reloc.c\
+	calc/calc_atoi.c\
+	calc/calc_ltoa.c\
+	calc/change_vars.c\
+	calc/ft_do_zam_eval.c\
 	utility_files/g_builtins.c\
 	utility_files/global.c\
 	utility_files/crc32.c\

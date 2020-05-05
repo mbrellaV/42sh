@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   calc.c                                             :+:      :+:    :+:   */
+/*   make_request.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbrella <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -29,7 +29,7 @@ static void	calc_next(int *stackos, t_int *str, int c)
 	subos(stackos, str);
 }
 
-void		calc(int *stackos, t_int *str, int c)
+void		make_request(int *stackos, t_int *str, int c)
 {
 	if ((c - 300) == '-')
 		stackos[str->ol - 2] = stackos[str->ol - 2] - stackos[str->ol - 1];

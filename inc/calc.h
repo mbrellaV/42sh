@@ -1,17 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   calc.h                                             :+:      :+:    :+:   */
+/*   make_request.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wstygg <wstygg@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ggrimes <ggrimes@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/28 21:19:01 by wstygg            #+#    #+#             */
-/*   Updated: 2020/05/02 13:20:10 by wstygg           ###   ########.fr       */
+/*   Created: 2019/08/28 21:19:01 by ggrimes           #+#    #+#             */
+/*   Updated: 2020/02/18 21:09:05 by ggrimes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CALC_H
 # define CALC_H
+
+# include <stdio.h>
+# include <stdlib.h>
+# include <unistd.h>
+# include <string.h>
+# include "../libft/inc/libft.h"
+# include <unistd.h>
+# include <stdlib.h>
+
 
 # define CALC_TOKENS_SIZE 100
 
@@ -50,7 +59,7 @@ typedef struct			s_calc_tkn
 
 typedef	struct			s_calc_tkns
 {
-	t_calc_tkn			*first_token;
+	t_calc_tkn			*tokens;
 	size_t				size;
 	size_t				malloc_size;
 }						t_calc_tkns;
@@ -169,7 +178,7 @@ long long				calc_log(t_calc_tkns *s_tokens, size_t *index,
 	t_calc_err *error);
 
 /*
-** calc.c
+** make_request.c
 */
 
 long long				calc(char *str, t_calc_err *error);
@@ -215,9 +224,9 @@ long long				calc_ll_atoi(const char *str);
 
 char					*calc_ltoa(long long num);
 
-/*
-** calc.c
-*/
-char					*ft_main_calc_rec(char *mas);
+char					*change_vars(char *evalstr);
+
+char					*ft_main_calc_rec(char *mas, t_calc_err *error);
+
 
 #endif
