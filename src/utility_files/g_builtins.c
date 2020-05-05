@@ -15,6 +15,7 @@
 char			init_shell_builtins(void)
 {
 	int			i;
+
 	const char	*g_builtins[BIL_NUM] = {
 		"alias", "export", "unset",
 		"history", "env", "clear", "hash",
@@ -32,6 +33,7 @@ char			init_shell_builtins(void)
 			ft_error_q(1);
 		i++;
 	}
+	return (1);
 }
 
 int				is_builtin(char *str)

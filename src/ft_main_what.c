@@ -62,6 +62,7 @@ int			ft_main_what(t_exectoken *tmp)
 	char	*del;
 
 	sas = 0;
+	job = NULL;
 	while (tmp)
 	{
 		if ((tmp->file_args == NULL) && (tmp->file_opt == NULL) && trick(&tmp))

@@ -38,6 +38,7 @@ t_memory	*create_first_hist_token(char *line, char *buf)
 	ft_strdel(&line);
 	head->next = NULL;
 	head->back = NULL;
+	return (head);
 }
 
 static void	zap_history(t_memory **head, char **line, char **buf)
