@@ -1,7 +1,7 @@
 NAME		=	42sh
 
 CC			=	gcc
-FLAGS		=	#-Wall -Wextra -Werror
+FLAGS		=	-Wall -Wextra -Werror
 D_FLAGS		=	-g
 
 DELTA		=	$$(echo "$$(tput cols)-47"|bc)
@@ -139,15 +139,6 @@ SRC_BASE = builtins/ft_cd.c\
 	hash/hash_table_2.c\
 	hash/hash_error.c\
 	hash/print_hash.c\
-	evaln/dop.c\
-	evaln/calc.c\
-	evaln/atoimy.c\
-	evaln/inftopost.c\
-	evaln/ft_do_zam_eval.c\
-	evaln/sub_and_add.c\
-	evaln/calc_error.c\
-    evaln/change_vars.c\
-    evaln/check_calc.c\
     calc/calc_add_fun.c\
     calc/calc.c\
     calc/calc_lexer.c\

@@ -30,6 +30,7 @@ char		pop(t_stack* mys)
 {
 	if(!isEmpty(mys))
 		return mys->array[--mys->index];
+	return ('\0');
 }
 
 

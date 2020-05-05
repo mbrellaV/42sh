@@ -28,6 +28,7 @@ int				calc_word_size(char *str)
 			return (i);
 		i++;
 	}
+	return (0);
 }
 
 char			*save_to_env(char *str, int i, int dopi, char *dopstr)
@@ -69,6 +70,7 @@ char			*do_save_var(char *str)
 	i = 0;
 	opr_inc_side[0] = 0;
 	opr_inc_side[1] = 0;
+	dopstr = NULL;
 	i += word_size(str);
 	if ((str[i - 1] == '-' && str[i - 2] == '-'))
 		opr_inc_side[1] = -1;

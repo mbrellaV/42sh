@@ -63,4 +63,5 @@ int			do_authors(void)
 	print_mbrella();
 	print_wstygg();
 	print_qmartina();
+	return (1);
 }

@@ -58,7 +58,7 @@ char				*hash_parse(char *key)
 	id = str_to_hash(key);
 	if (!globals()->g_hash[id])
 	{
-		if (globals()->g_hash[id] = parse_path(key, -1))
+		if ((globals()->g_hash[id] = parse_path(key, -1)))
 			return (globals()->g_hash[id]->value);
 		else
 			return (NULL);
