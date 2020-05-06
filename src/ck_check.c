@@ -29,7 +29,7 @@ int					ft_ck_addline(t_readline *p)
 	{
 		if (p->buff[0] != '\0')
 		{
-			if (!(dop_memory = ft_memory(globals()->g_memory_head, &(p->buff)))
+			if (!(dop_memory = ft_add_to_history(globals()->g_memory_head, &(p->buff)))
 					&& strdelr(&p->buff))
 				return (-1);
 			globals()->g_memory_head = dop_memory;

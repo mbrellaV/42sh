@@ -38,10 +38,13 @@
 # include <dirent.h>
 # include <errno.h>
 # include "parser.h"
-# include "nucleus.h"
-# include "struct.h"
 # include "hash.h"
 # include "calc.h"
+# include "history.h"
+# include "nucleus.h"
+# include "lexer.h"
+# include "struct.h"
+#include "exec.h"
 # include "../src/qft_printf/ft_printf.h"
 
 # define RED		"\x1B[31m"
@@ -114,16 +117,6 @@ typedef struct		s_zams
 	char			*str_for_del;
 }					t_zams;
 
-typedef struct		s_jobl
-{
-	t_process		*p;
-	pid_t			pid;
-	char			*rt;
-	int				mypipe[2];
-	int				infile;
-	int				outfile;
-}					t_jobl;
-
 typedef struct		s_pstat
 {
 	t_job			*j;
@@ -136,7 +129,6 @@ typedef struct		s_pstat
 t_global			*globals(void);
 int					is_builtin(char *str);
 void				ft_alias();
-int					alias_error(int error, char *tmp1, char *tmp2);
 int					check_flag(char **av, t_fc *f);
 int					calc_h_size();
 char				*read_fc(int fd);
@@ -147,7 +139,7 @@ int					ft_do_change_alias(char **mas);
 char				*do_obr_zamena(char *line);
 void				ft_realloc_all(int k, char ***envl);
 void				ft_echo(char **str);
-t_memory			*dop_memmory(int fd, char *buf);
+t_memory			*make_memmory_with_one_node(int fd, char *buf);
 char				*get_hist_by_id(int id);
 char				*ft_slash(char *str, t_builtins *echo);
 void				del_one_node(t_lextoken *token_to_del,
@@ -163,10 +155,6 @@ int					ft_cd(char **str);
 void				do_all_var(char **env);
 int					do_cd(t_builtins *cd, char *str);
 int					do_fc(char **av);
-t_job				*get_last_job();
-t_job				*get_prev_last_job(void);
-t_job				*get_job_by_start_str(char *str);
-t_job				*get_job_by_cont_str(char *str);
 int					do_authors(void);
 char				*get_pwd(t_builtins *cd);
 char				*get_oldpwd(t_builtins *cd);
@@ -188,18 +176,11 @@ void				ft_free_split(char **split);
 int					ft_signal(int signo, t_readline *p);
 void				ft_fork_signal(int signo);
 int					ft_main_what(t_exectoken *tmp);
-void				change_enters_in_sc(char *line);
-void				ft_whatis(t_exectoken *tmp, t_memory *q);
-void				ft_infinit_pipe(t_exectoken *head);
 int					ft_distruct_tree(t_exectoken *q);
 int					ft_distr_lex(t_lextoken	*tmp);
 int					ft_distruct_memory(t_memory	*head);
 void				ft_error_q(int er);
 int					ft_ck_addline(t_readline *p);
-int					ft_norm_pipe(int p1, int *fd_in, int p0,
-						t_exectoken **head);
-int					ft_error_args(t_exectoken *tmp);
-void				ft_file_create(t_exectoken *head);
 int					ft_what_flag(char *opt);
 int					calc_h_size();
 int					ft_put_info(void);
@@ -225,9 +206,6 @@ char				*ft_do_zam_eval(char *mas);
 int					sc_size(char *str, char b);
 char				find_pair_sc(char c);
 int					check_bracket(char *str);
-void				do_obr_zamena_slash(t_exectoken *tmp);
-void				ft_redirect(t_pipe *p, int new_infile_fd,
-						int new_outfile_fd);
 int					set_redirects_for_builtins(char **av);
 int					ft_open_flag_in_builtins(char *opt, int flag, int *infile,
 						int *outfile);
@@ -235,20 +213,8 @@ t_job				*get_job_by_number(int n);
 int					do_fg(char **mas);
 int					check_if_in_par(char *line, int i);
 int					do_bg(char **mas);
-int					launch_process(t_process *p, t_job *j, t_jobl jobl, int fg);
-int					launch_job(t_job *j, int foreground);
-int					needs_something_before(int n);
-int					do_job_del();
-void				ft_change_all_sc(char *str);
-void				do_zamena_opt_tokens(t_exectoken *tmp);
-int					check_all_errors(t_lextoken *tmp);
-void				ft_redirect(t_pipe *p, int new_infile_fd,
-						int new_outfile_fd);
-void				do_redir_into_file(t_pipe *p, char *file,
-						int new_infile_fd, int new_outfile_fd);
 int					return_with_close(int *opened_fds, int int_to_return,
 						char *dopline, int marker);
-void				ft_redirect_one(int old_file_fd, int new_infile_fd);
 int					ft_heredoc(char *tmp);
 int					ft_open_flag(char *opt, t_pipe *p);
 int					ft_what_flag(char *opt);
@@ -269,26 +235,24 @@ void				dop_to_check_tab_delete(t_readline *p,
 void				do_job_notification (void);
 void				continue_job (t_job *j, int foreground);
 void				mark_job_as_running (t_job *j);
-t_job				*find_job(pid_t pgid);
 int					job_is_stopped (t_job *j);
 int					job_is_completed (t_job *j);
-int					ft_distruct_job(t_job *head);
 int					ft_find_in_fds(int *opened_fds, int fd_to_find);
 int					ft_add_to_fds(int *opened_fds, int fd_to_add);
 int					ft_remove_from_fds(int *opened_fds, int fd_to_remove);
 int					*ft_create_opened_fds();
 void				disable_shell_signals();
 void				recover_normal_shell_signals();
-void				ft_infinit_pipe2(t_exectoken *head, t_memory *q);
 int					ft_whatis2(t_process *tmp);
 void				init_shell(void);
 int					do_builtin(t_exectoken *tmp);
 int					ck_br(const char *str);
 void				put_error_to_shell(int error);
-int					is_system_symbol(char c);
-int					num_of_the_job(t_job *j);
-void				ft_strcat_char(char *buf, char c);
 char				*ft_do_zam_eval(char *mas);
 uint_least32_t		crc_32(unsigned char *buf, size_t len);
+int					ft_error(int error, char *dopline);
+int					alias_error(int error, char *tmp1, char *tmp2);
+int					ft_error_d(t_readline *p);
+
 
 #endif

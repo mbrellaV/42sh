@@ -38,6 +38,7 @@ int					word_size1(char *str, char *delim);
 char				*ft_strrchr(const char *s, int c);
 char				*ft_strnstr(const char *haystack, const char *needle,
 					size_t len);
+void				ft_strcat_char(char *buf, char c);
 int					ft_str_is_numeric(char *s);
 int					ft_str_is_numeric_2(char *s, int flag);
 char				*ft_strnew(size_t size);

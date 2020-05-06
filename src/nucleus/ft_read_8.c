@@ -39,6 +39,16 @@ static void		norme_help(t_readline *p, char buf[8])
 	do_job_del();
 }
 
+void			do_hist_add_with_slash_n(int mod, t_readline *p)
+{
+	if (globals()->g_memory_head->inp && mod != 0)
+	{
+		if (globals()->g_memory_head->inp[0] != '\0')
+			ft_strcat(globals()->g_memory_head->inp, "\n");
+		ft_strcat(globals()->g_memory_head->inp, p->buff);
+	}
+}
+
 void			ft_read_8(t_readline *p, t_memory *head, int mod)
 {
 	char		buf[8];
@@ -66,5 +76,6 @@ void			ft_read_8(t_readline *p, t_memory *head, int mod)
 		else
 			norme_help(p, buf);
 	}
+	do_hist_add_with_slash_n(mod, p);
 	p->index = do_zamena_slash(p->buff, p);
 }

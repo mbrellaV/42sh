@@ -31,7 +31,6 @@ add_executable(42save
         src/exec/continuing_jobs.c
         src/exec/ft_create_file.c
         src/exec/ft_do_redirects.c
-        src/exec/ft_fun_fork.c
         src/exec/launch_job.c
         src/exec/launch_process.c
         src/exec/operating_job.c
@@ -43,7 +42,7 @@ add_executable(42save
         src/hash/hash_table_2.c
         src/lexer/all_bax_and_hist_change.c
         src/lexer/change_dol.c
-        src/lexer/change_hist_exp.c
+        src/history/change_hist_exp.c
         src/lexer/change_sc.c
         src/lexer/change_spaces.c
         src/lexer/change_str_by_str.c
@@ -52,7 +51,7 @@ add_executable(42save
         src/lexer/create_new_lexer_struct.c
         src/lexer/dop_funs.c
         src/lexer/get_opt_type.c
-        src/lexer/history_search.c
+        src/history/history_search.c
         src/lexer/kill_dop_structure.c
         src/lexer/lexer.c
         src/lexer/word_sizes.c
@@ -60,7 +59,7 @@ add_executable(42save
         src/nucleus/del_readline.c
         src/nucleus/do_add.c
         src/nucleus/dop_tab_funs.c
-        src/nucleus/find_history.c
+        src/history/find_history.c
         src/nucleus/ft_add_intput_que.c
         src/nucleus/ft_add_sumchar.c
         src/nucleus/ft_arrdel.c
@@ -75,10 +74,9 @@ add_executable(42save
         src/nucleus/ft_do_copy.c
         src/nucleus/ft_do_delch.c
         src/nucleus/ft_do_leftright.c
-        src/nucleus/ft_dop_history.c
         src/nucleus/ft_downcursor.c
-        src/nucleus/ft_head_memory.c
-        src/nucleus/ft_memory.c
+        src/history/init_history.c
+        src/history/ft_add_to_history.c
         src/nucleus/ft_next_slovo.c
         src/nucleus/ft_print_tab.c
         src/nucleus/ft_directory.c
@@ -86,8 +84,8 @@ add_executable(42save
         src/nucleus/ft_printf_helper.c
         src/nucleus/ft_put_n.c
         src/nucleus/ft_putcut.c
-        src/nucleus/dop_memory.c
-        src/nucleus/ft_putmemory.c
+        src/history/dop_memory.c
+        src/history/ft_putmemory.c
         src/nucleus/ft_read_8.c
         src/nucleus/ft_realloc_buff.c
         src/nucleus/ft_realloc_tab.c
@@ -97,7 +95,7 @@ add_executable(42save
         src/nucleus/ft_upcursor.c
         src/nucleus/ft_cheak_tab.c
         src/nucleus/input_mode.c
-        src/nucleus/show_history.c
+        src/history/show_history.c
         src/nucleus/tab.c
         src/calc/calc_add_fun.c
         src/calc/calc.c
@@ -140,7 +138,8 @@ add_executable(42save
         src/exec/find_jobs.c src/exec/working_with_fds.c src/exec/job_info.c
         src/exec/ft_do_open_flags.c src/exec/redirect.c src/ck_check.c
         src/lexer/del_one_node_in_lextokens.c src/ft_main_what.c src/put_error_to_env.c
-        src/hash/print_hash.c src/parser/is_system_symbol.c   src/builtins/ft_fc.c src/builtins/ft_fc_2.c src/utility_files/crc32.c src/lexer/do_zam_ravno.c src/nucleus/ft_cheak_tab.c src/nucleus/ft_directory.c src/nucleus/ft_find_env.c src/builtins/authors.c src/nucleus/dop_memory.c src/redirects.c src/ft_open_flag_in_builtins.c src/do_builtin.c libft/src/count_words.c)
+        src/hash/print_hash.c src/parser/is_system_symbol.c
+        src/builtins/ft_fc.c src/builtins/ft_fc_2.c src/utility_files/crc32.c src/lexer/do_zam_ravno.c src/nucleus/ft_cheak_tab.c src/nucleus/ft_directory.c src/nucleus/ft_find_env.c src/builtins/authors.c src/history/dop_memory.c src/redirects.c src/ft_open_flag_in_builtins.c src/do_builtin.c libft/src/count_words.c inc/history.h libft/src/ft_strcat_char.c src/history/save_hist.c inc/lexer.h inc/exec.h src/exec/ft_redirect_error.c)
 
 
 target_link_libraries(42save ${CMAKE_SOURCE_DIR}/libft/libft.a)

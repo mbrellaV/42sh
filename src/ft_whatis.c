@@ -46,7 +46,7 @@ int		ft_whatis2_1(t_process *tmp)
 	else if (ft_strcmp(tmp->file_args[0], "echo") == 0)
 		ft_echo(tmp->file_args);
 	else if (ft_strcmp(tmp->file_args[0], "history") == 0)
-		show_history();
+		show_history(globals()->g_memory_head);
 	else
 		return (ft_whatis2_2(tmp));
 	return (1);

@@ -60,7 +60,6 @@ SRC_BASE = builtins/ft_cd.c\
  	exec/free_job_list.c\
 	builtins/fg_builtin.c\
 	builtins/bg_builtin.c\
- 	exec/ft_fun_fork.c\
  	exec/launch_job.c\
  	exec/put_job_in_foreground.c\
  	exec/put_job_in_background.c\
@@ -68,6 +67,7 @@ SRC_BASE = builtins/ft_cd.c\
  	exec/job_info.c\
  	exec/working_with_fds.c\
  	exec/create_jobs_and_proc.c\
+ 	exec/ft_redirect_error.c\
 	lexer/lexer.c\
 	lexer/change_dol.c\
 	lexer/change_spaces.c\
@@ -78,10 +78,8 @@ SRC_BASE = builtins/ft_cd.c\
 	lexer/del_one_node_in_lextokens.c\
 	lexer/do_zam_ravno.c\
 	lexer/word_sizes.c\
-	lexer/change_hist_exp.c\
 	lexer/change_str_by_str.c\
 	lexer/get_opt_type.c\
-	lexer/history_search.c\
 	lexer/change_sc.c\
 	lexer/check_errors.c\
 	lexer/create_new_lexer_struct.c\
@@ -104,7 +102,6 @@ SRC_BASE = builtins/ft_cd.c\
 	nucleus/ft_arrows.c\
 	nucleus/ft_putcut.c\
 	nucleus/ft_cut.c\
-	nucleus/dop_memory.c\
 	nucleus/dop_tab_funs.c\
 	nucleus/ft_do_delch.c\
 	nucleus/ft_cut_copy.c\
@@ -112,22 +109,25 @@ SRC_BASE = builtins/ft_cd.c\
 	nucleus/ft_strsplit1.c\
 	nucleus/ft_print_tab.c\
 	nucleus/ft_realloc_tab.c\
-	nucleus/show_history.c\
-	nucleus/ft_head_memory.c\
-	nucleus/ft_memory.c\
-	nucleus/ft_dop_history.c\
-	nucleus/ft_putmemory.c\
 	nucleus/ft_directory.c\
 	nucleus/ft_start_read.c\
 	nucleus/ft_printf_helper.c\
 	nucleus/ft_cheak_quote.c\
 	nucleus/ft_cheak_tab.c\
 	nucleus/ft_add_intput_que.c\
-	nucleus/find_history.c\
 	nucleus/ft_arrnew.c\
 	nucleus/ft_arrdel.c\
 	nucleus/del_readline.c\
 	nucleus/tab.c\
+	history/dop_memory.c\
+	history/show_history.c\
+	history/ft_putmemory.c\
+	history/change_hist_exp.c\
+	history/find_history.c\
+	history/ft_add_to_history.c\
+	history/history_search.c\
+	history/init_history.c\
+	history/save_hist.c\
 	parser/dop_parser.c\
 	parser/change_tilda.c\
 	parser/main_parser.c\
