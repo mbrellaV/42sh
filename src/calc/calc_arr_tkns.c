@@ -5,9 +5,9 @@ static t_calc_tkns	*calc_new_tkns(void)
 	t_calc_tkns		*s_tokens;
 	t_calc_tkn		*tokens;
 
-	if (!(s_tokens = (t_calc_tkns *)malloc(sizeof(t_calc_tkns))))
+	if (!(s_tokens = (t_calc_tkns *)ft_memalloc(sizeof(t_calc_tkns))))
 		return (NULL);
-	if (!(tokens = (t_calc_tkn *)malloc(sizeof(t_calc_tkn)
+	if (!(tokens = (t_calc_tkn *)ft_memalloc(sizeof(t_calc_tkn)
 		* (CALC_TOKENS_SIZE))))
 	{
 		free(s_tokens);

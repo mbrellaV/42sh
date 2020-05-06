@@ -20,7 +20,7 @@ char			*ft_add_accur(char *str, int acu, t_printf *p)
 
 	if (acu == -1)
 		return (ft_strdup(str));
-	if (!(s = (char *)malloc(sizeof(char) * acu + 2)))
+	if (!(s = (char *)ft_memalloc(sizeof(char) * acu + 2)))
 		exit(1);
 	len = (int)ft_strlen(str);
 	i = -1;

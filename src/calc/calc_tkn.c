@@ -4,7 +4,7 @@ t_calc_tkn	*calc_newtkn(char *value, t_calc_tkntype type)
 {
 	t_calc_tkn	*token;
 
-	if (!(token = (t_calc_tkn *)malloc(sizeof(t_calc_tkn))))
+	if (!(token = (t_calc_tkn *)ft_memalloc(sizeof(t_calc_tkn))))
 		return (NULL);
 	token->value = value;
 	token->type = type;

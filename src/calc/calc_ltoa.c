@@ -30,7 +30,7 @@ char		*calc_ltoa(long long num)
 	str_size = calc_digit(num);
 	if (sign == -1)
 		str_size++;
-	if (!(new_str = (char *)malloc(sizeof(char) * (str_size + 1))))
+	if (!(new_str = (char *)ft_memalloc(sizeof(char) * (str_size + 1))))
 		return (NULL);
 	new_str[str_size] = '\0';
 	if (sign == -1)

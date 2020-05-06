@@ -27,7 +27,7 @@ static long long		calc_parent_next(long long result,
 		(*index)++;
 		return (result);
 	}
-	return (result = calc_var(s_tokens, index, error));
+	return (calc_var(s_tokens, index, error));
 }
 
 t_calc_tkn				*calc_get_parent_tkn(char *str, size_t pos)

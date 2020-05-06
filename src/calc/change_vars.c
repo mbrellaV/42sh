@@ -24,11 +24,18 @@ int				calc_word_size(char *str)
 	i = 0;
 	while (str[i] != '\0')
 	{
+		if (is_incr_sym(str[i]))
+			break ;
 		if (!ft_isalpha(str[i]) && !ft_isdigit(str[i]))
 			return (i);
 		i++;
 	}
-	return (0);
+	if ((str[i] == '+' && str[i + 1] == '-') ||
+	(str[i] == '-' && str[i + 1] == '+'))
+		return (i);
+	if (is_incr_sym(str[i]) && is_incr_sym(str[i + 1]))
+		return (i + 2);
+	return (i);
 }
 
 char			*save_to_env(char *str, int i, int dopi, char *dopstr)
@@ -37,7 +44,6 @@ char			*save_to_env(char *str, int i, int dopi, char *dopstr)
 	char	*str_from_env;
 	int		res;
 
-	//dprintf(2, "\nsas: |%d|\n", dopi);
 	if (dopi == 0)
 		return (ft_strdup("0"));
 	if (str[0] == '+' || str[0] == '-')
@@ -72,9 +78,9 @@ char			*do_save_var(char *str)
 	opr_inc_side[1] = 0;
 	dopstr = NULL;
 	i += word_size(str);
-	if ((str[i - 1] == '-' && str[i - 2] == '-'))
+	if (i > 1 && (str[i - 1] == '-' && str[i - 2] == '-'))
 		opr_inc_side[1] = -1;
-	if ((str[i - 1] == '+' && str[i - 2] == '+'))
+	if (i > 1 && (str[i - 1] == '+' && str[i - 2] == '+'))
 		opr_inc_side[1] = 1;
 	if ((str[0] == '-' && str[1] == '-'))
 		opr_inc_side[0] = -1;
@@ -82,7 +88,8 @@ char			*do_save_var(char *str)
 		opr_inc_side[0] = 1;
 	if (opr_inc_side[0] != 0 && opr_inc_side[1] != 0)
 		return (NULL);
-	if (is_incr_sym(str[i - 1]) && (opr_inc_side[0] == 0 && opr_inc_side[1] == 0))
+	if (i > 0 && is_incr_sym(str[i - 1]) &&
+	(opr_inc_side[0] == 0 && opr_inc_side[1] == 0))
 	{
 		dopstr = ft_strjoin("0", &str[i - 1]);
 		return (dopstr);
@@ -95,25 +102,9 @@ int				zam_word_in_eval(int *i, char *evalstr, char *newstr)
 	char	*dopstr;
 	char	*str_for_del;
 
-	if ((is_incr_sym(evalstr[word_size(&evalstr[*i]) + 1])) &&
-		is_incr_sym(evalstr[word_size(&evalstr[*i]) + 2]))
-	{
-		dopstr = ft_strsub(evalstr, *i, word_size(&evalstr[*i]) + 2);
-		*i += word_size(&evalstr[*i]) + 2;
-	}
-	else if ((is_incr_sym(evalstr[0])) &&
-			 is_incr_sym(evalstr[1]))
-	{
-		dopstr = ft_strsub(evalstr, *i, word_size(&evalstr[*i]));
-		*i += word_size(&evalstr[*i]);
-	}
-	else
-	{
-		dopstr = ft_strsub(evalstr, *i, word_size(&evalstr[*i]));
-		*i += word_size(&evalstr[*i]);
-	}
+	dopstr = ft_strsub(evalstr, *i, calc_word_size(&evalstr[*i]));
+	*i += calc_word_size(&evalstr[*i]);
 	str_for_del = dopstr;
-	//dprintf(2, "\nda: |%s|\n", dopstr);
 	if (!(dopstr = do_save_var(dopstr)))
 	{
 		ft_strdel(&evalstr);
@@ -123,7 +114,6 @@ int				zam_word_in_eval(int *i, char *evalstr, char *newstr)
 	}
 	ft_strdel(&str_for_del);
 	ft_strcat(newstr, dopstr);
-	//dprintf(2, "\n|%s|\n", dopstr);
 	ft_strdel(&dopstr);
 	return (1);
 }
@@ -144,6 +134,7 @@ char			*change_vars(char *evalstr)
 			dopstr = ft_strsub(&evalstr[i], 0, calc_word_size(&evalstr[i + 1]) + 1);
 			ft_strcat(newstr, dopstr);
 			ft_strdel(&dopstr);
+			i += word_size(&evalstr[i]);
 		}
 		if (ft_isalpha(evalstr[i]) == 1 || (((ft_strstr(&evalstr[i], "++") == &evalstr[i]) ||
 				(ft_strstr(&evalstr[i], "--") == &evalstr[i])) && ft_isalpha(evalstr[i + 2]) == 1))

@@ -20,13 +20,14 @@ static long long	calc_var_next(long long result, t_calc_tkns *s_tokens,
 	if (type == CALC_VAR)
 	{
 		var = (t_calc_var *)s_tokens->tokens[*index].value;
+		dprintf(2, "\n|%s|\n", (char *)var);
 		result = calc(var->value, error);
 		if (error->status)
 			return (0);
 		*index += (calc_check_var_inc(s_tokens, *index)) ? 2 : 1;
 		return (result);
 	}
-	return (result = calc_unary(s_tokens, index, error));
+	return (calc_unary(s_tokens, index, error));
 }
 
 long long			calc_var(t_calc_tkns *s_tokens, size_t *index,
@@ -78,6 +79,7 @@ t_calc_tkns			*calc_prefix(char *str, t_calc_tkns *s_tokens, size_t *pos)
 	if (!(value = ft_get_var(str, globals()->g_all_var)))
 		return (calc_del_tkns(s_tokens));
 	s_tokens = calc_get_arr_tkns(value, s_tokens, s_tokens->size);
+	ft_strdel(&value);
 	s_tokens->size--;
 	str[i] = temp;
 	*pos += i;

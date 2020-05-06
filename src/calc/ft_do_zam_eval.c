@@ -38,7 +38,7 @@ char		*ft_do_cut(char *tmp, t_calc_err *error)
 				return (NULL);
 			if (str_for_rec != NULL)
 				dop = str_for_rec;
-			str = ft_itoa((int)calc(dop, error));
+			str = calc_ltoa(calc(dop, error));
 			(str_for_del != dop) ? ft_strdel(&str_for_del) : 0;
 			if (error->status > 0)
 				return (return_with_del(str));

@@ -17,7 +17,7 @@ char	**ft_arrnew(size_t size)
 	char		**arr;
 	size_t		i;
 
-	if (!(arr = (char **)malloc(sizeof(char *) * (size + 1))))
+	if (!(arr = (char **)ft_memalloc(sizeof(char *) * (size + 1))))
 		return (NULL);
 	i = 0;
 	while (i <= size)
