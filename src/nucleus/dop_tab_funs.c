@@ -6,26 +6,26 @@
 /*   By: mbrella <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/31 19:36:44 by mbrella           #+#    #+#             */
-/*   Updated: 2020/05/02 13:20:11 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/04/20 14:49:46 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/fshell.h"
 
-void	ft_add_builtins_in_tab(char *name, t_readline *p)
+void	ft_find_dir(char *dir, char *name, t_readline *p)
 {
-	char	**mas;
-	int		i;
-	char	*goodstr;
+	DIR				*mydir;
+	struct dirent	*myfile;
 
-	i = 0;
-	mas = globals()->g_builtins;
-	while (mas[i] != NULL)
+	mydir = opendir(dir);
+	if (mydir != NULL)
 	{
-		goodstr = mas[i];
-		if (is_cmp(name, goodstr))
-			ft_add_tab(p, goodstr);
-		i++;
+		while ((myfile = readdir(mydir)) != 0)
+		{
+			if (is_cmp(name, myfile->d_name) && myfile->d_name[0] != '.')
+				ft_add_tab(p, myfile->d_name);
+		}
+		closedir(mydir);
 	}
 }
 
@@ -51,6 +51,34 @@ void	ft_find_path(t_readline *p, char *name)
 	ft_arrdel(path);
 }
 
+char	*ft_directory(char *str, int *flag_dir)
+{
+	int		k;
+	char	*tmp;
+	char	*hp;
+	char	*tmp1;
+
+	k = ft_strlen(str);
+	while (--k >= 0)
+		if (str[k] == '/')
+		{
+			if (str[0] == '~')
+			{
+				if (!(hp = ft_get_var("HOME", globals()->g_env)))
+					ft_error_q(5);
+				tmp = ft_strndup(&str[1], k - 1);
+				tmp1 = ft_strjoin(hp, tmp);
+				free(hp);
+				ft_strdel(&tmp);
+				return (tmp1);
+			}
+			else
+				return (ft_strndup(str, k + 1));
+		}
+	*flag_dir = 0;
+	return (ft_strdup("./"));
+}
+
 int		is_cmp(char *s1, char *s2)
 {
 	int	i;
@@ -68,19 +96,12 @@ int		is_cmp(char *s1, char *s2)
 	return (1);
 }
 
-char	*ft_name(char *str, t_readline *p)
+char	*ft_name(char *str)
 {
 	int		k;
 
-	k = (int)ft_strlen(str) - 1;
-	if (k < 0)
-		return (NULL);
-	while (k > 0 && str[k] != '/' && (isword(str[k]) == 1 || str[k] == '{') &&
-		str[k] != '$')
-		k--;
-	if (k >= 0 && str[k] == '$' && str[k + 1] != '{')
-		p->flag_tab = 2;
-	else if (k >= 0 && str[k] == '$' && str[k + 1] == '{')
-		p->flag_tab = 3;
-	return (ft_strdup(&str[k + (str[k] == '/' ? 1 : 0)]));
+	k = ft_strlen(str);
+	while (--k >= 0 && str[k] != '/' && isword(str[k]) == 1)
+		;
+	return (ft_strdup(&str[k + 1]));
 }

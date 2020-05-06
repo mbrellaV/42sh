@@ -6,5 +6,5 @@ C_FLAGS = -g   -std=gnu99
 
 C_DEFINES = 
 
-C_INCLUDES = -I/home/wstygg/CLionProjects/42sh/inc -I/home/wstygg/CLionProjects/42sh/src -I/home/wstygg/CLionProjects/42sh/src/qft_printf 
+C_INCLUDES = -I/home/pro/CLionProjects/42sh/inc -I/home/pro/CLionProjects/42sh/src -I/home/pro/CLionProjects/42sh/src/qft_printf 
 

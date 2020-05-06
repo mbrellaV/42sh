@@ -6,7 +6,7 @@
 /*   By: qmartina <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/27 17:36:10 by qmartina          #+#    #+#             */
-/*   Updated: 2020/05/02 13:20:11 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/04/20 14:49:46 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,8 @@ void	ft_arrows(t_readline *p)
 	{
 		while (p->index <= p->len)
 		{
-			do_right(p);
+//			if (ft_put_n(p->len_hint, p->index, p->len) == -1)
+				do_right(p);
 		}
 		p->index--;
 	}

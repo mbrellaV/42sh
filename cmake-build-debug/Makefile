@@ -39,19 +39,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /snap/clion/112/bin/cmake/linux/bin/cmake
+CMAKE_COMMAND = /home/pro/Загрузки/clion-2019.3.5/bin/cmake/linux/bin/cmake
 
 # The command to remove a file.
-RM = /snap/clion/112/bin/cmake/linux/bin/cmake -E remove -f
+RM = /home/pro/Загрузки/clion-2019.3.5/bin/cmake/linux/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/wstygg/CLionProjects/42sh
+CMAKE_SOURCE_DIR = /home/pro/CLionProjects/42sh
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/wstygg/CLionProjects/42sh/cmake-build-debug
+CMAKE_BINARY_DIR = /home/pro/CLionProjects/42sh/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -59,7 +59,7 @@ CMAKE_BINARY_DIR = /home/wstygg/CLionProjects/42sh/cmake-build-debug
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/snap/clion/112/bin/cmake/linux/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/home/pro/Загрузки/clion-2019.3.5/bin/cmake/linux/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -70,7 +70,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/snap/clion/112/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	/home/pro/Загрузки/clion-2019.3.5/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/wstygg/CLionProjects/42sh/cmake-build-debug/CMakeFiles /home/wstygg/CLionProjects/42sh/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pro/CLionProjects/42sh/cmake-build-debug/CMakeFiles /home/pro/CLionProjects/42sh/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/wstygg/CLionProjects/42sh/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pro/CLionProjects/42sh/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -1229,249 +1229,6 @@ src/errors/errror_handler.s: src/errors/errror_handler.c.s
 src/errors/errror_handler.c.s:
 	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/errors/errror_handler.c.s
 .PHONY : src/errors/errror_handler.c.s
-
-src/evaln/atoimy.o: src/evaln/atoimy.c.o
-
-.PHONY : src/evaln/atoimy.o
-
-# target to build an object file
-src/evaln/atoimy.c.o:
-	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/evaln/atoimy.c.o
-.PHONY : src/evaln/atoimy.c.o
-
-src/evaln/atoimy.i: src/evaln/atoimy.c.i
-
-.PHONY : src/evaln/atoimy.i
-
-# target to preprocess a source file
-src/evaln/atoimy.c.i:
-	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/evaln/atoimy.c.i
-.PHONY : src/evaln/atoimy.c.i
-
-src/evaln/atoimy.s: src/evaln/atoimy.c.s
-
-.PHONY : src/evaln/atoimy.s
-
-# target to generate assembly for a file
-src/evaln/atoimy.c.s:
-	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/evaln/atoimy.c.s
-.PHONY : src/evaln/atoimy.c.s
-
-src/evaln/calc.o: src/evaln/calc.c.o
-
-.PHONY : src/evaln/calc.o
-
-# target to build an object file
-src/evaln/calc.c.o:
-	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/evaln/calc.c.o
-.PHONY : src/evaln/calc.c.o
-
-src/evaln/calc.i: src/evaln/calc.c.i
-
-.PHONY : src/evaln/calc.i
-
-# target to preprocess a source file
-src/evaln/calc.c.i:
-	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/evaln/calc.c.i
-.PHONY : src/evaln/calc.c.i
-
-src/evaln/calc.s: src/evaln/calc.c.s
-
-.PHONY : src/evaln/calc.s
-
-# target to generate assembly for a file
-src/evaln/calc.c.s:
-	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/evaln/calc.c.s
-.PHONY : src/evaln/calc.c.s
-
-src/evaln/calc_error.o: src/evaln/calc_error.c.o
-
-.PHONY : src/evaln/calc_error.o
-
-# target to build an object file
-src/evaln/calc_error.c.o:
-	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/evaln/calc_error.c.o
-.PHONY : src/evaln/calc_error.c.o
-
-src/evaln/calc_error.i: src/evaln/calc_error.c.i
-
-.PHONY : src/evaln/calc_error.i
-
-# target to preprocess a source file
-src/evaln/calc_error.c.i:
-	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/evaln/calc_error.c.i
-.PHONY : src/evaln/calc_error.c.i
-
-src/evaln/calc_error.s: src/evaln/calc_error.c.s
-
-.PHONY : src/evaln/calc_error.s
-
-# target to generate assembly for a file
-src/evaln/calc_error.c.s:
-	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/evaln/calc_error.c.s
-.PHONY : src/evaln/calc_error.c.s
-
-src/evaln/change_vars.o: src/evaln/change_vars.c.o
-
-.PHONY : src/evaln/change_vars.o
-
-# target to build an object file
-src/evaln/change_vars.c.o:
-	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/evaln/change_vars.c.o
-.PHONY : src/evaln/change_vars.c.o
-
-src/evaln/change_vars.i: src/evaln/change_vars.c.i
-
-.PHONY : src/evaln/change_vars.i
-
-# target to preprocess a source file
-src/evaln/change_vars.c.i:
-	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/evaln/change_vars.c.i
-.PHONY : src/evaln/change_vars.c.i
-
-src/evaln/change_vars.s: src/evaln/change_vars.c.s
-
-.PHONY : src/evaln/change_vars.s
-
-# target to generate assembly for a file
-src/evaln/change_vars.c.s:
-	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/evaln/change_vars.c.s
-.PHONY : src/evaln/change_vars.c.s
-
-src/evaln/check_calc.o: src/evaln/check_calc.c.o
-
-.PHONY : src/evaln/check_calc.o
-
-# target to build an object file
-src/evaln/check_calc.c.o:
-	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/evaln/check_calc.c.o
-.PHONY : src/evaln/check_calc.c.o
-
-src/evaln/check_calc.i: src/evaln/check_calc.c.i
-
-.PHONY : src/evaln/check_calc.i
-
-# target to preprocess a source file
-src/evaln/check_calc.c.i:
-	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/evaln/check_calc.c.i
-.PHONY : src/evaln/check_calc.c.i
-
-src/evaln/check_calc.s: src/evaln/check_calc.c.s
-
-.PHONY : src/evaln/check_calc.s
-
-# target to generate assembly for a file
-src/evaln/check_calc.c.s:
-	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/evaln/check_calc.c.s
-.PHONY : src/evaln/check_calc.c.s
-
-src/evaln/dop.o: src/evaln/dop.c.o
-
-.PHONY : src/evaln/dop.o
-
-# target to build an object file
-src/evaln/dop.c.o:
-	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/evaln/dop.c.o
-.PHONY : src/evaln/dop.c.o
-
-src/evaln/dop.i: src/evaln/dop.c.i
-
-.PHONY : src/evaln/dop.i
-
-# target to preprocess a source file
-src/evaln/dop.c.i:
-	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/evaln/dop.c.i
-.PHONY : src/evaln/dop.c.i
-
-src/evaln/dop.s: src/evaln/dop.c.s
-
-.PHONY : src/evaln/dop.s
-
-# target to generate assembly for a file
-src/evaln/dop.c.s:
-	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/evaln/dop.c.s
-.PHONY : src/evaln/dop.c.s
-
-src/evaln/ft_do_zam_eval.o: src/evaln/ft_do_zam_eval.c.o
-
-.PHONY : src/evaln/ft_do_zam_eval.o
-
-# target to build an object file
-src/evaln/ft_do_zam_eval.c.o:
-	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/evaln/ft_do_zam_eval.c.o
-.PHONY : src/evaln/ft_do_zam_eval.c.o
-
-src/evaln/ft_do_zam_eval.i: src/evaln/ft_do_zam_eval.c.i
-
-.PHONY : src/evaln/ft_do_zam_eval.i
-
-# target to preprocess a source file
-src/evaln/ft_do_zam_eval.c.i:
-	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/evaln/ft_do_zam_eval.c.i
-.PHONY : src/evaln/ft_do_zam_eval.c.i
-
-src/evaln/ft_do_zam_eval.s: src/evaln/ft_do_zam_eval.c.s
-
-.PHONY : src/evaln/ft_do_zam_eval.s
-
-# target to generate assembly for a file
-src/evaln/ft_do_zam_eval.c.s:
-	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/evaln/ft_do_zam_eval.c.s
-.PHONY : src/evaln/ft_do_zam_eval.c.s
-
-src/evaln/inftopost.o: src/evaln/inftopost.c.o
-
-.PHONY : src/evaln/inftopost.o
-
-# target to build an object file
-src/evaln/inftopost.c.o:
-	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/evaln/inftopost.c.o
-.PHONY : src/evaln/inftopost.c.o
-
-src/evaln/inftopost.i: src/evaln/inftopost.c.i
-
-.PHONY : src/evaln/inftopost.i
-
-# target to preprocess a source file
-src/evaln/inftopost.c.i:
-	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/evaln/inftopost.c.i
-.PHONY : src/evaln/inftopost.c.i
-
-src/evaln/inftopost.s: src/evaln/inftopost.c.s
-
-.PHONY : src/evaln/inftopost.s
-
-# target to generate assembly for a file
-src/evaln/inftopost.c.s:
-	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/evaln/inftopost.c.s
-.PHONY : src/evaln/inftopost.c.s
-
-src/evaln/sub_and_add.o: src/evaln/sub_and_add.c.o
-
-.PHONY : src/evaln/sub_and_add.o
-
-# target to build an object file
-src/evaln/sub_and_add.c.o:
-	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/evaln/sub_and_add.c.o
-.PHONY : src/evaln/sub_and_add.c.o
-
-src/evaln/sub_and_add.i: src/evaln/sub_and_add.c.i
-
-.PHONY : src/evaln/sub_and_add.i
-
-# target to preprocess a source file
-src/evaln/sub_and_add.c.i:
-	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/evaln/sub_and_add.c.i
-.PHONY : src/evaln/sub_and_add.c.i
-
-src/evaln/sub_and_add.s: src/evaln/sub_and_add.c.s
-
-.PHONY : src/evaln/sub_and_add.s
-
-# target to generate assembly for a file
-src/evaln/sub_and_add.c.s:
-	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/evaln/sub_and_add.c.s
-.PHONY : src/evaln/sub_and_add.c.s
 
 src/exec/continuing_jobs.o: src/exec/continuing_jobs.c.o
 
@@ -4332,33 +4089,6 @@ help:
 	@echo "... src/errors/errror_handler.o"
 	@echo "... src/errors/errror_handler.i"
 	@echo "... src/errors/errror_handler.s"
-	@echo "... src/evaln/atoimy.o"
-	@echo "... src/evaln/atoimy.i"
-	@echo "... src/evaln/atoimy.s"
-	@echo "... src/evaln/calc.o"
-	@echo "... src/evaln/calc.i"
-	@echo "... src/evaln/calc.s"
-	@echo "... src/evaln/calc_error.o"
-	@echo "... src/evaln/calc_error.i"
-	@echo "... src/evaln/calc_error.s"
-	@echo "... src/evaln/change_vars.o"
-	@echo "... src/evaln/change_vars.i"
-	@echo "... src/evaln/change_vars.s"
-	@echo "... src/evaln/check_calc.o"
-	@echo "... src/evaln/check_calc.i"
-	@echo "... src/evaln/check_calc.s"
-	@echo "... src/evaln/dop.o"
-	@echo "... src/evaln/dop.i"
-	@echo "... src/evaln/dop.s"
-	@echo "... src/evaln/ft_do_zam_eval.o"
-	@echo "... src/evaln/ft_do_zam_eval.i"
-	@echo "... src/evaln/ft_do_zam_eval.s"
-	@echo "... src/evaln/inftopost.o"
-	@echo "... src/evaln/inftopost.i"
-	@echo "... src/evaln/inftopost.s"
-	@echo "... src/evaln/sub_and_add.o"
-	@echo "... src/evaln/sub_and_add.i"
-	@echo "... src/evaln/sub_and_add.s"
 	@echo "... src/exec/continuing_jobs.o"
 	@echo "... src/exec/continuing_jobs.i"
 	@echo "... src/exec/continuing_jobs.s"

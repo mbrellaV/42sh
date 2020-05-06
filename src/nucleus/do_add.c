@@ -6,7 +6,7 @@
 /*   By: qmartina <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/27 17:04:08 by qmartina          #+#    #+#             */
-/*   Updated: 2020/05/02 13:20:11 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/04/20 14:49:46 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ void	ft_do_addch(t_readline *p, char c)
 	char	tmp2;
 	int		i;
 
+	ft_cleanstr(p->index + p->len_hint, p);
 	if (++p->len == p->buff_size)
 		ft_realloc_buff(p);
 	i = p->index++;
@@ -40,7 +41,7 @@ void	ft_do_addch(t_readline *p, char c)
 		tmp2 = p->buff[i];
 	}
 	p->buff[i] = tmp2;
-	ft_cleanstr(p->index + p->len_hint, p);
+//	ft_cleanstr(p->index + p->len_hint, p);
 	p->len_hint = ft_printf_helper(p->mod);
 	write(2, p->buff, p->len);
 	ft_setcursor(p->index, p->len, p);

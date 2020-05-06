@@ -28,12 +28,6 @@ add_executable(42save
         src/builtins/ft_echo2.c
         src/builtins/ft_type.c
         src/errors/errror_handler.c
-        src/evaln/atoimy.c
-        src/evaln/calc.c
-        src/evaln/dop.c
-        src/evaln/eval_expr.h
-        src/evaln/ft_do_zam_eval.c
-        src/evaln/inftopost.c
         src/exec/continuing_jobs.c
         src/exec/ft_create_file.c
         src/exec/ft_do_redirects.c
@@ -130,13 +124,6 @@ add_executable(42save
         src/parser/check_bracket.c
         src/parser/dop_parser.c
         src/parser/main_parser.c
-        src/evaln/calc.c
-        src/evaln/dop.c
-        src/evaln/calc.c
-        src/evaln/atoimy.c
-        src/evaln/inftopost.c
-        src/evaln/ft_do_zam_eval.c
-        src/evaln/sub_and_add.c
         src/check_file.c
         src/ft_distruct.c
         src/ft_error_q.c
@@ -151,9 +138,9 @@ add_executable(42save
         src/redirects.c
         src/shell_lvl.c src/exec/create_jobs_and_proc.c src/exec/free_job_list.c
         src/exec/find_jobs.c src/exec/working_with_fds.c src/exec/job_info.c
-        src/evaln/sub_and_add.c src/exec/ft_do_open_flags.c src/exec/redirect.c src/ck_check.c
+        src/exec/ft_do_open_flags.c src/exec/redirect.c src/ck_check.c
         src/lexer/del_one_node_in_lextokens.c src/ft_main_what.c src/put_error_to_env.c
-        src/hash/print_hash.c src/parser/is_system_symbol.c src/evaln/change_vars.c src/evaln/calc_error.c src/evaln/check_calc.c src/builtins/ft_fc.c src/builtins/ft_fc_2.c src/utility_files/crc32.c src/lexer/do_zam_ravno.c src/nucleus/ft_cheak_tab.c src/nucleus/ft_directory.c src/nucleus/ft_find_env.c src/builtins/authors.c src/nucleus/dop_memory.c src/redirects.c src/ft_open_flag_in_builtins.c src/do_builtin.c libft/src/count_words.c)
+        src/hash/print_hash.c src/parser/is_system_symbol.c   src/builtins/ft_fc.c src/builtins/ft_fc_2.c src/utility_files/crc32.c src/lexer/do_zam_ravno.c src/nucleus/ft_cheak_tab.c src/nucleus/ft_directory.c src/nucleus/ft_find_env.c src/builtins/authors.c src/nucleus/dop_memory.c src/redirects.c src/ft_open_flag_in_builtins.c src/do_builtin.c libft/src/count_words.c)
 
 
 target_link_libraries(42save ${CMAKE_SOURCE_DIR}/libft/libft.a)
