@@ -19,6 +19,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/42save.dir/src/builtins/ft_fc_2.c.o"
   "CMakeFiles/42save.dir/src/builtins/ft_fc_3.c.o"
   "CMakeFiles/42save.dir/src/builtins/ft_type.c.o"
+  "CMakeFiles/42save.dir/src/builtins/pwd.c.o"
   "CMakeFiles/42save.dir/src/calc/calc.c.o"
   "CMakeFiles/42save.dir/src/calc/calc_add_fun.c.o"
   "CMakeFiles/42save.dir/src/calc/calc_arr_reloc.c.o"
