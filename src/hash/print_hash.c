@@ -33,7 +33,7 @@ int					do_hash(char **args)
 		else
 			return (ft_dprintf(globals()->fd[1],
 					"Invalid option %s!\nUsage: "HASH_USAGE"\n", args[1]));
-		args++;
+				args++;
 	}
 	do_hash_args(args + 1);
 	return (0);

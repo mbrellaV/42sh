@@ -63,7 +63,6 @@ char			*save_to_env(char *str, int i, int dopi, char *dopstr)
 	ft_strdel(&str_for_rec);
 	ft_strdel(&dopstr);
 	dopstr = ft_itoa(res);
-	//dprintf(2, "\npwd: |%s, %d|\n", str, str[i]);
 	return (dopstr);
 }
 
@@ -146,6 +145,5 @@ char			*change_vars(char *evalstr)
 			ft_strcat_char(newstr, evalstr[i++]);
 	}
 	ft_strdel(&evalstr);
-	//dprintf(2, "\nsas: |%s|\n", newstr);
 	return (newstr);
 }

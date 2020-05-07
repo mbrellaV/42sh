@@ -15,7 +15,6 @@
 char			init_shell_builtins(void)
 {
 	int			i;
-
 	const char	*g_builtins[BIL_NUM] = {
 		"alias", "export", "unset",
 		"history", "env", "clear", "hash",

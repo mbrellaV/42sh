@@ -36,7 +36,7 @@ static void	zap_history(t_memory **head, char **line, char **buf)
 	if (*head == NULL)
 	{
 		*head = create_first_hist_token(*line, *buf);
-		return;
+		return ;
 	}
 	if (!((*head)->next = (t_memory *)ft_memalloc(sizeof(t_memory))))
 		ft_error_q(2);

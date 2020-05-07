@@ -20,7 +20,6 @@ void	ft_setcursor(int i, int max, t_readline *p)
 	p->index = p->len;
 	while (max > i)
 	{
-//		write(2, "\b", 1);
 		do_left(p);
 		max--;
 	}

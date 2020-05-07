@@ -12,12 +12,39 @@
 
 #include "../../inc/fshell.h"
 
-void	reset_input_mode(void)
+static void		norme_help(t_readline *p, char buf[8])
+{
+	if (p->sum_read == 27 || (p->sum_read == 119 && p->esc == 1))
+		ft_do_copy(p);
+	else if (ft_signal(p->sum_read, p) == 404)
+		ft_do_addch(p, buf[0]);
+	do_job_del();
+}
+
+int				ft_read_helper(t_readline *p, t_memory *h, int rt, char *buf)
+{
+	if (rt > 1)
+		ft_cheak_sum(p, &h);
+	else if (p->sum_read == 9)
+		ft_cheak_tab(p);
+	else if (p->sum_read == 18)
+		ft_add_his(p, h);
+	else if (p->sum_read == 25 || p->sum_read == 23 || p->sum_read == 21 ||
+	p->sum_read == 127)
+		ft_cut_copy(p);
+	else if (ft_signal(p->sum_read, p) == 1)
+		return (0);
+	else
+		norme_help(p, buf);
+	return (1);
+}
+
+void			reset_input_mode(void)
 {
 	tcsetattr(0, TCSANOW, &saved_attributes);
 }
 
-void	error_term(int error)
+void			error_term(int error)
 {
 	if (error == 1)
 	{
@@ -26,7 +53,7 @@ void	error_term(int error)
 	}
 }
 
-int		set_input_mode(void)
+int				set_input_mode(void)
 {
 	struct termios tattr;
 

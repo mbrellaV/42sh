@@ -61,8 +61,6 @@ void	ft_add_his_ch(t_readline *r, char c)
 		if (r->index > 0)
 		{
 			do_left(r);
-//			r->buff[--r->index] = 0;
-//			write(2, "\b", 1);
 		}
 	}
 	else

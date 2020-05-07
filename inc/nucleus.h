@@ -247,6 +247,7 @@ void						ft_upcursor(t_readline *p);
 void						reset_input_mode(void);
 void						error_term(int error);
 int							set_input_mode(void);
+int 						ft_read_helper(t_readline *p, t_memory *h, int rt, char *buf);
 
 /*
 ** nline.c

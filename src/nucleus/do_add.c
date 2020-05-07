@@ -41,7 +41,6 @@ void	ft_do_addch(t_readline *p, char c)
 		tmp2 = p->buff[i];
 	}
 	p->buff[i] = tmp2;
-//	ft_cleanstr(p->index + p->len_hint, p);
 	p->len_hint = ft_printf_helper(p->mod);
 	write(2, p->buff, p->len);
 	ft_setcursor(p->index, p->len, p);

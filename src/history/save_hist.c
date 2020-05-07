@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   save_history.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: wstygg <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/04/13 19:53:08 by wstygg            #+#    #+#             */
+/*   Updated: 2020/05/04 13:53:14 by wstygg           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "fshell.h"
 
 int			save_history(t_memory *q)
@@ -8,7 +20,7 @@ int			save_history(t_memory *q)
 
 	ft_bzero(buf, 1000000);
 	if ((fd = open("history/hist.txt", O_CREAT | O_RDWR | O_TRUNC,
-				   S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH | S_IWOTH)) < 0)
+			S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH | S_IWOTH)) < 0)
 		return (0);
 	while (q->back != NULL)
 		q = q->back;

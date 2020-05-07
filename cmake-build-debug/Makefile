@@ -48,10 +48,10 @@ RM = /home/lox/clion-2019.3.5/bin/cmake/linux/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/lox/42sh
+CMAKE_SOURCE_DIR = /home/lox/42
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/lox/42sh/cmake-build-debug
+CMAKE_BINARY_DIR = /home/lox/42/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/lox/42sh/cmake-build-debug/CMakeFiles /home/lox/42sh/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lox/42/cmake-build-debug/CMakeFiles /home/lox/42/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/lox/42sh/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lox/42/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -608,33 +608,6 @@ src/builtins/ft_type.s: src/builtins/ft_type.c.s
 src/builtins/ft_type.c.s:
 	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/builtins/ft_type.c.s
 .PHONY : src/builtins/ft_type.c.s
-
-src/builtins/pwd.o: src/builtins/pwd.c.o
-
-.PHONY : src/builtins/pwd.o
-
-# target to build an object file
-src/builtins/pwd.c.o:
-	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/builtins/pwd.c.o
-.PHONY : src/builtins/pwd.c.o
-
-src/builtins/pwd.i: src/builtins/pwd.c.i
-
-.PHONY : src/builtins/pwd.i
-
-# target to preprocess a source file
-src/builtins/pwd.c.i:
-	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/builtins/pwd.c.i
-.PHONY : src/builtins/pwd.c.i
-
-src/builtins/pwd.s: src/builtins/pwd.c.s
-
-.PHONY : src/builtins/pwd.s
-
-# target to generate assembly for a file
-src/builtins/pwd.c.s:
-	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/builtins/pwd.c.s
-.PHONY : src/builtins/pwd.c.s
 
 src/calc/calc.o: src/calc/calc.c.o
 
@@ -2580,6 +2553,33 @@ src/lexer/do_zam_ravno.c.s:
 	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/lexer/do_zam_ravno.c.s
 .PHONY : src/lexer/do_zam_ravno.c.s
 
+src/lexer/do_zamena_slash.o: src/lexer/do_zamena_slash.c.o
+
+.PHONY : src/lexer/do_zamena_slash.o
+
+# target to build an object file
+src/lexer/do_zamena_slash.c.o:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/lexer/do_zamena_slash.c.o
+.PHONY : src/lexer/do_zamena_slash.c.o
+
+src/lexer/do_zamena_slash.i: src/lexer/do_zamena_slash.c.i
+
+.PHONY : src/lexer/do_zamena_slash.i
+
+# target to preprocess a source file
+src/lexer/do_zamena_slash.c.i:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/lexer/do_zamena_slash.c.i
+.PHONY : src/lexer/do_zamena_slash.c.i
+
+src/lexer/do_zamena_slash.s: src/lexer/do_zamena_slash.c.s
+
+.PHONY : src/lexer/do_zamena_slash.s
+
+# target to generate assembly for a file
+src/lexer/do_zamena_slash.c.s:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/lexer/do_zamena_slash.c.s
+.PHONY : src/lexer/do_zamena_slash.c.s
+
 src/lexer/dop_funs.o: src/lexer/dop_funs.c.o
 
 .PHONY : src/lexer/dop_funs.o
@@ -4074,9 +4074,6 @@ help:
 	@echo "... src/builtins/ft_type.o"
 	@echo "... src/builtins/ft_type.i"
 	@echo "... src/builtins/ft_type.s"
-	@echo "... src/builtins/pwd.o"
-	@echo "... src/builtins/pwd.i"
-	@echo "... src/builtins/pwd.s"
 	@echo "... src/calc/calc.o"
 	@echo "... src/calc/calc.i"
 	@echo "... src/calc/calc.s"
@@ -4293,6 +4290,9 @@ help:
 	@echo "... src/lexer/do_zam_ravno.o"
 	@echo "... src/lexer/do_zam_ravno.i"
 	@echo "... src/lexer/do_zam_ravno.s"
+	@echo "... src/lexer/do_zamena_slash.o"
+	@echo "... src/lexer/do_zamena_slash.i"
+	@echo "... src/lexer/do_zamena_slash.s"
 	@echo "... src/lexer/dop_funs.o"
 	@echo "... src/lexer/dop_funs.i"
 	@echo "... src/lexer/dop_funs.s"

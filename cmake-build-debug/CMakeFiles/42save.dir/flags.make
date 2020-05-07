@@ -6,5 +6,5 @@ C_FLAGS = -g   -std=gnu99
 
 C_DEFINES = 
 
-C_INCLUDES = -I/home/lox/42sh/inc -I/home/lox/42sh/src -I/home/lox/42sh/src/qft_printf 
+C_INCLUDES = -I/home/lox/42/inc -I/home/lox/42/src -I/home/lox/42/src/qft_printf 
 
