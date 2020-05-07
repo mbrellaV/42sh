@@ -12,9 +12,9 @@
 
 #include "fshell.h"
 
-int				return_check(char *str, int parbig, int parmin)
+int				return_check(char *str, int i)
 {
-	if ((parbig % 2 != 0) || (parmin % 2 != 0))
+	if (i == -1)
 	{
 		ft_dprintf(globals()->fd[2],
 				"%s: unexpected EOF while looking for matching \"'\n", str);
@@ -32,21 +32,21 @@ int				return_check(char *str, int parbig, int parmin)
 int				check_par_and_brackets(char *str)
 {
 	int		i;
-	int		parbig;
-	int		parmin;
+	int		size;
 
 	i = 0;
-	parbig = 0;
-	parmin = 0;
+	size = 0;
 	while (str[i] != '\0')
 	{
-		if (str[i] == '"')
-			parbig++;
-		if (str[i] == '\'')
-			parmin++;
+		if (ispar(str[i]))
+		{
+			if ((size = c_size(&str[i], str[i])) == -1)
+				return_check(str, -1);
+			i += size + 1;
+		}
 		i++;
 	}
-	return (return_check(str, parbig, parmin));
+	return (return_check(str, i));
 }
 
 int				check_opt_tokens(t_lextoken *tmp)

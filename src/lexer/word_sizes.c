@@ -70,7 +70,7 @@ int				word_size(char *str)
 
 int				c_size(char *str, char b)
 {
-	int i;
+	int		i;
 
 	i = 0;
 	str++;
@@ -81,6 +81,8 @@ int				c_size(char *str, char b)
 		i++;
 		str++;
 	}
+	if (*str == '\0')
+		return (-1);
 	return (i);
 }
 

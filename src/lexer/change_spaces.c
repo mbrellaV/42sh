@@ -86,33 +86,42 @@ char		*do_reverse_zamena(char *str)
 	return (newstr);
 }
 
+static void do_zam_slash_in_par(t_zams *zams, char *line, char c)
+{
+	ft_strcat_char(zams->dopstr, line[zams->i]);
+	zams->i++;
+	if (c == '\"')
+	{
+		while (line[zams->i] != '\0' && line[zams->i] != c)
+		{
+			if (line[zams->i] == '\\' && ispar(line[zams->i + 1]))
+				ft_strcat_char(zams->dopstr, -1 * line[++zams->i]);
+			else
+				ft_strcat_char(zams->dopstr, line[zams->i]);
+			zams->i++;
+		}
+	}
+	else if (c == '\'')
+	{
+		while (line[zams->i] != '\0' && line[zams->i] != c)
+		{
+			ft_strcat_char(zams->dopstr, line[zams->i]);
+			zams->i++;
+		}
+	}
+	ft_strcat_char(zams->dopstr, line[zams->i]);
+}
+
 static void	decide_what_to_do(t_zams *zams, char *line)
 {
 	if (ispar(line[zams->i]))
 	{
-		zams->dop = c_size(&line[zams->i], line[zams->i]);
-		if (zams->dop == -2)
-			zams->dop = 2;
-		zams->str_for_del = ft_strsub(line, zams->i, zams->dop + 2);
-		ft_strcat(zams->dopstr, zams->str_for_del);
-		zams->i += zams->dop + 1;
-		ft_strdel(&zams->str_for_del);
+		do_zam_slash_in_par(zams, line, line[zams->i]);
 	}
 	else if (line[zams->i] == '\\' && line[zams->i + 1] != '\0')
-	{
-		zams->str_for_del = ft_strdup(" ");
-		zams->str_for_del[0] = -1 * line[zams->i + 1];
-		ft_strcat(zams->dopstr, zams->str_for_del);
-		ft_strdel(&zams->str_for_del);
-		zams->i++;
-	}
+		ft_strcat_char(zams->dopstr, -1 * line[zams->i++]);
 	else
-	{
-		zams->str_for_del = ft_strdup(" ");
-		zams->str_for_del[0] = line[zams->i];
-		ft_strcat(zams->dopstr, zams->str_for_del);
-		ft_strdel(&zams->str_for_del);
-	}
+		ft_strcat_char(zams->dopstr, line[zams->i]);
 }
 
 int			do_zamena_slash(char *line, t_readline *p)
