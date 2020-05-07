@@ -84,7 +84,10 @@ int				do_cd(t_builtins *cd, char *str)
 		else if (res_d == -1 || res_l == -1)
 			return (ft_cd_error(full_path, 3, 1));
 		else
+		{
+			free(full_path);
 			return (!res_d ? ft_cd_error(str, 3, 0) : ft_cd_error(str, 6, 0));
+		}
 	}
 	if (!ft_strcmp(str, "-") &&
 	(k = ft_findenv("PWD=", globals()->g_env)) != -404)

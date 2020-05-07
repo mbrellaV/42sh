@@ -18,6 +18,8 @@
 
 # define MAX_HASH	255
 
+# define HASH_USAGE "hash [-r] [utility...]"
+
 typedef struct		s_hash
 {
 	char			*key;
@@ -25,10 +27,11 @@ typedef struct		s_hash
 	struct s_hash	*next;
 }					t_hash;
 
+int					do_hash(char **argv);
 char				*hash_get(char *key, int no_error);
 void				hash_init(void);
 void				hash_clear(void);
-void				print_hash();
+int					print_hash();
 
 char				*slash_cat(char *s1, char *s2);
 void				hash_free_by_key(char *key);

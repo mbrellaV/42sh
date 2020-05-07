@@ -11,28 +11,35 @@
 /* ************************************************************************** */
 
 #include "fshell.h"
+#include "hash.h"
 
-void	do_hash(char **args)
+static void			do_hash_args(char **args)
 {
-	if (!args[1])
-		print_hash();
-	else if (args[2])
-	{
-		put_error_to_shell(2);
-		ft_dprintf(globals()->fd[2],
-				"42sh: hash: too many arguments!\nUsage: hash [-r]\n");
-	}
-	else if (args[1][0] != '-' || args[1][1] != 'r')
-	{
-		put_error_to_shell(2);
-		ft_dprintf(globals()->fd[2],
-				"42sh: hash: bad argument!\nUsage: hash [-r]\n");
-	}
-	else
-		hash_clear();
+	register int	i;
+
+	i = -1;
+	while (args[++i])
+		hash_get(args[i], 0);
 }
 
-void	print_hash(void)
+int					do_hash(char **args)
+{
+	if (!args || !args[0] || !args[1])
+		return (print_hash());
+	while (args[1] && args[1][0] == '-')
+	{
+		if (ft_strequ(args[1], "-r"))
+			hash_clear();
+		else
+			return (ft_dprintf(globals()->fd[1],
+					"Invalid option %s!\nUsage: "HASH_USAGE"\n", args[1]));
+		args++;
+	}
+	do_hash_args(args + 1);
+	return (0);
+}
+
+int					print_hash(void)
 {
 	t_hash			*hash;
 	int				i;
@@ -55,4 +62,5 @@ void	print_hash(void)
 			ft_putstr_fd("\n", globals()->fd[1]);
 		}
 	}
+	return (1);
 }

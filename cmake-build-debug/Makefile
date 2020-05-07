@@ -39,19 +39,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /home/petruha2001/Templates/clion-2019.3.5/bin/cmake/linux/bin/cmake
+CMAKE_COMMAND = /home/lox/clion-2019.3.5/bin/cmake/linux/bin/cmake
 
 # The command to remove a file.
-RM = /home/petruha2001/Templates/clion-2019.3.5/bin/cmake/linux/bin/cmake -E remove -f
+RM = /home/lox/clion-2019.3.5/bin/cmake/linux/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/petruha2001/42sh
+CMAKE_SOURCE_DIR = /home/lox/42sh
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/petruha2001/42sh/cmake-build-debug
+CMAKE_BINARY_DIR = /home/lox/42sh/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -59,7 +59,7 @@ CMAKE_BINARY_DIR = /home/petruha2001/42sh/cmake-build-debug
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/home/petruha2001/Templates/clion-2019.3.5/bin/cmake/linux/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/home/lox/clion-2019.3.5/bin/cmake/linux/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -70,7 +70,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/home/petruha2001/Templates/clion-2019.3.5/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	/home/lox/clion-2019.3.5/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/petruha2001/42sh/cmake-build-debug/CMakeFiles /home/petruha2001/42sh/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lox/42sh/cmake-build-debug/CMakeFiles /home/lox/42sh/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/petruha2001/42sh/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lox/42sh/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -608,6 +608,33 @@ src/builtins/ft_type.s: src/builtins/ft_type.c.s
 src/builtins/ft_type.c.s:
 	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/builtins/ft_type.c.s
 .PHONY : src/builtins/ft_type.c.s
+
+src/builtins/pwd.o: src/builtins/pwd.c.o
+
+.PHONY : src/builtins/pwd.o
+
+# target to build an object file
+src/builtins/pwd.c.o:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/builtins/pwd.c.o
+.PHONY : src/builtins/pwd.c.o
+
+src/builtins/pwd.i: src/builtins/pwd.c.i
+
+.PHONY : src/builtins/pwd.i
+
+# target to preprocess a source file
+src/builtins/pwd.c.i:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/builtins/pwd.c.i
+.PHONY : src/builtins/pwd.c.i
+
+src/builtins/pwd.s: src/builtins/pwd.c.s
+
+.PHONY : src/builtins/pwd.s
+
+# target to generate assembly for a file
+src/builtins/pwd.c.s:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/builtins/pwd.c.s
+.PHONY : src/builtins/pwd.c.s
 
 src/calc/calc.o: src/calc/calc.c.o
 
@@ -4047,6 +4074,9 @@ help:
 	@echo "... src/builtins/ft_type.o"
 	@echo "... src/builtins/ft_type.i"
 	@echo "... src/builtins/ft_type.s"
+	@echo "... src/builtins/pwd.o"
+	@echo "... src/builtins/pwd.i"
+	@echo "... src/builtins/pwd.s"
 	@echo "... src/calc/calc.o"
 	@echo "... src/calc/calc.i"
 	@echo "... src/calc/calc.s"

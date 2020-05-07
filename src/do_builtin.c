@@ -19,7 +19,7 @@ int		ft_whatis4_2(t_exectoken *tmp)
 	else if (ft_strcmp(tmp->file_args[0], "clear") == 0)
 		ft_putstr_fd("\033[2J\033[H", globals()->fd[2]);
 	else if (ft_strcmp(tmp->file_args[0], "hash") == 0)
-		print_hash();
+		return (do_hash(tmp->file_args));
 	else if (!ft_strcmp(tmp->file_args[0], "type"))
 		ft_type(tmp->file_args);
 	else if (!ft_strcmp(tmp->file_args[0], "fc"))
