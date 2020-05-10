@@ -55,6 +55,7 @@ void		ft_parse_and_make_save_to_env(char *arg)
 void		ft_do_export(char **mas)
 {
 	char	*dop;
+
 	if (mas == NULL)
 		ft_dprintf(2, "an error ocured\n");
 	else if (mas[1] == NULL)
