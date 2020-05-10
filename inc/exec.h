@@ -46,6 +46,7 @@ typedef struct				s_jobl
 */
 
 void						continue_job(t_job *j, int foreground);
+void						make_job_completed(t_job *job);
 
 /*
 ** create_jobs_and_proc.c

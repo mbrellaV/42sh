@@ -25,6 +25,18 @@ void			mark_job_as_running(t_job *j)
 	j->notified = 0;
 }
 
+void		make_job_completed(t_job *job)
+{
+	t_process	*pr;
+
+	pr = job->first_process;
+	while (pr)
+	{
+		pr->completed = 1;
+		pr = pr->next;
+	}
+}
+
 void			continue_job(t_job *j, int foreground)
 {
 	if (j == NULL)

@@ -18,19 +18,26 @@ static int	trick(t_exectoken **tmp)
 	return (1);
 }
 
-void		make_job_completed(t_job *job)
+int			do_qest(int wait_and, int wait_or)
 {
-	t_process	*pr;
+	char	*del;
+	int		num;
 
-	pr = job->first_process;
-	while (pr)
+	if (!(del = ft_get_var("?", globals()->g_all_var)))
 	{
-		pr->completed = 1;
-		pr = pr->next;
+		put_error_to_shell(0);
+		return (1);
 	}
+	num = ft_atoi(del);
+	ft_strdel(&del);
+	if ((wait_and == 1 && num > 0) || (wait_or == 1 && num == 0))
+	{
+		return (1);
+	}
+	return (0);
 }
 
-static void	do_job_things(char **del, int *sas, t_job **job, t_exectoken *tmp)
+static void	do_job_things(int *sas, t_job **job, t_exectoken *tmp)
 {
 	*job = create_job(tmp);
 	if (globals()->g_f_job != NULL)
@@ -40,17 +47,15 @@ static void	do_job_things(char **del, int *sas, t_job **job, t_exectoken *tmp)
 	*sas = launch_job(*job, (*job)->foreground);
 	if (*sas == -2)
 		make_job_completed(*job);
-	ft_strdel(del);
 }
 
-int			ft_main_if(t_exectoken *tmp, int sas, char *del, t_job *job)
+int			ft_main_if(t_exectoken *tmp, int sas, t_job *job)
 {
 	if ((tmp->file_args && !is_builtin(tmp->file_args[0])) || tmp->left)
-		do_job_things(&del, &sas, &job, tmp);
+		do_job_things(&sas, &job, tmp);
 	else
 	{
 		sas = do_builtin(tmp);
-		ft_strdel(&del);
 	}
 	return (sas);
 }
@@ -59,7 +64,6 @@ int			ft_main_what(t_exectoken *tmp)
 {
 	t_job	*job;
 	int		sas;
-	char	*del;
 
 	sas = 0;
 	job = NULL;
@@ -70,11 +74,9 @@ int			ft_main_what(t_exectoken *tmp)
 		if (((tmp->file_args && !is_builtin(tmp->file_args[0])) || tmp->left)
 			|| (tmp->left == NULL && is_builtin(tmp->file_args[0]) == 1))
 		{
-			del = ft_get_var("?", globals()->g_all_var);
-			if (((tmp->wait_and == 1 && ft_atoi(del) > 0) || (tmp->wait_or == 1
-				&& !ft_atoi(del))) && strdelr(&del) && trick(&tmp))
+			if (do_qest(tmp->wait_and, tmp->wait_or) && trick(&tmp))
 				continue ;
-			sas = ft_main_if(tmp, sas, del, job);
+			sas = ft_main_if(tmp, sas, job);
 		}
 		if (trick(&tmp) && sas == -1)
 			return (-1);

@@ -33,7 +33,7 @@ int		do_next_builtins_2(t_exectoken *tmp)
 
 int		do_next_builtins(t_exectoken *tmp)
 {
-	if (ft_strcmp(tmp->file_args[0], "set") == 0)
+	if (ft_strcmp(tmp->file_args[0], "set") == 0 && tmp->file_args[1] == NULL)
 		ft_show_env(globals()->g_all_var);
 	else if (ft_strcmp(tmp->file_args[0], "true") == 0)
 		put_error_to_shell(0);

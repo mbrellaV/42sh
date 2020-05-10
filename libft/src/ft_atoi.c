@@ -21,7 +21,7 @@ static int	ft_test(int nb)
 	return (404);
 }
 
-static int	ft_normitene(const char *str, int nb, int sum)
+static int	ft_main_atoi(const char *str, int nb, int sum)
 {
 	while (*str == '\n' || *str == '\t' || *str == '\v' ||
 			*str == '\r' || *str == ' ' || *str == '\f')
@@ -47,5 +47,5 @@ int			ft_atoi(const char *str)
 
 	nb = 1;
 	sum = 0;
-	return (ft_normitene(str, nb, sum));
+	return (ft_main_atoi(str, nb, sum));
 }

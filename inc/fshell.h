@@ -98,6 +98,7 @@ typedef struct		s_global
 	t_job			*g_f_job;
 	int				*fd;
 	char			**g_builtins;
+	char			**g_first_env;
 }					t_global;
 
 typedef struct		s_del

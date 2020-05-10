@@ -13,7 +13,7 @@
 #ifndef STRUCT_H
 # define STRUCT_H
 
-# define BIL_NUM			19
+# define BIL_NUM			21
 
 typedef struct				s_readline
 {

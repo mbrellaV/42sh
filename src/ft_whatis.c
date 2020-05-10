@@ -74,7 +74,7 @@ int		ft_whatis2(t_process *tmp)
 		unset_var(tmp->file_args[1], &globals()->g_env);
 		unset_var(tmp->file_args[1], &globals()->g_all_var);
 	}
-	else if (ft_strcmp(tmp->file_args[0], "set") == 0)
+	else if (ft_strcmp(tmp->file_args[0], "set") == 0 && tmp->file_args[1] == NULL)
 		ft_show_env(globals()->g_all_var);
 	else
 		return (ft_whatis2_1(tmp));
