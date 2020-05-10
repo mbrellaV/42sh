@@ -18,7 +18,7 @@ void	put_job_in_foreground(t_job *j, int cont)
 	if (cont)
 	{
 		if (kill(-j->pgid, SIGCONT) < 0)
-			ft_dprintf(2, "SIGCONT ERROR");
+			ft_dprintf(globals()->fd[2], "SIGCONT ERROR");
 	}
 	wait_for_job(j);
 	tcsetpgrp(globals()->g_shell_terminal, globals()->g_shell_pgid);

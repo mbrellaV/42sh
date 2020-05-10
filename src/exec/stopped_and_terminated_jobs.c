@@ -19,7 +19,7 @@ static int		check_status(t_pstat *pstat, int status, pid_t pid, t_job *job)
 	if (WIFSTOPPED(status))
 	{
 		pstat->p->stopped = 1;
-		ft_dprintf(2, "\n");
+		ft_dprintf(globals()->fd[2], "\n");
 		if (job != NULL)
 			format_job_info(job, "stopped", num_of_the_job(job));
 	}

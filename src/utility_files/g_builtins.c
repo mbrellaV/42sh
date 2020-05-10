@@ -15,13 +15,12 @@
 char			init_shell_builtins(void)
 {
 	int			i;
-
 	const char	*g_builtins[BIL_NUM] = {
 		"alias", "export", "unset",
 		"history", "env", "clear", "hash",
 		"cd", "echo", "exit", "type",
 		"set", "fg", "bg", "jobs",
-		"fc", "authors", NULL};
+		"fc", "authors", "unalias", NULL};
 
 	i = 0;
 	if (!(globals()->g_builtins = (char **)ft_memalloc(sizeof(char *) *

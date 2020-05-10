@@ -12,7 +12,7 @@
 
 #include "fshell.h"
 
-int		ft_whatis4_2(t_exectoken *tmp)
+int		do_next_builtins_2(t_exectoken *tmp)
 {
 	if (ft_strcmp(tmp->file_args[0], "env") == 0)
 		ft_show_env(globals()->g_env);
@@ -31,7 +31,7 @@ int		ft_whatis4_2(t_exectoken *tmp)
 	return (1);
 }
 
-int		ft_whatis4_1(t_exectoken *tmp)
+int		do_next_builtins(t_exectoken *tmp)
 {
 	if (ft_strcmp(tmp->file_args[0], "set") == 0)
 		ft_show_env(globals()->g_all_var);
@@ -50,7 +50,7 @@ int		ft_whatis4_1(t_exectoken *tmp)
 	else if (ft_strcmp(tmp->file_args[0], "history") == 0)
 		show_history(globals()->g_memory_head);
 	else
-		return (ft_whatis4_2(tmp));
+		return (do_next_builtins_2(tmp));
 	return (1);
 }
 
@@ -60,8 +60,8 @@ int		do_builtin(t_exectoken *tmp)
 		return (-2);
 	if (tmp->file_args[0] == NULL)
 		return (-2);
-	if (ft_strcmp(tmp->file_args[0], "exit") == 0 && tmp->file_args[1] == NULL)
-		return (-1);
+	if (ft_strcmp(tmp->file_args[0], "exit") == 0)
+		return (exit_builtin(tmp->file_args));
 	if (tmp->file_opt != NULL && !(set_redirects_for_builtins(tmp->file_opt)))
 		return (-2);
 	put_error_to_shell(0);
@@ -78,6 +78,6 @@ int		do_builtin(t_exectoken *tmp)
 		unset_var(tmp->file_args[1], &globals()->g_all_var);
 	}
 	else
-		return (ft_whatis4_1(tmp));
+		return (do_next_builtins(tmp));
 	return (1);
 }

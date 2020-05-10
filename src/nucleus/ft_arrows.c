@@ -24,8 +24,7 @@ void	ft_arrows(t_readline *p)
 	{
 		while (p->index <= p->len)
 		{
-//			if (ft_put_n(p->len_hint, p->index, p->len) == -1)
-				do_right(p);
+			do_right(p);
 		}
 		p->index--;
 	}

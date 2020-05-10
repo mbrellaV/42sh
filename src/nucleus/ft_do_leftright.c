@@ -12,10 +12,10 @@
 
 #include "../../inc/fshell.h"
 
-void 	do_up_ifn(t_nline *l, t_readline *p)
+void		do_up_ifn(t_nline *l, t_readline *p)
 {
-	int i;
-	int len;
+	int				i;
+	int				len;
 	struct winsize	wins;
 
 	if (ioctl(2, TIOCGWINSZ, &wins) == -1)
@@ -32,13 +32,12 @@ void 	do_up_ifn(t_nline *l, t_readline *p)
 		tputs(tgetstr("nd", NULL), 1, ft_c);
 		len--;
 	}
-
 }
 
-void 	do_up_if_izero(t_readline *p)
+void		do_up_if_izero(t_readline *p)
 {
-	int i;
-	int len;
+	int				i;
+	int				len;
 	struct winsize	wins;
 
 	if (ioctl(2, TIOCGWINSZ, &wins) == -1)
@@ -52,47 +51,19 @@ void 	do_up_if_izero(t_readline *p)
 	if (len >= wins.ws_col && len % wins.ws_col == 0)
 	{
 		tputs(tgetstr("up", NULL), 1, ft_c);
-		for (int k = 1; k < wins.ws_col; k++){
+		i = 0;
+		while (++i < wins.ws_col)
 			tputs(tgetstr("nd", NULL), 1, ft_c);
-		}
 	}
 	else
 		write(2, "\b", 1);
 	p->index--;
 }
 
-void 	do_down_if_iwscol(t_readline *p)
-{
-	int i;
-	int len;
-	struct winsize	wins;
-
-	if (ioctl(2, TIOCGWINSZ, &wins) == -1)
-		return ;
-	i = p->index;
-	len = 0;
-	while (--i >= 0 && p->buff[i] != '\n')
-		len++;
-	if (i == -1)
-		len += p->len_hint;
-	if (len >= wins.ws_col && len % wins.ws_col == 0)
-	{
-		tputs(tgetstr("do", NULL), 1, ft_c);
-		for (int k = 1; k < wins.ws_col; k++){
-			write(2, "\b", 1);
-		}
-	}
-	else
-		tputs(tgetstr("nd", NULL), 1, ft_c);
-//	p->index++;
-//	p->index--;
-}
-
-void	do_left(t_readline *p)
+void		do_left(t_readline *p)
 {
 	t_nline			l;
 
-//	dprintf(2, "\nSTART\n");
 	if (p->index > 0 && p->buff[p->index - 1] == '\n')
 	{
 		l.k = p->index - 1;
@@ -107,15 +78,12 @@ void	do_left(t_readline *p)
 	if (p->index > 0)
 	{
 		do_up_if_izero(p);
-//		p->index--;
-//		write(2, "\b", 1);
 	}
-//	dprintf(2, "END\n");
 }
 
-void 	do_right(t_readline *p)
+void		do_right(t_readline *p)
 {
-	int 	k;
+	int				k;
 
 	k = 0;
 	if (p->index >= p->len)
@@ -136,9 +104,8 @@ void 	do_right(t_readline *p)
 	p->index++;
 }
 
-void	ft_do_leftright(t_readline *p)
+void		ft_do_leftright(t_readline *p)
 {
-//	dprintf(2, "\nreal index= %d\n", p->index);
 	if (p->sum_read == 186)
 		do_left(p);
 	else if (p->sum_read == 185)

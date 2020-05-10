@@ -1,8 +1,7 @@
 NAME		=	42sh
 
 CC			=	gcc
-FLAGS		=	-Wall -Wextra -Werror
-D_FLAGS		=	-g
+FLAGS		=	-Wall -Wextra -Werror -g3
 
 DELTA		=	$$(echo "$$(tput cols)-47"|bc)
 
@@ -30,6 +29,7 @@ SRC_BASE = builtins/ft_cd.c\
 	builtins/alias/alias_error.c\
 	builtins/alias/ft_do_change_alias.c\
  	builtins/allenv/global_env.c\
+ 	builtins/exit_builtin.c\
  	ft_main_what.c\
  	ft_malloc.c\
  	qft_printf/add_buff.c\
@@ -84,6 +84,7 @@ SRC_BASE = builtins/ft_cd.c\
 	lexer/check_errors.c\
 	lexer/create_new_lexer_struct.c\
 	lexer/zam_opt_in_tokens.c\
+	lexer/do_zamena_slash.c\
 	nucleus/ft_read_8.c\
 	nucleus/ft_c.c\
 	nucleus/input_mode.c\
@@ -196,7 +197,7 @@ $(NAME):		$(LIBFT_LIB) $(OBJ_DIR) $(OBJS)
 		-I $(LIBFT_INC) \
 		$(LIBS) \
 		$(LIBFT_LIB) \
-		$(FLAGS) $(D_FLAGS)
+		$(FLAGS)
 	@printf "\r\033[48;5;15;38;5;25m✅ MAKE $(NAME)\033[0m\033[K\n"
 
 $(LIBFT_LIB):
@@ -212,29 +213,31 @@ $(OBJ_DIR)%.o :	$(SRC_DIR)%.c | $(OBJ_DIR)
 	@$(eval COLOR=$(shell echo $$(($(PERCENT)%35+196))))
 	@$(eval TO_DO=$(shell echo $$((20-$(INDEX)*20/$(NB)))))
 	@printf "\r\033[38;5;11m⌛ MAKE %10.10s : %2d%% \033[48;5;%dm%*s\033[0m%*s\033[48;5;255m \033[0m \033[38;5;11m %*.*s\033[0m\033[K" $(NAME) $(PERCENT) $(COLOR) $(DONE) "" $(TO_DO) "" $(DELTA) $(DELTA) "$@"
-	@$(CC) $(FLAGS) $(D_FLAGS) -MMD -c $< -o $@\
+	@$(CC)  -MMD -c $< -o $@\
 		-I $(INC_DIR)\
 		-I $(LIBFT_INC)
 	@$(eval INDEX=$(shell echo $$(($(INDEX)+1))))
 
-clean:			cleanlib
+clean:          cleanlib
 	@rm -rf $(OBJ_DIR)
-	@printf "\r\033[38;5;202m✖ clean $(NAME).\033[0m\033[K\n"
+	@printf "\r\033[38;5;202m✖ clean $(NAME)\033[0m\033[K\n"
 
 cleanlib:
 	@make -C $(LIBFT_DIR) clean
 
-fclean:			clean fcleanlib
-	@rm -f $(NAME)
-	@printf "\r\033[38;5;196m❌ fclean $(NAME).\033[0m\033[K\n"
+cleansh:
+	@rm -rf $(OBJ_DIR)
+	@printf "\r\033[38;5;202m✖ clean $(NAME)\033[0m\033[K\n"
 
-fcleanlib:		cleanlib
+fclean:			fcleanlib cleansh
+	@rm -f $(NAME)
+	@printf "\r\033[38;5;196m❌ fclean $(NAME)\033[0m\033[K\n"
+
+fcleanlib:
 	@make -C $(LIBFT_DIR) fclean
 
 re:				fclean all
 
-relib:			fcleanlib $(LIBFT_LIB)
-
-.PHONY :		fclean clean re relib cleanlib fcleanlib
+.PHONY :		fclean clean re cleanlib fcleanlib
 
 -include $(OBJS:.o=.d)

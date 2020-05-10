@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   nline.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: qmartina <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/01/27 17:32:53 by qmartina          #+#    #+#             */
+/*   Updated: 2020/04/20 14:49:46 by wstygg           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../../inc/fshell.h"
 
-void 	init_nline(t_readline *p, t_nline *l)
+void	init_nline(t_readline *p, t_nline *l)
 {
 	int		i;
 	int		len_str;
@@ -11,5 +23,4 @@ void 	init_nline(t_readline *p, t_nline *l)
 	len_str = 0;
 	while (p->buff[++i] && p->buff != '\n')
 		len_str++;
-
 }

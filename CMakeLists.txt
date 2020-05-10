@@ -131,6 +131,8 @@ add_executable(42save
         src/utility_files/g_builtins.c
         src/init_shell.c
         src/main.c
+        src/builtins/alias/ft_do_change_alias.c
+        src/builtins/alias/alias_error.c
         src/do_builtin.c
         src/ft_open_flag_in_builtins.c
         src/redirects.c
@@ -139,7 +141,7 @@ add_executable(42save
         src/exec/ft_do_open_flags.c src/exec/redirect.c src/ck_check.c
         src/lexer/del_one_node_in_lextokens.c src/ft_main_what.c src/put_error_to_env.c
         src/hash/print_hash.c src/parser/is_system_symbol.c
-        src/builtins/ft_fc.c src/builtins/ft_fc_2.c src/utility_files/crc32.c src/lexer/do_zam_ravno.c src/nucleus/ft_cheak_tab.c src/nucleus/ft_directory.c src/nucleus/ft_find_env.c src/builtins/authors.c src/history/dop_memory.c src/redirects.c src/ft_open_flag_in_builtins.c src/do_builtin.c libft/src/count_words.c inc/history.h libft/src/ft_strcat_char.c src/history/save_hist.c inc/lexer.h inc/exec.h src/exec/ft_redirect_error.c)
+        src/builtins/ft_fc.c src/builtins/ft_fc_2.c src/utility_files/crc32.c src/lexer/do_zam_ravno.c src/nucleus/ft_cheak_tab.c src/nucleus/ft_directory.c src/nucleus/ft_find_env.c src/builtins/authors.c src/history/dop_memory.c src/redirects.c src/ft_open_flag_in_builtins.c src/do_builtin.c libft/src/count_words.c inc/history.h libft/src/ft_strcat_char.c src/history/save_hist.c inc/lexer.h inc/exec.h src/exec/ft_redirect_error.c src/lexer/do_zamena_slash.c src/builtins/exit_builtin.c)
 
 
 target_link_libraries(42save ${CMAKE_SOURCE_DIR}/libft/libft.a)

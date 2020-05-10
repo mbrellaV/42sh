@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../../inc/fshell.h"
+#include "fshell.h"
 
 void		ft_alias(void)
 {
@@ -21,48 +21,55 @@ void		ft_alias(void)
 	globals()->g_alias[2] = NULL;
 }
 
-char		*ft_get_alias(char *dop)
+char		*ft_get_prev_word(char *str, int i)
 {
-	int		i;
-	char	*dopd;
+	char	*newstr;
+	int		d;
 
-	i = 0;
-	dopd = ft_strjoin(dop, "=");
-	while (globals()->g_alias[i])
-	{
-		if (ft_strstr(globals()->g_alias[i], dopd) == globals()->g_alias[i])
-		{
-			if (!(dop = ft_strsub(globals()->g_alias[i], ft_strlen(dopd),
-			ft_strlen(globals()->g_alias[i]) - ft_strlen(dopd))))
-				return (NULL);
-			ft_strdel(&dopd);
-			return (dop);
-		}
+	d = 0;
+	if (!str)
+		return (NULL);
+	if (!(newstr = ft_strnew(ft_strlen(str) + 10)))
+		ft_error_q(2);
+	i--;
+	while (i > 0 && (str[i] == ' ' || str[i] == '\t'))
+		i--;
+	while (i > 0 && isword(str[i]) == 1)
+		i--;
+	if (i != 0)
 		i++;
+	while (isword(str[i]) == 1)
+	{
+		newstr[d] = str[i];
+		i++;
+		d++;
 	}
-	ft_strdel(&dopd);
-	return (NULL);
+	newstr[d] = '\0';
+	return (newstr);
 }
 
-static int	size_0(char *str, int *i, char *newstr, char *dopstr)
+static int	do_zam_alias(char *str, int *i, char *newstr, char *dopstr)
 {
 	char	*dop;
 	int		size;
+	char	*prev_word;
 
+	prev_word = NULL;
 	size = word_size(&str[*i]);
 	dop = ft_strsub(str, *i, size);
-	if ((isword(str[*i]) == 1 && (!(dopstr = ft_get_alias(dop)))) ||
-		str[*i] == '$')
-		ft_strcat(newstr, dop);
-	else
+	if (str[*i] != '$' && (dopstr = ft_get_var(dop, globals()->g_alias)) &&
+	(prev_word = ft_get_prev_word(str, *i)) && ft_strcmp(prev_word, "unalias") != 0)
 		ft_strcat(newstr, dopstr);
+	else
+		ft_strcat(newstr, dop);
+	ft_strdel(&prev_word);
 	(*i) += size;
 	ft_strdel(&dopstr);
 	ft_strdel(&dop);
 	return (1);
 }
 
-static int	cycle(char *str, int *i, char *newstr)
+static int	alias_cycle(char *str, int *i, char *newstr)
 {
 	char	*dopstr;
 	char	*dop;
@@ -77,7 +84,7 @@ static int	cycle(char *str, int *i, char *newstr)
 		*i += size + 2;
 	}
 	else if (size > 0 && (str[*i] == '$' || isword(str[*i]) == 1))
-		return (size_0(str, i, newstr, dopstr));
+		return (do_zam_alias(str, i, newstr, dopstr));
 	else
 	{
 		dop = ft_strdup(" ");
@@ -100,7 +107,7 @@ int			ft_do_zam_alias(char **str)
 	if (!(*str = ft_strnew(130000)))
 		ft_error_q(2);
 	while (i < (int)ft_strlen(newstr) && newstr[i] != '\0')
-		if (cycle(newstr, &i, *str) == -1)
+		if (alias_cycle(newstr, &i, *str) == -1)
 		{
 			ft_strdel(&newstr);
 			return (-1);

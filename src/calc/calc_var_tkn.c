@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   calc_var_tkn.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: wstygg <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/04/13 19:53:08 by wstygg            #+#    #+#             */
+/*   Updated: 2020/05/04 13:53:14 by wstygg           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <fshell.h>
 #include "calc.h"
 
@@ -52,7 +64,6 @@ int			calc_check_var(char *str, t_calc_var *var)
 	temp = str[i];
 	str[i] = '\0';
 	value = ft_get_var(str, globals()->g_all_var);
-	//inc_var(str, value, var->value);
 	calc_fill_var(var, value, i);
 	str[i] = temp;
 	return (1);

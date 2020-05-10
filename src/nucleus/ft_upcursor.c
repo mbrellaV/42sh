@@ -12,11 +12,28 @@
 
 #include "../../inc/fshell.h"
 
+void	ft_upcursor_else(t_readline *p, int len, int i)
+{
+	int				len2;
+
+	len2 = 0;
+	while (--i >= 0 && p->buff[i] != '\n')
+		len2++;
+	if (i == -1)
+		len2 += p->len_hint - 1;
+	if (len2 > len)
+		len2++;
+	else
+		len2 = len + 1;
+	i = -1;
+	while (++i < len2)
+		do_left(p);
+}
+
 void	ft_upcursor(t_readline *p)
 {
-	int i;
-	int len;
-	int len2;
+	int				i;
+	int				len;
 	struct winsize	wins;
 
 	if (ioctl(2, TIOCGWINSZ, &wins) == -1)
@@ -31,20 +48,5 @@ void	ft_upcursor(t_readline *p)
 			do_left(p);
 	}
 	else
-	{
-		len2 = 0;
-		while (--i >= 0 && p->buff[i] != '\n')
-			len2++;
-		if (i == -1)
-			len2 += p->len_hint - 1;
-		if (len2 > len)
-			len2++;
-		else
-			len2 = len + 1;
-		i = -1;
-		while (++i < len2)
-			do_left(p);
-	}
+		ft_upcursor_else(p, len, i);
 }
-
-

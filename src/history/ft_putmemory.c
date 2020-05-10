@@ -12,7 +12,7 @@
 
 #include "fshell.h"
 
-static void			ft_dop_history(t_memory *q, t_readline *p, int k)
+static void		ft_dop_history(t_memory *q, t_readline *p, int k)
 {
 	if (k == 1)
 	{
@@ -39,7 +39,7 @@ static void			ft_dop_history(t_memory *q, t_readline *p, int k)
 	}
 }
 
-void		ft_putmemory(t_memory **q, t_readline *p)
+void			ft_putmemory(t_memory **q, t_readline *p)
 {
 	if (*q && (*q)->back && (*q)->back->back == NULL && p->sum_read == 183)
 		ft_dop_history((*q), p, 1);

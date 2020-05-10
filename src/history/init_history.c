@@ -36,7 +36,7 @@ static void	zap_history(t_memory **head, char **line, char **buf)
 	if (*head == NULL)
 	{
 		*head = create_first_hist_token(*line, *buf);
-		return;
+		return ;
 	}
 	if (!((*head)->next = (t_memory *)ft_memalloc(sizeof(t_memory))))
 		ft_error_q(2);
@@ -54,7 +54,7 @@ static void	zap_history(t_memory **head, char **line, char **buf)
 
 static int	norme_help(t_memory **head, char **line, char **hashsum, char **buf)
 {
-	ft_dprintf(2, "history has changed not in terminal\n");
+	ft_dprintf(globals()->fd[2], "history has changed not in terminal\n");
 	ft_distruct_memory((*head));
 	ft_strdel(line);
 	ft_strdel(hashsum);

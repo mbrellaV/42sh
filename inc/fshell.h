@@ -253,6 +253,7 @@ uint_least32_t		crc_32(unsigned char *buf, size_t len);
 int					ft_error(int error, char *dopline);
 int					alias_error(int error, char *tmp1, char *tmp2);
 int					ft_error_d(t_readline *p);
+int					exit_builtin(char **args);
 
 
 #endif

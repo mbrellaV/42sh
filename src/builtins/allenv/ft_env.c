@@ -43,7 +43,7 @@ void		ft_parse_and_make_save_to_env(char *arg)
 	char	*res;
 	int		len;
 
-	len = (int)(ft_strstr(arg , "=") - arg);
+	len = (int)(ft_strstr(arg, "=") - arg);
 	name = ft_strsub(arg, 0, len);
 	res = ft_strsub(arg, len + 1, ft_strlen(arg) - len);
 	set_new_var(name, res, &globals()->g_env);
@@ -57,7 +57,7 @@ void		ft_do_export(char **mas)
 	char	*dop;
 
 	if (mas == NULL)
-		ft_dprintf(2, "an error ocured\n");
+		ft_dprintf(globals()->fd[2], "an error ocured\n");
 	else if (mas[1] == NULL)
 		return (ft_show_env(globals()->g_env));
 	else if (mas[1] != NULL && mas[2] == NULL)
@@ -78,7 +78,7 @@ void		ft_do_export(char **mas)
 		set_new_var(mas[1], mas[2], &globals()->g_env);
 	}
 	else
-		ft_dprintf(2, "parse error\n");
+		ft_dprintf(globals()->fd[2], "parse error\n");
 }
 
 void		do_all_var(char **env)

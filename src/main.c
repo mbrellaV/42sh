@@ -46,6 +46,8 @@ int		main(int argc, char **argv, char **env)
 	t_exectoken		*start_token;
 
 	globals()->g_his_d = 0;
+	if (!(globals()->fd = ft_create_opened_fds()))
+		exit(0);
 	p.mod = 127;
 	ft_alias();
 	globals()->g_f_job = NULL;

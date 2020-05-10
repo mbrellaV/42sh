@@ -43,9 +43,9 @@ int		*ft_create_opened_fds(void)
 
 	if (!(opened_fds = (int *)ft_memalloc(sizeof(int) * 10)))
 		return (NULL);
-	opened_fds[0] = 1;
+	opened_fds[0] = 0;
 	opened_fds[1] = 1;
-	opened_fds[2] = 1;
+	opened_fds[2] = 2;
 	opened_fds[3] = -1;
 	opened_fds[4] = -1;
 	opened_fds[5] = -1;

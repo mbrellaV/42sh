@@ -29,7 +29,7 @@ void	ft_error_q(int er)
 	}
 	if (er == 3)
 	{
-		ft_dprintf(2, "is not a terminal\n");
+		ft_dprintf(globals()->fd[2], "is not a terminal\n");
 		exit(1);
 	}
 }
@@ -46,9 +46,9 @@ int		ft_error_d(t_readline *p)
 	}
 	else if (p->mod == 20)
 	{
-		ft_dprintf(2,
+		ft_dprintf(globals()->fd[2],
 				"Syntax error: end of file unexpected (expecting \")\")\n");
-		ft_dprintf(2, "exit\n");
+		ft_dprintf(globals()->fd[2], "exit\n");
 		exit(1);
 	}
 	else
