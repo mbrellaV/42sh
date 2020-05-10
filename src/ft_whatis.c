@@ -69,7 +69,7 @@ int		ft_whatis2(t_process *tmp)
 	else if (ft_strcmp(tmp->file_args[0], "export") == 0)
 		ft_do_export(tmp->file_args);
 	else if (ft_strcmp(tmp->file_args[0], "unset") == 0 &&
-	tmp->file_args[1] != NULL)
+			 tmp->file_args[1] != NULL)
 	{
 		unset_var(tmp->file_args[1], &globals()->g_env);
 		unset_var(tmp->file_args[1], &globals()->g_all_var);

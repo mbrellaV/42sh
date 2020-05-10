@@ -150,6 +150,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "/home/petruha2001/42sh/src/redirects.c" "/home/petruha2001/42sh/cmake-build-debug/CMakeFiles/42save.dir/src/redirects.c.o"
   "/home/petruha2001/42sh/src/shell_lvl.c" "/home/petruha2001/42sh/cmake-build-debug/CMakeFiles/42save.dir/src/shell_lvl.c.o"
   "/home/petruha2001/42sh/src/utility_files/crc32.c" "/home/petruha2001/42sh/cmake-build-debug/CMakeFiles/42save.dir/src/utility_files/crc32.c.o"
+  "/home/petruha2001/42sh/src/utility_files/ft_get_prev_word.c" "/home/petruha2001/42sh/cmake-build-debug/CMakeFiles/42save.dir/src/utility_files/ft_get_prev_word.c.o"
   "/home/petruha2001/42sh/src/utility_files/g_builtins.c" "/home/petruha2001/42sh/cmake-build-debug/CMakeFiles/42save.dir/src/utility_files/g_builtins.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")

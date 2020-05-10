@@ -31,7 +31,6 @@ SRC_BASE = builtins/ft_cd.c\
  	builtins/allenv/global_env.c\
  	builtins/exit_builtin.c\
  	ft_main_what.c\
- 	ft_malloc.c\
  	qft_printf/add_buff.c\
  	qft_printf/add_char.c\
  	qft_printf/add_d.c\
@@ -163,6 +162,8 @@ SRC_BASE = builtins/ft_cd.c\
 	utility_files/g_builtins.c\
 	utility_files/global.c\
 	utility_files/crc32.c\
+	utility_files/ft_malloc.c\
+	utility_files/ft_get_prev_word.c\
 	put_error_to_env.c\
 	ft_distruct.c\
 	ft_error_q.c\

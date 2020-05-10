@@ -4065,6 +4065,33 @@ src/utility_files/crc32.c.s:
 	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/utility_files/crc32.c.s
 .PHONY : src/utility_files/crc32.c.s
 
+src/utility_files/ft_get_prev_word.o: src/utility_files/ft_get_prev_word.c.o
+
+.PHONY : src/utility_files/ft_get_prev_word.o
+
+# target to build an object file
+src/utility_files/ft_get_prev_word.c.o:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/utility_files/ft_get_prev_word.c.o
+.PHONY : src/utility_files/ft_get_prev_word.c.o
+
+src/utility_files/ft_get_prev_word.i: src/utility_files/ft_get_prev_word.c.i
+
+.PHONY : src/utility_files/ft_get_prev_word.i
+
+# target to preprocess a source file
+src/utility_files/ft_get_prev_word.c.i:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/utility_files/ft_get_prev_word.c.i
+.PHONY : src/utility_files/ft_get_prev_word.c.i
+
+src/utility_files/ft_get_prev_word.s: src/utility_files/ft_get_prev_word.c.s
+
+.PHONY : src/utility_files/ft_get_prev_word.s
+
+# target to generate assembly for a file
+src/utility_files/ft_get_prev_word.c.s:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/utility_files/ft_get_prev_word.c.s
+.PHONY : src/utility_files/ft_get_prev_word.c.s
+
 src/utility_files/g_builtins.o: src/utility_files/g_builtins.c.o
 
 .PHONY : src/utility_files/g_builtins.o
@@ -4539,6 +4566,9 @@ help:
 	@echo "... src/utility_files/crc32.o"
 	@echo "... src/utility_files/crc32.i"
 	@echo "... src/utility_files/crc32.s"
+	@echo "... src/utility_files/ft_get_prev_word.o"
+	@echo "... src/utility_files/ft_get_prev_word.i"
+	@echo "... src/utility_files/ft_get_prev_word.s"
 	@echo "... src/utility_files/g_builtins.o"
 	@echo "... src/utility_files/g_builtins.i"
 	@echo "... src/utility_files/g_builtins.s"
