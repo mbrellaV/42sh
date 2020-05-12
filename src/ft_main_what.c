@@ -6,7 +6,7 @@
 /*   By: wstygg <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/16 17:22:09 by wstygg            #+#    #+#             */
-/*   Updated: 2020/05/12 19:15:21 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/05/12 17:23:43 by pro              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,9 +54,7 @@ int			ft_main_if(t_exectoken *tmp, int sas, t_job *job)
 	if ((tmp->file_args && !is_builtin(tmp->file_args[0])) || tmp->left)
 		do_job_things(&sas, &job, tmp);
 	else
-	{
 		sas = do_builtin(tmp->file_args, tmp->file_opt,  0);
-	}
 	return (sas);
 }
 

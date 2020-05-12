@@ -6,7 +6,7 @@
 /*   By: wstygg <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/15 18:29:17 by wstygg            #+#    #+#             */
-/*   Updated: 2020/05/12 19:15:21 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/05/12 17:24:37 by pro              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,9 +54,7 @@ int		ft_whatis2_1(t_process *tmp)
 
 int		ft_whatis2(t_process *tmp)
 {
-	if (tmp->file_args == NULL)
-		return (-2);
-	if (tmp->file_args[0] == NULL)
+	if (tmp->file_args == NULL || tmp->file_args[0] == NULL)
 		return (-2);
 	if (ft_strcmp(tmp->file_args[0], "exit") == 0 && tmp->file_args[1] == NULL)
 		return (-1);
@@ -69,12 +67,13 @@ int		ft_whatis2(t_process *tmp)
 	else if (ft_strcmp(tmp->file_args[0], "export") == 0)
 		ft_do_export(tmp->file_args);
 	else if (ft_strcmp(tmp->file_args[0], "unset") == 0 &&
-			 tmp->file_args[1] != NULL)
+		tmp->file_args[1] != NULL)
 	{
 		unset_var(tmp->file_args[1], &globals()->g_env);
 		unset_var(tmp->file_args[1], &globals()->g_all_var);
 	}
-	else if (ft_strcmp(tmp->file_args[0], "set") == 0 && tmp->file_args[1] == NULL)
+	else if (ft_strcmp(tmp->file_args[0], "set") == 0
+		&& tmp->file_args[1] == NULL)
 		ft_show_env(globals()->g_all_var);
 	else
 		return (ft_whatis2_1(tmp));

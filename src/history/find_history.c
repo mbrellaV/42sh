@@ -6,7 +6,7 @@
 /*   By: qmartina <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/29 21:45:21 by qmartina          #+#    #+#             */
-/*   Updated: 2020/05/12 19:15:22 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/05/12 16:26:56 by pro              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ void	put_help(t_readline *r)
 
 void	ft_print_start(t_readline *p, t_readline *r)
 {
+	r->mod = 404;
 	ft_start_read(r);
 	ft_cleanstr(p->index + p->len_hint, p);
 	ft_putstr_fd(GRN, 2);
@@ -50,6 +51,7 @@ void	ft_return(t_readline *p, t_readline *r, char *tmp)
 		free(tmp);
 	}
 	ft_cleanstr(r->index + r->len_hint, r);
+	del_readline(r);
 }
 
 void	ft_add_his_ch(t_readline *r, char c)
