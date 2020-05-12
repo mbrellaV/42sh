@@ -6,7 +6,7 @@
 /*   By: qmartina <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/26 02:59:46 by qmartina          #+#    #+#             */
-/*   Updated: 2020/05/12 15:40:48 by pro              ###   ########.fr       */
+/*   Updated: 2020/05/12 23:25:36 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,7 +100,7 @@ int			ft_fd_flag(char **av, int infile, int outfile, int errfile)
 		if (p.b < 0)
 			return (return_with_close(opened_fds, -1,
 					av[p.i + (p.b == -9 ? 2 : 0)], p.b * -1));
-		p.i += 3;
+			p.i += 3;
 		p = (t_pipe){0, p.i, 1, 0, 0, 0, &infile, &outfile, &errfile};
 	}
 	return (return_with_close(opened_fds, p.fd, NULL, 0));

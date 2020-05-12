@@ -6,7 +6,7 @@
 /*   By: qmartina <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/19 19:01:04 by qmartina          #+#    #+#             */
-/*   Updated: 2020/05/12 15:40:47 by pro              ###   ########.fr       */
+/*   Updated: 2020/05/12 22:36:30 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,26 +19,26 @@
 ** word_sizes.c
 */
 
-t_exectoken		*all_parse(char *cmd);
+t_exectoken				*all_parse(char *cmd);
 
 /*
 ** change_tilda.c
 */
 
-char			*do_zam_str_with_tilda(char *str);
+char					*do_zam_str_with_tilda(char *str);
 
 /*
 ** check_bracket.c
 */
 
-int				check_bracket(char *str);
+int						check_bracket(char *str);
 
 /*
 ** create_dop_struct.c
 */
 
-t_dop_str		*cr_dop_str_par(void);
-t_dop_str		*cr_dop_str_par1(t_lextoken *tmp1);
+t_dop_str				*cr_dop_str_par(void);
+t_dop_str				*cr_dop_str_par1(t_lextoken *tmp1);
 
 /*
 ** dop_parser.c
@@ -55,12 +55,12 @@ t_exectoken				*ft_cr_new_exectoken(t_lextoken *tmp,
 ** is_system_symbol.c
 */
 
-int		is_system_symbol(char c);
+int						is_system_symbol(char c);
 
 /*
 ** main_parser.c
 */
 
-t_exectoken		*do_parser(t_lextoken *tmp);
+t_exectoken				*do_parser(t_lextoken *tmp);
 
 #endif

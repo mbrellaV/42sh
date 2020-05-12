@@ -6,7 +6,7 @@
 /*   By: wstygg <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/15 18:29:17 by wstygg            #+#    #+#             */
-/*   Updated: 2020/05/12 15:40:48 by pro              ###   ########.fr       */
+/*   Updated: 2020/05/12 22:36:30 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,7 +104,7 @@ int		set_redirects_for_builtins(char **av)
 		if (b < 0)
 			return (return_with_close(opened_fds, -1,
 					ft_strdup(av[i + (b == -9 ? 2 : 0)]), b * -1));
-		i += 3;
+			i += 3;
 	}
 	free(globals()->fd);
 	globals()->fd = opened_fds;

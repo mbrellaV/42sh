@@ -6,11 +6,32 @@
 /*   By: wstygg <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/13 19:53:08 by wstygg            #+#    #+#             */
-/*   Updated: 2020/05/12 15:40:48 by pro              ###   ########.fr       */
+/*   Updated: 2020/05/12 22:36:30 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "calc.h"
+
+int			calc_word_size(char *str)
+{
+	int		i;
+
+	i = 0;
+	while (str[i] != '\0')
+	{
+		if (is_incr_sym(str[i]))
+			break ;
+		if (!ft_isalpha(str[i]) && !ft_isdigit(str[i]))
+			return (i);
+		i++;
+	}
+	if ((str[i] == '+' && str[i + 1] == '-') ||
+		(str[i] == '-' && str[i + 1] == '+'))
+		return (i);
+	if (is_incr_sym(str[i]) && is_incr_sym(str[i + 1]))
+		return (i + 2);
+	return (i);
+}
 
 t_calc_tkn	*calc_get_next_tkn(char *str, size_t pos)
 {

@@ -6,7 +6,7 @@
 /*   By: mbrella <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/11 10:58:44 by mbrella           #+#    #+#             */
-/*   Updated: 2020/05/12 15:40:47 by pro              ###   ########.fr       */
+/*   Updated: 2020/05/12 22:36:30 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@
 # include "nucleus.h"
 # include "lexer.h"
 # include "struct.h"
-#include "exec.h"
+# include "exec.h"
 # include "../src/qft_printf/ft_printf.h"
 
 # define RED		"\x1B[31m"
@@ -175,6 +175,7 @@ int					ft_findenv(char *s, char **env);
 void				ft_do_export(char **mas);
 int					ft_free_split(char **split);
 int					ft_signal(int signo, t_readline *p);
+int					ft_free(void *memory);
 void				ft_fork_signal(int signo);
 int					ft_main_what(t_exectoken *tmp);
 int					ft_distruct_tree(t_exectoken *q);
@@ -257,6 +258,5 @@ int					ft_error_d(t_readline *p);
 char				*ft_get_prev_word(char *str, int i);
 int					exit_builtin(char **args);
 int					is_first_word(char *str, int i);
-
 
 #endif

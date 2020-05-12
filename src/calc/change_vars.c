@@ -6,37 +6,11 @@
 /*   By: wstygg <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/13 19:53:08 by wstygg            #+#    #+#             */
-/*   Updated: 2020/05/12 15:40:48 by pro              ###   ########.fr       */
+/*   Updated: 2020/05/12 23:22:54 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fshell.h"
-
-int				is_incr_sym(char c)
-{
-	return (c == '+' || c == '-');
-}
-
-int				calc_word_size(char *str)
-{
-	int		i;
-
-	i = 0;
-	while (str[i] != '\0')
-	{
-		if (is_incr_sym(str[i]))
-			break ;
-		if (!ft_isalpha(str[i]) && !ft_isdigit(str[i]))
-			return (i);
-		i++;
-	}
-	if ((str[i] == '+' && str[i + 1] == '-') ||
-	(str[i] == '-' && str[i + 1] == '+'))
-		return (i);
-	if (is_incr_sym(str[i]) && is_incr_sym(str[i + 1]))
-		return (i + 2);
-	return (i);
-}
 
 char			*save_to_env(char *str, int i, int dopi, char *dopstr)
 {
@@ -87,12 +61,9 @@ char			*do_save_var(char *str)
 		opr_inc_side[0] = 1;
 	if (opr_inc_side[0] != 0 && opr_inc_side[1] != 0)
 		return (NULL);
-	if (i > 0 && is_incr_sym(str[i - 1]) &&
-	(opr_inc_side[0] == 0 && opr_inc_side[1] == 0))
-	{
-		dopstr = ft_strjoin("0", &str[i - 1]);
+	if (i > 0 && is_incr_sym(str[i - 1]) && (opr_inc_side[0] == 0 &&
+	opr_inc_side[1] == 0) && (dopstr = ft_strjoin("0", &str[i - 1])))
 		return (dopstr);
-	}
 	return (save_to_env(str, i, opr_inc_side[0] + opr_inc_side[1], dopstr));
 }
 
@@ -117,6 +88,15 @@ int				zam_word_in_eval(int *i, char *evalstr, char *newstr)
 	return (1);
 }
 
+static void		change_vars_help(char **dopstr, char **evalstr, int *i,
+									char *newstr)
+{
+	*dopstr = ft_strsub(evalstr[*i], 0, calc_word_size(evalstr[*i + 1]) + 1);
+	ft_strcat(newstr, *dopstr);
+	ft_strdel(dopstr);
+	*i += word_size(evalstr[*i]);
+}
+
 char			*change_vars(char *evalstr)
 {
 	int		i;
@@ -129,14 +109,10 @@ char			*change_vars(char *evalstr)
 	while (evalstr[i] != '\0')
 	{
 		if (evalstr[i] == '$')
-		{
-			dopstr = ft_strsub(&evalstr[i], 0, calc_word_size(&evalstr[i + 1]) + 1);
-			ft_strcat(newstr, dopstr);
-			ft_strdel(&dopstr);
-			i += word_size(&evalstr[i]);
-		}
-		if (ft_isalpha(evalstr[i]) == 1 || (((ft_strstr(&evalstr[i], "++") == &evalstr[i]) ||
-				(ft_strstr(&evalstr[i], "--") == &evalstr[i])) && ft_isalpha(evalstr[i + 2]) == 1))
+			change_vars_help(&dopstr, &evalstr, &i, newstr);
+		if (ft_isalpha(evalstr[i]) == 1 || (((ft_strstr(&evalstr[i], "++")
+		== &evalstr[i]) || (ft_strstr(&evalstr[i], "--") == &evalstr[i])) &&
+		ft_isalpha(evalstr[i + 2]) == 1))
 		{
 			if (zam_word_in_eval(&i, evalstr, newstr) == -1)
 				return (NULL);
