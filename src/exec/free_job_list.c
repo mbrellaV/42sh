@@ -12,12 +12,14 @@
 
 #include "fshell.h"
 
-void			free_process(t_process *tmp)
+void			free_process(t_process *tmp, pid_t jpid)
 {
 	t_process	*process_for_del;
 
 	while (tmp)
 	{
+		if (tmp->pid != jpid && jpid > 0)
+			kill(tmp->pid, SIGTERM);
 		process_for_del = tmp;
 		tmp = tmp->next;
 		free(process_for_del);
@@ -28,7 +30,7 @@ void			free_job(t_job *tmp)
 {
 	if (tmp)
 	{
-		free_process(tmp->first_process);
+		free_process(tmp->first_process, tmp->pgid);
 		ft_strdel(&tmp->command);
 		free(tmp);
 	}

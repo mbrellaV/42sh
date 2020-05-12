@@ -1,5 +1,17 @@
 #include "fshell.h"
 
+int			is_first_word(char *str, int i)
+{
+	while (i > 0 && isword(str[i]) == 1)
+	{
+		i--;
+	}
+	if (i == 0)
+		return (1);
+	else
+		return (0);
+}
+
 char		*ft_get_prev_word(char *str, int i)
 {
 	char	*newstr;

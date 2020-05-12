@@ -60,11 +60,13 @@ int				change_path(char *path, t_builtins *cd)
 				return (ft_cd_error(pwd_env, 6, 1));
 			}
 		set_new_var("OLDPWD", tmp, &globals()->g_env);
+		set_new_var("OLDPWD", tmp, &globals()->g_all_var);
 		pwd_env ? set_new_var("PWD", pwd_env, &globals()->g_env) :
 		set_new_var("PWD", path, &globals()->g_env);
+		pwd_env ? set_new_var("PWD", pwd_env, &globals()->g_all_var) :
+		set_new_var("PWD", path, &globals()->g_all_var);
 		free(pwd_env);
 		free(tmp);
-		return (0);
 	}
 	return (0);
 }
@@ -85,6 +87,9 @@ int				change_env(char *env, t_builtins *cd)
 		set_new_var("OLDPWD", pwd, &globals()->g_env);
 		set_new_var("PWD", globals()->g_env[k] + ft_strlen(env),
 				&globals()->g_env);
+		set_new_var("OLDPWD", pwd, &globals()->g_all_var);
+		set_new_var("PWD", globals()->g_env[k] + ft_strlen(env),
+					&globals()->g_all_var);
 		free(pwd);
 		return (0);
 	}

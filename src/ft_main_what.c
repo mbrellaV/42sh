@@ -25,7 +25,7 @@ int			do_qest(int wait_and, int wait_or)
 
 	if (!(del = ft_get_var("?", globals()->g_all_var)))
 	{
-		put_error_to_shell(0);
+		put_error_to_shell(2);
 		return (1);
 	}
 	num = ft_atoi(del);
@@ -55,7 +55,7 @@ int			ft_main_if(t_exectoken *tmp, int sas, t_job *job)
 		do_job_things(&sas, &job, tmp);
 	else
 	{
-		sas = do_builtin(tmp);
+		sas = do_builtin(tmp->file_args, tmp->file_opt,  0);
 	}
 	return (sas);
 }
@@ -63,12 +63,16 @@ int			ft_main_if(t_exectoken *tmp, int sas, t_job *job)
 int			ft_main_what(t_exectoken *tmp)
 {
 	t_job	*job;
-	int		sas;
+	int		exit_status;
 
-	sas = 0;
+	exit_status = 0;
 	job = NULL;
 	while (tmp)
 	{
+		if (globals()->fd != NULL)
+			free(globals()->fd);
+		if (!(globals()->fd = ft_create_opened_fds()))
+			return (-1);
 		if ((tmp->file_args == NULL) && (tmp->file_opt == NULL) && trick(&tmp))
 			continue ;
 		if (((tmp->file_args && !is_builtin(tmp->file_args[0])) || tmp->left)
@@ -76,9 +80,9 @@ int			ft_main_what(t_exectoken *tmp)
 		{
 			if (do_qest(tmp->wait_and, tmp->wait_or) && trick(&tmp))
 				continue ;
-			sas = ft_main_if(tmp, sas, job);
+			exit_status = ft_main_if(tmp, exit_status, job);
 		}
-		if (trick(&tmp) && sas == -1)
+		if (trick(&tmp) && exit_status == -1)
 			return (-1);
 	}
 	do_job_del();

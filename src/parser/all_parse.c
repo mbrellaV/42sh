@@ -35,14 +35,15 @@ int				check_par_and_brackets(char *str)
 	int		size;
 
 	i = 0;
-	size = 0;
 	while (str[i] != '\0')
 	{
 		if (ispar(str[i]))
 		{
 			if ((size = c_size(&str[i], str[i])) == -1)
-				return_check(str, -1);
-			i += size + 1;
+				return (return_check(str, -1));
+			if (size == -2)
+				size = 2;
+			i += size + 2;
 		}
 		i++;
 	}

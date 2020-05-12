@@ -246,7 +246,7 @@ void				disable_shell_signals();
 void				recover_normal_shell_signals();
 int					ft_whatis2(t_process *tmp);
 void				init_shell(void);
-int					do_builtin(t_exectoken *tmp);
+int					do_builtin(char **file_args, char **file_opt, int type);
 int					ck_br(const char *str);
 void				put_error_to_shell(int error);
 char				*ft_do_zam_eval(char *mas);
@@ -256,6 +256,7 @@ int					alias_error(int error, char *tmp1, char *tmp2);
 int					ft_error_d(t_readline *p);
 char				*ft_get_prev_word(char *str, int i);
 int					exit_builtin(char **args);
+int					is_first_word(char *str, int i);
 
 
 #endif

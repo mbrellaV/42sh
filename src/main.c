@@ -14,10 +14,6 @@
 
 int		main_cycle(t_readline *p, t_exectoken **start_token)
 {
-	if (globals()->fd != NULL)
-		free(globals()->fd);
-	if (!(globals()->fd = ft_create_opened_fds()))
-		return (-1);
 	if (!set_input_mode())
 	{
 		ft_start_read(p);

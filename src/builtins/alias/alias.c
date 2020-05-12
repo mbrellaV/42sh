@@ -16,7 +16,7 @@ void		ft_alias(void)
 {
 	if (!(globals()->g_alias = (char **)ft_memalloc(4 * sizeof(char *))))
 		ft_error(15, "malloc error alias");
-	globals()->g_alias[0] = ft_strdup("ll=ls");
+	globals()->g_alias[0] = ft_strdup("ll=ls -la");
 	globals()->g_alias[1] = ft_strdup("l=ls");
 	globals()->g_alias[2] = NULL;
 }
@@ -31,7 +31,7 @@ static int	do_zam_alias(char *str, int *i, char *newstr, char *dopstr)
 	size = word_size(&str[*i]);
 	dop = ft_strsub(str, *i, size);
 	if (str[*i] != '$' && (dopstr = ft_get_var(dop, globals()->g_alias)) &&
-	(prev_word = ft_get_prev_word(str, *i)) && ft_strcmp(prev_word, "unalias") != 0)
+	(!(prev_word = ft_get_prev_word(str, *i)) || is_first_word(str, *i)))
 		ft_strcat(newstr, dopstr);
 	else
 		ft_strcat(newstr, dop);
