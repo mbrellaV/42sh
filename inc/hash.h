@@ -16,7 +16,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 
-# define MAX_HASH	255
+# define MAX_HASH	256
 
 # define HASH_USAGE "hash [-r] [utility...]"
 

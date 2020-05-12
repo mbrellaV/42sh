@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../inc/fshell.h"
+#include "fshell.h"
 
 t_hash				*hash_create(char *key, char *value)
 {
