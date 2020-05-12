@@ -6,7 +6,7 @@
 /*   By: wstygg <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/29 00:35:48 by wstygg            #+#    #+#             */
-/*   Updated: 2020/05/12 17:28:00 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/05/12 19:15:22 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,11 +74,12 @@ int					launch(char *str, int put_name)
 	{
 		if (put_name)
 			if (!put_name_help(&split, i))
-				return (-1);
+				return (ft_free_split(split) - 1);
 		if ((start_token = all_parse(split[i])) == NULL)
-			return (!ft_distruct_tree(start_token));
+			return (!ft_distruct_tree(start_token) +
+					ft_free_split(split));
 		if (ft_main_what(start_token) == -1)
-			return (-1);
+			return (ft_free_split(split) - 1);
 		ft_distruct_tree(start_token);
 	}
 	ft_free_split(split);

@@ -6,7 +6,7 @@
 /*   By: mbrella <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/11 10:58:44 by mbrella           #+#    #+#             */
-/*   Updated: 2020/05/12 17:44:38 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/05/12 19:15:21 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -173,7 +173,7 @@ void				ft_fun_fork(char *path, char **arg, pid_t pgid,
 						int foreground);
 int					ft_findenv(char *s, char **env);
 void				ft_do_export(char **mas);
-void				ft_free_split(char **split);
+int					ft_free_split(char **split);
 int					ft_signal(int signo, t_readline *p);
 void				ft_fork_signal(int signo);
 int					ft_main_what(t_exectoken *tmp);
