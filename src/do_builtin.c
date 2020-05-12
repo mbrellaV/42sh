@@ -6,7 +6,7 @@
 /*   By: wstygg <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/15 18:29:17 by wstygg            #+#    #+#             */
-/*   Updated: 2020/05/12 17:28:00 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/05/12 17:28:05 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,13 @@ int		do_next_builtins_2(char **file_args)
 	else if (ft_strcmp(file_args[0], "clear") == 0)
 		ft_putstr_fd("\033[2J\033[H", globals()->fd[2]);
 	else if (ft_strcmp(file_args[0], "hash") == 0)
-		return (do_hash(file_args));
+		put_error_to_shell(do_hash(file_args));
 	else if (!ft_strcmp(file_args[0], "type"))
-		ft_type(file_args);
+		put_error_to_shell(ft_type(file_args));
 	else if (!ft_strcmp(file_args[0], "fc"))
-		return (do_fc(file_args));
+		put_error_to_shell(do_fc(file_args));
 	else if (!ft_strcmp(file_args[0], "authors"))
-		return (do_authors());
+		put_error_to_shell(do_authors());
 	else
 		return (0);
 	return (1);
@@ -40,15 +40,15 @@ int		do_next_builtins(char **file_args)
 	else if (ft_strcmp(file_args[0], "false") == 0)
 		put_error_to_shell(2);
 	else if (ft_strcmp(file_args[0], "fg") == 0)
-		do_fg(file_args);
+		put_error_to_shell(do_fg(file_args));
 	else if (ft_strcmp(file_args[0], "bg") == 0)
-		do_bg(file_args);
+		put_error_to_shell(do_bg(file_args));
 	else if (ft_strcmp(file_args[0], "jobs") == 0)
 		do_job_notification();
 	else if (ft_strcmp(file_args[0], "echo") == 0)
-		ft_echo(file_args);
+		put_error_to_shell(ft_echo(file_args));
 	else if (ft_strcmp(file_args[0], "history") == 0)
-		show_history(globals()->g_memory_head);
+		put_error_to_shell(show_history(globals()->g_memory_head));
 	else
 		return (do_next_builtins_2(file_args));
 	return (1);
@@ -68,7 +68,7 @@ int		do_builtin(char **file_args, char **file_opt, int type)
 		ft_strcmp(file_args[0], "unalias") == 0)
 		ft_do_change_alias(file_args);
 	else if (ft_strcmp(file_args[0], "cd") == 0)
-		ft_cd(file_args);
+		put_error_to_shell(ft_cd(file_args));
 	else if (ft_strcmp(file_args[0], "export") == 0)
 		ft_do_export(file_args);
 	else if (ft_strcmp(file_args[0], "unset") == 0 && file_args[1])

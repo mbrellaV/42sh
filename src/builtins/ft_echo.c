@@ -84,7 +84,7 @@ char	*ft_slash(char *str, t_builtins *echo)
 	return (ft_slash_2(str, echo, res));
 }
 
-void	ft_echo(char **str)
+int		ft_echo(char **str)
 {
 	int			k;
 	t_builtins	echo;
@@ -106,4 +106,5 @@ void	ft_echo(char **str)
 	}
 	if (!echo.echo_n && !echo.echo_c)
 		ft_dprintf(globals()->fd[1], "\n");
+	return (0);
 }
