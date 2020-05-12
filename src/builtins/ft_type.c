@@ -6,7 +6,7 @@
 /*   By: wstygg <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/13 19:38:47 by wstygg            #+#    #+#             */
-/*   Updated: 2020/05/12 17:33:39 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/05/12 17:35:27 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ static int			check_alias(char *arg)
 	return (0);
 }
 
-void				ft_type(char **argv)
+int					ft_type(char **argv)
 {
 	int				i;
 
@@ -65,6 +65,8 @@ void				ft_type(char **argv)
 		if (!check_alias(argv[i]))
 			if (!check_builtins(argv[i]))
 				if (!check_hash(argv[i]))
-					ft_dprintf(globals()->fd[2], "%s not found\n", argv[i]);
+					return (ft_dprintf(globals()->fd[2],
+							"%s not found\n", argv[i]));
 	}
+	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: mbrella <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/11 10:58:44 by mbrella           #+#    #+#             */
-/*   Updated: 2020/05/12 17:28:00 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/05/12 17:28:01 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -197,7 +197,7 @@ void				ft_add_tab(t_readline *p, char *str);
 void				ft_find_dir(char *dir, char *name, t_readline *p);
 char				*ft_directory(char *str, int *flag_tab);
 char				*ft_name(char *str, t_readline *p);
-void				ft_type(char **argv);
+int					ft_type(char **argv);
 void				ft_find_path(t_readline *p, char *name);
 void				ft_find_env(char *name, t_readline *p);
 void				ft_add_builtins_in_tab(char *name, t_readline *p);
