@@ -6,7 +6,7 @@
 /*   By: mbrella <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/11 10:58:44 by mbrella           #+#    #+#             */
-/*   Updated: 2020/05/12 17:28:01 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/05/12 17:44:38 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -139,7 +139,7 @@ int					ft_do_zam_alias(char **str);
 int					ft_do_change_alias(char **mas);
 char				*do_obr_zamena(char *line);
 void				ft_realloc_all(int k, char ***envl);
-void				ft_echo(char **str);
+int					ft_echo(char **str);
 t_memory			*make_memmory_with_one_node(int fd, char *buf);
 char				*get_hist_by_id(int id);
 char				*ft_slash(char *str, t_builtins *echo);
