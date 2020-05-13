@@ -16,6 +16,8 @@ int		ft_find_in_fds(int *opened_fds, int fd_to_find)
 {
 	if (opened_fds == NULL)
 		return (-1);
+	if (fd_to_find < 0 || fd_to_find > 9)
+		return (-1);
 	if (opened_fds[fd_to_find] >= 0)
 		return (1);
 	return (0);
@@ -25,6 +27,8 @@ int		ft_add_to_fds(int *opened_fds, int fd_to_add)
 {
 	if (opened_fds == NULL)
 		return (-1);
+	if (fd_to_add < 0 || fd_to_add > 9)
+		return (-1);
 	opened_fds[fd_to_add] = 1;
 	return (1);
 }
@@ -32,6 +36,8 @@ int		ft_add_to_fds(int *opened_fds, int fd_to_add)
 int		ft_remove_from_fds(int *opened_fds, int fd_to_remove)
 {
 	if (opened_fds == NULL)
+		return (-1);
+	if (fd_to_remove < 0 || fd_to_remove > 9)
 		return (-1);
 	opened_fds[fd_to_remove] = -1;
 	return (1);
