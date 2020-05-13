@@ -12,6 +12,24 @@
 
 #include "../../inc/fshell.h"
 
+int				ft_pwd(int full)
+{
+	int			k;
+	char		*str;
+
+	if (((k = ft_findenv("PWD=", globals()->g_env)) != -404) && (full ||
+			ft_findenv("PATH=", globals()->g_env) != -404))
+		vivod(1) ? (dprintf(globals()->fd[1], "%s\n",
+				globals()->g_env[k] + 4)) : 0;
+	else if (full || ft_findenv("PWD=", globals()->g_env) == -404)
+	{
+		str = getcwd(NULL, 100);
+		vivod(1) ? dprintf(globals()->fd[1], "%s\n", str) : 0;
+		free(str);
+	}
+	return (1);
+}
+
 char			*ft_strjoin_cd(char const *s1, char const *s2, int to_free)
 {
 	char		*str;
@@ -61,9 +79,11 @@ char			*get_oldpwd(t_builtins *cd)
 	int			res_l;
 
 	if (((k = ft_findenv("PWD=", globals()->g_env)) != -404))
+	{
 		if ((res_l = check_file(globals()->g_env[k] + 4, IS_L)) && res_l != -1)
 			cd->link = 1;
-	if (cd->link == 1)
+	}
+	if (cd->link == 1 && ((k = ft_findenv("PWD=", globals()->g_env)) != -404))
 		return (ft_strdup(globals()->g_env[k] + 4));
 	else
 		return (getcwd(NULL, 0));
@@ -91,7 +111,7 @@ int				do_cd(t_builtins *cd, char *str)
 		}
 	}
 	if (!ft_strcmp(str, "-") &&
-	(k = ft_findenv("PWD=", globals()->g_env)) != -404)
+	(k = ft_findenv("PWD=", globals()->g_env)) != -404 && vivod(1))
 		ft_dprintf(globals()->fd[1], "%s\n", globals()->g_env[k] + 4);
 	free(full_path);
 	return (0);

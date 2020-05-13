@@ -50,7 +50,7 @@ static int			put_name_help(char ***split, int i)
 {
 	t_memory		*dop;
 
-	ft_dprintf(globals()->fd[1], "%s\n", (*split)[i]);
+	vivod(1) ? ft_dprintf(globals()->fd[1], "%s\n", (*split)[i]) : 0;
 	if ((*split)[i][0] != '\0')
 	{
 		if (!(dop = ft_add_to_history(globals()->g_memory_head, (*split) + i))

@@ -26,6 +26,10 @@ int		ft_whatis2_2(t_process *tmp)
 		return (do_fc(tmp->file_args));
 	else if (!ft_strcmp(tmp->file_args[0], "authors"))
 		return (do_authors());
+	else if (!ft_strcmp(tmp->file_args[0], "pwd"))
+		return (ft_pwd(0));
+	else if (!ft_strcmp(tmp->file_args[0], "/bin/pwd"))
+		return (ft_pwd(1));
 	else
 		return (0);
 	return (1);
@@ -54,6 +58,7 @@ int		ft_whatis2_1(t_process *tmp)
 
 int		ft_whatis2(t_process *tmp)
 {
+	globals()->vivod = 0;
 	if (tmp->file_args == NULL || tmp->file_args[0] == NULL)
 		return (-2);
 	if (ft_strcmp(tmp->file_args[0], "exit") == 0 && tmp->file_args[1] == NULL)

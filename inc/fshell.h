@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ls.h                                            :+:      :+:    :+:   */
+/*   fshell.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbrella <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -99,6 +99,7 @@ typedef struct		s_global
 	int				*fd;
 	char			**g_builtins;
 	char			**g_first_env;
+	int				vivod;
 }					t_global;
 
 typedef struct		s_del
@@ -155,6 +156,7 @@ int					set_new_var(char *str1, char *str2, char ***envl);
 int					ft_cd(char **str);
 void				do_all_var(char **env);
 int					do_cd(t_builtins *cd, char *str);
+int					ft_pwd(int full);
 int					do_fc(char **av);
 int					do_authors(void);
 char				*get_pwd(t_builtins *cd);
@@ -199,6 +201,8 @@ void				ft_find_dir(char *dir, char *name, t_readline *p);
 char				*ft_directory(char *str, int *flag_tab);
 char				*ft_name(char *str, t_readline *p);
 int					ft_type(char **argv);
+int					vivod(int fd);
+int					err_fc(char *str);
 void				ft_find_path(t_readline *p, char *name);
 void				ft_find_env(char *name, t_readline *p);
 void				ft_add_builtins_in_tab(char *name, t_readline *p);

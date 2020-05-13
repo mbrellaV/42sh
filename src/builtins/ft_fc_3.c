@@ -12,6 +12,11 @@
 
 #include "fshell.h"
 
+int					err_fc(char *str)
+{
+	return (vivod(2) ? (ft_dprintf(globals()->fd[2], "%s", str)) : 0);
+}
+
 int					check_flag_2(int *i, char **av, t_fc *f)
 {
 	if (ft_strequ(av[*i], "-e"))
@@ -95,7 +100,7 @@ int					check_flag(char **av, t_fc *f)
 		else if (av[i][0] == '-')
 			if (!check_flag_2(&i, av, f))
 				continue ;
-		return (ft_dprintf(globals()->fd[2], FC_US));
+		return (vivod(2) ? ft_dprintf(globals()->fd[2], FC_US) : 0);
 	}
 	return (0);
 }

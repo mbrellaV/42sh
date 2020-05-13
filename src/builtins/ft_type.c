@@ -12,13 +12,26 @@
 
 #include "../inc/fshell.h"
 
+int					vivod(int fd)
+{
+	if (globals()->fd[fd] > 0 && globals()->fd[fd] < 9)
+		return (1);
+	else if (globals()->vivod == 0 && globals()->fd[2] > 0 &&
+		globals()->fd[2] < 9)
+		ft_dprintf(globals()->fd[2],
+				"42sh: write error: Bad file descriptor\n");
+	globals()->vivod = 1;
+	return (0);
+}
+
 static int			check_hash(char *arg)
 {
 	char			*hash;
 
 	if (!(hash = hash_get(arg, 1)))
 		return (0);
-	ft_dprintf(globals()->fd[1], "%s is %s\n", arg, hash);
+	if (vivod(1))
+		ft_dprintf(globals()->fd[1], "%s is %s\n", arg, hash);
 	return (1);
 }
 
@@ -30,7 +43,8 @@ static int			check_builtins(char *arg)
 	while (globals()->g_builtins[++i])
 		if (!ft_strcmp(arg, globals()->g_builtins[i]))
 		{
-			ft_dprintf(globals()->fd[1], "%s is a 42sh builtin\n", arg);
+			if (vivod(1))
+				ft_dprintf(globals()->fd[1], "%s is a 42sh builtin\n", arg);
 			return (1);
 		}
 	return (0);
@@ -47,7 +61,8 @@ static int			check_alias(char *arg)
 		alias = globals()->g_alias[i];
 		if (ft_strnstr(alias, arg, ft_strlen(arg)))
 		{
-			ft_dprintf(globals()->fd[1], "%s is aliased to `%s'\n",
+			if (vivod(1))
+				ft_dprintf(globals()->fd[1], "%s is aliased to `%s'\n",
 					arg, ft_strchr(alias, '=') + 1);
 			return (1);
 		}
@@ -62,11 +77,10 @@ int					ft_type(char **argv)
 	i = 0;
 	while (argv[++i])
 	{
-		if (!check_alias(argv[i]))
-			if (!check_builtins(argv[i]))
-				if (!check_hash(argv[i]))
-					return (ft_dprintf(globals()->fd[2],
-							"%s not found\n", argv[i]));
+		if (!check_alias(argv[i]) && !check_builtins(argv[i]) &&
+				!check_hash(argv[i]))
+			vivod(2) ? (ft_dprintf(globals()->fd[2],
+					"42sh: %s not found\n", argv[i])) : 0;
 	}
 	return (0);
 }
