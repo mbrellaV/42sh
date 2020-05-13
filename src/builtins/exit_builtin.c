@@ -16,7 +16,11 @@ int		exit_builtin(char **args)
 {
 	if (ft_strcmp(args[0], "exit") == 0 && ((args[1] == NULL)
 		|| (args[1] != NULL && args[2] == NULL)))
+	{
+		if (args[1] != NULL)
+			exit(ft_atoi(args[1]));
 		return (-1);
+	}
 	else
 	{
 		ft_dprintf(globals()->fd[2], "too many arguments\n");
