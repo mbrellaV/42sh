@@ -26,10 +26,6 @@ int		do_next_builtins_2(char **file_args)
 		put_error_to_shell(do_fc(file_args));
 	else if (!ft_strcmp(file_args[0], "authors"))
 		put_error_to_shell(do_authors());
-	else if (!ft_strcmp(file_args[0], "pwd"))
-		put_error_to_shell(ft_pwd(0));
-	else if (!ft_strcmp(file_args[0], "/bin/pwd"))
-		put_error_to_shell(ft_pwd(1));
 	else
 		return (0);
 	return (1);

@@ -12,24 +12,6 @@
 
 #include "../../inc/fshell.h"
 
-int				ft_pwd(int full)
-{
-	int			k;
-	char		*str;
-
-	if (((k = ft_findenv("PWD=", globals()->g_env)) != -404) && (full ||
-			ft_findenv("PATH=", globals()->g_env) != -404))
-		vivod(1) ? (dprintf(globals()->fd[1], "%s\n",
-				globals()->g_env[k] + 4)) : 0;
-	else if (full || ft_findenv("PWD=", globals()->g_env) == -404)
-	{
-		str = getcwd(NULL, 100);
-		vivod(1) ? dprintf(globals()->fd[1], "%s\n", str) : 0;
-		free(str);
-	}
-	return (1);
-}
-
 char			*ft_strjoin_cd(char const *s1, char const *s2, int to_free)
 {
 	char		*str;
