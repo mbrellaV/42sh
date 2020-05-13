@@ -6,7 +6,7 @@
 /*   By: wstygg <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/29 00:35:48 by wstygg            #+#    #+#             */
-/*   Updated: 2020/05/12 17:28:00 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/05/12 22:45:03 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ static int			put_name_help(char ***split, int i)
 {
 	t_memory		*dop;
 
-	ft_dprintf(globals()->fd[1], "%s\n", (*split)[i]);
+	vivod(1) ? ft_dprintf(globals()->fd[1], "%s\n", (*split)[i]) : 0;
 	if ((*split)[i][0] != '\0')
 	{
 		if (!(dop = ft_add_to_history(globals()->g_memory_head, (*split) + i))
@@ -74,11 +74,11 @@ int					launch(char *str, int put_name)
 	{
 		if (put_name)
 			if (!put_name_help(&split, i))
-				return (-1);
+				return (ft_free_split(split) - 1);
 		if ((start_token = all_parse(split[i])) == NULL)
-			return (!ft_distruct_tree(start_token));
+			return (!ft_distruct_tree(start_token) + ft_free_split(split));
 		if (ft_main_what(start_token) == -1)
-			return (-1);
+			return (ft_free_split(split) - 1);
 		ft_distruct_tree(start_token);
 	}
 	ft_free_split(split);

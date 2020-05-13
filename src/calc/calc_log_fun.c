@@ -6,11 +6,16 @@
 /*   By: wstygg <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/13 19:53:08 by wstygg            #+#    #+#             */
-/*   Updated: 2020/05/12 17:28:00 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/05/12 23:00:09 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "calc.h"
+
+int					is_incr_sym(char c)
+{
+	return (c == '+' || c == '-');
+}
 
 static long long	calc_log_or(long long result, t_calc_tkns *s_tokens,
 	size_t *index, t_calc_err *error)

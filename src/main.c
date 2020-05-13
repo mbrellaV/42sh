@@ -6,13 +6,13 @@
 /*   By: qmartina <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/22 09:38:59 by qmartina          #+#    #+#             */
-/*   Updated: 2020/05/12 17:28:00 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/05/12 22:36:30 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/fshell.h"
 
-int		main_cycle(t_readline *p, t_exectoken **start_token)
+int					main_cycle(t_readline *p, t_exectoken **start_token)
 {
 	if (!set_input_mode())
 	{
@@ -36,7 +36,14 @@ int		main_cycle(t_readline *p, t_exectoken **start_token)
 	return (0);
 }
 
-int		main(int argc, char **argv, char **env)
+static void			init_by_null(t_job **one, char **two, t_exectoken **three)
+{
+	*one = NULL;
+	*two = NULL;
+	*three = NULL;
+}
+
+int					main(int argc, char **argv, char **env)
 {
 	t_readline		p;
 	t_exectoken		*start_token;
@@ -46,9 +53,7 @@ int		main(int argc, char **argv, char **env)
 		exit(0);
 	p.mod = 127;
 	ft_alias();
-	globals()->g_f_job = NULL;
-	argv[0] = NULL;
-	start_token = NULL;
+	init_by_null(&globals()->g_f_job, argv, &start_token);
 	ft_global_env(env, argc);
 	globals()->g_memory_head = ft_head_memory();
 	do_count_shell_lvl();

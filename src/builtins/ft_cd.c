@@ -6,27 +6,29 @@
 /*   By: qmartina <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/24 20:03:14 by qmartina          #+#    #+#             */
-/*   Updated: 2020/05/12 17:28:00 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/05/12 22:36:39 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../inc/fshell.h"
+#include "fshell.h"
 
 int				ft_cd_error(char *tmp, int err, int to_free)
 {
 	put_error_to_shell(2);
-	err == 1 ? (ft_dprintf(globals()->fd[2],
+	(err == 1 && vivod(2)) ? (ft_dprintf(globals()->fd[2],
 			"cd: no such file or directory: %s\n", tmp)) : 0;
-	err == 2 ? ft_dprintf(globals()->fd[2], "cd: %s not set\n", tmp) : 0;
-	err == 3 ? (ft_dprintf(globals()->fd[2],
+	(err == 2 && vivod(2)) ? ft_dprintf(globals()->fd[2],
+			"cd: %s not set\n", tmp) : 0;
+	(err == 3 && vivod(2)) ? (ft_dprintf(globals()->fd[2],
 			"cd: not a directory: %s\n", tmp)) : 0;
-	err == 4 ? (ft_dprintf(globals()->fd[2],
+	(err == 4 && vivod(2)) ? (ft_dprintf(globals()->fd[2],
 			"cd: no such file or directory: %s\n", tmp)) : 0;
-	err == 6 ? (ft_dprintf(globals()->fd[2],
+	(err == 6 && vivod(2)) ? (ft_dprintf(globals()->fd[2],
 			"cd: permission denied: %s\n", tmp)) : 0;
-	err == 7 ? (ft_dprintf(globals()->fd[2],
+	(err == 7 && vivod(2)) ? (ft_dprintf(globals()->fd[2],
 			"cd: string not in pwd: %s\n", tmp)) : 0;
-	err == 9 ? ft_dprintf(globals()->fd[2], "cd: too many arguments\n") : 0;
+	(err == 9 && vivod(2)) ? ft_dprintf(globals()->fd[2],
+			"cd: too many arguments\n") : 0;
 	to_free ? free(tmp) : 0;
 	return (0);
 }
@@ -48,17 +50,11 @@ int				change_path(char *path, t_builtins *cd)
 	if (path)
 	{
 		pwd_env = NULL;
-		if ((tmp = get_oldpwd(cd)) && chdir(path) == -1)
-		{
-			free(tmp);
+		if ((tmp = get_oldpwd(cd)) && chdir(path) == -1 && ft_free(&tmp))
 			return (ft_cd_error(path, 6, 0));
-		}
 		if (cd->cd_p && cd->link && (pwd_env = getcwd(NULL, 0)))
-			if (chdir(pwd_env) == -1)
-			{
-				free(tmp);
+			if (chdir(pwd_env) == -1 && ft_free(&tmp))
 				return (ft_cd_error(pwd_env, 6, 1));
-			}
 		set_new_var("OLDPWD", tmp, &globals()->g_env);
 		set_new_var("OLDPWD", tmp, &globals()->g_all_var);
 		pwd_env ? set_new_var("PWD", pwd_env, &globals()->g_env) :

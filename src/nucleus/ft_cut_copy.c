@@ -6,7 +6,7 @@
 /*   By: qmartina <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/27 17:49:33 by qmartina          #+#    #+#             */
-/*   Updated: 2020/05/12 17:28:00 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/05/12 22:36:31 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,9 @@ void	ft_cut_copy(t_readline *p)
 	{
 		free(globals()->g_cp);
 		globals()->g_cp = ft_strndup(p->buff, p->index);
-		tmp = p->buff;
-		p->buff = ft_strndup(&tmp[p->index], (p->len - p->index));
+		tmp = ft_strndup(p->buff, p->len);
+		ft_bzero(p->buff, p->len);
+		ft_strncpy(p->buff, &tmp[p->index], (p->len - p->index));
 		free(tmp);
 		ft_cleanstr(p->index + p->len_hint, p);
 		p->index = 0;

@@ -6,7 +6,7 @@
 /*   By: mbrella <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/01 17:52:35 by mbrella           #+#    #+#             */
-/*   Updated: 2020/05/12 17:28:00 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/05/12 22:36:30 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void			ft_zam_ravno_main(char *tmp1, char *tmp2, t_lextoken *h)
 		tmp2 = ft_strdup("");
 	else
 		tmp2 = ft_strsub(h->line, ft_strstr(h->line, "=") -
-								  h->line + 1, ft_strlen(h->line));
+			h->line + 1, ft_strlen(h->line));
 	set_new_var(tmp1, tmp2, &globals()->g_all_var);
 	if (ft_findenv(tmp1, globals()->g_first_env) != -404)
 		set_new_var(tmp1, tmp2, &globals()->g_env);

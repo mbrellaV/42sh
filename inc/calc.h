@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   calc.h                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: wstygg <wstygg@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/05/12 23:37:42 by wstygg            #+#    #+#             */
+/*   Updated: 2020/05/12 23:37:46 by wstygg           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef CALC_H
 # define CALC_H
 
@@ -8,7 +20,6 @@
 # include "../libft/inc/libft.h"
 # include <unistd.h>
 # include <stdlib.h>
-
 
 # define CALC_TOKENS_SIZE 100
 
@@ -212,9 +223,11 @@ long long				calc_ll_atoi(const char *str);
 
 char					*calc_ltoa(long long num);
 
+int						is_incr_sym(char c);
+int						calc_word_size(char *str);
+
 char					*change_vars(char *evalstr);
 
 char					*ft_main_calc_rec(char *mas, t_calc_err *error);
-
 
 #endif

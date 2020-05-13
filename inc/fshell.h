@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ls.h                                            :+:      :+:    :+:   */
+/*   fshell.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbrella <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/11 10:58:44 by mbrella           #+#    #+#             */
-/*   Updated: 2020/05/12 17:44:38 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/05/12 22:36:30 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@
 # include "nucleus.h"
 # include "lexer.h"
 # include "struct.h"
-#include "exec.h"
+# include "exec.h"
 # include "../src/qft_printf/ft_printf.h"
 
 # define RED		"\x1B[31m"
@@ -99,6 +99,7 @@ typedef struct		s_global
 	int				*fd;
 	char			**g_builtins;
 	char			**g_first_env;
+	int				vivod;
 }					t_global;
 
 typedef struct		s_del
@@ -155,6 +156,7 @@ int					set_new_var(char *str1, char *str2, char ***envl);
 int					ft_cd(char **str);
 void				do_all_var(char **env);
 int					do_cd(t_builtins *cd, char *str);
+int					ft_pwd(int full);
 int					do_fc(char **av);
 int					do_authors(void);
 char				*get_pwd(t_builtins *cd);
@@ -173,8 +175,9 @@ void				ft_fun_fork(char *path, char **arg, pid_t pgid,
 						int foreground);
 int					ft_findenv(char *s, char **env);
 void				ft_do_export(char **mas);
-void				ft_free_split(char **split);
+int					ft_free_split(char **split);
 int					ft_signal(int signo, t_readline *p);
+int					ft_free(void *memory);
 void				ft_fork_signal(int signo);
 int					ft_main_what(t_exectoken *tmp);
 int					ft_distruct_tree(t_exectoken *q);
@@ -198,6 +201,8 @@ void				ft_find_dir(char *dir, char *name, t_readline *p);
 char				*ft_directory(char *str, int *flag_tab);
 char				*ft_name(char *str, t_readline *p);
 int					ft_type(char **argv);
+int					vivod(int fd);
+int					err_fc(char *str);
 void				ft_find_path(t_readline *p, char *name);
 void				ft_find_env(char *name, t_readline *p);
 void				ft_add_builtins_in_tab(char *name, t_readline *p);
@@ -257,6 +262,5 @@ int					ft_error_d(t_readline *p);
 char				*ft_get_prev_word(char *str, int i);
 int					exit_builtin(char **args);
 int					is_first_word(char *str, int i);
-
 
 #endif

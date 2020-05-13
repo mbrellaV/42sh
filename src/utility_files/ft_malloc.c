@@ -6,11 +6,19 @@
 /*   By: wstygg <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/16 17:18:08 by wstygg            #+#    #+#             */
-/*   Updated: 2020/05/12 17:28:00 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/05/12 22:49:13 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fshell.h"
+
+int			ft_free(void *memory)
+{
+	if (!memory)
+		return (0);
+	free(memory);
+	return (0);
+}
 
 void		*ft_malloc(size_t size)
 {

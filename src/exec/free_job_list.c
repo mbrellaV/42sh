@@ -6,7 +6,7 @@
 /*   By: wstygg <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/14 12:44:23 by wstygg            #+#    #+#             */
-/*   Updated: 2020/05/12 17:28:00 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/05/12 22:36:30 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void			free_job(t_job *tmp)
 
 static void		norme_help(t_del *del)
 {
-	if (del->j->first_process->foreground == 0)
+	if (del->j->foreground == 0)
 		format_job_info(del->j, "completed", del->d);
 	if (del->jlast)
 		del->jlast->next = del->jnext;

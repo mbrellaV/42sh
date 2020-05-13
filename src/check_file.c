@@ -6,13 +6,13 @@
 /*   By: qmartina <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/31 19:38:56 by qmartina          #+#    #+#             */
-/*   Updated: 2020/05/12 17:28:00 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/05/12 22:36:30 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/fshell.h"
 
-void				ft_free_split(char **split)
+int					ft_free_split(char **split)
 {
 	register int	i;
 
@@ -23,6 +23,7 @@ void				ft_free_split(char **split)
 		split[i] = NULL;
 	}
 	free(split);
+	return (0);
 }
 
 int					check_file(char *file, unsigned check)

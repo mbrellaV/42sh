@@ -1,5 +1,17 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   history.h                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: wstygg <wstygg@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/05/12 23:44:44 by wstygg            #+#    #+#             */
+/*   Updated: 2020/05/12 23:45:08 by wstygg           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef HISTORY_H
-#define HISTORY_H
+# define HISTORY_H
 
 # include <stdio.h>
 # include <stdlib.h>
@@ -17,15 +29,15 @@ typedef struct				s_memory
 	struct s_memory			*next;
 }							t_memory;
 
-
 /*
 ** change_hist_exp.c
 */
 
 char						*history_error(char *dopline);
 void						zm_history_numbers(int i, char **str1,
-									   char type, t_memory *q);
-void						zm_history_name(int i, char **str1, char type, t_memory *q);
+												char type, t_memory *q);
+void						zm_history_name(int i, char **str1, char type,
+												t_memory *q);
 char						*do_zam_cycle(char *str1, t_memory *q, int i);
 char						*do_zam_str_hist_var(char *str1, t_memory *q);
 
@@ -77,7 +89,8 @@ int							show_history(t_memory *q);
 
 char						*get_num_from_hist_begin(t_memory *t, int num);
 char						*get_num_from_hist_end(t_memory *t, int num);
-char						*get_num_from_hist_starting(t_memory *t, char *name);
+char						*get_num_from_hist_starting(t_memory *t,
+														char *name);
 char						*get_num_from_hist_cons(t_memory *t, char *name);
 
-#endif //INC_42SAVE_HISTORY_H
+#endif

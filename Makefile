@@ -1,7 +1,7 @@
 NAME		=	42sh
 
 CC			=	gcc
-FLAGS		=	-Wall -Wextra -Werror -g3
+FLAGS		=	-Wall -Wextra -Werror -g
 
 DELTA		=	$$(echo "$$(tput cols)-47"|bc)
 

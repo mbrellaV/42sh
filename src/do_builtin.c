@@ -6,7 +6,7 @@
 /*   By: wstygg <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/15 18:29:17 by wstygg            #+#    #+#             */
-/*   Updated: 2020/05/12 17:28:05 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/05/12 22:36:30 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,10 @@ int		do_next_builtins_2(char **file_args)
 		put_error_to_shell(do_fc(file_args));
 	else if (!ft_strcmp(file_args[0], "authors"))
 		put_error_to_shell(do_authors());
+	else if (!ft_strcmp(file_args[0], "pwd"))
+		put_error_to_shell(ft_pwd(0));
+	else if (!ft_strcmp(file_args[0], "/bin/pwd"))
+		put_error_to_shell(ft_pwd(1));
 	else
 		return (0);
 	return (1);
@@ -56,13 +60,15 @@ int		do_next_builtins(char **file_args)
 
 int		do_builtin(char **file_args, char **file_opt, int type)
 {
+	globals()->vivod = 0;
 	if (file_args == NULL)
 		return (-2);
 	if (file_args[0] == NULL)
 		return (-2);
 	if (ft_strcmp(file_args[0], "exit") == 0)
 		return (exit_builtin(file_args));
-	if (type == 0 && file_opt != NULL && !(set_redirects_for_builtins(file_opt)))
+	if (type == 0 && file_opt != NULL
+		&& !(set_redirects_for_builtins(file_opt)))
 		return (-2);
 	if (ft_strcmp(file_args[0], "alias") == 0 ||
 		ft_strcmp(file_args[0], "unalias") == 0)

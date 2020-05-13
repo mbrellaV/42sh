@@ -6,11 +6,16 @@
 /*   By: wstygg <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/02 15:23:39 by wstygg            #+#    #+#             */
-/*   Updated: 2020/05/12 17:28:00 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/05/12 22:36:31 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fshell.h"
+
+int					err_fc(char *str)
+{
+	return (vivod(2) ? (ft_dprintf(globals()->fd[2], "%s", str)) : 0);
+}
 
 int					check_flag_2(int *i, char **av, t_fc *f)
 {
@@ -95,7 +100,7 @@ int					check_flag(char **av, t_fc *f)
 		else if (av[i][0] == '-')
 			if (!check_flag_2(&i, av, f))
 				continue ;
-		return (ft_dprintf(globals()->fd[2], FC_US));
+		return (vivod(2) ? ft_dprintf(globals()->fd[2], FC_US) : 0);
 	}
 	return (0);
 }

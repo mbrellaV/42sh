@@ -6,7 +6,7 @@
 /*   By: plettie <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/06 12:05:01 by plettie           #+#    #+#             */
-/*   Updated: 2020/05/12 17:28:00 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/05/12 22:36:31 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ char	*ft_hex(char *str)
 	else
 		str--;
 	str++;
-	ft_dprintf(globals()->fd[1], "%d", i);
+	vivod(1) ? ft_dprintf(globals()->fd[1], "%d", i) : 0;
 	return (str);
 }
 
@@ -65,7 +65,8 @@ char	*distribute_echo(char **str, int k, int flag, t_builtins *echo)
 			str[k] = ft_flag_echo(str[k], echo);
 		else if ((flag = 1))
 		{
-			*str[k] != '\"' ? ft_putchar_fd(*str[k], globals()->fd[1]) : NULL;
+			if (*str[k] != '\"' && vivod(1))
+				ft_putchar_fd(*str[k], globals()->fd[1]);
 			str[k]++;
 		}
 	}

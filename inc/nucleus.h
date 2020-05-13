@@ -6,7 +6,7 @@
 /*   By: qmartina <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/25 17:27:41 by qmartina          #+#    #+#             */
-/*   Updated: 2020/05/12 17:28:00 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/05/12 23:47:38 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,8 @@ char						*ft_name(char *str, t_readline *p);
 ** ft_add_input_que.c
 */
 
-void						ft_add_intput_que(t_readline *p, t_memory *head, int mod);
+void						ft_add_intput_que(t_readline *p,
+							t_memory *head, int mod);
 
 /*
 ** ft_add_sumchar.c
@@ -145,11 +146,11 @@ void						ft_do_delch(t_readline *p);
 ** ft_leftright.c
 */
 
-void 						do_up_ifn(t_nline *l, t_readline *p);
-void 						do_up_if_izero(t_readline *p);
-void 						do_down_if_iwscol(t_readline *p);
+void						do_up_ifn(t_nline *l, t_readline *p);
+void						do_up_if_izero(t_readline *p);
+void						do_down_if_iwscol(t_readline *p);
 void						do_left(t_readline *p);
-void 						do_right(t_readline *p);
+void						do_right(t_readline *p);
 void						ft_do_leftright(t_readline *p);
 
 /*
@@ -169,7 +170,7 @@ void						ft_find_env(char *name, t_readline *p);
 ** ft_next_slovo.c
 */
 
-void	ft_next_slovo(t_readline *p);
+void						ft_next_slovo(t_readline *p);
 
 /*
 ** ft_print_tab.c
@@ -247,13 +248,15 @@ void						ft_upcursor(t_readline *p);
 void						reset_input_mode(void);
 void						error_term(int error);
 int							set_input_mode(void);
-int 						ft_read_helper(t_readline *p, t_memory **h, int rt, char *buf);
+int							ft_read_helper(t_readline *p,
+						t_memory **h, int rt, char *buf);
 
 /*
 ** nline.c
 */
 
-void 						init_nline(t_readline *p, t_nline *l);
+void						init_nline(t_readline *p,
+										t_nline *l);
 
 /*
 ** tab.c

@@ -6,7 +6,7 @@
 /*   By: qmartina <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/29 17:15:41 by qmartina          #+#    #+#             */
-/*   Updated: 2020/05/12 17:28:00 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/05/12 22:36:31 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,13 +48,13 @@ void			ft_read_8(t_readline *p, t_memory *head, int mod)
 
 	p->mod = mod;
 	h = head;
-	do_job_del();
-	while (do_job_del() && (rt = read(0, buf, 8)) && buf[0] != '\n')
+	while (do_job_del() &&
+	(rt = read(0, buf, 8)) && buf[0] != '\n' && do_job_del())
 	{
-		do_job_del();
 		p->sum_read = ft_add_sumchar(buf, rt);
 		if (!ft_read_helper(p, &h, rt, buf))
 			return ;
+		do_job_del();
 	}
 	do_hist_add_with_slash_n(mod, p);
 	p->index = do_zamena_slash(p->buff, p);
