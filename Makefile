@@ -25,6 +25,7 @@ SRC_BASE = builtins/ft_cd.c\
 	builtins/ft_fc_3.c\
 	builtins/authors.c\
 	builtins/allenv/ft_env.c\
+	builtins/allenv/ft_del_env_table.c\
 	builtins/alias/alias.c\
 	builtins/alias/alias_error.c\
 	builtins/alias/ft_do_change_alias.c\

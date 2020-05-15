@@ -100,6 +100,7 @@ typedef struct		s_global
 	char			**g_builtins;
 	char			**g_first_env;
 	int				vivod;
+	char			**env_del;
 }					t_global;
 
 typedef struct		s_del
@@ -150,6 +151,7 @@ char				*distribute_echo(char **str, int k, int flag,
 						t_builtins *echo);
 char				*ft_hex(char *str);
 void				delete_fc_command(void);
+char				**ft_add_to_del_env_table(char *tmp);
 void				*ft_malloc(size_t size);
 int					launch(char *str, int put_name);
 int					set_new_var(char *str1, char *str2, char ***envl);
@@ -158,6 +160,7 @@ void				do_all_var(char **env);
 int					do_cd(t_builtins *cd, char *str);
 int					ft_pwd(int full);
 int					do_fc(char **av);
+void				ft_free_env_table();
 int					do_authors(void);
 char				*get_pwd(t_builtins *cd);
 char				*get_oldpwd(t_builtins *cd);

@@ -31,6 +31,7 @@ int					main_cycle(t_readline *p, t_exectoken **start_token)
 	}
 	if (ft_main_what(*start_token) == -1)
 		return (-1);
+	ft_free_env_table();
 	del_readline(p);
 	ft_distruct_tree(*start_token);
 	return (0);
