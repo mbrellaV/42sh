@@ -27,7 +27,6 @@ int		exit_builtin(char **args)
 		else
 			return (-1);
 	}
-
 	else
 	{
 		ft_dprintf(globals()->fd[2], "too many arguments\n");

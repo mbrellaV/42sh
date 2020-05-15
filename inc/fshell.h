@@ -158,7 +158,6 @@ int					set_new_var(char *str1, char *str2, char ***envl);
 int					ft_cd(char **str);
 void				do_all_var(char **env);
 int					do_cd(t_builtins *cd, char *str);
-int					ft_pwd(int full);
 int					do_fc(char **av);
 void				ft_free_env_table();
 int					do_authors(void);
