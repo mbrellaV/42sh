@@ -744,546 +744,6 @@ src/builtins/kill_builtin.c.s:
 	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/builtins/kill_builtin.c.s
 .PHONY : src/builtins/kill_builtin.c.s
 
-src/calc/calc.o: src/calc/calc.c.o
-
-.PHONY : src/calc/calc.o
-
-# target to build an object file
-src/calc/calc.c.o:
-	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/calc/calc.c.o
-.PHONY : src/calc/calc.c.o
-
-src/calc/calc.i: src/calc/calc.c.i
-
-.PHONY : src/calc/calc.i
-
-# target to preprocess a source file
-src/calc/calc.c.i:
-	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/calc/calc.c.i
-.PHONY : src/calc/calc.c.i
-
-src/calc/calc.s: src/calc/calc.c.s
-
-.PHONY : src/calc/calc.s
-
-# target to generate assembly for a file
-src/calc/calc.c.s:
-	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/calc/calc.c.s
-.PHONY : src/calc/calc.c.s
-
-src/calc/calc_add_fun.o: src/calc/calc_add_fun.c.o
-
-.PHONY : src/calc/calc_add_fun.o
-
-# target to build an object file
-src/calc/calc_add_fun.c.o:
-	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/calc/calc_add_fun.c.o
-.PHONY : src/calc/calc_add_fun.c.o
-
-src/calc/calc_add_fun.i: src/calc/calc_add_fun.c.i
-
-.PHONY : src/calc/calc_add_fun.i
-
-# target to preprocess a source file
-src/calc/calc_add_fun.c.i:
-	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/calc/calc_add_fun.c.i
-.PHONY : src/calc/calc_add_fun.c.i
-
-src/calc/calc_add_fun.s: src/calc/calc_add_fun.c.s
-
-.PHONY : src/calc/calc_add_fun.s
-
-# target to generate assembly for a file
-src/calc/calc_add_fun.c.s:
-	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/calc/calc_add_fun.c.s
-.PHONY : src/calc/calc_add_fun.c.s
-
-src/calc/calc_arr_reloc.o: src/calc/calc_arr_reloc.c.o
-
-.PHONY : src/calc/calc_arr_reloc.o
-
-# target to build an object file
-src/calc/calc_arr_reloc.c.o:
-	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/calc/calc_arr_reloc.c.o
-.PHONY : src/calc/calc_arr_reloc.c.o
-
-src/calc/calc_arr_reloc.i: src/calc/calc_arr_reloc.c.i
-
-.PHONY : src/calc/calc_arr_reloc.i
-
-# target to preprocess a source file
-src/calc/calc_arr_reloc.c.i:
-	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/calc/calc_arr_reloc.c.i
-.PHONY : src/calc/calc_arr_reloc.c.i
-
-src/calc/calc_arr_reloc.s: src/calc/calc_arr_reloc.c.s
-
-.PHONY : src/calc/calc_arr_reloc.s
-
-# target to generate assembly for a file
-src/calc/calc_arr_reloc.c.s:
-	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/calc/calc_arr_reloc.c.s
-.PHONY : src/calc/calc_arr_reloc.c.s
-
-src/calc/calc_arr_tkns.o: src/calc/calc_arr_tkns.c.o
-
-.PHONY : src/calc/calc_arr_tkns.o
-
-# target to build an object file
-src/calc/calc_arr_tkns.c.o:
-	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/calc/calc_arr_tkns.c.o
-.PHONY : src/calc/calc_arr_tkns.c.o
-
-src/calc/calc_arr_tkns.i: src/calc/calc_arr_tkns.c.i
-
-.PHONY : src/calc/calc_arr_tkns.i
-
-# target to preprocess a source file
-src/calc/calc_arr_tkns.c.i:
-	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/calc/calc_arr_tkns.c.i
-.PHONY : src/calc/calc_arr_tkns.c.i
-
-src/calc/calc_arr_tkns.s: src/calc/calc_arr_tkns.c.s
-
-.PHONY : src/calc/calc_arr_tkns.s
-
-# target to generate assembly for a file
-src/calc/calc_arr_tkns.c.s:
-	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/calc/calc_arr_tkns.c.s
-.PHONY : src/calc/calc_arr_tkns.c.s
-
-src/calc/calc_atoi.o: src/calc/calc_atoi.c.o
-
-.PHONY : src/calc/calc_atoi.o
-
-# target to build an object file
-src/calc/calc_atoi.c.o:
-	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/calc/calc_atoi.c.o
-.PHONY : src/calc/calc_atoi.c.o
-
-src/calc/calc_atoi.i: src/calc/calc_atoi.c.i
-
-.PHONY : src/calc/calc_atoi.i
-
-# target to preprocess a source file
-src/calc/calc_atoi.c.i:
-	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/calc/calc_atoi.c.i
-.PHONY : src/calc/calc_atoi.c.i
-
-src/calc/calc_atoi.s: src/calc/calc_atoi.c.s
-
-.PHONY : src/calc/calc_atoi.s
-
-# target to generate assembly for a file
-src/calc/calc_atoi.c.s:
-	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/calc/calc_atoi.c.s
-.PHONY : src/calc/calc_atoi.c.s
-
-src/calc/calc_com_fun.o: src/calc/calc_com_fun.c.o
-
-.PHONY : src/calc/calc_com_fun.o
-
-# target to build an object file
-src/calc/calc_com_fun.c.o:
-	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/calc/calc_com_fun.c.o
-.PHONY : src/calc/calc_com_fun.c.o
-
-src/calc/calc_com_fun.i: src/calc/calc_com_fun.c.i
-
-.PHONY : src/calc/calc_com_fun.i
-
-# target to preprocess a source file
-src/calc/calc_com_fun.c.i:
-	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/calc/calc_com_fun.c.i
-.PHONY : src/calc/calc_com_fun.c.i
-
-src/calc/calc_com_fun.s: src/calc/calc_com_fun.c.s
-
-.PHONY : src/calc/calc_com_fun.s
-
-# target to generate assembly for a file
-src/calc/calc_com_fun.c.s:
-	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/calc/calc_com_fun.c.s
-.PHONY : src/calc/calc_com_fun.c.s
-
-src/calc/calc_eq_fun.o: src/calc/calc_eq_fun.c.o
-
-.PHONY : src/calc/calc_eq_fun.o
-
-# target to build an object file
-src/calc/calc_eq_fun.c.o:
-	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/calc/calc_eq_fun.c.o
-.PHONY : src/calc/calc_eq_fun.c.o
-
-src/calc/calc_eq_fun.i: src/calc/calc_eq_fun.c.i
-
-.PHONY : src/calc/calc_eq_fun.i
-
-# target to preprocess a source file
-src/calc/calc_eq_fun.c.i:
-	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/calc/calc_eq_fun.c.i
-.PHONY : src/calc/calc_eq_fun.c.i
-
-src/calc/calc_eq_fun.s: src/calc/calc_eq_fun.c.s
-
-.PHONY : src/calc/calc_eq_fun.s
-
-# target to generate assembly for a file
-src/calc/calc_eq_fun.c.s:
-	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/calc/calc_eq_fun.c.s
-.PHONY : src/calc/calc_eq_fun.c.s
-
-src/calc/calc_error_fun.o: src/calc/calc_error_fun.c.o
-
-.PHONY : src/calc/calc_error_fun.o
-
-# target to build an object file
-src/calc/calc_error_fun.c.o:
-	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/calc/calc_error_fun.c.o
-.PHONY : src/calc/calc_error_fun.c.o
-
-src/calc/calc_error_fun.i: src/calc/calc_error_fun.c.i
-
-.PHONY : src/calc/calc_error_fun.i
-
-# target to preprocess a source file
-src/calc/calc_error_fun.c.i:
-	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/calc/calc_error_fun.c.i
-.PHONY : src/calc/calc_error_fun.c.i
-
-src/calc/calc_error_fun.s: src/calc/calc_error_fun.c.s
-
-.PHONY : src/calc/calc_error_fun.s
-
-# target to generate assembly for a file
-src/calc/calc_error_fun.c.s:
-	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/calc/calc_error_fun.c.s
-.PHONY : src/calc/calc_error_fun.c.s
-
-src/calc/calc_inc_fun.o: src/calc/calc_inc_fun.c.o
-
-.PHONY : src/calc/calc_inc_fun.o
-
-# target to build an object file
-src/calc/calc_inc_fun.c.o:
-	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/calc/calc_inc_fun.c.o
-.PHONY : src/calc/calc_inc_fun.c.o
-
-src/calc/calc_inc_fun.i: src/calc/calc_inc_fun.c.i
-
-.PHONY : src/calc/calc_inc_fun.i
-
-# target to preprocess a source file
-src/calc/calc_inc_fun.c.i:
-	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/calc/calc_inc_fun.c.i
-.PHONY : src/calc/calc_inc_fun.c.i
-
-src/calc/calc_inc_fun.s: src/calc/calc_inc_fun.c.s
-
-.PHONY : src/calc/calc_inc_fun.s
-
-# target to generate assembly for a file
-src/calc/calc_inc_fun.c.s:
-	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/calc/calc_inc_fun.c.s
-.PHONY : src/calc/calc_inc_fun.c.s
-
-src/calc/calc_lexer.o: src/calc/calc_lexer.c.o
-
-.PHONY : src/calc/calc_lexer.o
-
-# target to build an object file
-src/calc/calc_lexer.c.o:
-	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/calc/calc_lexer.c.o
-.PHONY : src/calc/calc_lexer.c.o
-
-src/calc/calc_lexer.i: src/calc/calc_lexer.c.i
-
-.PHONY : src/calc/calc_lexer.i
-
-# target to preprocess a source file
-src/calc/calc_lexer.c.i:
-	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/calc/calc_lexer.c.i
-.PHONY : src/calc/calc_lexer.c.i
-
-src/calc/calc_lexer.s: src/calc/calc_lexer.c.s
-
-.PHONY : src/calc/calc_lexer.s
-
-# target to generate assembly for a file
-src/calc/calc_lexer.c.s:
-	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/calc/calc_lexer.c.s
-.PHONY : src/calc/calc_lexer.c.s
-
-src/calc/calc_log_fun.o: src/calc/calc_log_fun.c.o
-
-.PHONY : src/calc/calc_log_fun.o
-
-# target to build an object file
-src/calc/calc_log_fun.c.o:
-	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/calc/calc_log_fun.c.o
-.PHONY : src/calc/calc_log_fun.c.o
-
-src/calc/calc_log_fun.i: src/calc/calc_log_fun.c.i
-
-.PHONY : src/calc/calc_log_fun.i
-
-# target to preprocess a source file
-src/calc/calc_log_fun.c.i:
-	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/calc/calc_log_fun.c.i
-.PHONY : src/calc/calc_log_fun.c.i
-
-src/calc/calc_log_fun.s: src/calc/calc_log_fun.c.s
-
-.PHONY : src/calc/calc_log_fun.s
-
-# target to generate assembly for a file
-src/calc/calc_log_fun.c.s:
-	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/calc/calc_log_fun.c.s
-.PHONY : src/calc/calc_log_fun.c.s
-
-src/calc/calc_ltoa.o: src/calc/calc_ltoa.c.o
-
-.PHONY : src/calc/calc_ltoa.o
-
-# target to build an object file
-src/calc/calc_ltoa.c.o:
-	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/calc/calc_ltoa.c.o
-.PHONY : src/calc/calc_ltoa.c.o
-
-src/calc/calc_ltoa.i: src/calc/calc_ltoa.c.i
-
-.PHONY : src/calc/calc_ltoa.i
-
-# target to preprocess a source file
-src/calc/calc_ltoa.c.i:
-	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/calc/calc_ltoa.c.i
-.PHONY : src/calc/calc_ltoa.c.i
-
-src/calc/calc_ltoa.s: src/calc/calc_ltoa.c.s
-
-.PHONY : src/calc/calc_ltoa.s
-
-# target to generate assembly for a file
-src/calc/calc_ltoa.c.s:
-	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/calc/calc_ltoa.c.s
-.PHONY : src/calc/calc_ltoa.c.s
-
-src/calc/calc_mul_fun.o: src/calc/calc_mul_fun.c.o
-
-.PHONY : src/calc/calc_mul_fun.o
-
-# target to build an object file
-src/calc/calc_mul_fun.c.o:
-	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/calc/calc_mul_fun.c.o
-.PHONY : src/calc/calc_mul_fun.c.o
-
-src/calc/calc_mul_fun.i: src/calc/calc_mul_fun.c.i
-
-.PHONY : src/calc/calc_mul_fun.i
-
-# target to preprocess a source file
-src/calc/calc_mul_fun.c.i:
-	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/calc/calc_mul_fun.c.i
-.PHONY : src/calc/calc_mul_fun.c.i
-
-src/calc/calc_mul_fun.s: src/calc/calc_mul_fun.c.s
-
-.PHONY : src/calc/calc_mul_fun.s
-
-# target to generate assembly for a file
-src/calc/calc_mul_fun.c.s:
-	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/calc/calc_mul_fun.c.s
-.PHONY : src/calc/calc_mul_fun.c.s
-
-src/calc/calc_num_fun.o: src/calc/calc_num_fun.c.o
-
-.PHONY : src/calc/calc_num_fun.o
-
-# target to build an object file
-src/calc/calc_num_fun.c.o:
-	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/calc/calc_num_fun.c.o
-.PHONY : src/calc/calc_num_fun.c.o
-
-src/calc/calc_num_fun.i: src/calc/calc_num_fun.c.i
-
-.PHONY : src/calc/calc_num_fun.i
-
-# target to preprocess a source file
-src/calc/calc_num_fun.c.i:
-	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/calc/calc_num_fun.c.i
-.PHONY : src/calc/calc_num_fun.c.i
-
-src/calc/calc_num_fun.s: src/calc/calc_num_fun.c.s
-
-.PHONY : src/calc/calc_num_fun.s
-
-# target to generate assembly for a file
-src/calc/calc_num_fun.c.s:
-	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/calc/calc_num_fun.c.s
-.PHONY : src/calc/calc_num_fun.c.s
-
-src/calc/calc_parent_fun.o: src/calc/calc_parent_fun.c.o
-
-.PHONY : src/calc/calc_parent_fun.o
-
-# target to build an object file
-src/calc/calc_parent_fun.c.o:
-	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/calc/calc_parent_fun.c.o
-.PHONY : src/calc/calc_parent_fun.c.o
-
-src/calc/calc_parent_fun.i: src/calc/calc_parent_fun.c.i
-
-.PHONY : src/calc/calc_parent_fun.i
-
-# target to preprocess a source file
-src/calc/calc_parent_fun.c.i:
-	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/calc/calc_parent_fun.c.i
-.PHONY : src/calc/calc_parent_fun.c.i
-
-src/calc/calc_parent_fun.s: src/calc/calc_parent_fun.c.s
-
-.PHONY : src/calc/calc_parent_fun.s
-
-# target to generate assembly for a file
-src/calc/calc_parent_fun.c.s:
-	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/calc/calc_parent_fun.c.s
-.PHONY : src/calc/calc_parent_fun.c.s
-
-src/calc/calc_tkn.o: src/calc/calc_tkn.c.o
-
-.PHONY : src/calc/calc_tkn.o
-
-# target to build an object file
-src/calc/calc_tkn.c.o:
-	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/calc/calc_tkn.c.o
-.PHONY : src/calc/calc_tkn.c.o
-
-src/calc/calc_tkn.i: src/calc/calc_tkn.c.i
-
-.PHONY : src/calc/calc_tkn.i
-
-# target to preprocess a source file
-src/calc/calc_tkn.c.i:
-	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/calc/calc_tkn.c.i
-.PHONY : src/calc/calc_tkn.c.i
-
-src/calc/calc_tkn.s: src/calc/calc_tkn.c.s
-
-.PHONY : src/calc/calc_tkn.s
-
-# target to generate assembly for a file
-src/calc/calc_tkn.c.s:
-	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/calc/calc_tkn.c.s
-.PHONY : src/calc/calc_tkn.c.s
-
-src/calc/calc_var_fun.o: src/calc/calc_var_fun.c.o
-
-.PHONY : src/calc/calc_var_fun.o
-
-# target to build an object file
-src/calc/calc_var_fun.c.o:
-	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/calc/calc_var_fun.c.o
-.PHONY : src/calc/calc_var_fun.c.o
-
-src/calc/calc_var_fun.i: src/calc/calc_var_fun.c.i
-
-.PHONY : src/calc/calc_var_fun.i
-
-# target to preprocess a source file
-src/calc/calc_var_fun.c.i:
-	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/calc/calc_var_fun.c.i
-.PHONY : src/calc/calc_var_fun.c.i
-
-src/calc/calc_var_fun.s: src/calc/calc_var_fun.c.s
-
-.PHONY : src/calc/calc_var_fun.s
-
-# target to generate assembly for a file
-src/calc/calc_var_fun.c.s:
-	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/calc/calc_var_fun.c.s
-.PHONY : src/calc/calc_var_fun.c.s
-
-src/calc/calc_var_tkn.o: src/calc/calc_var_tkn.c.o
-
-.PHONY : src/calc/calc_var_tkn.o
-
-# target to build an object file
-src/calc/calc_var_tkn.c.o:
-	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/calc/calc_var_tkn.c.o
-.PHONY : src/calc/calc_var_tkn.c.o
-
-src/calc/calc_var_tkn.i: src/calc/calc_var_tkn.c.i
-
-.PHONY : src/calc/calc_var_tkn.i
-
-# target to preprocess a source file
-src/calc/calc_var_tkn.c.i:
-	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/calc/calc_var_tkn.c.i
-.PHONY : src/calc/calc_var_tkn.c.i
-
-src/calc/calc_var_tkn.s: src/calc/calc_var_tkn.c.s
-
-.PHONY : src/calc/calc_var_tkn.s
-
-# target to generate assembly for a file
-src/calc/calc_var_tkn.c.s:
-	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/calc/calc_var_tkn.c.s
-.PHONY : src/calc/calc_var_tkn.c.s
-
-src/calc/change_vars.o: src/calc/change_vars.c.o
-
-.PHONY : src/calc/change_vars.o
-
-# target to build an object file
-src/calc/change_vars.c.o:
-	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/calc/change_vars.c.o
-.PHONY : src/calc/change_vars.c.o
-
-src/calc/change_vars.i: src/calc/change_vars.c.i
-
-.PHONY : src/calc/change_vars.i
-
-# target to preprocess a source file
-src/calc/change_vars.c.i:
-	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/calc/change_vars.c.i
-.PHONY : src/calc/change_vars.c.i
-
-src/calc/change_vars.s: src/calc/change_vars.c.s
-
-.PHONY : src/calc/change_vars.s
-
-# target to generate assembly for a file
-src/calc/change_vars.c.s:
-	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/calc/change_vars.c.s
-.PHONY : src/calc/change_vars.c.s
-
-src/calc/ft_do_zam_eval.o: src/calc/ft_do_zam_eval.c.o
-
-.PHONY : src/calc/ft_do_zam_eval.o
-
-# target to build an object file
-src/calc/ft_do_zam_eval.c.o:
-	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/calc/ft_do_zam_eval.c.o
-.PHONY : src/calc/ft_do_zam_eval.c.o
-
-src/calc/ft_do_zam_eval.i: src/calc/ft_do_zam_eval.c.i
-
-.PHONY : src/calc/ft_do_zam_eval.i
-
-# target to preprocess a source file
-src/calc/ft_do_zam_eval.c.i:
-	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/calc/ft_do_zam_eval.c.i
-.PHONY : src/calc/ft_do_zam_eval.c.i
-
-src/calc/ft_do_zam_eval.s: src/calc/ft_do_zam_eval.c.s
-
-.PHONY : src/calc/ft_do_zam_eval.s
-
-# target to generate assembly for a file
-src/calc/ft_do_zam_eval.c.s:
-	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/calc/ft_do_zam_eval.c.s
-.PHONY : src/calc/ft_do_zam_eval.c.s
-
 src/check_file.o: src/check_file.c.o
 
 .PHONY : src/check_file.o
@@ -1391,6 +851,330 @@ src/errors/errror_handler.s: src/errors/errror_handler.c.s
 src/errors/errror_handler.c.s:
 	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/errors/errror_handler.c.s
 .PHONY : src/errors/errror_handler.c.s
+
+src/evaln/atoimy.o: src/evaln/atoimy.c.o
+
+.PHONY : src/evaln/atoimy.o
+
+# target to build an object file
+src/evaln/atoimy.c.o:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/evaln/atoimy.c.o
+.PHONY : src/evaln/atoimy.c.o
+
+src/evaln/atoimy.i: src/evaln/atoimy.c.i
+
+.PHONY : src/evaln/atoimy.i
+
+# target to preprocess a source file
+src/evaln/atoimy.c.i:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/evaln/atoimy.c.i
+.PHONY : src/evaln/atoimy.c.i
+
+src/evaln/atoimy.s: src/evaln/atoimy.c.s
+
+.PHONY : src/evaln/atoimy.s
+
+# target to generate assembly for a file
+src/evaln/atoimy.c.s:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/evaln/atoimy.c.s
+.PHONY : src/evaln/atoimy.c.s
+
+src/evaln/calc.o: src/evaln/calc.c.o
+
+.PHONY : src/evaln/calc.o
+
+# target to build an object file
+src/evaln/calc.c.o:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/evaln/calc.c.o
+.PHONY : src/evaln/calc.c.o
+
+src/evaln/calc.i: src/evaln/calc.c.i
+
+.PHONY : src/evaln/calc.i
+
+# target to preprocess a source file
+src/evaln/calc.c.i:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/evaln/calc.c.i
+.PHONY : src/evaln/calc.c.i
+
+src/evaln/calc.s: src/evaln/calc.c.s
+
+.PHONY : src/evaln/calc.s
+
+# target to generate assembly for a file
+src/evaln/calc.c.s:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/evaln/calc.c.s
+.PHONY : src/evaln/calc.c.s
+
+src/evaln/calc_atoi.o: src/evaln/calc_atoi.c.o
+
+.PHONY : src/evaln/calc_atoi.o
+
+# target to build an object file
+src/evaln/calc_atoi.c.o:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/evaln/calc_atoi.c.o
+.PHONY : src/evaln/calc_atoi.c.o
+
+src/evaln/calc_atoi.i: src/evaln/calc_atoi.c.i
+
+.PHONY : src/evaln/calc_atoi.i
+
+# target to preprocess a source file
+src/evaln/calc_atoi.c.i:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/evaln/calc_atoi.c.i
+.PHONY : src/evaln/calc_atoi.c.i
+
+src/evaln/calc_atoi.s: src/evaln/calc_atoi.c.s
+
+.PHONY : src/evaln/calc_atoi.s
+
+# target to generate assembly for a file
+src/evaln/calc_atoi.c.s:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/evaln/calc_atoi.c.s
+.PHONY : src/evaln/calc_atoi.c.s
+
+src/evaln/calc_def_token.o: src/evaln/calc_def_token.c.o
+
+.PHONY : src/evaln/calc_def_token.o
+
+# target to build an object file
+src/evaln/calc_def_token.c.o:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/evaln/calc_def_token.c.o
+.PHONY : src/evaln/calc_def_token.c.o
+
+src/evaln/calc_def_token.i: src/evaln/calc_def_token.c.i
+
+.PHONY : src/evaln/calc_def_token.i
+
+# target to preprocess a source file
+src/evaln/calc_def_token.c.i:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/evaln/calc_def_token.c.i
+.PHONY : src/evaln/calc_def_token.c.i
+
+src/evaln/calc_def_token.s: src/evaln/calc_def_token.c.s
+
+.PHONY : src/evaln/calc_def_token.s
+
+# target to generate assembly for a file
+src/evaln/calc_def_token.c.s:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/evaln/calc_def_token.c.s
+.PHONY : src/evaln/calc_def_token.c.s
+
+src/evaln/calc_lexer.o: src/evaln/calc_lexer.c.o
+
+.PHONY : src/evaln/calc_lexer.o
+
+# target to build an object file
+src/evaln/calc_lexer.c.o:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/evaln/calc_lexer.c.o
+.PHONY : src/evaln/calc_lexer.c.o
+
+src/evaln/calc_lexer.i: src/evaln/calc_lexer.c.i
+
+.PHONY : src/evaln/calc_lexer.i
+
+# target to preprocess a source file
+src/evaln/calc_lexer.c.i:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/evaln/calc_lexer.c.i
+.PHONY : src/evaln/calc_lexer.c.i
+
+src/evaln/calc_lexer.s: src/evaln/calc_lexer.c.s
+
+.PHONY : src/evaln/calc_lexer.s
+
+# target to generate assembly for a file
+src/evaln/calc_lexer.c.s:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/evaln/calc_lexer.c.s
+.PHONY : src/evaln/calc_lexer.c.s
+
+src/evaln/calc_ltoa.o: src/evaln/calc_ltoa.c.o
+
+.PHONY : src/evaln/calc_ltoa.o
+
+# target to build an object file
+src/evaln/calc_ltoa.c.o:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/evaln/calc_ltoa.c.o
+.PHONY : src/evaln/calc_ltoa.c.o
+
+src/evaln/calc_ltoa.i: src/evaln/calc_ltoa.c.i
+
+.PHONY : src/evaln/calc_ltoa.i
+
+# target to preprocess a source file
+src/evaln/calc_ltoa.c.i:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/evaln/calc_ltoa.c.i
+.PHONY : src/evaln/calc_ltoa.c.i
+
+src/evaln/calc_ltoa.s: src/evaln/calc_ltoa.c.s
+
+.PHONY : src/evaln/calc_ltoa.s
+
+# target to generate assembly for a file
+src/evaln/calc_ltoa.c.s:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/evaln/calc_ltoa.c.s
+.PHONY : src/evaln/calc_ltoa.c.s
+
+src/evaln/dop.o: src/evaln/dop.c.o
+
+.PHONY : src/evaln/dop.o
+
+# target to build an object file
+src/evaln/dop.c.o:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/evaln/dop.c.o
+.PHONY : src/evaln/dop.c.o
+
+src/evaln/dop.i: src/evaln/dop.c.i
+
+.PHONY : src/evaln/dop.i
+
+# target to preprocess a source file
+src/evaln/dop.c.i:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/evaln/dop.c.i
+.PHONY : src/evaln/dop.c.i
+
+src/evaln/dop.s: src/evaln/dop.c.s
+
+.PHONY : src/evaln/dop.s
+
+# target to generate assembly for a file
+src/evaln/dop.c.s:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/evaln/dop.c.s
+.PHONY : src/evaln/dop.c.s
+
+src/evaln/dop_word_funs.o: src/evaln/dop_word_funs.c.o
+
+.PHONY : src/evaln/dop_word_funs.o
+
+# target to build an object file
+src/evaln/dop_word_funs.c.o:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/evaln/dop_word_funs.c.o
+.PHONY : src/evaln/dop_word_funs.c.o
+
+src/evaln/dop_word_funs.i: src/evaln/dop_word_funs.c.i
+
+.PHONY : src/evaln/dop_word_funs.i
+
+# target to preprocess a source file
+src/evaln/dop_word_funs.c.i:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/evaln/dop_word_funs.c.i
+.PHONY : src/evaln/dop_word_funs.c.i
+
+src/evaln/dop_word_funs.s: src/evaln/dop_word_funs.c.s
+
+.PHONY : src/evaln/dop_word_funs.s
+
+# target to generate assembly for a file
+src/evaln/dop_word_funs.c.s:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/evaln/dop_word_funs.c.s
+.PHONY : src/evaln/dop_word_funs.c.s
+
+src/evaln/ft_do_zam_eval.o: src/evaln/ft_do_zam_eval.c.o
+
+.PHONY : src/evaln/ft_do_zam_eval.o
+
+# target to build an object file
+src/evaln/ft_do_zam_eval.c.o:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/evaln/ft_do_zam_eval.c.o
+.PHONY : src/evaln/ft_do_zam_eval.c.o
+
+src/evaln/ft_do_zam_eval.i: src/evaln/ft_do_zam_eval.c.i
+
+.PHONY : src/evaln/ft_do_zam_eval.i
+
+# target to preprocess a source file
+src/evaln/ft_do_zam_eval.c.i:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/evaln/ft_do_zam_eval.c.i
+.PHONY : src/evaln/ft_do_zam_eval.c.i
+
+src/evaln/ft_do_zam_eval.s: src/evaln/ft_do_zam_eval.c.s
+
+.PHONY : src/evaln/ft_do_zam_eval.s
+
+# target to generate assembly for a file
+src/evaln/ft_do_zam_eval.c.s:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/evaln/ft_do_zam_eval.c.s
+.PHONY : src/evaln/ft_do_zam_eval.c.s
+
+src/evaln/ft_eval_parser.o: src/evaln/ft_eval_parser.c.o
+
+.PHONY : src/evaln/ft_eval_parser.o
+
+# target to build an object file
+src/evaln/ft_eval_parser.c.o:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/evaln/ft_eval_parser.c.o
+.PHONY : src/evaln/ft_eval_parser.c.o
+
+src/evaln/ft_eval_parser.i: src/evaln/ft_eval_parser.c.i
+
+.PHONY : src/evaln/ft_eval_parser.i
+
+# target to preprocess a source file
+src/evaln/ft_eval_parser.c.i:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/evaln/ft_eval_parser.c.i
+.PHONY : src/evaln/ft_eval_parser.c.i
+
+src/evaln/ft_eval_parser.s: src/evaln/ft_eval_parser.c.s
+
+.PHONY : src/evaln/ft_eval_parser.s
+
+# target to generate assembly for a file
+src/evaln/ft_eval_parser.c.s:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/evaln/ft_eval_parser.c.s
+.PHONY : src/evaln/ft_eval_parser.c.s
+
+src/evaln/inftopost.o: src/evaln/inftopost.c.o
+
+.PHONY : src/evaln/inftopost.o
+
+# target to build an object file
+src/evaln/inftopost.c.o:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/evaln/inftopost.c.o
+.PHONY : src/evaln/inftopost.c.o
+
+src/evaln/inftopost.i: src/evaln/inftopost.c.i
+
+.PHONY : src/evaln/inftopost.i
+
+# target to preprocess a source file
+src/evaln/inftopost.c.i:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/evaln/inftopost.c.i
+.PHONY : src/evaln/inftopost.c.i
+
+src/evaln/inftopost.s: src/evaln/inftopost.c.s
+
+.PHONY : src/evaln/inftopost.s
+
+# target to generate assembly for a file
+src/evaln/inftopost.c.s:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/evaln/inftopost.c.s
+.PHONY : src/evaln/inftopost.c.s
+
+src/evaln/opr_znak.o: src/evaln/opr_znak.c.o
+
+.PHONY : src/evaln/opr_znak.o
+
+# target to build an object file
+src/evaln/opr_znak.c.o:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/evaln/opr_znak.c.o
+.PHONY : src/evaln/opr_znak.c.o
+
+src/evaln/opr_znak.i: src/evaln/opr_znak.c.i
+
+.PHONY : src/evaln/opr_znak.i
+
+# target to preprocess a source file
+src/evaln/opr_znak.c.i:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/evaln/opr_znak.c.i
+.PHONY : src/evaln/opr_znak.c.i
+
+src/evaln/opr_znak.s: src/evaln/opr_znak.c.s
+
+.PHONY : src/evaln/opr_znak.s
+
+# target to generate assembly for a file
+src/evaln/opr_znak.c.s:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/evaln/opr_znak.c.s
+.PHONY : src/evaln/opr_znak.c.s
 
 src/exec/continuing_jobs.o: src/exec/continuing_jobs.c.o
 
@@ -4224,66 +4008,6 @@ help:
 	@echo "... src/builtins/kill_builtin.o"
 	@echo "... src/builtins/kill_builtin.i"
 	@echo "... src/builtins/kill_builtin.s"
-	@echo "... src/calc/calc.o"
-	@echo "... src/calc/calc.i"
-	@echo "... src/calc/calc.s"
-	@echo "... src/calc/calc_add_fun.o"
-	@echo "... src/calc/calc_add_fun.i"
-	@echo "... src/calc/calc_add_fun.s"
-	@echo "... src/calc/calc_arr_reloc.o"
-	@echo "... src/calc/calc_arr_reloc.i"
-	@echo "... src/calc/calc_arr_reloc.s"
-	@echo "... src/calc/calc_arr_tkns.o"
-	@echo "... src/calc/calc_arr_tkns.i"
-	@echo "... src/calc/calc_arr_tkns.s"
-	@echo "... src/calc/calc_atoi.o"
-	@echo "... src/calc/calc_atoi.i"
-	@echo "... src/calc/calc_atoi.s"
-	@echo "... src/calc/calc_com_fun.o"
-	@echo "... src/calc/calc_com_fun.i"
-	@echo "... src/calc/calc_com_fun.s"
-	@echo "... src/calc/calc_eq_fun.o"
-	@echo "... src/calc/calc_eq_fun.i"
-	@echo "... src/calc/calc_eq_fun.s"
-	@echo "... src/calc/calc_error_fun.o"
-	@echo "... src/calc/calc_error_fun.i"
-	@echo "... src/calc/calc_error_fun.s"
-	@echo "... src/calc/calc_inc_fun.o"
-	@echo "... src/calc/calc_inc_fun.i"
-	@echo "... src/calc/calc_inc_fun.s"
-	@echo "... src/calc/calc_lexer.o"
-	@echo "... src/calc/calc_lexer.i"
-	@echo "... src/calc/calc_lexer.s"
-	@echo "... src/calc/calc_log_fun.o"
-	@echo "... src/calc/calc_log_fun.i"
-	@echo "... src/calc/calc_log_fun.s"
-	@echo "... src/calc/calc_ltoa.o"
-	@echo "... src/calc/calc_ltoa.i"
-	@echo "... src/calc/calc_ltoa.s"
-	@echo "... src/calc/calc_mul_fun.o"
-	@echo "... src/calc/calc_mul_fun.i"
-	@echo "... src/calc/calc_mul_fun.s"
-	@echo "... src/calc/calc_num_fun.o"
-	@echo "... src/calc/calc_num_fun.i"
-	@echo "... src/calc/calc_num_fun.s"
-	@echo "... src/calc/calc_parent_fun.o"
-	@echo "... src/calc/calc_parent_fun.i"
-	@echo "... src/calc/calc_parent_fun.s"
-	@echo "... src/calc/calc_tkn.o"
-	@echo "... src/calc/calc_tkn.i"
-	@echo "... src/calc/calc_tkn.s"
-	@echo "... src/calc/calc_var_fun.o"
-	@echo "... src/calc/calc_var_fun.i"
-	@echo "... src/calc/calc_var_fun.s"
-	@echo "... src/calc/calc_var_tkn.o"
-	@echo "... src/calc/calc_var_tkn.i"
-	@echo "... src/calc/calc_var_tkn.s"
-	@echo "... src/calc/change_vars.o"
-	@echo "... src/calc/change_vars.i"
-	@echo "... src/calc/change_vars.s"
-	@echo "... src/calc/ft_do_zam_eval.o"
-	@echo "... src/calc/ft_do_zam_eval.i"
-	@echo "... src/calc/ft_do_zam_eval.s"
 	@echo "... src/check_file.o"
 	@echo "... src/check_file.i"
 	@echo "... src/check_file.s"
@@ -4296,6 +4020,42 @@ help:
 	@echo "... src/errors/errror_handler.o"
 	@echo "... src/errors/errror_handler.i"
 	@echo "... src/errors/errror_handler.s"
+	@echo "... src/evaln/atoimy.o"
+	@echo "... src/evaln/atoimy.i"
+	@echo "... src/evaln/atoimy.s"
+	@echo "... src/evaln/calc.o"
+	@echo "... src/evaln/calc.i"
+	@echo "... src/evaln/calc.s"
+	@echo "... src/evaln/calc_atoi.o"
+	@echo "... src/evaln/calc_atoi.i"
+	@echo "... src/evaln/calc_atoi.s"
+	@echo "... src/evaln/calc_def_token.o"
+	@echo "... src/evaln/calc_def_token.i"
+	@echo "... src/evaln/calc_def_token.s"
+	@echo "... src/evaln/calc_lexer.o"
+	@echo "... src/evaln/calc_lexer.i"
+	@echo "... src/evaln/calc_lexer.s"
+	@echo "... src/evaln/calc_ltoa.o"
+	@echo "... src/evaln/calc_ltoa.i"
+	@echo "... src/evaln/calc_ltoa.s"
+	@echo "... src/evaln/dop.o"
+	@echo "... src/evaln/dop.i"
+	@echo "... src/evaln/dop.s"
+	@echo "... src/evaln/dop_word_funs.o"
+	@echo "... src/evaln/dop_word_funs.i"
+	@echo "... src/evaln/dop_word_funs.s"
+	@echo "... src/evaln/ft_do_zam_eval.o"
+	@echo "... src/evaln/ft_do_zam_eval.i"
+	@echo "... src/evaln/ft_do_zam_eval.s"
+	@echo "... src/evaln/ft_eval_parser.o"
+	@echo "... src/evaln/ft_eval_parser.i"
+	@echo "... src/evaln/ft_eval_parser.s"
+	@echo "... src/evaln/inftopost.o"
+	@echo "... src/evaln/inftopost.i"
+	@echo "... src/evaln/inftopost.s"
+	@echo "... src/evaln/opr_znak.o"
+	@echo "... src/evaln/opr_znak.i"
+	@echo "... src/evaln/opr_znak.s"
 	@echo "... src/exec/continuing_jobs.o"
 	@echo "... src/exec/continuing_jobs.i"
 	@echo "... src/exec/continuing_jobs.s"

@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../inc/fshell.h"
+#include "fshell.h"
 
 t_lextoken		*ft_cr_new_token(char *line, int op_type)
 {

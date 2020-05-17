@@ -28,8 +28,8 @@ static t_calc_tkntype	calc_com_type(char *str)
 		return (0);
 }
 
-static long long		calc_com_next(long long result, t_calc_tkns *s_tokens,
-	size_t *index, t_calc_err *error)
+static long long		calc_com_next(long long result, t_calc_tokens *s_tokens,
+									  size_t *index, t_calc_err *error)
 {
 	t_calc_tkntype	oper;
 
@@ -73,8 +73,8 @@ t_calc_tkn				*calc_get_com_tkn(char *str, size_t pos)
 	return (token);
 }
 
-long long				calc_com(t_calc_tkns *s_tokens, size_t *index,
-	t_calc_err *error)
+long long				calc_com(t_calc_tokens *s_tokens, size_t *index,
+								  t_calc_err *error)
 {
 	long long	result;
 

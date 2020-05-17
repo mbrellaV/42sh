@@ -7,7 +7,7 @@ DELTA		=	$$(echo "$$(tput cols)-47"|bc)
 
 LIBFT_DIR	=	libft/
 LIBFT_LIB	=	$(LIBFT_DIR)libft.a
-LIBFT_INC	=	$(LIBFT_DIR)libft.h
+LIBFT_INC	=	$(LIBFT_DIR)inc
 
 LIBS		=	-ltermcap
 
@@ -140,26 +140,18 @@ SRC_BASE = builtins/ft_cd.c\
 	hash/hash_table_2.c\
 	hash/hash_error.c\
 	hash/print_hash.c\
-    calc/calc_add_fun.c\
-    calc/calc.c\
-    calc/calc_lexer.c\
-	calc/calc_arr_tkns.c\
-	calc/calc_mul_fun.c\
-	calc/calc_inc_fun.c\
-	calc/calc_com_fun.c\
-	calc/calc_eq_fun.c\
-	calc/calc_log_fun.c\
-	calc/calc_tkn.c\
-	calc/calc_num_fun.c\
-	calc/calc_parent_fun.c\
-	calc/calc_error_fun.c\
-	calc/calc_var_fun.c\
-	calc/calc_var_tkn.c\
-	calc/calc_arr_reloc.c\
-	calc/calc_atoi.c\
-	calc/calc_ltoa.c\
-	calc/change_vars.c\
-	calc/ft_do_zam_eval.c\
+	evaln/dop.c\
+    evaln/calc.c\
+    evaln/atoimy.c\
+    evaln/inftopost.c\
+    evaln/calc_def_token.c\
+    evaln/ft_do_zam_eval.c\
+    evaln/calc_lexer.c\
+    evaln/sub_and_add.c\
+    evaln/calc_error.c\
+    evaln/change_vars.c\
+    evaln/check_calc.c\
+    evaln/ft_eval_parser.c\
 	utility_files/g_builtins.c\
 	utility_files/global.c\
 	utility_files/crc32.c\

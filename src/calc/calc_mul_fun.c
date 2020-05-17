@@ -26,8 +26,8 @@ static t_calc_tkntype	calc_mul_type(char *str)
 		return (0);
 }
 
-static long long		calc_div_mod(long long result, t_calc_tkns *s_tokens,
-	size_t *index, t_calc_err *error)
+static long long		calc_div_mod(long long result, t_calc_tokens *s_tokens,
+									 size_t *index, t_calc_err *error)
 {
 	long long			next_result;
 	t_calc_tkntype		type;
@@ -48,7 +48,7 @@ static long long		calc_div_mod(long long result, t_calc_tkns *s_tokens,
 }
 
 static long long		calc_mul_div_mod_next(long long result,
-					t_calc_tkns *s_tokens, size_t *index, t_calc_err *error)
+											  t_calc_tokens *s_tokens, size_t *index, t_calc_err *error)
 {
 	t_calc_tkntype	type;
 
@@ -84,8 +84,8 @@ t_calc_tkn				*calc_get_mul_mod_tkn(char *str, size_t pos)
 	return (token);
 }
 
-long long				calc_mul_div_mod(t_calc_tkns *s_tokens,
-	size_t *index, t_calc_err *error)
+long long				calc_mul_div_mod(t_calc_tokens *s_tokens,
+										  size_t *index, t_calc_err *error)
 {
 	long long	result;
 

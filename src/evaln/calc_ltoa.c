@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   calc_arr_reloc.c                                   :+:      :+:    :+:   */
+/*   calc_ltoa.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wstygg <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,21 +10,43 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "calc.h"
+#include "eval_expr.h"
 
-t_calc_tokens	*calc_reloc_tkns(t_calc_tokens *s_tokens)
+static int	calc_digit(long long num)
 {
-	t_calc_tkn		*new_tokens;
+	int	digit;
 
-	if (!s_tokens)
+	digit = 1;
+	if (!num)
+		return (digit);
+	while ((num /= 10) > 0)
+		digit++;
+	return (digit);
+}
+
+static void	calc_ltoa_rec(long num, char *str, int index)
+{
+	if (num >= 10)
+		calc_ltoa_rec(num / 10, str, index - 1);
+	str[index] = (num % 10) + '0';
+}
+
+char		*calc_ltoa(long long num)
+{
+	int		str_size;
+	char	*new_str;
+	short	sign;
+
+	sign = (num < 0) ? -1 : 1;
+	num *= sign;
+	str_size = calc_digit(num);
+	if (sign == -1)
+		str_size++;
+	if (!(new_str = (char *)ft_memalloc(sizeof(char) * (str_size + 1))))
 		return (NULL);
-	if (!(new_tokens = (t_calc_tkn *)ft_memalloc(sizeof(t_calc_tkn)
-		* (s_tokens->malloc_size + CALC_TOKENS_SIZE))))
-		return (s_tokens);
-	new_tokens = ft_memcpy(new_tokens, s_tokens->tokens, sizeof(t_calc_tkn)
-		* s_tokens->malloc_size);
-	free(s_tokens->tokens);
-	s_tokens->tokens = new_tokens;
-	s_tokens->malloc_size += CALC_TOKENS_SIZE;
-	return (s_tokens);
+	new_str[str_size] = '\0';
+	if (sign == -1)
+		new_str[0] = '-';
+	calc_ltoa_rec(num, new_str, str_size - 1);
+	return (new_str);
 }

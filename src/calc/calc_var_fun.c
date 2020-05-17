@@ -12,7 +12,7 @@
 
 #include "fshell.h"
 
-static long long	calc_check_var_inc(t_calc_tkns *s_tokens, size_t index)
+static long long	calc_check_var_inc(t_calc_tokens *s_tokens, size_t index)
 {
 	t_calc_tkntype	type;
 
@@ -22,28 +22,31 @@ static long long	calc_check_var_inc(t_calc_tkns *s_tokens, size_t index)
 	return (0);
 }
 
-static long long	calc_var_next(long long result, t_calc_tkns *s_tokens,
-	size_t *index, t_calc_err *error)
+static long long	calc_var_next(long long result, t_calc_tokens *s_tokens,
+								  size_t *index, t_calc_err *error)
 {
 	t_calc_tkntype	type;
+	t_calc_tkntype	next_tkn_type;
 	t_calc_var		*var;
+	char			*tmp;
 
 	type = s_tokens->tokens[*index].type;
+	next_tkn_type = s_tokens->tokens[*index + 1].type;
 	if (type == CALC_VAR)
 	{
 		var = (t_calc_var *)s_tokens->tokens[*index].value;
-		dprintf(2, "\n|%s|\n", (char *)var);
 		result = calc(var->value, error);
 		if (error->status)
 			return (0);
+		tmp = ft_itoa(result + (next_tkn_type == CALC_INC ? 1 : -1));
 		*index += (calc_check_var_inc(s_tokens, *index)) ? 2 : 1;
 		return (result);
 	}
 	return (calc_unary(s_tokens, index, error));
 }
 
-long long			calc_var(t_calc_tkns *s_tokens, size_t *index,
-													t_calc_err *error)
+long long			calc_var(t_calc_tokens *s_tokens, size_t *index,
+							  t_calc_err *error)
 {
 	long long		result;
 
@@ -56,8 +59,8 @@ long long			calc_var(t_calc_tkns *s_tokens, size_t *index,
 	return (result);
 }
 
-long long			calc_var_inc(t_calc_tkns *s_tokens, size_t *index,
-														t_calc_err *error)
+long long			calc_var_inc(t_calc_tokens *s_tokens, size_t *index,
+								  t_calc_err *error)
 {
 	long long		result;
 	size_t			cur_index;
@@ -74,7 +77,7 @@ long long			calc_var_inc(t_calc_tkns *s_tokens, size_t *index,
 	return (result);
 }
 
-t_calc_tkns			*calc_prefix(char *str, t_calc_tkns *s_tokens, size_t *pos)
+t_calc_tokens			*calc_prefix(char *str, t_calc_tokens *s_tokens, size_t *pos)
 {
 	size_t	i;
 	char	temp;

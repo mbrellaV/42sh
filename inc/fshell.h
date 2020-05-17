@@ -45,6 +45,7 @@
 # include "lexer.h"
 # include "struct.h"
 # include "exec.h"
+# include "../src/evaln/eval_expr.h"
 # include "../src/qft_printf/ft_printf.h"
 
 # define RED		"\x1B[31m"

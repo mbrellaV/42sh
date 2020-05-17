@@ -14,16 +14,11 @@
 
 long long		calc(char *str, t_calc_err *error)
 {
-	t_calc_tkns	*s_tokens;
+	t_calc_tokens	*s_tokens;
 	long long	res;
 
 	if (!str || !error)
 		return (0);
-	if (!(str = change_vars(str)))
-	{
-		error->status = 1;
-		return (0);
-	}
 	if (!(s_tokens = calc_get_arr_tkns(str, NULL, 0)))
 		return (calc_error(error, CALC_ERR_LX));
 	res = calc_exp(s_tokens, 0, error);
@@ -32,7 +27,7 @@ long long		calc(char *str, t_calc_err *error)
 	return (res);
 }
 
-long long		calc_exp(t_calc_tkns *s_tokens, size_t index, t_calc_err *error)
+long long		calc_exp(t_calc_tokens *s_tokens, size_t index, t_calc_err *error)
 {
 	long long	result;
 

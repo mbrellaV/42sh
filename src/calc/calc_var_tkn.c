@@ -33,24 +33,6 @@ int			calc_var_is_valid(char *str)
 	return (i);
 }
 
-void		inc_var(char *str, char *value, char *inc)
-{
-	int		num;
-	char	*tmp;
-
-	if (value)
-		num = ft_atoi(value);
-	else
-		num = 0;
-	if (inc && ft_strcmp(inc, "++"))
-		num++;
-	else if (inc && ft_strcmp(inc, "++"))
-		num--;
-	tmp = ft_itoa(num);
-	set_new_var(str, tmp, &globals()->g_all_var);
-	ft_strdel(&tmp);
-}
-
 int			calc_check_var(char *str, t_calc_var *var)
 {
 	size_t	i;

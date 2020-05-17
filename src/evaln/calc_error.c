@@ -1,30 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   calc_arr_reloc.c                                   :+:      :+:    :+:   */
+/*   calc_error.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wstygg <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/13 19:53:08 by wstygg            #+#    #+#             */
-/*   Updated: 2020/05/12 22:36:30 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/05/04 13:41:58 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "calc.h"
+#include "eval_expr.h"
 
-t_calc_tokens	*calc_reloc_tkns(t_calc_tokens *s_tokens)
+t_int	*tmp_0(t_int *tmp, char *s)
 {
-	t_calc_tkn		*new_tokens;
+	tmp->ol = 0;
+	tmp->zl = 0;
+	tmp->i = 0;
+	tmp->d = 0;
+	tmp->last_token = 0;
+	tmp->s = s;
+	return (tmp);
+}
 
-	if (!s_tokens)
-		return (NULL);
-	if (!(new_tokens = (t_calc_tkn *)ft_memalloc(sizeof(t_calc_tkn)
-		* (s_tokens->malloc_size + CALC_TOKENS_SIZE))))
-		return (s_tokens);
-	new_tokens = ft_memcpy(new_tokens, s_tokens->tokens, sizeof(t_calc_tkn)
-		* s_tokens->malloc_size);
-	free(s_tokens->tokens);
-	s_tokens->tokens = new_tokens;
-	s_tokens->malloc_size += CALC_TOKENS_SIZE;
-	return (s_tokens);
+int		c_e(t_calc calce)
+{
+	if (calce.stackos != NULL)
+		free(calce.stackos);
+	if (calce.stackzn != NULL)
+		free(calce.stackzn);
+	if (calce.str != NULL)
+		free(calce.str);
+	ft_strdel(&calce.delstr);
+	*calce.error = 1;
+	return (-1);
 }

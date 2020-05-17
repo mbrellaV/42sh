@@ -17,8 +17,8 @@ int					is_incr_sym(char c)
 	return (c == '+' || c == '-');
 }
 
-static long long	calc_log_or(long long result, t_calc_tkns *s_tokens,
-	size_t *index, t_calc_err *error)
+static long long	calc_log_or(long long result, t_calc_tokens *s_tokens,
+								size_t *index, t_calc_err *error)
 {
 	long long		next_result;
 
@@ -28,8 +28,8 @@ static long long	calc_log_or(long long result, t_calc_tkns *s_tokens,
 	return (result || next_result);
 }
 
-static long long	calc_log_next(long long result, t_calc_tkns *s_tokens,
-	size_t *index, t_calc_err *error)
+static long long	calc_log_next(long long result, t_calc_tokens *s_tokens,
+								  size_t *index, t_calc_err *error)
 {
 	t_calc_tkntype	oper;
 
@@ -65,8 +65,8 @@ t_calc_tkn			*calc_get_log_tkn(char *str, size_t pos)
 	return (token);
 }
 
-long long			calc_log(t_calc_tkns *s_tokens, size_t *index,
-													t_calc_err *error)
+long long			calc_log(t_calc_tokens *s_tokens, size_t *index,
+							  t_calc_err *error)
 {
 	long long		result;
 

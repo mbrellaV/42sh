@@ -12,8 +12,8 @@
 
 #include "calc.h"
 
-static long long	calc_add_sub_next(long long result, t_calc_tkns *s_tokens,
-	size_t *index, t_calc_err *error)
+static long long	calc_add_sub_next(long long result, t_calc_tokens *s_tokens,
+									  size_t *index, t_calc_err *error)
 {
 	t_calc_tkntype	oper;
 
@@ -49,8 +49,8 @@ t_calc_tkn			*calc_get_add_tkn(char *str, size_t pos)
 	return (token);
 }
 
-long long			calc_add_sub(t_calc_tkns *s_tokens, size_t *index,
-	t_calc_err *error)
+long long			calc_add_sub(t_calc_tokens *s_tokens, size_t *index,
+								  t_calc_err *error)
 {
 	long long	result;
 

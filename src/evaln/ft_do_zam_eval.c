@@ -6,7 +6,7 @@
 /*   By: wstygg <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/13 19:53:08 by wstygg            #+#    #+#             */
-/*   Updated: 2020/05/12 22:36:30 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/05/04 13:53:14 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char		*return_with_del(char *str)
 	return (NULL);
 }
 
-char		*ft_do_cut(char *tmp, t_calc_err *error)
+char		*ft_do_cut(char *tmp, int *error)
 {
 	int					di;
 	char				*str;
@@ -34,20 +34,20 @@ char		*ft_do_cut(char *tmp, t_calc_err *error)
 			dop = ft_strsub(tmp, 2, di - 2);
 			str_for_del = dop;
 			str_for_rec = ft_main_calc_rec(dop, error);
-			if (error->status > 0)
+			if (*error == 1)
 				return (NULL);
 			if (str_for_rec != NULL)
 				dop = str_for_rec;
-			str = calc_ltoa(calc(dop, error));
+			str = ft_itoa(eval_expr(dop, error));
 			(str_for_del != dop) ? ft_strdel(&str_for_del) : 0;
-			if (error->status > 0)
+			if (*error == 1)
 				return (return_with_del(str));
 			return (str);
 		}
 	return (NULL);
 }
 
-char		*ft_main_calc_rec(char *mas, t_calc_err *error)
+char		*ft_main_calc_rec(char *mas, int *error)
 {
 	char	*newstr;
 	char	*cut_str;
@@ -56,7 +56,7 @@ char		*ft_main_calc_rec(char *mas, t_calc_err *error)
 
 	i = 0;
 	d = 0;
-	newstr = ft_memalloc(ft_strlen(mas) + 1);
+	newstr = ft_malloc(ft_strlen(mas) + 1);
 	while (i < (int)ft_strlen(mas) && mas[i] != '\0')
 	{
 		if (mas[i] == '$' && ++d)
@@ -79,16 +79,16 @@ char		*ft_main_calc_rec(char *mas, t_calc_err *error)
 char		*ft_do_zam_eval(char *mas)
 {
 	char				*newstr;
-	t_calc_err			error;
+	int					error;
 
-	error.status = 0;
+	error = 0;
 	if (mas == NULL)
 		return (NULL);
 	if (*mas == '\0')
 		return (mas);
 	if ((newstr = ft_main_calc_rec(mas, &error)) == NULL)
 	{
-		if (error.status > 0)
+		if (error == 1)
 		{
 			put_error_to_shell(2);
 			ft_dprintf(globals()->fd[2],

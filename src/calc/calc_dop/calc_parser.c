@@ -1,14 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   calc_arr_tkns.c                                    :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: wstygg <marvin@42.fr>                      +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/04/13 19:53:08 by wstygg            #+#    #+#             */
-/*   Updated: 2020/05/12 22:36:30 by wstygg           ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
 
 #include "calc.h"
 
@@ -20,7 +9,7 @@ static t_calc_tokens	*calc_new_tkns(void)
 	if (!(s_tokens = (t_calc_tokens *)ft_memalloc(sizeof(t_calc_tokens))))
 		return (NULL);
 	if (!(tokens = (t_calc_tkn *)ft_memalloc(sizeof(t_calc_tkn)
-		* (CALC_TOKENS_SIZE))))
+											 * (CALC_TOKENS_SIZE))))
 	{
 		free(s_tokens);
 		return (NULL);
@@ -28,18 +17,6 @@ static t_calc_tokens	*calc_new_tkns(void)
 	s_tokens->tokens = tokens;
 	s_tokens->malloc_size = CALC_TOKENS_SIZE;
 	s_tokens->size = 0;
-	return (s_tokens);
-}
-
-static t_calc_tokens	*calc_preprocessing(char *str, t_calc_tokens *s_tokens,
-											size_t *pos)
-{
-	if (!str || !pos)
-		return (calc_del_tkns(s_tokens));
-	while (str[*pos] == ' ')
-		(*pos)++;
-	if (str[*pos] == '$')
-		return (calc_prefix(str, s_tokens, pos));
 	return (s_tokens);
 }
 
@@ -58,7 +35,6 @@ t_calc_tokens			*calc_get_arr_tkns(char *str,
 	s_tokens->size = index;
 	while (1)
 	{
-		s_tokens = calc_preprocessing(str, s_tokens, &pos);
 		if (!s_tokens || !(token = calc_get_next_tkn(str, pos)))
 			return (calc_del_tkns(s_tokens));
 		ft_memcpy(&s_tokens->tokens[s_tokens->size], token, sizeof(t_calc_tkn));
@@ -88,7 +64,7 @@ t_calc_tokens			*calc_del_tkns(t_calc_tokens *s_tokens)
 	return (NULL);
 }
 
-int					calc_check_index(t_calc_tokens *s_tokens, size_t index)
+int						calc_check_index(t_calc_tokens *s_tokens, size_t index)
 {
 	if (!s_tokens)
 		return (0);

@@ -63,11 +63,4 @@ typedef	struct				s_stack
 	char					array[1000];
 }							t_stack;
 
-typedef	struct				s_calc_token
-{
-	char					*line;
-	int						type;
-	struct s_calc_token		*next;
-}							t_calc_token;
-
 #endif

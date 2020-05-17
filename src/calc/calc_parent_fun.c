@@ -25,7 +25,7 @@ static t_calc_tkntype	calc_parent_type(char *str)
 }
 
 static long long		calc_parent_next(long long result,
-					t_calc_tkns *s_tokens, size_t *index, t_calc_err *error)
+										 t_calc_tokens *s_tokens, size_t *index, t_calc_err *error)
 {
 	t_calc_tkntype	oper;
 
@@ -57,8 +57,8 @@ t_calc_tkn				*calc_get_parent_tkn(char *str, size_t pos)
 	return (token);
 }
 
-long long				calc_parent(t_calc_tkns *s_tokens, size_t *index,
-	t_calc_err *error)
+long long				calc_parent(t_calc_tokens *s_tokens, size_t *index,
+									 t_calc_err *error)
 {
 	long long	result;
 

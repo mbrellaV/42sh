@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   calc_arr_reloc.c                                   :+:      :+:    :+:   */
+/*   calc_atoi.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wstygg <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,21 +10,36 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "calc.h"
+#include "eval_expr.h"
 
-t_calc_tokens	*calc_reloc_tkns(t_calc_tokens *s_tokens)
+static int	calc_is_whitespace(char c)
 {
-	t_calc_tkn		*new_tokens;
+	if (c == '\t' || c == '\v' || c == '\f' || c == '\r'
+		|| c == '\n' || c == ' ')
+		return (1);
+	return (0);
+}
 
-	if (!s_tokens)
-		return (NULL);
-	if (!(new_tokens = (t_calc_tkn *)ft_memalloc(sizeof(t_calc_tkn)
-		* (s_tokens->malloc_size + CALC_TOKENS_SIZE))))
-		return (s_tokens);
-	new_tokens = ft_memcpy(new_tokens, s_tokens->tokens, sizeof(t_calc_tkn)
-		* s_tokens->malloc_size);
-	free(s_tokens->tokens);
-	s_tokens->tokens = new_tokens;
-	s_tokens->malloc_size += CALC_TOKENS_SIZE;
-	return (s_tokens);
+long long	calc_ll_atoi(const char *str)
+{
+	long long			sign;
+	unsigned long long	res;
+
+	if (!str)
+		return (0);
+	sign = 1;
+	res = 0;
+	while (calc_is_whitespace(*str))
+		str++;
+	if (*str == '-')
+		sign = -1;
+	if (*str == '+' || *str == '-')
+		str++;
+	while (*str >= 48 && *str <= 57)
+	{
+		res *= 10;
+		res += *str - '0';
+		str++;
+	}
+	return (sign * res);
 }

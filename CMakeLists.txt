@@ -4,6 +4,7 @@ project(42save C)
 set(CMAKE_C_STANDARD 99)
 
 include_directories(inc)
+include_directories(libft/inc)
 include_directories(src)
 include_directories(src/qft_printf)
 
@@ -97,26 +98,6 @@ add_executable(42save
         src/nucleus/input_mode.c
         src/history/show_history.c
         src/nucleus/tab.c
-        src/calc/calc_add_fun.c
-        src/calc/calc.c
-        src/calc/calc_lexer.c
-        src/calc/calc_arr_tkns.c
-        src/calc/calc_mul_fun.c
-        src/calc/calc_inc_fun.c
-        src/calc/calc_com_fun.c
-        src/calc/calc_eq_fun.c
-        src/calc/calc_log_fun.c
-        src/calc/calc_tkn.c
-        src/calc/calc_num_fun.c
-        src/calc/calc_parent_fun.c
-        src/calc/calc_error_fun.c
-        src/calc/calc_var_fun.c
-        src/calc/calc_var_tkn.c
-        src/calc/calc_arr_reloc.c
-        src/calc/calc_atoi.c
-        src/calc/calc_ltoa.c
-        src/calc/change_vars.c
-        src/calc/ft_do_zam_eval.c
         src/parser/all_parse.c
         src/parser/change_tilda.c
         src/parser/check_bracket.c
@@ -141,7 +122,21 @@ add_executable(42save
         src/exec/ft_do_open_flags.c src/exec/redirect.c src/ck_check.c
         src/lexer/del_one_node_in_lextokens.c src/ft_main_what.c src/put_error_to_env.c
         src/hash/print_hash.c src/parser/is_system_symbol.c
-        src/builtins/ft_fc.c src/builtins/ft_fc_2.c src/utility_files/crc32.c src/lexer/do_zam_ravno.c src/nucleus/ft_cheak_tab.c src/nucleus/ft_directory.c src/nucleus/ft_find_env.c src/builtins/authors.c src/history/dop_memory.c src/redirects.c src/ft_open_flag_in_builtins.c src/do_builtin.c libft/src/count_words.c inc/history.h libft/src/ft_strcat_char.c src/history/save_hist.c inc/lexer.h inc/exec.h src/exec/ft_redirect_error.c src/lexer/do_zamena_slash.c src/builtins/exit_builtin.c src/utility_files/ft_get_prev_word.c src/builtins/kill_builtin.c src/builtins/allenv/ft_del_env_table.c)
+        src/builtins/ft_fc.c src/builtins/ft_fc_2.c src/utility_files/crc32.c src/lexer/do_zam_ravno.c
+        src/nucleus/ft_cheak_tab.c src/nucleus/ft_directory.c src/nucleus/ft_find_env.c src/builtins/authors.c
+        src/history/dop_memory.c src/redirects.c src/ft_open_flag_in_builtins.c src/do_builtin.c
+        libft/src/count_words.c inc/history.h libft/src/ft_strcat_char.c src/history/save_hist.c inc/lexer.h
+        inc/exec.h src/exec/ft_redirect_error.c src/lexer/do_zamena_slash.c src/builtins/exit_builtin.c
+        src/utility_files/ft_get_prev_word.c src/builtins/kill_builtin.c src/builtins/allenv/ft_del_env_table.c
+        src/evaln/calc_def_token.c
+        src/evaln/atoimy.c
+        src/evaln/calc.c
+        src/evaln/dop.c
+        src/evaln/calc_ltoa.c
+        src/evaln/calc_atoi.c
+        src/evaln/eval_expr.h
+        src/evaln/ft_do_zam_eval.c
+        src/evaln/inftopost.c src/evaln/ft_eval_parser.c src/evaln/opr_znak.c src/evaln/calc_lexer.c src/evaln/dop_word_funs.c)
 
 
 target_link_libraries(42save ${CMAKE_SOURCE_DIR}/libft/libft.a)
