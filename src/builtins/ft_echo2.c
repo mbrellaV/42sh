@@ -37,7 +37,7 @@ char	*ft_hex(char *str)
 	else
 		str--;
 	str++;
-	vivod(1) ? ft_dprintf(globals()->fd[1], "%d", i) : 0;
+	ft_dprintf(globals()->fd[1], "%d", i);
 	return (str);
 }
 
@@ -65,7 +65,7 @@ char	*distribute_echo(char **str, int k, int flag, t_builtins *echo)
 			str[k] = ft_flag_echo(str[k], echo);
 		else if ((flag = 1))
 		{
-			if (*str[k] != '\"' && vivod(1))
+			if (*str[k] != '\"')
 				ft_putchar_fd(*str[k], globals()->fd[1]);
 			str[k]++;
 		}
