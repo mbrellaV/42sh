@@ -17,7 +17,7 @@ char	*ft_print_oct(char *str, int nb)
 	while (nb > 777)
 		nb /= 10;
 	nb = ft_itoa_base(nb, 8);
-	vivod(1) ? ft_putnbr_fd(nb, globals()->fd[1]) : 0;
+	ft_putnbr_fd(nb, globals()->fd[1]);
 	if (*(str + 4) >= '0' && *(str + 4) <= '7')
 		str = str + 5;
 	else if (*(str + 3) >= '0' && *(str + 3) <= '7')
@@ -60,7 +60,7 @@ char	*ft_slash_2(char *str, t_builtins *echo, int res)
 		return (str + 2);
 	if (res == 0)
 	{
-		vivod(1) ? ft_putchar_fd('\\', globals()->fd[1]) : 0;
+		ft_putchar_fd('\\', globals()->fd[1]);
 		return (str + 2);
 	}
 	return (str);
@@ -71,16 +71,16 @@ char	*ft_slash(char *str, t_builtins *echo)
 	int			res;
 
 	res = 13;
-	(*(str + 1) == '\\' && vivod(1)) ? dprintf(globals()->fd[1], "\\") : --res;
-	(*(str + 1) == 'a' && vivod(1)) ? dprintf(globals()->fd[1], "\a") : --res;
-	(*(str + 1) == 'b' && vivod(1)) ? dprintf(globals()->fd[1], "\b") : --res;
-	(*(str + 1) == 't' && vivod(1)) ? dprintf(globals()->fd[1], "\t") : --res;
-	(*(str + 1) == 'n' && vivod(1)) ? dprintf(globals()->fd[1], "\n") : --res;
-	(*(str + 1) == 'v' && vivod(1)) ? dprintf(globals()->fd[1], "\v") : --res;
-	(*(str + 1) == 'r' && vivod(1)) ? dprintf(globals()->fd[1], "\r") : --res;
-	(*(str + 1) == 'f' && vivod(1)) ? dprintf(globals()->fd[1], "\f") : --res;
-	(*(str + 1) == '\"' && vivod(1)) ? dprintf(globals()->fd[1], "\"") : --res;
-	(*(str + 1) == '\'' && vivod(1)) ? dprintf(globals()->fd[1], "\'") : --res;
+	(*(str + 1) == '\\') ? ft_putchar_fd('\\', globals()->fd[1]) : --res;
+	(*(str + 1) == 'a') ? ft_putchar_fd('\a', globals()->fd[1]) : --res;
+	(*(str + 1) == 'b') ? ft_putchar_fd('\b', globals()->fd[1]) : --res;
+	(*(str + 1) == 't') ? ft_putchar_fd('\t', globals()->fd[1]) : --res;
+	(*(str + 1) == 'n') ? ft_putchar_fd('\n', globals()->fd[1]) : --res;
+	(*(str + 1) == 'v') ? ft_putchar_fd('\v', globals()->fd[1]) : --res;
+	(*(str + 1) == 'r') ? ft_putchar_fd('\r', globals()->fd[1]) : --res;
+	(*(str + 1) == 'f') ? ft_putchar_fd('\f', globals()->fd[1]) : --res;
+	(*(str + 1) == '\"') ? ft_putchar_fd('\"', globals()->fd[1]) : --res;
+	(*(str + 1) == '\'') ? ft_putchar_fd('\'', globals()->fd[1]) : --res;
 	return (ft_slash_2(str, echo, res));
 }
 
@@ -95,16 +95,23 @@ int		ft_echo(char **str)
 	flag = 0;
 	echo.echo_n = 0;
 	echo.echo_c = 0;
+//	while (str && str[k])
+//	{
+//		dprintf(globals()->fd[1], "%s\n", str[k]);
+//		k++;
+//	}
+	if (!vivod(1))
+		return (-1);
 	while (str[++k])
 	{
 		tmp = str[k];
-		str[k] = distribute_echo(str, k, flag, &echo);
 		!echo.echo_n ? flag = 1 : 0;
+		str[k] = distribute_echo(str, k, flag, &echo);
 		str[k] = tmp;
 		if (str[k + 1] && (*str[k] != '-' || (*str[k] == '-' && !echo.echo_n)))
-			vivod(1) ? ft_dprintf(globals()->fd[1], " ") : 0;
+			ft_dprintf(globals()->fd[1], " ");
 	}
 	if (!echo.echo_n && !echo.echo_c)
-		vivod(1) ? ft_dprintf(globals()->fd[1], "\n") : 0;
+		ft_dprintf(globals()->fd[1], "\n");
 	return (0);
 }
