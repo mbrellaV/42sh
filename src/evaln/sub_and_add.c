@@ -24,7 +24,7 @@ void	subos(int *stackos, t_int *lastint)
 	(lastint->ol)--;
 }
 
-void	addzn(int *stackzn, int c, t_int *lastint)
+void	addzn(int *stackzn, t_calc_tkntype c, t_int *lastint)
 {
 	stackzn[lastint->zl] = c;
 	(lastint->zl)++;

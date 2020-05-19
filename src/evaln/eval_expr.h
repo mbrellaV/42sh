@@ -79,16 +79,17 @@ typedef struct		s_calc
 
 int					is_znak(int c);
 int					eval_expr(char *s, int *error);
-void				dostack(int *stackos, int *stackzn, int c, t_int *lastint);
+void				dostack(int *stackos, int *stackzn, t_calc_tkntype c, t_int *lastint);
 int					calcend(int **stackos, int **stackzn, t_int **str);
 char				*ft_main_calc_rec(char *mas, int *error);
 int					prior(int c);
 int					ft_atoi_with(char *str, int *marker);
+int					is_znak_type(t_calc_tkntype type);
 t_int				*cr_new_el(char *s, int *error);
-void				calc(int *stackos, t_int *str, int c);
+void				calc(int *stackos, t_int *str, t_calc_tkntype c);
 void				addos(int *stackos, int c, t_int *lastint);
 void				subos(int *stackos, t_int *lastint);
-void				addzn(int *stackzn, int c, t_int *lastint);
+void				addzn(int *stackzn, t_calc_tkntype c, t_int *lastint);
 void				subzn(int *stackzn, t_int *lastint);
 void				ft_putchar(char c);
 int					opr_znak(char *dstr);
@@ -105,7 +106,7 @@ int						calc_word_size(char *str);
 char					*change_vars(char *evalstr);
 t_calc_token			*calc_define_token(char *str);
 t_calc_token		*add_token_cr(t_calc_token *start, t_calc_token *token_to_add);
-t_calc_token		*ft_make_token_from_str(char *str, int *i);
+t_calc_token		*ft_make_token_from_str(char *str, int *i, t_calc_token *prev_token);
 t_calc_token		*ft_eval_parse(char *str);
 int					issc(char c);
 

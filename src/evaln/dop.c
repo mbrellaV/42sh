@@ -12,20 +12,13 @@
 
 #include "eval_expr.h"
 
-//t_int		*cr_new_el(char *s, int *error)
-//{
-//	t_int	*tmp;
-//
-//	if (!(tmp = ft_memalloc(sizeof(t_int))))
-//		return (NULL);
-//	tmp = tmp_0(tmp, s);
-//	if (!(tmp->s = change_vars(s)))
-//	{
-//		*error = 1;
-//		ft_strdel(&tmp->s);
-//		free(tmp);
-//		return (NULL);
-//	}
+t_int		*cr_new_el(char *s, int *error)
+{
+	t_int	*tmp;
+
+	if (!(tmp = ft_memalloc(sizeof(t_int))))
+		return (NULL);
+	tmp = tmp_0(tmp, s);
 //	if (!check_calc_sc(tmp->s))
 //	{
 //		*error = 1;
@@ -33,24 +26,24 @@
 //		free(tmp);
 //		return (NULL);
 //	}
-//	if (!(tmp->stackos = (int*)ft_memalloc(4 * ft_strlen(tmp->s))))
-//		return (NULL);
-//	if (!(tmp->stackzn = (int*)ft_memalloc(4 * ft_strlen(tmp->s))))
-//		return (NULL);
-//	return (tmp);
-//}
+	if (!(tmp->stackos = (int*)ft_memalloc(4 * ft_strlen(tmp->s))))
+		return (NULL);
+	if (!(tmp->stackzn = (int*)ft_memalloc(4 * ft_strlen(tmp->s))))
+		return (NULL);
+	return (tmp);
+}
 
 int			prior(int c)
 {
-	if ((c - 300) == '*')
+	if (c == CALC_MUL)
 		return (2);
-	else if ((c - 300) == '/')
+	else if (c == CALC_DIV)
 		return (2);
-	else if ((c - 300) == '%')
+	else if (c == CALC_MOD)
 		return (2);
-	else if (issc((char)(c - 300)))
+	else if (c == CALC_FIR_SC || c == CALC_SEC_SC)
 		return (0);
-	else if (c > 300 && c < 800)
+	else if (is_znak_type(c))
 		return (1);
 	else
 		return (0);
@@ -66,11 +59,11 @@ int			is_znak(int c)
 		return (0);
 }
 
-void		dostack(int *stackos, int *stackzn, int c, t_int *lastint)
+void		dostack(int *stackos, int *stackzn, t_calc_tkntype c, t_int *lastint)
 {
-	if ((c - 300) == '(')
+	if (c == CALC_FIR_SC || (lastint->zl != 0 && prior(stackzn[lastint->zl - 1]) < prior(c)))
 		addzn(stackzn, c, lastint);
-	else if ((c - 300) == ')')
+	else if (c == CALC_SEC_SC)
 	{
 		while (stackzn[lastint->zl - 1] != ('(' + 300))
 		{
@@ -79,8 +72,6 @@ void		dostack(int *stackos, int *stackzn, int c, t_int *lastint)
 		}
 		subzn(stackzn, lastint);
 	}
-	else if (lastint->zl != 0 && prior(stackzn[lastint->zl - 1]) < prior(c))
-		addzn(stackzn, c, lastint);
 	else
 	{
 		while (lastint->zl > 0 && prior(stackzn[lastint->zl - 1]) >= prior(c))
@@ -90,8 +81,6 @@ void		dostack(int *stackos, int *stackzn, int c, t_int *lastint)
 		}
 		addzn(stackzn, c, lastint);
 	}
-	if (is_znak(c))
-		lastint->d = 1;
 }
 
 int			calcend(int **stackos, int **stackzn, t_int **str)
