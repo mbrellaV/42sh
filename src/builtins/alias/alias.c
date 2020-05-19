@@ -31,7 +31,8 @@ static int	do_zam_alias(char *str, int *i, char *newstr, char *dopstr)
 	size = word_size(&str[*i]);
 	dop = ft_strsub(str, *i, size);
 	if (str[*i] != '$' && (dopstr = ft_get_var(dop, globals()->g_alias)) &&
-	(!(prev_word = ft_get_prev_word(str, *i)) || is_first_word(str, *i)))
+	((!(prev_word = ft_get_prev_word(str, *i)) || is_cmd_delim(get_op_type(prev_word)))
+	|| is_first_word(str, *i)))
 		ft_strcat(newstr, dopstr);
 	else
 		ft_strcat(newstr, dop);

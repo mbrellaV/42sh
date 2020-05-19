@@ -1,14 +1,24 @@
 #include "eval_expr.h"
 
+int					is_incr(t_calc_tkntype type)
+{
+	return (type == CALC_PRE_INC || type == CALC_PRE_DEC || type == CALC_INC || type == CALC_DEC);
+}
+
 t_calc_token		*ft_make_token_from_str(char *str, int *i, t_calc_token *prev_token)
 {
 	int		size;
 	char	*tmp;
 
+//is_incr_sym(str[0])
 	size = calc_word_size(str);
-	//dprintf(2, "\n|%d|\n", size);
-	if (prev_token->type == CALC_VAR && is_incr_sym(str[0]))
-		size = ();
+	if (prev_token && (prev_token->type == CALC_VAR ||
+	prev_token->type == CALC_NUMBER || is_incr(prev_token->type)) && (ft_isdigit(str[0]) || ft_isalpha(str[0])))
+	{
+		tmp = ft_strsub(str, 0, size);
+		*i += size;
+		return (ft_cr_new_calc_token(tmp, CALC_ERROR));
+	}
 	tmp = ft_strsub(str, 0, size);
 	*i += size;
 	return (calc_define_token(tmp));
@@ -21,18 +31,23 @@ t_calc_token		*ft_eval_parse(char *str)
 	t_calc_token	*tmp_token;
 
 	i = 0;
+	tmp_token = NULL;
 	if (!(first_token = ft_cr_new_calc_token(NULL, CALC_START)))
 		return (NULL);
 	while (str[i] != '\0')
 	{
 		if (str[i] != ' ')
 		{
-			tmp_token = ft_make_token_from_str(&str[i], &i);
+			tmp_token = ft_make_token_from_str(&str[i], &i, tmp_token);
+			if (tmp_token && tmp_token->type == CALC_ERROR)
+				return (tmp_token);
 			//dprintf(2, "\n2: |%s, %d|\n", tmp_token->var, tmp_token->type);
-			add_token_cr(first_token, tmp_token);
-			if (tmp_token->type == CALC_NUMBER && tmp_token->prev->type == CALC_NUMBER)
-				return (NULL);
-
+			if (tmp_token)
+			{
+				add_token_cr(first_token, tmp_token);
+				if (tmp_token->type == CALC_NUMBER && tmp_token->prev->type == CALC_NUMBER)
+					return (NULL);
+			}
 		}
 		else
 			i++;

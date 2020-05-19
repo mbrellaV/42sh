@@ -78,6 +78,22 @@ int		is_znak_type(t_calc_tkntype type)
 	type != CALC_INC && type != CALC_DEC && type != CALC_PRE_INC && type != CALC_PRE_DEC);
 }
 
+t_calc_token		*get_last_token(t_calc_token *tmp)
+{
+	while (tmp->next)
+	{
+		tmp = tmp->next;
+	}
+	return (tmp);
+}
+
+int			return_with_error(t_calc_token *error_token, int *error, char *all_str)
+{
+	*error = 1;
+	ft_dprintf(2, "42sh: %s: syntax error in expression (error token is \"%s\")", all_str, error_token->var);
+	return (0);
+}
+
 int		eval_expr(char *s, int *error)
 {
 	t_int			*l;
@@ -88,20 +104,22 @@ int		eval_expr(char *s, int *error)
 	if (!(l = cr_new_el(s, error)))
 		return (c_e((t_calc){NULL, NULL, NULL, error, NULL}));
 	tmp_token = ft_eval_parse(s);
+	if (get_last_token(tmp_token)->type == CALC_ERROR)
+		return (return_with_error(get_last_token(tmp_token), error, s));
 	first_token = tmp_token;
 	while (tmp_token != NULL && tmp_token->type != CALC_END)
 	{
-		//dprintf(2, "\n|%s, %d|\n", tmp_token->var, tmp_token->type);
+		dprintf(2, "\n|%s, %d|\n", tmp_token->var, tmp_token->type);
 		if (tmp_token->type == CALC_VAR)
 			zam_var(tmp_token, error);
 		if (*error == 0 && (tmp_token->type == CALC_NUMBER || tmp_token->type == CALC_VAR))
 		{
-			//dprintf(2, "\nddd: |%s|\n", tmp_token->var);
+			dprintf(2, "\nddd: |%s|\n", tmp_token->var);
 			addos(l->stackos, ft_atoi(tmp_token->var), l);
 		}
 		else if (*error == 0 && is_znak_type(tmp_token->type))
 		{
-			//dprintf(2, "\nsss: ||\n");
+			dprintf(2, "\nsss: ||\n");
 			dostack(l->stackos, l->stackzn, tmp_token->type, l);
 		}
 //		while (*error == 0 && i <= l->zl)
@@ -115,24 +133,4 @@ int		eval_expr(char *s, int *error)
 	}
 	free_calc_tokens(first_token);
 	return (calcend(&l->stackos, &l->stackzn, &l));
-//	while (l->i < (int)ft_strlen(l->s) && l->s[l->i] != '\0')
-//	{
-//		if (check_calc_str(&l->s[l->i]) == -1)
-//			return (c_e((t_calc){l->stackos, l->stackzn, l, error, l->s}));
-//		if ((l->s[l->i] >= '0' && l->s[l->i] <= '9') ||
-//		((l->s[l->i] == '-' || l->s[l->i] == '+') && l->s[l->i + 1] != '\0' &&
-//		(l->s[l->i + 1] >= '0' && l->s[l->i + 1] <= '9') && l->d == 1))
-//		{
-//			if (l->last_token == 1)
-//				return (c_e((t_calc){l->stackos, l->stackzn, l, error, l->s}));
-//			l->last_token = 1;
-//			addos(l->stackos, ft_atoi_with(l->s + l->i, &l->i), l);
-//			l->d = 0;
-//		}
-//		l = eval_help(l);
-//		if (l->last_token >= 3)
-//			return (c_e((t_calc){l->stackos, l->stackzn, l, error, l->s}));
-//	}
-//	ft_strdel(&l->s);
-//	return (calcend(&l->stackos, &l->stackzn, &l));
 }

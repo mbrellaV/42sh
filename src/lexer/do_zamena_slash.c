@@ -45,7 +45,10 @@ static void		decide_what_to_do(t_zams *zams, char *line)
 		do_zam_slash_in_par(zams, line, line[zams->i]);
 	}
 	else if (line[zams->i] == '\\' && line[zams->i + 1] != '\0')
-		ft_strcat_char(zams->dopstr, -1 * line[zams->i++]);
+	{
+		ft_strcat_char(zams->dopstr, -1 * line[zams->i + 1]);
+		zams->i++;
+	}
 	else
 		ft_strcat_char(zams->dopstr, line[zams->i]);
 }
