@@ -30,7 +30,7 @@ int				ft_cd_error(char *tmp, int err, int to_free)
 	(err == 9 && vivod(2)) ? ft_dprintf(globals()->fd[2],
 			"cd: too many arguments\n") : 0;
 	to_free ? free(tmp) : 0;
-	return (0);
+	return (-1);
 }
 
 int				flags_cd(char *str, t_builtins *cd, int j)

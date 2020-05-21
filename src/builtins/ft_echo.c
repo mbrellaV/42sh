@@ -80,7 +80,7 @@ char	*ft_slash(char *str, t_builtins *echo)
 	(*(str + 1) == 'r') ? ft_putchar_fd('\r', globals()->fd[1]) : --res;
 	(*(str + 1) == 'f') ? ft_putchar_fd('\f', globals()->fd[1]) : --res;
 	(*(str + 1) == '\"') ? ft_putchar_fd('\"', globals()->fd[1]) : --res;
-	(*(str + 1) == '\'') ? ft_putchar_fd('\'', globals()->fd[1]) : --res;
+	(*(str + 1) == '\'') ? ft_putstr_fd("\\\'", globals()->fd[1]) : --res;
 	return (ft_slash_2(str, echo, res));
 }
 
