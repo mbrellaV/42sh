@@ -51,17 +51,37 @@ int			znak_size(char *str)
 	return (i);
 }
 
-int			calc_word_size(char *str)
+//int			ft_num_with_sym(char *str)
+//{
+//	int		i;
+//
+//	i = 1;
+//	if (is_incr_sym(str[i]))
+//		return (1);
+//	while (str[i] && (str[i] == ' '))
+//	{
+//		i++;
+//	}
+//	if ()
+//	ft_atoi_with(str + i, &i);
+//	return (i);
+//}
+
+int			calc_word_size(char *str, int type)
 {
 	int		i;
 
 	i = 0;
+//	if (type == 1)
+//		return (ft_num_with_sym(str));
 	if (ft_isalpha(*str))
 		return (var_size(str));
 	if (ft_isdigit(*str))
 		return (num_size(str));
 	if (is_znak(*str))
 		return (znak_size(str));
+	if ((*str > 31 && *str < 127))
+		return (1);
 	return (i);
 }
 

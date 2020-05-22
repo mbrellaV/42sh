@@ -1890,6 +1890,45 @@ CMakeFiles/42save.dir/src/evaln/dop_word_funs.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/42save.dir/src/evaln/dop_word_funs.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/petruha2001/42sh/src/evaln/dop_word_funs.c -o CMakeFiles/42save.dir/src/evaln/dop_word_funs.c.s
 
+CMakeFiles/42save.dir/src/history/open_hist_file.c.o: CMakeFiles/42save.dir/flags.make
+CMakeFiles/42save.dir/src/history/open_hist_file.c.o: ../src/history/open_hist_file.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/petruha2001/42sh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_142) "Building C object CMakeFiles/42save.dir/src/history/open_hist_file.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/42save.dir/src/history/open_hist_file.c.o   -c /home/petruha2001/42sh/src/history/open_hist_file.c
+
+CMakeFiles/42save.dir/src/history/open_hist_file.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/42save.dir/src/history/open_hist_file.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/petruha2001/42sh/src/history/open_hist_file.c > CMakeFiles/42save.dir/src/history/open_hist_file.c.i
+
+CMakeFiles/42save.dir/src/history/open_hist_file.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/42save.dir/src/history/open_hist_file.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/petruha2001/42sh/src/history/open_hist_file.c -o CMakeFiles/42save.dir/src/history/open_hist_file.c.s
+
+CMakeFiles/42save.dir/src/evaln/zam_var.c.o: CMakeFiles/42save.dir/flags.make
+CMakeFiles/42save.dir/src/evaln/zam_var.c.o: ../src/evaln/zam_var.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/petruha2001/42sh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_143) "Building C object CMakeFiles/42save.dir/src/evaln/zam_var.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/42save.dir/src/evaln/zam_var.c.o   -c /home/petruha2001/42sh/src/evaln/zam_var.c
+
+CMakeFiles/42save.dir/src/evaln/zam_var.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/42save.dir/src/evaln/zam_var.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/petruha2001/42sh/src/evaln/zam_var.c > CMakeFiles/42save.dir/src/evaln/zam_var.c.i
+
+CMakeFiles/42save.dir/src/evaln/zam_var.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/42save.dir/src/evaln/zam_var.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/petruha2001/42sh/src/evaln/zam_var.c -o CMakeFiles/42save.dir/src/evaln/zam_var.c.s
+
+CMakeFiles/42save.dir/src/evaln/calc_utility.c.o: CMakeFiles/42save.dir/flags.make
+CMakeFiles/42save.dir/src/evaln/calc_utility.c.o: ../src/evaln/calc_utility.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/petruha2001/42sh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_144) "Building C object CMakeFiles/42save.dir/src/evaln/calc_utility.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/42save.dir/src/evaln/calc_utility.c.o   -c /home/petruha2001/42sh/src/evaln/calc_utility.c
+
+CMakeFiles/42save.dir/src/evaln/calc_utility.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/42save.dir/src/evaln/calc_utility.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/petruha2001/42sh/src/evaln/calc_utility.c > CMakeFiles/42save.dir/src/evaln/calc_utility.c.i
+
+CMakeFiles/42save.dir/src/evaln/calc_utility.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/42save.dir/src/evaln/calc_utility.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/petruha2001/42sh/src/evaln/calc_utility.c -o CMakeFiles/42save.dir/src/evaln/calc_utility.c.s
+
 # Object files for target 42save
 42save_OBJECTS = \
 "CMakeFiles/42save.dir/src/builtins/ft_fc_3.c.o" \
@@ -2032,7 +2071,10 @@ CMakeFiles/42save.dir/src/evaln/dop_word_funs.c.s: cmake_force
 "CMakeFiles/42save.dir/src/evaln/ft_eval_parser.c.o" \
 "CMakeFiles/42save.dir/src/evaln/opr_znak.c.o" \
 "CMakeFiles/42save.dir/src/evaln/calc_lexer.c.o" \
-"CMakeFiles/42save.dir/src/evaln/dop_word_funs.c.o"
+"CMakeFiles/42save.dir/src/evaln/dop_word_funs.c.o" \
+"CMakeFiles/42save.dir/src/history/open_hist_file.c.o" \
+"CMakeFiles/42save.dir/src/evaln/zam_var.c.o" \
+"CMakeFiles/42save.dir/src/evaln/calc_utility.c.o"
 
 # External object files for target 42save
 42save_EXTERNAL_OBJECTS =
@@ -2178,10 +2220,13 @@ CMakeFiles/42save.dir/src/evaln/dop_word_funs.c.s: cmake_force
 42save: CMakeFiles/42save.dir/src/evaln/opr_znak.c.o
 42save: CMakeFiles/42save.dir/src/evaln/calc_lexer.c.o
 42save: CMakeFiles/42save.dir/src/evaln/dop_word_funs.c.o
+42save: CMakeFiles/42save.dir/src/history/open_hist_file.c.o
+42save: CMakeFiles/42save.dir/src/evaln/zam_var.c.o
+42save: CMakeFiles/42save.dir/src/evaln/calc_utility.c.o
 42save: CMakeFiles/42save.dir/build.make
 42save: ../libft/libft.a
 42save: CMakeFiles/42save.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/petruha2001/42sh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_142) "Linking C executable 42save"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/petruha2001/42sh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_145) "Linking C executable 42save"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/42save.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

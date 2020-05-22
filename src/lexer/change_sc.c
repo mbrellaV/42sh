@@ -48,6 +48,8 @@ void		ft_change_all_sc(char *str)
 			i += word_size(&str[i]);
 		if ((str[i] == '(' || str[i] == ')') && !check_if_in_par(str, i))
 			str[i] = ' ';
+		if ((str[i] == '{' || str[i] == '}') && !check_if_in_par(str, i))
+			str[i] = ' ';
 		i++;
 	}
 }

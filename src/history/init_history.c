@@ -71,7 +71,8 @@ t_memory	*ft_head_memory(void)
 	char		*hashsum;
 
 	buf = ft_malloc(20000);
-	fd = open("history/hist.txt", O_RDWR);
+	if ((fd = open_hist_file(1)) == -1)
+		return (make_memmory_with_one_node(fd, buf));
 	if (get_next_line_with_sym(fd, &line, -100) <= 0)
 		return (make_memmory_with_one_node(fd, buf));
 	head = NULL;

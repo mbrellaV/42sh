@@ -1014,6 +1014,33 @@ src/evaln/calc_ltoa.c.s:
 	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/evaln/calc_ltoa.c.s
 .PHONY : src/evaln/calc_ltoa.c.s
 
+src/evaln/calc_utility.o: src/evaln/calc_utility.c.o
+
+.PHONY : src/evaln/calc_utility.o
+
+# target to build an object file
+src/evaln/calc_utility.c.o:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/evaln/calc_utility.c.o
+.PHONY : src/evaln/calc_utility.c.o
+
+src/evaln/calc_utility.i: src/evaln/calc_utility.c.i
+
+.PHONY : src/evaln/calc_utility.i
+
+# target to preprocess a source file
+src/evaln/calc_utility.c.i:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/evaln/calc_utility.c.i
+.PHONY : src/evaln/calc_utility.c.i
+
+src/evaln/calc_utility.s: src/evaln/calc_utility.c.s
+
+.PHONY : src/evaln/calc_utility.s
+
+# target to generate assembly for a file
+src/evaln/calc_utility.c.s:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/evaln/calc_utility.c.s
+.PHONY : src/evaln/calc_utility.c.s
+
 src/evaln/dop.o: src/evaln/dop.c.o
 
 .PHONY : src/evaln/dop.o
@@ -1175,6 +1202,33 @@ src/evaln/opr_znak.s: src/evaln/opr_znak.c.s
 src/evaln/opr_znak.c.s:
 	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/evaln/opr_znak.c.s
 .PHONY : src/evaln/opr_znak.c.s
+
+src/evaln/zam_var.o: src/evaln/zam_var.c.o
+
+.PHONY : src/evaln/zam_var.o
+
+# target to build an object file
+src/evaln/zam_var.c.o:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/evaln/zam_var.c.o
+.PHONY : src/evaln/zam_var.c.o
+
+src/evaln/zam_var.i: src/evaln/zam_var.c.i
+
+.PHONY : src/evaln/zam_var.i
+
+# target to preprocess a source file
+src/evaln/zam_var.c.i:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/evaln/zam_var.c.i
+.PHONY : src/evaln/zam_var.c.i
+
+src/evaln/zam_var.s: src/evaln/zam_var.c.s
+
+.PHONY : src/evaln/zam_var.s
+
+# target to generate assembly for a file
+src/evaln/zam_var.c.s:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/evaln/zam_var.c.s
+.PHONY : src/evaln/zam_var.c.s
 
 src/exec/continuing_jobs.o: src/exec/continuing_jobs.c.o
 
@@ -2093,6 +2147,33 @@ src/history/init_history.s: src/history/init_history.c.s
 src/history/init_history.c.s:
 	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/history/init_history.c.s
 .PHONY : src/history/init_history.c.s
+
+src/history/open_hist_file.o: src/history/open_hist_file.c.o
+
+.PHONY : src/history/open_hist_file.o
+
+# target to build an object file
+src/history/open_hist_file.c.o:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/history/open_hist_file.c.o
+.PHONY : src/history/open_hist_file.c.o
+
+src/history/open_hist_file.i: src/history/open_hist_file.c.i
+
+.PHONY : src/history/open_hist_file.i
+
+# target to preprocess a source file
+src/history/open_hist_file.c.i:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/history/open_hist_file.c.i
+.PHONY : src/history/open_hist_file.c.i
+
+src/history/open_hist_file.s: src/history/open_hist_file.c.s
+
+.PHONY : src/history/open_hist_file.s
+
+# target to generate assembly for a file
+src/history/open_hist_file.c.s:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/history/open_hist_file.c.s
+.PHONY : src/history/open_hist_file.c.s
 
 src/history/save_hist.o: src/history/save_hist.c.o
 
@@ -4038,6 +4119,9 @@ help:
 	@echo "... src/evaln/calc_ltoa.o"
 	@echo "... src/evaln/calc_ltoa.i"
 	@echo "... src/evaln/calc_ltoa.s"
+	@echo "... src/evaln/calc_utility.o"
+	@echo "... src/evaln/calc_utility.i"
+	@echo "... src/evaln/calc_utility.s"
 	@echo "... src/evaln/dop.o"
 	@echo "... src/evaln/dop.i"
 	@echo "... src/evaln/dop.s"
@@ -4056,6 +4140,9 @@ help:
 	@echo "... src/evaln/opr_znak.o"
 	@echo "... src/evaln/opr_znak.i"
 	@echo "... src/evaln/opr_znak.s"
+	@echo "... src/evaln/zam_var.o"
+	@echo "... src/evaln/zam_var.i"
+	@echo "... src/evaln/zam_var.s"
 	@echo "... src/exec/continuing_jobs.o"
 	@echo "... src/exec/continuing_jobs.i"
 	@echo "... src/exec/continuing_jobs.s"
@@ -4158,6 +4245,9 @@ help:
 	@echo "... src/history/init_history.o"
 	@echo "... src/history/init_history.i"
 	@echo "... src/history/init_history.s"
+	@echo "... src/history/open_hist_file.o"
+	@echo "... src/history/open_hist_file.i"
+	@echo "... src/history/open_hist_file.s"
 	@echo "... src/history/save_hist.o"
 	@echo "... src/history/save_hist.i"
 	@echo "... src/history/save_hist.s"

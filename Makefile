@@ -121,6 +121,7 @@ SRC_BASE = builtins/ft_cd.c\
 	nucleus/del_readline.c\
 	nucleus/tab.c\
 	history/dop_memory.c\
+	history/open_hist_file.c\
 	history/show_history.c\
 	history/ft_putmemory.c\
 	history/change_hist_exp.c\
@@ -142,6 +143,8 @@ SRC_BASE = builtins/ft_cd.c\
 	hash/print_hash.c\
 	evaln/dop.c\
     evaln/calc.c\
+    evaln/calc_utility.c\
+    evaln/zam_var.c\
     evaln/atoimy.c\
     evaln/inftopost.c\
     evaln/calc_def_token.c\

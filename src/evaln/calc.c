@@ -10,7 +10,32 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "eval_expr.h"
+#include <fshell.h>
+
+static int	calc_znaks(int *stackzn, int zl)
+{
+	int		i;
+	int		calc_znaks;
+
+	i = 0;
+	calc_znaks = 0;
+	while (i < zl)
+	{
+		if (stackzn[i] != CALC_FIR_SC && stackzn[i] != CALC_SEC_SC)
+			calc_znaks++;
+		i++;
+	}
+	return (calc_znaks);
+}
+
+static int	error_return_calc(int error, char *error_str)
+{
+	if (error == 1)
+		ft_dprintf(2, "42sh: calc: division by zero error\n");
+	if (error == 2)
+		ft_dprintf(2, "42sh: calc: syntax error (error token is \"%s\")\n", error_str);
+	return (-1);
+}
 
 static void	calc_next(int *stackos, t_int *str, t_calc_tkntype c)
 {
@@ -29,8 +54,13 @@ static void	calc_next(int *stackos, t_int *str, t_calc_tkntype c)
 	subos(stackos, str);
 }
 
-void		calc(int *stackos, t_int *str, t_calc_tkntype c)
+int				calc(int *stackos, t_int *str, t_calc_tkntype c, char *error_var)
 {
+	//dprintf(2, "\nffddd: |%d, %d|\n", str->ol, str->zl);
+	if (str->ol - calc_znaks(str->stackzn, str->zl) < 1)
+		return (error_return_calc(2, error_var));
+	if ((c == CALC_DIV || c == CALC_MOD) && stackos[str->ol - 1] == 0)
+		return (error_return_calc(1, error_var));
 	if (c == CALC_MINUS)
 		stackos[str->ol - 2] = stackos[str->ol - 2] - stackos[str->ol - 1];
 	else if (c == CALC_PLUS)

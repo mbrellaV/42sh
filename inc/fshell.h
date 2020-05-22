@@ -178,6 +178,7 @@ void				ft_fun_fork(char *path, char **arg, pid_t pgid,
 						int foreground);
 int					ft_findenv(char *s, char **env);
 void				ft_do_export(char **mas);
+char				*ft_get_next_word(char *str, int i);
 int					ft_free_split(char **split);
 int					ft_signal(int signo, t_readline *p);
 int					ft_free(void *memory);

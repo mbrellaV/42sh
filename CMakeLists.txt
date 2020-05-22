@@ -136,7 +136,7 @@ add_executable(42save
         src/evaln/calc_atoi.c
         src/evaln/eval_expr.h
         src/evaln/ft_do_zam_eval.c
-        src/evaln/inftopost.c src/evaln/ft_eval_parser.c src/evaln/opr_znak.c src/evaln/calc_lexer.c src/evaln/dop_word_funs.c)
+        src/evaln/inftopost.c src/evaln/ft_eval_parser.c src/evaln/opr_znak.c src/evaln/calc_lexer.c src/evaln/dop_word_funs.c src/history/open_hist_file.c src/evaln/zam_var.c src/evaln/calc_utility.c)
 
 
 target_link_libraries(42save ${CMAKE_SOURCE_DIR}/libft/libft.a)

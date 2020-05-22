@@ -19,8 +19,7 @@ int			save_history(t_memory *q)
 	char	*hashsum;
 
 	ft_bzero(buf, 1000000);
-	if ((fd = open("history/hist.txt", O_CREAT | O_RDWR | O_TRUNC,
-			S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH | S_IWOTH)) < 0)
+	if ((fd = open_hist_file(0)) < 0)
 		return (0);
 	while (q->back != NULL)
 		q = q->back;

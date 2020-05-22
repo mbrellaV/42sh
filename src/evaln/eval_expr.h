@@ -66,6 +66,7 @@ typedef struct		s_int
 	int				i;
 	int				last_token;
 	char			*s;
+	t_calc_token	*first_token;
 }					t_int;
 
 typedef struct		s_calc
@@ -79,14 +80,15 @@ typedef struct		s_calc
 
 int					is_znak(int c);
 int					eval_expr(char *s, int *error);
-void				dostack(int *stackos, int *stackzn, t_calc_tkntype c, t_int *lastint);
-int					calcend(int **stackos, int **stackzn, t_int **str);
+int					calcend(int **stackos, int **stackzn, t_int **str, int *error);
+int					return_with_error(t_calc_token *error_token,
+					int *error, char *all_str, t_int *l);
 char				*ft_main_calc_rec(char *mas, int *error);
 int					prior(int c);
 int					ft_atoi_with(char *str, int *marker);
 int					is_znak_type(t_calc_tkntype type);
 t_int				*cr_new_el(char *s, int *error);
-void				calc(int *stackos, t_int *str, t_calc_tkntype c);
+int					calc(int *stackos, t_int *str, t_calc_tkntype c, char *error_var);
 void				addos(int *stackos, int c, t_int *lastint);
 void				subos(int *stackos, t_int *lastint);
 void				addzn(int *stackzn, t_calc_tkntype c, t_int *lastint);
@@ -102,9 +104,10 @@ t_int				*tmp_0(t_int *tmp, char *s);
 t_calc_token		*ft_cr_new_calc_token(char *line, t_calc_tkntype type);
 char					*calc_ltoa(long long num);
 int						is_incr_sym(char c);
-int						calc_word_size(char *str);
+int					calc_word_size(char *str, int type);
 char					*change_vars(char *evalstr);
 t_calc_token			*calc_define_token(char *str);
+int					dostack(int *stackos, int *stackzn, t_calc_token *c, t_int *lastint);
 t_calc_token		*add_token_cr(t_calc_token *start, t_calc_token *token_to_add);
 t_calc_token		*ft_make_token_from_str(char *str, int *i, t_calc_token *prev_token);
 t_calc_token		*ft_eval_parse(char *str);
@@ -114,9 +117,15 @@ int					issc(char c);
 ** calc_lexer.c
 */
 
-char					*ft_main_calc_rec(char *mas, int *error);
+char						*ft_main_calc_rec(char *mas, int *error);
 t_calc_token				*calc_get_next_tkn(char *str, size_t pos);
 t_calc_token				*calc_define_token_next(char *str);
+
+void						free_calc_tokens(t_calc_token *tmp);
+int							return_with_error(t_calc_token *error_token, int *error, char *all_str, t_int *l);
+int							is_znak_type(t_calc_tkntype type);
+t_calc_token				*get_last_token(t_calc_token *tmp);
+void						zam_var(t_calc_token *var_token, int *error);
 
 
 #endif

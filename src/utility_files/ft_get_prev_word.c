@@ -40,3 +40,26 @@ char		*ft_get_prev_word(char *str, int i)
 	newstr = ft_strsub(str, i, word_size(&str[i]));
 	return (newstr);
 }
+
+char		*ft_get_next_word(char *str, int i)
+{
+	char	*newstr;
+	int		d;
+
+	d = 0;
+	if (!str)
+		return (NULL);
+	i++;
+	while (str[i] != '\0' && isword(str[i]) == 1)
+		i++;
+	//dprintf(2, "\nlico: |%s, %d, %d|\n", str, i, d);
+	while (str[i] != '\0' && (str[i] == ' ' || str[i] == '\t'))
+		i++;
+	while (str[i] != '\0' && (isword(str[i]) == 1))
+	{
+		i++;
+		d++;
+	}
+	newstr = ft_strsub(str, i - d, d);
+	return (newstr);
+}

@@ -6,7 +6,10 @@ t_calc_token		*ft_cr_new_calc_token(char *line, t_calc_tkntype type)
 
 	if (!(tmp = ft_memalloc(sizeof(t_calc_token))))
 		return (NULL);
-	tmp->var = ft_strdup(line);
+	if (line != NULL)
+		tmp->var = ft_strdup(line);
+	else
+		tmp->var = NULL;
 	tmp->type = type;
 	tmp->next = NULL;
 	return (tmp);
