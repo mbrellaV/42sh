@@ -22,7 +22,7 @@ int		exit_builtin(char **args)
 		{
 			ft_dprintf(globals()->fd[2], "42sh: exit: %s: numeric argument required\n", args[1]);
 			put_error_to_shell(2);
-			return (-2);
+			return (-1);
 		}
 		else
 			return (-1);

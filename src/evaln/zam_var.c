@@ -16,7 +16,7 @@ void		zam_var(t_calc_token *var_token, int *error)
 		dop++;
 	if ((env_var = ft_get_var(var_token->var, globals()->g_all_var)))
 	{
-		res = eval_expr(env_var, error);
+		res = eval_expr(env_var, error, var_token->var);
 		ft_strdel(&env_var);
 		if (*error != 0)
 			return ;

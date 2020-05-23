@@ -29,22 +29,23 @@ int		main_calc(t_calc_token *tmp_token, int *error, t_int *l)
 				return (return_with_error(NULL, error, NULL, l));
 		}
 		if (*error != 0)
-			return (0);
+			return (return_with_error(NULL, error, NULL, l));
 		tmp_token = tmp_token->next;
 	}
 	return (calcend(&l->stackos, &l->stackzn, &l, error));
 }
 
-int		eval_expr(char *s, int *error)
+int		eval_expr(char *s, int *error, char *rec_var)
 {
 	t_int			*l;
 	t_calc_token	*tmp_token;
 
+	//dprintf(2, "\nsas: |%s|\n", s);
 	if (!(l = cr_new_el(s, error)))
 		return (c_e((t_calc){NULL, NULL, NULL, error, NULL}));
-	tmp_token = ft_eval_parse(s);
+	tmp_token = ft_eval_parse(s, rec_var);
 	l->first_token = tmp_token;
-	if (get_last_token(tmp_token)->type == CALC_ERROR)
+	if (get_last_token(tmp_token)->type == CALC_ERROR || get_last_token(tmp_token)->type == CALC_REC_ERROR)
 		return (return_with_error(get_last_token(tmp_token), error, s, l));
 	return (main_calc(tmp_token, error, l));
 }

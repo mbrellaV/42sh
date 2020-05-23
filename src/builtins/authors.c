@@ -38,5 +38,5 @@ int			do_authors(void)
 	print_mbrella();
 	print_plettie();
 	print_wstygg();
-	return (1);
+	return (0);
 }

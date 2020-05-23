@@ -180,7 +180,7 @@ t_calc_token		*ft_make_token_from_str(char *str, int *i, t_calc_token *prev_toke
 	}
 }
 
-t_calc_token		*ft_eval_parse(char *str)
+t_calc_token		*ft_eval_parse(char *str, char *rec_var)
 {
 	int				i;
 	t_calc_token	*first_token;
@@ -192,15 +192,21 @@ t_calc_token		*ft_eval_parse(char *str)
 		return (NULL);
 	while (str[i] != '\0')
 	{
-		//dprintf(2, "\ntest: |%c|\n", str[i]);
 		if (str[i] != ' ')
 		{
 			tmp_token = ft_make_token_from_str(&str[i], &i, tmp_token);
-			if (tmp_token && tmp_token->type == CALC_ERROR)
-				return (tmp_token);
 			if (tmp_token)
 			{
 				add_token_cr(first_token, tmp_token);
+			}
+			if (tmp_token && tmp_token->type == CALC_ERROR)
+			{
+				return (first_token);
+			}
+			if (tmp_token && rec_var && !ft_strcmp(tmp_token->var, rec_var))
+			{
+				add_token_cr(first_token, ft_cr_new_calc_token(tmp_token->var, CALC_REC_ERROR));
+				return (first_token);
 			}
 		}
 		else

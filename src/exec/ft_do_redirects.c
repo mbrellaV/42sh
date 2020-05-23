@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../inc/fshell.h"
+#include "fshell.h"
 #include <stdio.h>
 
 void		do_heredoc(t_pipe *p, char **av)

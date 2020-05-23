@@ -101,7 +101,7 @@ int		ft_echo(char **str)
 //		k++;
 //	}
 	if (!vivod(1))
-		return (-1);
+		return (1);
 	while (str[++k])
 	{
 		tmp = str[k];

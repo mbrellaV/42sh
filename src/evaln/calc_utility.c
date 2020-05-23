@@ -16,8 +16,12 @@ void		free_calc_tokens(t_calc_token *tmp)
 int			return_with_error(t_calc_token *error_token, int *error, char *all_str, t_int *l)
 {
 	*error = 1;
-	if (error_token != NULL && all_str != NULL)
-		ft_dprintf(2, "42sh: %s: syntax error in expression (error token is \"%s\")", all_str, error_token->var);
+	if (error_token != NULL && all_str != NULL && error_token->type == CALC_ERROR)
+		ft_dprintf(2, "42sh: %s: syntax error in expression (error token is \"%s\")\n",
+				all_str, error_token->var);
+	else if (error_token != NULL && all_str != NULL && error_token->type == CALC_REC_ERROR)
+		ft_dprintf(2, "42sh: %s: expression recursion level exceeded (error token is %s)\n" ,
+				all_str, error_token->var);
 	if (l != NULL)
 		free_calc_tokens(l->first_token);
 	if (l != NULL)

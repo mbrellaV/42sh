@@ -44,7 +44,8 @@ typedef enum			e_calc_tkntype
 	CALC_PRE_INC = 20,
 	CALC_PRE_DEC = 21,
 	CALC_FIR_SC = 22,
-	CALC_SEC_SC = 23
+	CALC_SEC_SC = 23,
+	CALC_REC_ERROR = 24
 }						t_calc_tkntype;
 
 typedef struct		s_calc_token
@@ -79,7 +80,7 @@ typedef struct		s_calc
 }					t_calc;
 
 int					is_znak(int c);
-int					eval_expr(char *s, int *error);
+int					eval_expr(char *s, int *error, char *rec_var);
 int					calcend(int **stackos, int **stackzn, t_int **str, int *error);
 int					return_with_error(t_calc_token *error_token,
 					int *error, char *all_str, t_int *l);
@@ -110,7 +111,7 @@ t_calc_token			*calc_define_token(char *str);
 int					dostack(int *stackos, int *stackzn, t_calc_token *c, t_int *lastint);
 t_calc_token		*add_token_cr(t_calc_token *start, t_calc_token *token_to_add);
 t_calc_token		*ft_make_token_from_str(char *str, int *i, t_calc_token *prev_token);
-t_calc_token		*ft_eval_parse(char *str);
+t_calc_token		*ft_eval_parse(char *str, char *rec_var);
 int					issc(char c);
 
 /*
