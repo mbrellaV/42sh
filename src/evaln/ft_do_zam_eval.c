@@ -62,7 +62,7 @@ char		*ft_main_calc_rec(char *mas, int *error)
 	{
 		if (mas[i] == '$' && ++d)
 		{
-			if (!(cut_str = ft_do_cut(mas + 1, error)))
+			if (!(cut_str = ft_do_cut(mas + i + 1, error)))
 				return (return_with_del(newstr));
 			i += sc_size(&mas[i + 1], mas[i + 1]);
 		}
