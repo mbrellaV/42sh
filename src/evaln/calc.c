@@ -31,9 +31,10 @@ static int	calc_znaks(int *stackzn, int zl)
 static int	error_return_calc(int error, char *error_str)
 {
 	if (error == 1)
-		ft_dprintf(2, "42sh: calc: division by zero error\n");
+		vivod(2) ? ft_dprintf(2, "42sh: calc: division by zero error\n") : 0;
 	if (error == 2)
-		ft_dprintf(2, "42sh: calc: syntax error (error token is \"%s\")\n", error_str);
+		vivod(2) ? ft_dprintf(2,
+				"42sh: calc: (error token is \"%s\")\n", error_str) : 0;
 	return (-1);
 }
 
@@ -54,9 +55,9 @@ static void	calc_next(int *stackos, t_int *str, t_calc_tkntype c)
 	subos(stackos, str);
 }
 
-int				calc(int *stackos, t_int *str, t_calc_tkntype c, char *error_var)
+int				calc(int *stackos, t_int *str, t_calc_tkntype c,
+					char *error_var)
 {
-	//dprintf(2, "\nffddd: |%d, %d|\n", str->ol, str->zl);
 	if (str->ol - calc_znaks(str->stackzn, str->zl) < 1)
 		return (error_return_calc(2, error_var));
 	if ((c == CALC_DIV || c == CALC_MOD) && stackos[str->ol - 1] == 0)

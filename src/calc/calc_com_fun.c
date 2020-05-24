@@ -29,7 +29,7 @@ static t_calc_tkntype	calc_com_type(char *str)
 }
 
 static long long		calc_com_next(long long result, t_calc_tokens *s_tokens,
-									  size_t *index, t_calc_err *error)
+		size_t *index, t_calc_err *error)
 {
 	t_calc_tkntype	oper;
 
@@ -74,7 +74,7 @@ t_calc_tkn				*calc_get_com_tkn(char *str, size_t pos)
 }
 
 long long				calc_com(t_calc_tokens *s_tokens, size_t *index,
-								  t_calc_err *error)
+		t_calc_err *error)
 {
 	long long	result;
 

@@ -22,6 +22,8 @@ int		show_history(t_memory *q)
 	i = 0;
 	sum = 0;
 	tmp = q;
+	if (!vivod(1))
+		return (1);
 	while (tmp->back)
 		tmp = tmp->back;
 	dop = tmp;
@@ -34,7 +36,7 @@ int		show_history(t_memory *q)
 	while (tmp->next)
 	{
 		if (sum - i < 16)
-			ft_printf("%d\t%s\n", i, tmp->inp);
+			ft_dprintf(globals()->fd[1], "%d\t%s\n", i, tmp->inp);
 		tmp = tmp->next;
 		i++;
 	}

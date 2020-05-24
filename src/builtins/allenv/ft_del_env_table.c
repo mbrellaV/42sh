@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_del_env_table.c                                 :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: qmartina <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/01/28 16:44:37 by qmartina          #+#    #+#             */
+/*   Updated: 2020/05/12 22:36:31 by wstygg           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "fshell.h"
 
 char			**ft_add_to_del_env_table(char *tmp)
@@ -25,7 +37,7 @@ char			**ft_add_to_del_env_table(char *tmp)
 	ft_show_env(new_del_env);
 }
 
-void			ft_free_env_table()
+void			ft_free_env_table(void)
 {
 	int		i;
 

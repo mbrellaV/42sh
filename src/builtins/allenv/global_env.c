@@ -47,18 +47,19 @@ int		ft_env_len(char **env)
 	return (count);
 }
 
-void	ft_show_env(char **env)
+int		ft_show_env(char **env)
 {
 	int		i;
 
 	i = 0;
-	if (env == NULL)
-		return ;
+	if (!vivod(1) || env == NULL)
+		return (1);
 	while (env[i])
 	{
 		ft_dprintf(globals()->fd[1], "%s\n", env[i]);
 		i++;
 	}
+	return (0);
 }
 
 int		ft_findenv(char *s, char **env)

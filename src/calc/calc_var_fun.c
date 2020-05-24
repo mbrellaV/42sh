@@ -23,7 +23,7 @@ static long long	calc_check_var_inc(t_calc_tokens *s_tokens, size_t index)
 }
 
 static long long	calc_var_next(long long result, t_calc_tokens *s_tokens,
-								  size_t *index, t_calc_err *error)
+		size_t *index, t_calc_err *error)
 {
 	t_calc_tkntype	type;
 	t_calc_tkntype	next_tkn_type;
@@ -46,7 +46,7 @@ static long long	calc_var_next(long long result, t_calc_tokens *s_tokens,
 }
 
 long long			calc_var(t_calc_tokens *s_tokens, size_t *index,
-							  t_calc_err *error)
+		t_calc_err *error)
 {
 	long long		result;
 
@@ -60,7 +60,7 @@ long long			calc_var(t_calc_tokens *s_tokens, size_t *index,
 }
 
 long long			calc_var_inc(t_calc_tokens *s_tokens, size_t *index,
-								  t_calc_err *error)
+		t_calc_err *error)
 {
 	long long		result;
 	size_t			cur_index;
@@ -77,11 +77,11 @@ long long			calc_var_inc(t_calc_tokens *s_tokens, size_t *index,
 	return (result);
 }
 
-t_calc_tokens			*calc_prefix(char *str, t_calc_tokens *s_tokens, size_t *pos)
+t_calc_tokens		*calc_prefix(char *str, t_calc_tokens *s_tokens, size_t *pos)
 {
-	size_t	i;
-	char	temp;
-	char	*value;
+	size_t			i;
+	char			temp;
+	char			*value;
 
 	if (!str || !s_tokens || !pos)
 		return (s_tokens);

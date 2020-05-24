@@ -13,7 +13,7 @@
 #include "calc.h"
 
 static long long	calc_unary_next(t_calc_tokens *s_tokens, size_t *index,
-									t_calc_err *error)
+		t_calc_err *error)
 {
 	long long		result;
 	short			sign;
@@ -52,7 +52,7 @@ t_calc_tkn			*calc_get_number_tkn(char *str, size_t pos)
 }
 
 long long			calc_number(t_calc_tokens *s_tokens, size_t *index,
-								 t_calc_err *error)
+		t_calc_err *error)
 {
 	long long	result;
 
@@ -69,7 +69,7 @@ long long			calc_number(t_calc_tokens *s_tokens, size_t *index,
 }
 
 long long			calc_unary(t_calc_tokens *s_tokens, size_t *index,
-								t_calc_err *error)
+		t_calc_err *error)
 {
 	if (!s_tokens || !calc_check_index(s_tokens, *index))
 		return (calc_error(error, CALC_ERR_NULL_OR_IND));

@@ -79,7 +79,7 @@ char	*ft_slash(char *str, t_builtins *echo)
 	(*(str + 1) == 'v') ? ft_putchar_fd('\v', globals()->fd[1]) : --res;
 	(*(str + 1) == 'r') ? ft_putchar_fd('\r', globals()->fd[1]) : --res;
 	(*(str + 1) == 'f') ? ft_putchar_fd('\f', globals()->fd[1]) : --res;
-	(*(str + 1) == '\"') ? ft_putchar_fd('\"', globals()->fd[1]) : --res;
+	(*(str + 1) == '\"') ? ft_putstr_fd("\\\"", globals()->fd[1]) : --res;
 	(*(str + 1) == '\'') ? ft_putstr_fd("\\\'", globals()->fd[1]) : --res;
 	return (ft_slash_2(str, echo, res));
 }
@@ -95,11 +95,6 @@ int		ft_echo(char **str)
 	flag = 0;
 	echo.echo_n = 0;
 	echo.echo_c = 0;
-//	while (str && str[k])
-//	{
-//		dprintf(globals()->fd[1], "%s\n", str[k]);
-//		k++;
-//	}
 	if (!vivod(1))
 		return (1);
 	while (str[++k])

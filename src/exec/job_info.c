@@ -12,13 +12,16 @@
 
 #include "fshell.h"
 
-void		format_job_info(t_job *j, const char *status, int num)
+int			format_job_info(t_job *j, const char *status, int num)
 {
-	ft_dprintf(globals()->fd[2], "[%d] + %ld (%s): %s\n", num,
+	if (!vivod(1))
+		return (1);
+	ft_dprintf(globals()->fd[1], "[%d] + %ld (%s): %s\n", num,
 			(long)j->pgid, status, j->command);
+	return (0);
 }
 
-void		do_job_notification(void)
+int			do_job_notification(void)
 {
 	t_job	*j;
 	int		d;
@@ -29,12 +32,13 @@ void		do_job_notification(void)
 	while (j)
 	{
 		d++;
-		if (job_is_completed(j))
-			format_job_info(j, "completed", d);
-		else if (j->foreground == 0)
-			format_job_info(j, "Running", d);
-		else if (job_is_stopped(j))
-			format_job_info(j, "suspended", d);
+		if (job_is_completed(j) && format_job_info(j, "completed", d))
+			return (1);
+		else if (j->foreground == 0 && format_job_info(j, "Running", d))
+			return (1);
+		else if (job_is_stopped(j) && format_job_info(j, "suspended", d))
+			return (1);
 		j = j->next;
 	}
+	return (0);
 }

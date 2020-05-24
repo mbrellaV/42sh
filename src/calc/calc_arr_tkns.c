@@ -15,7 +15,7 @@
 static t_calc_tokens	*calc_new_tkns(void)
 {
 	t_calc_tokens		*s_tokens;
-	t_calc_tkn		*tokens;
+	t_calc_tkn			*tokens;
 
 	if (!(s_tokens = (t_calc_tokens *)ft_memalloc(sizeof(t_calc_tokens))))
 		return (NULL);
@@ -32,7 +32,7 @@ static t_calc_tokens	*calc_new_tkns(void)
 }
 
 static t_calc_tokens	*calc_preprocessing(char *str, t_calc_tokens *s_tokens,
-											size_t *pos)
+		size_t *pos)
 {
 	if (!str || !pos)
 		return (calc_del_tkns(s_tokens));
@@ -44,7 +44,7 @@ static t_calc_tokens	*calc_preprocessing(char *str, t_calc_tokens *s_tokens,
 }
 
 t_calc_tokens			*calc_get_arr_tkns(char *str,
-											t_calc_tokens *s_tokens, size_t index)
+		t_calc_tokens *s_tokens, size_t index)
 {
 	t_calc_tkn		*token;
 	size_t			pos;
@@ -75,7 +75,7 @@ t_calc_tokens			*calc_get_arr_tkns(char *str,
 
 t_calc_tokens			*calc_del_tkns(t_calc_tokens *s_tokens)
 {
-	size_t			i;
+	size_t				i;
 
 	if (!s_tokens)
 		return (NULL);
@@ -88,7 +88,7 @@ t_calc_tokens			*calc_del_tkns(t_calc_tokens *s_tokens)
 	return (NULL);
 }
 
-int					calc_check_index(t_calc_tokens *s_tokens, size_t index)
+int						calc_check_index(t_calc_tokens *s_tokens, size_t index)
 {
 	if (!s_tokens)
 		return (0);

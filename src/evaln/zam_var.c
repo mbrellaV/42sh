@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   zam_var.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: qmartina <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/01/28 16:44:37 by qmartina          #+#    #+#             */
+/*   Updated: 2020/05/12 22:36:31 by wstygg           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "fshell.h"
 
 void		zam_var(t_calc_token *var_token, int *error)
@@ -29,8 +41,10 @@ void		zam_var(t_calc_token *var_token, int *error)
 	if (var_token->next && var_token->next->type == CALC_DEC)
 		res--;
 	dop_str = ft_itoa(res);
-	if ((var_token->prev && (var_token->prev->type == CALC_PRE_DEC || var_token->prev->type == CALC_PRE_INC)) ||
-		(var_token->next && (var_token->next->type == CALC_INC || var_token->next->type == CALC_DEC)))
+	if ((var_token->prev && (var_token->prev->type == CALC_PRE_DEC
+		|| var_token->prev->type == CALC_PRE_INC)) ||
+		(var_token->next && (var_token->next->type == CALC_INC
+		|| var_token->next->type == CALC_DEC)))
 		set_new_var(str_to_del, dop_str, &globals()->g_all_var);
 	ft_strdel(&dop_str);
 	ft_strdel(&str_to_del);

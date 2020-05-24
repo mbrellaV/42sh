@@ -120,8 +120,8 @@ void					ft_redirect_error(int marker, char *dopline);
 ** job_info.c
 */
 
-void					format_job_info(t_job *j, const char *status, int num);
-void					do_job_notification(void);
+int						format_job_info(t_job *j, const char *status, int num);
+int						do_job_notification(void);
 
 /*
 ** launch_job.c
