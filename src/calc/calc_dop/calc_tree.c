@@ -1,4 +1,4 @@
-#include "Tree.h"
+#include "tree.h"
 
 t_calc_tree_root		*make_t_calc_tree_root_node()
 {
@@ -20,7 +20,7 @@ t_calc_tree_node		*make_tree_node()
  *
  * \param parent_node : parent node
  * \param datum : input data1
- * \param isChar : input data2
+ * \param is_char : input data2
  * \return self node or new child node
  *
  */

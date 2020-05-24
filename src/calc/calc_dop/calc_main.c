@@ -1,9 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   calc_main.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: wstygg <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/04/13 19:53:08 by wstygg            #+#    #+#             */
+/*   Updated: 2020/05/12 22:36:30 by wstygg           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "fshell.h"
 
 long long		calc(char *str, t_calc_err *error)
 {
 	t_calc_tokens	*s_tokens;
-	long long	res;
+	long long		res;
 
 	if (!str || !error)
 		return (0);
@@ -17,7 +29,7 @@ long long		calc(char *str, t_calc_err *error)
 
 long long		calc_exp(t_calc_tokens *s_tokens, size_t index, t_calc_err *error)
 {
-	long long	result;
+	long long		result;
 
 	if (!s_tokens || !calc_check_index(s_tokens, index))
 		return (calc_error(error, CALC_ERR_NULL_OR_IND));

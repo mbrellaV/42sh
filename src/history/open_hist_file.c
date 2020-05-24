@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   open_hist_file.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: qmartina <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/01/28 16:46:28 by qmartina          #+#    #+#             */
+/*   Updated: 2020/05/12 22:36:31 by wstygg           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "fshell.h"
 
 int			open_hist_file(int type)
@@ -11,7 +23,7 @@ int			open_hist_file(int type)
 	tmp = ft_strjoin(home_dir, "/.42hist");
 	dprintf(2, "\n|%s|\n", tmp);
 	if (type == 0 && (fd = open(tmp, O_CREAT | O_RDWR | O_TRUNC,
-				   S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH | S_IWOTH)) < 0)
+			S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH | S_IWOTH)) < 0)
 	{
 		ft_strdel(&home_dir);
 		ft_strdel(&tmp);

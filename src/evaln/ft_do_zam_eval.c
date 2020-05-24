@@ -27,24 +27,24 @@ char		*ft_do_cut(char *tmp, int *error)
 	char				*str_for_del;
 
 	di = 0;
-	if (tmp[di] == '(' && tmp[di + 1] == '(')
-		if (sc_size(&tmp[di], '(') != -1 && sc_size(&tmp[di + 1], '(') != -1)
-		{
-			di = sc_size(&tmp[di], '(') - 3;
-			dop = ft_strsub(tmp, 2, di - 2);
-			str_for_del = dop;
-			str_for_rec = ft_main_calc_rec(dop, error);
-			if (*error == 1)
-				return (return_with_del(str_for_del));
-			if (str_for_rec != NULL)
-				dop = str_for_rec;
-			str = ft_itoa(eval_expr(dop, error, NULL));
-			(str_for_del != dop) ? ft_strdel(&str_for_del) : 0;
-			ft_strdel(&dop);
-			if (*error == 1)
-				return (return_with_del(str));
-			return (str);
-		}
+	if (tmp[di] == '(' && tmp[di + 1] == '(' && sc_size(&tmp[di], '(') != -1 &&
+	sc_size(&tmp[di + 1], '(') != -1)
+	{
+		di = sc_size(&tmp[di], '(') - 3;
+		dop = ft_strsub(tmp, 2, di - 2);
+		str_for_del = dop;
+		str_for_rec = ft_main_calc_rec(dop, error);
+		if (*error == 1)
+			return (return_with_del(str_for_del));
+		if (str_for_rec != NULL)
+			dop = str_for_rec;
+		str = ft_itoa(eval_expr(dop, error, NULL));
+		(str_for_del != dop) ? ft_strdel(&str_for_del) : 0;
+		ft_strdel(&dop);
+		if (*error == 1)
+			return (return_with_del(str));
+		return (str);
+	}
 	return (NULL);
 }
 
@@ -92,8 +92,6 @@ char		*ft_do_zam_eval(char *mas)
 		if (error != 0)
 		{
 			put_error_to_shell(2);
-//			ft_dprintf(globals()->fd[2],
-//					"parse error in eval near: |%s|\n", mas);
 			ft_strdel(&mas);
 			return (NULL);
 		}

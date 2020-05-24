@@ -95,11 +95,6 @@ int		ft_echo(char **str)
 	flag = 0;
 	echo.echo_n = 0;
 	echo.echo_c = 0;
-//	while (str && str[k])
-//	{
-//		dprintf(globals()->fd[1], "%s\n", str[k]);
-//		k++;
-//	}
 	if (!vivod(1))
 		return (1);
 	while (str[++k])

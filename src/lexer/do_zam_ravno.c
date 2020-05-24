@@ -12,7 +12,7 @@
 
 #include "../../inc/fshell.h"
 
-t_lextoken		*do_zam_dop(t_lextoken *h, t_lextoken **first_token)
+t_lextoken	*do_zam_dop(t_lextoken *h, t_lextoken **first_token)
 {
 	t_lextoken	*dop;
 
@@ -21,7 +21,7 @@ t_lextoken		*do_zam_dop(t_lextoken *h, t_lextoken **first_token)
 	return (dop);
 }
 
-void			ft_zam_ravno_main(char *tmp1, char *tmp2, t_lextoken *h, int type)
+void		ft_zam_ravno_main(char *tmp1, char *tmp2, t_lextoken *h, int type)
 {
 	tmp1 = ft_strsub(h->line, 0, ft_strstr(h->line, "=") - h->line);
 	if (*(ft_strstr(h->line, "=") + 1) == '\0')
@@ -44,7 +44,7 @@ void			ft_zam_ravno_main(char *tmp1, char *tmp2, t_lextoken *h, int type)
 	ft_strdel(&tmp2);
 }
 
-t_lextoken		*do_zam_ravno(t_lextoken *h, t_lextoken **first_token)
+t_lextoken	*do_zam_ravno(t_lextoken *h, t_lextoken **first_token)
 {
 	char		*tmp1;
 	char		*tmp2;
@@ -54,7 +54,8 @@ t_lextoken		*do_zam_ravno(t_lextoken *h, t_lextoken **first_token)
 	if (h != NULL && h->line != NULL && ft_strstr(h->line, "=") &&
 	(h->prev == NULL || is_cmd_delim(get_op_type(h->prev->line))))
 	{
-		if (h->next == NULL || ft_strstr(h->next->line, "=") || is_cmd_delim(get_op_type(h->next->line)))
+		if (h->next == NULL || ft_strstr(h->next->line, "=") ||
+		is_cmd_delim(get_op_type(h->next->line)))
 		{
 			ft_zam_ravno_main(tmp1, tmp2, h, 1);
 		}

@@ -14,7 +14,6 @@
 
 int		exit_builtin(char **args)
 {
-
 	if (ft_strcmp(args[0], "exit") == 0 && ((args[1] == NULL)
 		|| (args[1] != NULL && args[2] == NULL)))
 	{

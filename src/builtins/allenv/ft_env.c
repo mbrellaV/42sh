@@ -52,12 +52,13 @@ void		ft_parse_and_make_save_to_env(char *arg)
 	ft_strdel(&res);
 }
 
-int		ft_do_export(char **mas)
+int			ft_do_export(char **mas)
 {
 	char	*dop;
 
 	if (mas == NULL)
-		return (vivod(2) ? ft_dprintf(globals()->fd[2], "an error ocured\n") : 1);
+		return (vivod(2) ? (ft_dprintf(globals()->fd[2],
+				"an error ocured\n")) : 1);
 	else if (mas[1] == NULL && ft_show_env(globals()->g_env))
 		return (1);
 	else if (mas[1] != NULL && mas[2] == NULL)

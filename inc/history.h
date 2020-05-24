@@ -97,6 +97,6 @@ char						*get_num_from_hist_cons(t_memory *t, char *name);
 ** open_hist_file.c
 */
 
-int			open_hist_file(int type);
+int							open_hist_file(int type);
 
 #endif
