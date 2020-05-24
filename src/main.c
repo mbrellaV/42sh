@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/fshell.h"
+#include "fshell.h"
 
 int					main_cycle(t_readline *p, t_exectoken **start_token)
 {

@@ -113,6 +113,12 @@ t_calc_token		*add_token_cr(t_calc_token *start, t_calc_token *token_to_add);
 t_calc_token		*ft_make_token_from_str(char *str, int *i, t_calc_token *prev_token);
 t_calc_token		*ft_eval_parse(char *str, char *rec_var);
 int					issc(char c);
+t_calc_token		*define_standart_token(char *str, int *i);
+
+t_calc_token		*check_and_define_pre_incr(char *str, int *i, t_calc_token *prev_token);
+t_calc_token		*check_calc_error(char *str, int *i, t_calc_token *prev_token);
+t_calc_token		*check_calc_incr_after(char *str, int *i, t_calc_token *prev_token);
+t_calc_token		*check_if_incr_with_num(char *str, int *i, t_calc_token *prev_token);
 
 /*
 ** calc_lexer.c

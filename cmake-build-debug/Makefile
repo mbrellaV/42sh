@@ -1041,6 +1041,60 @@ src/evaln/calc_utility.c.s:
 	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/evaln/calc_utility.c.s
 .PHONY : src/evaln/calc_utility.c.s
 
+src/evaln/check_calc_tokens.o: src/evaln/check_calc_tokens.c.o
+
+.PHONY : src/evaln/check_calc_tokens.o
+
+# target to build an object file
+src/evaln/check_calc_tokens.c.o:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/evaln/check_calc_tokens.c.o
+.PHONY : src/evaln/check_calc_tokens.c.o
+
+src/evaln/check_calc_tokens.i: src/evaln/check_calc_tokens.c.i
+
+.PHONY : src/evaln/check_calc_tokens.i
+
+# target to preprocess a source file
+src/evaln/check_calc_tokens.c.i:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/evaln/check_calc_tokens.c.i
+.PHONY : src/evaln/check_calc_tokens.c.i
+
+src/evaln/check_calc_tokens.s: src/evaln/check_calc_tokens.c.s
+
+.PHONY : src/evaln/check_calc_tokens.s
+
+# target to generate assembly for a file
+src/evaln/check_calc_tokens.c.s:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/evaln/check_calc_tokens.c.s
+.PHONY : src/evaln/check_calc_tokens.c.s
+
+src/evaln/define_calc_tokens.o: src/evaln/define_calc_tokens.c.o
+
+.PHONY : src/evaln/define_calc_tokens.o
+
+# target to build an object file
+src/evaln/define_calc_tokens.c.o:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/evaln/define_calc_tokens.c.o
+.PHONY : src/evaln/define_calc_tokens.c.o
+
+src/evaln/define_calc_tokens.i: src/evaln/define_calc_tokens.c.i
+
+.PHONY : src/evaln/define_calc_tokens.i
+
+# target to preprocess a source file
+src/evaln/define_calc_tokens.c.i:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/evaln/define_calc_tokens.c.i
+.PHONY : src/evaln/define_calc_tokens.c.i
+
+src/evaln/define_calc_tokens.s: src/evaln/define_calc_tokens.c.s
+
+.PHONY : src/evaln/define_calc_tokens.s
+
+# target to generate assembly for a file
+src/evaln/define_calc_tokens.c.s:
+	$(MAKE) -f CMakeFiles/42save.dir/build.make CMakeFiles/42save.dir/src/evaln/define_calc_tokens.c.s
+.PHONY : src/evaln/define_calc_tokens.c.s
+
 src/evaln/dop.o: src/evaln/dop.c.o
 
 .PHONY : src/evaln/dop.o
@@ -4122,6 +4176,12 @@ help:
 	@echo "... src/evaln/calc_utility.o"
 	@echo "... src/evaln/calc_utility.i"
 	@echo "... src/evaln/calc_utility.s"
+	@echo "... src/evaln/check_calc_tokens.o"
+	@echo "... src/evaln/check_calc_tokens.i"
+	@echo "... src/evaln/check_calc_tokens.s"
+	@echo "... src/evaln/define_calc_tokens.o"
+	@echo "... src/evaln/define_calc_tokens.i"
+	@echo "... src/evaln/define_calc_tokens.s"
 	@echo "... src/evaln/dop.o"
 	@echo "... src/evaln/dop.i"
 	@echo "... src/evaln/dop.s"

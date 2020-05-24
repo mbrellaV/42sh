@@ -52,7 +52,6 @@ char		*ft_get_next_word(char *str, int i)
 	i++;
 	while (str[i] != '\0' && isword(str[i]) == 1)
 		i++;
-	//dprintf(2, "\nlico: |%s, %d, %d|\n", str, i, d);
 	while (str[i] != '\0' && (str[i] == ' ' || str[i] == '\t'))
 		i++;
 	while (str[i] != '\0' && (isword(str[i]) == 1))

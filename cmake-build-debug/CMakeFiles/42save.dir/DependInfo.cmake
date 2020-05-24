@@ -38,6 +38,8 @@ set(CMAKE_DEPENDS_CHECK_C
   "/home/petruha2001/42sh/src/evaln/calc_lexer.c" "/home/petruha2001/42sh/cmake-build-debug/CMakeFiles/42save.dir/src/evaln/calc_lexer.c.o"
   "/home/petruha2001/42sh/src/evaln/calc_ltoa.c" "/home/petruha2001/42sh/cmake-build-debug/CMakeFiles/42save.dir/src/evaln/calc_ltoa.c.o"
   "/home/petruha2001/42sh/src/evaln/calc_utility.c" "/home/petruha2001/42sh/cmake-build-debug/CMakeFiles/42save.dir/src/evaln/calc_utility.c.o"
+  "/home/petruha2001/42sh/src/evaln/check_calc_tokens.c" "/home/petruha2001/42sh/cmake-build-debug/CMakeFiles/42save.dir/src/evaln/check_calc_tokens.c.o"
+  "/home/petruha2001/42sh/src/evaln/define_calc_tokens.c" "/home/petruha2001/42sh/cmake-build-debug/CMakeFiles/42save.dir/src/evaln/define_calc_tokens.c.o"
   "/home/petruha2001/42sh/src/evaln/dop.c" "/home/petruha2001/42sh/cmake-build-debug/CMakeFiles/42save.dir/src/evaln/dop.c.o"
   "/home/petruha2001/42sh/src/evaln/dop_word_funs.c" "/home/petruha2001/42sh/cmake-build-debug/CMakeFiles/42save.dir/src/evaln/dop_word_funs.c.o"
   "/home/petruha2001/42sh/src/evaln/ft_do_zam_eval.c" "/home/petruha2001/42sh/cmake-build-debug/CMakeFiles/42save.dir/src/evaln/ft_do_zam_eval.c.o"

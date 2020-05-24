@@ -9,7 +9,6 @@ int			open_hist_file(int type)
 	if (!(home_dir = ft_get_var("HOME", globals()->g_env)))
 		return (-1);
 	tmp = ft_strjoin(home_dir, "/.42hist");
-	dprintf(2, "\n|%s|\n", tmp);
 	if (type == 0 && (fd = open(tmp, O_CREAT | O_RDWR | O_TRUNC,
 				   S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH | S_IWOTH)) < 0)
 	{

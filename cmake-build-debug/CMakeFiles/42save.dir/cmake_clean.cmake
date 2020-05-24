@@ -35,6 +35,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/42save.dir/src/evaln/calc_lexer.c.o"
   "CMakeFiles/42save.dir/src/evaln/calc_ltoa.c.o"
   "CMakeFiles/42save.dir/src/evaln/calc_utility.c.o"
+  "CMakeFiles/42save.dir/src/evaln/check_calc_tokens.c.o"
+  "CMakeFiles/42save.dir/src/evaln/define_calc_tokens.c.o"
   "CMakeFiles/42save.dir/src/evaln/dop.c.o"
   "CMakeFiles/42save.dir/src/evaln/dop_word_funs.c.o"
   "CMakeFiles/42save.dir/src/evaln/ft_do_zam_eval.c.o"

@@ -35,7 +35,6 @@ int			ft_do_change_alias(char **mas)
 	else if (ft_strcmp(mas[0], "unalias") == 0 && mas[1] != NULL &&
 	mas[2] == NULL && ft_strstr(mas[1], "=") == NULL)
 	{
-		dprintf(2, "sass");
 		unset_var(mas[1], &globals()->g_alias);
 		ft_show_env(globals()->g_alias);
 	}

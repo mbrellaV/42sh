@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../inc/fshell.h"
+#include "fshell.h"
 
 static void		do_zam_slash_in_par(t_zams *zams, char *line, char c)
 {
@@ -20,7 +20,7 @@ static void		do_zam_slash_in_par(t_zams *zams, char *line, char c)
 	{
 		while (line[zams->i] != '\0' && line[zams->i] != c)
 		{
-			if (line[zams->i] == '\\' && ispar(line[zams->i + 1]))
+			if (line[zams->i] == '\\' && line[zams->i + 1] ==  '\"')
 				ft_strcat_char(zams->dopstr, -1 * line[++zams->i]);
 			else
 				ft_strcat_char(zams->dopstr, line[zams->i]);
