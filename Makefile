@@ -145,7 +145,6 @@ SRC_BASE = builtins/ft_cd.c\
     evaln/calc.c\
     evaln/calc_utility.c\
     evaln/zam_var.c\
-    evaln/atoimy.c\
     evaln/inftopost.c\
     evaln/calc_def_token.c\
     evaln/ft_do_zam_eval.c\
@@ -153,8 +152,6 @@ SRC_BASE = builtins/ft_cd.c\
     evaln/calc_lexer.c\
     evaln/sub_and_add.c\
     evaln/calc_error.c\
-    evaln/change_vars.c\
-    evaln/check_calc.c\
     evaln/define_calc_tokens.c\
     evaln/ft_eval_parser.c\
 	utility_files/g_builtins.c\

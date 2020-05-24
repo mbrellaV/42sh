@@ -16,7 +16,6 @@ int		main_calc(t_calc_token *tmp_token, int *error, t_int *l)
 {
 	while (tmp_token != NULL && tmp_token->type != CALC_END)
 	{
-		//dprintf(2, "\n|%s, %d|\n", tmp_token->var, tmp_token->type);
 		if (tmp_token->type == CALC_VAR)
 			zam_var(tmp_token, error);
 		if (*error == 0 && (tmp_token->type == CALC_NUMBER || tmp_token->type == CALC_VAR))
@@ -40,7 +39,6 @@ int		eval_expr(char *s, int *error, char *rec_var)
 	t_int			*l;
 	t_calc_token	*tmp_token;
 
-	//dprintf(2, "\nsas: |%s|\n", s);
 	if (!(l = cr_new_el(s, error)))
 		return (c_e((t_calc){NULL, NULL, NULL, error, NULL}));
 	tmp_token = ft_eval_parse(s, rec_var);

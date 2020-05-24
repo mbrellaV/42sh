@@ -5,8 +5,6 @@ int					is_incr(t_calc_tkntype type)
 	return (type == CALC_PRE_INC || type == CALC_PRE_DEC || type == CALC_INC || type == CALC_DEC);
 }
 
-
-
 t_calc_token		*ft_make_token_from_str(char *str, int *i, t_calc_token *prev_token)
 {
 	t_calc_token	*tmp_token;

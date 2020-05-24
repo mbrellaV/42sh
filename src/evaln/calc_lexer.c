@@ -51,22 +51,6 @@ int			znak_size(char *str)
 	return (i);
 }
 
-//int			ft_num_with_sym(char *str)
-//{
-//	int		i;
-//
-//	i = 1;
-//	if (is_incr_sym(str[i]))
-//		return (1);
-//	while (str[i] && (str[i] == ' '))
-//	{
-//		i++;
-//	}
-//	if ()
-//	ft_atoi_with(str + i, &i);
-//	return (i);
-//}
-
 int			calc_word_size(char *str, int type)
 {
 	int		i;
@@ -84,24 +68,3 @@ int			calc_word_size(char *str, int type)
 		return (1);
 	return (i);
 }
-
-//int			calc_word_size(char *str)
-//{
-//	int		i;
-//
-//	i = 0;
-//	while (str[i] != '\0')
-//	{
-//		if (is_incr_sym(str[i]))
-//			break ;
-//		if (!ft_isalpha(str[i]) && !ft_isdigit(str[i]))
-//			return (i);
-//		i++;
-//	}
-//	if ((str[i] == '+' && str[i + 1] == '-') ||
-//		(str[i] == '-' && str[i + 1] == '+'))
-//		return (i);
-//	if (is_incr_sym(str[i]) && is_incr_sym(str[i + 1]))
-//		return (i + 2);
-//	return (i);
-//}
