@@ -52,20 +52,18 @@ void		ft_parse_and_make_save_to_env(char *arg)
 	ft_strdel(&res);
 }
 
-void		ft_do_export(char **mas)
+int		ft_do_export(char **mas)
 {
 	char	*dop;
 
 	if (mas == NULL)
-		ft_dprintf(globals()->fd[2], "an error ocured\n");
-	else if (mas[1] == NULL)
-		return (ft_show_env(globals()->g_env));
+		return (vivod(2) ? ft_dprintf(globals()->fd[2], "an error ocured\n") : 1);
+	else if (mas[1] == NULL && ft_show_env(globals()->g_env))
+		return (1);
 	else if (mas[1] != NULL && mas[2] == NULL)
 	{
 		if (ft_strstr(mas[1], "=") != NULL)
-		{
 			ft_parse_and_make_save_to_env(mas[1]);
-		}
 		else if (ft_findenv(mas[1], globals()->g_all_var) != -404)
 		{
 			dop = ft_get_var(mas[1], globals()->g_all_var);
@@ -74,11 +72,10 @@ void		ft_do_export(char **mas)
 		}
 	}
 	else if (mas[1] && mas[2] && mas[3] == NULL)
-	{
 		set_new_var(mas[1], mas[2], &globals()->g_env);
-	}
 	else
-		ft_dprintf(globals()->fd[2], "parse error\n");
+		vivod(2) ? ft_dprintf(globals()->fd[2], "parse error\n") : 0;
+	return (0);
 }
 
 void		do_all_var(char **env)

@@ -69,7 +69,7 @@ int					ft_type(char **argv)
 
 	i = 0;
 	if (!vivod(1))
-		return (-1);
+		return (1);
 	while (argv[++i])
 	{
 		if (!check_alias(argv[i]) && !check_builtins(argv[i]) &&

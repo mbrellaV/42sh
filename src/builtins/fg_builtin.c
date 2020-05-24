@@ -32,10 +32,11 @@ int		do_fg(char **mas)
 				continue_job(get_job_by_cont_str(&mas[1][1]), 1);
 		}
 		else
-			return (!ft_dprintf(globals()->fd[2],
-					"42sh: fg: %s: no such job", mas[1]) - 1);
+			return (vivod(2) ? (!ft_dprintf(globals()->fd[2],
+					"42sh: fg: %s: no such job\n", mas[1]) - 1) : 1);
 	}
 	else
-		return (!ft_dprintf(globals()->fd[2], "usage: fg [job_id]\n") - 1);
+		return (vivod(2) ? (!ft_dprintf(globals()->fd[2],
+				"usage: fg [job_id]\n") - 1) : 1);
 	return (0);
 }

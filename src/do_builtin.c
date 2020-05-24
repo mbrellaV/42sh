@@ -15,7 +15,7 @@
 int		do_next_builtins_2(char **file_args)
 {
 	if (ft_strcmp(file_args[0], "env") == 0)
-		ft_show_env(globals()->g_env);
+		put_error_to_shell(ft_show_env(globals()->g_env));
 	else if (ft_strcmp(file_args[0], "clear") == 0)
 		ft_putstr_fd("\033[2J\033[H", globals()->fd[2]);
 	else if (ft_strcmp(file_args[0], "hash") == 0)
@@ -44,7 +44,7 @@ int		do_next_builtins(char **file_args)
 	else if (ft_strcmp(file_args[0], "bg") == 0)
 		put_error_to_shell(do_bg(file_args));
 	else if (ft_strcmp(file_args[0], "jobs") == 0)
-		do_job_notification();
+		put_error_to_shell(do_job_notification());
 	else if (ft_strcmp(file_args[0], "echo") == 0)
 		put_error_to_shell(ft_echo(file_args));
 	else if (ft_strcmp(file_args[0], "history") == 0)
@@ -72,7 +72,7 @@ int		do_builtin(char **file_args, char **file_opt, int type)
 	else if (ft_strcmp(file_args[0], "cd") == 0)
 		put_error_to_shell(ft_cd(file_args));
 	else if (ft_strcmp(file_args[0], "export") == 0)
-		ft_do_export(file_args);
+		put_error_to_shell(ft_do_export(file_args));
 	else if (ft_strcmp(file_args[0], "unset") == 0 && file_args[1])
 	{
 		unset_var(file_args[1], &globals()->g_env);

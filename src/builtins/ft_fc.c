@@ -35,13 +35,11 @@ static int			do_fc_l(t_fc flags)
 	range = flags.rng;
 	while (range[0] != range[1])
 	{
-		if (vivod(1))
-			ft_dprintf(globals()->fd[1], "%d\t%s\n", range[0],
+		ft_dprintf(globals()->fd[1], "%d\t%s\n", range[0],
 				get_hist_by_id(range[0]));
 		range[0] += (range[0] < range[1]) ? 1 : -1;
 	}
-	if (vivod(1))
-		ft_dprintf(globals()->fd[1], "%d\t%s\n", range[0],
+	ft_dprintf(globals()->fd[1], "%d\t%s\n", range[0],
 			get_hist_by_id(range[0]));
 	return (0);
 }
@@ -60,14 +58,14 @@ static int			do_fc_regular(int fd, t_fc flags)
 		if (!ft_dprintf(fd, "%s\n", get_hist_by_id(range[0])))
 		{
 			return (vivod(2) ? (ft_dprintf(globals()->fd[2],
-					"fc write error!\n")) : 0);
+					"fc write error!\n")) : 1);
 		}
 		range[0] += (range[0] < range[1]) ? 1 : -1;
 	}
 	if (!ft_dprintf(fd, "%s\n", get_hist_by_id(range[0])))
 	{
 		return (vivod(2) ? (ft_dprintf(globals()->fd[2],
-				"fc write error!\n")) : 0);
+				"fc write error!\n")) : 1);
 	}
 	close(fd);
 	if (pick_launch(flags))
@@ -100,6 +98,8 @@ int					do_fc(char **av)
 	t_fc			f;
 	char			*command;
 
+	if (!vivod(1))
+		return (1);
 	f = (t_fc){.rng = {0, 0, 0}, .r = 0, .l = 0, .silent = 0, .editor = FC_VIM};
 	if (check_flag(++av, &f))
 		return ((f.rng[0] > f.hi_s) ? err_fc(FC_US) : 0);

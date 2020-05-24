@@ -22,10 +22,12 @@ int			alias_error(int error, char *tmp1, char *tmp2)
 	}
 	if (error == 14)
 	{
-		ft_dprintf(globals()->fd[2], "alias [alias-name[=string]...]\n");
+		vivod(2) ? ft_dprintf(globals()->fd[2],
+				"alias [alias-name[=string]...]\n") : 0;
 		return (-1);
 	}
-	ft_dprintf(globals()->fd[2], "alias error: wrong argument: |%s|\n", tmp2);
+	vivod(2) ? ft_dprintf(globals()->fd[2],
+			"alias error: wrong argument: |%s|\n", tmp2) : 0;
 	ft_strdel(&tmp1);
 	ft_strdel(&tmp2);
 	return (-1);
