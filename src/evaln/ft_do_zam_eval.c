@@ -41,9 +41,7 @@ char		*ft_do_cut(char *tmp, int *error)
 		str = ft_itoa(eval_expr(dop, error, NULL));
 		(str_for_del != dop) ? ft_strdel(&str_for_del) : 0;
 		ft_strdel(&dop);
-		if (*error == 1)
-			return (return_with_del(str));
-		return (str);
+		return ((*error == 1) ? return_with_del(str) : str);
 	}
 	return (NULL);
 }

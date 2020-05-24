@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   calc_utility.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: wstygg <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/04/13 19:53:08 by wstygg            #+#    #+#             */
+/*   Updated: 2020/05/04 13:41:58 by wstygg           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "fshell.h"
 
-void		free_calc_tokens(t_calc_token *tmp)
+void			free_calc_tokens(t_calc_token *tmp)
 {
 	t_calc_token	*dop;
 
@@ -13,14 +25,19 @@ void		free_calc_tokens(t_calc_token *tmp)
 	}
 }
 
-int			return_with_error(t_calc_token *error_token, int *error, char *all_str, t_int *l)
+int				return_with_error(t_calc_token *error_token, int *error,
+		char *all_str, t_int *l)
 {
 	*error = 1;
-	if (error_token != NULL && all_str != NULL && error_token->type == CALC_ERROR)
-		ft_dprintf(2, "42sh: %s: syntax error in expression (error token is \"%s\")\n",
+	if (error_token != NULL && all_str != NULL &&
+	error_token->type == CALC_ERROR)
+		ft_dprintf(globals()->fd[2],
+				"42sh: %s: error in expression (error token is \"%s\")\n",
 				all_str, error_token->var);
-	else if (error_token != NULL && all_str != NULL && error_token->type == CALC_REC_ERROR)
-		ft_dprintf(2, "42sh: %s: expression recursion level exceeded (error token is %s)\n" ,
+	else if (error_token != NULL && all_str != NULL &&
+	error_token->type == CALC_REC_ERROR)
+		ft_dprintf(globals()->fd[2],
+				"42sh: %s: expression level exceeded (error token is %s)\n",
 				all_str, error_token->var);
 	if (l != NULL)
 		free_calc_tokens(l->first_token);
@@ -33,13 +50,14 @@ int			return_with_error(t_calc_token *error_token, int *error, char *all_str, t_
 	return (0);
 }
 
-int		is_znak_type(t_calc_tkntype type)
+int				is_znak_type(t_calc_tkntype type)
 {
 	return ((type > CALC_NUMBER && type <= CALC_SEC_SC) && type != CALC_VAR &&
-			type != CALC_INC && type != CALC_DEC && type != CALC_PRE_INC && type != CALC_PRE_DEC);
+			type != CALC_INC && type != CALC_DEC &&
+			type != CALC_PRE_INC && type != CALC_PRE_DEC);
 }
 
-t_calc_token		*get_last_token(t_calc_token *tmp)
+t_calc_token	*get_last_token(t_calc_token *tmp)
 {
 	while (tmp->next)
 	{

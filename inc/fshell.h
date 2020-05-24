@@ -39,7 +39,6 @@
 # include <errno.h>
 # include "parser.h"
 # include "hash.h"
-# include "calc.h"
 # include "history.h"
 # include "nucleus.h"
 # include "lexer.h"

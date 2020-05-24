@@ -51,34 +51,6 @@ int			is_znak(int c)
 		return (0);
 }
 
-int			dostack(int *stackos, int *stackzn, t_calc_token *c, t_int *lastint)
-{
-	if ((c->type == CALC_FIR_SC || (lastint->zl != 0 && prior(stackzn[lastint->zl - 1])
-	< prior(c->type))) && c->type != CALC_SEC_SC)
-		addzn(stackzn, c->type, lastint);
-	else if (c->type == CALC_SEC_SC)
-	{
-		while (stackzn[lastint->zl - 1] != CALC_FIR_SC)
-		{
-			if ((calc(stackos, lastint, stackzn[lastint->zl - 1], c->var)) == -1)
-				return (-1);
-			subzn(stackzn, lastint);
-		}
-		subzn(stackzn, lastint);
-	}
-	else
-	{
-		while (lastint->zl > 0 && prior(stackzn[lastint->zl - 1]) >= prior(c->type))
-		{
-			if ((calc(stackos, lastint, stackzn[lastint->zl - 1], c->var)) == -1)
-				return (-1);
-			subzn(stackzn, lastint);
-		}
-		addzn(stackzn, c->type, lastint);
-	}
-	return (1);
-}
-
 int			calcend(int **stackos, int **stackzn, t_int **str, int *error)
 {
 	int		result;
@@ -89,7 +61,8 @@ int			calcend(int **stackos, int **stackzn, t_int **str, int *error)
 	dop_stackzn = *stackzn;
 	while ((*str)->ol > 1)
 	{
-		if ((calc(dop_stackos, *str, dop_stackzn[(*str)->zl - 1], (*str)->s)) == -1)
+		if ((calc(dop_stackos, *str, dop_stackzn[(*str)->zl - 1],
+				(*str)->s)) == -1)
 			return (return_with_error(NULL, error, NULL, (*str)));
 		subzn(dop_stackzn, *str);
 	}

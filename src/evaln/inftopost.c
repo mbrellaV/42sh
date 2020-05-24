@@ -18,7 +18,8 @@ int		main_calc(t_calc_token *tmp_token, int *error, t_int *l)
 	{
 		if (tmp_token->type == CALC_VAR)
 			zam_var(tmp_token, error);
-		if (*error == 0 && (tmp_token->type == CALC_NUMBER || tmp_token->type == CALC_VAR))
+		if (*error == 0 && (tmp_token->type == CALC_NUMBER ||
+		tmp_token->type == CALC_VAR))
 		{
 			addos(l->stackos, ft_atoi(tmp_token->var), l);
 		}
@@ -43,7 +44,8 @@ int		eval_expr(char *s, int *error, char *rec_var)
 		return (c_e((t_calc){NULL, NULL, NULL, error, NULL}));
 	tmp_token = ft_eval_parse(s, rec_var);
 	l->first_token = tmp_token;
-	if (get_last_token(tmp_token)->type == CALC_ERROR || get_last_token(tmp_token)->type == CALC_REC_ERROR)
+	if (get_last_token(tmp_token)->type == CALC_ERROR ||
+	get_last_token(tmp_token)->type == CALC_REC_ERROR)
 		return (return_with_error(get_last_token(tmp_token), error, s, l));
 	return (main_calc(tmp_token, error, l));
 }

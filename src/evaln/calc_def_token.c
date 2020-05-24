@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   calc_def_token.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: wstygg <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/04/13 19:53:08 by wstygg            #+#    #+#             */
+/*   Updated: 2020/05/04 13:41:58 by wstygg           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "eval_expr.h"
 
-t_calc_token		*ft_cr_new_calc_token(char *line, t_calc_tkntype type)
+t_calc_token		*ft_ntoken(char *line, t_calc_tkntype type)
 {
 	t_calc_token	*tmp;
 
@@ -15,7 +27,8 @@ t_calc_token		*ft_cr_new_calc_token(char *line, t_calc_tkntype type)
 	return (tmp);
 }
 
-t_calc_token		*add_token_cr(t_calc_token *start, t_calc_token *token_to_add)
+t_calc_token		*add_token_cr(t_calc_token *start,
+		t_calc_token *token_to_add)
 {
 	t_calc_token	*tmp;
 

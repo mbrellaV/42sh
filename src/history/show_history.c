@@ -16,27 +16,25 @@ int		show_history(t_memory *q)
 {
 	t_memory	*tmp;
 	int			i;
-	int			sum;
+	int			s;
 	t_memory	*dop;
 
-	i = 0;
-	sum = 0;
 	tmp = q;
-	if (!vivod(1))
+	s = 0;
+	if ((!(i = 0)) && !vivod(1))
 		return (1);
 	while (tmp->back)
 		tmp = tmp->back;
 	dop = tmp;
 	while (tmp != NULL)
 	{
-		sum++;
+		s++;
 		tmp = tmp->next;
 	}
 	tmp = dop;
 	while (tmp->next)
 	{
-		if (sum - i < 16)
-			ft_dprintf(globals()->fd[1], "%d\t%s\n", i, tmp->inp);
+		s - i < 16 ? ft_dprintf(globals()->fd[1], "%d\t%s\n", i, tmp->inp) : 0;
 		tmp = tmp->next;
 		i++;
 	}

@@ -1,58 +1,222 @@
-cmake_minimum_required(VERSION 3.14)
-project(42save C)
+cmake_minimum_required(VERSION 3.15)
+project(42sh C)
 
-set(CMAKE_C_STANDARD 99)
+set(CMAKE_C_STANDARD 11)
 
 include_directories(inc)
 include_directories(libft/inc)
-include_directories(src)
+include_directories(src/calc/calc_dop)
+include_directories(src/evaln)
 include_directories(src/qft_printf)
 
-add_executable(42save
-        src/builtins/ft_fc_3.c
+add_executable(42sh
+        inc/exec.h
         inc/fshell.h
         inc/hash.h
+        inc/history.h
+        inc/lexer.h
         inc/nucleus.h
         inc/parser.h
         inc/struct.h
-        src/builtins/authors.c
+        libft/inc/get_next_line.h
+        libft/inc/libft.h
+        libft/src/count_words.c
+        libft/src/ft_atoi.c
+        libft/src/ft_bzero.c
+        libft/src/ft_count.c
+        libft/src/ft_count_whtsp_end.c
+        libft/src/ft_count_whtsp_start.c
+        libft/src/ft_count_words.c
+        libft/src/ft_exponentiation.c
+        libft/src/ft_free_str.c
+        libft/src/ft_isalnum.c
+        libft/src/ft_isalpha.c
+        libft/src/ft_isascii.c
+        libft/src/ft_isdelim.c
+        libft/src/ft_isdigit.c
+        libft/src/ft_islower.c
+        libft/src/ft_isprint.c
+        libft/src/ft_isupper.c
+        libft/src/ft_itoa.c
+        libft/src/ft_itoa_base.c
+        libft/src/ft_labs.c
+        libft/src/ft_list_clear.c
+        libft/src/ft_list_foreach.c
+        libft/src/ft_list_reverse.c
+        libft/src/ft_lstadd.c
+        libft/src/ft_lstdel.c
+        libft/src/ft_lstdelone.c
+        libft/src/ft_lstiter.c
+        libft/src/ft_lstmap.c
+        libft/src/ft_lstnew.c
+        libft/src/ft_memalloc.c
+        libft/src/ft_memccpy.c
+        libft/src/ft_memchr.c
+        libft/src/ft_memcmp.c
+        libft/src/ft_memcpy.c
+        libft/src/ft_memdel.c
+        libft/src/ft_memmove.c
+        libft/src/ft_memset.c
+        libft/src/ft_nbrlen.c
+        libft/src/ft_printf.c
+        libft/src/ft_putchar.c
+        libft/src/ft_putchar_fd.c
+        libft/src/ft_putendl.c
+        libft/src/ft_putendl_fd.c
+        libft/src/ft_putnbr.c
+        libft/src/ft_putnbr_fd.c
+        libft/src/ft_putstr.c
+        libft/src/ft_putstr_fd.c
+        libft/src/ft_realloc.c
+        libft/src/ft_sqrt.c
+        libft/src/ft_str_is_lowercase.c
+        libft/src/ft_str_is_numeric.c
+        libft/src/ft_str_is_printable.c
+        libft/src/ft_strcat.c
+        libft/src/ft_strcat_char.c
+        libft/src/ft_strchr.c
+        libft/src/ft_strclr.c
+        libft/src/ft_strcmp.c
+        libft/src/ft_strcmp_start.c
+        libft/src/ft_strcpy.c
+        libft/src/ft_strdel.c
+        libft/src/ft_strdup.c
+        libft/src/ft_strequ.c
+        libft/src/ft_striter.c
+        libft/src/ft_striteri.c
+        libft/src/ft_strjoin.c
+        libft/src/ft_strjoin_cmp.c
+        libft/src/ft_strjoinch.c
+        libft/src/ft_strjoinch_i.c
+        libft/src/ft_strlcat.c
+        libft/src/ft_strlen.c
+        libft/src/ft_strmap.c
+        libft/src/ft_strmapi.c
+        libft/src/ft_strncat.c
+        libft/src/ft_strncmp.c
+        libft/src/ft_strncpy.c
+        libft/src/ft_strndup.c
+        libft/src/ft_strnequ.c
+        libft/src/ft_strnew.c
+        libft/src/ft_strnstr.c
+        libft/src/ft_strrchr.c
+        libft/src/ft_strsep.c
+        libft/src/ft_strsplit.c
+        libft/src/ft_strstr.c
+        libft/src/ft_strsub.c
+        libft/src/ft_strtrim.c
+        libft/src/ft_swap.c
+        libft/src/ft_tolower.c
+        libft/src/ft_toupper.c
+        libft/src/ft_word_size.c
+        libft/src/get_next_line.c
+        libft/src/get_next_line_with_sym.c
         src/builtins/alias/alias.c
+        src/builtins/alias/alias_error.c
+        src/builtins/alias/ft_do_change_alias.c
+        src/builtins/allenv/ft_del_env_table.c
         src/builtins/allenv/ft_env.c
         src/builtins/allenv/global_env.c
         src/builtins/allenv/main_env.c
+        src/builtins/authors.c
         src/builtins/bg_builtin.c
+        src/builtins/exit_builtin.c
         src/builtins/fg_builtin.c
         src/builtins/ft_cd.c
         src/builtins/ft_cd_2.c
         src/builtins/ft_cd_3.c
         src/builtins/ft_echo.c
         src/builtins/ft_echo2.c
+        src/builtins/ft_fc.c
+        src/builtins/ft_fc_2.c
+        src/builtins/ft_fc_3.c
         src/builtins/ft_type.c
+        src/calc/calc_dop/calc_main.c
+        src/calc/calc_dop/calc_parser.c
+        src/calc/calc_dop/calc_tree.c
+        src/calc/calc_dop/remove_tree.c
+        src/calc/calc_dop/traversal.c
+        src/calc/calc_dop/tree.h
+        src/calc/calc.c
+        src/calc/calc_add_fun.c
+        src/calc/calc_arr_reloc.c
+        src/calc/calc_arr_tkns.c
+        src/calc/calc_atoi.c
+        src/calc/calc_com_fun.c
+        src/calc/calc_eq_fun.c
+        src/calc/calc_error_fun.c
+        src/calc/calc_inc_fun.c
+        src/calc/calc_lexer.c
+        src/calc/calc_log_fun.c
+        src/calc/calc_ltoa.c
+        src/calc/calc_mul_fun.c
+        src/calc/calc_num_fun.c
+        src/calc/calc_parent_fun.c
+        src/calc/calc_tkn.c
+        src/calc/calc_var_fun.c
+        src/calc/calc_var_tkn.c
+        src/calc/change_vars.c
+        src/calc/ft_do_zam_eval.c
         src/errors/errror_handler.c
+        src/evaln/calc.c
+        src/evaln/calc_def_token.c
+        src/evaln/calc_error.c
+        src/evaln/calc_lexer.c
+        src/evaln/calc_utility.c
+        src/evaln/check_calc_tokens.c
+        src/evaln/define_calc_tokens.c
+        src/evaln/dop.c
+        src/evaln/eval_expr.h
+        src/evaln/ft_do_zam_eval.c
+        src/evaln/ft_eval_parser.c
+        src/evaln/inftopost.c
+        src/evaln/opr_znak.c
+        src/evaln/sub_and_add.c
+        src/evaln/zam_var.c
         src/exec/continuing_jobs.c
+        src/exec/create_jobs_and_proc.c
+        src/exec/find_jobs.c
+        src/exec/free_job_list.c
         src/exec/ft_create_file.c
+        src/exec/ft_do_open_flags.c
         src/exec/ft_do_redirects.c
+        src/exec/ft_redirect_error.c
+        src/exec/job_info.c
         src/exec/launch_job.c
         src/exec/launch_process.c
         src/exec/operating_job.c
         src/exec/put_job_in_background.c
         src/exec/put_job_in_foreground.c
+        src/exec/redirect.c
         src/exec/stopped_and_terminated_jobs.c
+        src/exec/working_with_fds.c
         src/hash/hash_error.c
         src/hash/hash_table.c
         src/hash/hash_table_2.c
+        src/hash/print_hash.c
+        src/history/change_hist_exp.c
+        src/history/dop_memory.c
+        src/history/find_history.c
+        src/history/ft_add_to_history.c
+        src/history/ft_putmemory.c
+        src/history/history_search.c
+        src/history/init_history.c
+        src/history/open_hist_file.c
+        src/history/save_hist.c
+        src/history/show_history.c
         src/lexer/all_bax_and_hist_change.c
         src/lexer/change_dol.c
-        src/history/change_hist_exp.c
         src/lexer/change_sc.c
         src/lexer/change_spaces.c
         src/lexer/change_str_by_str.c
         src/lexer/check_errors.c
         src/lexer/cr_and_add_tokens.c
         src/lexer/create_new_lexer_struct.c
+        src/lexer/del_one_node_in_lextokens.c
+        src/lexer/do_zam_ravno.c
+        src/lexer/do_zamena_slash.c
         src/lexer/dop_funs.c
         src/lexer/get_opt_type.c
-        src/history/history_search.c
         src/lexer/kill_dop_structure.c
         src/lexer/lexer.c
         src/lexer/word_sizes.c
@@ -60,7 +224,6 @@ add_executable(42save
         src/nucleus/del_readline.c
         src/nucleus/do_add.c
         src/nucleus/dop_tab_funs.c
-        src/history/find_history.c
         src/nucleus/ft_add_intput_que.c
         src/nucleus/ft_add_sumchar.c
         src/nucleus/ft_arrdel.c
@@ -69,24 +232,21 @@ add_executable(42save
         src/nucleus/ft_back_slovo.c
         src/nucleus/ft_c.c
         src/nucleus/ft_cheak_quote.c
+        src/nucleus/ft_cheak_tab.c
         src/nucleus/ft_cleanstr.c
         src/nucleus/ft_cut.c
         src/nucleus/ft_cut_copy.c
+        src/nucleus/ft_directory.c
         src/nucleus/ft_do_copy.c
         src/nucleus/ft_do_delch.c
         src/nucleus/ft_do_leftright.c
         src/nucleus/ft_downcursor.c
-        src/history/init_history.c
-        src/history/ft_add_to_history.c
+        src/nucleus/ft_find_env.c
         src/nucleus/ft_next_slovo.c
         src/nucleus/ft_print_tab.c
-        src/nucleus/ft_directory.c
-        src/nucleus/ft_read_8.c
         src/nucleus/ft_printf_helper.c
         src/nucleus/ft_put_n.c
         src/nucleus/ft_putcut.c
-        src/history/dop_memory.c
-        src/history/ft_putmemory.c
         src/nucleus/ft_read_8.c
         src/nucleus/ft_realloc_buff.c
         src/nucleus/ft_realloc_tab.c
@@ -94,50 +254,50 @@ add_executable(42save
         src/nucleus/ft_start_read.c
         src/nucleus/ft_strsplit1.c
         src/nucleus/ft_upcursor.c
-        src/nucleus/ft_cheak_tab.c
         src/nucleus/input_mode.c
-        src/history/show_history.c
+        src/nucleus/nline.c
         src/nucleus/tab.c
         src/parser/all_parse.c
         src/parser/change_tilda.c
         src/parser/check_bracket.c
+        src/parser/create_dop_struct.c
         src/parser/dop_parser.c
+        src/parser/is_system_symbol.c
         src/parser/main_parser.c
+        src/qft_printf/add_buff.c
+        src/qft_printf/add_char.c
+        src/qft_printf/add_d.c
+        src/qft_printf/add_str.c
+        src/qft_printf/ft_add_c_s_d.c
+        src/qft_printf/ft_add_double.c
+        src/qft_printf/ft_dtoa.c
+        src/qft_printf/ft_itoa_base_c.c
+        src/qft_printf/ft_math.c
+        src/qft_printf/ft_okr_double.c
+        src/qft_printf/ft_oxu.c
+        src/qft_printf/ft_pars.c
+        src/qft_printf/ft_pars2.c
+        src/qft_printf/ft_pointer.c
+        src/qft_printf/ft_pr_help.c
+        src/qft_printf/ft_printf.c
+        src/qft_printf/ft_printf.h
+        src/qft_printf/main.c
+        src/utility_files/crc32.c
+        src/utility_files/ft_get_prev_word.c
+        src/utility_files/ft_malloc.c
+        src/utility_files/g_builtins.c
+        src/utility_files/global.c
         src/check_file.c
+        src/ck_check.c
+        src/do_builtin.c
         src/ft_distruct.c
         src/ft_error_q.c
+        src/ft_main_what.c
+        src/ft_open_flag_in_builtins.c
         src/ft_signal.c
         src/ft_take_arg.c
-        src/utility_files/g_builtins.c
         src/init_shell.c
         src/main.c
-        src/builtins/alias/ft_do_change_alias.c
-        src/builtins/alias/alias_error.c
-        src/do_builtin.c
-        src/ft_open_flag_in_builtins.c
+        src/put_error_to_env.c
         src/redirects.c
-        src/utility_files/ft_get_prev_word.c
-        src/shell_lvl.c src/exec/create_jobs_and_proc.c src/exec/free_job_list.c
-        src/exec/find_jobs.c src/exec/working_with_fds.c src/exec/job_info.c
-        src/exec/ft_do_open_flags.c src/exec/redirect.c src/ck_check.c
-        src/lexer/del_one_node_in_lextokens.c src/ft_main_what.c src/put_error_to_env.c
-        src/hash/print_hash.c src/parser/is_system_symbol.c
-        src/builtins/ft_fc.c src/builtins/ft_fc_2.c src/utility_files/crc32.c src/lexer/do_zam_ravno.c
-        src/nucleus/ft_cheak_tab.c src/nucleus/ft_directory.c src/nucleus/ft_find_env.c src/builtins/authors.c
-        src/history/dop_memory.c src/redirects.c src/ft_open_flag_in_builtins.c src/do_builtin.c
-        libft/src/count_words.c inc/history.h libft/src/ft_strcat_char.c src/history/save_hist.c inc/lexer.h
-        inc/exec.h src/exec/ft_redirect_error.c src/lexer/do_zamena_slash.c src/builtins/exit_builtin.c
-        src/utility_files/ft_get_prev_word.c src/builtins/kill_builtin.c src/builtins/allenv/ft_del_env_table.c
-        src/evaln/calc_def_token.c
-        src/evaln/atoimy.c
-        src/evaln/calc.c
-        src/evaln/dop.c
-        src/evaln/calc_ltoa.c
-        src/evaln/calc_atoi.c
-        src/evaln/eval_expr.h
-        src/evaln/ft_do_zam_eval.c
-        src/evaln/inftopost.c src/evaln/ft_eval_parser.c src/evaln/opr_znak.c src/evaln/calc_lexer.c src/evaln/dop_word_funs.c src/history/open_hist_file.c src/evaln/zam_var.c src/evaln/calc_utility.c src/evaln/define_calc_tokens.c src/evaln/check_calc_tokens.c)
-
-
-target_link_libraries(42save ${CMAKE_SOURCE_DIR}/libft/libft.a)
-target_link_libraries(42save termcap)
+        src/shell_lvl.c)

@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   calc_lexer.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: wstygg <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/04/13 19:53:08 by wstygg            #+#    #+#             */
+/*   Updated: 2020/05/04 13:41:58 by wstygg           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "eval_expr.h"
 
-int					is_incr_sym(char c)
+int			is_incr_sym(char c)
 {
 	return (c == '+' || c == '-');
 }
@@ -35,7 +47,6 @@ int			num_size(char *str)
 
 int			znak_size(char *str)
 {
-
 	int		i;
 
 	i = 0;
@@ -56,8 +67,6 @@ int			calc_word_size(char *str, int type)
 	int		i;
 
 	i = 0;
-//	if (type == 1)
-//		return (ft_num_with_sym(str));
 	if (ft_isalpha(*str))
 		return (var_size(str));
 	if (ft_isdigit(*str))

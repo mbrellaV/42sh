@@ -55,8 +55,8 @@ static void	calc_next(int *stackos, t_int *str, t_calc_tkntype c)
 	subos(stackos, str);
 }
 
-int				calc(int *stackos, t_int *str, t_calc_tkntype c,
-					char *error_var)
+int			calc(int *stackos, t_int *str, t_calc_tkntype c,
+		char *error_var)
 {
 	if (str->ol - calc_znaks(str->stackzn, str->zl) < 1)
 		return (error_return_calc(2, error_var));

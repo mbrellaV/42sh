@@ -143,6 +143,7 @@ SRC_BASE = builtins/ft_cd.c\
 	hash/print_hash.c\
 	evaln/dop.c\
     evaln/calc.c\
+    evaln/dostack.c\
     evaln/calc_utility.c\
     evaln/zam_var.c\
     evaln/inftopost.c\
