@@ -65,8 +65,7 @@ char	*distribute_echo(char **str, int k, int flag, t_builtins *echo)
 			str[k] = ft_flag_echo(str[k], echo);
 		else if ((flag = 1))
 		{
-			if (*str[k] != '\"')
-				ft_putchar_fd(*str[k], globals()->fd[1]);
+			ft_putchar_fd(*str[k], globals()->fd[1]);
 			str[k]++;
 		}
 	}

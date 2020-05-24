@@ -92,7 +92,6 @@ int		ft_echo(char **str)
 	char		*tmp;
 
 	k = 0;
-	flag = 0;
 	echo.echo_n = 0;
 	echo.echo_c = 0;
 	if (!vivod(1))
