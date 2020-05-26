@@ -131,32 +131,6 @@ add_executable(42sh
         src/builtins/ft_fc_2.c
         src/builtins/ft_fc_3.c
         src/builtins/ft_type.c
-        src/calc/calc_dop/calc_main.c
-        src/calc/calc_dop/calc_parser.c
-        src/calc/calc_dop/calc_tree.c
-        src/calc/calc_dop/remove_tree.c
-        src/calc/calc_dop/traversal.c
-        src/calc/calc_dop/tree.h
-        src/calc/calc.c
-        src/calc/calc_add_fun.c
-        src/calc/calc_arr_reloc.c
-        src/calc/calc_arr_tkns.c
-        src/calc/calc_atoi.c
-        src/calc/calc_com_fun.c
-        src/calc/calc_eq_fun.c
-        src/calc/calc_error_fun.c
-        src/calc/calc_inc_fun.c
-        src/calc/calc_lexer.c
-        src/calc/calc_log_fun.c
-        src/calc/calc_ltoa.c
-        src/calc/calc_mul_fun.c
-        src/calc/calc_num_fun.c
-        src/calc/calc_parent_fun.c
-        src/calc/calc_tkn.c
-        src/calc/calc_var_fun.c
-        src/calc/calc_var_tkn.c
-        src/calc/change_vars.c
-        src/calc/ft_do_zam_eval.c
         src/errors/errror_handler.c
         src/evaln/calc.c
         src/evaln/calc_def_token.c
@@ -170,6 +144,7 @@ add_executable(42sh
         src/evaln/ft_do_zam_eval.c
         src/evaln/ft_eval_parser.c
         src/evaln/inftopost.c
+        src/evaln/dostack.c
         src/evaln/opr_znak.c
         src/evaln/sub_and_add.c
         src/evaln/zam_var.c

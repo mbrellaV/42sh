@@ -66,7 +66,10 @@ int			calcend(int **stackos, int **stackzn, t_int **str, int *error)
 			return (return_with_error(NULL, error, NULL, (*str)));
 		subzn(dop_stackzn, *str);
 	}
-	result = dop_stackos[0];
+	if ((*str)->ol <= 0)
+		result = 0;
+	else
+		result = dop_stackos[0];
 	free_calc_tokens((*str)->first_token);
 	free(dop_stackos);
 	free(dop_stackzn);

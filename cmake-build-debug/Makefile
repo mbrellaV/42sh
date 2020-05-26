@@ -39,19 +39,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /home/lox/clion-2019.3.5/bin/cmake/linux/bin/cmake
+CMAKE_COMMAND = /home/petruha2001/Templates/clion-2019.3.5/bin/cmake/linux/bin/cmake
 
 # The command to remove a file.
-RM = /home/lox/clion-2019.3.5/bin/cmake/linux/bin/cmake -E remove -f
+RM = /home/petruha2001/Templates/clion-2019.3.5/bin/cmake/linux/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/lox/42sh
+CMAKE_SOURCE_DIR = /home/petruha2001/42sh
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/lox/42sh/cmake-build-debug
+CMAKE_BINARY_DIR = /home/petruha2001/42sh/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -59,7 +59,7 @@ CMAKE_BINARY_DIR = /home/lox/42sh/cmake-build-debug
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/home/lox/clion-2019.3.5/bin/cmake/linux/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/home/petruha2001/Templates/clion-2019.3.5/bin/cmake/linux/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -70,7 +70,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/home/lox/clion-2019.3.5/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	/home/petruha2001/Templates/clion-2019.3.5/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/lox/42sh/cmake-build-debug/CMakeFiles /home/lox/42sh/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/petruha2001/42sh/cmake-build-debug/CMakeFiles /home/petruha2001/42sh/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/lox/42sh/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/petruha2001/42sh/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -3120,681 +3120,6 @@ src/builtins/ft_type.c.s:
 	$(MAKE) -f CMakeFiles/42sh.dir/build.make CMakeFiles/42sh.dir/src/builtins/ft_type.c.s
 .PHONY : src/builtins/ft_type.c.s
 
-src/calc/calc.o: src/calc/calc.c.o
-
-.PHONY : src/calc/calc.o
-
-# target to build an object file
-src/calc/calc.c.o:
-	$(MAKE) -f CMakeFiles/42sh.dir/build.make CMakeFiles/42sh.dir/src/calc/calc.c.o
-.PHONY : src/calc/calc.c.o
-
-src/calc/calc.i: src/calc/calc.c.i
-
-.PHONY : src/calc/calc.i
-
-# target to preprocess a source file
-src/calc/calc.c.i:
-	$(MAKE) -f CMakeFiles/42sh.dir/build.make CMakeFiles/42sh.dir/src/calc/calc.c.i
-.PHONY : src/calc/calc.c.i
-
-src/calc/calc.s: src/calc/calc.c.s
-
-.PHONY : src/calc/calc.s
-
-# target to generate assembly for a file
-src/calc/calc.c.s:
-	$(MAKE) -f CMakeFiles/42sh.dir/build.make CMakeFiles/42sh.dir/src/calc/calc.c.s
-.PHONY : src/calc/calc.c.s
-
-src/calc/calc_add_fun.o: src/calc/calc_add_fun.c.o
-
-.PHONY : src/calc/calc_add_fun.o
-
-# target to build an object file
-src/calc/calc_add_fun.c.o:
-	$(MAKE) -f CMakeFiles/42sh.dir/build.make CMakeFiles/42sh.dir/src/calc/calc_add_fun.c.o
-.PHONY : src/calc/calc_add_fun.c.o
-
-src/calc/calc_add_fun.i: src/calc/calc_add_fun.c.i
-
-.PHONY : src/calc/calc_add_fun.i
-
-# target to preprocess a source file
-src/calc/calc_add_fun.c.i:
-	$(MAKE) -f CMakeFiles/42sh.dir/build.make CMakeFiles/42sh.dir/src/calc/calc_add_fun.c.i
-.PHONY : src/calc/calc_add_fun.c.i
-
-src/calc/calc_add_fun.s: src/calc/calc_add_fun.c.s
-
-.PHONY : src/calc/calc_add_fun.s
-
-# target to generate assembly for a file
-src/calc/calc_add_fun.c.s:
-	$(MAKE) -f CMakeFiles/42sh.dir/build.make CMakeFiles/42sh.dir/src/calc/calc_add_fun.c.s
-.PHONY : src/calc/calc_add_fun.c.s
-
-src/calc/calc_arr_reloc.o: src/calc/calc_arr_reloc.c.o
-
-.PHONY : src/calc/calc_arr_reloc.o
-
-# target to build an object file
-src/calc/calc_arr_reloc.c.o:
-	$(MAKE) -f CMakeFiles/42sh.dir/build.make CMakeFiles/42sh.dir/src/calc/calc_arr_reloc.c.o
-.PHONY : src/calc/calc_arr_reloc.c.o
-
-src/calc/calc_arr_reloc.i: src/calc/calc_arr_reloc.c.i
-
-.PHONY : src/calc/calc_arr_reloc.i
-
-# target to preprocess a source file
-src/calc/calc_arr_reloc.c.i:
-	$(MAKE) -f CMakeFiles/42sh.dir/build.make CMakeFiles/42sh.dir/src/calc/calc_arr_reloc.c.i
-.PHONY : src/calc/calc_arr_reloc.c.i
-
-src/calc/calc_arr_reloc.s: src/calc/calc_arr_reloc.c.s
-
-.PHONY : src/calc/calc_arr_reloc.s
-
-# target to generate assembly for a file
-src/calc/calc_arr_reloc.c.s:
-	$(MAKE) -f CMakeFiles/42sh.dir/build.make CMakeFiles/42sh.dir/src/calc/calc_arr_reloc.c.s
-.PHONY : src/calc/calc_arr_reloc.c.s
-
-src/calc/calc_arr_tkns.o: src/calc/calc_arr_tkns.c.o
-
-.PHONY : src/calc/calc_arr_tkns.o
-
-# target to build an object file
-src/calc/calc_arr_tkns.c.o:
-	$(MAKE) -f CMakeFiles/42sh.dir/build.make CMakeFiles/42sh.dir/src/calc/calc_arr_tkns.c.o
-.PHONY : src/calc/calc_arr_tkns.c.o
-
-src/calc/calc_arr_tkns.i: src/calc/calc_arr_tkns.c.i
-
-.PHONY : src/calc/calc_arr_tkns.i
-
-# target to preprocess a source file
-src/calc/calc_arr_tkns.c.i:
-	$(MAKE) -f CMakeFiles/42sh.dir/build.make CMakeFiles/42sh.dir/src/calc/calc_arr_tkns.c.i
-.PHONY : src/calc/calc_arr_tkns.c.i
-
-src/calc/calc_arr_tkns.s: src/calc/calc_arr_tkns.c.s
-
-.PHONY : src/calc/calc_arr_tkns.s
-
-# target to generate assembly for a file
-src/calc/calc_arr_tkns.c.s:
-	$(MAKE) -f CMakeFiles/42sh.dir/build.make CMakeFiles/42sh.dir/src/calc/calc_arr_tkns.c.s
-.PHONY : src/calc/calc_arr_tkns.c.s
-
-src/calc/calc_atoi.o: src/calc/calc_atoi.c.o
-
-.PHONY : src/calc/calc_atoi.o
-
-# target to build an object file
-src/calc/calc_atoi.c.o:
-	$(MAKE) -f CMakeFiles/42sh.dir/build.make CMakeFiles/42sh.dir/src/calc/calc_atoi.c.o
-.PHONY : src/calc/calc_atoi.c.o
-
-src/calc/calc_atoi.i: src/calc/calc_atoi.c.i
-
-.PHONY : src/calc/calc_atoi.i
-
-# target to preprocess a source file
-src/calc/calc_atoi.c.i:
-	$(MAKE) -f CMakeFiles/42sh.dir/build.make CMakeFiles/42sh.dir/src/calc/calc_atoi.c.i
-.PHONY : src/calc/calc_atoi.c.i
-
-src/calc/calc_atoi.s: src/calc/calc_atoi.c.s
-
-.PHONY : src/calc/calc_atoi.s
-
-# target to generate assembly for a file
-src/calc/calc_atoi.c.s:
-	$(MAKE) -f CMakeFiles/42sh.dir/build.make CMakeFiles/42sh.dir/src/calc/calc_atoi.c.s
-.PHONY : src/calc/calc_atoi.c.s
-
-src/calc/calc_com_fun.o: src/calc/calc_com_fun.c.o
-
-.PHONY : src/calc/calc_com_fun.o
-
-# target to build an object file
-src/calc/calc_com_fun.c.o:
-	$(MAKE) -f CMakeFiles/42sh.dir/build.make CMakeFiles/42sh.dir/src/calc/calc_com_fun.c.o
-.PHONY : src/calc/calc_com_fun.c.o
-
-src/calc/calc_com_fun.i: src/calc/calc_com_fun.c.i
-
-.PHONY : src/calc/calc_com_fun.i
-
-# target to preprocess a source file
-src/calc/calc_com_fun.c.i:
-	$(MAKE) -f CMakeFiles/42sh.dir/build.make CMakeFiles/42sh.dir/src/calc/calc_com_fun.c.i
-.PHONY : src/calc/calc_com_fun.c.i
-
-src/calc/calc_com_fun.s: src/calc/calc_com_fun.c.s
-
-.PHONY : src/calc/calc_com_fun.s
-
-# target to generate assembly for a file
-src/calc/calc_com_fun.c.s:
-	$(MAKE) -f CMakeFiles/42sh.dir/build.make CMakeFiles/42sh.dir/src/calc/calc_com_fun.c.s
-.PHONY : src/calc/calc_com_fun.c.s
-
-src/calc/calc_dop/calc_main.o: src/calc/calc_dop/calc_main.c.o
-
-.PHONY : src/calc/calc_dop/calc_main.o
-
-# target to build an object file
-src/calc/calc_dop/calc_main.c.o:
-	$(MAKE) -f CMakeFiles/42sh.dir/build.make CMakeFiles/42sh.dir/src/calc/calc_dop/calc_main.c.o
-.PHONY : src/calc/calc_dop/calc_main.c.o
-
-src/calc/calc_dop/calc_main.i: src/calc/calc_dop/calc_main.c.i
-
-.PHONY : src/calc/calc_dop/calc_main.i
-
-# target to preprocess a source file
-src/calc/calc_dop/calc_main.c.i:
-	$(MAKE) -f CMakeFiles/42sh.dir/build.make CMakeFiles/42sh.dir/src/calc/calc_dop/calc_main.c.i
-.PHONY : src/calc/calc_dop/calc_main.c.i
-
-src/calc/calc_dop/calc_main.s: src/calc/calc_dop/calc_main.c.s
-
-.PHONY : src/calc/calc_dop/calc_main.s
-
-# target to generate assembly for a file
-src/calc/calc_dop/calc_main.c.s:
-	$(MAKE) -f CMakeFiles/42sh.dir/build.make CMakeFiles/42sh.dir/src/calc/calc_dop/calc_main.c.s
-.PHONY : src/calc/calc_dop/calc_main.c.s
-
-src/calc/calc_dop/calc_parser.o: src/calc/calc_dop/calc_parser.c.o
-
-.PHONY : src/calc/calc_dop/calc_parser.o
-
-# target to build an object file
-src/calc/calc_dop/calc_parser.c.o:
-	$(MAKE) -f CMakeFiles/42sh.dir/build.make CMakeFiles/42sh.dir/src/calc/calc_dop/calc_parser.c.o
-.PHONY : src/calc/calc_dop/calc_parser.c.o
-
-src/calc/calc_dop/calc_parser.i: src/calc/calc_dop/calc_parser.c.i
-
-.PHONY : src/calc/calc_dop/calc_parser.i
-
-# target to preprocess a source file
-src/calc/calc_dop/calc_parser.c.i:
-	$(MAKE) -f CMakeFiles/42sh.dir/build.make CMakeFiles/42sh.dir/src/calc/calc_dop/calc_parser.c.i
-.PHONY : src/calc/calc_dop/calc_parser.c.i
-
-src/calc/calc_dop/calc_parser.s: src/calc/calc_dop/calc_parser.c.s
-
-.PHONY : src/calc/calc_dop/calc_parser.s
-
-# target to generate assembly for a file
-src/calc/calc_dop/calc_parser.c.s:
-	$(MAKE) -f CMakeFiles/42sh.dir/build.make CMakeFiles/42sh.dir/src/calc/calc_dop/calc_parser.c.s
-.PHONY : src/calc/calc_dop/calc_parser.c.s
-
-src/calc/calc_dop/calc_tree.o: src/calc/calc_dop/calc_tree.c.o
-
-.PHONY : src/calc/calc_dop/calc_tree.o
-
-# target to build an object file
-src/calc/calc_dop/calc_tree.c.o:
-	$(MAKE) -f CMakeFiles/42sh.dir/build.make CMakeFiles/42sh.dir/src/calc/calc_dop/calc_tree.c.o
-.PHONY : src/calc/calc_dop/calc_tree.c.o
-
-src/calc/calc_dop/calc_tree.i: src/calc/calc_dop/calc_tree.c.i
-
-.PHONY : src/calc/calc_dop/calc_tree.i
-
-# target to preprocess a source file
-src/calc/calc_dop/calc_tree.c.i:
-	$(MAKE) -f CMakeFiles/42sh.dir/build.make CMakeFiles/42sh.dir/src/calc/calc_dop/calc_tree.c.i
-.PHONY : src/calc/calc_dop/calc_tree.c.i
-
-src/calc/calc_dop/calc_tree.s: src/calc/calc_dop/calc_tree.c.s
-
-.PHONY : src/calc/calc_dop/calc_tree.s
-
-# target to generate assembly for a file
-src/calc/calc_dop/calc_tree.c.s:
-	$(MAKE) -f CMakeFiles/42sh.dir/build.make CMakeFiles/42sh.dir/src/calc/calc_dop/calc_tree.c.s
-.PHONY : src/calc/calc_dop/calc_tree.c.s
-
-src/calc/calc_dop/remove_tree.o: src/calc/calc_dop/remove_tree.c.o
-
-.PHONY : src/calc/calc_dop/remove_tree.o
-
-# target to build an object file
-src/calc/calc_dop/remove_tree.c.o:
-	$(MAKE) -f CMakeFiles/42sh.dir/build.make CMakeFiles/42sh.dir/src/calc/calc_dop/remove_tree.c.o
-.PHONY : src/calc/calc_dop/remove_tree.c.o
-
-src/calc/calc_dop/remove_tree.i: src/calc/calc_dop/remove_tree.c.i
-
-.PHONY : src/calc/calc_dop/remove_tree.i
-
-# target to preprocess a source file
-src/calc/calc_dop/remove_tree.c.i:
-	$(MAKE) -f CMakeFiles/42sh.dir/build.make CMakeFiles/42sh.dir/src/calc/calc_dop/remove_tree.c.i
-.PHONY : src/calc/calc_dop/remove_tree.c.i
-
-src/calc/calc_dop/remove_tree.s: src/calc/calc_dop/remove_tree.c.s
-
-.PHONY : src/calc/calc_dop/remove_tree.s
-
-# target to generate assembly for a file
-src/calc/calc_dop/remove_tree.c.s:
-	$(MAKE) -f CMakeFiles/42sh.dir/build.make CMakeFiles/42sh.dir/src/calc/calc_dop/remove_tree.c.s
-.PHONY : src/calc/calc_dop/remove_tree.c.s
-
-src/calc/calc_dop/traversal.o: src/calc/calc_dop/traversal.c.o
-
-.PHONY : src/calc/calc_dop/traversal.o
-
-# target to build an object file
-src/calc/calc_dop/traversal.c.o:
-	$(MAKE) -f CMakeFiles/42sh.dir/build.make CMakeFiles/42sh.dir/src/calc/calc_dop/traversal.c.o
-.PHONY : src/calc/calc_dop/traversal.c.o
-
-src/calc/calc_dop/traversal.i: src/calc/calc_dop/traversal.c.i
-
-.PHONY : src/calc/calc_dop/traversal.i
-
-# target to preprocess a source file
-src/calc/calc_dop/traversal.c.i:
-	$(MAKE) -f CMakeFiles/42sh.dir/build.make CMakeFiles/42sh.dir/src/calc/calc_dop/traversal.c.i
-.PHONY : src/calc/calc_dop/traversal.c.i
-
-src/calc/calc_dop/traversal.s: src/calc/calc_dop/traversal.c.s
-
-.PHONY : src/calc/calc_dop/traversal.s
-
-# target to generate assembly for a file
-src/calc/calc_dop/traversal.c.s:
-	$(MAKE) -f CMakeFiles/42sh.dir/build.make CMakeFiles/42sh.dir/src/calc/calc_dop/traversal.c.s
-.PHONY : src/calc/calc_dop/traversal.c.s
-
-src/calc/calc_eq_fun.o: src/calc/calc_eq_fun.c.o
-
-.PHONY : src/calc/calc_eq_fun.o
-
-# target to build an object file
-src/calc/calc_eq_fun.c.o:
-	$(MAKE) -f CMakeFiles/42sh.dir/build.make CMakeFiles/42sh.dir/src/calc/calc_eq_fun.c.o
-.PHONY : src/calc/calc_eq_fun.c.o
-
-src/calc/calc_eq_fun.i: src/calc/calc_eq_fun.c.i
-
-.PHONY : src/calc/calc_eq_fun.i
-
-# target to preprocess a source file
-src/calc/calc_eq_fun.c.i:
-	$(MAKE) -f CMakeFiles/42sh.dir/build.make CMakeFiles/42sh.dir/src/calc/calc_eq_fun.c.i
-.PHONY : src/calc/calc_eq_fun.c.i
-
-src/calc/calc_eq_fun.s: src/calc/calc_eq_fun.c.s
-
-.PHONY : src/calc/calc_eq_fun.s
-
-# target to generate assembly for a file
-src/calc/calc_eq_fun.c.s:
-	$(MAKE) -f CMakeFiles/42sh.dir/build.make CMakeFiles/42sh.dir/src/calc/calc_eq_fun.c.s
-.PHONY : src/calc/calc_eq_fun.c.s
-
-src/calc/calc_error_fun.o: src/calc/calc_error_fun.c.o
-
-.PHONY : src/calc/calc_error_fun.o
-
-# target to build an object file
-src/calc/calc_error_fun.c.o:
-	$(MAKE) -f CMakeFiles/42sh.dir/build.make CMakeFiles/42sh.dir/src/calc/calc_error_fun.c.o
-.PHONY : src/calc/calc_error_fun.c.o
-
-src/calc/calc_error_fun.i: src/calc/calc_error_fun.c.i
-
-.PHONY : src/calc/calc_error_fun.i
-
-# target to preprocess a source file
-src/calc/calc_error_fun.c.i:
-	$(MAKE) -f CMakeFiles/42sh.dir/build.make CMakeFiles/42sh.dir/src/calc/calc_error_fun.c.i
-.PHONY : src/calc/calc_error_fun.c.i
-
-src/calc/calc_error_fun.s: src/calc/calc_error_fun.c.s
-
-.PHONY : src/calc/calc_error_fun.s
-
-# target to generate assembly for a file
-src/calc/calc_error_fun.c.s:
-	$(MAKE) -f CMakeFiles/42sh.dir/build.make CMakeFiles/42sh.dir/src/calc/calc_error_fun.c.s
-.PHONY : src/calc/calc_error_fun.c.s
-
-src/calc/calc_inc_fun.o: src/calc/calc_inc_fun.c.o
-
-.PHONY : src/calc/calc_inc_fun.o
-
-# target to build an object file
-src/calc/calc_inc_fun.c.o:
-	$(MAKE) -f CMakeFiles/42sh.dir/build.make CMakeFiles/42sh.dir/src/calc/calc_inc_fun.c.o
-.PHONY : src/calc/calc_inc_fun.c.o
-
-src/calc/calc_inc_fun.i: src/calc/calc_inc_fun.c.i
-
-.PHONY : src/calc/calc_inc_fun.i
-
-# target to preprocess a source file
-src/calc/calc_inc_fun.c.i:
-	$(MAKE) -f CMakeFiles/42sh.dir/build.make CMakeFiles/42sh.dir/src/calc/calc_inc_fun.c.i
-.PHONY : src/calc/calc_inc_fun.c.i
-
-src/calc/calc_inc_fun.s: src/calc/calc_inc_fun.c.s
-
-.PHONY : src/calc/calc_inc_fun.s
-
-# target to generate assembly for a file
-src/calc/calc_inc_fun.c.s:
-	$(MAKE) -f CMakeFiles/42sh.dir/build.make CMakeFiles/42sh.dir/src/calc/calc_inc_fun.c.s
-.PHONY : src/calc/calc_inc_fun.c.s
-
-src/calc/calc_lexer.o: src/calc/calc_lexer.c.o
-
-.PHONY : src/calc/calc_lexer.o
-
-# target to build an object file
-src/calc/calc_lexer.c.o:
-	$(MAKE) -f CMakeFiles/42sh.dir/build.make CMakeFiles/42sh.dir/src/calc/calc_lexer.c.o
-.PHONY : src/calc/calc_lexer.c.o
-
-src/calc/calc_lexer.i: src/calc/calc_lexer.c.i
-
-.PHONY : src/calc/calc_lexer.i
-
-# target to preprocess a source file
-src/calc/calc_lexer.c.i:
-	$(MAKE) -f CMakeFiles/42sh.dir/build.make CMakeFiles/42sh.dir/src/calc/calc_lexer.c.i
-.PHONY : src/calc/calc_lexer.c.i
-
-src/calc/calc_lexer.s: src/calc/calc_lexer.c.s
-
-.PHONY : src/calc/calc_lexer.s
-
-# target to generate assembly for a file
-src/calc/calc_lexer.c.s:
-	$(MAKE) -f CMakeFiles/42sh.dir/build.make CMakeFiles/42sh.dir/src/calc/calc_lexer.c.s
-.PHONY : src/calc/calc_lexer.c.s
-
-src/calc/calc_log_fun.o: src/calc/calc_log_fun.c.o
-
-.PHONY : src/calc/calc_log_fun.o
-
-# target to build an object file
-src/calc/calc_log_fun.c.o:
-	$(MAKE) -f CMakeFiles/42sh.dir/build.make CMakeFiles/42sh.dir/src/calc/calc_log_fun.c.o
-.PHONY : src/calc/calc_log_fun.c.o
-
-src/calc/calc_log_fun.i: src/calc/calc_log_fun.c.i
-
-.PHONY : src/calc/calc_log_fun.i
-
-# target to preprocess a source file
-src/calc/calc_log_fun.c.i:
-	$(MAKE) -f CMakeFiles/42sh.dir/build.make CMakeFiles/42sh.dir/src/calc/calc_log_fun.c.i
-.PHONY : src/calc/calc_log_fun.c.i
-
-src/calc/calc_log_fun.s: src/calc/calc_log_fun.c.s
-
-.PHONY : src/calc/calc_log_fun.s
-
-# target to generate assembly for a file
-src/calc/calc_log_fun.c.s:
-	$(MAKE) -f CMakeFiles/42sh.dir/build.make CMakeFiles/42sh.dir/src/calc/calc_log_fun.c.s
-.PHONY : src/calc/calc_log_fun.c.s
-
-src/calc/calc_ltoa.o: src/calc/calc_ltoa.c.o
-
-.PHONY : src/calc/calc_ltoa.o
-
-# target to build an object file
-src/calc/calc_ltoa.c.o:
-	$(MAKE) -f CMakeFiles/42sh.dir/build.make CMakeFiles/42sh.dir/src/calc/calc_ltoa.c.o
-.PHONY : src/calc/calc_ltoa.c.o
-
-src/calc/calc_ltoa.i: src/calc/calc_ltoa.c.i
-
-.PHONY : src/calc/calc_ltoa.i
-
-# target to preprocess a source file
-src/calc/calc_ltoa.c.i:
-	$(MAKE) -f CMakeFiles/42sh.dir/build.make CMakeFiles/42sh.dir/src/calc/calc_ltoa.c.i
-.PHONY : src/calc/calc_ltoa.c.i
-
-src/calc/calc_ltoa.s: src/calc/calc_ltoa.c.s
-
-.PHONY : src/calc/calc_ltoa.s
-
-# target to generate assembly for a file
-src/calc/calc_ltoa.c.s:
-	$(MAKE) -f CMakeFiles/42sh.dir/build.make CMakeFiles/42sh.dir/src/calc/calc_ltoa.c.s
-.PHONY : src/calc/calc_ltoa.c.s
-
-src/calc/calc_mul_fun.o: src/calc/calc_mul_fun.c.o
-
-.PHONY : src/calc/calc_mul_fun.o
-
-# target to build an object file
-src/calc/calc_mul_fun.c.o:
-	$(MAKE) -f CMakeFiles/42sh.dir/build.make CMakeFiles/42sh.dir/src/calc/calc_mul_fun.c.o
-.PHONY : src/calc/calc_mul_fun.c.o
-
-src/calc/calc_mul_fun.i: src/calc/calc_mul_fun.c.i
-
-.PHONY : src/calc/calc_mul_fun.i
-
-# target to preprocess a source file
-src/calc/calc_mul_fun.c.i:
-	$(MAKE) -f CMakeFiles/42sh.dir/build.make CMakeFiles/42sh.dir/src/calc/calc_mul_fun.c.i
-.PHONY : src/calc/calc_mul_fun.c.i
-
-src/calc/calc_mul_fun.s: src/calc/calc_mul_fun.c.s
-
-.PHONY : src/calc/calc_mul_fun.s
-
-# target to generate assembly for a file
-src/calc/calc_mul_fun.c.s:
-	$(MAKE) -f CMakeFiles/42sh.dir/build.make CMakeFiles/42sh.dir/src/calc/calc_mul_fun.c.s
-.PHONY : src/calc/calc_mul_fun.c.s
-
-src/calc/calc_num_fun.o: src/calc/calc_num_fun.c.o
-
-.PHONY : src/calc/calc_num_fun.o
-
-# target to build an object file
-src/calc/calc_num_fun.c.o:
-	$(MAKE) -f CMakeFiles/42sh.dir/build.make CMakeFiles/42sh.dir/src/calc/calc_num_fun.c.o
-.PHONY : src/calc/calc_num_fun.c.o
-
-src/calc/calc_num_fun.i: src/calc/calc_num_fun.c.i
-
-.PHONY : src/calc/calc_num_fun.i
-
-# target to preprocess a source file
-src/calc/calc_num_fun.c.i:
-	$(MAKE) -f CMakeFiles/42sh.dir/build.make CMakeFiles/42sh.dir/src/calc/calc_num_fun.c.i
-.PHONY : src/calc/calc_num_fun.c.i
-
-src/calc/calc_num_fun.s: src/calc/calc_num_fun.c.s
-
-.PHONY : src/calc/calc_num_fun.s
-
-# target to generate assembly for a file
-src/calc/calc_num_fun.c.s:
-	$(MAKE) -f CMakeFiles/42sh.dir/build.make CMakeFiles/42sh.dir/src/calc/calc_num_fun.c.s
-.PHONY : src/calc/calc_num_fun.c.s
-
-src/calc/calc_parent_fun.o: src/calc/calc_parent_fun.c.o
-
-.PHONY : src/calc/calc_parent_fun.o
-
-# target to build an object file
-src/calc/calc_parent_fun.c.o:
-	$(MAKE) -f CMakeFiles/42sh.dir/build.make CMakeFiles/42sh.dir/src/calc/calc_parent_fun.c.o
-.PHONY : src/calc/calc_parent_fun.c.o
-
-src/calc/calc_parent_fun.i: src/calc/calc_parent_fun.c.i
-
-.PHONY : src/calc/calc_parent_fun.i
-
-# target to preprocess a source file
-src/calc/calc_parent_fun.c.i:
-	$(MAKE) -f CMakeFiles/42sh.dir/build.make CMakeFiles/42sh.dir/src/calc/calc_parent_fun.c.i
-.PHONY : src/calc/calc_parent_fun.c.i
-
-src/calc/calc_parent_fun.s: src/calc/calc_parent_fun.c.s
-
-.PHONY : src/calc/calc_parent_fun.s
-
-# target to generate assembly for a file
-src/calc/calc_parent_fun.c.s:
-	$(MAKE) -f CMakeFiles/42sh.dir/build.make CMakeFiles/42sh.dir/src/calc/calc_parent_fun.c.s
-.PHONY : src/calc/calc_parent_fun.c.s
-
-src/calc/calc_tkn.o: src/calc/calc_tkn.c.o
-
-.PHONY : src/calc/calc_tkn.o
-
-# target to build an object file
-src/calc/calc_tkn.c.o:
-	$(MAKE) -f CMakeFiles/42sh.dir/build.make CMakeFiles/42sh.dir/src/calc/calc_tkn.c.o
-.PHONY : src/calc/calc_tkn.c.o
-
-src/calc/calc_tkn.i: src/calc/calc_tkn.c.i
-
-.PHONY : src/calc/calc_tkn.i
-
-# target to preprocess a source file
-src/calc/calc_tkn.c.i:
-	$(MAKE) -f CMakeFiles/42sh.dir/build.make CMakeFiles/42sh.dir/src/calc/calc_tkn.c.i
-.PHONY : src/calc/calc_tkn.c.i
-
-src/calc/calc_tkn.s: src/calc/calc_tkn.c.s
-
-.PHONY : src/calc/calc_tkn.s
-
-# target to generate assembly for a file
-src/calc/calc_tkn.c.s:
-	$(MAKE) -f CMakeFiles/42sh.dir/build.make CMakeFiles/42sh.dir/src/calc/calc_tkn.c.s
-.PHONY : src/calc/calc_tkn.c.s
-
-src/calc/calc_var_fun.o: src/calc/calc_var_fun.c.o
-
-.PHONY : src/calc/calc_var_fun.o
-
-# target to build an object file
-src/calc/calc_var_fun.c.o:
-	$(MAKE) -f CMakeFiles/42sh.dir/build.make CMakeFiles/42sh.dir/src/calc/calc_var_fun.c.o
-.PHONY : src/calc/calc_var_fun.c.o
-
-src/calc/calc_var_fun.i: src/calc/calc_var_fun.c.i
-
-.PHONY : src/calc/calc_var_fun.i
-
-# target to preprocess a source file
-src/calc/calc_var_fun.c.i:
-	$(MAKE) -f CMakeFiles/42sh.dir/build.make CMakeFiles/42sh.dir/src/calc/calc_var_fun.c.i
-.PHONY : src/calc/calc_var_fun.c.i
-
-src/calc/calc_var_fun.s: src/calc/calc_var_fun.c.s
-
-.PHONY : src/calc/calc_var_fun.s
-
-# target to generate assembly for a file
-src/calc/calc_var_fun.c.s:
-	$(MAKE) -f CMakeFiles/42sh.dir/build.make CMakeFiles/42sh.dir/src/calc/calc_var_fun.c.s
-.PHONY : src/calc/calc_var_fun.c.s
-
-src/calc/calc_var_tkn.o: src/calc/calc_var_tkn.c.o
-
-.PHONY : src/calc/calc_var_tkn.o
-
-# target to build an object file
-src/calc/calc_var_tkn.c.o:
-	$(MAKE) -f CMakeFiles/42sh.dir/build.make CMakeFiles/42sh.dir/src/calc/calc_var_tkn.c.o
-.PHONY : src/calc/calc_var_tkn.c.o
-
-src/calc/calc_var_tkn.i: src/calc/calc_var_tkn.c.i
-
-.PHONY : src/calc/calc_var_tkn.i
-
-# target to preprocess a source file
-src/calc/calc_var_tkn.c.i:
-	$(MAKE) -f CMakeFiles/42sh.dir/build.make CMakeFiles/42sh.dir/src/calc/calc_var_tkn.c.i
-.PHONY : src/calc/calc_var_tkn.c.i
-
-src/calc/calc_var_tkn.s: src/calc/calc_var_tkn.c.s
-
-.PHONY : src/calc/calc_var_tkn.s
-
-# target to generate assembly for a file
-src/calc/calc_var_tkn.c.s:
-	$(MAKE) -f CMakeFiles/42sh.dir/build.make CMakeFiles/42sh.dir/src/calc/calc_var_tkn.c.s
-.PHONY : src/calc/calc_var_tkn.c.s
-
-src/calc/change_vars.o: src/calc/change_vars.c.o
-
-.PHONY : src/calc/change_vars.o
-
-# target to build an object file
-src/calc/change_vars.c.o:
-	$(MAKE) -f CMakeFiles/42sh.dir/build.make CMakeFiles/42sh.dir/src/calc/change_vars.c.o
-.PHONY : src/calc/change_vars.c.o
-
-src/calc/change_vars.i: src/calc/change_vars.c.i
-
-.PHONY : src/calc/change_vars.i
-
-# target to preprocess a source file
-src/calc/change_vars.c.i:
-	$(MAKE) -f CMakeFiles/42sh.dir/build.make CMakeFiles/42sh.dir/src/calc/change_vars.c.i
-.PHONY : src/calc/change_vars.c.i
-
-src/calc/change_vars.s: src/calc/change_vars.c.s
-
-.PHONY : src/calc/change_vars.s
-
-# target to generate assembly for a file
-src/calc/change_vars.c.s:
-	$(MAKE) -f CMakeFiles/42sh.dir/build.make CMakeFiles/42sh.dir/src/calc/change_vars.c.s
-.PHONY : src/calc/change_vars.c.s
-
-src/calc/ft_do_zam_eval.o: src/calc/ft_do_zam_eval.c.o
-
-.PHONY : src/calc/ft_do_zam_eval.o
-
-# target to build an object file
-src/calc/ft_do_zam_eval.c.o:
-	$(MAKE) -f CMakeFiles/42sh.dir/build.make CMakeFiles/42sh.dir/src/calc/ft_do_zam_eval.c.o
-.PHONY : src/calc/ft_do_zam_eval.c.o
-
-src/calc/ft_do_zam_eval.i: src/calc/ft_do_zam_eval.c.i
-
-.PHONY : src/calc/ft_do_zam_eval.i
-
-# target to preprocess a source file
-src/calc/ft_do_zam_eval.c.i:
-	$(MAKE) -f CMakeFiles/42sh.dir/build.make CMakeFiles/42sh.dir/src/calc/ft_do_zam_eval.c.i
-.PHONY : src/calc/ft_do_zam_eval.c.i
-
-src/calc/ft_do_zam_eval.s: src/calc/ft_do_zam_eval.c.s
-
-.PHONY : src/calc/ft_do_zam_eval.s
-
-# target to generate assembly for a file
-src/calc/ft_do_zam_eval.c.s:
-	$(MAKE) -f CMakeFiles/42sh.dir/build.make CMakeFiles/42sh.dir/src/calc/ft_do_zam_eval.c.s
-.PHONY : src/calc/ft_do_zam_eval.c.s
-
 src/check_file.o: src/check_file.c.o
 
 .PHONY : src/check_file.o
@@ -4118,6 +3443,33 @@ src/evaln/dop.s: src/evaln/dop.c.s
 src/evaln/dop.c.s:
 	$(MAKE) -f CMakeFiles/42sh.dir/build.make CMakeFiles/42sh.dir/src/evaln/dop.c.s
 .PHONY : src/evaln/dop.c.s
+
+src/evaln/dostack.o: src/evaln/dostack.c.o
+
+.PHONY : src/evaln/dostack.o
+
+# target to build an object file
+src/evaln/dostack.c.o:
+	$(MAKE) -f CMakeFiles/42sh.dir/build.make CMakeFiles/42sh.dir/src/evaln/dostack.c.o
+.PHONY : src/evaln/dostack.c.o
+
+src/evaln/dostack.i: src/evaln/dostack.c.i
+
+.PHONY : src/evaln/dostack.i
+
+# target to preprocess a source file
+src/evaln/dostack.c.i:
+	$(MAKE) -f CMakeFiles/42sh.dir/build.make CMakeFiles/42sh.dir/src/evaln/dostack.c.i
+.PHONY : src/evaln/dostack.c.i
+
+src/evaln/dostack.s: src/evaln/dostack.c.s
+
+.PHONY : src/evaln/dostack.s
+
+# target to generate assembly for a file
+src/evaln/dostack.c.s:
+	$(MAKE) -f CMakeFiles/42sh.dir/build.make CMakeFiles/42sh.dir/src/evaln/dostack.c.s
+.PHONY : src/evaln/dostack.c.s
 
 src/evaln/ft_do_zam_eval.o: src/evaln/ft_do_zam_eval.c.o
 
@@ -7971,81 +7323,6 @@ help:
 	@echo "... src/builtins/ft_type.o"
 	@echo "... src/builtins/ft_type.i"
 	@echo "... src/builtins/ft_type.s"
-	@echo "... src/calc/calc.o"
-	@echo "... src/calc/calc.i"
-	@echo "... src/calc/calc.s"
-	@echo "... src/calc/calc_add_fun.o"
-	@echo "... src/calc/calc_add_fun.i"
-	@echo "... src/calc/calc_add_fun.s"
-	@echo "... src/calc/calc_arr_reloc.o"
-	@echo "... src/calc/calc_arr_reloc.i"
-	@echo "... src/calc/calc_arr_reloc.s"
-	@echo "... src/calc/calc_arr_tkns.o"
-	@echo "... src/calc/calc_arr_tkns.i"
-	@echo "... src/calc/calc_arr_tkns.s"
-	@echo "... src/calc/calc_atoi.o"
-	@echo "... src/calc/calc_atoi.i"
-	@echo "... src/calc/calc_atoi.s"
-	@echo "... src/calc/calc_com_fun.o"
-	@echo "... src/calc/calc_com_fun.i"
-	@echo "... src/calc/calc_com_fun.s"
-	@echo "... src/calc/calc_dop/calc_main.o"
-	@echo "... src/calc/calc_dop/calc_main.i"
-	@echo "... src/calc/calc_dop/calc_main.s"
-	@echo "... src/calc/calc_dop/calc_parser.o"
-	@echo "... src/calc/calc_dop/calc_parser.i"
-	@echo "... src/calc/calc_dop/calc_parser.s"
-	@echo "... src/calc/calc_dop/calc_tree.o"
-	@echo "... src/calc/calc_dop/calc_tree.i"
-	@echo "... src/calc/calc_dop/calc_tree.s"
-	@echo "... src/calc/calc_dop/remove_tree.o"
-	@echo "... src/calc/calc_dop/remove_tree.i"
-	@echo "... src/calc/calc_dop/remove_tree.s"
-	@echo "... src/calc/calc_dop/traversal.o"
-	@echo "... src/calc/calc_dop/traversal.i"
-	@echo "... src/calc/calc_dop/traversal.s"
-	@echo "... src/calc/calc_eq_fun.o"
-	@echo "... src/calc/calc_eq_fun.i"
-	@echo "... src/calc/calc_eq_fun.s"
-	@echo "... src/calc/calc_error_fun.o"
-	@echo "... src/calc/calc_error_fun.i"
-	@echo "... src/calc/calc_error_fun.s"
-	@echo "... src/calc/calc_inc_fun.o"
-	@echo "... src/calc/calc_inc_fun.i"
-	@echo "... src/calc/calc_inc_fun.s"
-	@echo "... src/calc/calc_lexer.o"
-	@echo "... src/calc/calc_lexer.i"
-	@echo "... src/calc/calc_lexer.s"
-	@echo "... src/calc/calc_log_fun.o"
-	@echo "... src/calc/calc_log_fun.i"
-	@echo "... src/calc/calc_log_fun.s"
-	@echo "... src/calc/calc_ltoa.o"
-	@echo "... src/calc/calc_ltoa.i"
-	@echo "... src/calc/calc_ltoa.s"
-	@echo "... src/calc/calc_mul_fun.o"
-	@echo "... src/calc/calc_mul_fun.i"
-	@echo "... src/calc/calc_mul_fun.s"
-	@echo "... src/calc/calc_num_fun.o"
-	@echo "... src/calc/calc_num_fun.i"
-	@echo "... src/calc/calc_num_fun.s"
-	@echo "... src/calc/calc_parent_fun.o"
-	@echo "... src/calc/calc_parent_fun.i"
-	@echo "... src/calc/calc_parent_fun.s"
-	@echo "... src/calc/calc_tkn.o"
-	@echo "... src/calc/calc_tkn.i"
-	@echo "... src/calc/calc_tkn.s"
-	@echo "... src/calc/calc_var_fun.o"
-	@echo "... src/calc/calc_var_fun.i"
-	@echo "... src/calc/calc_var_fun.s"
-	@echo "... src/calc/calc_var_tkn.o"
-	@echo "... src/calc/calc_var_tkn.i"
-	@echo "... src/calc/calc_var_tkn.s"
-	@echo "... src/calc/change_vars.o"
-	@echo "... src/calc/change_vars.i"
-	@echo "... src/calc/change_vars.s"
-	@echo "... src/calc/ft_do_zam_eval.o"
-	@echo "... src/calc/ft_do_zam_eval.i"
-	@echo "... src/calc/ft_do_zam_eval.s"
 	@echo "... src/check_file.o"
 	@echo "... src/check_file.i"
 	@echo "... src/check_file.s"
@@ -8082,6 +7359,9 @@ help:
 	@echo "... src/evaln/dop.o"
 	@echo "... src/evaln/dop.i"
 	@echo "... src/evaln/dop.s"
+	@echo "... src/evaln/dostack.o"
+	@echo "... src/evaln/dostack.i"
+	@echo "... src/evaln/dostack.s"
 	@echo "... src/evaln/ft_do_zam_eval.o"
 	@echo "... src/evaln/ft_do_zam_eval.i"
 	@echo "... src/evaln/ft_do_zam_eval.s"

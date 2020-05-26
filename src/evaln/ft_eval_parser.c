@@ -37,28 +37,39 @@ t_calc_token		*ft_make_token_from_str(char *str, int *i,
 	}
 }
 
+void				*decide_how_to_parse(t_calc_token *tmp_token, t_calc_token *first_token, char *rec_var)
+{
+	if (tmp_token)
+	{
+		add_token_cr(first_token, tmp_token);
+	}
+	if (tmp_token && tmp_token->type == CALC_ERROR)
+	{
+		return (first_token);
+	}
+	if (tmp_token && rec_var && !ft_strcmp(tmp_token->var, rec_var))
+	{
+		add_token_cr(first_token, ft_ntoken(tmp_token->var, CALC_REC_ERROR));
+		return (first_token);
+	}
+}
+
 t_calc_token		*ft_eval_parse(char *str, char *rec_var)
 {
 	int				i;
 	t_calc_token	*f_token;
-	t_calc_token	*ttok;
+	t_calc_token	*tmp_token;
 
 	i = 0;
-	ttok = NULL;
+	tmp_token = NULL;
 	if (!(f_token = ft_ntoken(NULL, CALC_START)))
 		return (NULL);
 	while (str[i] != '\0')
 	{
 		if (str[i] != ' ')
-			ttok = ft_make_token_from_str(&str[i], &i, ttok);
-		if (str[i] != ' ' && ttok)
-			add_token_cr(f_token, ttok);
-		if (str[i] != ' ' && ttok && ttok->type == CALC_ERROR)
-			return (f_token);
-		if (str[i] != ' ' && ttok && rec_var && !ft_strcmp(ttok->var, rec_var))
 		{
-			add_token_cr(f_token, ft_ntoken(ttok->var, CALC_REC_ERROR));
-			return (f_token);
+			tmp_token = ft_make_token_from_str(&str[i], &i, tmp_token);
+			decide_how_to_parse(tmp_token, f_token, rec_var);
 		}
 		else
 			i++;
