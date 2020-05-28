@@ -48,11 +48,12 @@ char	*ft_slash_2(char *str, t_builtins *echo, int res)
 	nb = -404;
 	if (res == 4)
 		return (str + 2);
-	if ((--res) && *(str + 1) == '0' && (++res))
+	if ((--res) && *(str) && *(str + 1) && *(str + 1) == '0' && (++res))
 		nb = ft_atoi_echo((str + 1));
-	if ((--res) && *(str + 1) == 'x' && (++res))
+	if ((--res) && *(str) && *(str + 1) && *(str + 1) == 'x' && (++res))
 		str = ft_hex(str + 1);
-	if (!(--res) && *(str + 1) == 'c' && (++res) && (echo->echo_c = 1))
+	if (!(--res) && *(str) && *(str + 1) && *(str + 1) == 'c' && (++res)
+	&& (echo->echo_c = 1))
 		return (NULL);
 	if (nb > 0)
 		str = ft_print_oct(str, nb);
@@ -61,7 +62,7 @@ char	*ft_slash_2(char *str, t_builtins *echo, int res)
 	if (res == 0)
 	{
 		ft_putchar_fd('\\', globals()->fd[1]);
-		return (str + 2);
+		return (str + 1);
 	}
 	return (str);
 }
