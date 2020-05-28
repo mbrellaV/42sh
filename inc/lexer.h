@@ -73,7 +73,7 @@ t_lextoken					*do_zam_bax_and_hist_full(t_lextoken *h,
 ** change_dol.c
 */
 
-char						*do_zam_str_bax(char *str1, t_dop_str *t);
+char						*do_zam_str_bax(char *str1);
 
 /*
 ** change_sc.c

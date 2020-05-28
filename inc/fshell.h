@@ -145,6 +145,7 @@ int					ft_echo(char **str);
 t_memory			*make_memmory_with_one_node(int fd, char *buf);
 char				*get_hist_by_id(int id);
 char				*ft_slash(char *str, t_builtins *echo);
+int					zam_bax_in_exectoken(t_exectoken *tmp);
 void				del_one_node(t_lextoken *token_to_del,
 						t_lextoken **first_token);
 char				*distribute_echo(char **str, int k, int flag,

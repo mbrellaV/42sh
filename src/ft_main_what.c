@@ -51,6 +51,7 @@ static void	do_job_things(int *sas, t_job **job, t_exectoken *tmp)
 
 int			ft_main_if(t_exectoken *tmp, int sas, t_job *job)
 {
+	zam_bax_in_exectoken(tmp);
 	if ((tmp->file_args && !is_builtin(tmp->file_args[0])) || tmp->left)
 		do_job_things(&sas, &job, tmp);
 	else

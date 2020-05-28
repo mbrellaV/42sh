@@ -29,6 +29,7 @@ void		ft_zam_ravno_main(char *tmp1, char *tmp2, t_lextoken *h, int type)
 	else
 		tmp2 = ft_strsub(h->line, ft_strstr(h->line, "=") -
 			h->line + 1, ft_strlen(h->line));
+	tmp2 = do_obr_zamena(tmp2);
 	if (type == 1)
 	{
 		set_new_var(tmp1, tmp2, &globals()->g_all_var);
