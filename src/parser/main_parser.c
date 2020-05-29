@@ -30,9 +30,9 @@ int				zam_bax_in_exectoken(t_exectoken *tmp)
 	i = 0;
 	while (tmp->file_opt != NULL && tmp->file_opt[i] != NULL)
 	{
-		if (!(tmp->file_args[i] = do_zam_str_bax(tmp->file_args[i])))
+		if (!(tmp->file_opt[i] = do_zam_str_bax(tmp->file_opt[i])))
 			return (-1);
-		if (!(tmp->file_args[i] = ft_do_zam_eval(tmp->file_args[i])))
+		if (!(tmp->file_opt[i] = ft_do_zam_eval(tmp->file_opt[i])))
 			return (-1);
 		i++;
 	}
