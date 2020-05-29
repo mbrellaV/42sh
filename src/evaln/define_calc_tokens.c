@@ -26,6 +26,7 @@ t_calc_token	*define_standart_token(char *str, int *i)
 	if (tmp_token == NULL)
 	{
 		size = 1;
+		ft_strdel(&tmp);
 		tmp = ft_strsub(str, 0, size);
 		tmp_token = calc_define_token(tmp);
 	}

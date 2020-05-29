@@ -53,6 +53,7 @@ char		*do_zam_str_bax(char *str1)
 			dop = ft_strsub(str1, zams.i, c_size(&str1[zams.i], str1[zams.i]) + 2);
 			ft_strcat(new, dop);
 			zams.i += c_size(&str1[zams.i], str1[zams.i]) + 2;
+			ft_strdel(&dop);
 		}
 		zam_symbol(str1, &zams, new);
 	}

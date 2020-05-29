@@ -51,7 +51,8 @@ static void	do_job_things(int *sas, t_job **job, t_exectoken *tmp)
 
 int			ft_main_if(t_exectoken *tmp, int sas, t_job *job)
 {
-	zam_bax_in_exectoken(tmp);
+	if (zam_bax_in_exectoken(tmp) == -1)
+		return (-3);
 	if ((tmp->file_args && !is_builtin(tmp->file_args[0])) || tmp->left)
 		do_job_things(&sas, &job, tmp);
 	else
@@ -83,6 +84,8 @@ int			ft_main_what(t_exectoken *tmp)
 		}
 		if (trick(&tmp) && exit_status == -1)
 			return (-1);
+		if (exit_status == -3)
+			return (-3);
 	}
 	do_job_del();
 	return (1);

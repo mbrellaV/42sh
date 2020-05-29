@@ -22,10 +22,14 @@ int		exit_builtin(char **args)
 			vivod(2) ? ft_dprintf(globals()->fd[2],
 					"42sh: exit: %s: numeric argument required\n", args[1]) : 0;
 			put_error_to_shell(2);
-			return (-1);
+			save_history(globals()->g_memory_head);
+			exit(127);
 		}
 		else
-			return (-1);
+		{
+			save_history(globals()->g_memory_head);
+			exit(args[1] ? ft_atoi(args[1]) : 0);
+		}
 	}
 	else
 	{
