@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../inc/fshell.h"
+#include "fshell.h"
 
 int				dop_lexer2(t_dop_str *tmp, char *line)
 {
@@ -39,6 +39,11 @@ int				dop_lexer2(t_dop_str *tmp, char *line)
 
 static int		dop_dop_lexer1(int *plus_to_word, t_dop_str *tmp, char *line)
 {
+	if (tmp->tail_c != NULL && (tmp->tail_c->operator_type > 2 &&
+	(tmp->tail_c->operator_type < 9)))
+		tmp->d_c = 1;
+	if (!(tmp->tail_c = add_token(tmp->tail_c, tmp->tmp_c)))
+		return (-1);
 	if (ispar(line[(tmp)->i_c]) && (tmp)->i_c > 0 &&
 			isword(line[(tmp)->i_c - 1]))
 		(tmp)->tail_c->is_near_word = 1;
@@ -79,11 +84,6 @@ int				dop_lexer1(t_dop_str *tmp, char *line)
 		return (-1);
 	tmp->tmp_c = ft_strsub(line, tmp->i_c + (plus_to_word),
 		word_size(line + tmp->i_c) - (issc(line[tmp->i_c]) == 1 ? 3 : 0));
-	if (tmp->tail_c != NULL && (tmp->tail_c->operator_type > 2 &&
-		(tmp->tail_c->operator_type < 9)))
-		tmp->d_c = 1;
-	if (!(tmp->tail_c = add_token(tmp->tail_c, tmp->tmp_c)))
-		return (-1);
 	return (dop_dop_lexer1(&plus_to_word, tmp, line));
 }
 

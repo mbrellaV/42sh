@@ -85,6 +85,7 @@ t_exectoken		*all_parse(char *cmd)
 	t_exectoken	*extmp;
 	t_lextoken	*dop_tmp;
 
+	//dprintf(2, "\nsas: |%s|\n", cmd);
 	if (*cmd == '\0' || check_par_and_brackets(cmd) == 0)
 		return (NULL);
 	ft_change_all_sc(cmd);

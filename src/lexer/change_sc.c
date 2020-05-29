@@ -22,14 +22,20 @@ int			check_if_in_par(char *line, int i)
 	while (d > -1 && line[d])
 	{
 		if (ispar(line[d]))
+		{
 			marker++;
+			break ;
+		}
 		d--;
 	}
 	d = i;
 	while (line[d])
 	{
 		if (ispar(line[d]))
+		{
 			marker++;
+			break ;
+		}
 		d++;
 	}
 	if (marker == 2)
@@ -48,8 +54,8 @@ void		ft_change_all_sc(char *str)
 			i += word_size(&str[i]);
 		if ((str[i] == '(' || str[i] == ')') && !check_if_in_par(str, i))
 			str[i] = ' ';
-		if ((str[i] == '{' || str[i] == '}') && !check_if_in_par(str, i))
-			str[i] = ' ';
+//		if ((str[i] == '{' || str[i] == '}') && !check_if_in_par(str, i))
+//			str[i] = ' ';
 		i++;
 	}
 }

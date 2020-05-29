@@ -21,7 +21,8 @@ t_memory	*make_memmory_with_one_node(int fd, char *buf)
 	head->inp = ft_strdup("authors");
 	head->next = NULL;
 	head->back = NULL;
-	close(fd);
+	if (fd >= 0)
+		close(fd);
 	ft_strdel(&buf);
 	return (head);
 }

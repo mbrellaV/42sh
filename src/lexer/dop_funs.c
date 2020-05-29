@@ -19,7 +19,7 @@ int			ispar(char c)
 
 int			issc(char c)
 {
-	if (c == '(' || c == '{' || c == ')' || c == '}')
+	if (c == '(' || c == ')')
 		return (1);
 	else
 		return (0);
@@ -43,7 +43,7 @@ int			isword(char c)
 {
 	if (ispar(c) == 1)
 		return (2);
-	if (issc(c) == 1)
+	if (issc(c))
 		return (3);
 	if (c == '$')
 		return (4);

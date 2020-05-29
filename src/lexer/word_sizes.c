@@ -54,10 +54,10 @@ int				word_size(char *str)
 		return (sc_size(str + 1, *(str + 1)));
 	else if (*str == '$')
 		return (size_with_bax(str));
-	if (*str == ')' || *str == '}')
+	if (*str == ')')
 		return (1);
-	if (issc(*str))
-		return (1);
+//	if (issc(*str))
+//		return (1);
 	while (*str)
 	{
 		if (isword(*str) != 1)

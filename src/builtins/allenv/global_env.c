@@ -59,7 +59,7 @@ int		ft_show_env(char **env)
 		ft_dprintf(globals()->fd[1], "%s\n", env[i]);
 		i++;
 	}
-	return (0);
+	return (1);
 }
 
 int		ft_findenv(char *s, char **env)

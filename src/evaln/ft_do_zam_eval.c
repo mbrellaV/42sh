@@ -85,6 +85,7 @@ char		*ft_do_zam_eval(char *mas)
 		return (NULL);
 	if (*mas == '\0')
 		return (mas);
+	//dprintf(2, "\n|%s|\n", mas);
 	if ((newstr = ft_main_calc_rec(mas, &error)) == NULL)
 	{
 		if (error != 0)

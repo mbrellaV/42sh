@@ -41,6 +41,7 @@ typedef struct				s_exectoken
 	struct s_exectoken		*right;
 	char					**file_args;
 	char					**file_opt;
+	int	 	 	 	 	 	*inhibitor_args;
 	int						foreground;
 }							t_exectoken;
 
