@@ -152,7 +152,7 @@ char				*distribute_echo(char **str, int k, int flag,
 						t_builtins *echo);
 char				*ft_hex(char *str);
 void				delete_fc_command(void);
-char				**ft_add_to_del_env_table(char *tmp);
+void				ft_add_to_del_env_table(char *tmp);
 void				*ft_malloc(size_t size);
 int					launch(char *str, int put_name);
 int					set_new_var(char *str1, char *str2, char ***envl);

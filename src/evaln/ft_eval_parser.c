@@ -52,6 +52,7 @@ void				*decide_how_to_parse(t_calc_token *tmp_token, t_calc_token *first_token,
 		add_token_cr(first_token, ft_ntoken(tmp_token->var, CALC_REC_ERROR));
 		return (first_token);
 	}
+	return (NULL);
 }
 
 t_calc_token		*ft_eval_parse(char *str, char *rec_var)
@@ -69,7 +70,8 @@ t_calc_token		*ft_eval_parse(char *str, char *rec_var)
 		if (str[i] != ' ')
 		{
 			tmp_token = ft_make_token_from_str(&str[i], &i, tmp_token);
-			decide_how_to_parse(tmp_token, f_token, rec_var);
+			if (decide_how_to_parse(tmp_token, f_token, rec_var) != NULL)
+				return (f_token);
 		}
 		else
 			i++;

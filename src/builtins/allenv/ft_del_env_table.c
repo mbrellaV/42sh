@@ -12,7 +12,7 @@
 
 #include "fshell.h"
 
-char			**ft_add_to_del_env_table(char *tmp)
+void			ft_add_to_del_env_table(char *tmp)
 {
 	char	**new_del_env;
 	int		i;

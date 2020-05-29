@@ -36,7 +36,7 @@ int				zam_bax_in_exectoken(t_exectoken *tmp)
 			return (-1);
 		i++;
 	}
-
+	return (0);
 }
 
 t_exectoken		*do_parser_dop(t_dop_str *t, t_lextoken *tmp)

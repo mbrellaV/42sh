@@ -77,4 +77,5 @@ int			calc(int *stackos, t_int *str, t_calc_tkntype c,
 	else if (c == CALC_LESS)
 		stackos[str->ol - 2] = stackos[str->ol - 2] < stackos[str->ol - 1];
 	calc_next(stackos, str, c);
+	return (0);
 }
