@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../inc/fshell.h"
+#include "fshell.h"
 
 t_lextoken	*do_zam_dop(t_lextoken *h, t_lextoken **first_token)
 {

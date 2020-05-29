@@ -38,7 +38,7 @@ int		do_next_builtins(char **file_args)
 	else if (ft_strcmp(file_args[0], "true") == 0)
 		put_error_to_shell(0);
 	else if (ft_strcmp(file_args[0], "false") == 0)
-		put_error_to_shell(2);
+		put_error_to_shell(1);
 	else if (ft_strcmp(file_args[0], "fg") == 0)
 		put_error_to_shell(do_fg(file_args));
 	else if (ft_strcmp(file_args[0], "bg") == 0)
