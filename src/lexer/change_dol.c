@@ -18,15 +18,15 @@ static void	zam_symbol(char *str1, t_zams *zams, char *new)
 	{
 		zams->dop = (str1[zams->i + 1] == '{' ? 2 : 1);
 		zams->dopstr = ft_strsub(str1, zams->i + zams->dop,
-			word_size(&str1[zams->i]) - (zams->dop == 2 ? 3 : 1));
+			word_size(&str1[zams->i]) - (zams->dop == 2 ? 2 : 1));
 		zams->str_for_del = zams->dopstr;
-		//dprintf(2, "\nsas0: |%s|\n", zams->dopstr);
+		//dprintf(2, "\nsas0: |%d, %s, %s|\n", word_size(&str1[zams->i]), zams->dopstr, &str1[zams->i]);
 		zams->dopstr = ft_get_var(zams->dopstr, globals()->g_all_var);
 		ft_strdel(&zams->str_for_del);
 		//dprintf(2, "\nsas1: |%s|\n", zams->dopstr);
 		if (zams->dopstr != NULL)
 			ft_strcat(new, zams->dopstr);
-		zams->i += word_size(&str1[zams->i]);
+		zams->i += word_size(&str1[zams->i]) + 1;
 		ft_strdel(&zams->dopstr);
 	}
 	else

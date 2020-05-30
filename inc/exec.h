@@ -26,7 +26,7 @@ typedef struct			s_process
 	char				stopped;
 	int					status;
 	char				**file_opt;
-	int					foreground;
+	int					*inhibitor_args;
 }						t_process;
 
 typedef struct			s_job

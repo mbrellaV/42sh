@@ -67,9 +67,13 @@ void					dop_cr_new_exec(t_dop_str *t,
 t_exectoken				*ft_cr_new_exectoken(t_lextoken *tmp,
 		t_exectoken *prev, int op_type, t_dop_str *t)
 {
+	int		i;
+
 	if (!(t = cr_dop_str_par1(tmp)))
 		return (NULL);
+	i = 0;
 	dop_cr_new_exec(t, prev, op_type, 0);
+	t->tmp1_a->inhibitor_args = create_inhibitor_args(tmp);
 	while (t->dop_a != NULL && !is_cmd_delim(t->dop_a->operator_type))
 	{
 		if (t->dop_a->is_near_opt == 0)
@@ -84,6 +88,7 @@ t_exectoken				*ft_cr_new_exectoken(t_lextoken *tmp,
 				return (ft_kill_str_dop_exec(t, NULL));
 			t->dopi_a++;
 		}
+		t->tmp1_a->inhibitor_args[i++] = t->dop_a->inhibitor_lvl;
 		t->dop_a = t->dop_a->next;
 	}
 	dop_cr_new_exec(t, prev, op_type, 1);

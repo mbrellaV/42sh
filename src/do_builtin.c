@@ -54,7 +54,7 @@ int		do_next_builtins(char **file_args)
 	return (1);
 }
 
-int		do_builtin(char **file_args, char **file_opt, int type)
+int		do_builtin(char **file_args, char **file_opt, int type, int *inhibitor_args)
 {
 	globals()->vivod = 0;
 	if (file_args == NULL)
@@ -74,10 +74,7 @@ int		do_builtin(char **file_args, char **file_opt, int type)
 	else if (ft_strcmp(file_args[0], "export") == 0)
 		put_error_to_shell(ft_do_export(file_args));
 	else if (ft_strcmp(file_args[0], "unset") == 0 && file_args[1])
-	{
-		unset_var(file_args[1], &globals()->g_env);
-		unset_var(file_args[1], &globals()->g_all_var);
-	}
+		put_error_to_shell(unset_builtin(file_args));
 	else
 		return (do_next_builtins(file_args));
 	return (1);

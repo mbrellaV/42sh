@@ -2769,6 +2769,33 @@ src/builtins/allenv/main_env.c.s:
 	$(MAKE) -f CMakeFiles/42sh.dir/build.make CMakeFiles/42sh.dir/src/builtins/allenv/main_env.c.s
 .PHONY : src/builtins/allenv/main_env.c.s
 
+src/builtins/allenv/unset_builtin.o: src/builtins/allenv/unset_builtin.c.o
+
+.PHONY : src/builtins/allenv/unset_builtin.o
+
+# target to build an object file
+src/builtins/allenv/unset_builtin.c.o:
+	$(MAKE) -f CMakeFiles/42sh.dir/build.make CMakeFiles/42sh.dir/src/builtins/allenv/unset_builtin.c.o
+.PHONY : src/builtins/allenv/unset_builtin.c.o
+
+src/builtins/allenv/unset_builtin.i: src/builtins/allenv/unset_builtin.c.i
+
+.PHONY : src/builtins/allenv/unset_builtin.i
+
+# target to preprocess a source file
+src/builtins/allenv/unset_builtin.c.i:
+	$(MAKE) -f CMakeFiles/42sh.dir/build.make CMakeFiles/42sh.dir/src/builtins/allenv/unset_builtin.c.i
+.PHONY : src/builtins/allenv/unset_builtin.c.i
+
+src/builtins/allenv/unset_builtin.s: src/builtins/allenv/unset_builtin.c.s
+
+.PHONY : src/builtins/allenv/unset_builtin.s
+
+# target to generate assembly for a file
+src/builtins/allenv/unset_builtin.c.s:
+	$(MAKE) -f CMakeFiles/42sh.dir/build.make CMakeFiles/42sh.dir/src/builtins/allenv/unset_builtin.c.s
+.PHONY : src/builtins/allenv/unset_builtin.c.s
+
 src/builtins/authors.o: src/builtins/authors.c.o
 
 .PHONY : src/builtins/authors.o
@@ -6252,6 +6279,33 @@ src/parser/dop_parser.c.s:
 	$(MAKE) -f CMakeFiles/42sh.dir/build.make CMakeFiles/42sh.dir/src/parser/dop_parser.c.s
 .PHONY : src/parser/dop_parser.c.s
 
+src/parser/inhibitor_args.o: src/parser/inhibitor_args.c.o
+
+.PHONY : src/parser/inhibitor_args.o
+
+# target to build an object file
+src/parser/inhibitor_args.c.o:
+	$(MAKE) -f CMakeFiles/42sh.dir/build.make CMakeFiles/42sh.dir/src/parser/inhibitor_args.c.o
+.PHONY : src/parser/inhibitor_args.c.o
+
+src/parser/inhibitor_args.i: src/parser/inhibitor_args.c.i
+
+.PHONY : src/parser/inhibitor_args.i
+
+# target to preprocess a source file
+src/parser/inhibitor_args.c.i:
+	$(MAKE) -f CMakeFiles/42sh.dir/build.make CMakeFiles/42sh.dir/src/parser/inhibitor_args.c.i
+.PHONY : src/parser/inhibitor_args.c.i
+
+src/parser/inhibitor_args.s: src/parser/inhibitor_args.c.s
+
+.PHONY : src/parser/inhibitor_args.s
+
+# target to generate assembly for a file
+src/parser/inhibitor_args.c.s:
+	$(MAKE) -f CMakeFiles/42sh.dir/build.make CMakeFiles/42sh.dir/src/parser/inhibitor_args.c.s
+.PHONY : src/parser/inhibitor_args.c.s
+
 src/parser/is_system_symbol.o: src/parser/is_system_symbol.c.o
 
 .PHONY : src/parser/is_system_symbol.o
@@ -7284,6 +7338,9 @@ help:
 	@echo "... src/builtins/allenv/main_env.o"
 	@echo "... src/builtins/allenv/main_env.i"
 	@echo "... src/builtins/allenv/main_env.s"
+	@echo "... src/builtins/allenv/unset_builtin.o"
+	@echo "... src/builtins/allenv/unset_builtin.i"
+	@echo "... src/builtins/allenv/unset_builtin.s"
 	@echo "... src/builtins/authors.o"
 	@echo "... src/builtins/authors.i"
 	@echo "... src/builtins/authors.s"
@@ -7671,6 +7728,9 @@ help:
 	@echo "... src/parser/dop_parser.o"
 	@echo "... src/parser/dop_parser.i"
 	@echo "... src/parser/dop_parser.s"
+	@echo "... src/parser/inhibitor_args.o"
+	@echo "... src/parser/inhibitor_args.i"
+	@echo "... src/parser/inhibitor_args.s"
 	@echo "... src/parser/is_system_symbol.o"
 	@echo "... src/parser/is_system_symbol.i"
 	@echo "... src/parser/is_system_symbol.s"

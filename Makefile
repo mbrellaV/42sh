@@ -25,6 +25,7 @@ SRC_BASE = builtins/ft_cd.c\
 	builtins/ft_fc_3.c\
 	builtins/authors.c\
 	builtins/allenv/ft_env.c\
+	builtins/allenv/unset_builtin.c\
 	builtins/allenv/ft_del_env_table.c\
 	builtins/alias/alias.c\
 	builtins/alias/alias_error.c\
@@ -134,6 +135,7 @@ SRC_BASE = builtins/ft_cd.c\
 	parser/change_tilda.c\
 	parser/main_parser.c\
 	parser/check_bracket.c\
+	parser/inhibitor_args.c\
 	parser/all_parse.c\
 	parser/create_dop_struct.c\
 	parser/is_system_symbol.c\

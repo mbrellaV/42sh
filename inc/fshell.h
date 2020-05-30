@@ -152,6 +152,8 @@ char				*distribute_echo(char **str, int k, int flag,
 						t_builtins *echo);
 char				*ft_hex(char *str);
 void				delete_fc_command(void);
+int					*create_inhibitor_args(t_lextoken *tmp);
+int					unset_builtin(char **file_args);
 void				ft_add_to_del_env_table(char *tmp);
 void				*ft_malloc(size_t size);
 int					launch(char *str, int put_name);
@@ -255,7 +257,7 @@ void				disable_shell_signals();
 void				recover_normal_shell_signals();
 int					ft_whatis2(t_process *tmp);
 void				init_shell(void);
-int					do_builtin(char **file_args, char **file_opt, int type);
+int					do_builtin(char **file_args, char **file_opt, int type, int *inhibitor_args);
 int					ck_br(const char *str);
 void				put_error_to_shell(int error);
 char				*ft_do_zam_eval(char *mas);

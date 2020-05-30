@@ -31,9 +31,11 @@ int				size_with_bax(char *str)
 
 	i = 0;
 	str++;
+	//dprintf(2, "\nsas123: |%s|\n", str);
 	while (*str)
 	{
-		if (isword(*str) != 1)
+		//dprintf(2, "\nsas1234: |%s|\n", str);
+		if (isword(*str) != 1 || *str == '}')
 			return (i + 1);
 		i++;
 		str++;

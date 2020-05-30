@@ -53,10 +53,10 @@ int			ft_main_if(t_exectoken *tmp, int sas, t_job *job)
 {
 	if (zam_bax_in_exectoken(tmp) == -1)
 		return (-3);
-	if ((tmp->file_args && !is_builtin(tmp->file_args[0])) || tmp->left)
+	if ((tmp->file_args && !is_builtin(tmp->file_args[0])) || tmp->left || tmp->foreground == 0)
 		do_job_things(&sas, &job, tmp);
 	else
-		sas = do_builtin(tmp->file_args, tmp->file_opt, 0);
+		sas = do_builtin(tmp->file_args, tmp->file_opt, 0, tmp->inhibitor_args);
 	return (sas);
 }
 

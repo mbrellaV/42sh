@@ -20,6 +20,7 @@ int		ft_distruct_tree(t_exectoken *q)
 		ft_distruct_tree(q->right);
 		ft_arrdel(q->file_args);
 		ft_arrdel(q->file_opt);
+		free(q->inhibitor_args);
 		free(q);
 	}
 	return (1);

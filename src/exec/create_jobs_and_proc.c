@@ -21,12 +21,12 @@ t_process		*create_process(t_exectoken *tmp)
 	fir->file_args = tmp->file_args;
 	if (check_file_args(fir) == 0)
 		return (NULL);
-	fir->foreground = 1;
 	fir->pid = 0;
 	fir->completed = 0;
 	fir->next = NULL;
 	fir->stopped = 0;
 	fir->file_opt = tmp->file_opt;
+	fir->inhibitor_args = tmp->inhibitor_args;
 	return (fir);
 }
 
@@ -37,9 +37,6 @@ t_process		*create_process_list(t_exectoken *tmp)
 
 	if (!(fir = create_process(tmp)))
 		ft_error_q(5);
-	if (tmp->file_opt && ft_strcmp(tmp->file_opt[ft_env_len(tmp->file_opt) - 1],
-			"&") == 0)
-		fir->foreground = 0;
 	proc = fir;
 	tmp = tmp->left;
 	while (tmp)

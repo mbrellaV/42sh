@@ -74,7 +74,10 @@ int					ft_type(char **argv)
 	{
 		if (!check_alias(argv[i]) && !check_builtins(argv[i]) &&
 				!check_hash(argv[i]))
+		{
 			ft_dprintf(globals()->fd[2], "42sh: %s not found\n", argv[i]);
+			return (-1);
+		}
 	}
 	return (0);
 }
