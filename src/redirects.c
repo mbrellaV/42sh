@@ -34,7 +34,8 @@ int		do_simple_redir(int *opened_fds, char **av, int flag, int i)
 	{
 		if (ft_open_flag_in_builtins(av[i + 2], flag, &infile, &outfile) == -1)
 			return (-1);
-		opened_fds[ft_atoi(av[i])] = outfile;
+		if (ft_find_in_fds(opened_fds, ft_atoi(av[i])) != -1)
+			opened_fds[ft_atoi(av[i])] = outfile;
 	}
 	if (flag == 3)
 	{
