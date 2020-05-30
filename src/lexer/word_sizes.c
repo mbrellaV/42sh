@@ -56,8 +56,8 @@ int				word_size(char *str)
 		return (size_with_bax(str));
 	if (*str == ')')
 		return (1);
-//	if (issc(*str))
-//		return (1);
+	if (issc(*str))
+		return (1);
 	while (*str)
 	{
 		if (isword(*str) != 1)

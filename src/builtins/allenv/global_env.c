@@ -20,7 +20,7 @@ void	ft_global_env(char **env, int argc)
 	i = -1;
 	k = argc;
 	if (!(globals()->g_env = (char **)ft_memalloc(sizeof(char *) *
-			(ft_env_len(env) + 1))))
+			(ft_env_len(env) + 2))))
 		ft_error_q(1);
 	while (env[++i])
 	{
