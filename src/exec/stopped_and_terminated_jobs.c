@@ -28,9 +28,6 @@ static int		check_status(t_pstat *pstat, int status, pid_t pid, t_job *job)
 		pstat->p->completed = 1;
 		pstat->p->status = WEXITSTATUS(status);
 		put_error_to_shell(pstat->p->status);
-		pstat->ptmp = pstat->j->first_process;
-		while (pstat->ptmp != pstat->p && (pstat->ptmp->completed = 1))
-			pstat->ptmp = pstat->ptmp->next;
 		if (WIFSIGNALED(status))
 			ft_dprintf(globals()->fd[2], "%d: Terminated by signal %d.\n",
 					(int)pid, WTERMSIG(pstat->p->status));
@@ -81,6 +78,7 @@ void			update_status(void)
 		while (pr)
 		{
 			pid = waitpid(pr->pid, &status, WUNTRACED | WNOHANG);
+			//dprintf(2, "\n|%d|\n", pid);
 			mark_process_status(pid, status, job);
 			pr = pr->next;
 		}

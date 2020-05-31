@@ -48,8 +48,7 @@ void			ft_read_8(t_readline *p, t_memory *head, int mod)
 
 	p->mod = mod;
 	h = head;
-	while (do_job_del() &&
-	(rt = read(0, buf, 8)) && buf[0] != '\n' && do_job_del())
+	while ((rt = read(0, buf, 8)) && buf[0] != '\n')
 	{
 		p->sum_read = ft_add_sumchar(buf, rt);
 		if (!ft_read_helper(p, &h, rt, buf))

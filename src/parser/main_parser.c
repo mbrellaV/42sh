@@ -37,6 +37,7 @@ int				zam_bax_in_exectoken(t_exectoken *tmp)
 			return (-1);
 		if (!(tmp->file_opt[i] = ft_do_zam_eval(tmp->file_opt[i])))
 			return (-1);
+		i++;
 	}
 	return (0);
 }

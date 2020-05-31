@@ -134,8 +134,8 @@ int						launch_job(t_job *j, int foreground);
 */
 
 void					standart_redirect(int infile, int outfile, int errfile);
-int						launch_process(t_process *p, t_job *j,
-										t_jobl jobl, int fg);
+int						launch_process(t_process *p, t_job *j, t_jobl *jobl, int fg);
+
 
 /*
 ** operating_jobs.c
