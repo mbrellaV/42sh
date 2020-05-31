@@ -87,5 +87,6 @@ t_memory	*ft_head_memory(void)
 	ft_strdel(&hashsum);
 	ft_strdel(&line);
 	ft_strdel(&buf);
+	uncypher_hist(head);
 	return (head);
 }

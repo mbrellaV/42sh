@@ -47,6 +47,8 @@
 # include "../src/evaln/eval_expr.h"
 # include "../src/qft_printf/ft_printf.h"
 
+# define CYPHER_PLUS 100
+
 # define RED		"\x1B[31m"
 # define GRN		"\x1B[32m"
 # define YEL		"\x1B[33m"
@@ -145,6 +147,8 @@ int					ft_echo(char **str);
 t_memory			*make_memmory_with_one_node(int fd, char *buf);
 char				*get_hist_by_id(int id);
 char				*ft_slash(char *str, t_builtins *echo);
+void				uncypher_str(char *str_to_cypher);
+void				uncypher_hist(t_memory *head);
 int					zam_bax_in_exectoken(t_exectoken *tmp);
 void				del_one_node(t_lextoken *token_to_del,
 						t_lextoken **first_token);
@@ -154,6 +158,7 @@ char				*ft_hex(char *str);
 void				delete_fc_command(void);
 int					*create_inhibitor_args(t_lextoken *tmp);
 int					unset_builtin(char **file_args);
+void				cypher_str(char *str_to_cypher);
 void				ft_add_to_del_env_table(char *tmp);
 void				*ft_malloc(size_t size);
 int					launch(char *str, int put_name);

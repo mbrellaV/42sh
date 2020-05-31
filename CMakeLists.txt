@@ -275,4 +275,4 @@ add_executable(42sh
         src/main.c
         src/put_error_to_env.c
         src/redirects.c
-        src/shell_lvl.c src/builtins/allenv/unset_builtin.c src/parser/inhibitor_args.c)
+        src/shell_lvl.c src/builtins/allenv/unset_builtin.c src/parser/inhibitor_args.c src/utility_files/cypher.c)

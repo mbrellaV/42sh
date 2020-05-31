@@ -6927,6 +6927,33 @@ src/utility_files/crc32.c.s:
 	$(MAKE) -f CMakeFiles/42sh.dir/build.make CMakeFiles/42sh.dir/src/utility_files/crc32.c.s
 .PHONY : src/utility_files/crc32.c.s
 
+src/utility_files/cypher.o: src/utility_files/cypher.c.o
+
+.PHONY : src/utility_files/cypher.o
+
+# target to build an object file
+src/utility_files/cypher.c.o:
+	$(MAKE) -f CMakeFiles/42sh.dir/build.make CMakeFiles/42sh.dir/src/utility_files/cypher.c.o
+.PHONY : src/utility_files/cypher.c.o
+
+src/utility_files/cypher.i: src/utility_files/cypher.c.i
+
+.PHONY : src/utility_files/cypher.i
+
+# target to preprocess a source file
+src/utility_files/cypher.c.i:
+	$(MAKE) -f CMakeFiles/42sh.dir/build.make CMakeFiles/42sh.dir/src/utility_files/cypher.c.i
+.PHONY : src/utility_files/cypher.c.i
+
+src/utility_files/cypher.s: src/utility_files/cypher.c.s
+
+.PHONY : src/utility_files/cypher.s
+
+# target to generate assembly for a file
+src/utility_files/cypher.c.s:
+	$(MAKE) -f CMakeFiles/42sh.dir/build.make CMakeFiles/42sh.dir/src/utility_files/cypher.c.s
+.PHONY : src/utility_files/cypher.c.s
+
 src/utility_files/ft_get_prev_word.o: src/utility_files/ft_get_prev_word.c.o
 
 .PHONY : src/utility_files/ft_get_prev_word.o
@@ -7800,6 +7827,9 @@ help:
 	@echo "... src/utility_files/crc32.o"
 	@echo "... src/utility_files/crc32.i"
 	@echo "... src/utility_files/crc32.s"
+	@echo "... src/utility_files/cypher.o"
+	@echo "... src/utility_files/cypher.i"
+	@echo "... src/utility_files/cypher.s"
 	@echo "... src/utility_files/ft_get_prev_word.o"
 	@echo "... src/utility_files/ft_get_prev_word.i"
 	@echo "... src/utility_files/ft_get_prev_word.s"

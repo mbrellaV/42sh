@@ -27,6 +27,7 @@ int			save_history(t_memory *q)
 	{
 		if (q->inp != NULL)
 		{
+			cypher_str(q->inp);
 			ft_strcat((char *)buf, q->inp);
 			ft_strcat_char((char *)buf, -100);
 		}
