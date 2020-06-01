@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../inc/fshell.h"
+#include "fshell.h"
 
 static void		norme_help(t_readline *p, char buf[8])
 {
@@ -18,7 +18,6 @@ static void		norme_help(t_readline *p, char buf[8])
 		ft_do_copy(p);
 	else if (ft_signal(p->sum_read, p) == 404)
 		ft_do_addch(p, buf[0]);
-	do_job_del();
 }
 
 int				ft_read_helper(t_readline *p, t_memory **h, int rt, char *buf)

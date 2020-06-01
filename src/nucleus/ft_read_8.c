@@ -53,8 +53,8 @@ void			ft_read_8(t_readline *p, t_memory *head, int mod)
 		p->sum_read = ft_add_sumchar(buf, rt);
 		if (!ft_read_helper(p, &h, rt, buf))
 			return ;
-		do_job_del();
 	}
 	do_hist_add_with_slash_n(mod, p);
 	p->index = do_zamena_slash(p->buff, p);
+	do_job_del();
 }
