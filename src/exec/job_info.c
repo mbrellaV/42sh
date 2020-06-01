@@ -21,33 +21,33 @@ int			format_job_info(t_job *j, const char *status, int num)
 	return (0);
 }
 
+static int	job_checker(t_job *j, int d, char *str)
+{
+	if (format_job_info(j, str, d) == 1)
+		return (1);
+	return (0);
+}
+
 int			do_job_notification(void)
 {
 	t_job	*j;
 	int		d;
+	int		stat;
 
 	update_status();
 	d = 0;
 	j = globals()->g_f_job;
-	//////////////////////else if!  нельзя в одну строку!!!!
-	while (j)
+	stat = 0;
+	while (j && d++)
 	{
-		d++;
 		if (job_is_completed(j))
-		{
-			if (format_job_info(j, "completed", d) == 1)
-				return (1);
-		}
+			stat = job_checker(j, d, "completed");
 		else if (job_is_stopped(j))
-		{
-			if (format_job_info(j, "suspended", d) == 1)
-				return (1);
-		}
+			stat = job_checker(j, d, "suspended");
 		else if (j->foreground == 0)
-		{
-			if (format_job_info(j, "Running", d) == 1)
-				return (1);
-		}
+			stat = job_checker(j, d, "Running");
+		if (stat == 1)
+			return (1);
 		j = j->next;
 	}
 	return (0);

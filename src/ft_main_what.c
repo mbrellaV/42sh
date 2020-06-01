@@ -53,11 +53,21 @@ int			ft_main_if(t_exectoken *tmp, int sas, t_job *job)
 {
 	if (zam_bax_in_exectoken(tmp) == -1)
 		return (-3);
-	if ((tmp->file_args && !is_builtin(tmp->file_args[0])) || tmp->left || tmp->foreground == 0)
+	if ((tmp->file_args && !is_builtin(tmp->file_args[0]))
+	|| tmp->left || tmp->foreground == 0)
 		do_job_things(&sas, &job, tmp);
 	else
 		sas = do_builtin(tmp->file_args, tmp->file_opt, 0, tmp->inhibitor_args);
 	return (sas);
+}
+
+static int	ft_exit_status(t_exectoken *tmp, int exit_status)
+{
+	if (trick(&tmp) && exit_status == -1)
+		return (-1);
+	if (exit_status == -3)
+		return (-3);
+	return (0);
 }
 
 int			ft_main_what(t_exectoken *tmp)
@@ -69,8 +79,7 @@ int			ft_main_what(t_exectoken *tmp)
 	job = NULL;
 	while (tmp)
 	{
-		if (globals()->fd != NULL)
-			free(globals()->fd);
+		globals()->fd != NULL ? free(globals()->fd) : 0;
 		if (!(globals()->fd = ft_create_opened_fds()))
 			return (-1);
 		if ((tmp->file_args == NULL) && (tmp->file_opt == NULL) && trick(&tmp))
@@ -82,10 +91,8 @@ int			ft_main_what(t_exectoken *tmp)
 				continue ;
 			exit_status = ft_main_if(tmp, exit_status, job);
 		}
-		if (trick(&tmp) && exit_status == -1)
-			return (-1);
-		if (exit_status == -3)
-			return (-3);
+		if ((exit_status = ft_exit_status(tmp, exit_status)))
+			return (exit_status);
 	}
 	do_job_del();
 	return (1);

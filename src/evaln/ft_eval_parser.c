@@ -37,7 +37,8 @@ t_calc_token		*ft_make_token_from_str(char *str, int *i,
 	}
 }
 
-void				*decide_how_to_parse(t_calc_token *tmp_token, t_calc_token *first_token, char *rec_var)
+void				*decide_how_to_parse(t_calc_token *tmp_token,
+		t_calc_token *first_token, char *rec_var)
 {
 	if (tmp_token)
 	{
@@ -47,9 +48,11 @@ void				*decide_how_to_parse(t_calc_token *tmp_token, t_calc_token *first_token,
 	{
 		return (first_token);
 	}
-	if (tmp_token && tmp_token->type == CALC_NUMBER && ft_strlen(tmp_token->var) > 8)
+	if (tmp_token && tmp_token->type == CALC_NUMBER &&
+	ft_strlen(tmp_token->var) > 8)
 	{
-		add_token_cr(first_token, ft_ntoken(tmp_token->var, CALC_NUM_OVERFLOW_ERROR));
+		add_token_cr(first_token,
+				ft_ntoken(tmp_token->var, CALC_NUM_OVERFLOW_ERROR));
 		return (first_token);
 	}
 	if (tmp_token && rec_var && !ft_strcmp(tmp_token->var, rec_var))

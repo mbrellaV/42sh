@@ -14,16 +14,15 @@
 
 static void	zam_symbol(char *str1, t_zams *zams, char *new)
 {
-	if (str1[zams->i] == '$' && (str1[zams->i + 1] != '(' && str1[zams->i + 1] != ')'))
+	if (str1[zams->i] == '$' && (str1[zams->i + 1] != '(' &&
+	str1[zams->i + 1] != ')'))
 	{
 		zams->dop = (str1[zams->i + 1] == '{' ? 2 : 1);
 		zams->dopstr = ft_strsub(str1, zams->i + zams->dop,
 			word_size(&str1[zams->i]) - (zams->dop == 2 ? 2 : 1));
 		zams->str_for_del = zams->dopstr;
-		//dprintf(2, "\nsas0: |%d, %s, %s|\n", word_size(&str1[zams->i]), zams->dopstr, &str1[zams->i]);
 		zams->dopstr = ft_get_var(zams->dopstr, globals()->g_all_var);
 		ft_strdel(&zams->str_for_del);
-		//dprintf(2, "\nsas1: |%s|\n", zams->dopstr);
 		if (zams->dopstr != NULL)
 			ft_strcat(new, zams->dopstr);
 		zams->i += word_size(&str1[zams->i]) + 1;
@@ -43,7 +42,7 @@ char		*do_zam_str_bax(char *str1)
 {
 	t_zams	zams;
 	char	*new;
-	char 	*dop;
+	char	*dop;
 
 	zams.i = 0;
 	if (!(new = ft_strnew(130000)))
@@ -52,7 +51,8 @@ char		*do_zam_str_bax(char *str1)
 	{
 		if (str1[zams.i] == '\'')
 		{
-			dop = ft_strsub(str1, zams.i, c_size(&str1[zams.i], str1[zams.i]) + 2);
+			dop = ft_strsub(str1, zams.i, c_size(&str1[zams.i],
+					str1[zams.i]) + 2);
 			ft_strcat(new, dop);
 			zams.i += c_size(&str1[zams.i], str1[zams.i]) + 2;
 			ft_strdel(&dop);

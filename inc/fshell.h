@@ -262,7 +262,8 @@ void				recover_normal_shell_signals();
 void				wait_for_semaphore(t_jobl *jobl);
 void				activate_semaphore(t_jobl *jobl);
 void				init_shell(void);
-int					do_builtin(char **file_args, char **file_opt, int type, int *inhibitor_args);
+int					do_builtin(char **file_args, char **file_opt,
+						int type, int *inhibitor_args);
 int					ck_br(const char *str);
 void				put_error_to_shell(int error);
 char				*ft_do_zam_eval(char *mas);

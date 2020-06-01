@@ -54,7 +54,8 @@ int		do_next_builtins(char **file_args)
 	return (1);
 }
 
-int		do_builtin(char **file_args, char **file_opt, int type, int *inhibitor_args)
+int		do_builtin(char **file_args, char **file_opt,
+		int type, int *inhibitor_args)
 {
 	globals()->vivod = 0;
 	if (file_args == NULL)

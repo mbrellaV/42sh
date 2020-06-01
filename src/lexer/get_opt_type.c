@@ -21,10 +21,11 @@ int				get_op_type(char *operator)
 	i = 0;
 	if (operator == NULL)
 		return (-2);
-	if (operator && (ft_strstr(operator, operators[i]) || ft_strstr(operator, "<>") != NULL
-	|| ft_strstr(operator, "<<-") != NULL || ft_strstr(operator, "<<<") != NULL
-	|| ft_strstr(operator, "|||") != NULL || ft_strstr(operator, ">|") != NULL
-	|| ft_strstr(operator, ">>>") != NULL || ft_strstr(operator, "&&&") != NULL))
+	if (operator && (ft_strstr(operator, operators[i]) ||
+	ft_strstr(operator, "<>") != NULL || ft_strstr(operator, "<<-") != NULL
+	|| ft_strstr(operator, "<<<") != NULL || ft_strstr(operator, "|||") != NULL
+	|| ft_strstr(operator, ">|") != NULL || ft_strstr(operator, ">>>") != NULL
+	|| ft_strstr(operator, "&&&") != NULL))
 		return (-1);
 	i++;
 	while (i < 12)
