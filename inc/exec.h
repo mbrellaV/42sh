@@ -49,6 +49,7 @@ typedef struct			s_jobl
 	pid_t				pid;
 	char				*rt;
 	int					mypipe[2];
+	int					sempipe[2];
 	int					infile;
 	int					outfile;
 }						t_jobl;

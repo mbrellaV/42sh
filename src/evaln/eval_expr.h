@@ -45,7 +45,8 @@ typedef enum				e_calc_tkntype
 	CALC_PRE_DEC = 21,
 	CALC_FIR_SC = 22,
 	CALC_SEC_SC = 23,
-	CALC_REC_ERROR = 24
+	CALC_REC_ERROR = 24,
+	CALC_NUM_OVERFLOW_ERROR = 25
 }							t_calc_tkntype;
 
 typedef struct				s_calc_token

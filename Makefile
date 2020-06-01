@@ -162,6 +162,7 @@ SRC_BASE = builtins/ft_cd.c\
 	utility_files/crc32.c\
 	utility_files/cypher.c\
 	utility_files/ft_malloc.c\
+	utility_files/semaphore.c\
 	utility_files/ft_get_prev_word.c\
 	put_error_to_env.c\
 	ft_distruct.c\

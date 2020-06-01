@@ -45,7 +45,8 @@ int		eval_expr(char *s, int *error, char *rec_var)
 	tmp_token = ft_eval_parse(s, rec_var);
 	l->first_token = tmp_token;
 	if (get_last_token(tmp_token)->type == CALC_ERROR ||
-	get_last_token(tmp_token)->type == CALC_REC_ERROR)
+	get_last_token(tmp_token)->type == CALC_REC_ERROR ||
+	get_last_token(tmp_token)->type == CALC_NUM_OVERFLOW_ERROR)
 		return (return_with_error(get_last_token(tmp_token), error, s, l));
 	return (main_calc(tmp_token, error, l));
 }

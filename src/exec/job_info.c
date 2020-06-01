@@ -29,15 +29,25 @@ int			do_job_notification(void)
 	update_status();
 	d = 0;
 	j = globals()->g_f_job;
+	//////////////////////else if!  нельзя в одну строку!!!!
 	while (j)
 	{
 		d++;
-		if (job_is_completed(j) && format_job_info(j, "completed", d))
-			return (1);
-		else if (j->foreground == 0 && format_job_info(j, "Running", d))
-			return (1);
-		else if (job_is_stopped(j) && format_job_info(j, "suspended", d))
-			return (1);
+		if (job_is_completed(j))
+		{
+			if (format_job_info(j, "completed", d) == 1)
+				return (1);
+		}
+		else if (job_is_stopped(j))
+		{
+			if (format_job_info(j, "suspended", d) == 1)
+				return (1);
+		}
+		else if (j->foreground == 0)
+		{
+			if (format_job_info(j, "Running", d) == 1)
+				return (1);
+		}
 		j = j->next;
 	}
 	return (0);
