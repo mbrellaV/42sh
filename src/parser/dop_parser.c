@@ -69,9 +69,9 @@ t_exectoken				*ft_cr_new_exectoken(t_lextoken *tmp,
 {
 	int		i;
 
-	i = 0;
 	if (!(t = cr_dop_str_par1(tmp)))
 		return (NULL);
+	i = 0;
 	dop_cr_new_exec(t, prev, op_type, 0);
 	t->tmp1_a->inhibitor_args = create_inhibitor_args(tmp);
 	while (t->dop_a != NULL && !is_cmd_delim(t->dop_a->operator_type))

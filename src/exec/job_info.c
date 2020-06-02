@@ -38,8 +38,9 @@ int			do_job_notification(void)
 	d = 0;
 	j = globals()->g_f_job;
 	stat = 0;
-	while (j && d++)
+	while (j)
 	{
+		d++;
 		if (job_is_completed(j))
 			stat = job_checker(j, d, "completed");
 		else if (job_is_stopped(j))

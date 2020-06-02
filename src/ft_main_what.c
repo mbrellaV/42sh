@@ -61,9 +61,9 @@ int			ft_main_if(t_exectoken *tmp, int sas, t_job *job)
 	return (sas);
 }
 
-static int	ft_exit_status(t_exectoken *tmp, int exit_status)
+static int	ft_exit_status(t_exectoken **tmp, int exit_status)
 {
-	if (trick(&tmp) && exit_status == -1)
+	if (trick(tmp) && exit_status == -1)
 		return (-1);
 	if (exit_status == -3)
 		return (-3);
@@ -91,7 +91,7 @@ int			ft_main_what(t_exectoken *tmp)
 				continue ;
 			exit_status = ft_main_if(tmp, exit_status, job);
 		}
-		if ((exit_status = ft_exit_status(tmp, exit_status)))
+		if ((exit_status = ft_exit_status(&tmp, exit_status)) != 0)
 			return (exit_status);
 	}
 	do_job_del();
