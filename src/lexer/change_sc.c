@@ -58,7 +58,7 @@ void		ft_change_all_sc(char *str)
 		if (ispar(str[i]))
 		{
 			size = c_size(&str[i], str[i]);
-			if  (size == -2)
+			if (size == -2)
 				size = 2;
 			if (size == -1)
 				size = 1;

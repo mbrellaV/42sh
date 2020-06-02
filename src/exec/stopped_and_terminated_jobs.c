@@ -77,7 +77,6 @@ void			update_status(void)
 		while (pr)
 		{
 			pid = waitpid(pr->pid, &status, WUNTRACED | WNOHANG);
-			//dprintf(2, "\n|%d|\n", pid);
 			mark_process_status(pid, status, job);
 			pr = pr->next;
 		}

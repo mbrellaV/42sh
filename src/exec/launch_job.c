@@ -61,9 +61,7 @@ int				launch_job(t_job *j, int foreground)
 			jobl.outfile = j->stdoutc;
 		do_fork(&jobl, j, foreground);
 	}
-	if (!globals()->g_shell_is_interactive)
-		wait_for_job(j);
-	(foreground) ? put_job_in_foreground(j, 0) :
-		put_job_in_background(j, 0);
+	(!globals()->g_shell_is_interactive) ? wait_for_job(j) : 0;
+	(foreground) ? put_job_in_foreground(j, 0) : put_job_in_background(j, 0);
 	return (0);
 }

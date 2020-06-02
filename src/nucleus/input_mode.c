@@ -68,6 +68,5 @@ int				set_input_mode(void)
 	tattr.c_cc[VTIME] = 0;
 	if (tcsetattr(0, 0, &tattr) == -1)
 		error_term(1);
-	//atexit(reset_input_mode);
 	return (0);
 }

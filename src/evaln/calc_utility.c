@@ -40,10 +40,10 @@ int				return_with_error(t_calc_token *error_token, int *error,
 				"42sh: %s: expression level exceeded (error token is %s)\n",
 				all_str, error_token->var);
 	else if (error_token != NULL && all_str != NULL &&
-			 error_token->type == CALC_NUM_OVERFLOW_ERROR)
+	error_token->type == CALC_NUM_OVERFLOW_ERROR)
 		ft_dprintf(globals()->fd[2],
-				   "42sh: %s: number is too big (error token is %s)\n",
-				   all_str, error_token->var);
+				"42sh: %s: number is too big (error token is %s)\n",
+				all_str, error_token->var);
 	if (l != NULL)
 		free_calc_tokens(l->first_token);
 	if (l != NULL)
