@@ -14,7 +14,6 @@
 
 static void		do_fork(t_jobl *jobl, t_job *j, int foreground)
 {
-	start_semaphore(jobl);
 	jobl->pid = fork();
 	if (jobl->pid == 0)
 		launch_process(jobl->p, j, jobl, foreground);
@@ -22,7 +21,6 @@ static void		do_fork(t_jobl *jobl, t_job *j, int foreground)
 		exit(0);
 	else
 	{
-		wait_for_semaphore(jobl);
 		jobl->p->pid = jobl->pid;
 		if (globals()->g_shell_is_interactive)
 		{

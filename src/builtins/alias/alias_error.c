@@ -17,7 +17,7 @@ int			alias_error(int error, char *tmp1, char *tmp2)
 	put_error_to_shell(error);
 	if (error == 15)
 	{
-		ft_error(15, "parse error");
+		ft_error(15, "parse error", NULL);
 		return (-1);
 	}
 	if (error == 14)

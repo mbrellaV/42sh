@@ -17,13 +17,13 @@ static int			pick_launch(t_fc flags)
 	if (flags.silent)
 		return (0);
 	if (flags.editor == FC_VIM)
-		if (launch("vim .fc", 0))
+		if (launch("vim /tmp/.42fc", 0))
 			return (-1);
 	if (flags.editor == FC_EMACS)
-		if (launch("emacs .fc", 0))
+		if (launch("emacs /tmp/.42fc", 0))
 			return (-1);
 	if (flags.editor == FC_NANO)
-		if (launch("nano .fc", 0))
+		if (launch("nano /tmp/.42fc", 0))
 			return (-1);
 	return (0);
 }
@@ -107,16 +107,16 @@ int					do_fc(char **av)
 	work_with_range(&f);
 	if (f.l)
 		return (do_fc_l(f));
-	else if ((fd = open(".fc", O_CREAT | O_RDWR | O_TRUNC, S_IRUSR | S_IWUSR |
+	else if ((fd = open("/tmp/.42fc", O_CREAT | O_RDWR | O_TRUNC, S_IRUSR | S_IWUSR |
 	S_IRGRP | S_IWGRP | S_IROTH | S_IWOTH, 0644)) == -1)
 		return (err_fc("fc create error!\n"));
 	if (do_fc_regular(fd, f))
 		return (1);
-	if ((fd = open(".fc", O_RDONLY)) == -1)
+	if ((fd = open("/tmp/.42fc", O_RDONLY)) == -1)
 		return (err_fc("fc read error!\n"));
 	command = read_fc(fd);
 	if (launch(command, 1))
 		return (1);
 	free(command);
-	return ((remove(".fc")) ? err_fc("delete err!\n") : 0);
+	return ((remove("/tmp/.42fc")));
 }

@@ -59,7 +59,6 @@ int			launch_process(t_process *p, t_job *j, t_jobl *jobl, int fg)
 	}
 	(dop1 < 0) ? exit(1) : 0;
 	dop1 = do_builtin(p->file_args, p->file_opt, 1, p->inhibitor_args);
-	activate_semaphore(jobl);
 	(dop1 == 1) ? exit(0) : 0;
 	(dop1 == 0) ? execve(jobl->rt, p->file_args, globals()->g_env) : 0;
 	exit(127);

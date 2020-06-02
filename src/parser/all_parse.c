@@ -58,20 +58,20 @@ int				check_opt_tokens(t_lextoken *tmp)
 			is_cmd_redirect(get_op_type(tmp->line)) &&
 			is_cmd_redirect(get_op_type(tmp->next->line)))
 		{
-			ft_error(5, tmp->line);
+			ft_error(5, tmp->line, NULL);
 			return (-1);
 		}
 		if (tmp->line && is_cmd_redirect(get_op_type(tmp->line)) &&
 				tmp->next->line == NULL)
 		{
-			ft_error(5, tmp->line);
+			ft_error(5, tmp->line, NULL);
 			return (-1);
 		}
 		if (tmp->next && tmp->line && tmp->next->line &&
 			is_cmd_redirect(get_op_type(tmp->line)) &&
 			get_op_type(tmp->next->line) >= 0)
 		{
-			ft_error(5, tmp->line);
+			ft_error(5, tmp->line, NULL);
 			return (-1);
 		}
 		tmp = tmp->next;
@@ -85,7 +85,6 @@ t_exectoken		*all_parse(char *cmd)
 	t_exectoken	*extmp;
 	t_lextoken	*dop_tmp;
 
-	//dprintf(2, "\nsas: |%s|\n", cmd);
 	if (*cmd == '\0' || check_par_and_brackets(cmd) == 0)
 		return (NULL);
 	ft_change_all_sc(cmd);
@@ -96,7 +95,7 @@ t_exectoken		*all_parse(char *cmd)
 		return (NULL);
 	if (check_all_errors(tmp) != 1)
 	{
-		ft_error(5, "\\n");
+		ft_error(5, "\\n", NULL);
 		ft_distr_lex(tmp);
 		return (NULL);
 	}

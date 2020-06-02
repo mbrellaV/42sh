@@ -1,13 +1,13 @@
 #include "fshell.h"
 
-char	cypher_char(char *c)
+void	cypher_char(char *c)
 {
-	*c += CYPHER_PLUS;
+	*c ^= KEYCODE;
 }
 
-char	uncypher_char(char *c)
+void	uncypher_char(char *c)
 {
-	*c -= CYPHER_PLUS;
+	*c ^= KEYCODE;
 }
 
 void	cypher_str(char *str_to_cypher)

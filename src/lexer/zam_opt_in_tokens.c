@@ -44,7 +44,10 @@ char		**zam_opt_tokens(char **mas)
 		else if (mas[i][0] >= '0' && mas[i][0] <= '9')
 			norm_help(&nopt, &iopt, mas, &i);
 		else
+		{
+			ft_free_str(nopt);
 			return (NULL);
+		}
 	}
 	nopt[iopt] = NULL;
 	return (nopt);
@@ -60,7 +63,10 @@ void		do_zamena_opt_tokens(t_exectoken *tmp)
 	{
 		dop = tmp->file_opt;
 		tmp->file_opt = zam_opt_tokens(tmp->file_opt);
-		ft_free_str(dop);
+		if (tmp->file_opt != NULL)
+			ft_free_str(dop);
+		else
+			tmp->file_opt = dop;
 	}
 	do_zamena_opt_tokens(tmp->right);
 	do_zamena_opt_tokens(tmp->left);

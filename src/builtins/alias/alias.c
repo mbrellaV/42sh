@@ -15,7 +15,7 @@
 void		ft_alias(void)
 {
 	if (!(globals()->g_alias = (char **)ft_memalloc(4 * sizeof(char *))))
-		ft_error(15, "malloc error alias");
+		ft_error(15, "malloc error alias", NULL);
 	globals()->g_alias[0] = ft_strdup("ll=ls -la");
 	globals()->g_alias[1] = ft_strdup("l=ls");
 	globals()->g_alias[2] = NULL;

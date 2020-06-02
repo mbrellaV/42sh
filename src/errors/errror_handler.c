@@ -10,9 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../inc/fshell.h"
+#include "fshell.h"
 
-int			ft_error(int error, char *dopline)
+int			ft_error(int error, char *dopline, char *str_to_del)
 {
 	put_error_to_shell(2);
 	if (error == 5)
@@ -20,5 +20,7 @@ int			ft_error(int error, char *dopline)
 		ft_dprintf(globals()->fd[2],
 				"parse error near: %s\n", dopline);
 	}
+	if (str_to_del != NULL)
+		ft_strdel(&dopline);
 	return (-1);
 }

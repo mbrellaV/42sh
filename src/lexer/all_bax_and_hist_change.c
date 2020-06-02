@@ -85,7 +85,7 @@ t_lextoken		*do_zam_bax_and_hist_full(t_lextoken *h, t_lextoken **save_tmp)
 	while (h != NULL)
 	{
 		if (h->operator_type == -1 && h->is_near_opt > 0 &&
-		ft_error(5, h->line))
+		ft_error(5, h->line, NULL))
 			return (ft_kill_str_dop_lex(tmp, NULL));
 		if (*h->line == '\0')
 		{

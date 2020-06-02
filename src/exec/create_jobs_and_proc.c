@@ -84,6 +84,15 @@ char			*create_command(t_exectoken *head)
 	return (new_str);
 }
 
+static t_exectoken			*get_last_pipe_tree(t_exectoken *tmp)
+{
+	while (tmp->left != NULL)
+	{
+		tmp =  tmp->left;
+	}
+	return (tmp);
+}
+
 t_job			*create_job(t_exectoken *head)
 {
 	t_job		*new_job;
@@ -93,7 +102,7 @@ t_job			*create_job(t_exectoken *head)
 	if (!(new_job = ft_memalloc(sizeof(t_job))))
 		ft_error_q(2);
 	new_job->first_process = create_process_list(head);
-	new_job->foreground = head->foreground;
+	new_job->foreground = get_last_pipe_tree(head)->foreground;
 	new_job->pgid = -1;
 	new_job->command = create_command(head);
 	new_job->stdinc = 0;

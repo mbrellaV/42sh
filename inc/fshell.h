@@ -47,7 +47,7 @@
 # include "../src/evaln/eval_expr.h"
 # include "../src/qft_printf/ft_printf.h"
 
-# define CYPHER_PLUS 100
+# define KEYCODE 0x42
 
 # define RED		"\x1B[31m"
 # define GRN		"\x1B[32m"
@@ -236,7 +236,6 @@ int					ft_heredoc(char *tmp);
 int					ft_open_flag(char *opt, t_pipe *p);
 int					ft_what_flag(char *opt);
 void				ft_redirect_error(int marker, char *dopline);
-void				start_semaphore(t_jobl *jobl);
 int					ft_fd_flag(char **av, int infile, int outfile,
 						int errfile);
 void				put_job_in_foreground (t_job *j, int cont);
@@ -259,15 +258,13 @@ int					ft_remove_from_fds(int *opened_fds, int fd_to_remove);
 int					*ft_create_opened_fds();
 void				disable_shell_signals();
 void				recover_normal_shell_signals();
-void				wait_for_semaphore(t_jobl *jobl);
-void				activate_semaphore(t_jobl *jobl);
 void				init_shell(void);
 int					do_builtin(char **file_args, char **file_opt, int type, int *inhibitor_args);
 int					ck_br(const char *str);
 void				put_error_to_shell(int error);
 char				*ft_do_zam_eval(char *mas);
 uint_least32_t		crc_32(unsigned char *buf, size_t len);
-int					ft_error(int error, char *dopline);
+int					ft_error(int error, char *dopline, char *str_to_del);
 int					alias_error(int error, char *tmp1, char *tmp2);
 int					ft_error_d(t_readline *p);
 char				*ft_get_prev_word(char *str, int i);

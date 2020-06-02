@@ -10,8 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include ".././inc/fshell.h"
-#include <errno.h>
+#include "fshell.h"
 
 static int		check_status(t_pstat *pstat, int status, pid_t pid, t_job *job)
 {
@@ -26,12 +25,12 @@ static int		check_status(t_pstat *pstat, int status, pid_t pid, t_job *job)
 	else
 	{
 		pstat->p->completed = 1;
-		pstat->p->status = WEXITSTATUS(status);
 		put_error_to_shell(pstat->p->status);
 		if (WIFSIGNALED(status))
 			ft_dprintf(globals()->fd[2], "%d: Terminated by signal %d.\n",
 					(int)pid, WTERMSIG(pstat->p->status));
 	}
+
 	return (0);
 }
 
@@ -96,7 +95,8 @@ void			wait_for_job(t_job *j)
 	{
 		if (job_is_stopped(j))
 			break ;
-		pid = waitpid(-j->pgid, &status, WUNTRACED);
+		//dprintf(2, "\nwait\n");
+		pid = waitpid(-j->pgid, &status, WUNTRACED | WNOHANG);
 		mark_process_status(pid, status, j);
 	}
 }
