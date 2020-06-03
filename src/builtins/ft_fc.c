@@ -102,7 +102,7 @@ int					do_fc(char **av)
 		return (1);
 	f = (t_fc){.rng = {0, 0, 0}, .r = 0, .l = 0, .silent = 0, .editor = FC_VIM};
 	if (check_flag(++av, &f))
-		return ((f.rng[0] > f.hi_s) ? err_fc(FC_US) : 0);
+		return ((f.rng[0] > f.hi_s) ? err_fc(FC_US) : 2);
 	!f.l ? delete_fc_command() : 0;
 	work_with_range(&f);
 	if (f.l)

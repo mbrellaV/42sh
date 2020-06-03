@@ -21,7 +21,7 @@ int		show_history(t_memory *q)
 
 	tmp = q;
 	s = 0;
-	if ((!(i = 0)) && !vivod(1))
+	if (((i = 1)) && !vivod(1))
 		return (1);
 	while (tmp->back)
 		tmp = tmp->back;
@@ -34,9 +34,9 @@ int		show_history(t_memory *q)
 	tmp = dop;
 	while (tmp->next)
 	{
-		s - i < 16 ? ft_dprintf(globals()->fd[1], "%d\t%s\n", i, tmp->inp) : 0;
+		ft_dprintf(globals()->fd[1], "%d\t%s\n", i, tmp->inp);
 		tmp = tmp->next;
 		i++;
 	}
-	return (1);
+	return (0);
 }

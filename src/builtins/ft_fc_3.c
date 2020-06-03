@@ -14,7 +14,8 @@
 
 int					err_fc(char *str)
 {
-	return (vivod(2) ? (ft_dprintf(globals()->fd[2], "%s", str)) : 0);
+	vivod(2) ? (ft_dprintf(globals()->fd[2], "%s", str)) : 2;
+	return (2);
 }
 
 int					check_flag_2(int *i, char **av, t_fc *f)

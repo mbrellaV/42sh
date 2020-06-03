@@ -48,9 +48,10 @@ void	ft_return(t_readline *p, t_readline *r, char *tmp)
 		ft_strcpy(p->buff, tmp);
 		p->index = (int)ft_strlen(tmp);
 		p->len = (int)ft_strlen(tmp);
-		free(tmp);
+		ft_strdel(&tmp);
 	}
 	ft_cleanstr(r->index + r->len_hint, r);
+	ft_strdel(&tmp);
 	del_readline(r);
 }
 
