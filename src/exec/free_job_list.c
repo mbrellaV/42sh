@@ -18,8 +18,6 @@ void			free_process(t_process *tmp, pid_t jpid)
 
 	while (tmp)
 	{
-		if (tmp->pid != jpid && jpid > 0)
-			kill(tmp->pid, SIGPIPE);
 		process_for_del = tmp;
 		tmp = tmp->next;
 		free(process_for_del);

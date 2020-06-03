@@ -52,9 +52,9 @@ int			launch_process(t_process *p, t_job *j, t_jobl *jobl, int fg)
 	dop1 = 0;
 	if (globals()->g_shell_is_interactive)
 	{
-		if (jobl->infile != j->stdinc && jobl->mypipe[1] != 0)
+		if (jobl->infile != j->stdinc && jobl->mypipe[1] != 0 && jobl->outfile == j->stdoutc)
 			close(jobl->mypipe[1]);
-		if (jobl->outfile != j->stdoutc && jobl->mypipe[0] != 0)
+		if (jobl->outfile != j->stdoutc && jobl->mypipe[0] != 0 && jobl->infile == j->stdinc)
 			close(jobl->mypipe[0]);
 		pid = getpid();
 		if (j->pgid == 0)

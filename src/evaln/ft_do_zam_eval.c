@@ -28,7 +28,8 @@ char		*ft_do_cut(char *tmp, int *error)
 
 	di = 0;
 	if (tmp[di] == '(' && tmp[di + 1] == '(' && sc_size(&tmp[di], '(') != -1 &&
-	sc_size(&tmp[di + 1], '(') != -1)
+	sc_size(&tmp[di + 1], '(') != -1 &&
+	(sc_size(&tmp[di], '(') -  sc_size(&tmp[di + 1], '(')) == 2)
 	{
 		di = sc_size(&tmp[di], '(') - 3;
 		dop = ft_strsub(tmp, 2, di - 2);

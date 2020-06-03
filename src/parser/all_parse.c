@@ -42,10 +42,12 @@ int				check_par_and_brackets(char *str)
 			if ((size = c_size(&str[i], str[i])) == -1)
 				return (return_check(str, -1));
 			if (size == -2)
-				size = 2;
-			i += size + 2;
+				i += 2;
+			else
+				i += size + 2;
 		}
-		i++;
+		else
+			i++;
 	}
 	return (return_check(str, i));
 }

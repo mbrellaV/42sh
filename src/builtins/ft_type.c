@@ -17,6 +17,7 @@ int					vivod(int fd)
 	if (globals()->fd[fd] > 0 && globals()->fd[fd] < 9)
 		return (1);
 	globals()->vivod = 1;
+	put_error_to_shell(globals()->vivod);
 	return (0);
 }
 

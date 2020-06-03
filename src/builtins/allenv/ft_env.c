@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../../inc/fshell.h"
+#include "fshell.h"
 
 char		*ft_get_var(char *dop, char **env)
 {
@@ -52,30 +52,44 @@ void		ft_parse_and_make_save_to_env(char *arg)
 	ft_strdel(&res);
 }
 
-int			ft_do_export(char **mas)
+static int	do_save_to_env(char **mas)
 {
 	char	*dop;
 
+	if (ft_strstr(mas[1], "=") != NULL)
+	{
+		ft_parse_and_make_save_to_env(mas[1]);
+		return (0);
+	}
+	else if (ft_findenv(mas[1], globals()->g_all_var) != -404)
+	{
+		dop = ft_get_var(mas[1], globals()->g_all_var);
+		set_new_var(mas[1], dop, &globals()->g_env);
+		ft_strdel(&dop);
+	}
+	vivod(2) ? ft_dprintf(globals()->fd[2], "no such var\n") : 0;
+	return (1);
+}
+
+int			ft_do_export(char **mas)
+{
 	if (mas == NULL)
 		return (vivod(2) ? (ft_dprintf(globals()->fd[2],
 				"an error ocured\n")) : 1);
-	else if (mas[1] == NULL && ft_show_env(globals()->g_env))
-		return (1);
-	else if (mas[1] != NULL && mas[2] == NULL)
-	{
-		if (ft_strstr(mas[1], "=") != NULL)
-			ft_parse_and_make_save_to_env(mas[1]);
-		else if (ft_findenv(mas[1], globals()->g_all_var) != -404)
-		{
-			dop = ft_get_var(mas[1], globals()->g_all_var);
-			set_new_var(mas[1], dop, &globals()->g_env);
-			ft_strdel(&dop);
-		}
-	}
-	else if (mas[1] && mas[2] && mas[3] == NULL)
+	else if (mas[1] == NULL && !ft_show_env(globals()->g_env))
+		return (0);
+	else if (mas[1] && !ft_strcmp("-p", mas[1]) &&
+	mas[2] == NULL && !ft_show_env(globals()->g_env))
+		return (0);
+	else if (mas[1] != NULL && mas[2] == NULL && ft_strcmp("-p", mas[1]))
+		return (do_save_to_env(mas));
+	else if (mas[1] && mas[2] && mas[3] == NULL && ft_strcmp("-p", mas[1]))
 		set_new_var(mas[1], mas[2], &globals()->g_env);
 	else
+	{
 		vivod(2) ? ft_dprintf(globals()->fd[2], "parse error\n") : 0;
+		return (2);
+	}
 	return (0);
 }
 

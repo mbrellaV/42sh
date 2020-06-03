@@ -75,9 +75,11 @@ char	*ft_name(char *str, t_readline *p)
 	k = (int)ft_strlen(str) - 1;
 	if (k < 0)
 		return (NULL);
-	while (k > 0 && str[k] != '/' && (isword(str[k]) == 1 || str[k] == '{') &&
+	while (k > 0 && str[k] != '/' && (isword(str[k]) == 1) &&
 		str[k] != '$')
+	{
 		k--;
+	}
 	if (k >= 0 && str[k] == '$' && str[k + 1] != '{')
 		p->flag_tab = 2;
 	else if (k >= 0 && str[k] == '$' && str[k + 1] == '{')

@@ -14,8 +14,22 @@
 
 int		is_system_symbol(char c)
 {
-	if (c == '$' || c == '>' || c == '<' ||
-	c == '=' || c == '&' || c == '|' || c == ';')
+	if (c == '$' || c == '>' || c == '<' || c == '\\' ||
+	c == '=' || c == '&' || c == '|' || c == ';' || c == '/' || c == '-')
 		return (1);
+	return (0);
+}
+
+int		has_system_symbol(char *str)
+{
+	int		i;
+
+	i = 0;
+	while (str[i] != '\0')
+	{
+		if (is_system_symbol(str[i]) == 1)
+			return (1);
+		i++;
+	}
 	return (0);
 }

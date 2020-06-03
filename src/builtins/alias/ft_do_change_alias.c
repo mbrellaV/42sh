@@ -20,7 +20,7 @@ int			mas_1(char **mas)
 	tmp1 = ft_strsub(mas[1], 0, ft_strstr(mas[1], "=") - mas[1]);
 	tmp2 = ft_strsub(mas[1], ft_strstr(mas[1], "=") -
 	mas[1] + 1, ft_strlen(mas[1]));
-	if (is_system_symbol(*tmp2) == 1)
+	if (has_system_symbol(tmp2) == 1 || has_system_symbol(tmp1) == 1)
 		return (alias_error(2, tmp1, tmp2));
 	set_new_var(tmp1, tmp2, &globals()->g_alias);
 	ft_strdel(&tmp1);

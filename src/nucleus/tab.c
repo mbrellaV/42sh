@@ -60,7 +60,8 @@ void	dop_to_check_tab(t_readline *p, char **str, int *i)
 		p->index++;
 	}
 	*i = p->index;
-	while (--(*i) > 0 && (isword(p->buff[*i]) == 1 || p->buff[*i] == '{'))
+	while (--(*i) > 0 && (isword(p->buff[*i]) == 1 ||
+	p->buff[*i] == '{' || p->buff[*i] == '$'))
 		;
 	p->i_dop = *i;
 	while (--(p->i_dop) > 0 && isword(p->buff[p->i_dop]) != 1)

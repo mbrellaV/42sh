@@ -244,6 +244,7 @@ void				put_job_in_foreground (t_job *j, int cont);
 void				put_job_in_background (t_job *j, int cont);
 int					mark_process_status(pid_t pid, int status, t_job *job);
 void				update_status (void);
+int					has_system_symbol(char *str);
 void				wait_for_job (t_job *j);
 t_job				*create_job(t_exectoken *head);
 int					check_file_args(t_process *tmp);
