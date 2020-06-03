@@ -106,7 +106,7 @@ int				ft_cd(char **str)
 		if (str[i][j] == '-' && ft_strcmp(str[i], "-"))
 		{
 			while (str[i][++j])
-				if (!flags_cd(str[i], &cd, j))
+				if (flags_cd(str[i], &cd, j) == -1)
 					return (1);
 		}
 		else if (str[i] && str[i + 1] && !str[i + 2])

@@ -93,7 +93,6 @@ void			wait_for_job(t_job *j)
 	{
 		if (job_is_stopped(j))
 			break ;
-		//dprintf(2, "\nsasasv\n");
 		pid = waitpid(-j->pgid, &status, WUNTRACED | WNOHANG);
 		mark_process_status(pid, status, j);
 	}

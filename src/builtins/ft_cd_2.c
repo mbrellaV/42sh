@@ -49,7 +49,7 @@ char		*full_path_helper(char *ret, char *all, char *path)
 		ft_strcmp(ret, "/") ? ret = ft_strjoin_cd(ret, "/", 1) : 0;
 		ret = ft_strjoin_cd(ret, all, 1);
 	}
-	if ((check_file(ret, IS_D)) == -1)
+	if ((check_file(ret, IS_D)) == -1 && (ret = ft_cdpath(ret, all)) == NULL)
 	{
 		ft_cd_error(path, 4, 0);
 		free(ret);

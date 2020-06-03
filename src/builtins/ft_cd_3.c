@@ -12,6 +12,34 @@
 
 #include "../../inc/fshell.h"
 
+char			*ft_cdpath(char *ret, char *all)
+{
+	int			k;
+	char		**str;
+	int			i;
+
+	i = -1;
+	if ((k = ft_findenv("CDPATH=", globals()->g_env)) != -404)
+	{
+		str = ft_strsplit1(globals()->g_env[k] + 7, ':');
+		while (str[++i])
+		{
+			free(ret);
+			ret = ft_strjoin_cd(ft_strjoin(str[i], "/"),
+								all, 1);
+			if (check_file(ret, IS_D) != -1)
+			{
+				ft_free_split(str);
+				return (ret);
+			}
+		}
+		free(ret);
+		ft_free_split(str);
+		return (NULL);
+	}
+	return (NULL);
+}
+
 char			*ft_strjoin_cd(char const *s1, char const *s2, int to_free)
 {
 	char		*str;

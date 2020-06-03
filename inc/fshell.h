@@ -164,6 +164,7 @@ void				*ft_malloc(size_t size);
 int					launch(char *str, int put_name);
 int					set_new_var(char *str1, char *str2, char ***envl);
 int					ft_cd(char **str);
+char				*ft_cdpath(char *ret, char *all);
 void				do_all_var(char **env);
 int					do_cd(t_builtins *cd, char *str);
 int					do_fc(char **av);
