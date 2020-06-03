@@ -6,7 +6,7 @@
 /*   By: wstygg <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/28 22:11:46 by wstygg            #+#    #+#             */
-/*   Updated: 2020/05/12 22:36:31 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/06/03 20:13:59 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,8 +107,8 @@ int					do_fc(char **av)
 	work_with_range(&f);
 	if (f.l)
 		return (do_fc_l(f));
-	else if ((fd = open("/tmp/.42fc", O_CREAT | O_RDWR | O_TRUNC, S_IRUSR | S_IWUSR |
-	S_IRGRP | S_IWGRP | S_IROTH | S_IWOTH, 0644)) == -1)
+	else if ((fd = open("/tmp/.42fc", O_CREAT | O_RDWR | O_TRUNC, S_IRUSR
+	| S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH | S_IWOTH, 0644)) == -1)
 		return (err_fc("fc create error!\n"));
 	if (do_fc_regular(fd, f))
 		return (1);

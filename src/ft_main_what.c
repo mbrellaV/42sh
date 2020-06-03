@@ -6,7 +6,7 @@
 /*   By: wstygg <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/16 17:22:09 by wstygg            #+#    #+#             */
-/*   Updated: 2020/05/12 22:36:30 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/06/03 20:13:48 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,25 +16,6 @@ static int	trick(t_exectoken **tmp)
 {
 	*tmp = (*tmp)->right;
 	return (1);
-}
-
-int			do_qest(int wait_and, int wait_or)
-{
-	char	*del;
-	int		num;
-
-	if (!(del = ft_get_var("?", globals()->g_all_var)))
-	{
-		put_error_to_shell(2);
-		return (1);
-	}
-	num = ft_atoi(del);
-	ft_strdel(&del);
-	if ((wait_and == 1 && num > 0) || (wait_or == 1 && num == 0))
-	{
-		return (1);
-	}
-	return (0);
 }
 
 static void	do_job_things(int *sas, t_job **job, t_exectoken *tmp)
@@ -87,7 +68,7 @@ int			ft_main_what(t_exectoken *tmp)
 		if (((tmp->file_args && !is_builtin(tmp->file_args[0])) || tmp->left)
 			|| (tmp->left == NULL && is_builtin(tmp->file_args[0]) == 1))
 		{
-			if (do_qest(tmp->wait_and, tmp->wait_or) && trick(&tmp))
+			if (do_quest(tmp->wait_and, tmp->wait_or) && trick(&tmp))
 				continue ;
 			exit_status = ft_main_if(tmp, exit_status, job);
 		}

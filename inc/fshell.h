@@ -6,7 +6,7 @@
 /*   By: mbrella <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/11 10:58:44 by mbrella           #+#    #+#             */
-/*   Updated: 2020/05/12 22:36:30 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/06/03 20:13:52 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -214,6 +214,8 @@ char				*ft_name(char *str, t_readline *p);
 int					ft_type(char **argv);
 int					vivod(int fd);
 int					err_fc(char *str);
+t_exectoken			*get_last_pipe_tree(t_exectoken *tmp);
+int					do_quest(int wait_and, int wait_or);
 void				ft_find_path(t_readline *p, char *name);
 void				ft_find_env(char *name, t_readline *p);
 void				ft_add_builtins_in_tab(char *name, t_readline *p);

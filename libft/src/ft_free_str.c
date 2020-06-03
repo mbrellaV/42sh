@@ -6,18 +6,18 @@
 /*   By: qmartina <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/30 15:37:10 by qmartina          #+#    #+#             */
-/*   Updated: 2020/05/12 22:36:31 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/06/03 20:13:49 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_free_str(char **arr)
+int		ft_free_str(char **arr)
 {
-	int i;
+	int	i;
 
 	if (!arr)
-		return ;
+		return (1);
 	i = -1;
 	while (arr[++i])
 	{
@@ -25,4 +25,5 @@ void	ft_free_str(char **arr)
 	}
 	free(arr);
 	arr = NULL;
+	return (1);
 }

@@ -6,7 +6,7 @@
 /*   By: wstygg <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/14 11:48:56 by wstygg            #+#    #+#             */
-/*   Updated: 2020/05/12 22:36:30 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/06/03 20:16:54 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,8 +51,8 @@ t_process		*create_process_list(t_exectoken *tmp)
 
 char			*create_new_cmd(char **mas, char *new_str)
 {
-	int		i;
-	char	*tmp;
+	int			i;
+	char		*tmp;
 
 	i = 0;
 	while (mas[i] != NULL)
@@ -82,15 +82,6 @@ char			*create_command(t_exectoken *head)
 		head = head->left;
 	}
 	return (new_str);
-}
-
-static t_exectoken			*get_last_pipe_tree(t_exectoken *tmp)
-{
-	while (tmp->left != NULL)
-	{
-		tmp =  tmp->left;
-	}
-	return (tmp);
 }
 
 t_job			*create_job(t_exectoken *head)

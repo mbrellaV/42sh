@@ -6,7 +6,7 @@
 /*   By: wstygg <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/14 18:53:37 by wstygg            #+#    #+#             */
-/*   Updated: 2020/05/12 22:36:30 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/06/03 20:13:49 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,11 +43,8 @@ char		**zam_opt_tokens(char **mas)
 		}
 		else if (mas[i][0] >= '0' && mas[i][0] <= '9')
 			norm_help(&nopt, &iopt, mas, &i);
-		else
-		{
-			ft_free_str(nopt);
+		else if (ft_free_str(nopt))
 			return (NULL);
-		}
 	}
 	nopt[iopt] = NULL;
 	return (nopt);

@@ -145,7 +145,6 @@ add_executable(42sh
         src/evaln/ft_eval_parser.c
         src/evaln/inftopost.c
         src/evaln/dostack.c
-        src/evaln/opr_znak.c
         src/evaln/sub_and_add.c
         src/evaln/zam_var.c
         src/exec/continuing_jobs.c
@@ -275,4 +274,4 @@ add_executable(42sh
         src/main.c
         src/put_error_to_env.c
         src/redirects.c
-        src/shell_lvl.c src/builtins/allenv/unset_builtin.c src/parser/inhibitor_args.c src/utility_files/cypher.c src/utility_files/semaphore.c)
+        src/shell_lvl.c src/builtins/allenv/unset_builtin.c src/parser/inhibitor_args.c src/utility_files/cypher.c src/do_quest.c)

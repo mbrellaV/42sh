@@ -6,7 +6,7 @@
 /*   By: qmartina <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/18 17:15:58 by qmartina          #+#    #+#             */
-/*   Updated: 2020/05/12 22:36:30 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/06/03 20:13:48 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ static int		check_status(t_pstat *pstat, int status, pid_t pid, t_job *job)
 			ft_dprintf(globals()->fd[2], "%d: Terminated by signal %d.\n",
 					(int)pid, WTERMSIG(pstat->p->status));
 	}
-
 	return (0);
 }
 
@@ -94,7 +93,6 @@ void			wait_for_job(t_job *j)
 	{
 		if (job_is_stopped(j))
 			break ;
-		//dprintf(2, "\nwait\n");
 		pid = waitpid(-j->pgid, &status, WUNTRACED | WNOHANG);
 		mark_process_status(pid, status, j);
 	}

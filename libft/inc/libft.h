@@ -6,7 +6,7 @@
 /*   By: qmartina <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/16 16:52:52 by qmartina          #+#    #+#             */
-/*   Updated: 2020/05/12 22:36:31 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/06/03 20:13:49 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,7 +106,7 @@ void				*ft_realloc(void *ptr, size_t prev_size, size_t new_size);
 char				*ft_strjoinch(char const *s1, char c);
 char				*ft_strjoin_cmp(char const *s1, char c);
 int					ft_strcmp_start(char *s1, char *s2);
-void				ft_free_str(char **arr);
+int					ft_free_str(char **arr);
 int					ft_count(int base, int c);
 int					ft_itoa_base(int value, int base);
 char				*ft_strndup(const char *s1, int n);

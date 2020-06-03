@@ -6,24 +6,19 @@
 /*   By: qmartina <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/18 17:30:33 by qmartina          #+#    #+#             */
-/*   Updated: 2020/05/12 22:36:30 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/06/03 20:13:48 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../inc/fshell.h"
+#include "fshell.h"
 
-t_job			*find_job(pid_t pgid)
+t_exectoken		*get_last_pipe_tree(t_exectoken *tmp)
 {
-	t_job		*j;
-
-	j = globals()->g_f_job;
-	while (j)
+	while (tmp->left != NULL)
 	{
-		if (j->pgid == pgid)
-			return (j);
-		j = j->next;
+		tmp = tmp->left;
 	}
-	return (NULL);
+	return (tmp);
 }
 
 int				job_is_stopped(t_job *j)

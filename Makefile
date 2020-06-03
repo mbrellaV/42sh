@@ -177,6 +177,7 @@ SRC_BASE = builtins/ft_cd.c\
 	builtins/ft_type.c\
 	redirects.c\
 	do_builtin.c\
+	do_quest.c\
 	ft_open_flag_in_builtins.c\
 
 
