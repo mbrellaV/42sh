@@ -129,8 +129,10 @@ t_lextoken		*do_lexer(char *line)
 			return (NULL);
 		}
 	}
-	if (tmp->tail_c != NULL && tmp->tail_c->operator_type == 2)
+	if (tmp->tail_c != NULL && (tmp->tail_c->operator_type == 2 ||
+	tmp->tail_c->operator_type == 10 || tmp->tail_c->operator_type == 11))
 	{
+		ft_distr_lex(tmp->doptail_c);
 		ft_kill_str_dop_lex(tmp, tmp->doptail_c);
 		return (ft_error(5, "\\n", NULL) == -1 ? NULL : 0);
 	}

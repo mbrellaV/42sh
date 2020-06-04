@@ -92,15 +92,15 @@ t_exectoken		*all_parse(char *cmd)
 	ft_change_all_sc(cmd);
 	if (!(tmp = do_lexer(cmd)))
 		return (NULL);
-	if (!(tmp = do_zam_bax_and_hist_full(tmp, &dop_tmp)) &&
-		ft_distr_lex(dop_tmp))
-		return (NULL);
 	if (check_all_errors(tmp) != 1)
 	{
 		ft_error(5, "\\n", NULL);
 		ft_distr_lex(tmp);
 		return (NULL);
 	}
+	if (!(tmp = do_zam_bax_and_hist_full(tmp, &dop_tmp)) &&
+		ft_distr_lex(dop_tmp))
+		return (NULL);
 	if (check_opt_tokens(tmp) == -1 && ft_distr_lex(tmp))
 		return (NULL);
 	extmp = do_parser(tmp);
