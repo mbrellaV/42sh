@@ -16,7 +16,6 @@ char		*ft_get_var_from_both(char *str)
 {
 	char	*res;
 
-	//dprintf(2, "\nsas: |%s|\n", str);
 	if ((res = ft_get_var(str, globals()->g_env)) != NULL)
 		return (res);
 	if ((res = ft_get_var(str, globals()->g_all_var)) != NULL)
@@ -104,20 +103,4 @@ int			ft_do_export(char **mas)
 		return (2);
 	}
 	return (0);
-}
-
-void		do_all_var(char **env)
-{
-	int		i;
-
-	i = -1;
-	if (!(globals()->g_all_var = (char **)ft_memalloc(sizeof(char *) *
-			(ft_env_len(env) + 2))))
-		ft_error_q(1);
-	while (env[++i])
-	{
-		if (!(globals()->g_all_var[i] = ft_strdup(env[i])))
-			ft_error_q(1);
-	}
-	env[i] = NULL;
 }

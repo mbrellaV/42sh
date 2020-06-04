@@ -15,9 +15,7 @@
 int		do_bg(char **mas)
 {
 	if (mas[0] != NULL && mas[1] == NULL)
-	{
 		continue_job(get_last_job(), 0);
-	}
 	else if (mas[0] != NULL && mas[1] != NULL && mas[2] == NULL
 	&& mas[1][0] == '%' && mas[1][1] != '\0')
 	{
