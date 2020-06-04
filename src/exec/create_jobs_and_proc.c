@@ -49,41 +49,6 @@ t_process		*create_process_list(t_exectoken *tmp)
 	return (fir);
 }
 
-char			*create_new_cmd(char **mas, char *new_str)
-{
-	int			i;
-	char		*tmp;
-
-	i = 0;
-	while (mas[i] != NULL)
-	{
-		tmp = new_str;
-		new_str = ft_strjoin(new_str, " ");
-		ft_strdel(&tmp);
-		tmp = new_str;
-		new_str = ft_strjoin(new_str, mas[i]);
-		ft_strdel(&tmp);
-		i++;
-	}
-	return (new_str);
-}
-
-char			*create_command(t_exectoken *head)
-{
-	char		*new_str;
-
-	if (!(new_str = ft_strnew(1)))
-		ft_error_q(5);
-	while (head)
-	{
-		new_str = create_new_cmd(head->file_args, new_str);
-		if (head->file_opt != NULL)
-			new_str = create_new_cmd(head->file_opt, new_str);
-		head = head->left;
-	}
-	return (new_str);
-}
-
 t_job			*create_job(t_exectoken *head)
 {
 	t_job		*new_job;
@@ -95,7 +60,7 @@ t_job			*create_job(t_exectoken *head)
 	new_job->first_process = create_process_list(head);
 	new_job->foreground = get_last_pipe_tree(head)->foreground;
 	new_job->pgid = -1;
-	new_job->command = create_command(head);
+	new_job->command = ft_strdup(globals()->g_memory_head->inp);
 	new_job->stdinc = 0;
 	new_job->stdoutc = 1;
 	new_job->stderrc = 2;

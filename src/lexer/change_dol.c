@@ -25,7 +25,7 @@ static void	zam_symbol(char *str1, t_zams *zams, char *new)
 		ft_strdel(&zams->str_for_del);
 		if (zams->dopstr != NULL)
 			ft_strcat(new, zams->dopstr);
-		zams->i += word_size(&str1[zams->i]) + 1;
+		zams->i += word_size(&str1[zams->i]) + (zams->dop == 2 ? 1 : 0);
 		ft_strdel(&zams->dopstr);
 	}
 	else

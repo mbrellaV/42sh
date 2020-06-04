@@ -24,8 +24,8 @@ int			unset_builtin(char **file_args)
 	{
 		while (file_args[i])
 		{
-			unset_var(file_args[1], &globals()->g_env);
-			unset_var(file_args[1], &globals()->g_all_var);
+			unset_var(file_args[i], &globals()->g_env);
+			unset_var(file_args[i], &globals()->g_all_var);
 			i++;
 		}
 	}

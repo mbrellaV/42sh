@@ -22,9 +22,9 @@ void		ft_change_all_sc(char *str)
 	{
 		if (str[i] == '$' && (str[i + 1] == '(' || str[i + 1] == '{'))
 			i += word_size(&str[i]);
-		if ((str[i] == '(' || str[i] == ')'))
+		else if ((str[i] == '(' || str[i] == ')'))
 			str[i] = ' ';
-		if (ispar(str[i]))
+		else if (ispar(str[i]))
 		{
 			size = c_size(&str[i], str[i]);
 			if (size == -2)
@@ -33,6 +33,7 @@ void		ft_change_all_sc(char *str)
 				size = 1;
 			i += size;
 		}
-		i++;
+		else
+			i++;
 	}
 }
