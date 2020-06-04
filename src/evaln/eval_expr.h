@@ -132,5 +132,6 @@ int							return_with_error(t_calc_token *error_token,
 int							is_znak_type(t_calc_tkntype type);
 t_calc_token				*get_last_token(t_calc_token *tmp);
 void						zam_var(t_calc_token *var_token, int *error);
+t_calc_token				*calc_prev_mean_calc_token(t_calc_token *tmp);
 
 #endif

@@ -12,6 +12,15 @@
 
 #include "eval_expr.h"
 
+t_calc_token	*calc_prev_mean_calc_token(t_calc_token *tmp)
+{
+	while (tmp->type == CALC_FIR_SC || tmp->type == CALC_SEC_SC)
+	{
+		tmp = tmp->prev;
+	}
+	return (tmp);
+}
+
 t_int		*cr_new_el(char *s, int *error)
 {
 	t_int	*tmp;
