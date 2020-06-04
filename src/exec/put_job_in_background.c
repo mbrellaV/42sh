@@ -17,7 +17,7 @@ void				put_job_in_background(t_job *j, int cont)
 	struct timespec	tw;
 	struct timespec	tr;
 
-	tw = (struct timespec){0, 12000000};
+	tw = (struct timespec){0, 22000000};
 	if (cont)
 		if (kill(-j->pgid, SIGCONT) < 0)
 			perror("kill (SIGCONT)");

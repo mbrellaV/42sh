@@ -12,6 +12,18 @@
 
 #include "fshell.h"
 
+char		*ft_get_var_from_both(char *str)
+{
+	char	*res;
+
+	//dprintf(2, "\nsas: |%s|\n", str);
+	if ((res = ft_get_var(str, globals()->g_env)) != NULL)
+		return (res);
+	if ((res = ft_get_var(str, globals()->g_all_var)) != NULL)
+		return (res);
+	return (NULL);
+}
+
 char		*ft_get_var(char *dop, char **env)
 {
 	int		i;
@@ -66,6 +78,7 @@ static int	do_save_to_env(char **mas)
 		dop = ft_get_var(mas[1], globals()->g_all_var);
 		set_new_var(mas[1], dop, &globals()->g_env);
 		ft_strdel(&dop);
+		return (0);
 	}
 	vivod(2) ? ft_dprintf(globals()->fd[2], "no such var\n") : 0;
 	return (1);

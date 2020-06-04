@@ -177,6 +177,7 @@ int					change_path(char *path, t_builtins *cd);
 char				*create_full_path(char *path, t_builtins *cd);
 char				*ft_strjoin_cd(char const *s1, char const *s2, int to_free);
 char				*ft_get_var(char *dop, char **env);
+char				*ft_get_var_from_both(char *str);
 int					issc(char c);
 char				init_shell_builtins();
 t_lextoken			*do_zam_ravno(t_lextoken *h, t_lextoken **first_token);

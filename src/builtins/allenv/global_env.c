@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../../inc/fshell.h"
+#include "fshell.h"
 
 void	ft_global_env(char **env, int argc)
 {

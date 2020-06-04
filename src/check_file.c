@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/fshell.h"
+#include "fshell.h"
 
 int					ft_free_split(char **split)
 {

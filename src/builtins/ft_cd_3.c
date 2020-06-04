@@ -10,18 +10,18 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../inc/fshell.h"
+#include "fshell.h"
 
 char			*ft_cdpath(char *ret, char *all)
 {
-	int			k;
 	char		**str;
 	int			i;
+	char		*dop;
 
 	i = -1;
-	if ((k = ft_findenv("CDPATH=", globals()->g_env)) != -404)
+	if ((dop = ft_get_var_from_both("CDPATH")))
 	{
-		str = ft_strsplit1(globals()->g_env[k] + 7, ':');
+		str = ft_strsplit1(dop, ':');
 		while (str[++i])
 		{
 			free(ret);
@@ -30,13 +30,14 @@ char			*ft_cdpath(char *ret, char *all)
 			if (check_file(ret, IS_D) != -1)
 			{
 				ft_free_split(str);
+				ft_strdel(&dop);
 				return (ret);
 			}
+			ft_strdel(&ret);
 		}
-		free(ret);
 		ft_free_split(str);
-		return (NULL);
 	}
+	ft_strdel(&dop);
 	return (NULL);
 }
 
