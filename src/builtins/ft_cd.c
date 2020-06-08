@@ -50,11 +50,15 @@ int				change_path(char *path, t_builtins *cd)
 	if (path)
 	{
 		pwd_env = NULL;
-		if ((tmp = get_oldpwd(cd)) && chdir(path) == -1 && ft_free(&tmp))
-			return (ft_cd_error(path, 6, 0));
+		if ((tmp = get_oldpwd(cd)) && chdir(path) == -1 && ft_free(tmp) == 0)
+			return (ft_cd_error(path, 6, 1));
 		if (cd->cd_p && cd->link && (pwd_env = getcwd(NULL, 0)))
-			if (chdir(pwd_env) == -1 && ft_free(&tmp))
+			if (chdir(pwd_env) == -1)
+			{
+				free(tmp);
+				free(path);
 				return (ft_cd_error(pwd_env, 6, 1));
+			}
 		set_new_var("OLDPWD", tmp, &globals()->g_env);
 		set_new_var("OLDPWD", tmp, &globals()->g_all_var);
 		pwd_env ? set_new_var("PWD", pwd_env, &globals()->g_env) :

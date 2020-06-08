@@ -19,14 +19,13 @@ char			*ft_cdpath(char *ret, char *all)
 	char		*dop;
 
 	i = -1;
+	ft_strdel(&ret);
 	if ((dop = ft_get_var_from_both("CDPATH")))
 	{
 		str = ft_strsplit1(dop, ':');
 		while (str[++i])
 		{
-			free(ret);
-			ret = ft_strjoin_cd(ft_strjoin(str[i], "/"),
-								all, 1);
+			ret = ft_strjoin_cd(ft_strjoin(str[i], "/"), all, 1);
 			if (check_file(ret, IS_D) != -1)
 			{
 				ft_free_split(str);
@@ -112,14 +111,14 @@ int				do_cd(t_builtins *cd, char *str)
 		if ((res_l = check_file(full_path, IS_L)) && res_l != -1)
 			cd->link = 1;
 		if ((res_d = check_file(full_path, IS_D)) == 1 || res_l == 1)
-			change_path(full_path, cd);
+		{
+			if (change_path(full_path, cd) == -1)
+				return (1);
+		}
 		else if (res_d == -1 || res_l == -1)
 			return (ft_cd_error(full_path, 3, 1));
-		else
-		{
-			free(full_path);
+		else if (ft_free(full_path) == 0)
 			return (!res_d ? ft_cd_error(str, 3, 0) : ft_cd_error(str, 6, 0));
-		}
 	}
 	if (!ft_strcmp(str, "-") &&
 	(k = ft_findenv("PWD=", globals()->g_env)) != -404 && vivod(1))
