@@ -2580,6 +2580,33 @@ libft/src/get_next_line_with_sym.c.s:
 	$(MAKE) -f CMakeFiles/42sh.dir/build.make CMakeFiles/42sh.dir/libft/src/get_next_line_with_sym.c.s
 .PHONY : libft/src/get_next_line_with_sym.c.s
 
+src/builtins/42sh_builtin.o: src/builtins/42sh_builtin.c.o
+
+.PHONY : src/builtins/42sh_builtin.o
+
+# target to build an object file
+src/builtins/42sh_builtin.c.o:
+	$(MAKE) -f CMakeFiles/42sh.dir/build.make CMakeFiles/42sh.dir/src/builtins/42sh_builtin.c.o
+.PHONY : src/builtins/42sh_builtin.c.o
+
+src/builtins/42sh_builtin.i: src/builtins/42sh_builtin.c.i
+
+.PHONY : src/builtins/42sh_builtin.i
+
+# target to preprocess a source file
+src/builtins/42sh_builtin.c.i:
+	$(MAKE) -f CMakeFiles/42sh.dir/build.make CMakeFiles/42sh.dir/src/builtins/42sh_builtin.c.i
+.PHONY : src/builtins/42sh_builtin.c.i
+
+src/builtins/42sh_builtin.s: src/builtins/42sh_builtin.c.s
+
+.PHONY : src/builtins/42sh_builtin.s
+
+# target to generate assembly for a file
+src/builtins/42sh_builtin.c.s:
+	$(MAKE) -f CMakeFiles/42sh.dir/build.make CMakeFiles/42sh.dir/src/builtins/42sh_builtin.c.s
+.PHONY : src/builtins/42sh_builtin.c.s
+
 src/builtins/alias/alias.o: src/builtins/alias/alias.c.o
 
 .PHONY : src/builtins/alias/alias.o
@@ -7344,6 +7371,9 @@ help:
 	@echo "... libft/src/get_next_line_with_sym.o"
 	@echo "... libft/src/get_next_line_with_sym.i"
 	@echo "... libft/src/get_next_line_with_sym.s"
+	@echo "... src/builtins/42sh_builtin.o"
+	@echo "... src/builtins/42sh_builtin.i"
+	@echo "... src/builtins/42sh_builtin.s"
 	@echo "... src/builtins/alias/alias.o"
 	@echo "... src/builtins/alias/alias.i"
 	@echo "... src/builtins/alias/alias.s"

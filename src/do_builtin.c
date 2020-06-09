@@ -24,6 +24,10 @@ int		do_next_builtins_2(char **file_args)
 		put_error_to_shell(ft_type(file_args));
 	else if (!ft_strcmp(file_args[0], "authors"))
 		put_error_to_shell(do_authors());
+	else if (ft_strcmp(file_args[0], "export") == 0)
+		put_error_to_shell(ft_do_export(file_args));
+	else if (ft_strcmp(file_args[0], "unset") == 0 && file_args[1])
+		put_error_to_shell(unset_builtin(file_args));
 	else
 		return (0);
 	return (1);
@@ -70,12 +74,10 @@ int		do_builtin(char **file_args, char **file_opt,
 		ft_do_change_alias(file_args);
 	else if (ft_strcmp(file_args[0], "cd") == 0)
 		put_error_to_shell(ft_cd(file_args));
-	else if (ft_strcmp(file_args[0], "export") == 0)
-		put_error_to_shell(ft_do_export(file_args));
-	else if (ft_strcmp(file_args[0], "unset") == 0 && file_args[1])
-		put_error_to_shell(unset_builtin(file_args));
 	else if (!ft_strcmp(file_args[0], "fc") && type == 0)
 		put_error_to_shell(do_fc(file_args));
+	else if (!ft_strcmp(file_args[0], "42sh") && type == 0)
+		put_error_to_shell(do_42sh_builtin(file_args));
 	else
 		return (do_next_builtins(file_args));
 	return (1);

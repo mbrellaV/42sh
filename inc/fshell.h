@@ -171,6 +171,7 @@ int					do_fc(char **av);
 void				ft_free_env_table();
 int					do_authors(void);
 char				*get_pwd(t_builtins *cd);
+int					do_42sh_builtin(char **av);
 char				*get_oldpwd(t_builtins *cd);
 int					ft_cd_error(char *tmp, int err, int to_free);
 int					change_path(char *path, t_builtins *cd);

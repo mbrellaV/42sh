@@ -40,7 +40,7 @@ char			init_shell_builtins(void)
 		"history", "env", "clear", "hash",
 		"cd", "echo", "exit", "type",
 		"set", "fg", "bg", "jobs", "false",
-		"fc", "authors", "unalias", "true", NULL};
+		"fc", "authors", "unalias", "true", "42sh", NULL};
 
 	i = 0;
 	init_first_envs();
