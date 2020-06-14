@@ -23,6 +23,7 @@ SRC_BASE = builtins/ft_cd.c\
 	builtins/ft_fc.c\
 	builtins/ft_fc_2.c\
 	builtins/ft_fc_3.c\
+	builtins/history_builtin.c\
 	builtins/42sh_builtin.c\
 	builtins/authors.c\
 	builtins/allenv/ft_env.c\
@@ -131,6 +132,7 @@ SRC_BASE = builtins/ft_cd.c\
 	history/ft_add_to_history.c\
 	history/history_search.c\
 	history/init_history.c\
+	history/del_hist.c\
 	history/save_hist.c\
 	parser/dop_parser.c\
 	parser/change_tilda.c\

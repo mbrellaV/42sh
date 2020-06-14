@@ -17,7 +17,10 @@ int		do_next_builtins_2(char **file_args)
 	if (ft_strcmp(file_args[0], "env") == 0)
 		put_error_to_shell(ft_show_env(globals()->g_env));
 	else if (ft_strcmp(file_args[0], "clear") == 0)
-		ft_putstr_fd("\033[2J\033[H", globals()->fd[2]);
+    {
+        ft_putstr_fd("\033[2J\033[H", globals()->fd[2]);
+        put_error_to_shell(0);
+    }
 	else if (ft_strcmp(file_args[0], "hash") == 0)
 		put_error_to_shell(do_hash(file_args));
 	else if (!ft_strcmp(file_args[0], "type"))
@@ -50,7 +53,7 @@ int		do_next_builtins(char **file_args)
 	else if (ft_strcmp(file_args[0], "echo") == 0)
 		put_error_to_shell(ft_echo(file_args));
 	else if (ft_strcmp(file_args[0], "history") == 0)
-		put_error_to_shell(show_history(globals()->g_memory_head));
+		put_error_to_shell(hist_builtin(file_args));
 	else
 		return (do_next_builtins_2(file_args));
 	return (1);

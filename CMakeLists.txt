@@ -274,4 +274,4 @@ add_executable(42sh
         src/main.c
         src/put_error_to_env.c
         src/redirects.c
-        src/shell_lvl.c src/builtins/allenv/unset_builtin.c src/parser/inhibitor_args.c src/utility_files/cypher.c src/do_quest.c src/builtins/42sh_builtin.c)
+        src/shell_lvl.c src/builtins/allenv/unset_builtin.c src/parser/inhibitor_args.c src/utility_files/cypher.c src/do_quest.c src/builtins/42sh_builtin.c src/builtins/history_builtin.c src/history/del_hist.c)
