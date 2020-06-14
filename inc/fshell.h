@@ -71,12 +71,13 @@
 
 # define SHELL_NAME	"42sh"
 
-# define FC_US "42sh: fc: error!\nusing: fc -[eslr] [editor] [range | number]\n"
+# define FC_US "42sh: fc: error!\nusing: fc -[eslrn] [range | number]\n"
 # define SY_E_1	"42sh: Syntax error: newline unexpected (expecting \")\")\n"
 # define SY_E_2	"42sh: Syntax error: \")\" unexpected\n"
 
 typedef struct		s_fc
 {
+	int				n;
 	int				l;
 	int				r;
 	int				hi_s;
@@ -144,14 +145,14 @@ int					ft_do_change_alias(char **mas);
 char				*do_obr_zamena(char *line);
 void				ft_realloc_all(int k, char ***envl);
 int					ft_echo(char **str);
-void                del_hist();
+void				del_hist();
 t_memory			*make_memmory_with_one_node(int fd, char *buf);
 char				*get_hist_by_id(int id);
 char				*ft_slash(char *str, t_builtins *echo);
 void				uncypher_str(char *str_to_cypher);
 void				uncypher_hist(t_memory *head);
 int					zam_bax_in_exectoken(t_exectoken *tmp);
-int		            hist_builtin(char **mas);
+int					hist_builtin(char **mas);
 void				del_one_node(t_lextoken *token_to_del,
 						t_lextoken **first_token);
 char				*distribute_echo(char **str, int k, int flag,

@@ -6,16 +6,35 @@
 /*   By: wstygg <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/02 15:23:39 by wstygg            #+#    #+#             */
-/*   Updated: 2020/06/03 20:13:49 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/06/15 00:16:30 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fshell.h"
 
-int					err_fc(char *str)
+static int			check_flag_3(const char *str, t_fc *f)
 {
-	vivod(2) ? (ft_dprintf(globals()->fd[2], "%s", str)) : 2;
-	return (2);
+	register int	i;
+	char			c;
+
+	if (str[0] != '-')
+		return (-1);
+	i = 0;
+	while (str[++i])
+	{
+		c = str[i];
+		if (c == 'n')
+			f->n = 1;
+		else if (c == 's')
+			f->silent = 1;
+		else if (c == 'l')
+			f->l = 1;
+		else if (c == 'r')
+			f->r = 1;
+		else
+			return (-1);
+	}
+	return (0);
 }
 
 int					check_flag_2(int *i, char **av, t_fc *f)
@@ -36,15 +55,7 @@ int					check_flag_2(int *i, char **av, t_fc *f)
 		else
 			return (-1);
 	}
-	else if (ft_strequ(av[*i], "-s"))
-		f->silent = 1;
-	else if (ft_strequ(av[*i], "-l"))
-		f->l = 1;
-	else if (ft_strequ(av[*i], "-r"))
-		f->r = 1;
-	else
-		return (-1);
-	return (0);
+	return (check_flag_3(av[*i], f));
 }
 
 int					calc_h_size(void)

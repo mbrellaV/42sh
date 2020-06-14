@@ -12,6 +12,12 @@
 
 #include "fshell.h"
 
+int					err_fc(char *str)
+{
+	vivod(2) ? (ft_dprintf(globals()->fd[2], "%s", str)) : 2;
+	return (2);
+}
+
 char				*get_hist_by_id(int id)
 {
 	int				i;
