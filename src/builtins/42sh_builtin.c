@@ -17,7 +17,8 @@ int					do_42sh_builtin(char **av)
 	int				fd;
 	char			*command;
 
-	if (av[0] && av[1] && av[2] == NULL)
+	set_input_mode();
+	if (av && av[1])
 	{
 		if ((fd = open(av[1], O_RDONLY)) == -1)
 			return (err_fc("42sh read error!\n"));
@@ -27,6 +28,6 @@ int					do_42sh_builtin(char **av)
 		free(command);
 		return (0);
 	}
-	ft_dprintf(globals()->fd[2], "parse error\n");
-	return (1);
+	reset_input_mode();
+	return (0);
 }

@@ -44,17 +44,31 @@ static void			init_by_null(t_job **one, char **two, t_exectoken **three)
 	*three = NULL;
 }
 
-int					main(int argc, char **argv, char **env)
+void				ft_start_42sh(char **argv)
 {
 	t_readline		p;
 	t_exectoken		*start_token;
 
+	p.mod = 127;
+	init_by_null(&globals()->g_f_job, argv, &start_token);
+	if (argv[1] == NULL)
+	{
+		while (1)
+			if (main_cycle(&p, &start_token) == -1)
+				break;
+	}
+	else
+	{
+		do_42sh_builtin(argv);
+	}
+}
+
+int					main(int argc, char **argv, char **env)
+{
 	globals()->g_his_d = 0;
 	if (!(globals()->fd = ft_create_opened_fds()))
 		exit(0);
-	p.mod = 127;
 	ft_alias();
-	init_by_null(&globals()->g_f_job, argv, &start_token);
 	ft_global_env(env, argc);
 	globals()->g_memory_head = ft_head_memory();
 	do_count_shell_lvl();
@@ -65,9 +79,7 @@ int					main(int argc, char **argv, char **env)
 		ft_put_info();
 	else
 		ft_error_q(3);
-	while (1)
-		if (main_cycle(&p, &start_token) == -1)
-			break ;
+	ft_start_42sh(argv);
 	save_history(globals()->g_memory_head);
 	exit(0);
 }
