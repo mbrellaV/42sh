@@ -100,7 +100,7 @@ static void			work_with_range(t_fc *fc)
 	}
 }
 
-int					do_fc(char **av)
+int					do_fc(char **av, int type)
 {
 	int				fd;
 	t_fc			f;
@@ -115,6 +115,8 @@ int					do_fc(char **av)
 	work_with_range(&f);
 	if (f.l)
 		return (do_fc_l(f));
+	else if (type == 1)
+		return (-1);
 	else if ((fd = open("/tmp/.42fc", O_CREAT | O_RDWR | O_TRUNC, S_IRUSR
 		| S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH | S_IWOTH, 0644)) == -1)
 		return (err_fc("fc create error!\n"));
@@ -126,5 +128,6 @@ int					do_fc(char **av)
 	if (launch(command, 1))
 		return (1);
 	free(command);
+	do_job_notification();
 	return ((remove("/tmp/.42fc")));
 }

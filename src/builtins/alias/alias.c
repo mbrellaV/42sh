@@ -52,10 +52,8 @@ static int	do_zam_alias(char *str, int *i, char *newstr, char **remaining_aliase
 	else
 	{
 		ft_strcat(newstr, dop);
-		ft_strdel(&prev_word);
 		(*i) += size;
-		ft_strdel(&dopstr);
-		ft_strdel(&dop);
+		alias_dop(dop, prev_word, dopstr);
 		return (0);
 	}
 }
@@ -72,7 +70,7 @@ static int	alias_cycle(char *str, int *i, char *newstr, char **remaining_aliases
 		ft_strcat(newstr, dop);
 		*i += size + 2;
 	}
-	else if (size > 0 && (str[*i] == '$' || isword(str[*i]) == 1))
+	else if (size > 0 && (str[*i] != '$' || isword(str[*i]) == 1))
 		return (do_zam_alias(str, i, newstr, remaining_aliases));
 	else
 	{

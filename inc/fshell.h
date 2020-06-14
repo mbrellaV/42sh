@@ -170,7 +170,7 @@ int					ft_cd(char **str);
 char				*ft_cdpath(char *ret, char *all);
 void				do_all_var(char **env);
 int					do_cd(t_builtins *cd, char *str);
-int					do_fc(char **av);
+int					do_fc(char **av, int type);
 void				ft_free_env_table();
 int					do_authors(void);
 char				*get_pwd(t_builtins *cd);
