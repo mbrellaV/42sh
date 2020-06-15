@@ -21,6 +21,7 @@ static void		do_join(t_lextoken **doph, t_lextoken **lextmp1)
 	h = *doph;
 	tmp = (h)->next->line;
 	(h)->next->is_near_word = 0;
+	h->next->is_near_opt = h->is_near_opt;
 	(h)->next->inhibitor_lvl = h->inhibitor_lvl;
 	(h)->next->line = ft_strjoin((h)->line, (h)->next->line);
 	ft_strdel(&tmp);
@@ -48,7 +49,8 @@ t_lextoken		*do_zam_join_par(t_lextoken *h)
 	lextmp1 = h;
 	while (h)
 	{
-		if (h->next && h->next->is_near_word == 1)
+		//get_op_type()
+		if (h->next && h->next->is_near_word == 1 && h->operator_type == -2)
 			do_join(&h, &lextmp1);
 		else
 			h = h->next;

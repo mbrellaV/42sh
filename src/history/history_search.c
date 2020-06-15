@@ -51,10 +51,12 @@ char				*get_num_from_hist_starting(t_memory *t, char *name)
 
 	i = 0;
 	while (t->back != NULL)
+		t = t->back;
+	while (t->next != NULL)
 	{
 		if (t->inp != NULL && ft_strstr(t->inp, name) == t->inp)
 			return (ft_strdup(t->inp));
-		t = t->back;
+		t = t->next;
 		i++;
 	}
 	return (NULL);
@@ -65,7 +67,6 @@ char				*get_num_from_hist_cons(t_memory *t, char *name)
 	int		i;
 
 	i = 0;
-	t = t->back;
 	while (t->back != NULL)
 	{
 		if (ft_strstr(t->inp, name) != NULL)

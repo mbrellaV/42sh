@@ -53,6 +53,8 @@ void				ft_start_42sh(char **argv)
 	init_by_null(&globals()->g_f_job, argv, &start_token);
 	if (argv[1] == NULL)
 	{
+		if (isatty(0) && isatty(1) && isatty(2))
+			ft_put_info();
 		while (1)
 			if (main_cycle(&p, &start_token) == -1)
 				break;
@@ -76,7 +78,7 @@ int					main(int argc, char **argv, char **env)
 	hash_init();
 	init_shell();
 	if (isatty(0) && isatty(1) && isatty(2))
-		ft_put_info();
+		;
 	else
 		ft_error_q(3);
 	ft_start_42sh(argv);

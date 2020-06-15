@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/fshell.h"
+#include "fshell.h"
 
 void	do_count_shell_lvl(void)
 {
