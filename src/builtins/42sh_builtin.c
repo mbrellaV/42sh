@@ -28,7 +28,6 @@ int					do_42sh_builtin(char **av)
 		free(command);
 		return (0);
 	}
-	//svdsdvsdv
 	reset_input_mode();
 	return (0);
 }

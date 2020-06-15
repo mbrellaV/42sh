@@ -6,7 +6,7 @@
 /*   By: wstygg <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/02 15:23:39 by wstygg            #+#    #+#             */
-/*   Updated: 2020/06/15 00:16:30 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/06/15 22:48:13 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ int					check_flag_2(int *i, char **av, t_fc *f)
 				f->editor = FC_NANO;
 			else
 				return (-1);
+			return (0);
 		}
 		else
 			return (-1);
