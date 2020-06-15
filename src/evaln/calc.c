@@ -12,7 +12,7 @@
 
 #include <fshell.h>
 
-static int	calc_znaks(int *stackzn, int zl)
+static int	calc_znaks(long long *stackzn, int zl)
 {
 	int		i;
 	int		calc_znaks;
@@ -38,7 +38,7 @@ static int	error_return_calc(int error, char *error_str)
 	return (-1);
 }
 
-static void	calc_next(int *stackos, t_int *str, t_calc_tkntype c)
+static void	calc_next(long long *stackos, t_int *str, t_calc_tkntype c)
 {
 	if (c == CALC_DIFF)
 		stackos[str->ol - 2] = stackos[str->ol - 2] != stackos[str->ol - 1];
@@ -55,7 +55,7 @@ static void	calc_next(int *stackos, t_int *str, t_calc_tkntype c)
 	subos(stackos, str);
 }
 
-int			calc(int *stackos, t_int *str, t_calc_tkntype c,
+int			calc(long long *stackos, t_int *str, t_calc_tkntype c,
 		char *error_var)
 {
 	if (str->ol - calc_znaks(str->stackzn, str->zl) < 1)

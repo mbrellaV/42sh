@@ -12,7 +12,7 @@
 
 #include <fshell.h>
 
-int		main_calc(t_calc_token *tmp_token, int *error, t_int *l)
+long long		main_calc(t_calc_token *tmp_token, int *error, t_int *l)
 {
 	while (tmp_token != NULL && tmp_token->type != CALC_END)
 	{
@@ -35,7 +35,7 @@ int		main_calc(t_calc_token *tmp_token, int *error, t_int *l)
 	return (calcend(&l->stackos, &l->stackzn, &l, error));
 }
 
-int		eval_expr(char *s, int *error, char *rec_var)
+long long		eval_expr(char *s, int *error, char *rec_var)
 {
 	t_int			*l;
 	t_calc_token	*tmp_token;

@@ -62,26 +62,25 @@ typedef struct				s_int
 	int						ol;
 	int						zl;
 	int						d;
-	int						*stackos;
-	int						*stackzn;
+	long long				*stackos;
+	long long				*stackzn;
 	int						i;
-	int						last_token;
 	char					*s;
 	t_calc_token			*first_token;
 }							t_int;
 
 typedef struct				s_calc
 {
-	int						*stackos;
-	int						*stackzn;
+	long long				*stackos;
+	long long				*stackzn;
 	t_int					*str;
 	int						*error;
 	char					*delstr;
 }							t_calc;
 
 int							is_znak(int c);
-int							eval_expr(char *s, int *error, char *rec_var);
-int							calcend(int **stackos, int **stackzn, t_int **str,
+long long					eval_expr(char *s, int *error, char *rec_var);
+long long					calcend(long long **stackos, long long **stackzn, t_int **str,
 								int *error);
 int							return_with_error(t_calc_token *error_token,
 							int *error, char *all_str, t_int *l);
@@ -90,13 +89,13 @@ int							prior(int c);
 int							ft_atoi_with(char *str, int *marker);
 int							is_znak_type(t_calc_tkntype type);
 t_int						*cr_new_el(char *s, int *error);
-int							calc(int *stackos, t_int *str, t_calc_tkntype c,
+int							calc(long long *stackos, t_int *str, t_calc_tkntype c,
 								char *error_var);
-void						addos(int *stackos, int c, t_int *lastint);
-void						subos(int *stackos, t_int *lastint);
-void						addzn(int *stackzn, t_calc_tkntype c,
+void						addos(long long *stackos, int c, t_int *lastint);
+void						subos(long long *stackos, t_int *lastint);
+void						addzn(long long *stackzn, t_calc_tkntype c,
 								t_int *lastint);
-void						subzn(int *stackzn, t_int *lastint);
+void						subzn(long long *stackzn, t_int *lastint);
 int							c_e(t_calc calce);
 t_int						*tmp_0(t_int *tmp, char *s);
 t_calc_token				*ft_ntoken(char *line,
@@ -104,9 +103,8 @@ t_calc_token				*ft_ntoken(char *line,
 char						*calc_ltoa(long long num);
 int							is_incr_sym(char c);
 int							calc_word_size(char *str, int type);
-char						*change_vars(char *evalstr);
 t_calc_token				*calc_define_token(char *str);
-int							dostack(int *stackos, int *stackzn,
+int							dostack(long long *stackos, long long *stackzn,
 								t_calc_token *c, t_int *lastint);
 t_calc_token				*add_token_cr(t_calc_token *start,
 								t_calc_token *token_to_add);

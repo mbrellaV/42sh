@@ -28,9 +28,9 @@ t_int		*cr_new_el(char *s, int *error)
 	if (!(tmp = ft_memalloc(sizeof(t_int))))
 		return (NULL);
 	tmp = tmp_0(tmp, s);
-	if (!(tmp->stackos = (int*)ft_memalloc(4 * ft_strlen(tmp->s))))
+	if (!(tmp->stackos = (long long*)ft_memalloc(20 * ft_strlen(tmp->s))))
 		return (NULL);
-	if (!(tmp->stackzn = (int*)ft_memalloc(4 * ft_strlen(tmp->s))))
+	if (!(tmp->stackzn = (long long*)ft_memalloc(20 * ft_strlen(tmp->s))))
 		return (NULL);
 	return (tmp);
 }
@@ -38,11 +38,15 @@ t_int		*cr_new_el(char *s, int *error)
 int			prior(int c)
 {
 	if (c == CALC_MUL)
-		return (2);
+		return (3);
 	else if (c == CALC_DIV)
-		return (2);
+		return (3);
 	else if (c == CALC_MOD)
-		return (2);
+		return (3);
+	else if (c == CALC_PLUS)
+		return (3);
+	else if (c == CALC_MINUS)
+		return (3);
 	else if (c == CALC_FIR_SC || c == CALC_SEC_SC)
 		return (0);
 	else if (is_znak_type(c))
@@ -54,17 +58,17 @@ int			prior(int c)
 int			is_znak(int c)
 {
 	if (c == '-' || c == '+' || c == '<' || c == '>' || c == '=' ||
-	c == '&' || c == '|' || c == '*' || c == '/' || c == '%')
+	c == '&' || c == '|' || c == '*' || c == '/' || c == '%' || c == '!')
 		return (1);
 	else
 		return (0);
 }
 
-int			calcend(int **stackos, int **stackzn, t_int **str, int *error)
+long long		calcend(long long **stackos, long long **stackzn, t_int **str, int *error)
 {
-	int		result;
-	int		*dop_stackos;
-	int		*dop_stackzn;
+	long long		result;
+	long long		*dop_stackos;
+	long long		*dop_stackzn;
 
 	dop_stackos = *stackos;
 	dop_stackzn = *stackzn;

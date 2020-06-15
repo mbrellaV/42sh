@@ -51,6 +51,10 @@ t_calc_token	*calc_define_token(char *str)
 		return (ft_ntoken(str, CALC_EQ));
 	else if (!ft_strncmp(str, "!=", 2))
 		return (ft_ntoken(str, CALC_DIFF));
+	else if (!ft_strncmp(str, "<=", 2))
+		return (ft_ntoken(str, CALC_LESSOREQ));
+	else if (!ft_strncmp(str, ">=", 2))
+		return (ft_ntoken(str, CALC_MOREOREQ));
 	else if (*str == '<')
 		return (ft_ntoken(str, CALC_LESS));
 	else if (*str == '>')

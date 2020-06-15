@@ -49,7 +49,7 @@ void				*decide_how_to_parse(t_calc_token *tmp_token,
 		return (first_token);
 	}
 	if (tmp_token && tmp_token->type == CALC_NUMBER &&
-	ft_strlen(tmp_token->var) > 8)
+	ft_strlen(tmp_token->var) > 19)
 	{
 		add_token_cr(first_token,
 				ft_ntoken(tmp_token->var, CALC_NUM_OVERFLOW_ERROR));

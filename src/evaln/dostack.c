@@ -12,7 +12,7 @@
 
 #include "eval_expr.h"
 
-int			help_dos(int *stackos, int *stackzn, t_calc_token *c,
+int			help_dos(long long *stackos, long long *stackzn, t_calc_token *c,
 		t_int *lastint)
 {
 	while (lastint->zl > 0 &&
@@ -27,7 +27,7 @@ int			help_dos(int *stackos, int *stackzn, t_calc_token *c,
 	return (0);
 }
 
-int			dostack(int *stackos, int *stackzn, t_calc_token *c, t_int *lastint)
+int			dostack(long long *stackos, long long *stackzn, t_calc_token *c, t_int *lastint)
 {
 	if ((c->type == CALC_FIR_SC || (lastint->zl != 0 &&
 	prior(stackzn[lastint->zl - 1])
