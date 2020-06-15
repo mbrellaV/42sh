@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/fshell.h"
+#include "fshell.h"
 
 void	ft_start_read(t_readline *p)
 {

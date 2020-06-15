@@ -59,7 +59,7 @@ void				ft_start_42sh(char **argv)
 	}
 	else
 	{
-		do_42sh_builtin(argv);
+		put_error_to_shell(do_42sh_builtin(argv));
 	}
 }
 
