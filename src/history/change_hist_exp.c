@@ -98,6 +98,10 @@ char				*do_zam_str_hist_var(char *str1, t_memory *q)
 	i = 0;
 	while (str1[i] != '\0')
 	{
+		if (str1[i] == '\'')
+			i += c_size(&str1[i], str1[i]) + 2;
+		if (str1[i] == '$')
+			i += word_size(&str1[i]);
 		if (str1[i] == '!')
 			str1 = do_zam_cycle(str1, q, i);
 		if (str1 == NULL)

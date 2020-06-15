@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../inc/fshell.h"
+#include "fshell.h"
 
 char		*do_zam_str_by_str(int start, int end, char *str, char *zam_str)
 {
@@ -27,7 +27,7 @@ char		*do_zam_str_by_str(int start, int end, char *str, char *zam_str)
 	if (!(newstr = ft_memalloc((ft_strlen(str) +
 			ft_strlen(zam_str) + 2) * sizeof(char))))
 		ft_error_q(2);
-	while (str[++i] != '\0' && i < start - 1)
+	while (str[++i] != '\0' && i < start)
 		newstr[i] = str[i];
 	while (zam_str[dopi] != '\0')
 		newstr[i++] = zam_str[dopi++];

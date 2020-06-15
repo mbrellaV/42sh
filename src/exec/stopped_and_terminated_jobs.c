@@ -26,8 +26,8 @@ static int		check_status(t_pstat *pstat, int status, pid_t pid, t_job *job)
 	{
 		pstat->p->completed = 1;
 		put_error_to_shell(pstat->p->status);
-		if (WIFSIGNALED(status))
-			ft_dprintf(globals()->fd[2], "%d: Terminated by signal %d.\n",
+		if (WIFSIGNALED(status) && WTERMSIG(pstat->p->status) != 13)
+			ft_dprintf(globals()->fd[2], "%d: recieved signal %d.\n",
 					(int)pid, WTERMSIG(pstat->p->status));
 	}
 	return (0);
