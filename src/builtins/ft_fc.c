@@ -6,7 +6,7 @@
 /*   By: wstygg <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/28 22:11:46 by wstygg            #+#    #+#             */
-/*   Updated: 2020/06/03 20:13:59 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/06/15 22:42:31 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,7 +100,7 @@ static void			work_with_range(t_fc *fc)
 	}
 }
 
-int					do_fc(char **av, int type)
+int					do_fc(char **av)
 {
 	int				fd;
 	t_fc			f;
@@ -115,8 +115,6 @@ int					do_fc(char **av, int type)
 	work_with_range(&f);
 	if (f.l)
 		return (do_fc_l(f));
-	else if (type == 1)
-		return (-1);
 	else if ((fd = open("/tmp/.42fc", O_CREAT | O_RDWR | O_TRUNC, S_IRUSR
 		| S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH | S_IWOTH, 0644)) == -1)
 		return (err_fc("fc create error!\n"));
@@ -128,6 +126,5 @@ int					do_fc(char **av, int type)
 	if (launch(command, 1))
 		return (1);
 	free(command);
-	do_job_notification();
 	return ((remove("/tmp/.42fc")));
 }

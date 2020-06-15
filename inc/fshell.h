@@ -6,7 +6,7 @@
 /*   By: mbrella <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/11 10:58:44 by mbrella           #+#    #+#             */
-/*   Updated: 2020/06/03 20:13:52 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/06/15 22:42:15 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -170,7 +170,7 @@ int					ft_cd(char **str);
 char				*ft_cdpath(char *ret, char *all);
 void				do_all_var(char **env);
 int					do_cd(t_builtins *cd, char *str);
-int					do_fc(char **av, int type);
+int					do_fc(char **av);
 void				ft_free_env_table();
 int					do_authors(void);
 char				*get_pwd(t_builtins *cd);

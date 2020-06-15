@@ -6,7 +6,7 @@
 /*   By: wstygg <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/15 18:29:17 by wstygg            #+#    #+#             */
-/*   Updated: 2020/06/03 20:13:48 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/06/15 22:42:15 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,8 +77,8 @@ int		do_builtin(char **file_args, char **file_opt,
 		ft_do_change_alias(file_args);
 	else if (ft_strcmp(file_args[0], "cd") == 0)
 		put_error_to_shell(ft_cd(file_args));
-	else if (!ft_strcmp(file_args[0], "fc"))//&& type == 0)
-		put_error_to_shell(do_fc(file_args, type));
+	else if (!ft_strcmp(file_args[0], "fc"))
+		put_error_to_shell(do_fc(file_args));
 	else if (!ft_strcmp(file_args[0], "42sh") && type == 0)
 		put_error_to_shell(do_42sh_builtin(file_args));
 	else
