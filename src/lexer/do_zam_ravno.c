@@ -53,7 +53,8 @@ t_lextoken	*do_zam_ravno(t_lextoken *h, t_lextoken **first_token)
 	tmp1 = NULL;
 	tmp2 = NULL;
 	if (h != NULL && h->line != NULL && ft_strstr(h->line, "=") &&
-	(h->prev == NULL || is_cmd_delim(get_op_type(h->prev->line))))
+	(h->prev == NULL || is_cmd_delim(get_op_type(h->prev->line))) &&
+	!ft_strstr(h->line, "$(("))
 	{
 		if (h->next == NULL || ft_strstr(h->next->line, "=") ||
 		is_cmd_delim(get_op_type(h->next->line)))

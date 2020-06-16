@@ -12,6 +12,12 @@
 
 #include "fshell.h"
 
+int					is_incr(t_calc_tkntype type)
+{
+	return (type == CALC_PRE_INC || type == CALC_PRE_DEC ||
+			type == CALC_INC || type == CALC_DEC);
+}
+
 t_calc_token		*check_and_define_pre_incr(char *str, int *i,
 		t_calc_token *prev_token)
 {
@@ -43,7 +49,8 @@ t_calc_token		*check_calc_error(char *str, int *i,
 
 	if (prev_token &&
 	(calc_prev_mean_calc_token(prev_token)->type == CALC_VAR ||
-	calc_prev_mean_calc_token(prev_token)->type == CALC_NUMBER)
+	calc_prev_mean_calc_token(prev_token)->type == CALC_NUMBER ||
+	is_incr(calc_prev_mean_calc_token(prev_token)->type))
 	&& (ft_isdigit(str[0]) ||
 	ft_isalpha(str[0])))
 	{
