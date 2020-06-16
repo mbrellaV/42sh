@@ -48,10 +48,10 @@ RM = /snap/clion/114/bin/cmake/linux/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/wstygg/ClionProjects/42sh
+CMAKE_SOURCE_DIR = /home/petruha2001/42sh
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/wstygg/ClionProjects/42sh/cmake-build-debug
+CMAKE_BINARY_DIR = /home/petruha2001/42sh/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/wstygg/ClionProjects/42sh/cmake-build-debug/CMakeFiles /home/wstygg/ClionProjects/42sh/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/petruha2001/42sh/cmake-build-debug/CMakeFiles /home/petruha2001/42sh/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/wstygg/ClionProjects/42sh/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/petruha2001/42sh/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -5091,6 +5091,33 @@ src/lexer/dop_funs.c.s:
 	$(MAKE) -f CMakeFiles/42sh.dir/build.make CMakeFiles/42sh.dir/src/lexer/dop_funs.c.s
 .PHONY : src/lexer/dop_funs.c.s
 
+src/lexer/dop_lexer.o: src/lexer/dop_lexer.c.o
+
+.PHONY : src/lexer/dop_lexer.o
+
+# target to build an object file
+src/lexer/dop_lexer.c.o:
+	$(MAKE) -f CMakeFiles/42sh.dir/build.make CMakeFiles/42sh.dir/src/lexer/dop_lexer.c.o
+.PHONY : src/lexer/dop_lexer.c.o
+
+src/lexer/dop_lexer.i: src/lexer/dop_lexer.c.i
+
+.PHONY : src/lexer/dop_lexer.i
+
+# target to preprocess a source file
+src/lexer/dop_lexer.c.i:
+	$(MAKE) -f CMakeFiles/42sh.dir/build.make CMakeFiles/42sh.dir/src/lexer/dop_lexer.c.i
+.PHONY : src/lexer/dop_lexer.c.i
+
+src/lexer/dop_lexer.s: src/lexer/dop_lexer.c.s
+
+.PHONY : src/lexer/dop_lexer.s
+
+# target to generate assembly for a file
+src/lexer/dop_lexer.c.s:
+	$(MAKE) -f CMakeFiles/42sh.dir/build.make CMakeFiles/42sh.dir/src/lexer/dop_lexer.c.s
+.PHONY : src/lexer/dop_lexer.c.s
+
 src/lexer/get_opt_type.o: src/lexer/get_opt_type.c.o
 
 .PHONY : src/lexer/get_opt_type.o
@@ -7704,6 +7731,9 @@ help:
 	@echo "... src/lexer/dop_funs.o"
 	@echo "... src/lexer/dop_funs.i"
 	@echo "... src/lexer/dop_funs.s"
+	@echo "... src/lexer/dop_lexer.o"
+	@echo "... src/lexer/dop_lexer.i"
+	@echo "... src/lexer/dop_lexer.s"
 	@echo "... src/lexer/get_opt_type.o"
 	@echo "... src/lexer/get_opt_type.i"
 	@echo "... src/lexer/get_opt_type.s"

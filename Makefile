@@ -76,6 +76,7 @@ SRC_BASE = builtins/ft_cd.c\
 	lexer/change_spaces.c\
 	lexer/cr_and_add_tokens.c\
 	lexer/dop_funs.c\
+	lexer/dop_lexer.c\
 	lexer/all_bax_and_hist_change.c\
 	lexer/kill_dop_structure.c\
 	lexer/del_one_node_in_lextokens.c\

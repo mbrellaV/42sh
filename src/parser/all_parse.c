@@ -98,33 +98,12 @@ t_exectoken		*all_parse(char *cmd)
 		ft_distr_lex(tmp);
 		return (NULL);
 	}
-//	dop_tmp = tmp;
-//	while (dop_tmp)
-//	{
-//		dprintf(2, "\nsas: |%s, %d, %d|\n",
-//				dop_tmp->line, dop_tmp->operator_type, dop_tmp->is_near_opt);
-//		dop_tmp = dop_tmp->next;
-//	}
 	if (!(tmp = do_zam_bax_and_hist_full(tmp, &dop_tmp)) &&
 		ft_distr_lex(dop_tmp))
 		return (NULL);
-//	dop_tmp = tmp;
-//	while (dop_tmp)
-//	{
-//		dprintf(2, "\nsas: |%s, %d, %d|\n", dop_tmp->line,
-//				dop_tmp->operator_type, dop_tmp->is_near_opt);
-//		dop_tmp = dop_tmp->next;
-//	}
 	if (check_opt_tokens(tmp) == -1 && ft_distr_lex(tmp))
 		return (NULL);
 	extmp = do_parser(tmp);
-//	t_exectoken *exdop = extmp;
-//	while (exdop)
-//	{
-//		if (exdop->file_opt != NULL)
-//			ft_show_env(exdop->file_opt);
-//		exdop = exdop->right;
-//	}
 	do_zamena_opt_tokens(extmp);
 	do_obr_zamena_slash(extmp);
 	ft_distr_lex(tmp);
