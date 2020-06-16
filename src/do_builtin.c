@@ -17,10 +17,10 @@ int		do_next_builtins_2(char **file_args)
 	if (ft_strcmp(file_args[0], "env") == 0)
 		put_error_to_shell(ft_show_env(globals()->g_env));
 	else if (ft_strcmp(file_args[0], "clear") == 0)
-    {
-        ft_putstr_fd("\033[2J\033[H", globals()->fd[2]);
-        put_error_to_shell(0);
-    }
+	{
+		ft_putstr_fd("\033[2J\033[H", globals()->fd[2]);
+		put_error_to_shell(0);
+	}
 	else if (ft_strcmp(file_args[0], "hash") == 0)
 		put_error_to_shell(do_hash(file_args));
 	else if (!ft_strcmp(file_args[0], "type"))

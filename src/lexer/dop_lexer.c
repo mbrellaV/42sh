@@ -4,7 +4,7 @@ int				dop_lexer2(t_dop_str *tmp, char *line)
 {
 	if (tmp->tail_c && tmp->tail_c->prev &&
 		ft_str_is_numeric(tmp->tail_c->prev->line) && (line[tmp->i_c + 1] == '>' ||
-													   line[tmp->i_c + 1] == '<') && tmp->tail_c->prev->inhibitor_lvl == 0)
+		line[tmp->i_c + 1] == '<') && tmp->tail_c->prev->inhibitor_lvl == 0)
 		tmp->tail_c->prev->is_near_opt = 1;
 	tmp->tmp_c = ft_strsub(line, tmp->i_c, word_size(line + tmp->i_c));
 	if (tmp->tail_c && needs_something_before(tmp->tail_c->operator_type) &&
@@ -71,6 +71,6 @@ int				dop_lexer1(t_dop_str *tmp, char *line)
 	if (word_size(line + tmp->i_c) == -1)
 		return (-1);
 	tmp->tmp_c = ft_strsub(line, tmp->i_c + (plus_to_word),
-						   word_size(line + tmp->i_c) - (issc(line[tmp->i_c]) == 1 ? 3 : 0));
+	word_size(line + tmp->i_c) - (issc(line[tmp->i_c]) == 1 ? 3 : 0));
 	return (dop_dop_lexer1(&plus_to_word, tmp, line));
 }

@@ -80,8 +80,8 @@ typedef struct				s_calc
 
 int							is_znak(int c);
 long long					eval_expr(char *s, int *error, char *rec_var);
-long long					calcend(long long **stackos, long long **stackzn, t_int **str,
-								int *error);
+long long					calcend(long long **stackos, long long **stackzn,
+							t_int **str, int *error);
 int							return_with_error(t_calc_token *error_token,
 							int *error, char *all_str, t_int *l);
 char						*ft_main_calc_rec(char *mas, int *error);
@@ -89,8 +89,8 @@ int							prior(int c);
 int							ft_atoi_with(char *str, int *marker);
 int							is_znak_type(t_calc_tkntype type);
 t_int						*cr_new_el(char *s, int *error);
-int							calc(long long *stackos, t_int *str, t_calc_tkntype c,
-								char *error_var);
+int							calc(long long *stackos, t_int *str,
+							t_calc_tkntype c, char *error_var);
 void						addos(long long *stackos, int c, t_int *lastint);
 void						subos(long long *stackos, t_int *lastint);
 void						addzn(long long *stackzn, t_calc_tkntype c,

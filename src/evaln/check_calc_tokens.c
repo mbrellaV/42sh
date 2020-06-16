@@ -41,8 +41,10 @@ t_calc_token		*check_calc_error(char *str, int *i,
 	char			*tmp;
 	t_calc_token	*tmp_token;
 
-	if (prev_token && (calc_prev_mean_calc_token(prev_token)->type == CALC_VAR ||
-	calc_prev_mean_calc_token(prev_token)->type == CALC_NUMBER) && (ft_isdigit(str[0]) ||
+	if (prev_token &&
+	(calc_prev_mean_calc_token(prev_token)->type == CALC_VAR ||
+	calc_prev_mean_calc_token(prev_token)->type == CALC_NUMBER)
+	&& (ft_isdigit(str[0]) ||
 	ft_isalpha(str[0])))
 	{
 		size = calc_word_size(str, 0);

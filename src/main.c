@@ -57,7 +57,7 @@ void				ft_start_42sh(char **argv)
 			ft_put_info();
 		while (1)
 			if (main_cycle(&p, &start_token) == -1)
-				break;
+				break ;
 	}
 	else
 	{
