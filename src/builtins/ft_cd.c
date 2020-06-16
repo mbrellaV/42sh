@@ -117,6 +117,8 @@ int				ft_cd(char **str)
 			return (ft_cd_error(str[1], 7, 0));
 		else if (str[i] && str[i + 1] && str[i + 2])
 			return (ft_cd_error(NULL, 9, 0));
+		else if (str[i][j] == 0)
+			return (0);
 		else
 			return (do_cd(&cd, str[i]));
 	}
