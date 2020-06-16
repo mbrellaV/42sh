@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../inc/fshell.h"
+#include "fshell.h"
 
 char			*do_zam_str_with_tilda(char *str)
 {
