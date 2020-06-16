@@ -80,7 +80,7 @@ char						*do_zam_str_bax(char *str1);
 ** change_sc.c
 */
 
-void						ft_change_all_sc(char *str);
+char						*ft_change_all_sc(char *cmd);
 
 /*
 ** change_spaces.c

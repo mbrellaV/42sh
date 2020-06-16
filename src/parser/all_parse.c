@@ -12,7 +12,13 @@
 
 #include "fshell.h"
 
-int				return_check(char *str, int i)
+static t_exectoken	*return_with_del(char *del, t_exectoken *ret)
+{
+	ft_strdel(&del);
+	return (ret);
+}
+
+	int				return_check(char *str, int i)
 {
 	if (i == -1)
 	{
@@ -29,7 +35,7 @@ int				return_check(char *str, int i)
 	return (1);
 }
 
-int				check_par_and_brackets(char *str)
+int					check_par_and_brackets(char *str)
 {
 	int		i;
 	int		size;
@@ -52,7 +58,7 @@ int				check_par_and_brackets(char *str)
 	return (return_check(str, i));
 }
 
-int				check_opt_tokens(t_lextoken *tmp)
+int					check_opt_tokens(t_lextoken *tmp)
 {
 	while (tmp != NULL)
 	{
@@ -81,7 +87,7 @@ int				check_opt_tokens(t_lextoken *tmp)
 	return (1);
 }
 
-t_exectoken		*all_parse(char *cmd)
+t_exectoken			*all_parse(char *cmd)
 {
 	t_lextoken	*tmp;
 	t_exectoken	*extmp;
@@ -89,23 +95,23 @@ t_exectoken		*all_parse(char *cmd)
 
 	if (*cmd == '\0' || check_par_and_brackets(cmd) == 0)
 		return (NULL);
-	ft_change_all_sc(cmd);
+	cmd = ft_change_all_sc(cmd);
 	if (!(tmp = do_lexer(cmd)))
-		return (NULL);
+		return (return_with_del(cmd, NULL));
 	if (check_all_errors(tmp) != 1)
 	{
 		ft_error(5, "\\n", NULL);
 		ft_distr_lex(tmp);
-		return (NULL);
+		return (return_with_del(cmd, NULL));
 	}
 	if (!(tmp = do_zam_bax_and_hist_full(tmp, &dop_tmp)) &&
 		ft_distr_lex(dop_tmp))
-		return (NULL);
+		return (return_with_del(cmd, NULL));
 	if (check_opt_tokens(tmp) == -1 && ft_distr_lex(tmp))
-		return (NULL);
+		return (return_with_del(cmd, NULL));
 	extmp = do_parser(tmp);
 	do_zamena_opt_tokens(extmp);
 	do_obr_zamena_slash(extmp);
 	ft_distr_lex(tmp);
-	return (extmp);
+	return (return_with_del(cmd, extmp));
 }
