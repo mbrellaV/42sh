@@ -24,8 +24,7 @@ void	ft_add_intput_que(t_readline *p, t_memory *head, int mod)
 		ft_realloc_buff(p);
 	mod == 1 ? p->buff[p->index++] = '\n' : 0;
 	mod == 1 ? p->len++ : 0;
-	if (mod == 11)
-		p->buff[p->index - 1] = -43;
+	mod == 11 ? p->buff[p->index - 1] = -43 : 0;
 	mod == 20 ? p->buff[p->index++] = ' ' : 0;
 	mod == 20 ? p->buff[p->index++] = ';' : 0;
 	mod == 20 ? p->len += 2 : 0;

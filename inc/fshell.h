@@ -135,6 +135,7 @@ typedef struct		s_pstat
 t_global			*globals(void);
 int					is_builtin(char *str);
 void				ft_alias();
+int					alias_dop(char *dop, char *prev_word, char *dopstr);
 int					check_flag(char **av, t_fc *f);
 int					calc_h_size();
 char				*read_fc(int fd);

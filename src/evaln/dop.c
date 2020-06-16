@@ -21,7 +21,7 @@ t_calc_token	*calc_prev_mean_calc_token(t_calc_token *tmp)
 	return (tmp);
 }
 
-t_int		*cr_new_el(char *s, int *error)
+t_int			*cr_new_el(char *s, int *error)
 {
 	t_int	*tmp;
 
@@ -35,7 +35,7 @@ t_int		*cr_new_el(char *s, int *error)
 	return (tmp);
 }
 
-int			prior(int c)
+int				prior(int c)
 {
 	if (c == CALC_MUL)
 		return (3);
@@ -55,7 +55,7 @@ int			prior(int c)
 		return (0);
 }
 
-int			is_znak(int c)
+int				is_znak(int c)
 {
 	if (c == '-' || c == '+' || c == '<' || c == '>' || c == '=' ||
 	c == '&' || c == '|' || c == '*' || c == '/' || c == '%' || c == '!')
@@ -64,7 +64,8 @@ int			is_znak(int c)
 		return (0);
 }
 
-long long		calcend(long long **stackos, long long **stackzn, t_int **str, int *error)
+long long		calcend(long long **stackos, long long **stackzn, t_int **str,
+		int *error)
 {
 	long long		result;
 	long long		*dop_stackos;

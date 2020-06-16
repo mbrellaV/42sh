@@ -61,15 +61,15 @@ t_calc_token	*calc_define_token(char *str)
 		return (ft_ntoken(str, CALC_MORE));
 	else if (!ft_strncmp(str, "++", 2))
 		return (ft_ntoken(str, CALC_INC));
-	else if (!ft_strncmp(str, "--", 2))
-		return (ft_ntoken(str, CALC_DEC));
 	else
 		return (calc_define_token_next(str));
 }
 
 t_calc_token	*calc_define_token_next(char *str)
 {
-	if (*str == '+')
+	if (!ft_strncmp(str, "--", 2))
+		return (ft_ntoken(str, CALC_DEC));
+	else if (*str == '+')
 		return (ft_ntoken(str, CALC_PLUS));
 	else if (*str == '-')
 		return (ft_ntoken(str, CALC_MINUS));

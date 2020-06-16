@@ -12,6 +12,23 @@
 
 #include "../../../inc/fshell.h"
 
+void		ft_alias(void)
+{
+	if (!(globals()->g_alias = (char **)ft_memalloc(4 * sizeof(char *))))
+		ft_error(15, "malloc error alias", NULL);
+	globals()->g_alias[0] = ft_strdup("ll=ls -la");
+	globals()->g_alias[1] = ft_strdup("l=ls");
+	globals()->g_alias[2] = NULL;
+}
+
+int			alias_dop(char *dop, char *prev_word, char *dopstr)
+{
+	ft_strdel(&prev_word);
+	ft_strdel(&dopstr);
+	ft_strdel(&dop);
+	return (1);
+}
+
 int			alias_error(int error, char *tmp1, char *tmp2)
 {
 	put_error_to_shell(error);

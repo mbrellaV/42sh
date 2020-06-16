@@ -183,7 +183,8 @@ void						do_zamena_opt_tokens(t_exectoken *tmp);
 */
 
 int							dop_lexer2(t_dop_str *tmp, char *line);
-int							dop_dop_lexer1(int *plus_to_word, t_dop_str *tmp, char *line);
+int							dop_dop_lexer1(int *plus_to_word, t_dop_str *tmp,
+								char *line);
 int							dop_lexer1(t_dop_str *tmp, char *line);
 
 #endif

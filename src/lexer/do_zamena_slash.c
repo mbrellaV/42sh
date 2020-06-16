@@ -20,7 +20,8 @@ static void		do_zam_slash_in_par(t_zams *zams, char *line, char c)
 	{
 		while (line[zams->i] != '\0' && line[zams->i] != c)
 		{
-			if (line[zams->i] == '\\' && (line[zams->i + 1] != '\0' && line[zams->i + 1] != '\n'))
+			if (line[zams->i] == '\\' && (line[zams->i + 1] != '\0' &&
+			line[zams->i + 1] != '\n'))
 				ft_strcat_char(zams->dopstr, -1 * line[++zams->i]);
 			else if (line[zams->i] == '\\' && line[zams->i + 1] == '\"')
 				ft_strcat_char(zams->dopstr, -1 * line[++zams->i]);
@@ -46,7 +47,8 @@ static void		decide_what_to_do(t_zams *zams, char *line)
 	{
 		do_zam_slash_in_par(zams, line, line[zams->i]);
 	}
-	else if (line[zams->i] == '\\' && (line[zams->i + 1] != '\0' && line[zams->i + 1] != '\n'))
+	else if (line[zams->i] == '\\' && (line[zams->i + 1] != '\0' &&
+	line[zams->i + 1] != '\n'))
 	{
 		ft_strcat_char(zams->dopstr, -1 * line[zams->i + 1]);
 		zams->i++;

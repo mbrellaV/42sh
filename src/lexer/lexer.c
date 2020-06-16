@@ -12,7 +12,7 @@
 
 #include "fshell.h"
 
-int				dop_lexer(t_dop_str *tmp, char *line)
+int					dop_lexer(t_dop_str *tmp, char *line)
 {
 	if (isword(line[tmp->i_c]) > 0)
 	{
@@ -34,7 +34,7 @@ int				dop_lexer(t_dop_str *tmp, char *line)
 	return (0);
 }
 
-static t_lextoken		*lexer_error(t_dop_str *tmp)
+static t_lextoken	*lexer_error(t_dop_str *tmp)
 {
 	put_error_to_shell(2);
 	if (tmp->doptail_c == NULL)
@@ -44,7 +44,7 @@ static t_lextoken		*lexer_error(t_dop_str *tmp)
 	return (NULL);
 }
 
-t_lextoken		*do_lexer(char *line)
+t_lextoken			*do_lexer(char *line)
 {
 	t_dop_str	*tmp;
 

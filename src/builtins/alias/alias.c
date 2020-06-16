@@ -12,24 +12,8 @@
 
 #include "fshell.h"
 
-void		ft_alias(void)
-{
-	if (!(globals()->g_alias = (char **)ft_memalloc(4 * sizeof(char *))))
-		ft_error(15, "malloc error alias", NULL);
-	globals()->g_alias[0] = ft_strdup("ll=ls -la");
-	globals()->g_alias[1] = ft_strdup("l=ls");
-	globals()->g_alias[2] = NULL;
-}
-
-int			alias_dop(char *dop, char *prev_word, char *dopstr)
-{
-	ft_strdel(&prev_word);
-	ft_strdel(&dopstr);
-	ft_strdel(&dop);
-	return (1);
-}
-
-static int	do_zam_alias(char *str, int *i, char *newstr, char **remaining_aliases)
+static int	do_zam_alias(char *str, int *i, char *newstr,
+		char **remaining_aliases)
 {
 	char	*dop;
 	int		size;
@@ -58,7 +42,8 @@ static int	do_zam_alias(char *str, int *i, char *newstr, char **remaining_aliase
 	}
 }
 
-static int	alias_cycle(char *str, int *i, char *newstr, char **remaining_aliases)
+static int	alias_cycle(char *str, int *i, char *newstr,
+		char **remaining_aliases)
 {
 	char	*dop;
 	int		size;
@@ -83,7 +68,8 @@ static int	alias_cycle(char *str, int *i, char *newstr, char **remaining_aliases
 	return (2);
 }
 
-int		ft_do_main_zam_alias(char **str, int *semaphore, char **remaining_aliases)
+int			ft_do_main_zam_alias(char **str, int *semaphore,
+		char **remaining_aliases)
 {
 	int		i;
 	int		dop;

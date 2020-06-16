@@ -1,10 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   dop_lexer.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mbrella <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/12/11 18:53:40 by mbrella           #+#    #+#             */
+/*   Updated: 2020/06/15 23:31:21 by wstygg           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "fshell.h"
 
-int				dop_lexer2(t_dop_str *tmp, char *line)
+int		dop_lexer2(t_dop_str *tmp, char *line)
 {
 	if (tmp->tail_c && tmp->tail_c->prev &&
-		ft_str_is_numeric(tmp->tail_c->prev->line) && (line[tmp->i_c + 1] == '>' ||
-		line[tmp->i_c + 1] == '<') && tmp->tail_c->prev->inhibitor_lvl == 0)
+		ft_str_is_numeric(tmp->tail_c->prev->line) && (line[tmp->i_c + 1] == '>'
+		|| line[tmp->i_c + 1] == '<') && tmp->tail_c->prev->inhibitor_lvl == 0)
 		tmp->tail_c->prev->is_near_opt = 1;
 	tmp->tmp_c = ft_strsub(line, tmp->i_c, word_size(line + tmp->i_c));
 	if (tmp->tail_c && needs_something_before(tmp->tail_c->operator_type) &&
@@ -51,7 +63,7 @@ int		dop_dop_lexer1(int *plus_to_word, t_dop_str *tmp, char *line)
 	return (0);
 }
 
-int				dop_lexer1(t_dop_str *tmp, char *line)
+int		dop_lexer1(t_dop_str *tmp, char *line)
 {
 	int			plus_to_word;
 

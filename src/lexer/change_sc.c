@@ -15,7 +15,6 @@
 static void		change_with_one_par(char *str, char *newstr, int *i)
 {
 	ft_strcat_char(newstr, str[(*i)++]);
-	dprintf(2, "\nttt1: |%s|\n", newstr);
 	while (str[(*i)] != '\'')
 	{
 		if (str[(*i)] == -43)
@@ -74,7 +73,7 @@ static char		*change_slash_slashn(char *str)
 	return (newstr);
 }
 
-char		*ft_change_all_sc(char *str)
+char			*ft_change_all_sc(char *str)
 {
 	int		i;
 	int		size;
