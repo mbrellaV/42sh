@@ -16,12 +16,16 @@ static void		do_join(t_lextoken **doph, t_lextoken **lextmp1)
 {
 	t_lextoken	*lextmp;
 	t_lextoken	*h;
+	char		*tmp;
 
 	h = *doph;
 	(h)->next->is_near_word = 0;
+	tmp = h->next->line;
 	h->next->is_near_opt = h->is_near_opt;
 	(h)->next->inhibitor_lvl = h->inhibitor_lvl;
 	(h)->next->line = ft_strjoin((h)->line, (h)->next->line);
+	ft_strdel(&tmp);
+	ft_strdel(&h->line);
 	if ((h)->prev != NULL)
 	{
 		(h)->prev->next = (h)->next;
