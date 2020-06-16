@@ -52,7 +52,7 @@ void			ft_free_env_table(void)
 	globals()->env_del = NULL;
 }
 
-int		ft_show_env_with_export(char **env)
+int				ft_show_env_with_export(char **env)
 {
 	int		i;
 
