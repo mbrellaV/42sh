@@ -51,3 +51,18 @@ void			ft_free_env_table(void)
 	ft_free_str(globals()->env_del);
 	globals()->env_del = NULL;
 }
+
+int		ft_show_env_with_export(char **env)
+{
+	int		i;
+
+	i = 0;
+	if (!vivod(1) || env == NULL)
+		return (1);
+	while (env[i])
+	{
+		ft_dprintf(globals()->fd[1], "export %s\n", env[i]);
+		i++;
+	}
+	return (0);
+}

@@ -91,7 +91,7 @@ int			ft_do_export(char **mas)
 	else if (mas[1] == NULL && !ft_show_env(globals()->g_env))
 		return (0);
 	else if (mas[1] && !ft_strcmp("-p", mas[1]) &&
-	mas[2] == NULL && !ft_show_env(globals()->g_env))
+	mas[2] == NULL && !ft_show_env_with_export(globals()->g_env))
 		return (0);
 	else if (mas[1] != NULL && mas[2] == NULL && ft_strcmp("-p", mas[1]))
 		return (do_save_to_env(mas));

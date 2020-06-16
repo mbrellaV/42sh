@@ -147,6 +147,7 @@ char				*do_obr_zamena(char *line);
 void				ft_realloc_all(int k, char ***envl);
 int					ft_echo(char **str);
 void				del_hist();
+int					ft_show_env_with_export(char **env);
 t_memory			*make_memmory_with_one_node(int fd, char *buf);
 char				*get_hist_by_id(int id);
 char				*ft_slash(char *str, t_builtins *echo);

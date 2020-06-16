@@ -55,7 +55,7 @@ t_lextoken			*do_lexer(char *line)
 	while (line[tmp->i_c] != '\0')
 	{
 		if (dop_lexer(tmp, line) == -1)
-			lexer_error(tmp);
+			return (lexer_error(tmp));
 	}
 	if (tmp->tail_c != NULL && (tmp->tail_c->operator_type == 2 ||
 	tmp->tail_c->operator_type == 10 || tmp->tail_c->operator_type == 11))
