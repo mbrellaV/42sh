@@ -96,6 +96,7 @@ t_exectoken			*all_parse(char *cmd)
 	if (*cmd == '\0' || check_par_and_brackets(cmd) == 0)
 		return (NULL);
 	cmd = ft_change_all_sc(cmd);
+	dprintf(2, "\n|%s|\n", cmd);
 	if (!(tmp = do_lexer(cmd)))
 		return (return_with_del(cmd, NULL));
 	if (check_all_errors(tmp) != 1)

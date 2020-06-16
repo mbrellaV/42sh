@@ -15,6 +15,7 @@
 static void		change_with_one_par(char *str, char *newstr, int *i)
 {
 	ft_strcat_char(newstr, str[(*i)++]);
+	dprintf(2, "\nttt1: |%s|\n", newstr);
 	while (str[(*i)] != '\'')
 	{
 		if (str[(*i)] == -43)
@@ -40,7 +41,7 @@ static void		change_with_two_par(char *str, char *newstr, int *i)
 		}
 		else if (str[*i] == '\\' && str[*i + 1] == '\n')
 		{
-			(*i) += 1;
+			(*i) += 2;
 		}
 		else
 			ft_strcat_char(newstr, str[(*i)]);
@@ -61,7 +62,7 @@ static char		*change_slash_slashn(char *str)
 	{
 		if (str[i] == '\'')
 			change_with_one_par(str, newstr, &i);
-		if (str[i] == '\"')
+		else if (str[i] == '\"')
 			change_with_two_par(str, newstr, &i);
 		else if (str[i] == -43)
 			i++;
@@ -85,8 +86,11 @@ char		*ft_change_all_sc(char *str)
 			i += word_size(&str[i]);
 		else if (ispar(str[i]))
 		{
-			size = c_size(&str[i], str[i]) + 2;
-			i += size;
+			size = c_size(&str[i], str[i]);
+			if (size == -2)
+				i += 2;
+			else
+				i += size + 2;
 		}
 		else if ((str[i] == '(' || str[i] == ')'))
 			str[i] = ' ';
