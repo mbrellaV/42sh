@@ -95,7 +95,9 @@ t_calc_token		*check_if_incr_with_num(char *str, int *i,
 	int				d;
 
 	tmp = ft_get_next_word(str, 0);
-	if ((!prev_token || (is_znak_type(prev_token->type))) && is_incr_sym(str[0])
+	if ((!calc_prev_mean_calc_token(prev_token) ||
+	(is_znak_type(calc_prev_mean_calc_token(prev_token)->type))) &&
+	is_incr_sym(str[0])
 	&& !is_incr_sym(str[1]) && ft_str_is_numeric(tmp))
 	{
 		!(dopstr = ft_strnew(ft_strlen(tmp) + 100)) ? ft_error_q(2) : 0;

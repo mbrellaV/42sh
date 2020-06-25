@@ -25,7 +25,7 @@ void	init_shell(void)
 		globals()->g_shell_pgid = getpid();
 		if (setpgid(globals()->g_shell_pgid, globals()->g_shell_pgid) < 0)
 		{
-			perror("Couldn't put the shell in its own process group");
+			ft_dprintf(globals()->fd[2], "Couldn't put the shell in its own process group");
 			exit(1);
 		}
 		tcsetpgrp(0, globals()->g_shell_pgid);

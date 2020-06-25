@@ -14,7 +14,7 @@
 
 t_calc_token	*calc_prev_mean_calc_token(t_calc_token *tmp)
 {
-	while (tmp->type == CALC_FIR_SC || tmp->type == CALC_SEC_SC)
+	while (tmp && (tmp->type == CALC_FIR_SC || tmp->type == CALC_SEC_SC))
 	{
 		tmp = tmp->prev;
 	}

@@ -20,6 +20,6 @@ void				put_job_in_background(t_job *j, int cont)
 	tw = (struct timespec){0, 22000000};
 	if (cont)
 		if (kill(-j->pgid, SIGCONT) < 0)
-			perror("kill (SIGCONT)");
+			ft_dprintf(globals()->fd[2], "kill (SIGCONT)");
 	nanosleep(&tw, &tr);
 }
